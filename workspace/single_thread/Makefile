@@ -1,4 +1,4 @@
-all: stack_no_while stack_with_while
+all: single_thread_test
 
 CC := gcc
 CCFLAGS := -g -Wall
