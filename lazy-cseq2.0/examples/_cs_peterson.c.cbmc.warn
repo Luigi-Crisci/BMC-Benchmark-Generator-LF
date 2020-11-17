@@ -1,0 +1,4 @@
+file <command-line> line 0: <command-line>:0:0: warning: "__STDC_VERSION__" redefined
+<built-in>: note: this is the location of the previous definition
+file examples/_cs_peterson.c line 62 function __cs_safe_malloc: function `malloc' is not declared
+file examples/_cs_peterson.c line 306 function thr1_0: function `assert' is not declared

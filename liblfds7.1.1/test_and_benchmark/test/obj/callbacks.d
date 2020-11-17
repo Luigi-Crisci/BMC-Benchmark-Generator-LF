@@ -1,0 +1,36 @@
+callbacks.o: ../../src/./callbacks.c ../../src/./internal.h \
+ ../../src/./../../../liblfds711/inc/liblfds711.h \
+ ../../src/./../../../liblfds711/inc/liblfds711/lfds711_porting_abstraction_layer_compiler.h \
+ ../../src/./../../../liblfds711/inc/liblfds711/lfds711_porting_abstraction_layer_operating_system.h \
+ ../../src/./../../../liblfds711/inc/liblfds711/lfds711_porting_abstraction_layer_processor.h \
+ ../../src/./../../../liblfds711/inc/liblfds711/lfds711_prng.h \
+ ../../src/./../../../liblfds711/inc/liblfds711/lfds711_misc.h \
+ ../../src/./../../../liblfds711/inc/liblfds711/lfds711_btree_addonly_unbalanced.h \
+ ../../src/./../../../liblfds711/inc/liblfds711/lfds711_freelist.h \
+ ../../src/./../../../liblfds711/inc/liblfds711/lfds711_hash_addonly.h \
+ ../../src/./../../../liblfds711/inc/liblfds711/lfds711_list_addonly_singlylinked_ordered.h \
+ ../../src/./../../../liblfds711/inc/liblfds711/lfds711_list_addonly_singlylinked_unordered.h \
+ ../../src/./../../../liblfds711/inc/liblfds711/lfds711_queue_bounded_manyproducer_manyconsumer.h \
+ ../../src/./../../../liblfds711/inc/liblfds711/lfds711_queue_bounded_singleproducer_singleconsumer.h \
+ ../../src/./../../../liblfds711/inc/liblfds711/lfds711_queue_unbounded_manyproducer_manyconsumer.h \
+ ../../src/./../../../liblfds711/inc/liblfds711/lfds711_ringbuffer.h \
+ ../../src/./../../../liblfds711/inc/liblfds711/lfds711_stack.h \
+ ../../src/./../../libtest/inc/libtest.h \
+ ../../src/./../../libtest/inc/libtest/libtest_porting_abstraction_layer_operating_system.h \
+ ../../src/./../../libtest/inc/libtest/libtest_porting_abstraction_layer_compiler.h \
+ ../../src/./../../libtest/inc/../../../liblfds711/inc/liblfds711.h \
+ ../../src/./../../libtest/inc/../../libshared/inc/libshared.h \
+ ../../src/./../../libtest/inc/../../libshared/inc/libshared/libshared_porting_abstraction_layer_operating_system.h \
+ ../../src/./../../libtest/inc/../../libshared/inc/../../../liblfds711/inc/liblfds711.h \
+ ../../src/./../../libtest/inc/../../libshared/inc/libshared/libshared_ansi.h \
+ ../../src/./../../libtest/inc/../../libshared/inc/libshared/libshared_memory.h \
+ ../../src/./../../libtest/inc/../../libshared/inc/libshared/libshared_misc.h \
+ ../../src/./../../libtest/inc/../../libshared/inc/libshared/libshared_porting_abstraction_layer.h \
+ ../../src/./../../libtest/inc/libtest/libtest_porting_abstraction_layer.h \
+ ../../src/./../../libtest/inc/libtest/libtest_misc.h \
+ ../../src/./../../libtest/inc/libtest/libtest_tests.h \
+ ../../src/./../../libtest/inc/libtest/libtest_test.h \
+ ../../src/./../../libtest/inc/libtest/libtest_results.h \
+ ../../src/./../../libtest/inc/libtest/libtest_testsuite.h \
+ ../../src/./../../libtest/inc/libtest/libtest_threadset.h \
+ ../../src/./util_cmdline.h

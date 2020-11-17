@@ -1,0 +1,255 @@
+CBMC version 5.10 (cbmc-5.10) 64-bit x86_64 linux
+Parsing examples/_cs_peterson.c
+Converting
+Type-checking _cs_peterson
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Running with 8 object bits, 24 offset bits (default)
+Starting Bounded Model Checking
+size of program expression: 411 steps
+simple slicing removed 27 assignments
+Generated 3 VCC(s), 3 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+752 variables, 1775 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0045575s
+Building error trace
+Counterexample:
+
+State 32 file examples/_cs_peterson.c line 385 function main thread 0
+----------------------------------------------------
+  __cs_tmp_t0_r0=2 (010)
+
+State 33 file examples/_cs_peterson.c line 386 function main thread 0
+----------------------------------------------------
+  __cs_pc_cs[0]=2 (00010)
+
+State 41 file examples/_cs_peterson.c line 363 function main_thread thread 0
+----------------------------------------------------
+  __cs_new_thread_id=&__cs_local_main_t1 (00000010 00000000 00000000 00000000)
+
+State 42 file examples/_cs_peterson.c line 363 function main_thread thread 0
+----------------------------------------------------
+  __cs_attr=NULL (00000000 00000000 00000000 00000000)
+
+State 43 file examples/_cs_peterson.c line 363 function main_thread thread 0
+----------------------------------------------------
+  __cs_thread_function=thr1_0 (00000011 00000000 00000000 00000000)
+
+State 44 file examples/_cs_peterson.c line 363 function main_thread thread 0
+----------------------------------------------------
+  __cs_arg=NULL (00000000 00000000 00000000 00000000)
+
+State 45 file examples/_cs_peterson.c line 363 function main_thread thread 0
+----------------------------------------------------
+  __cs_threadID=1 (00000000 00000000 00000000 00000001)
+
+State 47 file examples/_cs_peterson.c line 85 function __cs_create thread 0
+----------------------------------------------------
+  __cs_local_main_t1=1 (00000000 00000000 00000000 00000001)
+
+State 48 file examples/_cs_peterson.c line 86 function __cs_create thread 0
+----------------------------------------------------
+  __cs_active_thread[1]=1 (1)
+
+State 49 file examples/_cs_peterson.c line 87 function __cs_create thread 0
+----------------------------------------------------
+  __cs_threadargs[1]=NULL (00000000 00000000 00000000 00000000)
+
+State 52 file examples/_cs_peterson.c line 88 function __cs_create thread 0
+----------------------------------------------------
+  __cs_message="thread spawned" (00000100 00000000 00000000 00000000)
+
+State 59 file examples/_cs_peterson.c line 365 function main_thread thread 0
+----------------------------------------------------
+  __cs_new_thread_id=&__cs_local_main_t2 (00000101 00000000 00000000 00000000)
+
+State 60 file examples/_cs_peterson.c line 365 function main_thread thread 0
+----------------------------------------------------
+  __cs_attr=NULL (00000000 00000000 00000000 00000000)
+
+State 61 file examples/_cs_peterson.c line 365 function main_thread thread 0
+----------------------------------------------------
+  __cs_thread_function=thr2_0 (00000110 00000000 00000000 00000000)
+
+State 62 file examples/_cs_peterson.c line 365 function main_thread thread 0
+----------------------------------------------------
+  __cs_arg=NULL (00000000 00000000 00000000 00000000)
+
+State 63 file examples/_cs_peterson.c line 365 function main_thread thread 0
+----------------------------------------------------
+  __cs_threadID=2 (00000000 00000000 00000000 00000010)
+
+State 65 file examples/_cs_peterson.c line 85 function __cs_create thread 0
+----------------------------------------------------
+  __cs_local_main_t2=2 (00000000 00000000 00000000 00000010)
+
+State 66 file examples/_cs_peterson.c line 86 function __cs_create thread 0
+----------------------------------------------------
+  __cs_active_thread[2]=1 (1)
+
+State 67 file examples/_cs_peterson.c line 87 function __cs_create thread 0
+----------------------------------------------------
+  __cs_threadargs[2]=NULL (00000000 00000000 00000000 00000000)
+
+State 70 file examples/_cs_peterson.c line 88 function __cs_create thread 0
+----------------------------------------------------
+  __cs_message="thread spawned" (00000100 00000000 00000000 00000000)
+
+State 79 file examples/_cs_peterson.c line 379 function main_thread thread 0
+----------------------------------------------------
+  __cs_value_ptr=NULL (00000000 00000000 00000000 00000000)
+
+State 80 file examples/_cs_peterson.c line 379 function main_thread thread 0
+----------------------------------------------------
+  __cs_thread_index=0u (00000000 00000000 00000000 00000000)
+
+State 81 file examples/_cs_peterson.c line 99 function __cs_exit thread 0
+----------------------------------------------------
+  __cs_thread_joinargs[0]=NULL (00000000 00000000 00000000 00000000)
+
+State 86 file examples/_cs_peterson.c line 390 function main thread 0
+----------------------------------------------------
+  __cs_pc[0]=2 (0010)
+
+State 87 file examples/_cs_peterson.c line 392 function main thread 0
+----------------------------------------------------
+  __cs_tmp_t1_r0=6 (110)
+
+State 89 file examples/_cs_peterson.c line 395 function main thread 0
+----------------------------------------------------
+  __cs_pc_cs[1]=6 (00110)
+
+State 93 file examples/_cs_peterson.c line 397 function main thread 0
+----------------------------------------------------
+  __cs_param_thr1___cs_unused=NULL (00000000 00000000 00000000 00000000)
+
+State 95 file examples/_cs_peterson.c line 290 function thr1_0 thread 0
+----------------------------------------------------
+  flag1=1 (00000000 00000000 00000000 00000001)
+
+State 97 file examples/_cs_peterson.c line 292 function thr1_0 thread 0
+----------------------------------------------------
+  turn=1 (00000000 00000000 00000000 00000001)
+
+State 100 file examples/_cs_peterson.c line 298 function thr1_0 thread 0
+----------------------------------------------------
+  x=0 (00000000 00000000 00000000 00000000)
+
+State 102 file examples/_cs_peterson.c line 303 function thr1_0 thread 0
+----------------------------------------------------
+  __cs_local_thr1___cs_tmp_if_cond_0=FALSE (00000000)
+
+State 105 file examples/_cs_peterson.c line 310 function thr1_0 thread 0
+----------------------------------------------------
+  flag1=0 (00000000 00000000 00000000 00000000)
+
+State 109 file examples/_cs_peterson.c line 316 function thr1_0 thread 0
+----------------------------------------------------
+  __cs_value_ptr=NULL (00000000 00000000 00000000 00000000)
+
+State 110 file examples/_cs_peterson.c line 316 function thr1_0 thread 0
+----------------------------------------------------
+  __cs_thread_index=1u (00000000 00000000 00000000 00000001)
+
+State 111 file examples/_cs_peterson.c line 99 function __cs_exit thread 0
+----------------------------------------------------
+  __cs_thread_joinargs[1]=NULL (00000000 00000000 00000000 00000000)
+
+State 116 file examples/_cs_peterson.c line 398 function main thread 0
+----------------------------------------------------
+  __cs_pc[1]=6 (0110)
+
+State 117 file examples/_cs_peterson.c line 401 function main thread 0
+----------------------------------------------------
+  __cs_tmp_t2_r0=8 (1000)
+
+State 119 file examples/_cs_peterson.c line 404 function main thread 0
+----------------------------------------------------
+  __cs_pc_cs[2]=8 (01000)
+
+State 123 file examples/_cs_peterson.c line 406 function main thread 0
+----------------------------------------------------
+  __cs_param_thr2___cs_unused=NULL (00000000 00000000 00000000 00000000)
+
+State 125 file examples/_cs_peterson.c line 321 function thr2_0 thread 0
+----------------------------------------------------
+  flag2=1 (00000000 00000000 00000000 00000001)
+
+State 127 file examples/_cs_peterson.c line 323 function thr2_0 thread 0
+----------------------------------------------------
+  turn=0 (00000000 00000000 00000000 00000000)
+
+State 131 file examples/_cs_peterson.c line 329 function thr2_0 thread 0
+----------------------------------------------------
+  x=1 (00000000 00000000 00000000 00000001)
+
+State 133 file examples/_cs_peterson.c line 334 function thr2_0 thread 0
+----------------------------------------------------
+  __cs_local_thr2___cs_tmp_if_cond_1=FALSE (00000000)
+
+State 137 file examples/_cs_peterson.c line 346 function thr2_0 thread 0
+----------------------------------------------------
+  flag2=0 (00000000 00000000 00000000 00000000)
+
+State 141 file examples/_cs_peterson.c line 352 function thr2_0 thread 0
+----------------------------------------------------
+  __cs_value_ptr=NULL (00000000 00000000 00000000 00000000)
+
+State 142 file examples/_cs_peterson.c line 352 function thr2_0 thread 0
+----------------------------------------------------
+  __cs_thread_index=2u (00000000 00000000 00000000 00000010)
+
+State 143 file examples/_cs_peterson.c line 99 function __cs_exit thread 0
+----------------------------------------------------
+  __cs_thread_joinargs[2]=NULL (00000000 00000000 00000000 00000000)
+
+State 148 file examples/_cs_peterson.c line 407 function main thread 0
+----------------------------------------------------
+  __cs_pc[2]=8 (1000)
+
+State 149 file examples/_cs_peterson.c line 409 function main thread 0
+----------------------------------------------------
+  __cs_tmp_t0_r1=3 (011)
+
+State 151 file examples/_cs_peterson.c line 412 function main thread 0
+----------------------------------------------------
+  __cs_pc_cs[0]=5 (00101)
+
+State 161 file examples/_cs_peterson.c line 367 function main_thread thread 0
+----------------------------------------------------
+  __cs_id=1 (00000000 00000000 00000000 00000001)
+
+State 162 file examples/_cs_peterson.c line 367 function main_thread thread 0
+----------------------------------------------------
+  __cs_value_ptr=((const void **)NULL) (00000000 00000000 00000000 00000000)
+
+State 164 file examples/_cs_peterson.c line 94 function __cs_join thread 0
+----------------------------------------------------
+  __cs_value_ptr$object=NULL (00000000 00000000 00000000 00000000)
+
+State 170 file examples/_cs_peterson.c line 369 function main_thread thread 0
+----------------------------------------------------
+  __cs_id=2 (00000000 00000000 00000000 00000010)
+
+State 171 file examples/_cs_peterson.c line 369 function main_thread thread 0
+----------------------------------------------------
+  __cs_value_ptr=((const void **)NULL) (00000000 00000000 00000000 00000000)
+
+State 173 file examples/_cs_peterson.c line 94 function __cs_join thread 0
+----------------------------------------------------
+  __cs_value_ptr$object=NULL (00000000 00000000 00000000 00000000)
+
+Violated property:
+  file examples/_cs_peterson.c line 371 function main_thread
+  assertion flag2 != 0
+  flag2 != 0
+
+
+VERIFICATION FAILED
