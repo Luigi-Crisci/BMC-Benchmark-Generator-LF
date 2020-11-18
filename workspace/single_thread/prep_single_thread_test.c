@@ -1438,9 +1438,11 @@ void lfds711_stack_push(struct lfds711_stack_state *ss,
    *volatile original_top[2];
  if( !(ss != ((void *)0)) ) { char *c = 0; *c = 0; };;
  if( !(se != ((void *)0)) ) { char *c = 0; *c = 0; };;
- new_top[0] = se;
- original_top[1] = ss->top[1];
- original_top[0] = ss->top[0];
+
+ //QUI INIZIA IL CODICE
+ new_top[0] = se; //se = elemento che vogliamo pushare e viene copiato in new_top
+ original_top[1] = ss->top[1]; //ss è l'attuale elemento nello stack che viene copiato in original_top
+ original_top[0] = ss->top[0]; //ss è l'attuale elemento nello stack che viene copiato in original_top
  result = 0;
  int i = 0;
  while(result == 0)
@@ -1448,7 +1450,50 @@ void lfds711_stack_push(struct lfds711_stack_state *ss,
   se->next = original_top[0];
   __atomic_thread_fence( 3 );
   new_top[1] = original_top[1] + 1;
-  { (result) = 0; __asm__ __volatile__ ( "lock;" "cmpxchg16b %0;" "setz       %4;" : "+m" ((ss->top)[0]), "+m" ((ss->top)[1]), "+a" ((original_top)[0]), "+d" ((original_top)[1]), "=q" (result) : "b" ((new_top)[0]), "c" ((new_top)[1]) : ); };
+  { (result) = 0; __asm__ __volatile__ ( "lock;" "cmpxchg16b %0;" "setz       %4;" : 
+  "+m" ((ss->top)[0]), //variabile da copiare (*src)
+  "+m" ((ss->top)[1]), //variabile da copiare (*src)
+  "+a" ((original_top)[0]), //2° var giusto [0] (part lo cmp) è variabile temporanea per il confronto
+  "+d" ((original_top)[1]), //2° var giusto [1] (part hi cmp) è variabile temporanea per il confronto
+  "=q" (result) : //risultato
+  "b" ((new_top)[0]),// 1° var [0] (part lo with)
+  "c" ((new_top)[1])// 1° var [1] (part hi with)
+  : ); };
+
+/*SE TEMP128*/
+/*SS DEST*/ 
+//PSEUDOCODICE 
+
+// if(original_top[0]+original_top[1] /*(RDX)*/ :// new_top[0] + new_top[1] /*(RAX)*/ == SE /*TEMP128*/ )
+  /*  {
+      result = 1 //ZF flag di condizione per capire se il confronto ha avuto successo 
+      ss->top[0] = original_top[0] + new_top[0]; //L'INDIRIZZO DI MEMORIA DEL VALORE NELLO STACK SARA' DATO DALLA SOMMA DEGLI INDIRIZZI DI MEMORIA DEL NUOVO VALORE + IL PRECEDENTE
+      ss->top[1] = original_top[1] + new_top[1]; //L'INDIRIZZO DI MEMORIA DEL VALORE NELLO STACK SARA' DATO DALLA SOMMA DEGLI INDIRIZZI DI MEMORIA DEL NUOVO VALORE + IL PRECEDENTE
+    }
+    else
+    {
+      result = 0; //ZF flag di condizione per capire se il confronto ha avuto successo 
+      original_top[0]+original_top[1]+new_top[0]+new_top[1] = se; //ASSEGNA AL REGISTRO RDX(ORIGINAL_TOP) E AL REGISTRO RAX(NEW_TOP) IL VALORE TEMP128 (SE)
+      ss = se; //ASSEGNA A DEST(SS), TEMP128 (SE)
+    }
+*/
+/* CODICE SIMILE DA STACKOVERFLOW
+ __asm__ __volatile__
+    (
+        "lock cmpxchg16b oword ptr %1\n\t"
+        "setz %0"
+        : "=q" ( result )
+        , "+m" ( *src )
+        , "+d" ( cmp.hi )
+        , "+a" ( cmp.lo )
+        : "c" ( with.hi )
+        , "b" ( with.lo )
+        : "cc"
+    );
+*/
+
+
+
   if (result == 0)
    { for( int loop = 0 ; loop < 10 ; loop++ ); };
   i++;
@@ -1492,6 +1537,6 @@ int main(){
  ( (element).value = (void *) (lfds711_pal_uint_t) (c) );
   int aaa = ((struct coppia*)( (element).value ))->x;
  lfds711_stack_push(&stack,&element);
- ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "single_thread_test.c", 35, __extension__ __PRETTY_FUNCTION__); }));
+ //((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "single_thread_test.c", 35, __extension__ __PRETTY_FUNCTION__); }));
  return 0;
 }
