@@ -1428,6 +1428,20 @@ int lfds711_stack_pop(struct lfds711_stack_state *ss,
     }
     new_top[1] = original_top[1] + 1;
     new_top[0] = original_top[0]->next;
+
+    //IF inserito al posto della funzione "cmpxchg16b" di "asm"
+    if (original_top[0] == ss->top[0])
+    {
+      ss->top[0] = new_top[0];
+      result = 1;
+    }
+    else
+    {
+      original_top[0] = ss->top[0];
+      result = 0;
+    }
+
+/* Commentata in quanto non più utilizzata e sostituta dall'if precedente
     {
       (result) = 0;
       __asm__ __volatile__("lock;"
@@ -1437,6 +1451,8 @@ int lfds711_stack_pop(struct lfds711_stack_state *ss,
                            : "b"((new_top)[0]), "c"((new_top)[1])
                            :);
     };
+*/
+
     if (result == 0)
     {
       {
@@ -1513,6 +1529,8 @@ void lfds711_stack_push(struct lfds711_stack_state *ss,
     __atomic_thread_fence(3);
 
     new_top[1] = original_top[1] + 1;
+
+    //IF inserito al posto della funzione "cmpxchg16b" di "asm"
     if (original_top[0] == ss->top[0])
     {
       ss->top[0] = new_top[0];
@@ -1524,7 +1542,9 @@ void lfds711_stack_push(struct lfds711_stack_state *ss,
       result = 0;
     }
 
-    // { (result) = 0; __asm__ __volatile__ ( "lock;" "cmpxchg16b %0;" "setz       %4;" : "+m" ((ss->top)[0]), "+m" ((ss->top)[1]), "+a" ((original_top)[0]), "+d" ((original_top)[1]), "=q" (result) : "b" ((new_top)[0]), "c" ((new_top)[1]) : ); };
+    /* Commentata in quanto non più utilizzata e sostituta dall'if precedente
+     { (result) = 0; __asm__ __volatile__ ( "lock;" "cmpxchg16b %0;" "setz       %4;" : "+m" ((ss->top)[0]), "+m" ((ss->top)[1]), "+a" ((original_top)[0]), "+d" ((original_top)[1]), "=q" (result) : "b" ((new_top)[0]), "c" ((new_top)[1]) : ); };
+    */
     if (result == 0)
     {
       for (int loop = 0; loop < 10; loop++)
@@ -1626,6 +1646,10 @@ int main()
   printf("Result %d : %d\n", result->x, result->y);
   
 
-  ((void)sizeof((0) ? 1 : 0), __extension__({ if (0) ; else __assert_fail ("0", "single_thread_test.c", 51, __extension__ __PRETTY_FUNCTION__); }));
+ //test assert(0) 
+ //((void)sizeof((0) ? 1 : 0), __extension__({ if (0) ; else __assert_fail ("0", "single_thread_test.c", 51, __extension__ __PRETTY_FUNCTION__); }));
+ 
+ //test assert(result->x == 6)
+  ((void)sizeof((0)? 1 : 0), __extension__({if(result->x == 6 ); else __assert_fail("0", "single_thread_test.c", 51, __extension__ __PRETTY_FUNCTION__); }));
   return 0;
 }
