@@ -3,9 +3,6 @@
 #include <assert.h>
 #include "../library.c"
 
-struct coppia{
-	int x,y;
-};
 
 
 int main(){
@@ -45,7 +42,6 @@ int main(){
 	struct coppia *result = (struct coppia*)LFDS711_STACK_GET_VALUE_FROM_ELEMENT(*e); 
 	printf("Result %d : %d\n",result->x,result->y);
 
-	// // lfds711_stack_cleanup(&stack,NULL);
 	int s = result->x;
 	assert(s == 6);
 	//assert(0);
