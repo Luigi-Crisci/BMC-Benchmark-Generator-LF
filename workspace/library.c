@@ -118,7 +118,20 @@ int lfds711_stack_pop(struct lfds711_stack_state *ss,
 		new_top[COUNTER] = original_top[COUNTER] + 1;
 		new_top[POINTER] = original_top[POINTER]->next;
 
-		LFDS711_PAL_ATOMIC_DWCAS(ss->top, original_top, new_top, LFDS711_MISC_CAS_STRENGTH_WEAK, result);
+		//IF che va a sostituire la funzione cmpxchg16b in quanto non parsabile in lazycseq
+		if (original_top[0] == ss->top[0])
+    	{
+      		ss->top[0] = new_top[0];
+      		result = 1;
+    	}
+    	else
+    	{
+      		original_top[0] = ss->top[0];
+      		result = 0;
+    	}
+
+		//Funzione cmpxchg16b in asm che è stata sostituita dal precedente if
+		//LFDS711_PAL_ATOMIC_DWCAS(ss->top, original_top, new_top, LFDS711_MISC_CAS_STRENGTH_WEAK, result);
 
 		if (result == 0)
 		{
@@ -165,7 +178,22 @@ void lfds711_stack_push(struct lfds711_stack_state *ss,
 		LFDS711_MISC_BARRIER_STORE;
 
 		new_top[COUNTER] = original_top[COUNTER] + 1;
-		LFDS711_PAL_ATOMIC_DWCAS(ss->top, original_top, new_top, LFDS711_MISC_CAS_STRENGTH_WEAK, result);
+
+		//IF che va a sostituire la funzione cmpxchg16b in quanto non parsabile in lazycseq
+		if (original_top[0] == ss->top[0])
+    	{
+      		ss->top[0] = new_top[0];
+     		result = 1;
+    	}
+    	else
+    	{
+      		original_top[0] = ss->top[0];
+      		result = 0;
+    	}
+
+
+		//Funzione cmpxchg16b in asm che è stata sostituita dal precedente if
+		//LFDS711_PAL_ATOMIC_DWCAS(ss->top, original_top, new_top, LFDS711_MISC_CAS_STRENGTH_WEAK, result);
 
 		if (result == 0)
 			LFDS711_BACKOFF_EXPONENTIAL_BACKOFF(ss->push_backoff, backoff_iteration);

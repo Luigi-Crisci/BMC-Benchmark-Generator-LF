@@ -46,9 +46,9 @@ int main(){
 	printf("Result %d : %d\n",result->x,result->y);
 
 	// // lfds711_stack_cleanup(&stack,NULL);
-	// int s = result->x;
-	// assert(s == 2);
-	assert(0);
+	int s = result->x;
+	assert(s == 6);
+	//assert(0);
 	return 0;
 
 	
