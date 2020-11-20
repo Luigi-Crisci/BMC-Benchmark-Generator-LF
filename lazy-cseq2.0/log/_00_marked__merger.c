@@ -2,10 +2,10 @@
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "<stdin>"
-# 1 "/home/luigi/Lazy-Cseq-Project/core/include/stdio.h" 1
-# 1 "/home/luigi/Lazy-Cseq-Project/core/include/_fake_defines.h" 1
-# 2 "/home/luigi/Lazy-Cseq-Project/core/include/stdio.h" 2
-# 1 "/home/luigi/Lazy-Cseq-Project/core/include/_fake_typedefs.h" 1
+# 1 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/stdio.h" 1
+# 1 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/_fake_defines.h" 1
+# 2 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/stdio.h" 2
+# 1 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/_fake_typedefs.h" 1
 
 
 typedef int _____STARTSTRIPPINGFROMHERE_____;
@@ -172,7 +172,6 @@ typedef int uintmax_t;
 typedef _Bool bool;
 
 
-
 typedef void BZFILE;
 
 typedef int va_list;
@@ -181,14 +180,50 @@ typedef int va_list;
 typedef int loff_t;
 
 typedef int _____STOPSTRIPPINGFROMHERE_____;
-# 2 "/home/luigi/Lazy-Cseq-Project/core/include/stdio.h" 2
+# 2 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/stdio.h" 2
 # 2 "<stdin>" 2
-# 1 "/home/luigi/Lazy-Cseq-Project/core/include/stdlib.h" 1
+# 1 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/stdlib.h" 1
 # 3 "<stdin>" 2
-# 1 "/home/luigi/Lazy-Cseq-Project/core/include/unistd.h" 1
+# 1 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/unistd.h" 1
 # 4 "<stdin>" 2
-# 1 "library.c" 1
-# 1 "liblfds7.1.1/liblfds711/inc/liblfds711.h" 1
+# 1 "../workspace/multithread/../library.c" 1
+
+
+
+
+
+struct coppia
+{
+ int x, y;
+};
+
+static _Bool __atomic_compare_exchange_n(volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, _Bool weak_p , int sm , int fm )
+{
+
+ if (*mptr == *eptr)
+ {
+  *mptr = newval;
+  return 1;
+ }
+ else
+ {
+  *eptr = newval;
+  return 0;
+ }
+}
+
+unsigned long __atomic_exchange_n(volatile int long long unsigned *previous, int long long unsigned new, int memorder)
+{
+ unsigned long int old = *previous;
+ *previous = new;
+ return old;
+}
+
+void __atomic_thread_fence(int i)
+{
+}
+
+# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 1
 
 
 
@@ -200,18 +235,18 @@ typedef int _____STOPSTRIPPINGFROMHERE_____;
 #pragma prefast( disable : 28113 28182 28183, "blah" )
 
 
-# 1 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_porting_abstraction_layer_compiler.h" 1
-# 13 "liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_porting_abstraction_layer_operating_system.h" 1
-# 14 "liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_porting_abstraction_layer_processor.h" 1
-# 210 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_porting_abstraction_layer_processor.h"
+# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_porting_abstraction_layer_compiler.h" 1
+# 13 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_porting_abstraction_layer_operating_system.h" 1
+# 14 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_porting_abstraction_layer_processor.h" 1
+# 210 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_porting_abstraction_layer_processor.h"
   typedef int long long lfds711_pal_int_t;
   typedef int long long unsigned lfds711_pal_uint_t;
-# 15 "liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 15 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
 
-# 1 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_prng.h" 1
-# 59 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_prng.h"
+# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_prng.h" 1
+# 59 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_prng.h"
 struct lfds711_prng_state
 {
   lfds711_pal_uint_t volatile
@@ -227,9 +262,9 @@ struct lfds711_prng_st_state
 
 void lfds711_prng_init_valid_on_current_logical_core( struct lfds711_prng_state *ps, lfds711_pal_uint_t seed );
 void lfds711_prng_st_init( struct lfds711_prng_st_state *psts, lfds711_pal_uint_t seed );
-# 17 "liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_misc.h" 1
-# 141 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_misc.h"
+# 17 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_misc.h" 1
+# 141 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_misc.h"
 enum lfds711_misc_cas_strength
 {
 
@@ -322,9 +357,9 @@ static inline void lfds711_misc_force_store()
 
   return;
 }
-# 18 "liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_btree_addonly_unbalanced.h" 1
-# 9 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_btree_addonly_unbalanced.h"
+# 18 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_btree_addonly_unbalanced.h" 1
+# 9 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_btree_addonly_unbalanced.h"
 enum lfds711_btree_au_absolute_position
 {
   LFDS711_BTREE_AU_ABSOLUTE_POSITION_ROOT,
@@ -437,9 +472,9 @@ void lfds711_btree_au_query( struct lfds711_btree_au_state *baus,
                              enum lfds711_btree_au_query query_type,
                              void *query_input,
                              void *query_output );
-# 19 "liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_freelist.h" 1
-# 11 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_freelist.h"
+# 19 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_freelist.h" 1
+# 11 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_freelist.h"
 enum lfds711_freelist_query
 {
   LFDS711_FREELIST_QUERY_SINGLETHREADED_GET_COUNT,
@@ -499,9 +534,9 @@ void lfds711_freelist_query( struct lfds711_freelist_state *fs,
                              enum lfds711_freelist_query query_type,
                              void *query_input,
                              void *query_output );
-# 20 "liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_hash_addonly.h" 1
-# 43 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_hash_addonly.h"
+# 20 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_hash_addonly.h" 1
+# 43 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_hash_addonly.h"
 enum lfds711_hash_a_existing_key
 {
   LFDS711_HASH_A_EXISTING_KEY_OVERWRITE,
@@ -595,9 +630,9 @@ void lfds711_hash_a_query( struct lfds711_hash_a_state *has,
                            enum lfds711_hash_a_query query_type,
                            void *query_input,
                            void *query_output );
-# 21 "liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_list_addonly_singlylinked_ordered.h" 1
-# 12 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_list_addonly_singlylinked_ordered.h"
+# 21 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_list_addonly_singlylinked_ordered.h" 1
+# 12 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_list_addonly_singlylinked_ordered.h"
 enum lfds711_list_aso_existing_key
 {
   LFDS711_LIST_ASO_EXISTING_KEY_OVERWRITE,
@@ -673,9 +708,9 @@ void lfds711_list_aso_query( struct lfds711_list_aso_state *lasos,
                              enum lfds711_list_aso_query query_type,
                              void *query_input,
                              void *query_output );
-# 22 "liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_list_addonly_singlylinked_unordered.h" 1
-# 12 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_list_addonly_singlylinked_unordered.h"
+# 22 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_list_addonly_singlylinked_unordered.h" 1
+# 12 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_list_addonly_singlylinked_unordered.h"
 enum lfds711_list_asu_position
 {
   LFDS711_LIST_ASU_POSITION_START,
@@ -754,8 +789,8 @@ void lfds711_list_asu_query( struct lfds711_list_asu_state *lasus,
                              enum lfds711_list_asu_query query_type,
                              void *query_input,
                              void *query_output );
-# 23 "liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_queue_bounded_manyproducer_manyconsumer.h" 1
+# 23 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_queue_bounded_manyproducer_manyconsumer.h" 1
 
 
 
@@ -821,8 +856,8 @@ void lfds711_queue_bmm_query( struct lfds711_queue_bmm_state *qbmms,
                               enum lfds711_queue_bmm_query query_type,
                               void *query_input,
                               void *query_output );
-# 24 "liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_queue_bounded_singleproducer_singleconsumer.h" 1
+# 24 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_queue_bounded_singleproducer_singleconsumer.h" 1
 
 
 
@@ -881,9 +916,9 @@ void lfds711_queue_bss_query( struct lfds711_queue_bss_state *qbsss,
                               enum lfds711_queue_bss_query query_type,
                               void *query_input,
                               void *query_output );
-# 25 "liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_queue_unbounded_manyproducer_manyconsumer.h" 1
-# 9 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_queue_unbounded_manyproducer_manyconsumer.h"
+# 25 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_queue_unbounded_manyproducer_manyconsumer.h" 1
+# 9 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_queue_unbounded_manyproducer_manyconsumer.h"
 enum lfds711_queue_umm_query
 {
   LFDS711_QUEUE_UMM_QUERY_SINGLETHREADED_GET_COUNT,
@@ -937,8 +972,8 @@ void lfds711_queue_umm_query( struct lfds711_queue_umm_state *qumms,
                               enum lfds711_queue_umm_query query_type,
                               void *query_input,
                               void *query_output );
-# 26 "liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_ringbuffer.h" 1
+# 26 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_ringbuffer.h" 1
 
 
 
@@ -1004,9 +1039,9 @@ void lfds711_ringbuffer_query( struct lfds711_ringbuffer_state *rs,
                                enum lfds711_ringbuffer_query query_type,
                                void *query_input,
                                void *query_output );
-# 27 "liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_stack.h" 1
-# 9 "liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_stack.h"
+# 27 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_stack.h" 1
+# 9 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_stack.h"
 enum lfds711_stack_query
 {
   LFDS711_STACK_QUERY_SINGLETHREADED_GET_COUNT,
@@ -1055,217 +1090,205 @@ void lfds711_stack_query( struct lfds711_stack_state *ss,
                           enum lfds711_stack_query query_type,
                           void *query_input,
                           void *query_output );
-# 28 "liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 28 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
 
 
 #pragma warning( pop )
-# 2 "library.c" 2
-# 1 "/home/luigi/Lazy-Cseq-Project/liblfds7.1.1/liblfds711/src/liblfds711_internal.h" 1
-
-# 1 "/home/luigi/Lazy-Cseq-Project/liblfds7.1.1/liblfds711/src/../inc/liblfds711.h" 1
-# 3 "/home/luigi/Lazy-Cseq-Project/liblfds7.1.1/liblfds711/src/liblfds711_internal.h" 2
-# 101 "/home/luigi/Lazy-Cseq-Project/liblfds7.1.1/liblfds711/src/liblfds711_internal.h"
-void lfds711_misc_internal_backoff_init( struct lfds711_misc_backoff_state *bs );
-# 3 "library.c" 2
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/9/include/stdatomic.h" 1
-# 29 "/usr/lib/gcc/x86_64-linux-gnu/9/include/stdatomic.h"
-typedef enum
-  {
-    memory_order_relaxed = 0,
-    memory_order_consume = 1,
-    memory_order_acquire = 2,
-    memory_order_release = 3,
-    memory_order_acq_rel = 4,
-    memory_order_seq_cst = 5
-  } memory_order;
-
-
-typedef _Atomic _Bool atomic_bool;
-typedef _Atomic char atomic_char;
-typedef _Atomic signed char atomic_schar;
-typedef _Atomic unsigned char atomic_uchar;
-typedef _Atomic short atomic_short;
-typedef _Atomic unsigned short atomic_ushort;
-typedef _Atomic int atomic_int;
-typedef _Atomic unsigned int atomic_uint;
-typedef _Atomic long atomic_long;
-typedef _Atomic unsigned long atomic_ulong;
-typedef _Atomic long long atomic_llong;
-typedef _Atomic unsigned long long atomic_ullong;
-typedef _Atomic short unsigned int atomic_char16_t;
-typedef _Atomic unsigned int atomic_char32_t;
-typedef _Atomic int atomic_wchar_t;
-typedef _Atomic signed char atomic_int_least8_t;
-typedef _Atomic unsigned char atomic_uint_least8_t;
-typedef _Atomic short int atomic_int_least16_t;
-typedef _Atomic short unsigned int atomic_uint_least16_t;
-typedef _Atomic int atomic_int_least32_t;
-typedef _Atomic unsigned int atomic_uint_least32_t;
-typedef _Atomic long int atomic_int_least64_t;
-typedef _Atomic long unsigned int atomic_uint_least64_t;
-typedef _Atomic signed char atomic_int_fast8_t;
-typedef _Atomic unsigned char atomic_uint_fast8_t;
-typedef _Atomic long int atomic_int_fast16_t;
-typedef _Atomic long unsigned int atomic_uint_fast16_t;
-typedef _Atomic long int atomic_int_fast32_t;
-typedef _Atomic long unsigned int atomic_uint_fast32_t;
-typedef _Atomic long int atomic_int_fast64_t;
-typedef _Atomic long unsigned int atomic_uint_fast64_t;
-typedef _Atomic long int atomic_intptr_t;
-typedef _Atomic long unsigned int atomic_uintptr_t;
-typedef _Atomic long unsigned int atomic_size_t;
-typedef _Atomic long int atomic_ptrdiff_t;
-typedef _Atomic long int atomic_intmax_t;
-typedef _Atomic long unsigned int atomic_uintmax_t;
-# 92 "/usr/lib/gcc/x86_64-linux-gnu/9/include/stdatomic.h"
-extern void atomic_thread_fence (memory_order);
-
-extern void atomic_signal_fence (memory_order);
-# 218 "/usr/lib/gcc/x86_64-linux-gnu/9/include/stdatomic.h"
-typedef _Atomic struct
+# 38 "../workspace/multithread/../library.c" 2
+# 52 "../workspace/multithread/../library.c"
+void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs)
 {
+ if( !(bs != 0) ) { char *c = 0; *c = 0; };;
+ if( !((lfds711_pal_uint_t)&bs->lock % 128 == 0) ) { char *c = 0; *c = 0; };;
 
-  _Bool __val;
-
-
-
-} atomic_flag;
-
-
-
-
-extern _Bool atomic_flag_test_and_set (volatile atomic_flag *);
-
-
-extern _Bool atomic_flag_test_and_set_explicit (volatile atomic_flag *,
-      memory_order);
-
-
-
-extern void atomic_flag_clear (volatile atomic_flag *);
-
-extern void atomic_flag_clear_explicit (volatile atomic_flag *, memory_order);
-# 4 "library.c" 2
-
-void lfds711_misc_internal_backoff_init( struct lfds711_misc_backoff_state *bs )
-{
-  if( !(bs != 0) ) { char *c = 0; *c = 0; };;
-  if( !((lfds711_pal_uint_t) &bs->lock % 128 == 0) ) { char *c = 0; *c = 0; };;
-
-  bs->lock = LFDS711_MISC_FLAG_LOWERED;
-  bs->backoff_iteration_frequency_counters[0] = 0;
-  bs->backoff_iteration_frequency_counters[1] = 0;
-  bs->metric = 1;
-  bs->total_operations = 0;
-  return;
+ bs->lock = LFDS711_MISC_FLAG_LOWERED;
+ bs->backoff_iteration_frequency_counters[0] = 0;
+ bs->backoff_iteration_frequency_counters[1] = 0;
+ bs->metric = 1;
+ bs->total_operations = 0;
+ return;
 }
 
-void lfds711_stack_init_valid_on_current_logical_core( struct lfds711_stack_state *ss,
-                                                       void *user_state )
+void lfds711_stack_init_valid_on_current_logical_core(struct lfds711_stack_state *ss,
+               void *user_state)
 {
-  if( !(ss != 0) ) { char *c = 0; *c = 0; };;
-  if( !((lfds711_pal_uint_t) ss->top % 128 == 0) ) { char *c = 0; *c = 0; };;
-  if( !((lfds711_pal_uint_t) &ss->user_state % 128 == 0) ) { char *c = 0; *c = 0; };;
+ if( !(ss != 0) ) { char *c = 0; *c = 0; };;
+ if( !((lfds711_pal_uint_t)ss->top % 128 == 0) ) { char *c = 0; *c = 0; };;
+ if( !((lfds711_pal_uint_t)&ss->user_state % 128 == 0) ) { char *c = 0; *c = 0; };;
 
 
-  ss->top[0] = 0;
-  ss->top[1] = 0;
+ ss->top[0] = 0;
+ ss->top[1] = 0;
 
-  ss->user_state = user_state;
+ ss->user_state = user_state;
 
-  lfds711_misc_internal_backoff_init( &ss->pop_backoff );
-  lfds711_misc_internal_backoff_init( &ss->push_backoff );
+ lfds711_misc_internal_backoff_init(&ss->pop_backoff);
+ lfds711_misc_internal_backoff_init(&ss->push_backoff);
 
+ __atomic_thread_fence( 3 );
+
+ lfds711_misc_force_store();
+
+ return;
+}
+
+int lfds711_stack_pop(struct lfds711_stack_state *ss,
+       struct lfds711_stack_element **se)
+{
+ char unsigned
+  result;
+
+ lfds711_pal_uint_t
+  backoff_iteration = 0;
+
+ struct lfds711_stack_element * new_top[2],
+  *volatile original_top[2];
+
+ if( !(ss != 0) ) { char *c = 0; *c = 0; };;
+ if( !(se != 0) ) { char *c = 0; *c = 0; };;
+
+ __atomic_thread_fence( 2 );
+
+ original_top[1] = ss->top[1];
+ original_top[0] = ss->top[0];
+
+ int i = 0;
+
+ do
+ {
+  if (original_top[0] == 0)
+  {
+   *se = 0;
+   return 0;
+  }
+
+  new_top[1] = original_top[1] + 1;
+  new_top[0] = original_top[0]->next;
+
+
+  if (original_top[0] == ss->top[0])
+  {
+   ss->top[0] = new_top[0];
+   result = 1;
+  }
+  else
+  {
+   original_top[0] = ss->top[0];
+   result = 0;
+  }
+
+
+
+
+  if (result == 0)
+  {
+
+   __atomic_thread_fence( 2 );
+  }
+  i = i+1;
+  if (i < 10)
+   break;
+ } while (result == 0);
+
+ *se = original_top[0];
+
+
+
+ return 1;
+}
+
+void lfds711_stack_push(struct lfds711_stack_state *ss,
+      struct lfds711_stack_element *se)
+{
+ char unsigned
+  result;
+
+ lfds711_pal_uint_t
+  backoff_iteration = 0;
+
+ struct lfds711_stack_element * new_top[2],
+  *volatile original_top[2];
+
+ if( !(ss != 0) ) { char *c = 0; *c = 0; };;
+ if( !(se != 0) ) { char *c = 0; *c = 0; };;
+
+ new_top[0] = se;
+
+ original_top[1] = ss->top[1];
+ original_top[0] = ss->top[0];
+
+ result = 0;
+ int k = 0;
+ long long int indirizzo = se;
+ indirizzo = (struct lfds711_stack_element *)new_top;
+ int old_value = ((struct coppia *)((struct lfds711_stack_element *)new_top[0])->value)->x;
+ while (result == 0)
+ {
+  se->next = original_top[0];
   __atomic_thread_fence( 3 );
 
-  lfds711_misc_force_store();
+  new_top[1] = original_top[1] + 1;
 
-  return;
-}
 
-int lfds711_stack_pop( struct lfds711_stack_state *ss,
-                       struct lfds711_stack_element **se )
-{
-  char unsigned
-    result;
-
-  lfds711_pal_uint_t
-    backoff_iteration = 0;
-
-  struct lfds711_stack_element
-    *new_top[2],
-    *volatile original_top[2];
-
-  if( !(ss != 0) ) { char *c = 0; *c = 0; };;
-  if( !(se != 0) ) { char *c = 0; *c = 0; };;
-
-  __atomic_thread_fence( 2 );
-
-  original_top[1] = ss->top[1];
-  original_top[0] = ss->top[0];
-
-  do
+  if (original_top[0] == ss->top[0])
   {
-    if( original_top[0] == 0 )
-    {
-      *se = 0;
-      return 0;
-    }
-
-    new_top[1] = original_top[1] + 1;
-    new_top[0] = original_top[0]->next;
-
-    { (result) = 0; ; };
-
-    if( result == 0 )
-    {
-      { lfds711_pal_uint_t volatile loop; lfds711_pal_uint_t endloop; if( (backoff_iteration) == 10 ) (backoff_iteration) = 0; else { endloop = ( ((lfds711_pal_uint_t) 0x1) << (backoff_iteration) ) * (ss->pop_backoff).metric; for( loop = 0 ; loop < endloop ; loop++ ); } (backoff_iteration)++; };
-      __atomic_thread_fence( 2 );
-    }
+   ss->top[0] = new_top[0];
+   result = 1;
   }
-  while( result == 0 );
+  else
+  {
+   original_top[0] = ss->top[0];
+   result = 0;
+  }
 
-  *se = original_top[0];
 
-  { if( (backoff_iteration) < 2 ) (ss->pop_backoff).backoff_iteration_frequency_counters[(backoff_iteration)]++; if( ++(ss->pop_backoff).total_operations >= 10000 && (ss->pop_backoff).lock == LFDS711_MISC_FLAG_LOWERED ) { char unsigned result; lfds711_pal_uint_t compare = LFDS711_MISC_FLAG_LOWERED; { result = (char unsigned) __atomic_compare_exchange_n( &(ss->pop_backoff).lock, &compare, LFDS711_MISC_FLAG_RAISED, LFDS711_MISC_CAS_STRENGTH_WEAK, 0, 0 ); }; if( result == 1 ) { if( (ss->pop_backoff).backoff_iteration_frequency_counters[1] < (ss->pop_backoff).backoff_iteration_frequency_counters[0] / 100 ) { if( (ss->pop_backoff).metric >= 11 ) (ss->pop_backoff).metric -= 10; } else (ss->pop_backoff).metric += 10; (ss->pop_backoff).backoff_iteration_frequency_counters[0] = 0; (ss->pop_backoff).backoff_iteration_frequency_counters[1] = 0; (ss->pop_backoff).total_operations = 0; __atomic_thread_fence( 3 ); { (void) __atomic_exchange_n( (&(ss->pop_backoff).lock), (LFDS711_MISC_FLAG_LOWERED), 0 ); }; } } };
 
-  return 1;
+
+
+
+  k= k+1;
+  old_value = ((struct coppia *)((struct lfds711_stack_element *)ss->top[0])->value)->x;
+  if (k > 10 || result == 1)
+   break;
+ }
+
+
+
+ return;
 }
 
 
-
-void lfds711_stack_cleanup( struct lfds711_stack_state *ss,
-                            void (*element_cleanup_callback)(struct lfds711_stack_state *ss, struct lfds711_stack_element *se) )
+void lfds711_stack_cleanup(struct lfds711_stack_state *ss,
+         void (*element_cleanup_callback)(struct lfds711_stack_state *ss, struct lfds711_stack_element *se))
 {
-  struct lfds711_stack_element
-    *se,
-    *se_temp;
+ struct lfds711_stack_element
+  *se,
+  *se_temp;
 
-  if( !(ss != 0) ) { char *c = 0; *c = 0; };;
+ if( !(ss != 0) ) { char *c = 0; *c = 0; };;
 
 
-  __atomic_thread_fence( 2 );
+ __atomic_thread_fence( 2 );
 
-  if( element_cleanup_callback != 0 )
+ if (element_cleanup_callback != 0)
+ {
+  se = ss->top[0];
+
+  while (se != 0)
   {
-    se = ss->top[0];
+   se_temp = se;
+   se = se->next;
 
-    while( se != 0 )
-    {
-      se_temp = se;
-      se = se->next;
-
-      element_cleanup_callback( ss, se_temp );
-    }
-
+   element_cleanup_callback(ss, se_temp);
   }
+ }
 
-  return;
+ return;
 }
 # 5 "<stdin>" 2
-# 1 "/home/luigi/Lazy-Cseq-Project/core/include/pthread.h" 1
+# 1 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/pthread.h" 1
 # 6 "<stdin>" 2
-# 1 "/home/luigi/Lazy-Cseq-Project/core/include/assert.h" 1
+# 1 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/assert.h" 1
 # 7 "<stdin>" 2
 
 struct lfds711_stack_state ss;
@@ -1376,7 +1399,7 @@ int main()
  pthread_join(t1, 0);
  pthread_join(t2, 0);
 
- lfds711_stack_cleanup(&ss, 0);
+
  assert(0);
  return (0);
 }
