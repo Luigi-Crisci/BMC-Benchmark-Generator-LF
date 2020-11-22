@@ -101,10 +101,35 @@ void *tr2()
 	// assert(count == VALUES);
 }
 
+//int function that returns the size of the stack and pop those elements
+int check_stack_size()
+{
+	struct lfds711_stack_element *se;
+	int extra_pop = 0;
+	int res;
+
+	res = lfds711_stack_pop(&ss, &se);
+
+	while(res!=0)
+	{
+		extra_pop++;
+		res = lfds711_stack_pop(&ss, &se);
+	}
+	
+	return extra_pop;
+}
+
+
+
 int main()
 {
 
 	lfds711_stack_init_valid_on_current_logical_core(&ss, NULL);
+
+	//Input of thread1 and thread2 respectively
+	int num_pop =3, num_push = 3;
+
+	int num_elem = num_push - num_pop;
 
 	pthread_t t1, t2;
 	pthread_mutex_init(&lock, NULL);
@@ -113,7 +138,15 @@ int main()
 	pthread_join(t1, 0);
 	pthread_join(t2, 0);
 
+
+	//If the number returned by the function is higher than the expected then the size of the stack isn't correct
+	int extra_elem = check_stack_size();
+	if(extra_elem > num_elem)
+		assert(0);
+		else{
+			assert(1);
+			}
+	
 	// lfds711_stack_cleanup(&ss, NULL);
-	assert(0);
 	return (EXIT_SUCCESS);
 }
