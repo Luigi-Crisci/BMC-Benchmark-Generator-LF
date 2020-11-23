@@ -141,11 +141,12 @@ int main()
 
 	//If the number returned by the function is higher than the expected then the size of the stack isn't correct
 	int extra_elem = check_stack_size();
-	if(extra_elem > num_elem)
-		assert(0);
-		else{
-			assert(1);
-			}
+	// if(extra_elem > num_elem)
+	// 	assert(0);
+	// 	else{
+	// 		assert(1);
+	// 		}
+	assert(check_stack_size() <= num_elem);
 	
 	// lfds711_stack_cleanup(&ss, NULL);
 	return (EXIT_SUCCESS);
