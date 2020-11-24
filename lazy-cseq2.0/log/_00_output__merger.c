@@ -164,7 +164,6 @@ typedef int uintmax_t;
 typedef _Bool bool;
 
 
-
 typedef void BZFILE;
 
 typedef int va_list;
@@ -173,6 +172,42 @@ typedef int va_list;
 typedef int loff_t;
 
 typedef int _____STOPSTRIPPINGFROMHERE_____;
+
+
+
+
+
+struct coppia
+{
+ int x, y;
+};
+
+static _Bool __atomic_compare_exchange_n(volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, _Bool weak_p , int sm , int fm )
+{
+
+ if (*mptr == *eptr)
+ {
+  *mptr = newval;
+  return 1;
+ }
+ else
+ {
+  *eptr = newval;
+  return 0;
+ }
+}
+
+unsigned long __atomic_exchange_n(volatile int long long unsigned *previous, int long long unsigned new, int memorder)
+{
+ unsigned long int old = *previous;
+ *previous = new;
+ return old;
+}
+
+void __atomic_thread_fence(int i)
+{
+}
+
 
 
 
@@ -1003,197 +1038,194 @@ void lfds711_stack_query( struct lfds711_stack_state *ss,
 
 
 #pragma warning( pop )
-
-void lfds711_misc_internal_backoff_init( struct lfds711_misc_backoff_state *bs );
-typedef enum
-  {
-    memory_order_relaxed = 0,
-    memory_order_consume = 1,
-    memory_order_acquire = 2,
-    memory_order_release = 3,
-    memory_order_acq_rel = 4,
-    memory_order_seq_cst = 5
-  } memory_order;
-
-
-typedef _Atomic _Bool atomic_bool;
-typedef _Atomic char atomic_char;
-typedef _Atomic signed char atomic_schar;
-typedef _Atomic unsigned char atomic_uchar;
-typedef _Atomic short atomic_short;
-typedef _Atomic unsigned short atomic_ushort;
-typedef _Atomic int atomic_int;
-typedef _Atomic unsigned int atomic_uint;
-typedef _Atomic long atomic_long;
-typedef _Atomic unsigned long atomic_ulong;
-typedef _Atomic long long atomic_llong;
-typedef _Atomic unsigned long long atomic_ullong;
-typedef _Atomic short unsigned int atomic_char16_t;
-typedef _Atomic unsigned int atomic_char32_t;
-typedef _Atomic int atomic_wchar_t;
-typedef _Atomic signed char atomic_int_least8_t;
-typedef _Atomic unsigned char atomic_uint_least8_t;
-typedef _Atomic short int atomic_int_least16_t;
-typedef _Atomic short unsigned int atomic_uint_least16_t;
-typedef _Atomic int atomic_int_least32_t;
-typedef _Atomic unsigned int atomic_uint_least32_t;
-typedef _Atomic long int atomic_int_least64_t;
-typedef _Atomic long unsigned int atomic_uint_least64_t;
-typedef _Atomic signed char atomic_int_fast8_t;
-typedef _Atomic unsigned char atomic_uint_fast8_t;
-typedef _Atomic long int atomic_int_fast16_t;
-typedef _Atomic long unsigned int atomic_uint_fast16_t;
-typedef _Atomic long int atomic_int_fast32_t;
-typedef _Atomic long unsigned int atomic_uint_fast32_t;
-typedef _Atomic long int atomic_int_fast64_t;
-typedef _Atomic long unsigned int atomic_uint_fast64_t;
-typedef _Atomic long int atomic_intptr_t;
-typedef _Atomic long unsigned int atomic_uintptr_t;
-typedef _Atomic long unsigned int atomic_size_t;
-typedef _Atomic long int atomic_ptrdiff_t;
-typedef _Atomic long int atomic_intmax_t;
-typedef _Atomic long unsigned int atomic_uintmax_t;
-extern void atomic_thread_fence (memory_order);
-
-extern void atomic_signal_fence (memory_order);
-typedef _Atomic struct
+void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs)
 {
+ if( !(bs != 0) ) { char *c = 0; *c = 0; };;
+ if( !((lfds711_pal_uint_t)&bs->lock % 128 == 0) ) { char *c = 0; *c = 0; };;
 
-  _Bool __val;
-
-
-
-} atomic_flag;
-
-
-
-
-extern _Bool atomic_flag_test_and_set (volatile atomic_flag *);
-
-
-extern _Bool atomic_flag_test_and_set_explicit (volatile atomic_flag *,
-      memory_order);
-
-
-
-extern void atomic_flag_clear (volatile atomic_flag *);
-
-extern void atomic_flag_clear_explicit (volatile atomic_flag *, memory_order);
-
-void lfds711_misc_internal_backoff_init( struct lfds711_misc_backoff_state *bs )
-{
-  if( !(bs != 0) ) { char *c = 0; *c = 0; };;
-  if( !((lfds711_pal_uint_t) &bs->lock % 128 == 0) ) { char *c = 0; *c = 0; };;
-
-  bs->lock = LFDS711_MISC_FLAG_LOWERED;
-  bs->backoff_iteration_frequency_counters[0] = 0;
-  bs->backoff_iteration_frequency_counters[1] = 0;
-  bs->metric = 1;
-  bs->total_operations = 0;
-  return;
+ bs->lock = LFDS711_MISC_FLAG_LOWERED;
+ bs->backoff_iteration_frequency_counters[0] = 0;
+ bs->backoff_iteration_frequency_counters[1] = 0;
+ bs->metric = 1;
+ bs->total_operations = 0;
+ return;
 }
 
-void lfds711_stack_init_valid_on_current_logical_core( struct lfds711_stack_state *ss,
-                                                       void *user_state )
+void lfds711_stack_init_valid_on_current_logical_core(struct lfds711_stack_state *ss,
+               void *user_state)
 {
-  if( !(ss != 0) ) { char *c = 0; *c = 0; };;
-  if( !((lfds711_pal_uint_t) ss->top % 128 == 0) ) { char *c = 0; *c = 0; };;
-  if( !((lfds711_pal_uint_t) &ss->user_state % 128 == 0) ) { char *c = 0; *c = 0; };;
+ if( !(ss != 0) ) { char *c = 0; *c = 0; };;
+ if( !((lfds711_pal_uint_t)ss->top % 128 == 0) ) { char *c = 0; *c = 0; };;
+ if( !((lfds711_pal_uint_t)&ss->user_state % 128 == 0) ) { char *c = 0; *c = 0; };;
 
 
-  ss->top[0] = 0;
-  ss->top[1] = 0;
+ ss->top[0] = 0;
+ ss->top[1] = 0;
 
-  ss->user_state = user_state;
+ ss->user_state = user_state;
 
-  lfds711_misc_internal_backoff_init( &ss->pop_backoff );
-  lfds711_misc_internal_backoff_init( &ss->push_backoff );
+ lfds711_misc_internal_backoff_init(&ss->pop_backoff);
+ lfds711_misc_internal_backoff_init(&ss->push_backoff);
 
+ __atomic_thread_fence( 3 );
+
+ lfds711_misc_force_store();
+
+ return;
+}
+
+int lfds711_stack_pop(struct lfds711_stack_state *ss,
+       struct lfds711_stack_element **se)
+{
+ char unsigned
+  result;
+
+ lfds711_pal_uint_t
+  backoff_iteration = 0;
+
+ struct lfds711_stack_element * new_top[2],
+  *volatile original_top[2];
+
+ if( !(ss != 0) ) { char *c = 0; *c = 0; };;
+ if( !(se != 0) ) { char *c = 0; *c = 0; };;
+
+ __atomic_thread_fence( 2 );
+
+ original_top[1] = ss->top[1];
+ original_top[0] = ss->top[0];
+
+ int i = 0;
+
+ do
+ {
+  if (original_top[0] == 0)
+  {
+   *se = 0;
+   return 0;
+  }
+
+  new_top[1] = original_top[1] + 1;
+  new_top[0] = original_top[0]->next;
+
+
+  if (original_top[0] == ss->top[0])
+  {
+   ss->top[0] = new_top[0];
+   result = 1;
+  }
+  else
+  {
+   original_top[0] = ss->top[0];
+   result = 0;
+  }
+
+
+
+
+  if (result == 0)
+  {
+
+   __atomic_thread_fence( 2 );
+  }
+  i = i+1;
+  if (i < 10)
+   break;
+ } while (result == 0);
+
+ *se = original_top[0];
+
+
+
+ return 1;
+}
+
+void lfds711_stack_push(struct lfds711_stack_state *ss,
+      struct lfds711_stack_element *se)
+{
+ char unsigned
+  result;
+
+ lfds711_pal_uint_t
+  backoff_iteration = 0;
+
+ struct lfds711_stack_element * new_top[2],
+  *volatile original_top[2];
+
+ if( !(ss != 0) ) { char *c = 0; *c = 0; };;
+ if( !(se != 0) ) { char *c = 0; *c = 0; };;
+
+ new_top[0] = se;
+
+ original_top[1] = ss->top[1];
+ original_top[0] = ss->top[0];
+
+ result = 0;
+ int k = 0;
+ long long int indirizzo = se;
+ indirizzo = (struct lfds711_stack_element *)new_top;
+ int old_value = ((struct coppia *)((struct lfds711_stack_element *)new_top[0])->value)->x;
+ while (result == 0)
+ {
+  se->next = original_top[0];
   __atomic_thread_fence( 3 );
 
-  lfds711_misc_force_store();
+  new_top[1] = original_top[1] + 1;
 
-  return;
-}
 
-int lfds711_stack_pop( struct lfds711_stack_state *ss,
-                       struct lfds711_stack_element **se )
-{
-  char unsigned
-    result;
-
-  lfds711_pal_uint_t
-    backoff_iteration = 0;
-
-  struct lfds711_stack_element
-    *new_top[2],
-    *volatile original_top[2];
-
-  if( !(ss != 0) ) { char *c = 0; *c = 0; };;
-  if( !(se != 0) ) { char *c = 0; *c = 0; };;
-
-  __atomic_thread_fence( 2 );
-
-  original_top[1] = ss->top[1];
-  original_top[0] = ss->top[0];
-
-  do
+  if (original_top[0] == ss->top[0])
   {
-    if( original_top[0] == 0 )
-    {
-      *se = 0;
-      return 0;
-    }
-
-    new_top[1] = original_top[1] + 1;
-    new_top[0] = original_top[0]->next;
-
-    { (result) = 0; ; };
-
-    if( result == 0 )
-    {
-      { lfds711_pal_uint_t volatile loop; lfds711_pal_uint_t endloop; if( (backoff_iteration) == 10 ) (backoff_iteration) = 0; else { endloop = ( ((lfds711_pal_uint_t) 0x1) << (backoff_iteration) ) * (ss->pop_backoff).metric; for( loop = 0 ; loop < endloop ; loop++ ); } (backoff_iteration)++; };
-      __atomic_thread_fence( 2 );
-    }
+   ss->top[0] = new_top[0];
+   result = 1;
   }
-  while( result == 0 );
+  else
+  {
+   original_top[0] = ss->top[0];
+   result = 0;
+  }
 
-  *se = original_top[0];
 
-  { if( (backoff_iteration) < 2 ) (ss->pop_backoff).backoff_iteration_frequency_counters[(backoff_iteration)]++; if( ++(ss->pop_backoff).total_operations >= 10000 && (ss->pop_backoff).lock == LFDS711_MISC_FLAG_LOWERED ) { char unsigned result; lfds711_pal_uint_t compare = LFDS711_MISC_FLAG_LOWERED; { result = (char unsigned) __atomic_compare_exchange_n( &(ss->pop_backoff).lock, &compare, LFDS711_MISC_FLAG_RAISED, LFDS711_MISC_CAS_STRENGTH_WEAK, 0, 0 ); }; if( result == 1 ) { if( (ss->pop_backoff).backoff_iteration_frequency_counters[1] < (ss->pop_backoff).backoff_iteration_frequency_counters[0] / 100 ) { if( (ss->pop_backoff).metric >= 11 ) (ss->pop_backoff).metric -= 10; } else (ss->pop_backoff).metric += 10; (ss->pop_backoff).backoff_iteration_frequency_counters[0] = 0; (ss->pop_backoff).backoff_iteration_frequency_counters[1] = 0; (ss->pop_backoff).total_operations = 0; __atomic_thread_fence( 3 ); { (void) __atomic_exchange_n( (&(ss->pop_backoff).lock), (LFDS711_MISC_FLAG_LOWERED), 0 ); }; } } };
 
-  return 1;
+
+
+
+  k= k+1;
+  old_value = ((struct coppia *)((struct lfds711_stack_element *)ss->top[0])->value)->x;
+  if (k > 10 || result == 1)
+   break;
+ }
+
+
+
+ return;
 }
 
 
-
-void lfds711_stack_cleanup( struct lfds711_stack_state *ss,
-                            void (*element_cleanup_callback)(struct lfds711_stack_state *ss, struct lfds711_stack_element *se) )
+void lfds711_stack_cleanup(struct lfds711_stack_state *ss,
+         void (*element_cleanup_callback)(struct lfds711_stack_state *ss, struct lfds711_stack_element *se))
 {
-  struct lfds711_stack_element
-    *se,
-    *se_temp;
+ struct lfds711_stack_element
+  *se,
+  *se_temp;
 
-  if( !(ss != 0) ) { char *c = 0; *c = 0; };;
+ if( !(ss != 0) ) { char *c = 0; *c = 0; };;
 
 
-  __atomic_thread_fence( 2 );
+ __atomic_thread_fence( 2 );
 
-  if( element_cleanup_callback != 0 )
+ if (element_cleanup_callback != 0)
+ {
+  se = ss->top[0];
+
+  while (se != 0)
   {
-    se = ss->top[0];
+   se_temp = se;
+   se = se->next;
 
-    while( se != 0 )
-    {
-      se_temp = se;
-      se = se->next;
-
-      element_cleanup_callback( ss, se_temp );
-    }
-
+   element_cleanup_callback(ss, se_temp);
   }
+ }
 
-  return;
+ return;
 }
 
 struct lfds711_stack_state ss;
@@ -1304,7 +1336,7 @@ int main()
  pthread_join(t1, 0);
  pthread_join(t2, 0);
 
- lfds711_stack_cleanup(&ss, 0);
+
  assert(0);
  return (0);
 }

@@ -17,6 +17,7 @@ All makefiles have a **preprocessed** target to expand macro and make the progra
 - [] Simulate fence
 - [] Make manual test case
 - [] Automatize test case
-- [] Valutate benchmark
+- [] Valutate benchmark  
+
 ## Author
 *Luigi Crisci*
