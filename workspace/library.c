@@ -1,3 +1,6 @@
+#include <liblfds711.h>
+#include <pthread.h>
+
 #define bool _Bool
 #define true 1
 #define false 0
@@ -7,6 +10,7 @@ struct coppia
 {
 	int x, y;
 };
+
 
 static bool __atomic_compare_exchange_n(volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, bool weak_p UNUSED, int sm UNUSED, int fm UNUSED)
 {
@@ -33,20 +37,14 @@ void __atomic_thread_fence(int i)
 {
 }
 
-#include <liblfds711.h>
-// #include "../liblfds7.1.1/liblfds711/src/liblfds711_internal.h"
 
 #define LFDS711_BACKOFF_INITIAL_VALUE 0
 #define LFDS711_BACKOFF_LIMIT 10
 
 #define LFDS711_BACKOFF_EXPONENTIAL_BACKOFF(backoff_state, backoff_iteration) \
-		for (int loop = 0; loop < 10; loop = loop + 1)								  \
+	for (int loop = 0; loop < 10; loop = loop + 1)
 
 #define MAX_IT 100
-
-// typedef unsigned UWORD __attribute__((mode(word)));
-// typedef int (__kernel_cmpxchg_t) (UWORD oldval, UWORD newval, UWORD *ptr);
-// #define __kernel_cmpxchg (*(__kernel_cmpxchg_t *) 0xffff0fc0)
 
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs)
 {
@@ -84,6 +82,20 @@ void lfds711_stack_init_valid_on_current_logical_core(struct lfds711_stack_state
 	return;
 }
 
+
+int swap_stack_top(volatile long long int *top, volatile long long int *oldtop,volatile long long int *newtop){
+	if (*oldtop == *top)
+		{
+			*top = *newtop;
+			return 1;
+		}
+		else
+		{
+			*oldtop = *top;
+			return 0;
+		}
+}
+
 int lfds711_stack_pop(struct lfds711_stack_state *ss,
 					  struct lfds711_stack_element **se)
 {
@@ -118,19 +130,12 @@ int lfds711_stack_pop(struct lfds711_stack_state *ss,
 		new_top[POINTER] = original_top[POINTER]->next;
 
 		//IF che va a sostituire la funzione cmpxchg16b in quanto non parsabile in lazycseq
-		if (original_top[0] == ss->top[0])
-		{
-			ss->top[0] = new_top[0];
-			result = 1;
-		}
-		else
-		{
-			original_top[0] = ss->top[0];
-			result = 0;
-		}
+		//TODO: Should be atomic: must be transferred into a __VERIFED function
+		result = swap_stack_top(&(ss->top[0]),&(original_top[0]),&(new_top[0]));
+		
 
 		//Funzione cmpxchg16b in asm che è stata sostituita dal precedente if
-		//LFDS711_PAL_ATOMIC_DWCAS(ss->top, original_top, new_top, LFDS711_MISC_CAS_STRENGTH_WEAK, result);
+		// LFDS711_PAL_ATOMIC_DWCAS(ss->top, original_top, new_top, LFDS711_MISC_CAS_STRENGTH_WEAK, result);
 
 		if (result == 0)
 		{
@@ -138,8 +143,8 @@ int lfds711_stack_pop(struct lfds711_stack_state *ss,
 			LFDS711_MISC_BARRIER_LOAD;
 		}
 		i++;
-		
-		if(i > MAX_IT)
+
+		if (i > MAX_IT)
 			break;
 	} while (result == 0);
 
@@ -183,23 +188,26 @@ void lfds711_stack_push(struct lfds711_stack_state *ss,
 		new_top[COUNTER] = original_top[COUNTER] + 1;
 
 		//IF che va a sostituire la funzione cmpxchg16b in quanto non parsabile in lazycseq
-		if (original_top[0] == ss->top[0])
-		{
-			ss->top[0] = new_top[0];
-			result = 1;
-		}
-		else
-		{
-			original_top[0] = ss->top[0];
-			result = 0;
-		}
+		//TODO: Should be atomic: must be transferred into a __VERIFED function
+		// if (original_top[0] == ss->top[0])
+		// {
+		// 	ss->top[0] = new_top[0];
+		// 	result = 1;
+		// }
+		// else
+		// {
+		// 	original_top[0] = ss->top[0];
+		// 	result = 0;
+		// }
+		result = swap_stack_top(&(ss->top[0]),&(original_top[0]),&(new_top[0]));
+
 
 		//Funzione cmpxchg16b in asm che è stata sostituita dal precedente if
-		//LFDS711_PAL_ATOMIC_DWCAS(ss->top, original_top, new_top, LFDS711_MISC_CAS_STRENGTH_WEAK, result);
+		// LFDS711_PAL_ATOMIC_DWCAS(ss->top, original_top, new_top, LFDS711_MISC_CAS_STRENGTH_WEAK, result);
 
 		// if (result == 0)
 		// 	LFDS711_BACKOFF_EXPONENTIAL_BACKOFF(ss->push_backoff, backoff_iteration);
-		
+
 		if (k > MAX_IT || result == 1)
 			break;
 	}
