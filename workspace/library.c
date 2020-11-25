@@ -5,7 +5,6 @@
 
 static bool __atomic_compare_exchange_n(volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, bool weak_p UNUSED, int sm UNUSED, int fm UNUSED)
 {
-
 	if (*mptr == *eptr)
 	{
 		*mptr = newval;
@@ -25,9 +24,9 @@ unsigned long __atomic_exchange_n(volatile int long long unsigned *previous, int
 	return old;
 }
 
-void __atomic_thread_fence(int i){
+// void __atomic_thread_fence(int i){
 	
-}
+// }
 
 #include <liblfds711.h>
 #include "../liblfds7.1.1/liblfds711/src/liblfds711_internal.h"
@@ -41,8 +40,7 @@ void __atomic_thread_fence(int i){
     for( int loop = 0 ; loop < 10 ; loop++ );                                                  \
 }
 
-#define MAX_IT 2
-
+#define MAX_IT 100
 
 // typedef unsigned UWORD __attribute__((mode(word)));
 // typedef int (__kernel_cmpxchg_t) (UWORD oldval, UWORD newval, UWORD *ptr);
@@ -126,7 +124,8 @@ int lfds711_stack_pop(struct lfds711_stack_state *ss,
 			LFDS711_MISC_BARRIER_LOAD;
 		}
 		i++;
-		if(i<MAX_IT)
+		
+		if(i > MAX_IT)
 			break;
 	} while (result == 0);
 
@@ -170,7 +169,8 @@ void lfds711_stack_push(struct lfds711_stack_state *ss,
 		if (result == 0)
 			LFDS711_BACKOFF_EXPONENTIAL_BACKOFF(ss->push_backoff, backoff_iteration);
 		i++;
-		if(i>MAX_IT)
+
+		if(i > MAX_IT)
 			break;
 	}
 
@@ -183,6 +183,7 @@ void lfds711_stack_push(struct lfds711_stack_state *ss,
 void lfds711_stack_cleanup(struct lfds711_stack_state *ss,
 													 void (*element_cleanup_callback)(struct lfds711_stack_state *ss, struct lfds711_stack_element *se))
 {
+
 	struct lfds711_stack_element
 			*se,
 			*se_temp;
