@@ -20,6 +20,12 @@ preprocessed_stack_no_while.c: stack_no_while.c
 preprocessed_stack_no_while: preprocessed_stack_no_while.o
 				$(CC) $(CCFLAGS) -o $@ $? $(LIBS)
 
+preprocessed_stack_with_while.c: stack_with_while.c
+				$(CC) $(PREP) -o $@ $? $(LIBS)
+
+preprocessed_stack_with_while: preprocessed_stack_with_while.o
+				$(CC) $(CCFLAGS) -o $@ $? $(LIBS)
+
 clean: 
 		rm *.o
 		rm stack_no_while

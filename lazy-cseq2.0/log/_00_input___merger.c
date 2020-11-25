@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "library.c"
+#include "../library.c"
 #include <pthread.h>
 #include <assert.h>
 
@@ -113,7 +113,7 @@ int main()
 	pthread_join(t1, 0);
 	pthread_join(t2, 0);
 
-	lfds711_stack_cleanup(&ss, NULL);
+	// lfds711_stack_cleanup(&ss, NULL);
 	assert(0);
 	return (EXIT_SUCCESS);
 }
