@@ -18,7 +18,7 @@ struct test_data
 		user_id;
 };
 
-#define VALUES 3
+#define VALUES 100000
 
 void *tr1()
 {
@@ -48,7 +48,6 @@ void *tr1()
 	lfds711_stack_push(&ss, &td[2].se);
 	pthread_mutex_unlock(&lock);
 
-	k = 1;
 }
 
 

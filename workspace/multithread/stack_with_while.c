@@ -1,19 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <pthread.h>
-#include "../library.c"
+#include "../library_barrier.c"
 #include <assert.h>
 
-
+#define VALUES 2000
+//Set ATOMIC_OPERATION to make push and pop atomic
+//FIXME: Currently not working because of the presence of locks in push and pop method
+#define ATOMIC_OPERATION 0
+#define LOCK if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);}
+#define UNLOCK if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); }
 
 struct lfds711_stack_state ss;
-pthread_mutex_t lock;
-volatile int k = 0;
+// pthread_mutex_t lock;
 
 struct test_data
 {
-	
 	struct lfds711_stack_element
 		se;
 
@@ -21,55 +23,49 @@ struct test_data
 		user_id;
 };
 
-#define VALUES 30
 
 void *push()
 {
 	struct test_data *td;
 
-	int long long unsigned
-		loop;
+	int long long unsigned loop;
 
 	td = malloc(sizeof(struct test_data) * VALUES);
-	// sleep(1);
+
 	for (loop = 0; loop < VALUES; loop++)
 	{
-		pthread_mutex_lock(&lock);
+		LOCK;
 		td[loop].user_id = loop;
 		LFDS711_STACK_SET_VALUE_IN_ELEMENT(td[loop].se, &td[loop]);
 		lfds711_stack_push(&ss, &td[loop].se);
-		pthread_mutex_unlock(&lock);
+		UNLOCK;
 	}
-	// k = 1;
+	
 }
 
 void *pop()
 {
-	// while(k==0){}
-
-	int long long unsigned loop;
 	struct lfds711_stack_element *se;
 	struct test_data *temp_td;
+
 	int res;
 	int count = 0;
+	int loop;
 	for (loop = 0; loop < VALUES; loop++)
 	{
 		temp_td = NULL;
-		pthread_mutex_lock(&lock);
+		LOCK;
 		res = lfds711_stack_pop(&ss, &se);
-		pthread_mutex_unlock(&lock);
+		UNLOCK;
 		
 		if(res == 0)
 			continue;
 		temp_td = LFDS711_STACK_GET_VALUE_FROM_ELEMENT(*se);
 		count++;
-		int x = temp_td->user_id;
-		// res = temp_td->user_id;
-		// assert(res==0 || res==1 || res == 2);
-		printf("user_id = %llu\n", temp_td->user_id);
+		printf("%llu\n", temp_td->user_id);
 	}
 
-	assert(count==VALUES);
+	// assert(count==VALUES);
 }
 
 int main()
@@ -84,8 +80,9 @@ int main()
 	pthread_join(t1, 0);
 	pthread_join(t2, 0);
 
-	lfds711_stack_cleanup(&ss, NULL);
+	//Commented because cseq is unable to parse it
+	// lfds711_stack_cleanup(&ss, NULL);
 
-	assert(0);
+	// assert(0);
 	return (EXIT_SUCCESS);
 }
