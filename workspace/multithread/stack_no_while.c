@@ -198,19 +198,8 @@ int main()
 	pthread_join(t2, 0);
 
 
-<<<<<<< HEAD
 	//Check if the number of the elements are correct
 	check_stack_size(num_elem);
-=======
-	//If the number returned by the function is higher than the expected then the size of the stack isn't correct
-	int extra_elem = check_stack_size();
-	// if(extra_elem > num_elem)
-	// 	assert(0);
-	// 	else{
-	// 		assert(1);
-	// 		}
-	assert(check_stack_size() <= num_elem);
->>>>>>> 9f78a7dd59743aa7580c12417aa03496f23e0b12
 	
 	// lfds711_stack_cleanup(&ss, NULL);
 	return (EXIT_SUCCESS);
