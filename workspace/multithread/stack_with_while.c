@@ -139,31 +139,40 @@ void readFile(char* filename, LIST_NODE_T *listHead)
 			//printf("%d\n",atoi(ptr));
       		if(curNode->payload.user_id != atoi(ptr))
          		break;
-			i++;
+			i++; //da ricontrollare forse aggiungere l'else
       		parent = curNode;
       		curNode=curNode->next;
 			ptr = strtok(NULL, delim);
       		}
 		
-		//If i!=size then elements didn't match so it's a new assert
-		if(i!=size)
+		if (i == size)
 		{
-			int filefd = open("foo.txt", O_WRONLY|O_CREAT|O_APPEND, 0666);
-			int saved = dup(1);
-			close(1);//Close stdout
-			dup(filefd);
-			PrintListPayloads(listHead);
-			close(filefd);
-			fflush(stdout);
-			dup2(saved, 1);
-			close(saved);
-			break;
-			//assert("nuova condizione");
+			//lista già presente nell'assert
+			fclose(fp);         
+			return;
 		}
+		
 		i=0;
 		
-    }       
-	fclose(fp);         
+    }    
+
+	//If i!=size then elements didn't match with any line so it's a new assert  
+	if(i!=size)
+	{
+		int filefd = open("foo.txt", O_WRONLY|O_CREAT|O_APPEND, 0666);
+		int saved = dup(1);
+		close(1);//Close stdout
+		dup(filefd);
+		PrintListPayloads(listHead);
+		close(filefd);
+		fflush(stdout);
+		dup2(saved, 1);
+		close(saved);
+		fclose(fp);         
+		return;
+		//assert("nuova condizione");
+	}
+
 }
 
 
