@@ -71,6 +71,20 @@ void *pop()
 	// assert(count==VALUES);
 }
 
+//Function to write the content of the list, printed on stdout, into the file
+void writeIntofile(char *filename,LIST_NODE_T *listHead)
+{
+	int filefd = open(filename, O_WRONLY|O_CREAT|O_APPEND, 0666);
+	int saved = dup(1);
+	close(1);//Close stdout
+	dup(filefd);
+	PrintListPayloads(listHead);
+	close(filefd);
+	fflush(stdout);
+	dup2(saved, 1);
+	close(saved);
+}
+
 
 //Function to copy the actual content of the stack into a linked list
 LIST_NODE_T* createList(LIST_NODE_T *listHead)
@@ -113,41 +127,31 @@ void readFile(char* filename, LIST_NODE_T *listHead)
 	FILE *fp = fopen(filename, "r"); 
 	if(!fp)
 		{
-			int filefd = open(filename, O_WRONLY|O_CREAT|O_APPEND, 0666);
-			int saved = dup(1);
-			close(1);//Close stdout
-			dup(filefd);
-			PrintListPayloads(listHead);
-			close(filefd);
-			fflush(stdout);
-			dup2(saved, 1);
-			close(saved);
+			writeIntofile(filename, listHead);
+			assert(0);
 			return;
-			//assert(e' il primo test quindi per forza non abbiamo mai incontrato questo case)
 		}
 
 	//Iterate line by line through the file. If it reach the end of the file we already met this assert condition.
-	while ((read = getline(&line, &len, fp)) != -1) {
+	while ((read = getline(&line, &len, fp)) != -1) 
+	{
 		//Split string for each ","
 		char *ptr = strtok(line, delim);
-        //printf("Retrieved line of length %zu:\n", read);
 
 		//While there is a node in the list created compare it with the file
 		while(curNode)
       		{
-			//printf("%llu\n",curNode->payload.user_id);
-			//printf("%d\n",atoi(ptr));
       		if(curNode->payload.user_id != atoi(ptr))
          		break;
-			i++; //da ricontrollare forse aggiungere l'else
+			i++;
       		parent = curNode;
       		curNode=curNode->next;
 			ptr = strtok(NULL, delim);
       		}
 		
+		//list already into the file
 		if (i == size)
 		{
-			//lista già presente nell'assert
 			fclose(fp);         
 			return;
 		}
@@ -159,18 +163,9 @@ void readFile(char* filename, LIST_NODE_T *listHead)
 	//If i!=size then elements didn't match with any line so it's a new assert  
 	if(i!=size)
 	{
-		int filefd = open("foo.txt", O_WRONLY|O_CREAT|O_APPEND, 0666);
-		int saved = dup(1);
-		close(1);//Close stdout
-		dup(filefd);
-		PrintListPayloads(listHead);
-		close(filefd);
-		fflush(stdout);
-		dup2(saved, 1);
-		close(saved);
-		fclose(fp);         
+		writeIntofile(filename, listHead);
+		assert(0);         
 		return;
-		//assert("nuova condizione");
 	}
 
 }
@@ -195,6 +190,5 @@ int main()
 	//Commented because cseq is unable to parse it
 	// lfds711_stack_cleanup(&ss, NULL);
 
-	// assert(0);
 	return (EXIT_SUCCESS);
 }
