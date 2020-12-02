@@ -1465,936 +1465,2042 @@ void *query_output);
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs);
 
 # 567 "<previous_module>"
-_Bool __atomic_compare_exchange_n(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
+__cs_mutex_t lock;
 
 # 568 "<previous_module>"
+_Bool __atomic_compare_exchange_n(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
+
+# 569 "<previous_module>"
 {
         
-# 569 "<previous_module>"
+# 570 "<previous_module>"
+int res;
+        
+# 571 "<previous_module>"
+res = __CSEQ_atomic_compare_and_exchange(mptr, eptr, newval, weak_p, sm, fm);
+        
+# 572 "<previous_module>"
+return res;
+}
+
+
+# 574 "<previous_module>"
+_Bool __CSEQ_atomic_compare_and_exchange(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
+
+# 575 "<previous_module>"
+{
+        
+# 576 "<previous_module>"
 ;_Bool __cs_tmp_if_cond_0; __cs_tmp_if_cond_0 = ((*mptr) == (*eptr)); 
         if (__cs_tmp_if_cond_0)
 
-# 570 "<previous_module>"
+# 577 "<previous_module>"
         {
                 
-# 571 "<previous_module>"
+# 578 "<previous_module>"
 *mptr = newval;
                 
-# 572 "<previous_module>"
+# 579 "<previous_module>"
 return 1;
         }
         else
 
-# 575 "<previous_module>"
+# 582 "<previous_module>"
         {
                 
-# 576 "<previous_module>"
+# 583 "<previous_module>"
 *eptr = newval;
                 
-# 577 "<previous_module>"
+# 584 "<previous_module>"
 return 0;
         }
 
-}
-
-
-# 580 "<previous_module>"
-unsigned long __atomic_exchange_n(int long long unsigned *previous, int long long unsigned new, int memorder)
-
-# 581 "<previous_module>"
-{
-        
-# 582 "<previous_module>"
-unsigned long int old;
-        
-# 583 "<previous_module>"
-old = *previous;
-        
-# 584 "<previous_module>"
-*previous = new;
-        
-# 585 "<previous_module>"
-return old;
 }
 
 
 # 587 "<previous_module>"
-void __atomic_thread_fence(int i)
+unsigned long __atomic_exchange_n(int long long unsigned *previous, int long long unsigned new, int memorder)
 
 # 588 "<previous_module>"
 {
+        
+# 589 "<previous_module>"
+int res;
+        
+# 590 "<previous_module>"
+res = __CSEQ_atomic_exchange(previous, new, memorder);
+        
+# 591 "<previous_module>"
+return res;
 }
 
 
-# 590 "<previous_module>"
-int swap_stack_top(struct lfds711_stack_element * volatile *top, struct lfds711_stack_element * volatile *oldtop, 
-# 591 "<previous_module>"
-struct lfds711_stack_element **newtop)
-
-# 592 "<previous_module>"
-{
-        
 # 593 "<previous_module>"
-;_Bool __cs_tmp_if_cond_1; __cs_tmp_if_cond_1 = ((*oldtop) == (*top)); 
-        if (__cs_tmp_if_cond_1)
+unsigned long __CSEQ_atomic_exchange(int long long unsigned *previous, int long long unsigned new, int memorder)
 
 # 594 "<previous_module>"
-        {
-                
+{
+        
 # 595 "<previous_module>"
-*top = *newtop;
-                
+unsigned long int old;
+        
 # 596 "<previous_module>"
-return 1;
-        }
-        else
-
-# 599 "<previous_module>"
-        {
-                
-# 600 "<previous_module>"
-*oldtop = *top;
-                
-# 601 "<previous_module>"
-return 0;
-        }
-
+old = *previous;
+        
+# 597 "<previous_module>"
+*previous = new;
+        
+# 598 "<previous_module>"
+return old;
 }
 
 
+# 600 "<previous_module>"
+void __atomic_thread_fence(int i)
+
+# 601 "<previous_module>"
+{
+}
+
+
+# 603 "<previous_module>"
+int __CSEQ_atomic_swap_stack_top(struct lfds711_stack_element * volatile *top, struct lfds711_stack_element * volatile *oldtop, 
 # 604 "<previous_module>"
-void exponential_backoff()
+struct lfds711_stack_element **newtop)
 
 # 605 "<previous_module>"
 {
         
 # 606 "<previous_module>"
-int loop;
-        
+;_Bool __cs_tmp_if_cond_1; __cs_tmp_if_cond_1 = ((*oldtop) == (*top)); 
+        if (__cs_tmp_if_cond_1)
+
 # 607 "<previous_module>"
-for (loop = 0; loop < 10; loop)
-# 608 "<previous_module>"
         {
                 
+# 608 "<previous_module>"
+*top = *newtop;
+                
 # 609 "<previous_module>"
+return 1;
+        }
+        else
+
+# 612 "<previous_module>"
+        {
+                
+# 613 "<previous_module>"
+*oldtop = *top;
+                
+# 614 "<previous_module>"
+return 0;
+        }
+
+}
+
+
+# 617 "<previous_module>"
+void exponential_backoff()
+
+# 618 "<previous_module>"
+{
+        
+# 619 "<previous_module>"
+int loop;
+        
+# 620 "<previous_module>"
+for (loop = 0; loop < 10; loop++)
+# 621 "<previous_module>"
+        {
+                
+# 622 "<previous_module>"
 ;
         }
 
 }
 
 
-# 612 "<previous_module>"
-__cs_mutex_t lock;
-
-# 613 "<previous_module>"
+# 625 "<previous_module>"
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs)
 
-# 614 "<previous_module>"
+# 626 "<previous_module>"
 {
         
-# 615 "<previous_module>"
+# 627 "<previous_module>"
 ;_Bool __cs_tmp_if_cond_2; __cs_tmp_if_cond_2 = (!(bs != 0)); 
         if (__cs_tmp_if_cond_2)
 
-# 616 "<previous_module>"
+# 628 "<previous_module>"
         {
                 
-# 617 "<previous_module>"
+# 629 "<previous_module>"
 char *c;
                 
-# 618 "<previous_module>"
+# 630 "<previous_module>"
 c = 0;
                 
-# 619 "<previous_module>"
+# 631 "<previous_module>"
 *c = 0;
         }
 
         
-# 621 "<previous_module>"
+# 633 "<previous_module>"
 ;
         
-# 622 "<previous_module>"
+# 634 "<previous_module>"
 ;
         
-# 623 "<previous_module>"
+# 635 "<previous_module>"
 ;_Bool __cs_tmp_if_cond_3; __cs_tmp_if_cond_3 = (!((((lfds711_pal_uint_t) (&(*bs).lock)) % 128) == 0)); 
         if (__cs_tmp_if_cond_3)
 
-# 624 "<previous_module>"
+# 636 "<previous_module>"
         {
                 
-# 625 "<previous_module>"
+# 637 "<previous_module>"
 char *c;
                 
-# 626 "<previous_module>"
+# 638 "<previous_module>"
 c = 0;
                 
-# 627 "<previous_module>"
+# 639 "<previous_module>"
 *c = 0;
         }
 
         
-# 629 "<previous_module>"
+# 641 "<previous_module>"
 ;
         
-# 630 "<previous_module>"
+# 642 "<previous_module>"
 ;
         
-# 631 "<previous_module>"
+# 643 "<previous_module>"
 (*bs).lock = LFDS711_MISC_FLAG_LOWERED;
         
-# 632 "<previous_module>"
+# 644 "<previous_module>"
 (*bs).backoff_iteration_frequency_counters[0] = 0;
         
-# 633 "<previous_module>"
+# 645 "<previous_module>"
 (*bs).backoff_iteration_frequency_counters[1] = 0;
         
-# 634 "<previous_module>"
+# 646 "<previous_module>"
 (*bs).metric = 1;
         
-# 635 "<previous_module>"
+# 647 "<previous_module>"
 (*bs).total_operations = 0;
         
-# 636 "<previous_module>"
+# 648 "<previous_module>"
 return;
 }
 
 
-# 638 "<previous_module>"
+# 650 "<previous_module>"
 void lfds711_stack_init_valid_on_current_logical_core(struct lfds711_stack_state *ss, 
-# 639 "<previous_module>"
+# 651 "<previous_module>"
 void *user_state)
 
-# 640 "<previous_module>"
+# 652 "<previous_module>"
 {
         
-# 641 "<previous_module>"
+# 653 "<previous_module>"
 __cs_mutex_init(&lock, 0);
         
-# 642 "<previous_module>"
+# 654 "<previous_module>"
 ;_Bool __cs_tmp_if_cond_4; __cs_tmp_if_cond_4 = (!(ss != 0)); 
         if (__cs_tmp_if_cond_4)
 
-# 643 "<previous_module>"
+# 655 "<previous_module>"
         {
                 
-# 644 "<previous_module>"
+# 656 "<previous_module>"
 char *c;
                 
-# 645 "<previous_module>"
+# 657 "<previous_module>"
 c = 0;
                 
-# 646 "<previous_module>"
+# 658 "<previous_module>"
 *c = 0;
         }
 
         
-# 648 "<previous_module>"
+# 660 "<previous_module>"
 ;
         
-# 649 "<previous_module>"
+# 661 "<previous_module>"
 ;
         
-# 650 "<previous_module>"
+# 662 "<previous_module>"
 ;_Bool __cs_tmp_if_cond_5; __cs_tmp_if_cond_5 = (!((((lfds711_pal_uint_t) (*ss).top) % 128) == 0)); 
         if (__cs_tmp_if_cond_5)
 
-# 651 "<previous_module>"
+# 663 "<previous_module>"
         {
                 
-# 652 "<previous_module>"
+# 664 "<previous_module>"
 char *c;
                 
-# 653 "<previous_module>"
+# 665 "<previous_module>"
 c = 0;
                 
-# 654 "<previous_module>"
+# 666 "<previous_module>"
 *c = 0;
         }
 
         
-# 656 "<previous_module>"
+# 668 "<previous_module>"
 ;
         
-# 657 "<previous_module>"
+# 669 "<previous_module>"
 ;
         
-# 658 "<previous_module>"
+# 670 "<previous_module>"
 ;_Bool __cs_tmp_if_cond_6; __cs_tmp_if_cond_6 = (!((((lfds711_pal_uint_t) (&(*ss).user_state)) % 128) == 0)); 
         if (__cs_tmp_if_cond_6)
 
-# 659 "<previous_module>"
+# 671 "<previous_module>"
         {
                 
-# 660 "<previous_module>"
+# 672 "<previous_module>"
 char *c;
                 
-# 661 "<previous_module>"
+# 673 "<previous_module>"
 c = 0;
                 
-# 662 "<previous_module>"
+# 674 "<previous_module>"
 *c = 0;
         }
 
         
-# 664 "<previous_module>"
+# 676 "<previous_module>"
 ;
         
-# 665 "<previous_module>"
+# 677 "<previous_module>"
 ;
         
-# 666 "<previous_module>"
+# 678 "<previous_module>"
 __cs_mutex_lock(&lock);
         
-# 667 "<previous_module>"
+# 679 "<previous_module>"
 (*ss).top[0] = 0;
         
-# 668 "<previous_module>"
+# 680 "<previous_module>"
 (*ss).top[1] = 0;
         
-# 669 "<previous_module>"
+# 681 "<previous_module>"
 (*ss).user_state = user_state;
         
-# 670 "<previous_module>"
+# 682 "<previous_module>"
 lfds711_misc_internal_backoff_init(&(*ss).pop_backoff);
         
-# 671 "<previous_module>"
+# 683 "<previous_module>"
 lfds711_misc_internal_backoff_init(&(*ss).push_backoff);
         
-# 672 "<previous_module>"
+# 684 "<previous_module>"
 lfds711_misc_force_store();
         
-# 673 "<previous_module>"
+# 685 "<previous_module>"
 __cs_mutex_unlock(&lock);
         
-# 674 "<previous_module>"
+# 686 "<previous_module>"
 return;
 }
 
 
-# 676 "<previous_module>"
+# 688 "<previous_module>"
 int lfds711_stack_pop(struct lfds711_stack_state *ss, 
-# 677 "<previous_module>"
+# 689 "<previous_module>"
 struct lfds711_stack_element **se)
 
-# 678 "<previous_module>"
+# 690 "<previous_module>"
 {
         
-# 679 "<previous_module>"
+# 691 "<previous_module>"
 char unsigned result;
         
-# 680 "<previous_module>"
+# 692 "<previous_module>"
 lfds711_pal_uint_t backoff_iteration;
         
-# 681 "<previous_module>"
+# 693 "<previous_module>"
 backoff_iteration = 0;
         
-# 682 "<previous_module>"
+# 694 "<previous_module>"
 struct lfds711_stack_element *new_top[2];
         
-# 683 "<previous_module>"
+# 695 "<previous_module>"
 struct lfds711_stack_element * volatile original_top[2];
         
-# 684 "<previous_module>"
+# 696 "<previous_module>"
 ;_Bool __cs_tmp_if_cond_7; __cs_tmp_if_cond_7 = (!(ss != 0)); 
         if (__cs_tmp_if_cond_7)
 
-# 685 "<previous_module>"
+# 697 "<previous_module>"
         {
                 
-# 686 "<previous_module>"
+# 698 "<previous_module>"
 char *c;
                 
-# 687 "<previous_module>"
+# 699 "<previous_module>"
 c = 0;
                 
-# 688 "<previous_module>"
+# 700 "<previous_module>"
 *c = 0;
         }
 
         
-# 690 "<previous_module>"
+# 702 "<previous_module>"
 ;
         
-# 691 "<previous_module>"
+# 703 "<previous_module>"
 ;
         
-# 692 "<previous_module>"
+# 704 "<previous_module>"
 ;_Bool __cs_tmp_if_cond_8; __cs_tmp_if_cond_8 = (!(se != 0)); 
         if (__cs_tmp_if_cond_8)
 
-# 693 "<previous_module>"
+# 705 "<previous_module>"
         {
                 
-# 694 "<previous_module>"
+# 706 "<previous_module>"
 char *c;
                 
-# 695 "<previous_module>"
+# 707 "<previous_module>"
 c = 0;
                 
-# 696 "<previous_module>"
+# 708 "<previous_module>"
 *c = 0;
         }
 
         
-# 698 "<previous_module>"
+# 710 "<previous_module>"
 ;
         
-# 699 "<previous_module>"
+# 711 "<previous_module>"
 ;
         
-# 700 "<previous_module>"
+# 712 "<previous_module>"
 __cs_mutex_lock(&lock);
         
-# 701 "<previous_module>"
+# 713 "<previous_module>"
 __cs_mutex_unlock(&lock);
         
-# 702 "<previous_module>"
+# 714 "<previous_module>"
 original_top[1] = (*ss).top[1];
         
-# 703 "<previous_module>"
+# 715 "<previous_module>"
 original_top[0] = (*ss).top[0];
         
-# 704 "<previous_module>"
+# 716 "<previous_module>"
 int i;
         
-# 705 "<previous_module>"
+# 717 "<previous_module>"
 i = 0;
         
-# 706 "<previous_module>"
+# 718 "<previous_module>"
 ;
         int __cs_dowhile_onetime_1;
         for (__cs_dowhile_onetime_1 = 0; __cs_dowhile_onetime_1 < 1; __cs_dowhile_onetime_1++)
-# 707 "<previous_module>"
+# 719 "<previous_module>"
         {
                 
-# 708 "<previous_module>"
+# 720 "<previous_module>"
 ;_Bool __cs_tmp_if_cond_9; __cs_tmp_if_cond_9 = (original_top[0] == 0); 
                 if (__cs_tmp_if_cond_9)
 
-# 709 "<previous_module>"
+# 721 "<previous_module>"
                 {
                         
-# 710 "<previous_module>"
+# 722 "<previous_module>"
 *se = 0;
                         
-# 711 "<previous_module>"
+# 723 "<previous_module>"
 return 0;
                 }
 
                 
-# 713 "<previous_module>"
+# 725 "<previous_module>"
 new_top[1] = original_top[1] + 1;
                 
-# 714 "<previous_module>"
+# 726 "<previous_module>"
 new_top[0] = (*original_top[0]).next;
                 
-# 715 "<previous_module>"
+# 727 "<previous_module>"
 __cs_mutex_lock(&lock);
                 
-# 716 "<previous_module>"
-result = swap_stack_top(&(*ss).top[0], &original_top[0], &new_top[0]);
+# 728 "<previous_module>"
+result = __CSEQ_atomic_swap_stack_top(&(*ss).top[0], &original_top[0], &new_top[0]);
                 
-# 717 "<previous_module>"
+# 729 "<previous_module>"
 __cs_mutex_unlock(&lock);
                 
-# 718 "<previous_module>"
+# 730 "<previous_module>"
 ;_Bool __cs_tmp_if_cond_10; __cs_tmp_if_cond_10 = (result == 0); 
                 if (__cs_tmp_if_cond_10)
 
-# 719 "<previous_module>"
+# 731 "<previous_module>"
                 {
                         
-# 720 "<previous_module>"
+# 732 "<previous_module>"
 exponential_backoff();
                         
-# 721 "<previous_module>"
+# 733 "<previous_module>"
 __cs_mutex_lock(&lock);
                         
-# 722 "<previous_module>"
+# 734 "<previous_module>"
 __cs_mutex_unlock(&lock);
                 }
 
                 
-# 724 "<previous_module>"
+# 736 "<previous_module>"
 i++;
                 
-# 725 "<previous_module>"
-;_Bool __cs_tmp_if_cond_11; __cs_tmp_if_cond_11 = (i > 100); 
+# 737 "<previous_module>"
+;_Bool __cs_tmp_if_cond_11; __cs_tmp_if_cond_11 = (i > 1000); 
                 if (__cs_tmp_if_cond_11)
 
-# 726 "<previous_module>"
+# 738 "<previous_module>"
                 {
                         
-# 727 "<previous_module>"
+# 739 "<previous_module>"
 break;
                 }
 
         }
 
         
-# 730 "<previous_module>"
+# 742 "<previous_module>"
 while (
-# 731 "<previous_module>"
+# 743 "<previous_module>"
 result == 0)
 
-# 732 "<previous_module>"
+# 744 "<previous_module>"
         {
                 
-# 733 "<previous_module>"
+# 745 "<previous_module>"
 ;_Bool __cs_tmp_if_cond_12; __cs_tmp_if_cond_12 = (original_top[0] == 0); 
                 if (__cs_tmp_if_cond_12)
 
-# 734 "<previous_module>"
+# 746 "<previous_module>"
                 {
                         
-# 735 "<previous_module>"
+# 747 "<previous_module>"
 *se = 0;
                         
-# 736 "<previous_module>"
+# 748 "<previous_module>"
 return 0;
                 }
 
                 
-# 738 "<previous_module>"
+# 750 "<previous_module>"
 new_top[1] = original_top[1] + 1;
                 
-# 739 "<previous_module>"
+# 751 "<previous_module>"
 new_top[0] = (*original_top[0]).next;
                 
-# 740 "<previous_module>"
+# 752 "<previous_module>"
 __cs_mutex_lock(&lock);
                 
-# 741 "<previous_module>"
-result = swap_stack_top(&(*ss).top[0], &original_top[0], &new_top[0]);
+# 753 "<previous_module>"
+result = __CSEQ_atomic_swap_stack_top(&(*ss).top[0], &original_top[0], &new_top[0]);
                 
-# 742 "<previous_module>"
+# 754 "<previous_module>"
 __cs_mutex_unlock(&lock);
                 
-# 743 "<previous_module>"
+# 755 "<previous_module>"
 ;_Bool __cs_tmp_if_cond_13; __cs_tmp_if_cond_13 = (result == 0); 
                 if (__cs_tmp_if_cond_13)
 
-# 744 "<previous_module>"
+# 756 "<previous_module>"
                 {
                         
-# 745 "<previous_module>"
+# 757 "<previous_module>"
 exponential_backoff();
                         
-# 746 "<previous_module>"
+# 758 "<previous_module>"
 __cs_mutex_lock(&lock);
                         
-# 747 "<previous_module>"
+# 759 "<previous_module>"
 __cs_mutex_unlock(&lock);
                 }
 
                 
-# 749 "<previous_module>"
+# 761 "<previous_module>"
 i++;
                 
-# 750 "<previous_module>"
-;_Bool __cs_tmp_if_cond_14; __cs_tmp_if_cond_14 = (i > 100); 
+# 762 "<previous_module>"
+;_Bool __cs_tmp_if_cond_14; __cs_tmp_if_cond_14 = (i > 1000); 
                 if (__cs_tmp_if_cond_14)
 
-# 751 "<previous_module>"
+# 763 "<previous_module>"
                 {
                         
-# 752 "<previous_module>"
+# 764 "<previous_module>"
 break;
                 }
 
         }
 
         
-# 755 "<previous_module>"
+# 767 "<previous_module>"
 *se = original_top[0];
         
-# 756 "<previous_module>"
+# 768 "<previous_module>"
 return 1;
 }
 
 
-# 758 "<previous_module>"
+# 770 "<previous_module>"
 void lfds711_stack_push(struct lfds711_stack_state *ss, 
-# 759 "<previous_module>"
+# 771 "<previous_module>"
 struct lfds711_stack_element *se)
 
-# 760 "<previous_module>"
+# 772 "<previous_module>"
 {
         
-# 761 "<previous_module>"
+# 773 "<previous_module>"
 char unsigned result;
         
-# 762 "<previous_module>"
+# 774 "<previous_module>"
 lfds711_pal_uint_t backoff_iteration;
         
-# 763 "<previous_module>"
+# 775 "<previous_module>"
 backoff_iteration = 0;
         
-# 764 "<previous_module>"
+# 776 "<previous_module>"
 struct lfds711_stack_element *new_top[2];
         
-# 765 "<previous_module>"
+# 777 "<previous_module>"
 struct lfds711_stack_element * volatile original_top[2];
         
-# 766 "<previous_module>"
+# 778 "<previous_module>"
 ;_Bool __cs_tmp_if_cond_15; __cs_tmp_if_cond_15 = (!(ss != 0)); 
         if (__cs_tmp_if_cond_15)
 
-# 767 "<previous_module>"
+# 779 "<previous_module>"
         {
                 
-# 768 "<previous_module>"
+# 780 "<previous_module>"
 char *c;
                 
-# 769 "<previous_module>"
+# 781 "<previous_module>"
 c = 0;
                 
-# 770 "<previous_module>"
+# 782 "<previous_module>"
 *c = 0;
         }
 
         
-# 772 "<previous_module>"
+# 784 "<previous_module>"
 ;
         
-# 773 "<previous_module>"
+# 785 "<previous_module>"
 ;
         
-# 774 "<previous_module>"
+# 786 "<previous_module>"
 ;_Bool __cs_tmp_if_cond_16; __cs_tmp_if_cond_16 = (!(se != 0)); 
         if (__cs_tmp_if_cond_16)
 
-# 775 "<previous_module>"
+# 787 "<previous_module>"
         {
                 
-# 776 "<previous_module>"
+# 788 "<previous_module>"
 char *c;
                 
-# 777 "<previous_module>"
+# 789 "<previous_module>"
 c = 0;
                 
-# 778 "<previous_module>"
+# 790 "<previous_module>"
 *c = 0;
         }
 
         
-# 780 "<previous_module>"
+# 792 "<previous_module>"
 ;
         
-# 781 "<previous_module>"
+# 793 "<previous_module>"
 ;
         
-# 782 "<previous_module>"
+# 794 "<previous_module>"
 new_top[0] = se;
         
-# 783 "<previous_module>"
+# 795 "<previous_module>"
 original_top[1] = (*ss).top[1];
         
-# 784 "<previous_module>"
+# 796 "<previous_module>"
 original_top[0] = (*ss).top[0];
         
-# 785 "<previous_module>"
+# 797 "<previous_module>"
 result = 0;
         
-# 786 "<previous_module>"
+# 798 "<previous_module>"
 int i;
         
-# 787 "<previous_module>"
+# 799 "<previous_module>"
 i = 0;
         
-# 788 "<previous_module>"
+# 800 "<previous_module>"
 while (result == 0)
 
-# 789 "<previous_module>"
+# 801 "<previous_module>"
         {
                 
-# 790 "<previous_module>"
+# 802 "<previous_module>"
 __cs_mutex_lock(&lock);
                 
-# 791 "<previous_module>"
+# 803 "<previous_module>"
 (*se).next = original_top[0];
                 
-# 792 "<previous_module>"
+# 804 "<previous_module>"
 __cs_mutex_unlock(&lock);
                 
-# 793 "<previous_module>"
+# 805 "<previous_module>"
 new_top[1] = original_top[1] + 1;
                 
-# 794 "<previous_module>"
+# 806 "<previous_module>"
 __cs_mutex_lock(&lock);
                 
-# 795 "<previous_module>"
-result = swap_stack_top(&(*ss).top[0], &original_top[0], &new_top[0]);
+# 807 "<previous_module>"
+result = __CSEQ_atomic_swap_stack_top(&(*ss).top[0], &original_top[0], &new_top[0]);
                 
-# 796 "<previous_module>"
+# 808 "<previous_module>"
 __cs_mutex_unlock(&lock);
                 
-# 797 "<previous_module>"
+# 809 "<previous_module>"
 ;_Bool __cs_tmp_if_cond_17; __cs_tmp_if_cond_17 = (result == 0); 
                 if (__cs_tmp_if_cond_17)
 
-# 798 "<previous_module>"
+# 810 "<previous_module>"
                 {
                         
-# 799 "<previous_module>"
+# 811 "<previous_module>"
 exponential_backoff();
                 }
 
                 
-# 801 "<previous_module>"
+# 813 "<previous_module>"
 i++;
                 
-# 802 "<previous_module>"
-;_Bool __cs_tmp_if_cond_18; __cs_tmp_if_cond_18 = (i > 100); 
+# 814 "<previous_module>"
+;_Bool __cs_tmp_if_cond_18; __cs_tmp_if_cond_18 = (i > 1000); 
                 if (__cs_tmp_if_cond_18)
 
-# 803 "<previous_module>"
+# 815 "<previous_module>"
                 {
                         
-# 804 "<previous_module>"
+# 816 "<previous_module>"
 break;
                 }
 
         }
 
         
-# 807 "<previous_module>"
+# 819 "<previous_module>"
 return;
 }
 
 
-# 809 "<previous_module>"
+# 821 "<previous_module>"
 void lfds711_stack_cleanup(struct lfds711_stack_state *ss, 
-# 810 "<previous_module>"
+# 822 "<previous_module>"
 void (*element_cleanup_callback)(struct lfds711_stack_state *ss, struct lfds711_stack_element *se))
 
-# 811 "<previous_module>"
+# 823 "<previous_module>"
 {
         
-# 812 "<previous_module>"
+# 824 "<previous_module>"
 struct lfds711_stack_element *se;
         
-# 813 "<previous_module>"
+# 825 "<previous_module>"
 struct lfds711_stack_element *se_temp;
         
-# 814 "<previous_module>"
+# 826 "<previous_module>"
 ;_Bool __cs_tmp_if_cond_19; __cs_tmp_if_cond_19 = (!(ss != 0)); 
         if (__cs_tmp_if_cond_19)
 
-# 815 "<previous_module>"
+# 827 "<previous_module>"
         {
                 
-# 816 "<previous_module>"
+# 828 "<previous_module>"
 char *c;
                 
-# 817 "<previous_module>"
+# 829 "<previous_module>"
 c = 0;
                 
-# 818 "<previous_module>"
+# 830 "<previous_module>"
 *c = 0;
         }
 
         
-# 820 "<previous_module>"
+# 832 "<previous_module>"
 ;
         
-# 821 "<previous_module>"
+# 833 "<previous_module>"
 ;
         
-# 822 "<previous_module>"
+# 834 "<previous_module>"
 __atomic_thread_fence(2);
         
-# 823 "<previous_module>"
+# 835 "<previous_module>"
 ;_Bool __cs_tmp_if_cond_20; __cs_tmp_if_cond_20 = (element_cleanup_callback != 0); 
         if (__cs_tmp_if_cond_20)
 
-# 824 "<previous_module>"
+# 836 "<previous_module>"
         {
                 
-# 825 "<previous_module>"
+# 837 "<previous_module>"
 se = (*ss).top[0];
                 
-# 826 "<previous_module>"
+# 838 "<previous_module>"
 while (se != 0)
 
-# 827 "<previous_module>"
+# 839 "<previous_module>"
                 {
                         
-# 828 "<previous_module>"
+# 840 "<previous_module>"
 se_temp = se;
                         
-# 829 "<previous_module>"
+# 841 "<previous_module>"
 se = (*se).next;
                         
-# 830 "<previous_module>"
+# 842 "<previous_module>"
 element_cleanup_callback(ss, se_temp);
                 }
 
         }
 
         
-# 833 "<previous_module>"
+# 845 "<previous_module>"
 return;
 }
 
 
-# 835 "<previous_module>"
-struct lfds711_stack_state ss;
-
-# 836 "<previous_module>"
-__cs_mutex_t lock;
-
-# 837 "<previous_module>"
-struct test_data
+# 851 "<previous_module>"
+typedef struct NODE_PAYLOAD_S
 {
         
-# 839 "<previous_module>"
+# 849 "<previous_module>"
 struct lfds711_stack_element se;
         
-# 840 "<previous_module>"
-int long long unsigned user_id;
-};
-
-# 842 "<previous_module>"
-void *push(void *__cs_unused)
-
-# 843 "<previous_module>"
-{
-        
-# 844 "<previous_module>"
-struct test_data *td;
-        
-# 845 "<previous_module>"
-int long long unsigned loop;
-        
-# 846 "<previous_module>"
-td = __cs_safe_malloc((sizeof(struct test_data)) * 3);
-        
-# 847 "<previous_module>"
-for (loop = 0; loop < 3; loop++)
-# 848 "<previous_module>"
-        {
-                
-# 849 "<previous_module>"
-;
-                
 # 850 "<previous_module>"
-td[loop].user_id = loop;
-                
-# 851 "<previous_module>"
-td[loop].se.value = (void *) ((lfds711_pal_uint_t) (&td[loop]));
-                
-# 852 "<previous_module>"
-lfds711_stack_push(&ss, &td[loop].se);
-                
-# 853 "<previous_module>"
-;
-        }
-
-}
-
+int long long unsigned user_id;
+} NODE_PAYLOAD_T;
 
 # 856 "<previous_module>"
-void *pop(void *__cs_unused)
-
-# 857 "<previous_module>"
+typedef struct LIST_NODE_S
 {
         
+# 854 "<previous_module>"
+struct LIST_NODE_S *next;
+        
+# 855 "<previous_module>"
+NODE_PAYLOAD_T payload;
+} LIST_NODE_T;
+
+# 857 "<previous_module>"
+int LIST_InsertHeadNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__se, int long long unsigned I__user_id)
+
 # 858 "<previous_module>"
-int long long unsigned loop;
+{
         
 # 859 "<previous_module>"
-struct lfds711_stack_element *se;
+int rCode;
         
 # 860 "<previous_module>"
-struct test_data *temp_td;
+rCode = 0;
         
 # 861 "<previous_module>"
-int res;
+LIST_NODE_T *newNode;
         
 # 862 "<previous_module>"
-int count;
+newNode = 0;
         
 # 863 "<previous_module>"
-count = 0;
+newNode = __cs_safe_malloc(sizeof(*newNode));
         
 # 864 "<previous_module>"
-for (loop = 0; loop < 3; loop++)
+;_Bool __cs_tmp_if_cond_21; __cs_tmp_if_cond_21 = (0 == newNode); 
+        if (__cs_tmp_if_cond_21)
+
 # 865 "<previous_module>"
         {
                 
 # 866 "<previous_module>"
-temp_td = 0;
+rCode = 12;
                 
 # 867 "<previous_module>"
-;
+fprintf(stderr, "malloc() failed.\n");
                 
 # 868 "<previous_module>"
-res = lfds711_stack_pop(&ss, &se);
-                
-# 869 "<previous_module>"
-;
-                
-# 870 "<previous_module>"
-;_Bool __cs_tmp_if_cond_21; __cs_tmp_if_cond_21 = (res == 0); 
-                if (__cs_tmp_if_cond_21)
+goto CLEANUP;
+        }
 
+        
+# 870 "<previous_module>"
+(*newNode).payload.se = I__se;
+        
 # 871 "<previous_module>"
+(*newNode).payload.user_id = I__user_id;
+        
+# 872 "<previous_module>"
+(*newNode).next = *IO_head;
+        
+# 873 "<previous_module>"
+*IO_head = newNode;
+        
+# 874 "<previous_module>"
+CLEANUP:
+        
+# 875 "<previous_module>"
+return rCode;
+
+}
+
+
+# 877 "<previous_module>"
+int PrintListPayloads(LIST_NODE_T *head)
+
+# 878 "<previous_module>"
+{
+        
+# 879 "<previous_module>"
+int rCode;
+        
+# 880 "<previous_module>"
+rCode = 0;
+        
+# 881 "<previous_module>"
+LIST_NODE_T *cur;
+        
+# 882 "<previous_module>"
+cur = head;
+        
+# 883 "<previous_module>"
+while (cur)
+
+# 884 "<previous_module>"
+        {
+                
+# 885 "<previous_module>"
+printf("%lld", (*cur).payload.user_id);
+                
+# 886 "<previous_module>"
+cur = (*cur).next;
+                
+# 887 "<previous_module>"
+;_Bool __cs_tmp_if_cond_22; __cs_tmp_if_cond_22 = (cur != 0); 
+                if (__cs_tmp_if_cond_22)
+
+# 888 "<previous_module>"
                 {
                         
-# 872 "<previous_module>"
+# 889 "<previous_module>"
+printf(",");
+                }
+
+        }
+
+        
+# 892 "<previous_module>"
+printf("\n");
+        
+# 893 "<previous_module>"
+return rCode;
+}
+
+
+# 895 "<previous_module>"
+int GetListSize(LIST_NODE_T *head)
+
+# 896 "<previous_module>"
+{
+        
+# 897 "<previous_module>"
+LIST_NODE_T *cur;
+        
+# 898 "<previous_module>"
+cur = head;
+        
+# 899 "<previous_module>"
+int nodeCnt;
+        
+# 900 "<previous_module>"
+nodeCnt = 0;
+        
+# 901 "<previous_module>"
+while (cur)
+
+# 902 "<previous_module>"
+        {
+                
+# 903 "<previous_module>"
+++nodeCnt;
+                
+# 904 "<previous_module>"
+cur = (*cur).next;
+        }
+
+        
+# 906 "<previous_module>"
+return nodeCnt;
+}
+
+
+# 908 "<previous_module>"
+int LIST_GetTailNode(LIST_NODE_T *I__listHead, LIST_NODE_T **_O_listTail)
+
+# 909 "<previous_module>"
+{
+        
+# 910 "<previous_module>"
+int rCode;
+        
+# 911 "<previous_module>"
+rCode = 0;
+        
+# 912 "<previous_module>"
+LIST_NODE_T *curNode;
+        
+# 913 "<previous_module>"
+curNode = I__listHead;
+        
+# 914 "<previous_module>"
+;_Bool __cs_tmp_if_cond_23; __cs_tmp_if_cond_23 = (curNode); 
+        if (__cs_tmp_if_cond_23)
+
+# 915 "<previous_module>"
+        {
+                
+# 916 "<previous_module>"
+while ((*curNode).next)
+
+# 917 "<previous_module>"
+                {
+                        
+# 918 "<previous_module>"
+curNode = (*curNode).next;
+                }
+
+        }
+
+        
+# 921 "<previous_module>"
+;_Bool __cs_tmp_if_cond_24; __cs_tmp_if_cond_24 = (_O_listTail); 
+        if (__cs_tmp_if_cond_24)
+
+# 922 "<previous_module>"
+        {
+                
+# 923 "<previous_module>"
+*_O_listTail = curNode;
+        }
+
+        
+# 925 "<previous_module>"
+return rCode;
+}
+
+
+# 927 "<previous_module>"
+int LIST_InsertTailNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__se, int long long unsigned I__user_id)
+
+# 928 "<previous_module>"
+{
+        
+# 929 "<previous_module>"
+int rCode;
+        
+# 930 "<previous_module>"
+rCode = 0;
+        
+# 931 "<previous_module>"
+LIST_NODE_T *tailNode;
+        
+# 932 "<previous_module>"
+LIST_NODE_T *newNode;
+        
+# 933 "<previous_module>"
+newNode = 0;
+        
+# 934 "<previous_module>"
+rCode = LIST_GetTailNode(*IO_head, &tailNode);
+        
+# 935 "<previous_module>"
+;_Bool __cs_tmp_if_cond_25; __cs_tmp_if_cond_25 = (rCode); 
+        if (__cs_tmp_if_cond_25)
+
+# 936 "<previous_module>"
+        {
+                
+# 937 "<previous_module>"
+fprintf(stderr, "LIST_GetTailNode() reports: %d\n", rCode);
+                
+# 938 "<previous_module>"
+goto CLEANUP;
+        }
+
+        
+# 940 "<previous_module>"
+newNode = __cs_safe_malloc(sizeof(*newNode));
+        
+# 941 "<previous_module>"
+;_Bool __cs_tmp_if_cond_26; __cs_tmp_if_cond_26 = (0 == newNode); 
+        if (__cs_tmp_if_cond_26)
+
+# 942 "<previous_module>"
+        {
+                
+# 943 "<previous_module>"
+rCode = 12;
+                
+# 944 "<previous_module>"
+fprintf(stderr, "malloc() failed.\n");
+                
+# 945 "<previous_module>"
+goto CLEANUP;
+        }
+
+        
+# 947 "<previous_module>"
+(*newNode).payload.user_id = I__user_id;
+        
+# 948 "<previous_module>"
+(*newNode).payload.se = I__se;
+        
+# 949 "<previous_module>"
+(*newNode).next = 0;
+        
+# 950 "<previous_module>"
+;_Bool __cs_tmp_if_cond_27; __cs_tmp_if_cond_27 = (tailNode); 
+        if (__cs_tmp_if_cond_27)
+
+# 951 "<previous_module>"
+        {
+                
+# 952 "<previous_module>"
+(*tailNode).next = newNode;
+        }
+        else
+
+# 955 "<previous_module>"
+        {
+                
+# 956 "<previous_module>"
+*IO_head = newNode;
+        }
+
+        
+# 958 "<previous_module>"
+CLEANUP:
+        
+# 959 "<previous_module>"
+return rCode;
+
+}
+
+
+# 961 "<previous_module>"
+int LIST_FetchParentNodeById(LIST_NODE_T *I__head, int long long unsigned I__user_id, LIST_NODE_T **_O_parent)
+
+# 962 "<previous_module>"
+{
+        
+# 963 "<previous_module>"
+int rCode;
+        
+# 964 "<previous_module>"
+rCode = 0;
+        
+# 965 "<previous_module>"
+LIST_NODE_T *parent;
+        
+# 966 "<previous_module>"
+parent = 0;
+        
+# 967 "<previous_module>"
+LIST_NODE_T *curNode;
+        
+# 968 "<previous_module>"
+curNode = I__head;
+        
+# 969 "<previous_module>"
+;_Bool __cs_tmp_if_cond_28; __cs_tmp_if_cond_28 = (0 == I__head); 
+        if (__cs_tmp_if_cond_28)
+
+# 970 "<previous_module>"
+        {
+                
+# 971 "<previous_module>"
+rCode = ENOENT;
+                
+# 972 "<previous_module>"
+goto CLEANUP;
+        }
+
+        
+# 974 "<previous_module>"
+while (curNode)
+
+# 975 "<previous_module>"
+        {
+                
+# 976 "<previous_module>"
+;_Bool __cs_tmp_if_cond_29; __cs_tmp_if_cond_29 = ((*curNode).payload.user_id > I__user_id); 
+                if (__cs_tmp_if_cond_29)
+
+# 977 "<previous_module>"
+                {
+                        
+# 978 "<previous_module>"
+break;
+                }
+
+                
+# 980 "<previous_module>"
+parent = curNode;
+                
+# 981 "<previous_module>"
+curNode = (*curNode).next;
+        }
+
+        
+# 983 "<previous_module>"
+;_Bool __cs_tmp_if_cond_30; __cs_tmp_if_cond_30 = (_O_parent); 
+        if (__cs_tmp_if_cond_30)
+
+# 984 "<previous_module>"
+        {
+                
+# 985 "<previous_module>"
+*_O_parent = parent;
+        }
+
+        
+# 987 "<previous_module>"
+CLEANUP:
+        
+# 988 "<previous_module>"
+return rCode;
+
+}
+
+
+# 990 "<previous_module>"
+int LIST_InsertNodeById(LIST_NODE_T **IO_head, int long long unsigned I__user_id, struct lfds711_stack_element I__se)
+
+# 991 "<previous_module>"
+{
+        
+# 992 "<previous_module>"
+int rCode;
+        
+# 993 "<previous_module>"
+rCode = 0;
+        
+# 994 "<previous_module>"
+LIST_NODE_T *parent;
+        
+# 995 "<previous_module>"
+LIST_NODE_T *newNode;
+        
+# 996 "<previous_module>"
+newNode = 0;
+        
+# 997 "<previous_module>"
+newNode = __cs_safe_malloc(sizeof(*newNode));
+        
+# 998 "<previous_module>"
+;_Bool __cs_tmp_if_cond_31; __cs_tmp_if_cond_31 = (0 == newNode); 
+        if (__cs_tmp_if_cond_31)
+
+# 999 "<previous_module>"
+        {
+                
+# 1000 "<previous_module>"
+rCode = 12;
+                
+# 1001 "<previous_module>"
+fprintf(stderr, "malloc() failed.\n");
+                
+# 1002 "<previous_module>"
+goto CLEANUP;
+        }
+
+        
+# 1004 "<previous_module>"
+(*newNode).payload.user_id = I__user_id;
+        
+# 1005 "<previous_module>"
+(*newNode).payload.se = I__se;
+        
+# 1006 "<previous_module>"
+rCode = LIST_FetchParentNodeById(*IO_head, I__user_id, &parent);
+        
+# 1007 "<previous_module>"
+;
+        
+# 1008 "<previous_module>"
+static int __cs_switch_cond_LIST_InsertNodeById_1;
+        
+# 1009 "<previous_module>"
+__cs_switch_cond_LIST_InsertNodeById_1 = rCode;
+        
+# 1010 "<previous_module>"
+;_Bool __cs_tmp_if_cond_32; __cs_tmp_if_cond_32 = (__cs_switch_cond_LIST_InsertNodeById_1 == 0); 
+        if (__cs_tmp_if_cond_32)
+
+# 1011 "<previous_module>"
+        {
+                
+# 1012 "<previous_module>"
+goto __cs_switch_LIST_InsertNodeById_1_exit;
+        }
+
+        
+# 1014 "<previous_module>"
+;_Bool __cs_tmp_if_cond_33; __cs_tmp_if_cond_33 = (__cs_switch_cond_LIST_InsertNodeById_1 == ENOENT); 
+        if (__cs_tmp_if_cond_33)
+
+# 1015 "<previous_module>"
+        {
+                
+# 1016 "<previous_module>"
+__cs_switch_LIST_InsertNodeById_1_case_2:
+                
+# 1017 "<previous_module>"
+;
+
+                
+# 1018 "<previous_module>"
+(*newNode).next = 0;
+                
+# 1019 "<previous_module>"
+*IO_head = newNode;
+                
+# 1020 "<previous_module>"
+rCode = 0;
+                
+# 1021 "<previous_module>"
+goto CLEANUP;
+                
+# 1022 "<previous_module>"
+goto __cs_switch_LIST_InsertNodeById_1_case_3;
+        }
+
+        
+# 1024 "<previous_module>"
+;_Bool __cs_tmp_if_cond_34; __cs_tmp_if_cond_34 = (!((__cs_switch_cond_LIST_InsertNodeById_1 == 0) || (__cs_switch_cond_LIST_InsertNodeById_1 == ENOENT))); 
+        if (__cs_tmp_if_cond_34)
+
+# 1025 "<previous_module>"
+        {
+                
+# 1026 "<previous_module>"
+__cs_switch_LIST_InsertNodeById_1_case_3:
+                
+# 1027 "<previous_module>"
+;
+
+                
+# 1028 "<previous_module>"
+fprintf(stderr, "LIST_FetchParentNodeByName() reports: %d\n", rCode);
+                
+# 1029 "<previous_module>"
+goto CLEANUP;
+                
+# 1030 "<previous_module>"
+goto __cs_switch_LIST_InsertNodeById_1_exit;
+        }
+
+        
+# 1032 "<previous_module>"
+__cs_switch_LIST_InsertNodeById_1_exit:
+        
+# 1033 "<previous_module>"
+;
+
+        
+# 1034 "<previous_module>"
+;_Bool __cs_tmp_if_cond_35; __cs_tmp_if_cond_35 = (0 == parent); 
+        if (__cs_tmp_if_cond_35)
+
+# 1035 "<previous_module>"
+        {
+                
+# 1036 "<previous_module>"
+(*newNode).next = *IO_head;
+                
+# 1037 "<previous_module>"
+*IO_head = newNode;
+                
+# 1038 "<previous_module>"
+goto CLEANUP;
+        }
+
+        
+# 1040 "<previous_module>"
+(*newNode).next = (*parent).next;
+        
+# 1041 "<previous_module>"
+(*parent).next = newNode;
+        
+# 1042 "<previous_module>"
+CLEANUP:
+        
+# 1043 "<previous_module>"
+return rCode;
+
+}
+
+
+# 1045 "<previous_module>"
+int LIST_FetchNodeById(LIST_NODE_T *I__head, int long long unsigned I__user_id, LIST_NODE_T **_O_node, LIST_NODE_T **_O_parent)
+
+# 1046 "<previous_module>"
+{
+        
+# 1047 "<previous_module>"
+int rCode;
+        
+# 1048 "<previous_module>"
+rCode = 0;
+        
+# 1049 "<previous_module>"
+LIST_NODE_T *parent;
+        
+# 1050 "<previous_module>"
+parent = 0;
+        
+# 1051 "<previous_module>"
+LIST_NODE_T *curNode;
+        
+# 1052 "<previous_module>"
+curNode = I__head;
+        
+# 1053 "<previous_module>"
+while (curNode)
+
+# 1054 "<previous_module>"
+        {
+                
+# 1055 "<previous_module>"
+;_Bool __cs_tmp_if_cond_36; __cs_tmp_if_cond_36 = ((*curNode).payload.user_id == I__user_id); 
+                if (__cs_tmp_if_cond_36)
+
+# 1056 "<previous_module>"
+                {
+                        
+# 1057 "<previous_module>"
+break;
+                }
+
+                
+# 1059 "<previous_module>"
+parent = curNode;
+                
+# 1060 "<previous_module>"
+curNode = (*curNode).next;
+        }
+
+        
+# 1062 "<previous_module>"
+;_Bool __cs_tmp_if_cond_37; __cs_tmp_if_cond_37 = (0 == curNode); 
+        if (__cs_tmp_if_cond_37)
+
+# 1063 "<previous_module>"
+        {
+                
+# 1064 "<previous_module>"
+rCode = ENOENT;
+                
+# 1065 "<previous_module>"
+goto CLEANUP;
+        }
+
+        
+# 1067 "<previous_module>"
+;_Bool __cs_tmp_if_cond_38; __cs_tmp_if_cond_38 = (_O_node); 
+        if (__cs_tmp_if_cond_38)
+
+# 1068 "<previous_module>"
+        {
+                
+# 1069 "<previous_module>"
+*_O_node = curNode;
+        }
+
+        
+# 1071 "<previous_module>"
+;_Bool __cs_tmp_if_cond_39; __cs_tmp_if_cond_39 = (_O_parent); 
+        if (__cs_tmp_if_cond_39)
+
+# 1072 "<previous_module>"
+        {
+                
+# 1073 "<previous_module>"
+*_O_parent = parent;
+        }
+
+        
+# 1075 "<previous_module>"
+CLEANUP:
+        
+# 1076 "<previous_module>"
+return rCode;
+
+}
+
+
+# 1078 "<previous_module>"
+int LIST_DeleteNodeById(LIST_NODE_T **IO_head, int long long unsigned I__user_id)
+
+# 1079 "<previous_module>"
+{
+        
+# 1080 "<previous_module>"
+int rCode;
+        
+# 1081 "<previous_module>"
+rCode = 0;
+        
+# 1082 "<previous_module>"
+LIST_NODE_T *parent;
+        
+# 1083 "<previous_module>"
+LIST_NODE_T *delNode;
+        
+# 1084 "<previous_module>"
+delNode = 0;
+        
+# 1085 "<previous_module>"
+rCode = LIST_FetchNodeById(*IO_head, I__user_id, &delNode, &parent);
+        
+# 1086 "<previous_module>"
+;
+        
+# 1087 "<previous_module>"
+static int __cs_switch_cond_LIST_DeleteNodeById_1;
+        
+# 1088 "<previous_module>"
+__cs_switch_cond_LIST_DeleteNodeById_1 = rCode;
+        
+# 1089 "<previous_module>"
+;_Bool __cs_tmp_if_cond_40; __cs_tmp_if_cond_40 = (__cs_switch_cond_LIST_DeleteNodeById_1 == 0); 
+        if (__cs_tmp_if_cond_40)
+
+# 1090 "<previous_module>"
+        {
+                
+# 1091 "<previous_module>"
+goto __cs_switch_LIST_DeleteNodeById_1_exit;
+        }
+
+        
+# 1093 "<previous_module>"
+;_Bool __cs_tmp_if_cond_41; __cs_tmp_if_cond_41 = (__cs_switch_cond_LIST_DeleteNodeById_1 == ENOENT); 
+        if (__cs_tmp_if_cond_41)
+
+# 1094 "<previous_module>"
+        {
+                
+# 1095 "<previous_module>"
+__cs_switch_LIST_DeleteNodeById_1_case_2:
+                
+# 1096 "<previous_module>"
+;
+
+                
+# 1097 "<previous_module>"
+fprintf(stderr, "Matching node not found.\n");
+                
+# 1098 "<previous_module>"
+goto CLEANUP;
+                
+# 1099 "<previous_module>"
+goto __cs_switch_LIST_DeleteNodeById_1_case_3;
+        }
+
+        
+# 1101 "<previous_module>"
+;_Bool __cs_tmp_if_cond_42; __cs_tmp_if_cond_42 = (!((__cs_switch_cond_LIST_DeleteNodeById_1 == 0) || (__cs_switch_cond_LIST_DeleteNodeById_1 == ENOENT))); 
+        if (__cs_tmp_if_cond_42)
+
+# 1102 "<previous_module>"
+        {
+                
+# 1103 "<previous_module>"
+__cs_switch_LIST_DeleteNodeById_1_case_3:
+                
+# 1104 "<previous_module>"
+;
+
+                
+# 1105 "<previous_module>"
+fprintf(stderr, "LIST_FetchNodeByName() reports: %d\n", rCode);
+                
+# 1106 "<previous_module>"
+goto CLEANUP;
+                
+# 1107 "<previous_module>"
+goto __cs_switch_LIST_DeleteNodeById_1_exit;
+        }
+
+        
+# 1109 "<previous_module>"
+__cs_switch_LIST_DeleteNodeById_1_exit:
+        
+# 1110 "<previous_module>"
+;
+
+        
+# 1111 "<previous_module>"
+;_Bool __cs_tmp_if_cond_43; __cs_tmp_if_cond_43 = (0 == parent); 
+        if (__cs_tmp_if_cond_43)
+
+# 1112 "<previous_module>"
+        {
+                
+# 1113 "<previous_module>"
+*IO_head = (*delNode).next;
+        }
+        else
+
+# 1116 "<previous_module>"
+        {
+                
+# 1117 "<previous_module>"
+(*parent).next = (*delNode).next;
+        }
+
+        
+# 1119 "<previous_module>"
+free(delNode);
+        
+# 1120 "<previous_module>"
+CLEANUP:
+        
+# 1121 "<previous_module>"
+return rCode;
+
+}
+
+
+# 1123 "<previous_module>"
+int LIST_Destroy(LIST_NODE_T **IO_head)
+
+# 1124 "<previous_module>"
+{
+        
+# 1125 "<previous_module>"
+int rCode;
+        
+# 1126 "<previous_module>"
+rCode = 0;
+        
+# 1127 "<previous_module>"
+while (*IO_head)
+
+# 1128 "<previous_module>"
+        {
+                
+# 1129 "<previous_module>"
+LIST_NODE_T *delNode;
+                
+# 1130 "<previous_module>"
+delNode = *IO_head;
+                
+# 1131 "<previous_module>"
+*IO_head = (*(*IO_head)).next;
+                
+# 1132 "<previous_module>"
+free(delNode);
+        }
+
+        
+# 1134 "<previous_module>"
+return rCode;
+}
+
+
+# 1136 "<previous_module>"
+struct lfds711_stack_state ss;
+
+# 1137 "<previous_module>"
+struct test_data
+{
+        
+# 1139 "<previous_module>"
+struct lfds711_stack_element se;
+        
+# 1140 "<previous_module>"
+int long long unsigned user_id;
+};
+
+# 1142 "<previous_module>"
+void *push(void *__cs_unused)
+
+# 1143 "<previous_module>"
+{
+        
+# 1144 "<previous_module>"
+struct test_data *td;
+        
+# 1145 "<previous_module>"
+int long long unsigned loop;
+        
+# 1146 "<previous_module>"
+td = __cs_safe_malloc((sizeof(struct test_data)) * 1);
+        
+# 1147 "<previous_module>"
+for (loop = 0; loop < 1; loop++)
+# 1148 "<previous_module>"
+        {
+                
+# 1149 "<previous_module>"
+td[loop].user_id = loop;
+                
+# 1150 "<previous_module>"
+td[loop].se.value = (void *) ((lfds711_pal_uint_t) (&td[loop]));
+                
+# 1151 "<previous_module>"
+lfds711_stack_push(&ss, &td[loop].se);
+        }
+
+}
+
+
+# 1154 "<previous_module>"
+void *pop(void *__cs_unused)
+
+# 1155 "<previous_module>"
+{
+        
+# 1156 "<previous_module>"
+struct lfds711_stack_element *se;
+        
+# 1157 "<previous_module>"
+struct test_data *temp_td;
+        
+# 1158 "<previous_module>"
+int res;
+        
+# 1159 "<previous_module>"
+int count;
+        
+# 1160 "<previous_module>"
+count = 0;
+        
+# 1161 "<previous_module>"
+int loop;
+        
+# 1162 "<previous_module>"
+for (loop = 0; loop < 1; loop++)
+# 1163 "<previous_module>"
+        {
+                
+# 1164 "<previous_module>"
+temp_td = 0;
+                
+# 1165 "<previous_module>"
+res = lfds711_stack_pop(&ss, &se);
+                
+# 1166 "<previous_module>"
+;_Bool __cs_tmp_if_cond_44; __cs_tmp_if_cond_44 = (res == 0); 
+                if (__cs_tmp_if_cond_44)
+
+# 1167 "<previous_module>"
+                {
+                        
+# 1168 "<previous_module>"
 continue;
                 }
 
                 
-# 874 "<previous_module>"
+# 1170 "<previous_module>"
 temp_td = (*se).value;
                 
-# 875 "<previous_module>"
+# 1171 "<previous_module>"
 count++;
-                
-# 876 "<previous_module>"
-printf("%llu\n", (*temp_td).user_id);
         }
 
-        
-# 878 "<previous_module>"
-__CSEQ_assert(count == 3);
 }
 
 
-# 880 "<previous_module>"
-int main()
+# 1174 "<previous_module>"
+void writeIntofile(char *filename, LIST_NODE_T *listHead)
 
-# 881 "<previous_module>"
+# 1175 "<previous_module>"
 {
         
-# 882 "<previous_module>"
+# 1176 "<previous_module>"
+int filefd;
+        
+# 1177 "<previous_module>"
+filefd = open(filename, (O_WRONLY | O_CREAT) | O_APPEND, 0666);
+        
+# 1178 "<previous_module>"
+int saved;
+        
+# 1179 "<previous_module>"
+saved = dup(1);
+        
+# 1180 "<previous_module>"
+close(1);
+        
+# 1181 "<previous_module>"
+dup(filefd);
+        
+# 1182 "<previous_module>"
+PrintListPayloads(listHead);
+        
+# 1183 "<previous_module>"
+close(filefd);
+        
+# 1184 "<previous_module>"
+fflush(stdout);
+        
+# 1185 "<previous_module>"
+dup2(saved, 1);
+        
+# 1186 "<previous_module>"
+close(saved);
+}
+
+
+# 1188 "<previous_module>"
+LIST_NODE_T *createList(LIST_NODE_T *listHead)
+
+# 1189 "<previous_module>"
+{
+        
+# 1190 "<previous_module>"
+struct lfds711_stack_element *se;
+        
+# 1191 "<previous_module>"
+struct test_data *temp_td;
+        
+# 1192 "<previous_module>"
+int res;
+        
+# 1193 "<previous_module>"
+res = lfds711_stack_pop(&ss, &se);
+        
+# 1194 "<previous_module>"
+while (res != 0)
+
+# 1195 "<previous_module>"
+        {
+                
+# 1196 "<previous_module>"
+temp_td = (*se).value;
+                
+# 1197 "<previous_module>"
+LIST_InsertHeadNode(&listHead, (*temp_td).se, (*temp_td).user_id);
+                
+# 1198 "<previous_module>"
+res = lfds711_stack_pop(&ss, &se);
+        }
+
+        
+# 1200 "<previous_module>"
+return listHead;
+}
+
+
+# 1202 "<previous_module>"
+void readFile(char *filename, LIST_NODE_T *listHead)
+
+# 1203 "<previous_module>"
+{
+        
+# 1204 "<previous_module>"
+char *line;
+        
+# 1205 "<previous_module>"
+line = 0;
+        
+# 1206 "<previous_module>"
+size_t len;
+        
+# 1207 "<previous_module>"
+len = 0;
+        
+# 1208 "<previous_module>"
+ssize_t read;
+        
+# 1209 "<previous_module>"
+LIST_NODE_T *parent;
+        
+# 1210 "<previous_module>"
+parent = 0;
+        
+# 1211 "<previous_module>"
+LIST_NODE_T *curNode;
+        
+# 1212 "<previous_module>"
+curNode = listHead;
+        
+# 1213 "<previous_module>"
+char delim[] = ",";
+        
+# 1214 "<previous_module>"
+int i;
+        
+# 1215 "<previous_module>"
+i = 0;
+        
+# 1216 "<previous_module>"
+int size;
+        
+# 1217 "<previous_module>"
+size = GetListSize(curNode);
+        
+# 1218 "<previous_module>"
+FILE *fp;
+        
+# 1219 "<previous_module>"
+fp = fopen(filename, "r");
+        
+# 1220 "<previous_module>"
+;_Bool __cs_tmp_if_cond_45; __cs_tmp_if_cond_45 = (!fp); 
+        if (__cs_tmp_if_cond_45)
+
+# 1221 "<previous_module>"
+        {
+                
+# 1222 "<previous_module>"
+writeIntofile(filename, listHead);
+                
+# 1223 "<previous_module>"
+__CSEQ_assert(0);
+                
+# 1224 "<previous_module>"
+return;
+        }
+
+        
+# 1226 "<previous_module>"
+while ((read = getline(&line, &len, fp)) != (-1))
+
+# 1227 "<previous_module>"
+        {
+                
+# 1228 "<previous_module>"
+char *ptr;
+                
+# 1229 "<previous_module>"
+ptr = strtok(line, delim);
+                
+# 1230 "<previous_module>"
+while (curNode)
+
+# 1231 "<previous_module>"
+                {
+                        
+# 1232 "<previous_module>"
+;_Bool __cs_tmp_if_cond_46; __cs_tmp_if_cond_46 = ((*curNode).payload.user_id != atoi(ptr)); 
+                        if (__cs_tmp_if_cond_46)
+
+# 1233 "<previous_module>"
+                        {
+                                
+# 1234 "<previous_module>"
+break;
+                        }
+
+                        
+# 1236 "<previous_module>"
+i++;
+                        
+# 1237 "<previous_module>"
+parent = curNode;
+                        
+# 1238 "<previous_module>"
+curNode = (*curNode).next;
+                        
+# 1239 "<previous_module>"
+ptr = strtok(0, delim);
+                }
+
+                
+# 1241 "<previous_module>"
+;_Bool __cs_tmp_if_cond_47; __cs_tmp_if_cond_47 = (i == size); 
+                if (__cs_tmp_if_cond_47)
+
+# 1242 "<previous_module>"
+                {
+                        
+# 1243 "<previous_module>"
+fclose(fp);
+                        
+# 1244 "<previous_module>"
+return;
+                }
+
+                
+# 1246 "<previous_module>"
+i = 0;
+        }
+
+        
+# 1248 "<previous_module>"
+;_Bool __cs_tmp_if_cond_48; __cs_tmp_if_cond_48 = (i != size); 
+        if (__cs_tmp_if_cond_48)
+
+# 1249 "<previous_module>"
+        {
+                
+# 1250 "<previous_module>"
+writeIntofile(filename, listHead);
+                
+# 1251 "<previous_module>"
+__CSEQ_assert(0);
+                
+# 1252 "<previous_module>"
+return;
+        }
+
+}
+
+
+# 1255 "<previous_module>"
+int main()
+
+# 1256 "<previous_module>"
+{
+        
+# 1257 "<previous_module>"
+LIST_NODE_T *listHead;
+        
+# 1258 "<previous_module>"
+listHead = 0;
+        
+# 1259 "<previous_module>"
 lfds711_stack_init_valid_on_current_logical_core(&ss, 0);
         
-# 883 "<previous_module>"
+# 1260 "<previous_module>"
 __cs_t t1;
         
-# 884 "<previous_module>"
+# 1261 "<previous_module>"
 __cs_t t2;
         
-# 885 "<previous_module>"
-__cs_mutex_init(&lock, 0);
-        
-# 886 "<previous_module>"
+# 1262 "<previous_module>"
 __cs_create(&t1, 0, push, 0);
         
-# 887 "<previous_module>"
+# 1263 "<previous_module>"
 __cs_create(&t2, 0, pop, 0);
         
-# 888 "<previous_module>"
+# 1264 "<previous_module>"
 __cs_join(t1, 0);
         
-# 889 "<previous_module>"
+# 1265 "<previous_module>"
 __cs_join(t2, 0);
         
-# 890 "<previous_module>"
+# 1266 "<previous_module>"
+listHead = createList(listHead);
+        
+# 1267 "<previous_module>"
+readFile("foo.txt", listHead);
+        
+# 1268 "<previous_module>"
 return 0;
 }
 

@@ -564,7 +564,14 @@ void *query_input,
 void *query_output);
 #pragma warning( pop )
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs);
+__cs_mutex_t lock;
 _Bool __atomic_compare_exchange_n(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
+{
+int res;
+res = __CSEQ_atomic_compare_and_exchange(mptr, eptr, newval, weak_p, sm, fm);
+return res;
+}
+_Bool __CSEQ_atomic_compare_and_exchange(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
 {
 if ((*mptr) == (*eptr))
         {
@@ -579,6 +586,12 @@ return 0;
 }
 unsigned long __atomic_exchange_n(int long long unsigned *previous, int long long unsigned new, int memorder)
 {
+int res;
+res = __CSEQ_atomic_exchange(previous, new, memorder);
+return res;
+}
+unsigned long __CSEQ_atomic_exchange(int long long unsigned *previous, int long long unsigned new, int memorder)
+{
 unsigned long int old;
 old = *previous;
 *previous = new;
@@ -587,7 +600,7 @@ return old;
 void __atomic_thread_fence(int i)
 {
 }
-int swap_stack_top(struct lfds711_stack_element * volatile *top, struct lfds711_stack_element * volatile *oldtop, 
+int __CSEQ_atomic_swap_stack_top(struct lfds711_stack_element * volatile *top, struct lfds711_stack_element * volatile *oldtop, 
 struct lfds711_stack_element **newtop)
 {
 if ((*oldtop) == (*top))
@@ -604,12 +617,11 @@ return 0;
 void exponential_backoff()
 {
 int loop;
-for (loop = 0; loop < 10; loop)
+for (loop = 0; loop < 10; loop++)
         {
 ;
         }
 }
-__cs_mutex_t lock;
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs)
 {
 if (!(bs != 0))
@@ -713,7 +725,7 @@ return 0;
 new_top[1] = original_top[1] + 1;
 new_top[0] = (*original_top[0]).next;
 __cs_mutex_lock(&lock);
-result = swap_stack_top(&(*ss).top[0], &original_top[0], &new_top[0]);
+result = __CSEQ_atomic_swap_stack_top(&(*ss).top[0], &original_top[0], &new_top[0]);
 __cs_mutex_unlock(&lock);
 if (result == 0)
                 {
@@ -722,7 +734,7 @@ __cs_mutex_lock(&lock);
 __cs_mutex_unlock(&lock);
                 }
 i++;
-if (i > 100)
+if (i > 1000)
                 {
 break;
                 }
@@ -769,14 +781,14 @@ __cs_mutex_lock(&lock);
 __cs_mutex_unlock(&lock);
 new_top[1] = original_top[1] + 1;
 __cs_mutex_lock(&lock);
-result = swap_stack_top(&(*ss).top[0], &original_top[0], &new_top[0]);
+result = __CSEQ_atomic_swap_stack_top(&(*ss).top[0], &original_top[0], &new_top[0]);
 __cs_mutex_unlock(&lock);
 if (result == 0)
                 {
 exponential_backoff();
                 }
 i++;
-if (i > 100)
+if (i > 1000)
                 {
 break;
                 }
@@ -809,8 +821,286 @@ element_cleanup_callback(ss, se_temp);
         }
 return;
 }
+typedef struct NODE_PAYLOAD_S
+{
+struct lfds711_stack_element se;
+int long long unsigned user_id;
+} NODE_PAYLOAD_T;
+typedef struct LIST_NODE_S
+{
+struct LIST_NODE_S *next;
+NODE_PAYLOAD_T payload;
+} LIST_NODE_T;
+int LIST_InsertHeadNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__se, int long long unsigned I__user_id)
+{
+int rCode;
+rCode = 0;
+LIST_NODE_T *newNode;
+newNode = 0;
+newNode = __cs_safe_malloc(sizeof(*newNode));
+if (0 == newNode)
+        {
+rCode = 12;
+fprintf(stderr, "malloc() failed.\n");
+goto CLEANUP;
+        }
+(*newNode).payload.se = I__se;
+(*newNode).payload.user_id = I__user_id;
+(*newNode).next = *IO_head;
+*IO_head = newNode;
+CLEANUP:
+return rCode;
+}
+int PrintListPayloads(LIST_NODE_T *head)
+{
+int rCode;
+rCode = 0;
+LIST_NODE_T *cur;
+cur = head;
+while (cur)
+        {
+printf("%lld", (*cur).payload.user_id);
+cur = (*cur).next;
+if (cur != 0)
+                {
+printf(",");
+                }
+        }
+printf("\n");
+return rCode;
+}
+int GetListSize(LIST_NODE_T *head)
+{
+LIST_NODE_T *cur;
+cur = head;
+int nodeCnt;
+nodeCnt = 0;
+while (cur)
+        {
+++nodeCnt;
+cur = (*cur).next;
+        }
+return nodeCnt;
+}
+int LIST_GetTailNode(LIST_NODE_T *I__listHead, LIST_NODE_T **_O_listTail)
+{
+int rCode;
+rCode = 0;
+LIST_NODE_T *curNode;
+curNode = I__listHead;
+if (curNode)
+        {
+while ((*curNode).next)
+                {
+curNode = (*curNode).next;
+                }
+        }
+if (_O_listTail)
+        {
+*_O_listTail = curNode;
+        }
+return rCode;
+}
+int LIST_InsertTailNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__se, int long long unsigned I__user_id)
+{
+int rCode;
+rCode = 0;
+LIST_NODE_T *tailNode;
+LIST_NODE_T *newNode;
+newNode = 0;
+rCode = LIST_GetTailNode(*IO_head, &tailNode);
+if (rCode)
+        {
+fprintf(stderr, "LIST_GetTailNode() reports: %d\n", rCode);
+goto CLEANUP;
+        }
+newNode = __cs_safe_malloc(sizeof(*newNode));
+if (0 == newNode)
+        {
+rCode = 12;
+fprintf(stderr, "malloc() failed.\n");
+goto CLEANUP;
+        }
+(*newNode).payload.user_id = I__user_id;
+(*newNode).payload.se = I__se;
+(*newNode).next = 0;
+if (tailNode)
+        {
+(*tailNode).next = newNode;
+        }
+        else
+        {
+*IO_head = newNode;
+        }
+CLEANUP:
+return rCode;
+}
+int LIST_FetchParentNodeById(LIST_NODE_T *I__head, int long long unsigned I__user_id, LIST_NODE_T **_O_parent)
+{
+int rCode;
+rCode = 0;
+LIST_NODE_T *parent;
+parent = 0;
+LIST_NODE_T *curNode;
+curNode = I__head;
+if (0 == I__head)
+        {
+rCode = ENOENT;
+goto CLEANUP;
+        }
+while (curNode)
+        {
+if ((*curNode).payload.user_id > I__user_id)
+                {
+break;
+                }
+parent = curNode;
+curNode = (*curNode).next;
+        }
+if (_O_parent)
+        {
+*_O_parent = parent;
+        }
+CLEANUP:
+return rCode;
+}
+int LIST_InsertNodeById(LIST_NODE_T **IO_head, int long long unsigned I__user_id, struct lfds711_stack_element I__se)
+{
+int rCode;
+rCode = 0;
+LIST_NODE_T *parent;
+LIST_NODE_T *newNode;
+newNode = 0;
+newNode = __cs_safe_malloc(sizeof(*newNode));
+if (0 == newNode)
+        {
+rCode = 12;
+fprintf(stderr, "malloc() failed.\n");
+goto CLEANUP;
+        }
+(*newNode).payload.user_id = I__user_id;
+(*newNode).payload.se = I__se;
+rCode = LIST_FetchParentNodeById(*IO_head, I__user_id, &parent);
+        ; static int __cs_switch_cond_LIST_InsertNodeById_1;__cs_switch_cond_LIST_InsertNodeById_1 = rCode;
+if (__cs_switch_cond_LIST_InsertNodeById_1 == 0)
+                {
+                    goto __cs_switch_LIST_InsertNodeById_1_exit;
+                }
+if (__cs_switch_cond_LIST_InsertNodeById_1 == ENOENT)
+                {
+                    __cs_switch_LIST_InsertNodeById_1_case_2:;
+(*newNode).next = 0;
+*IO_head = newNode;
+rCode = 0;
+goto CLEANUP;
+                    goto __cs_switch_LIST_InsertNodeById_1_case_3;
+                }
+if (!(__cs_switch_cond_LIST_InsertNodeById_1 == 0 || __cs_switch_cond_LIST_InsertNodeById_1 == ENOENT)) 
+                {
+                    __cs_switch_LIST_InsertNodeById_1_case_3:;
+fprintf(stderr, "LIST_FetchParentNodeByName() reports: %d\n", rCode);
+goto CLEANUP;
+                    goto __cs_switch_LIST_InsertNodeById_1_exit;
+                }
+                __cs_switch_LIST_InsertNodeById_1_exit:;
+if (0 == parent)
+        {
+(*newNode).next = *IO_head;
+*IO_head = newNode;
+goto CLEANUP;
+        }
+(*newNode).next = (*parent).next;
+(*parent).next = newNode;
+CLEANUP:
+return rCode;
+}
+int LIST_FetchNodeById(LIST_NODE_T *I__head, int long long unsigned I__user_id, LIST_NODE_T **_O_node, LIST_NODE_T **_O_parent)
+{
+int rCode;
+rCode = 0;
+LIST_NODE_T *parent;
+parent = 0;
+LIST_NODE_T *curNode;
+curNode = I__head;
+while (curNode)
+        {
+if ((*curNode).payload.user_id == I__user_id)
+                {
+break;
+                }
+parent = curNode;
+curNode = (*curNode).next;
+        }
+if (0 == curNode)
+        {
+rCode = ENOENT;
+goto CLEANUP;
+        }
+if (_O_node)
+        {
+*_O_node = curNode;
+        }
+if (_O_parent)
+        {
+*_O_parent = parent;
+        }
+CLEANUP:
+return rCode;
+}
+int LIST_DeleteNodeById(LIST_NODE_T **IO_head, int long long unsigned I__user_id)
+{
+int rCode;
+rCode = 0;
+LIST_NODE_T *parent;
+LIST_NODE_T *delNode;
+delNode = 0;
+rCode = LIST_FetchNodeById(*IO_head, I__user_id, &delNode, &parent);
+        ; static int __cs_switch_cond_LIST_DeleteNodeById_1;__cs_switch_cond_LIST_DeleteNodeById_1 = rCode;
+if (__cs_switch_cond_LIST_DeleteNodeById_1 == 0)
+                {
+                    goto __cs_switch_LIST_DeleteNodeById_1_exit;
+                }
+if (__cs_switch_cond_LIST_DeleteNodeById_1 == ENOENT)
+                {
+                    __cs_switch_LIST_DeleteNodeById_1_case_2:;
+fprintf(stderr, "Matching node not found.\n");
+goto CLEANUP;
+                    goto __cs_switch_LIST_DeleteNodeById_1_case_3;
+                }
+if (!(__cs_switch_cond_LIST_DeleteNodeById_1 == 0 || __cs_switch_cond_LIST_DeleteNodeById_1 == ENOENT)) 
+                {
+                    __cs_switch_LIST_DeleteNodeById_1_case_3:;
+fprintf(stderr, "LIST_FetchNodeByName() reports: %d\n", rCode);
+goto CLEANUP;
+                    goto __cs_switch_LIST_DeleteNodeById_1_exit;
+                }
+                __cs_switch_LIST_DeleteNodeById_1_exit:;
+if (0 == parent)
+        {
+*IO_head = (*delNode).next;
+        }
+        else
+        {
+(*parent).next = (*delNode).next;
+        }
+free(delNode);
+CLEANUP:
+return rCode;
+}
+int LIST_Destroy(LIST_NODE_T **IO_head)
+{
+int rCode;
+rCode = 0;
+while (*IO_head)
+        {
+LIST_NODE_T *delNode;
+delNode = *IO_head;
+*IO_head = (*(*IO_head)).next;
+free(delNode);
+        }
+return rCode;
+}
 struct lfds711_stack_state ss;
-__cs_mutex_t lock;
 struct test_data
 {
 struct lfds711_stack_element se;
@@ -820,49 +1110,127 @@ void *push(void *__cs_unused)
 {
 struct test_data *td;
 int long long unsigned loop;
-td = __cs_safe_malloc((sizeof(struct test_data)) * 3);
-for (loop = 0; loop < 3; loop++)
+td = __cs_safe_malloc((sizeof(struct test_data)) * 1);
+for (loop = 0; loop < 1; loop++)
         {
-;
 td[loop].user_id = loop;
 td[loop].se.value = (void *) ((lfds711_pal_uint_t) (&td[loop]));
 lfds711_stack_push(&ss, &td[loop].se);
-;
         }
 }
 void *pop(void *__cs_unused)
 {
-int long long unsigned loop;
 struct lfds711_stack_element *se;
 struct test_data *temp_td;
 int res;
 int count;
 count = 0;
-for (loop = 0; loop < 3; loop++)
+int loop;
+for (loop = 0; loop < 1; loop++)
         {
 temp_td = 0;
-;
 res = lfds711_stack_pop(&ss, &se);
-;
 if (res == 0)
                 {
 continue;
                 }
 temp_td = (*se).value;
 count++;
-printf("%llu\n", (*temp_td).user_id);
         }
-__CSEQ_assert(count == 3);
+}
+void writeIntofile(char *filename, LIST_NODE_T *listHead)
+{
+int filefd;
+filefd = open(filename, (O_WRONLY | O_CREAT) | O_APPEND, 0666);
+int saved;
+saved = dup(1);
+close(1);
+dup(filefd);
+PrintListPayloads(listHead);
+close(filefd);
+fflush(stdout);
+dup2(saved, 1);
+close(saved);
+}
+LIST_NODE_T *createList(LIST_NODE_T *listHead)
+{
+struct lfds711_stack_element *se;
+struct test_data *temp_td;
+int res;
+res = lfds711_stack_pop(&ss, &se);
+while (res != 0)
+        {
+temp_td = (*se).value;
+LIST_InsertHeadNode(&listHead, (*temp_td).se, (*temp_td).user_id);
+res = lfds711_stack_pop(&ss, &se);
+        }
+return listHead;
+}
+void readFile(char *filename, LIST_NODE_T *listHead)
+{
+char *line;
+line = 0;
+size_t len;
+len = 0;
+ssize_t read;
+LIST_NODE_T *parent;
+parent = 0;
+LIST_NODE_T *curNode;
+curNode = listHead;
+char delim[] = ",";
+int i;
+i = 0;
+int size;
+size = GetListSize(curNode);
+FILE *fp;
+fp = fopen(filename, "r");
+if (!fp)
+        {
+writeIntofile(filename, listHead);
+__CSEQ_assert(0);
+return;
+        }
+while ((read = getline(&line, &len, fp)) != (-1))
+        {
+char *ptr;
+ptr = strtok(line, delim);
+while (curNode)
+                {
+if ((*curNode).payload.user_id != atoi(ptr))
+                        {
+break;
+                        }
+i++;
+parent = curNode;
+curNode = (*curNode).next;
+ptr = strtok(0, delim);
+                }
+if (i == size)
+                {
+fclose(fp);
+return;
+                }
+i = 0;
+        }
+if (i != size)
+        {
+writeIntofile(filename, listHead);
+__CSEQ_assert(0);
+return;
+        }
 }
 int main()
 {
+LIST_NODE_T *listHead;
+listHead = 0;
 lfds711_stack_init_valid_on_current_logical_core(&ss, 0);
 __cs_t t1;
 __cs_t t2;
-__cs_mutex_init(&lock, 0);
 __cs_create(&t1, 0, push, 0);
 __cs_create(&t2, 0, pop, 0);
 __cs_join(t1, 0);
 __cs_join(t2, 0);
+listHead = createList(listHead);
+readFile("foo.txt", listHead);
 return 0;
 }

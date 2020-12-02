@@ -2,6 +2,7 @@
 #include <stdio.h> 
 #include <errno.h>   
 #include <string.h> 
+#define	ENOMEM		12
    
 typedef struct NODE_PAYLOAD_S
 	{

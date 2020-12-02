@@ -2266,7 +2266,7 @@ extern int pthread_atfork (void (*__prepare) (void),
       void (*__parent) (void),
       void (*__child) (void)) __attribute__ ((__nothrow__ , __leaf__));
 
-static _Bool __atomic_compare_exchange_n(volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, _Bool weak_p __attribute__((unused)), int sm __attribute__((unused)), int fm __attribute__((unused)))
+static _Bool __VERIFIER_atomic_compare_and_exchange(volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, _Bool weak_p __attribute__((unused)), int sm __attribute__((unused)), int fm __attribute__((unused)))
 {
  if (*mptr == *eptr)
  {
@@ -2279,7 +2279,7 @@ static _Bool __atomic_compare_exchange_n(volatile int long long unsigned *mptr, 
   return 0;
  }
 }
-unsigned long __atomic_exchange_n(volatile int long long unsigned *previous, int long long unsigned new, int memorder)
+unsigned long __VERIFIER_atomic_exchange(volatile int long long unsigned *previous, int long long unsigned new, int memorder)
 {
  unsigned long int old = *previous;
  *previous = new;
@@ -2288,7 +2288,7 @@ unsigned long __atomic_exchange_n(volatile int long long unsigned *previous, int
 void __atomic_thread_fence(int i)
 {
 }
-int swap_stack_top(struct lfds711_stack_element * volatile* top, struct lfds711_stack_element * volatile* oldtop,
+int __VERIFIER_atomic_swap_stack_top(struct lfds711_stack_element * volatile* top, struct lfds711_stack_element * volatile* oldtop,
     struct lfds711_stack_element **newtop)
 {
  if (*oldtop == *top)
@@ -2304,7 +2304,7 @@ int swap_stack_top(struct lfds711_stack_element * volatile* top, struct lfds711_
 }
 void exponential_backoff(){
  int loop;
- for (loop = 0; loop < 10; loop);
+ for (loop = 0; loop < 10; loop++);
 }
 pthread_mutex_t lock;
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs)
@@ -2361,7 +2361,7 @@ int lfds711_stack_pop(struct lfds711_stack_state *ss,
   new_top[1] = original_top[1] + 1;
   new_top[0] = original_top[0]->next;
   pthread_mutex_lock(&lock);
-  result = swap_stack_top(&(ss->top[0]), &(original_top[0]), &(new_top[0]));
+  result = __VERIFIER_atomic_swap_stack_top(&(ss->top[0]), &(original_top[0]), &(new_top[0]));
   pthread_mutex_unlock(&lock);
   if (result == 0)
   {
@@ -2370,7 +2370,7 @@ int lfds711_stack_pop(struct lfds711_stack_state *ss,
    pthread_mutex_unlock(&lock);
   }
   i++;
-  if (i > 100)
+  if (i > 1000)
    break;
  } while (result == 0);
  *se = original_top[0];
@@ -2399,12 +2399,12 @@ void lfds711_stack_push(struct lfds711_stack_state *ss,
   pthread_mutex_unlock(&lock);
   new_top[1] = original_top[1] + 1;
   pthread_mutex_lock(&lock);
-  result = swap_stack_top(&(ss->top[0]), &(original_top[0]), &(new_top[0]));
+  result = __VERIFIER_atomic_swap_stack_top(&(ss->top[0]), &(original_top[0]), &(new_top[0]));
   pthread_mutex_unlock(&lock);
   if (result == 0)
    exponential_backoff();
   i++;
-  if (i > 100)
+  if (i > 1000)
    break;
  }
  return;
@@ -2439,8 +2439,370 @@ extern void __assert_perror_fail (int __errnum, const char *__file,
 extern void __assert (const char *__assertion, const char *__file, int __line)
      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
 
+
+extern int *__errno_location (void) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+       size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern void *memmove (void *__dest, const void *__src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern void *memccpy (void *__restrict __dest, const void *__restrict __src,
+        int __c, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern void *memset (void *__s, int __c, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+extern int memcmp (const void *__s1, const void *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern void *memchr (const void *__s, int __c, size_t __n)
+      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *strncpy (char *__restrict __dest,
+        const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *strcat (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *strncat (char *__restrict __dest, const char *__restrict __src,
+        size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern int strcmp (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern int strncmp (const char *__s1, const char *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern int strcoll (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern size_t strxfrm (char *__restrict __dest,
+         const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+extern int strcoll_l (const char *__s1, const char *__s2, locale_t __l)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
+extern size_t strxfrm_l (char *__dest, const char *__src, size_t __n,
+    locale_t __l) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 4)));
+extern char *strdup (const char *__s)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
+extern char *strndup (const char *__string, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
+extern char *strchr (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern char *strrchr (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern size_t strcspn (const char *__s, const char *__reject)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern size_t strspn (const char *__s, const char *__accept)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *strpbrk (const char *__s, const char *__accept)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *strstr (const char *__haystack, const char *__needle)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *strtok (char *__restrict __s, const char *__restrict __delim)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+extern char *__strtok_r (char *__restrict __s,
+    const char *__restrict __delim,
+    char **__restrict __save_ptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 3)));
+extern char *strtok_r (char *__restrict __s, const char *__restrict __delim,
+         char **__restrict __save_ptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 3)));
+extern size_t strlen (const char *__s)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern size_t strnlen (const char *__string, size_t __maxlen)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern char *strerror (int __errnum) __attribute__ ((__nothrow__ , __leaf__));
+extern int strerror_r (int __errnum, char *__buf, size_t __buflen) __asm__ ("" "__xpg_strerror_r") __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+extern char *strerror_l (int __errnum, locale_t __l) __attribute__ ((__nothrow__ , __leaf__));
+
+extern int bcmp (const void *__s1, const void *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern void bcopy (const void *__src, void *__dest, size_t __n)
+  __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern void bzero (void *__s, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+extern char *index (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern char *rindex (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern int ffs (int __i) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+extern int ffsl (long int __l) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+__extension__ extern int ffsll (long long int __ll)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+extern int strcasecmp (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern int strncasecmp (const char *__s1, const char *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern int strcasecmp_l (const char *__s1, const char *__s2, locale_t __loc)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
+extern int strncasecmp_l (const char *__s1, const char *__s2,
+     size_t __n, locale_t __loc)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 4)));
+
+extern void explicit_bzero (void *__s, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+extern char *strsep (char **__restrict __stringp,
+       const char *__restrict __delim)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *strsignal (int __sig) __attribute__ ((__nothrow__ , __leaf__));
+extern char *__stpcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *stpcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *__stpncpy (char *__restrict __dest,
+   const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *stpncpy (char *__restrict __dest,
+        const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+typedef struct NODE_PAYLOAD_S
+ {
+ struct lfds711_stack_element se;
+ int long long unsigned user_id;
+ } NODE_PAYLOAD_T;
+typedef struct LIST_NODE_S
+    {
+    struct LIST_NODE_S *next;
+    NODE_PAYLOAD_T payload;
+    } LIST_NODE_T;
+int LIST_InsertHeadNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__se, int long long unsigned I__user_id)
+{
+   int rCode=0;
+   LIST_NODE_T *newNode = ((void *)0);
+   newNode=malloc(sizeof(*newNode));
+   if(((void *)0) == newNode)
+      {
+      rCode=12;
+      fprintf(stderr, "malloc() failed.\n");
+      goto CLEANUP;
+      }
+   newNode->payload.se = I__se;
+   newNode->payload.user_id = I__user_id;
+   newNode->next = *IO_head;
+   *IO_head = newNode;
+CLEANUP:
+   return(rCode);
+}
+int PrintListPayloads(LIST_NODE_T *head)
+{
+ int rCode=0;
+ LIST_NODE_T *cur = head;
+ while(cur)
+ {
+     printf("%lld",cur->payload.user_id);
+  cur=cur->next;
+      if(cur!=((void *)0))
+         printf(",");
+    }
+   printf("\n");
+   return(rCode);
+}
+int GetListSize(LIST_NODE_T *head)
+{
+ LIST_NODE_T *cur = head;
+ int nodeCnt=0;
+   while(cur)
+   {
+      ++nodeCnt;
+      cur = cur->next;
+   }
+   return nodeCnt;
+}
+int LIST_GetTailNode(LIST_NODE_T *I__listHead, LIST_NODE_T **_O_listTail )
+   {
+   int rCode=0;
+   LIST_NODE_T *curNode = I__listHead;
+   if(curNode)
+      {
+      while(curNode->next)
+         curNode=curNode->next;
+      }
+   if(_O_listTail)
+      *_O_listTail = curNode;
+   return(rCode);
+   }
+int LIST_InsertTailNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__se, int long long unsigned I__user_id)
+{
+   int rCode=0;
+   LIST_NODE_T *tailNode;
+   LIST_NODE_T *newNode = ((void *)0);
+   rCode=LIST_GetTailNode(*IO_head, &tailNode);
+   if(rCode)
+      {
+      fprintf(stderr, "LIST_GetTailNode() reports: %d\n", rCode);
+      goto CLEANUP;
+      }
+   newNode=malloc(sizeof(*newNode));
+   if(((void *)0) == newNode)
+      {
+      rCode=12;
+      fprintf(stderr, "malloc() failed.\n");
+      goto CLEANUP;
+      }
+   newNode->payload.user_id = I__user_id;
+   newNode->payload.se = I__se;
+   newNode->next = ((void *)0);
+   if(tailNode)
+      tailNode->next = newNode;
+   else
+      *IO_head = newNode;
+CLEANUP:
+   return(rCode);
+}
+int LIST_FetchParentNodeById(LIST_NODE_T *I__head, int long long unsigned I__user_id,LIST_NODE_T **_O_parent)
+   {
+   int rCode=0;
+   LIST_NODE_T *parent = ((void *)0);
+   LIST_NODE_T *curNode = I__head;
+   if(((void *)0) == I__head)
+      {
+      rCode=2;
+      goto CLEANUP;
+      }
+   while(curNode)
+      {
+      if(curNode->payload.user_id > I__user_id)
+         break;
+      parent = curNode;
+      curNode=curNode->next;
+      }
+   if(_O_parent)
+      *_O_parent = parent;
+CLEANUP:
+   return(rCode);
+   }
+int LIST_InsertNodeById(LIST_NODE_T **IO_head, int long long unsigned I__user_id, struct lfds711_stack_element I__se)
+{
+   int rCode=0;
+   LIST_NODE_T *parent;
+   LIST_NODE_T *newNode = ((void *)0);
+   newNode=malloc(sizeof(*newNode));
+   if(((void *)0) == newNode)
+      {
+      rCode=12;
+      fprintf(stderr, "malloc() failed.\n");
+      goto CLEANUP;
+      }
+   newNode->payload.user_id = I__user_id;
+   newNode->payload.se = I__se;
+   rCode=LIST_FetchParentNodeById(*IO_head, I__user_id, &parent);
+   switch(rCode)
+      {
+      case 0:
+         break;
+      case 2:
+         newNode->next = ((void *)0);
+         *IO_head = newNode;
+         rCode=0;
+         goto CLEANUP;
+      default:
+         fprintf(stderr, "LIST_FetchParentNodeByName() reports: %d\n", rCode);
+         goto CLEANUP;
+      }
+   if(((void *)0) == parent)
+      {
+      newNode->next = *IO_head;
+      *IO_head = newNode;
+      goto CLEANUP;
+      }
+   newNode->next = parent->next;
+   parent->next = newNode;
+CLEANUP:
+   return(rCode);
+ }
+int LIST_FetchNodeById(LIST_NODE_T *I__head,int long long unsigned I__user_id,LIST_NODE_T **_O_node,LIST_NODE_T **_O_parent)
+{
+   int rCode=0;
+   LIST_NODE_T *parent = ((void *)0);
+   LIST_NODE_T *curNode = I__head;
+   while(curNode)
+      {
+      if(curNode->payload.user_id == I__user_id)
+         break;
+      parent = curNode;
+      curNode=curNode->next;
+      }
+   if(((void *)0) == curNode)
+     {
+     rCode=2;
+     goto CLEANUP;
+     }
+   if(_O_node)
+      *_O_node = curNode;
+   if(_O_parent)
+      *_O_parent = parent;
+CLEANUP:
+   return(rCode);
+}
+int LIST_DeleteNodeById(LIST_NODE_T **IO_head, int long long unsigned I__user_id)
+{
+   int rCode=0;
+   LIST_NODE_T *parent;
+   LIST_NODE_T *delNode = ((void *)0);
+   rCode=LIST_FetchNodeById(*IO_head, I__user_id, &delNode, &parent);
+   switch(rCode)
+      {
+      case 0:
+         break;
+      case 2:
+         fprintf(stderr, "Matching node not found.\n");
+         goto CLEANUP;
+      default:
+         fprintf(stderr, "LIST_FetchNodeByName() reports: %d\n", rCode);
+         goto CLEANUP;
+      }
+   if(((void *)0) == parent)
+      *IO_head = delNode->next;
+   else
+      parent->next = delNode->next;
+   free(delNode);
+CLEANUP:
+   return(rCode);
+}
+int LIST_Destroy(LIST_NODE_T **IO_head)
+{
+   int rCode=0;
+   while(*IO_head)
+      {
+      LIST_NODE_T *delNode = *IO_head;
+      *IO_head = (*IO_head)->next;
+      free(delNode);
+      }
+   return(rCode);
+}
+
+struct flock
+  {
+    short int l_type;
+    short int l_whence;
+    __off_t l_start;
+    __off_t l_len;
+    __pid_t l_pid;
+  };
+
+
+struct stat
+  {
+    __dev_t st_dev;
+    __ino_t st_ino;
+    __nlink_t st_nlink;
+    __mode_t st_mode;
+    __uid_t st_uid;
+    __gid_t st_gid;
+    int __pad0;
+    __dev_t st_rdev;
+    __off_t st_size;
+    __blksize_t st_blksize;
+    __blkcnt_t st_blocks;
+    struct timespec st_atim;
+    struct timespec st_mtim;
+    struct timespec st_ctim;
+    __syscall_slong_t __glibc_reserved[3];
+  };
+extern int fcntl (int __fd, int __cmd, ...);
+extern int open (const char *__file, int __oflag, ...) __attribute__ ((__nonnull__ (1)));
+extern int openat (int __fd, const char *__file, int __oflag, ...)
+     __attribute__ ((__nonnull__ (2)));
+extern int creat (const char *__file, mode_t __mode) __attribute__ ((__nonnull__ (1)));
+extern int posix_fadvise (int __fd, off_t __offset, off_t __len,
+     int __advise) __attribute__ ((__nothrow__ , __leaf__));
+extern int posix_fallocate (int __fd, off_t __offset, off_t __len);
+
 struct lfds711_stack_state ss;
-pthread_mutex_t lock;
 struct test_data
 {
  struct lfds711_stack_element
@@ -2452,8 +2814,8 @@ void *push()
 {
  struct test_data *td;
  int long long unsigned loop;
- td = malloc(sizeof(struct test_data) * 3);
- for (loop = 0; loop < 3; loop++)
+ td = malloc(sizeof(struct test_data) * 1);
+ for (loop = 0; loop < 1; loop++)
  {
   if(0){ pthread_mutex_lock(&lock);};
   td[loop].user_id = loop;
@@ -2464,12 +2826,12 @@ void *push()
 }
 void *pop()
 {
- int long long unsigned loop;
  struct lfds711_stack_element *se;
  struct test_data *temp_td;
  int res;
  int count = 0;
- for (loop = 0; loop < 3; loop++)
+ int loop;
+ for (loop = 0; loop < 1; loop++)
  {
   temp_td = ((void *)0);
   if(0){ pthread_mutex_lock(&lock);};
@@ -2479,12 +2841,80 @@ void *pop()
    continue;
   temp_td = ( (*se).value );
   count++;
-  printf("%llu\n", temp_td->user_id);
  }
- ((void) sizeof ((count==3) ? 1 : 0), __extension__ ({ if (count==3) ; else __assert_fail ("count==VALUES", "stack_with_while.c", 66, __extension__ __PRETTY_FUNCTION__); }));
+}
+void writeIntofile(char *filename,LIST_NODE_T *listHead)
+{
+ int filefd = open(filename, 01|0100|02000, 0666);
+ int saved = dup(1);
+ close(1);
+ dup(filefd);
+ PrintListPayloads(listHead);
+ close(filefd);
+ fflush(stdout);
+ dup2(saved, 1);
+ close(saved);
+}
+LIST_NODE_T* createList(LIST_NODE_T *listHead)
+{
+ struct lfds711_stack_element *se;
+ struct test_data *temp_td;
+ int res;
+ res = lfds711_stack_pop(&ss, &se);
+ while (res!=0)
+ {
+  temp_td = ( (*se).value );
+  LIST_InsertHeadNode(&listHead,temp_td->se,temp_td->user_id);
+  res = lfds711_stack_pop(&ss, &se);
+ }
+ return listHead;
+}
+void readFile(char* filename, LIST_NODE_T *listHead)
+{
+ char *line = ((void *)0);
+ size_t len = 0;
+ ssize_t read;
+ LIST_NODE_T *parent = ((void *)0);
+ LIST_NODE_T *curNode = listHead;
+ char delim[] = ",";
+ int i = 0;
+ int size = GetListSize(curNode);
+ FILE *fp = fopen(filename, "r");
+ if(!fp)
+  {
+   writeIntofile(filename, listHead);
+   ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "stack_with_while.c", 131, __extension__ __PRETTY_FUNCTION__); }));
+   return;
+  }
+ while ((read = getline(&line, &len, fp)) != -1)
+ {
+  char *ptr = strtok(line, delim);
+  while(curNode)
+        {
+        if(curNode->payload.user_id != atoi(ptr))
+           break;
+   i++;
+        parent = curNode;
+        curNode=curNode->next;
+   ptr = strtok(((void *)0), delim);
+        }
+  if (i == size)
+  {
+   fclose(fp);
+   return;
+  }
+  i=0;
+    }
+ if(i!=size)
+ {
+  writeIntofile(filename, listHead);
+  ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "stack_with_while.c", 167, __extension__ __PRETTY_FUNCTION__); }));
+  return;
+ }
 }
 int main()
 {
+ LIST_NODE_T *listHead = ((void *)0);
  lfds711_stack_init_valid_on_current_logical_core(&ss, ((void *)0));
  pthread_t t1, t2;
  pthread_mutex_init(&lock, ((void *)0));
@@ -2492,5 +2922,7 @@ int main()
  pthread_create(&t2, ((void *)0), pop, ((void *)0));
  pthread_join(t1, 0);
  pthread_join(t2, 0);
+ listHead = createList(listHead);
+ readFile("foo.txt",listHead);
  return (0);
 }
