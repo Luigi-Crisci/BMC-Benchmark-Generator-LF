@@ -564,6 +564,16 @@ void *__cs_param__query_input,
 void *__cs_param__query_output);
 #pragma warning( pop )
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *__cs_param__bs);
+<<<<<<< HEAD
+=======
+__cs_mutex_t lock;
+_Bool __atomic_compare_exchange_n(int long long unsigned *__cs_param___atomic_compare_exchange_n_mptr, int long long unsigned *__cs_param___atomic_compare_exchange_n_eptr, int long long unsigned __cs_param___atomic_compare_exchange_n_newval, _Bool __cs_param___atomic_compare_exchange_n_weak_p, int __cs_param___atomic_compare_exchange_n_sm, int __cs_param___atomic_compare_exchange_n_fm)
+{
+int __cs_local___atomic_compare_exchange_n_res;
+__cs_local___atomic_compare_exchange_n_res = __CSEQ_atomic_compare_and_exchange(__cs_param___atomic_compare_exchange_n_mptr, __cs_param___atomic_compare_exchange_n_eptr, __cs_param___atomic_compare_exchange_n_newval, __cs_param___atomic_compare_exchange_n_weak_p, __cs_param___atomic_compare_exchange_n_sm, __cs_param___atomic_compare_exchange_n_fm);
+return __cs_local___atomic_compare_exchange_n_res;
+}
+>>>>>>> origin/main
 _Bool __CSEQ_atomic_compare_and_exchange(int long long unsigned *__cs_param___CSEQ_atomic_compare_and_exchange_mptr, int long long unsigned *__cs_param___CSEQ_atomic_compare_and_exchange_eptr, int long long unsigned __cs_param___CSEQ_atomic_compare_and_exchange_newval, _Bool __cs_param___CSEQ_atomic_compare_and_exchange_weak_p, int __cs_param___CSEQ_atomic_compare_and_exchange_sm, int __cs_param___CSEQ_atomic_compare_and_exchange_fm)
 {
 ;
@@ -580,6 +590,15 @@ return 1;
 return 0;
         }
 }
+<<<<<<< HEAD
+=======
+unsigned long __atomic_exchange_n(int long long unsigned *__cs_param___atomic_exchange_n_previous, int long long unsigned __cs_param___atomic_exchange_n_new, int __cs_param___atomic_exchange_n_memorder)
+{
+int __cs_local___atomic_exchange_n_res;
+__cs_local___atomic_exchange_n_res = __CSEQ_atomic_exchange(__cs_param___atomic_exchange_n_previous, __cs_param___atomic_exchange_n_new, __cs_param___atomic_exchange_n_memorder);
+return __cs_local___atomic_exchange_n_res;
+}
+>>>>>>> origin/main
 unsigned long __CSEQ_atomic_exchange(int long long unsigned *__cs_param___CSEQ_atomic_exchange_previous, int long long unsigned __cs_param___CSEQ_atomic_exchange_new, int __cs_param___CSEQ_atomic_exchange_memorder)
 {
 unsigned long int __cs_local___CSEQ_atomic_exchange_old;
@@ -615,7 +634,10 @@ for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loo
 ;
         }
 }
+<<<<<<< HEAD
 __cs_mutex_t lock;
+=======
+>>>>>>> origin/main
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *__cs_param_lfds711_misc_internal_backoff_init_bs)
 {
 ;
@@ -919,7 +941,11 @@ __cs_local_LIST_InsertHeadNode_newNode = __cs_safe_malloc(sizeof(*__cs_local_LIS
         __cs_local_LIST_InsertHeadNode___cs_tmp_if_cond_21 = 0 == __cs_local_LIST_InsertHeadNode_newNode;
 if (__cs_local_LIST_InsertHeadNode___cs_tmp_if_cond_21)
         {
+<<<<<<< HEAD
 __cs_local_LIST_InsertHeadNode_rCode = ENOMEM;
+=======
+__cs_local_LIST_InsertHeadNode_rCode = 12;
+>>>>>>> origin/main
 fprintf(stderr, "malloc() failed.\n");
 goto CLEANUP;
         }
@@ -1011,7 +1037,11 @@ __cs_local_LIST_InsertTailNode_newNode = __cs_safe_malloc(sizeof(*__cs_local_LIS
         __cs_local_LIST_InsertTailNode___cs_tmp_if_cond_26 = 0 == __cs_local_LIST_InsertTailNode_newNode;
 if (__cs_local_LIST_InsertTailNode___cs_tmp_if_cond_26)
         {
+<<<<<<< HEAD
 __cs_local_LIST_InsertTailNode_rCode = ENOMEM;
+=======
+__cs_local_LIST_InsertTailNode_rCode = 12;
+>>>>>>> origin/main
 fprintf(stderr, "malloc() failed.\n");
 goto CLEANUP;
         }
@@ -1083,7 +1113,11 @@ __cs_local_LIST_InsertNodeById_newNode = __cs_safe_malloc(sizeof(*__cs_local_LIS
         __cs_local_LIST_InsertNodeById___cs_tmp_if_cond_31 = 0 == __cs_local_LIST_InsertNodeById_newNode;
 if (__cs_local_LIST_InsertNodeById___cs_tmp_if_cond_31)
         {
+<<<<<<< HEAD
 __cs_local_LIST_InsertNodeById_rCode = ENOMEM;
+=======
+__cs_local_LIST_InsertNodeById_rCode = 12;
+>>>>>>> origin/main
 fprintf(stderr, "malloc() failed.\n");
 goto CLEANUP;
         }
@@ -1265,6 +1299,7 @@ void *push(void *__cs_param_push___cs_unused)
 {
 struct test_data *__cs_local_push_td;
 int long long unsigned __cs_local_push_loop;
+<<<<<<< HEAD
 __cs_local_push_td = __cs_safe_malloc((sizeof(struct test_data)) * 10);
 for (__cs_local_push_loop = 0; __cs_local_push_loop < 10; __cs_local_push_loop++)
         {
@@ -1273,6 +1308,14 @@ __cs_local_push_td[__cs_local_push_loop].user_id = __cs_local_push_loop;
 __cs_local_push_td[__cs_local_push_loop].se.value = (void *) ((lfds711_pal_uint_t) (&__cs_local_push_td[__cs_local_push_loop]));
 lfds711_stack_push(&ss, &__cs_local_push_td[__cs_local_push_loop].se);
 ;
+=======
+__cs_local_push_td = __cs_safe_malloc((sizeof(struct test_data)) * 1);
+for (__cs_local_push_loop = 0; __cs_local_push_loop < 1; __cs_local_push_loop++)
+        {
+__cs_local_push_td[__cs_local_push_loop].user_id = __cs_local_push_loop;
+__cs_local_push_td[__cs_local_push_loop].se.value = (void *) ((lfds711_pal_uint_t) (&__cs_local_push_td[__cs_local_push_loop]));
+lfds711_stack_push(&ss, &__cs_local_push_td[__cs_local_push_loop].se);
+>>>>>>> origin/main
         }
 }
 void *pop(void *__cs_param_pop___cs_unused)
@@ -1283,6 +1326,7 @@ int __cs_local_pop_res;
 int __cs_local_pop_count;
 __cs_local_pop_count = 0;
 int __cs_local_pop_loop;
+<<<<<<< HEAD
 for (__cs_local_pop_loop = 0; __cs_local_pop_loop < 10; __cs_local_pop_loop++)
         {
 __cs_local_pop_temp_td = 0;
@@ -1290,6 +1334,13 @@ __cs_local_pop_temp_td = 0;
 __cs_local_pop_res = lfds711_stack_pop(&ss, &__cs_local_pop_se);
 ;
 ;
+=======
+for (__cs_local_pop_loop = 0; __cs_local_pop_loop < 1; __cs_local_pop_loop++)
+        {
+__cs_local_pop_temp_td = 0;
+__cs_local_pop_res = lfds711_stack_pop(&ss, &__cs_local_pop_se);
+;
+>>>>>>> origin/main
                 _Bool __cs_local_pop___cs_tmp_if_cond_44;
                 __cs_local_pop___cs_tmp_if_cond_44 = __cs_local_pop_res == 0;
 if (__cs_local_pop___cs_tmp_if_cond_44)
@@ -1400,7 +1451,10 @@ __cs_local_main_listHead = 0;
 lfds711_stack_init_valid_on_current_logical_core(&ss, 0);
 __cs_t __cs_local_main_t1;
 __cs_t __cs_local_main_t2;
+<<<<<<< HEAD
 __cs_mutex_init(&lock, 0);
+=======
+>>>>>>> origin/main
 __cs_create(&__cs_local_main_t1, 0, push, 0);
 __cs_create(&__cs_local_main_t2, 0, pop, 0);
 __cs_join(__cs_local_main_t1, 0);

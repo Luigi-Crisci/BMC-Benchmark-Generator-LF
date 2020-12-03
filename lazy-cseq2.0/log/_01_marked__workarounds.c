@@ -1620,6 +1620,7 @@ void *query_output);
 # 1006 "<previous_module>"
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs);
 
+<<<<<<< HEAD
 # 1007 "<previous_module>"
 _Bool __VERIFIER_atomic_compare_and_exchange(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
 
@@ -1636,10 +1637,44 @@ if ((*mptr) == (*eptr))
 *mptr = newval;
                 
 # 1012 "<previous_module>"
+=======
+# 1014 "<previous_module>"
+pthread_mutex_t lock;
+
+# 1015 "<previous_module>"
+_Bool __atomic_compare_exchange_n(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
+{
+        
+# 1017 "<previous_module>"
+int res; res = __VERIFIER_atomic_compare_and_exchange(mptr, eptr, newval, weak_p, sm, fm);
+        
+# 1019 "<previous_module>"
+return res;
+}
+
+
+# 1022 "<previous_module>"
+_Bool __VERIFIER_atomic_compare_and_exchange(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
+
+# 1023 "<previous_module>"
+{
+        
+# 1024 "<previous_module>"
+if ((*mptr) == (*eptr))
+
+# 1025 "<previous_module>"
+        {
+                
+# 1026 "<previous_module>"
+*mptr = newval;
+                
+# 1027 "<previous_module>"
+>>>>>>> origin/main
 return 1;
         }
         else
 
+<<<<<<< HEAD
 # 1015 "<previous_module>"
         {
                 
@@ -1647,12 +1682,22 @@ return 1;
 *eptr = newval;
                 
 # 1017 "<previous_module>"
+=======
+# 1030 "<previous_module>"
+        {
+                
+# 1031 "<previous_module>"
+*eptr = newval;
+                
+# 1032 "<previous_module>"
+>>>>>>> origin/main
 return 0;
         }
 
 }
 
 
+<<<<<<< HEAD
 # 1021 "<previous_module>"
 unsigned long __VERIFIER_atomic_exchange(int long long unsigned *previous, int long long unsigned new, int memorder)
 
@@ -1666,18 +1711,53 @@ unsigned long int old; old = *previous;
 *previous = new;
         
 # 1025 "<previous_module>"
+=======
+# 1036 "<previous_module>"
+unsigned long __atomic_exchange_n(int long long unsigned *previous, int long long unsigned new, int memorder)
+{
+        
+# 1038 "<previous_module>"
+int res; res = __VERIFIER_atomic_exchange(previous, new, memorder);
+        
+# 1040 "<previous_module>"
+return res;
+}
+
+
+# 1043 "<previous_module>"
+unsigned long __VERIFIER_atomic_exchange(int long long unsigned *previous, int long long unsigned new, int memorder)
+
+# 1044 "<previous_module>"
+{
+        
+# 1045 "<previous_module>"
+unsigned long int old; old = *previous;
+        
+# 1046 "<previous_module>"
+*previous = new;
+        
+# 1047 "<previous_module>"
+>>>>>>> origin/main
 return old;
 }
 
 
+<<<<<<< HEAD
 # 1028 "<previous_module>"
 void __atomic_thread_fence(int i)
 
 # 1029 "<previous_module>"
+=======
+# 1049 "<previous_module>"
+void __atomic_thread_fence(int i)
+
+# 1050 "<previous_module>"
+>>>>>>> origin/main
 {
 }
 
 
+<<<<<<< HEAD
 # 1032 "<previous_module>"
 int __VERIFIER_atomic_swap_stack_top(struct lfds711_stack_element * volatile *top, struct lfds711_stack_element * volatile *oldtop, 
 # 1033 "<previous_module>"
@@ -1696,10 +1776,31 @@ if ((*oldtop) == (*top))
 *top = *newtop;
                 
 # 1038 "<previous_module>"
+=======
+# 1053 "<previous_module>"
+int __VERIFIER_atomic_swap_stack_top(struct lfds711_stack_element * volatile *top, struct lfds711_stack_element * volatile *oldtop, 
+# 1054 "<previous_module>"
+struct lfds711_stack_element **newtop)
+
+# 1055 "<previous_module>"
+{
+        
+# 1056 "<previous_module>"
+if ((*oldtop) == (*top))
+
+# 1057 "<previous_module>"
+        {
+                
+# 1058 "<previous_module>"
+*top = *newtop;
+                
+# 1059 "<previous_module>"
+>>>>>>> origin/main
 return 1;
         }
         else
 
+<<<<<<< HEAD
 # 1041 "<previous_module>"
         {
                 
@@ -1707,12 +1808,22 @@ return 1;
 *oldtop = *top;
                 
 # 1043 "<previous_module>"
+=======
+# 1062 "<previous_module>"
+        {
+                
+# 1063 "<previous_module>"
+*oldtop = *top;
+                
+# 1064 "<previous_module>"
+>>>>>>> origin/main
 return 0;
         }
 
 }
 
 
+<<<<<<< HEAD
 # 1051 "<previous_module>"
 void exponential_backoff()
 {
@@ -1721,6 +1832,16 @@ void exponential_backoff()
 int loop;
         
 # 1053 "<previous_module>"
+=======
+# 1072 "<previous_module>"
+void exponential_backoff()
+{
+        
+# 1073 "<previous_module>"
+int loop;
+        
+# 1074 "<previous_module>"
+>>>>>>> origin/main
 for (loop = 0; loop < 10; loop++)
         {
                 ;
@@ -1729,6 +1850,7 @@ for (loop = 0; loop < 10; loop++)
 }
 
 
+<<<<<<< HEAD
 # 1055 "<previous_module>"
 pthread_mutex_t lock;
 
@@ -1739,6 +1861,15 @@ void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs)
 {
         
 # 1059 "<previous_module>"
+=======
+# 1076 "<previous_module>"
+void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs)
+
+# 1077 "<previous_module>"
+{
+        
+# 1078 "<previous_module>"
+>>>>>>> origin/main
 if (!(bs != 0))
         {
                 char *c; c = 0;
@@ -1748,7 +1879,11 @@ if (!(bs != 0))
         ;
         ;
         
+<<<<<<< HEAD
 # 1060 "<previous_module>"
+=======
+# 1079 "<previous_module>"
+>>>>>>> origin/main
 if (!((((lfds711_pal_uint_t) (&(*bs).lock)) % 128) == 0))
         {
                 char *c; c = 0;
@@ -1758,6 +1893,7 @@ if (!((((lfds711_pal_uint_t) (&(*bs).lock)) % 128) == 0))
         ;
         ;
         
+<<<<<<< HEAD
 # 1062 "<previous_module>"
 (*bs).lock = LFDS711_MISC_FLAG_LOWERED;
         
@@ -1774,10 +1910,29 @@ if (!((((lfds711_pal_uint_t) (&(*bs).lock)) % 128) == 0))
 (*bs).total_operations = 0;
         
 # 1067 "<previous_module>"
+=======
+# 1081 "<previous_module>"
+(*bs).lock = LFDS711_MISC_FLAG_LOWERED;
+        
+# 1082 "<previous_module>"
+(*bs).backoff_iteration_frequency_counters[0] = 0;
+        
+# 1083 "<previous_module>"
+(*bs).backoff_iteration_frequency_counters[1] = 0;
+        
+# 1084 "<previous_module>"
+(*bs).metric = 1;
+        
+# 1085 "<previous_module>"
+(*bs).total_operations = 0;
+        
+# 1086 "<previous_module>"
+>>>>>>> origin/main
 return;
 }
 
 
+<<<<<<< HEAD
 # 1070 "<previous_module>"
 void lfds711_stack_init_valid_on_current_logical_core(struct lfds711_stack_state *ss, 
 # 1071 "<previous_module>"
@@ -1790,6 +1945,20 @@ void *user_state)
 pthread_mutex_init(&lock, 0);
         
 # 1076 "<previous_module>"
+=======
+# 1089 "<previous_module>"
+void lfds711_stack_init_valid_on_current_logical_core(struct lfds711_stack_state *ss, 
+# 1090 "<previous_module>"
+void *user_state)
+
+# 1091 "<previous_module>"
+{
+        
+# 1092 "<previous_module>"
+pthread_mutex_init(&lock, 0);
+        
+# 1095 "<previous_module>"
+>>>>>>> origin/main
 if (!(ss != 0))
         {
                 char *c; c = 0;
@@ -1799,7 +1968,11 @@ if (!(ss != 0))
         ;
         ;
         
+<<<<<<< HEAD
 # 1077 "<previous_module>"
+=======
+# 1096 "<previous_module>"
+>>>>>>> origin/main
 if (!((((lfds711_pal_uint_t) (*ss).top) % 128) == 0))
         {
                 char *c; c = 0;
@@ -1809,7 +1982,11 @@ if (!((((lfds711_pal_uint_t) (*ss).top) % 128) == 0))
         ;
         ;
         
+<<<<<<< HEAD
 # 1078 "<previous_module>"
+=======
+# 1097 "<previous_module>"
+>>>>>>> origin/main
 if (!((((lfds711_pal_uint_t) (&(*ss).user_state)) % 128) == 0))
         {
                 char *c; c = 0;
@@ -1819,6 +1996,7 @@ if (!((((lfds711_pal_uint_t) (&(*ss).user_state)) % 128) == 0))
         ;
         ;
         
+<<<<<<< HEAD
 # 1081 "<previous_module>"
 pthread_mutex_lock(&lock);
         
@@ -1844,10 +2022,38 @@ lfds711_misc_force_store();
 pthread_mutex_unlock(&lock);
         
 # 1095 "<previous_module>"
+=======
+# 1100 "<previous_module>"
+pthread_mutex_lock(&lock);
+        
+# 1101 "<previous_module>"
+(*ss).top[0] = 0;
+        
+# 1102 "<previous_module>"
+(*ss).top[1] = 0;
+        
+# 1104 "<previous_module>"
+(*ss).user_state = user_state;
+        
+# 1106 "<previous_module>"
+lfds711_misc_internal_backoff_init(&(*ss).pop_backoff);
+        
+# 1107 "<previous_module>"
+lfds711_misc_internal_backoff_init(&(*ss).push_backoff);
+        
+# 1110 "<previous_module>"
+lfds711_misc_force_store();
+        
+# 1112 "<previous_module>"
+pthread_mutex_unlock(&lock);
+        
+# 1114 "<previous_module>"
+>>>>>>> origin/main
 return;
 }
 
 
+<<<<<<< HEAD
 # 1098 "<previous_module>"
 int lfds711_stack_pop(struct lfds711_stack_state *ss, 
 # 1099 "<previous_module>"
@@ -1873,6 +2079,33 @@ struct lfds711_stack_element *new_top[2];
 struct lfds711_stack_element * volatile original_top[2];
         
 # 1110 "<previous_module>"
+=======
+# 1117 "<previous_module>"
+int lfds711_stack_pop(struct lfds711_stack_state *ss, 
+# 1118 "<previous_module>"
+struct lfds711_stack_element **se)
+
+# 1119 "<previous_module>"
+{
+        
+# 1121 "<previous_module>"
+
+# 1120 "<previous_module>"
+char unsigned result;
+        
+# 1124 "<previous_module>"
+
+# 1123 "<previous_module>"
+lfds711_pal_uint_t backoff_iteration; backoff_iteration = 0;
+        
+# 1126 "<previous_module>"
+struct lfds711_stack_element *new_top[2];
+        
+# 1127 "<previous_module>"
+struct lfds711_stack_element * volatile original_top[2];
+        
+# 1129 "<previous_module>"
+>>>>>>> origin/main
 if (!(ss != 0))
         {
                 char *c; c = 0;
@@ -1882,7 +2115,11 @@ if (!(ss != 0))
         ;
         ;
         
+<<<<<<< HEAD
 # 1111 "<previous_module>"
+=======
+# 1130 "<previous_module>"
+>>>>>>> origin/main
 if (!(se != 0))
         {
                 char *c; c = 0;
@@ -1892,6 +2129,7 @@ if (!(se != 0))
         ;
         ;
         
+<<<<<<< HEAD
 # 1117 "<previous_module>"
 pthread_mutex_lock(&lock);
         
@@ -1923,10 +2161,44 @@ if (original_top[0] == 0)
 *se = 0;
                         
 # 1130 "<previous_module>"
+=======
+# 1136 "<previous_module>"
+pthread_mutex_lock(&lock);
+        
+# 1137 "<previous_module>"
+pthread_mutex_unlock(&lock);
+        
+# 1139 "<previous_module>"
+original_top[1] = (*ss).top[1];
+        
+# 1140 "<previous_module>"
+original_top[0] = (*ss).top[0];
+        
+# 1142 "<previous_module>"
+int i; i = 0;
+        
+# 1144 "<previous_module>"
+do
+
+# 1145 "<previous_module>"
+        {
+                
+# 1146 "<previous_module>"
+if (original_top[0] == 0)
+
+# 1147 "<previous_module>"
+                {
+                        
+# 1148 "<previous_module>"
+*se = 0;
+                        
+# 1149 "<previous_module>"
+>>>>>>> origin/main
 return 0;
                 }
 
                 
+<<<<<<< HEAD
 # 1133 "<previous_module>"
 new_top[1] = original_top[1] + 1;
                 
@@ -1955,10 +2227,41 @@ exponential_backoff();
 pthread_mutex_lock(&lock);
                         
 # 1146 "<previous_module>"
+=======
+# 1152 "<previous_module>"
+new_top[1] = original_top[1] + 1;
+                
+# 1153 "<previous_module>"
+new_top[0] = (*original_top[0]).next;
+                
+# 1156 "<previous_module>"
+pthread_mutex_lock(&lock);
+                
+# 1157 "<previous_module>"
+result = __VERIFIER_atomic_swap_stack_top(&(*ss).top[0], &original_top[0], &new_top[0]);
+                
+# 1158 "<previous_module>"
+pthread_mutex_unlock(&lock);
+                
+# 1160 "<previous_module>"
+if (result == 0)
+
+# 1161 "<previous_module>"
+                {
+                        
+# 1163 "<previous_module>"
+exponential_backoff();
+                        
+# 1164 "<previous_module>"
+pthread_mutex_lock(&lock);
+                        
+# 1165 "<previous_module>"
+>>>>>>> origin/main
 pthread_mutex_unlock(&lock);
                 }
 
                 
+<<<<<<< HEAD
 # 1148 "<previous_module>"
 i++;
                 
@@ -1967,11 +2270,22 @@ if (i > 1000)
                 {
                         
 # 1150 "<previous_module>"
+=======
+# 1167 "<previous_module>"
+i++;
+                
+# 1168 "<previous_module>"
+if (i > 1000)
+                {
+                        
+# 1169 "<previous_module>"
+>>>>>>> origin/main
 break;
                 }
 
         }
         while (
+<<<<<<< HEAD
 # 1151 "<previous_module>"
 result == 0);
         
@@ -1979,10 +2293,20 @@ result == 0);
 *se = original_top[0];
         
 # 1157 "<previous_module>"
+=======
+# 1170 "<previous_module>"
+result == 0);
+        
+# 1172 "<previous_module>"
+*se = original_top[0];
+        
+# 1176 "<previous_module>"
+>>>>>>> origin/main
 return 1;
 }
 
 
+<<<<<<< HEAD
 # 1160 "<previous_module>"
 void lfds711_stack_push(struct lfds711_stack_state *ss, 
 # 1161 "<previous_module>"
@@ -2008,6 +2332,33 @@ struct lfds711_stack_element *new_top[2];
 struct lfds711_stack_element * volatile original_top[2];
         
 # 1172 "<previous_module>"
+=======
+# 1179 "<previous_module>"
+void lfds711_stack_push(struct lfds711_stack_state *ss, 
+# 1180 "<previous_module>"
+struct lfds711_stack_element *se)
+
+# 1181 "<previous_module>"
+{
+        
+# 1183 "<previous_module>"
+
+# 1182 "<previous_module>"
+char unsigned result;
+        
+# 1186 "<previous_module>"
+
+# 1185 "<previous_module>"
+lfds711_pal_uint_t backoff_iteration; backoff_iteration = 0;
+        
+# 1188 "<previous_module>"
+struct lfds711_stack_element *new_top[2];
+        
+# 1189 "<previous_module>"
+struct lfds711_stack_element * volatile original_top[2];
+        
+# 1191 "<previous_module>"
+>>>>>>> origin/main
 if (!(ss != 0))
         {
                 char *c; c = 0;
@@ -2017,7 +2368,11 @@ if (!(ss != 0))
         ;
         ;
         
+<<<<<<< HEAD
 # 1173 "<previous_module>"
+=======
+# 1192 "<previous_module>"
+>>>>>>> origin/main
 if (!(se != 0))
         {
                 char *c; c = 0;
@@ -2027,6 +2382,7 @@ if (!(se != 0))
         ;
         ;
         
+<<<<<<< HEAD
 # 1175 "<previous_module>"
 new_top[0] = se;
         
@@ -2074,10 +2430,60 @@ if (result == 0)
                 {
                         
 # 1199 "<previous_module>"
+=======
+# 1194 "<previous_module>"
+new_top[0] = se;
+        
+# 1196 "<previous_module>"
+original_top[1] = (*ss).top[1];
+        
+# 1197 "<previous_module>"
+original_top[0] = (*ss).top[0];
+        
+# 1199 "<previous_module>"
+result = 0;
+        
+# 1200 "<previous_module>"
+int i; i = 0;
+        
+# 1201 "<previous_module>"
+while (result == 0)
+
+# 1202 "<previous_module>"
+        {
+                
+# 1204 "<previous_module>"
+pthread_mutex_lock(&lock);
+                
+# 1205 "<previous_module>"
+(*se).next = original_top[0];
+                
+# 1206 "<previous_module>"
+pthread_mutex_unlock(&lock);
+                
+# 1209 "<previous_module>"
+new_top[1] = original_top[1] + 1;
+                
+# 1212 "<previous_module>"
+pthread_mutex_lock(&lock);
+                
+# 1213 "<previous_module>"
+result = __VERIFIER_atomic_swap_stack_top(&(*ss).top[0], &original_top[0], &new_top[0]);
+                
+# 1214 "<previous_module>"
+pthread_mutex_unlock(&lock);
+                
+# 1216 "<previous_module>"
+if (result == 0)
+                {
+                        
+# 1218 "<previous_module>"
+>>>>>>> origin/main
 exponential_backoff();
                 }
 
                 
+<<<<<<< HEAD
 # 1200 "<previous_module>"
 i++;
                 
@@ -2086,17 +2492,32 @@ if (i > 1000)
                 {
                         
 # 1202 "<previous_module>"
+=======
+# 1219 "<previous_module>"
+i++;
+                
+# 1220 "<previous_module>"
+if (i > 1000)
+                {
+                        
+# 1221 "<previous_module>"
+>>>>>>> origin/main
 break;
                 }
 
         }
 
         
+<<<<<<< HEAD
 # 1207 "<previous_module>"
+=======
+# 1226 "<previous_module>"
+>>>>>>> origin/main
 return;
 }
 
 
+<<<<<<< HEAD
 # 1211 "<previous_module>"
 void lfds711_stack_cleanup(struct lfds711_stack_state *ss, 
 # 1212 "<previous_module>"
@@ -2114,6 +2535,25 @@ struct lfds711_stack_element *se;
 struct lfds711_stack_element *se_temp;
         
 # 1218 "<previous_module>"
+=======
+# 1230 "<previous_module>"
+void lfds711_stack_cleanup(struct lfds711_stack_state *ss, 
+# 1231 "<previous_module>"
+void (*element_cleanup_callback)(struct lfds711_stack_state *ss, struct lfds711_stack_element *se))
+
+# 1232 "<previous_module>"
+{
+        
+# 1234 "<previous_module>"
+
+# 1233 "<previous_module>"
+struct lfds711_stack_element *se;
+        
+# 1235 "<previous_module>"
+struct lfds711_stack_element *se_temp;
+        
+# 1237 "<previous_module>"
+>>>>>>> origin/main
 if (!(ss != 0))
         {
                 char *c; c = 0;
@@ -2123,6 +2563,7 @@ if (!(ss != 0))
         ;
         ;
         
+<<<<<<< HEAD
 # 1221 "<previous_module>"
 __atomic_thread_fence(2);
         
@@ -2148,17 +2589,49 @@ se_temp = se;
 se = (*se).next;
                         
 # 1232 "<previous_module>"
+=======
+# 1240 "<previous_module>"
+__atomic_thread_fence(2);
+        
+# 1242 "<previous_module>"
+if (element_cleanup_callback != 0)
+
+# 1243 "<previous_module>"
+        {
+                
+# 1244 "<previous_module>"
+se = (*ss).top[0];
+                
+# 1246 "<previous_module>"
+while (se != 0)
+
+# 1247 "<previous_module>"
+                {
+                        
+# 1248 "<previous_module>"
+se_temp = se;
+                        
+# 1249 "<previous_module>"
+se = (*se).next;
+                        
+# 1251 "<previous_module>"
+>>>>>>> origin/main
 element_cleanup_callback(ss, se_temp);
                 }
 
         }
 
         
+<<<<<<< HEAD
 # 1236 "<previous_module>"
+=======
+# 1255 "<previous_module>"
+>>>>>>> origin/main
 return;
 }
 
 
+<<<<<<< HEAD
 # 1243 "<previous_module>"
 typedef struct NODE_PAYLOAD_S
 {
@@ -2209,10 +2682,63 @@ rCode = ENOMEM;
 fprintf(stderr, "malloc() failed.\n");
                 
 # 1265 "<previous_module>"
+=======
+# 1263 "<previous_module>"
+typedef struct NODE_PAYLOAD_S
+{
+        
+# 1261 "<previous_module>"
+struct lfds711_stack_element se;
+        
+# 1262 "<previous_module>"
+int long long unsigned user_id;
+} NODE_PAYLOAD_T;
+
+# 1269 "<previous_module>"
+typedef struct LIST_NODE_S
+{
+        
+# 1267 "<previous_module>"
+struct LIST_NODE_S *next;
+        
+# 1268 "<previous_module>"
+NODE_PAYLOAD_T payload;
+} LIST_NODE_T;
+
+# 1274 "<previous_module>"
+int LIST_InsertHeadNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__se, int long long unsigned I__user_id)
+
+# 1275 "<previous_module>"
+{
+        
+# 1276 "<previous_module>"
+int rCode; rCode = 0;
+        
+# 1277 "<previous_module>"
+LIST_NODE_T *newNode; newNode = 0;
+        
+# 1280 "<previous_module>"
+newNode = malloc(sizeof(*newNode));
+        
+# 1281 "<previous_module>"
+if (0 == newNode)
+
+# 1282 "<previous_module>"
+        {
+                
+# 1283 "<previous_module>"
+rCode = 12;
+                
+# 1284 "<previous_module>"
+fprintf(stderr, "malloc() failed.\n");
+                
+# 1285 "<previous_module>"
+>>>>>>> origin/main
 goto CLEANUP;
         }
 
         
+<<<<<<< HEAD
 # 1269 "<previous_module>"
 (*newNode).payload.se = I__se;
         
@@ -2229,11 +2755,30 @@ goto CLEANUP;
 CLEANUP:
         
 # 1278 "<previous_module>"
+=======
+# 1289 "<previous_module>"
+(*newNode).payload.se = I__se;
+        
+# 1290 "<previous_module>"
+(*newNode).payload.user_id = I__user_id;
+        
+# 1293 "<previous_module>"
+(*newNode).next = *IO_head;
+        
+# 1294 "<previous_module>"
+*IO_head = newNode;
+        
+# 1296 "<previous_module>"
+CLEANUP:
+        
+# 1298 "<previous_module>"
+>>>>>>> origin/main
 return rCode;
 
 }
 
 
+<<<<<<< HEAD
 # 1284 "<previous_module>"
 int PrintListPayloads(LIST_NODE_T *head)
 
@@ -2263,20 +2808,59 @@ if (cur != 0)
                 {
                         
 # 1295 "<previous_module>"
+=======
+# 1304 "<previous_module>"
+int PrintListPayloads(LIST_NODE_T *head)
+
+# 1305 "<previous_module>"
+{
+        
+# 1306 "<previous_module>"
+int rCode; rCode = 0;
+        
+# 1307 "<previous_module>"
+LIST_NODE_T *cur; cur = head;
+        
+# 1309 "<previous_module>"
+while (cur)
+
+# 1310 "<previous_module>"
+        {
+                
+# 1312 "<previous_module>"
+printf("%lld", (*cur).payload.user_id);
+                
+# 1313 "<previous_module>"
+cur = (*cur).next;
+                
+# 1314 "<previous_module>"
+if (cur != 0)
+                {
+                        
+# 1315 "<previous_module>"
+>>>>>>> origin/main
 printf(",");
                 }
 
         }
 
         
+<<<<<<< HEAD
 # 1297 "<previous_module>"
 printf("\n");
         
 # 1299 "<previous_module>"
+=======
+# 1317 "<previous_module>"
+printf("\n");
+        
+# 1319 "<previous_module>"
+>>>>>>> origin/main
 return rCode;
 }
 
 
+<<<<<<< HEAD
 # 1306 "<previous_module>"
 int GetListSize(LIST_NODE_T *head)
 
@@ -2299,15 +2883,44 @@ while (cur)
 ++nodeCnt;
                 
 # 1313 "<previous_module>"
+=======
+# 1326 "<previous_module>"
+int GetListSize(LIST_NODE_T *head)
+
+# 1327 "<previous_module>"
+{
+        
+# 1328 "<previous_module>"
+LIST_NODE_T *cur; cur = head;
+        
+# 1329 "<previous_module>"
+int nodeCnt; nodeCnt = 0;
+        
+# 1330 "<previous_module>"
+while (cur)
+
+# 1331 "<previous_module>"
+        {
+                
+# 1332 "<previous_module>"
+++nodeCnt;
+                
+# 1333 "<previous_module>"
+>>>>>>> origin/main
 cur = (*cur).next;
         }
 
         
+<<<<<<< HEAD
 # 1315 "<previous_module>"
+=======
+# 1335 "<previous_module>"
+>>>>>>> origin/main
 return nodeCnt;
 }
 
 
+<<<<<<< HEAD
 # 1322 "<previous_module>"
 int LIST_GetTailNode(LIST_NODE_T *I__listHead, LIST_NODE_T **_O_listTail)
 
@@ -2331,26 +2944,64 @@ while ((*curNode).next)
                 {
                         
 # 1332 "<previous_module>"
+=======
+# 1342 "<previous_module>"
+int LIST_GetTailNode(LIST_NODE_T *I__listHead, LIST_NODE_T **_O_listTail)
+
+# 1343 "<previous_module>"
+{
+        
+# 1344 "<previous_module>"
+int rCode; rCode = 0;
+        
+# 1345 "<previous_module>"
+LIST_NODE_T *curNode; curNode = I__listHead;
+        
+# 1349 "<previous_module>"
+if (curNode)
+
+# 1350 "<previous_module>"
+        {
+                
+# 1351 "<previous_module>"
+while ((*curNode).next)
+                {
+                        
+# 1352 "<previous_module>"
+>>>>>>> origin/main
 curNode = (*curNode).next;
                 }
 
         }
 
         
+<<<<<<< HEAD
 # 1336 "<previous_module>"
 if (_O_listTail)
         {
                 
 # 1337 "<previous_module>"
+=======
+# 1356 "<previous_module>"
+if (_O_listTail)
+        {
+                
+# 1357 "<previous_module>"
+>>>>>>> origin/main
 *_O_listTail = curNode;
         }
 
         
+<<<<<<< HEAD
 # 1339 "<previous_module>"
+=======
+# 1359 "<previous_module>"
+>>>>>>> origin/main
 return rCode;
 }
 
 
+<<<<<<< HEAD
 # 1345 "<previous_module>"
 int LIST_InsertTailNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__se, int long long unsigned I__user_id)
 
@@ -2379,10 +3030,41 @@ if (rCode)
 fprintf(stderr, "LIST_GetTailNode() reports: %d\n", rCode);
                 
 # 1356 "<previous_module>"
+=======
+# 1365 "<previous_module>"
+int LIST_InsertTailNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__se, int long long unsigned I__user_id)
+
+# 1366 "<previous_module>"
+{
+        
+# 1367 "<previous_module>"
+int rCode; rCode = 0;
+        
+# 1368 "<previous_module>"
+LIST_NODE_T *tailNode;
+        
+# 1369 "<previous_module>"
+LIST_NODE_T *newNode; newNode = 0;
+        
+# 1372 "<previous_module>"
+rCode = LIST_GetTailNode(*IO_head, &tailNode);
+        
+# 1373 "<previous_module>"
+if (rCode)
+
+# 1374 "<previous_module>"
+        {
+                
+# 1375 "<previous_module>"
+fprintf(stderr, "LIST_GetTailNode() reports: %d\n", rCode);
+                
+# 1376 "<previous_module>"
+>>>>>>> origin/main
 goto CLEANUP;
         }
 
         
+<<<<<<< HEAD
 # 1360 "<previous_module>"
 newNode = malloc(sizeof(*newNode));
         
@@ -2399,10 +3081,29 @@ rCode = ENOMEM;
 fprintf(stderr, "malloc() failed.\n");
                 
 # 1365 "<previous_module>"
+=======
+# 1380 "<previous_module>"
+newNode = malloc(sizeof(*newNode));
+        
+# 1381 "<previous_module>"
+if (0 == newNode)
+
+# 1382 "<previous_module>"
+        {
+                
+# 1383 "<previous_module>"
+rCode = 12;
+                
+# 1384 "<previous_module>"
+fprintf(stderr, "malloc() failed.\n");
+                
+# 1385 "<previous_module>"
+>>>>>>> origin/main
 goto CLEANUP;
         }
 
         
+<<<<<<< HEAD
 # 1369 "<previous_module>"
 (*newNode).payload.user_id = I__user_id;
         
@@ -2417,25 +3118,53 @@ if (tailNode)
         {
                 
 # 1375 "<previous_module>"
+=======
+# 1389 "<previous_module>"
+(*newNode).payload.user_id = I__user_id;
+        
+# 1390 "<previous_module>"
+(*newNode).payload.se = I__se;
+        
+# 1393 "<previous_module>"
+(*newNode).next = 0;
+        
+# 1394 "<previous_module>"
+if (tailNode)
+        {
+                
+# 1395 "<previous_module>"
+>>>>>>> origin/main
 (*tailNode).next = newNode;
         }
         else
         {
                 
+<<<<<<< HEAD
 # 1377 "<previous_module>"
+=======
+# 1397 "<previous_module>"
+>>>>>>> origin/main
 *IO_head = newNode;
         }
 
         
+<<<<<<< HEAD
 # 1379 "<previous_module>"
 CLEANUP:
         
 # 1381 "<previous_module>"
+=======
+# 1399 "<previous_module>"
+CLEANUP:
+        
+# 1401 "<previous_module>"
+>>>>>>> origin/main
 return rCode;
 
 }
 
 
+<<<<<<< HEAD
 # 1387 "<previous_module>"
 int LIST_FetchParentNodeById(LIST_NODE_T *I__head, int long long unsigned I__user_id, LIST_NODE_T **_O_parent)
 
@@ -2461,10 +3190,38 @@ if (0 == I__head)
 rCode = ENOENT;
                 
 # 1397 "<previous_module>"
+=======
+# 1407 "<previous_module>"
+int LIST_FetchParentNodeById(LIST_NODE_T *I__head, int long long unsigned I__user_id, LIST_NODE_T **_O_parent)
+
+# 1408 "<previous_module>"
+{
+        
+# 1409 "<previous_module>"
+int rCode; rCode = 0;
+        
+# 1410 "<previous_module>"
+LIST_NODE_T *parent; parent = 0;
+        
+# 1411 "<previous_module>"
+LIST_NODE_T *curNode; curNode = I__head;
+        
+# 1414 "<previous_module>"
+if (0 == I__head)
+
+# 1415 "<previous_module>"
+        {
+                
+# 1416 "<previous_module>"
+rCode = ENOENT;
+                
+# 1417 "<previous_module>"
+>>>>>>> origin/main
 goto CLEANUP;
         }
 
         
+<<<<<<< HEAD
 # 1401 "<previous_module>"
 while (curNode)
 
@@ -2476,36 +3233,72 @@ if ((*curNode).payload.user_id > I__user_id)
                 {
                         
 # 1404 "<previous_module>"
+=======
+# 1421 "<previous_module>"
+while (curNode)
+
+# 1422 "<previous_module>"
+        {
+                
+# 1423 "<previous_module>"
+if ((*curNode).payload.user_id > I__user_id)
+                {
+                        
+# 1424 "<previous_module>"
+>>>>>>> origin/main
 break;
                 }
 
                 
+<<<<<<< HEAD
 # 1406 "<previous_module>"
 parent = curNode;
                 
 # 1407 "<previous_module>"
+=======
+# 1426 "<previous_module>"
+parent = curNode;
+                
+# 1427 "<previous_module>"
+>>>>>>> origin/main
 curNode = (*curNode).next;
         }
 
         
+<<<<<<< HEAD
 # 1411 "<previous_module>"
 if (_O_parent)
         {
                 
 # 1412 "<previous_module>"
+=======
+# 1431 "<previous_module>"
+if (_O_parent)
+        {
+                
+# 1432 "<previous_module>"
+>>>>>>> origin/main
 *_O_parent = parent;
         }
 
         
+<<<<<<< HEAD
 # 1414 "<previous_module>"
 CLEANUP:
         
 # 1416 "<previous_module>"
+=======
+# 1434 "<previous_module>"
+CLEANUP:
+        
+# 1436 "<previous_module>"
+>>>>>>> origin/main
 return rCode;
 
 }
 
 
+<<<<<<< HEAD
 # 1423 "<previous_module>"
 int LIST_InsertNodeById(LIST_NODE_T **IO_head, int long long unsigned I__user_id, struct lfds711_stack_element I__se)
 
@@ -2537,10 +3330,44 @@ rCode = ENOMEM;
 fprintf(stderr, "malloc() failed.\n");
                 
 # 1435 "<previous_module>"
+=======
+# 1443 "<previous_module>"
+int LIST_InsertNodeById(LIST_NODE_T **IO_head, int long long unsigned I__user_id, struct lfds711_stack_element I__se)
+
+# 1444 "<previous_module>"
+{
+        
+# 1445 "<previous_module>"
+int rCode; rCode = 0;
+        
+# 1446 "<previous_module>"
+LIST_NODE_T *parent;
+        
+# 1447 "<previous_module>"
+LIST_NODE_T *newNode; newNode = 0;
+        
+# 1450 "<previous_module>"
+newNode = malloc(sizeof(*newNode));
+        
+# 1451 "<previous_module>"
+if (0 == newNode)
+
+# 1452 "<previous_module>"
+        {
+                
+# 1453 "<previous_module>"
+rCode = 12;
+                
+# 1454 "<previous_module>"
+fprintf(stderr, "malloc() failed.\n");
+                
+# 1455 "<previous_module>"
+>>>>>>> origin/main
 goto CLEANUP;
         }
 
         
+<<<<<<< HEAD
 # 1439 "<previous_module>"
 (*newNode).payload.user_id = I__user_id;
         
@@ -2586,11 +3413,59 @@ default:
 fprintf(stderr, "LIST_FetchParentNodeByName() reports: %d\n", rCode);
                         
 # 1458 "<previous_module>"
+=======
+# 1459 "<previous_module>"
+(*newNode).payload.user_id = I__user_id;
+        
+# 1460 "<previous_module>"
+(*newNode).payload.se = I__se;
+        
+# 1463 "<previous_module>"
+rCode = LIST_FetchParentNodeById(*IO_head, I__user_id, &parent);
+        
+# 1464 "<previous_module>"
+switch (rCode)
+
+# 1465 "<previous_module>"
+        {
+                
+# 1466 "<previous_module>"
+case 0:
+                        
+# 1467 "<previous_module>"
+break;
+
+                
+# 1469 "<previous_module>"
+case ENOENT:
+                        
+# 1471 "<previous_module>"
+(*newNode).next = 0;
+                        
+# 1472 "<previous_module>"
+*IO_head = newNode;
+                        
+# 1473 "<previous_module>"
+rCode = 0;
+                        
+# 1474 "<previous_module>"
+goto CLEANUP;
+
+                
+# 1476 "<previous_module>"
+default:
+                        
+# 1477 "<previous_module>"
+fprintf(stderr, "LIST_FetchParentNodeByName() reports: %d\n", rCode);
+                        
+# 1478 "<previous_module>"
+>>>>>>> origin/main
 goto CLEANUP;
 
         }
 
         
+<<<<<<< HEAD
 # 1463 "<previous_module>"
 if (0 == parent)
 
@@ -2604,10 +3479,26 @@ if (0 == parent)
 *IO_head = newNode;
                 
 # 1467 "<previous_module>"
+=======
+# 1483 "<previous_module>"
+if (0 == parent)
+
+# 1484 "<previous_module>"
+        {
+                
+# 1485 "<previous_module>"
+(*newNode).next = *IO_head;
+                
+# 1486 "<previous_module>"
+*IO_head = newNode;
+                
+# 1487 "<previous_module>"
+>>>>>>> origin/main
 goto CLEANUP;
         }
 
         
+<<<<<<< HEAD
 # 1471 "<previous_module>"
 (*newNode).next = (*parent).next;
         
@@ -2618,11 +3509,24 @@ goto CLEANUP;
 CLEANUP:
         
 # 1476 "<previous_module>"
+=======
+# 1491 "<previous_module>"
+(*newNode).next = (*parent).next;
+        
+# 1492 "<previous_module>"
+(*parent).next = newNode;
+        
+# 1494 "<previous_module>"
+CLEANUP:
+        
+# 1496 "<previous_module>"
+>>>>>>> origin/main
 return rCode;
 
 }
 
 
+<<<<<<< HEAD
 # 1482 "<previous_module>"
 int LIST_FetchNodeById(LIST_NODE_T *I__head, int long long unsigned I__user_id, LIST_NODE_T **_O_node, LIST_NODE_T **_O_parent)
 
@@ -2649,18 +3553,54 @@ if ((*curNode).payload.user_id == I__user_id)
                 {
                         
 # 1492 "<previous_module>"
+=======
+# 1502 "<previous_module>"
+int LIST_FetchNodeById(LIST_NODE_T *I__head, int long long unsigned I__user_id, LIST_NODE_T **_O_node, LIST_NODE_T **_O_parent)
+
+# 1503 "<previous_module>"
+{
+        
+# 1504 "<previous_module>"
+int rCode; rCode = 0;
+        
+# 1505 "<previous_module>"
+LIST_NODE_T *parent; parent = 0;
+        
+# 1506 "<previous_module>"
+LIST_NODE_T *curNode; curNode = I__head;
+        
+# 1509 "<previous_module>"
+while (curNode)
+
+# 1510 "<previous_module>"
+        {
+                
+# 1511 "<previous_module>"
+if ((*curNode).payload.user_id == I__user_id)
+                {
+                        
+# 1512 "<previous_module>"
+>>>>>>> origin/main
 break;
                 }
 
                 
+<<<<<<< HEAD
 # 1494 "<previous_module>"
 parent = curNode;
                 
 # 1495 "<previous_module>"
+=======
+# 1514 "<previous_module>"
+parent = curNode;
+                
+# 1515 "<previous_module>"
+>>>>>>> origin/main
 curNode = (*curNode).next;
         }
 
         
+<<<<<<< HEAD
 # 1499 "<previous_module>"
 if (0 == curNode)
 
@@ -2671,37 +3611,73 @@ if (0 == curNode)
 rCode = ENOENT;
                 
 # 1502 "<previous_module>"
+=======
+# 1519 "<previous_module>"
+if (0 == curNode)
+
+# 1520 "<previous_module>"
+        {
+                
+# 1521 "<previous_module>"
+rCode = ENOENT;
+                
+# 1522 "<previous_module>"
+>>>>>>> origin/main
 goto CLEANUP;
         }
 
         
+<<<<<<< HEAD
 # 1506 "<previous_module>"
 if (_O_node)
         {
                 
 # 1507 "<previous_module>"
+=======
+# 1526 "<previous_module>"
+if (_O_node)
+        {
+                
+# 1527 "<previous_module>"
+>>>>>>> origin/main
 *_O_node = curNode;
         }
 
         
+<<<<<<< HEAD
 # 1510 "<previous_module>"
 if (_O_parent)
         {
                 
 # 1511 "<previous_module>"
+=======
+# 1530 "<previous_module>"
+if (_O_parent)
+        {
+                
+# 1531 "<previous_module>"
+>>>>>>> origin/main
 *_O_parent = parent;
         }
 
         
+<<<<<<< HEAD
 # 1513 "<previous_module>"
 CLEANUP:
         
 # 1515 "<previous_module>"
+=======
+# 1533 "<previous_module>"
+CLEANUP:
+        
+# 1535 "<previous_module>"
+>>>>>>> origin/main
 return rCode;
 
 }
 
 
+<<<<<<< HEAD
 # 1521 "<previous_module>"
 int LIST_DeleteNodeById(LIST_NODE_T **IO_head, int long long unsigned I__user_id)
 
@@ -2750,26 +3726,89 @@ default:
 fprintf(stderr, "LIST_FetchNodeByName() reports: %d\n", rCode);
                         
 # 1540 "<previous_module>"
+=======
+# 1541 "<previous_module>"
+int LIST_DeleteNodeById(LIST_NODE_T **IO_head, int long long unsigned I__user_id)
+
+# 1542 "<previous_module>"
+{
+        
+# 1543 "<previous_module>"
+int rCode; rCode = 0;
+        
+# 1544 "<previous_module>"
+LIST_NODE_T *parent;
+        
+# 1545 "<previous_module>"
+LIST_NODE_T *delNode; delNode = 0;
+        
+# 1548 "<previous_module>"
+rCode = LIST_FetchNodeById(*IO_head, I__user_id, &delNode, &parent);
+        
+# 1549 "<previous_module>"
+switch (rCode)
+
+# 1550 "<previous_module>"
+        {
+                
+# 1551 "<previous_module>"
+case 0:
+                        
+# 1552 "<previous_module>"
+break;
+
+                
+# 1554 "<previous_module>"
+case ENOENT:
+                        
+# 1555 "<previous_module>"
+fprintf(stderr, "Matching node not found.\n");
+                        
+# 1556 "<previous_module>"
+goto CLEANUP;
+
+                
+# 1558 "<previous_module>"
+default:
+                        
+# 1559 "<previous_module>"
+fprintf(stderr, "LIST_FetchNodeByName() reports: %d\n", rCode);
+                        
+# 1560 "<previous_module>"
+>>>>>>> origin/main
 goto CLEANUP;
 
         }
 
         
+<<<<<<< HEAD
 # 1544 "<previous_module>"
 if (0 == parent)
         {
                 
 # 1545 "<previous_module>"
+=======
+# 1564 "<previous_module>"
+if (0 == parent)
+        {
+                
+# 1565 "<previous_module>"
+>>>>>>> origin/main
 *IO_head = (*delNode).next;
         }
         else
         {
                 
+<<<<<<< HEAD
 # 1547 "<previous_module>"
+=======
+# 1567 "<previous_module>"
+>>>>>>> origin/main
 (*parent).next = (*delNode).next;
         }
 
         
+<<<<<<< HEAD
 # 1550 "<previous_module>"
 free(delNode);
         
@@ -2777,11 +3816,21 @@ free(delNode);
 CLEANUP:
         
 # 1554 "<previous_module>"
+=======
+# 1570 "<previous_module>"
+free(delNode);
+        
+# 1572 "<previous_module>"
+CLEANUP:
+        
+# 1574 "<previous_module>"
+>>>>>>> origin/main
 return rCode;
 
 }
 
 
+<<<<<<< HEAD
 # 1560 "<previous_module>"
 int LIST_Destroy(LIST_NODE_T **IO_head)
 
@@ -2804,15 +3853,44 @@ LIST_NODE_T *delNode; delNode = *IO_head;
 *IO_head = (*(*IO_head)).next;
                 
 # 1569 "<previous_module>"
+=======
+# 1580 "<previous_module>"
+int LIST_Destroy(LIST_NODE_T **IO_head)
+
+# 1581 "<previous_module>"
+{
+        
+# 1582 "<previous_module>"
+int rCode; rCode = 0;
+        
+# 1584 "<previous_module>"
+while (*IO_head)
+
+# 1585 "<previous_module>"
+        {
+                
+# 1586 "<previous_module>"
+LIST_NODE_T *delNode; delNode = *IO_head;
+                
+# 1588 "<previous_module>"
+*IO_head = (*(*IO_head)).next;
+                
+# 1589 "<previous_module>"
+>>>>>>> origin/main
 free(delNode);
         }
 
         
+<<<<<<< HEAD
 # 1572 "<previous_module>"
+=======
+# 1592 "<previous_module>"
+>>>>>>> origin/main
 return rCode;
 }
 
 
+<<<<<<< HEAD
 # 1574 "<previous_module>"
 struct lfds711_stack_state ss;
 
@@ -2868,11 +3946,61 @@ lfds711_stack_push(&ss, &td[loop].se);
 # 1601 "<previous_module>"
 
                 ;
+=======
+# 1594 "<previous_module>"
+struct lfds711_stack_state ss;
+
+# 1597 "<previous_module>"
+struct test_data
+{
+        
+# 1600 "<previous_module>"
+
+# 1599 "<previous_module>"
+struct lfds711_stack_element se;
+        
+# 1603 "<previous_module>"
+
+# 1602 "<previous_module>"
+int long long unsigned user_id;
+};
+
+# 1607 "<previous_module>"
+void *push(void *__cs_unused)
+
+# 1608 "<previous_module>"
+{
+        
+# 1609 "<previous_module>"
+struct test_data *td;
+        
+# 1611 "<previous_module>"
+int long long unsigned loop;
+        
+# 1613 "<previous_module>"
+td = malloc((sizeof(struct test_data)) * 1);
+        
+# 1615 "<previous_module>"
+for (loop = 0; loop < 1; loop++)
+
+# 1616 "<previous_module>"
+        {
+                
+# 1618 "<previous_module>"
+td[loop].user_id = loop;
+                
+# 1619 "<previous_module>"
+td[loop].se.value = (void *) ((lfds711_pal_uint_t) (&td[loop]));
+                
+# 1620 "<previous_module>"
+lfds711_stack_push(&ss, &td[loop].se);
+>>>>>>> origin/main
         }
 
 }
 
 
+<<<<<<< HEAD
 # 1606 "<previous_module>"
 void *pop(void *__cs_unused)
 
@@ -2919,20 +4047,68 @@ if (res == 0)
                 {
                         
 # 1622 "<previous_module>"
+=======
+# 1626 "<previous_module>"
+void *pop(void *__cs_unused)
+
+# 1627 "<previous_module>"
+{
+        
+# 1628 "<previous_module>"
+struct lfds711_stack_element *se;
+        
+# 1629 "<previous_module>"
+struct test_data *temp_td;
+        
+# 1631 "<previous_module>"
+int res;
+        
+# 1632 "<previous_module>"
+int count; count = 0;
+        
+# 1633 "<previous_module>"
+int loop;
+        
+# 1634 "<previous_module>"
+for (loop = 0; loop < 1; loop++)
+
+# 1635 "<previous_module>"
+        {
+                
+# 1636 "<previous_module>"
+temp_td = 0;
+                
+# 1638 "<previous_module>"
+res = lfds711_stack_pop(&ss, &se);
+                
+# 1641 "<previous_module>"
+if (res == 0)
+                {
+                        
+# 1642 "<previous_module>"
+>>>>>>> origin/main
 continue;
                 }
 
                 
+<<<<<<< HEAD
 # 1623 "<previous_module>"
 temp_td = (*se).value;
                 
 # 1624 "<previous_module>"
+=======
+# 1643 "<previous_module>"
+temp_td = (*se).value;
+                
+# 1644 "<previous_module>"
+>>>>>>> origin/main
 count++;
         }
 
 }
 
 
+<<<<<<< HEAD
 # 1632 "<previous_module>"
 void writeIntofile(char *filename, LIST_NODE_T *listHead)
 
@@ -2964,10 +4140,44 @@ fflush(stdout);
 dup2(saved, 1);
         
 # 1642 "<previous_module>"
+=======
+# 1652 "<previous_module>"
+void writeIntofile(char *filename, LIST_NODE_T *listHead)
+
+# 1653 "<previous_module>"
+{
+        
+# 1654 "<previous_module>"
+int filefd; filefd = open(filename, (O_WRONLY | O_CREAT) | O_APPEND, 0666);
+        
+# 1655 "<previous_module>"
+int saved; saved = dup(1);
+        
+# 1656 "<previous_module>"
+close(1);
+        
+# 1657 "<previous_module>"
+dup(filefd);
+        
+# 1658 "<previous_module>"
+PrintListPayloads(listHead);
+        
+# 1659 "<previous_module>"
+close(filefd);
+        
+# 1660 "<previous_module>"
+fflush(stdout);
+        
+# 1661 "<previous_module>"
+dup2(saved, 1);
+        
+# 1662 "<previous_module>"
+>>>>>>> origin/main
 close(saved);
 }
 
 
+<<<<<<< HEAD
 # 1647 "<previous_module>"
 LIST_NODE_T *createList(LIST_NODE_T *listHead)
 
@@ -2999,15 +4209,53 @@ temp_td = (*se).value;
 LIST_InsertHeadNode(&listHead, (*temp_td).se, (*temp_td).user_id);
                 
 # 1658 "<previous_module>"
+=======
+# 1667 "<previous_module>"
+LIST_NODE_T *createList(LIST_NODE_T *listHead)
+
+# 1668 "<previous_module>"
+{
+        
+# 1669 "<previous_module>"
+struct lfds711_stack_element *se;
+        
+# 1670 "<previous_module>"
+struct test_data *temp_td;
+        
+# 1672 "<previous_module>"
+int res;
+        
+# 1673 "<previous_module>"
+res = lfds711_stack_pop(&ss, &se);
+        
+# 1674 "<previous_module>"
+while (res != 0)
+
+# 1675 "<previous_module>"
+        {
+                
+# 1676 "<previous_module>"
+temp_td = (*se).value;
+                
+# 1677 "<previous_module>"
+LIST_InsertHeadNode(&listHead, (*temp_td).se, (*temp_td).user_id);
+                
+# 1678 "<previous_module>"
+>>>>>>> origin/main
 res = lfds711_stack_pop(&ss, &se);
         }
 
         
+<<<<<<< HEAD
 # 1661 "<previous_module>"
+=======
+# 1681 "<previous_module>"
+>>>>>>> origin/main
 return listHead;
 }
 
 
+<<<<<<< HEAD
 # 1667 "<previous_module>"
 void readFile(char *filename, LIST_NODE_T *listHead)
 
@@ -3054,10 +4302,59 @@ writeIntofile(filename, listHead);
 assert(0);
                 
 # 1689 "<previous_module>"
+=======
+# 1687 "<previous_module>"
+void readFile(char *filename, LIST_NODE_T *listHead)
+
+# 1688 "<previous_module>"
+{
+        
+# 1689 "<previous_module>"
+char *line; line = 0;
+        
+# 1690 "<previous_module>"
+size_t len; len = 0;
+        
+# 1691 "<previous_module>"
+ssize_t read;
+        
+# 1693 "<previous_module>"
+LIST_NODE_T *parent; parent = 0;
+        
+# 1694 "<previous_module>"
+LIST_NODE_T *curNode; curNode = listHead;
+        
+# 1696 "<previous_module>"
+char delim[] = ",";
+        
+# 1697 "<previous_module>"
+int i; i = 0;
+        
+# 1699 "<previous_module>"
+int size; size = GetListSize(curNode);
+        
+# 1704 "<previous_module>"
+FILE *fp; fp = fopen(filename, "r");
+        
+# 1705 "<previous_module>"
+if (!fp)
+
+# 1706 "<previous_module>"
+        {
+                
+# 1707 "<previous_module>"
+writeIntofile(filename, listHead);
+                
+# 1708 "<previous_module>"
+assert(0);
+                
+# 1709 "<previous_module>"
+>>>>>>> origin/main
 return;
         }
 
         
+<<<<<<< HEAD
 # 1693 "<previous_module>"
 while ((read = getline(&line, &len, fp)) != (-1))
 
@@ -3078,10 +4375,33 @@ if ((*curNode).payload.user_id != atoi(ptr))
                         {
                                 
 # 1702 "<previous_module>"
+=======
+# 1713 "<previous_module>"
+while ((read = getline(&line, &len, fp)) != (-1))
+
+# 1714 "<previous_module>"
+        {
+                
+# 1716 "<previous_module>"
+char *ptr; ptr = strtok(line, delim);
+                
+# 1719 "<previous_module>"
+while (curNode)
+
+# 1720 "<previous_module>"
+                {
+                        
+# 1721 "<previous_module>"
+if ((*curNode).payload.user_id != atoi(ptr))
+                        {
+                                
+# 1722 "<previous_module>"
+>>>>>>> origin/main
 break;
                         }
 
                         
+<<<<<<< HEAD
 # 1703 "<previous_module>"
 i++;
                         
@@ -3092,10 +4412,23 @@ parent = curNode;
 curNode = (*curNode).next;
                         
 # 1706 "<previous_module>"
+=======
+# 1723 "<previous_module>"
+i++;
+                        
+# 1724 "<previous_module>"
+parent = curNode;
+                        
+# 1725 "<previous_module>"
+curNode = (*curNode).next;
+                        
+# 1726 "<previous_module>"
+>>>>>>> origin/main
 ptr = strtok(0, delim);
                 }
 
                 
+<<<<<<< HEAD
 # 1710 "<previous_module>"
 if (i == size)
 
@@ -3106,15 +4439,32 @@ if (i == size)
 fclose(fp);
                         
 # 1713 "<previous_module>"
+=======
+# 1730 "<previous_module>"
+if (i == size)
+
+# 1731 "<previous_module>"
+                {
+                        
+# 1732 "<previous_module>"
+fclose(fp);
+                        
+# 1733 "<previous_module>"
+>>>>>>> origin/main
 return;
                 }
 
                 
+<<<<<<< HEAD
 # 1716 "<previous_module>"
+=======
+# 1736 "<previous_module>"
+>>>>>>> origin/main
 i = 0;
         }
 
         
+<<<<<<< HEAD
 # 1721 "<previous_module>"
 if (i != size)
 
@@ -3128,12 +4478,28 @@ writeIntofile(filename, listHead);
 assert(0);
                 
 # 1725 "<previous_module>"
+=======
+# 1741 "<previous_module>"
+if (i != size)
+
+# 1742 "<previous_module>"
+        {
+                
+# 1743 "<previous_module>"
+writeIntofile(filename, listHead);
+                
+# 1744 "<previous_module>"
+assert(0);
+                
+# 1745 "<previous_module>"
+>>>>>>> origin/main
 return;
         }
 
 }
 
 
+<<<<<<< HEAD
 # 1732 "<previous_module>"
 int main()
 
@@ -3172,6 +4538,43 @@ listHead = createList(listHead);
 readFile("foo.txt", listHead);
         
 # 1750 "<previous_module>"
+=======
+# 1752 "<previous_module>"
+int main()
+
+# 1753 "<previous_module>"
+{
+        
+# 1754 "<previous_module>"
+LIST_NODE_T *listHead; listHead = 0;
+        
+# 1756 "<previous_module>"
+lfds711_stack_init_valid_on_current_logical_core(&ss, 0);
+        
+# 1758 "<previous_module>"
+pthread_t t1;
+        pthread_t t2;
+        
+# 1760 "<previous_module>"
+pthread_create(&t1, 0, push, 0);
+        
+# 1761 "<previous_module>"
+pthread_create(&t2, 0, pop, 0);
+        
+# 1762 "<previous_module>"
+pthread_join(t1, 0);
+        
+# 1763 "<previous_module>"
+pthread_join(t2, 0);
+        
+# 1765 "<previous_module>"
+listHead = createList(listHead);
+        
+# 1766 "<previous_module>"
+readFile("foo.txt", listHead);
+        
+# 1771 "<previous_module>"
+>>>>>>> origin/main
 return 0;
 }
 

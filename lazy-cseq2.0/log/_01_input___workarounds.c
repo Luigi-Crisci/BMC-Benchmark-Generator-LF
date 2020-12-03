@@ -1004,6 +1004,24 @@ void lfds711_stack_query( struct lfds711_stack_state *ss,
 #pragma warning( pop )
 
 void lfds711_misc_internal_backoff_init( struct lfds711_misc_backoff_state *bs );
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+pthread_mutex_t lock;
+static _Bool __atomic_compare_exchange_n(volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, _Bool weak_p , int sm , int fm ){
+
+ int res = __VERIFIER_atomic_compare_and_exchange(mptr,eptr,newval,weak_p,sm,fm);
+
+ return res;
+}
+
+>>>>>>> origin/main
 static _Bool __VERIFIER_atomic_compare_and_exchange(volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, _Bool weak_p , int sm , int fm )
 {
  if (*mptr == *eptr)
@@ -1018,13 +1036,26 @@ static _Bool __VERIFIER_atomic_compare_and_exchange(volatile int long long unsig
  }
 }
 
+<<<<<<< HEAD
+=======
+unsigned long __atomic_exchange_n(volatile int long long unsigned *previous, int long long unsigned new, int memorder){
+
+ int res = __VERIFIER_atomic_exchange(previous,new,memorder);
+
+ return res;
+}
+
+>>>>>>> origin/main
 unsigned long __VERIFIER_atomic_exchange(volatile int long long unsigned *previous, int long long unsigned new, int memorder)
 {
  unsigned long int old = *previous;
  *previous = new;
  return old;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 void __atomic_thread_fence(int i)
 {
 }
@@ -1052,8 +1083,11 @@ void exponential_backoff(){
  int loop;
  for (loop = 0; loop < 10; loop++);
 }
+<<<<<<< HEAD
 pthread_mutex_t lock;
 
+=======
+>>>>>>> origin/main
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs)
 {
  if( !(bs != 0) ) { char *c = 0; *c = 0; };;
@@ -1236,6 +1270,10 @@ void lfds711_stack_cleanup(struct lfds711_stack_state *ss,
  return;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
 typedef struct NODE_PAYLOAD_S
  {
  struct lfds711_stack_element se;
@@ -1260,7 +1298,11 @@ int LIST_InsertHeadNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__s
    newNode=malloc(sizeof(*newNode));
    if(0 == newNode)
       {
+<<<<<<< HEAD
       rCode=ENOMEM;
+=======
+      rCode=12;
+>>>>>>> origin/main
       fprintf(stderr, "malloc() failed.\n");
       goto CLEANUP;
       }
@@ -1360,7 +1402,11 @@ int LIST_InsertTailNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__s
    newNode=malloc(sizeof(*newNode));
    if(0 == newNode)
       {
+<<<<<<< HEAD
       rCode=ENOMEM;
+=======
+      rCode=12;
+>>>>>>> origin/main
       fprintf(stderr, "malloc() failed.\n");
       goto CLEANUP;
       }
@@ -1430,7 +1476,11 @@ int LIST_InsertNodeById(LIST_NODE_T **IO_head, int long long unsigned I__user_id
    newNode=malloc(sizeof(*newNode));
    if(0 == newNode)
       {
+<<<<<<< HEAD
       rCode=ENOMEM;
+=======
+      rCode=12;
+>>>>>>> origin/main
       fprintf(stderr, "malloc() failed.\n");
       goto CLEANUP;
       }
@@ -1590,6 +1640,7 @@ void *push()
 
  int long long unsigned loop;
 
+<<<<<<< HEAD
  td = malloc(sizeof(struct test_data) * 10);
 
  for (loop = 0; loop < 10; loop++)
@@ -1599,6 +1650,17 @@ void *push()
   ( (td[loop].se).value = (void *) (lfds711_pal_uint_t) (&td[loop]) );
   lfds711_stack_push(&ss, &td[loop].se);
   if(0){ pthread_mutex_unlock(&lock); };
+=======
+ td = malloc(sizeof(struct test_data) * 1);
+
+ for (loop = 0; loop < 1; loop++)
+ {
+
+  td[loop].user_id = loop;
+  ( (td[loop].se).value = (void *) (lfds711_pal_uint_t) (&td[loop]) );
+  lfds711_stack_push(&ss, &td[loop].se);
+
+>>>>>>> origin/main
  }
 
 }
@@ -1611,12 +1673,21 @@ void *pop()
  int res;
  int count = 0;
  int loop;
+<<<<<<< HEAD
  for (loop = 0; loop < 10; loop++)
  {
   temp_td = 0;
   if(0){ pthread_mutex_lock(&lock);};
   res = lfds711_stack_pop(&ss, &se);
   if(0){ pthread_mutex_unlock(&lock); };
+=======
+ for (loop = 0; loop < 1; loop++)
+ {
+  temp_td = 0;
+
+  res = lfds711_stack_pop(&ss, &se);
+
+>>>>>>> origin/main
 
   if(res == 0)
    continue;
@@ -1736,7 +1807,11 @@ int main()
  lfds711_stack_init_valid_on_current_logical_core(&ss, 0);
 
  pthread_t t1, t2;
+<<<<<<< HEAD
  pthread_mutex_init(&lock, 0);
+=======
+
+>>>>>>> origin/main
  pthread_create(&t1, 0, push, 0);
  pthread_create(&t2, 0, pop, 0);
  pthread_join(t1, 0);
@@ -1747,5 +1822,9 @@ int main()
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
  return (0);
 }

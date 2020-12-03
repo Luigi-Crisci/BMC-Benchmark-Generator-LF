@@ -2,10 +2,17 @@
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "<stdin>"
+<<<<<<< HEAD
 # 1 "/home/giuseppedp/tacs/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/stdio.h" 1
 # 1 "/home/giuseppedp/tacs/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/_fake_defines.h" 1
 # 2 "/home/giuseppedp/tacs/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/stdio.h" 2
 # 1 "/home/giuseppedp/tacs/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/_fake_typedefs.h" 1
+=======
+# 1 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/stdio.h" 1
+# 1 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/_fake_defines.h" 1
+# 2 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/stdio.h" 2
+# 1 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/_fake_typedefs.h" 1
+>>>>>>> origin/main
 
 
 typedef int _____STARTSTRIPPINGFROMHERE_____;
@@ -180,11 +187,19 @@ typedef int va_list;
 typedef int loff_t;
 
 typedef int _____STOPSTRIPPINGFROMHERE_____;
+<<<<<<< HEAD
 # 2 "/home/giuseppedp/tacs/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/stdio.h" 2
 # 2 "<stdin>" 2
 # 1 "/home/giuseppedp/tacs/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/stdlib.h" 1
 # 3 "<stdin>" 2
 # 1 "/home/giuseppedp/tacs/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/unistd.h" 1
+=======
+# 2 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/stdio.h" 2
+# 2 "<stdin>" 2
+# 1 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/stdlib.h" 1
+# 3 "<stdin>" 2
+# 1 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/unistd.h" 1
+>>>>>>> origin/main
 # 4 "<stdin>" 2
 # 1 "../workspace/multithread/../library_barrier.c" 1
 # 1 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 1
@@ -1066,9 +1081,29 @@ void lfds711_stack_query( struct lfds711_stack_state *ss,
 # 101 "../workspace/multithread/../../liblfds7.1.1/liblfds711/src/liblfds711_internal.h"
 void lfds711_misc_internal_backoff_init( struct lfds711_misc_backoff_state *bs );
 # 3 "../workspace/multithread/../library_barrier.c" 2
+<<<<<<< HEAD
 # 1 "/home/giuseppedp/tacs/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/pthread.h" 1
 # 4 "../workspace/multithread/../library_barrier.c" 2
 # 13 "../workspace/multithread/../library_barrier.c"
+=======
+# 1 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/pthread.h" 1
+# 4 "../workspace/multithread/../library_barrier.c" 2
+
+
+
+
+
+
+
+pthread_mutex_t lock;
+static _Bool __atomic_compare_exchange_n(volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, _Bool weak_p , int sm , int fm ){
+
+ int res = __VERIFIER_atomic_compare_and_exchange(mptr,eptr,newval,weak_p,sm,fm);
+
+ return res;
+}
+
+>>>>>>> origin/main
 static _Bool __VERIFIER_atomic_compare_and_exchange(volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, _Bool weak_p , int sm , int fm )
 {
  if (*mptr == *eptr)
@@ -1083,13 +1118,27 @@ static _Bool __VERIFIER_atomic_compare_and_exchange(volatile int long long unsig
  }
 }
 
+<<<<<<< HEAD
+=======
+unsigned long __atomic_exchange_n(volatile int long long unsigned *previous, int long long unsigned new, int memorder){
+
+ int res = __VERIFIER_atomic_exchange(previous,new,memorder);
+
+ return res;
+}
+
+>>>>>>> origin/main
 unsigned long __VERIFIER_atomic_exchange(volatile int long long unsigned *previous, int long long unsigned new, int memorder)
 {
  unsigned long int old = *previous;
  *previous = new;
  return old;
 }
+<<<<<<< HEAD
 
+=======
+# 74 "../workspace/multithread/../library_barrier.c"
+>>>>>>> origin/main
 void __atomic_thread_fence(int i)
 {
 }
@@ -1117,9 +1166,13 @@ void exponential_backoff(){
  int loop;
  for (loop = 0; loop < 10; loop++);
 }
+<<<<<<< HEAD
 # 74 "../workspace/multithread/../library_barrier.c"
 pthread_mutex_t lock;
 
+=======
+# 116 "../workspace/multithread/../library_barrier.c"
+>>>>>>> origin/main
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs)
 {
  if( !(bs != 0) ) { char *c = 0; *c = 0; };;
@@ -1302,6 +1355,7 @@ void lfds711_stack_cleanup(struct lfds711_stack_state *ss,
  return;
 }
 # 5 "<stdin>" 2
+<<<<<<< HEAD
 # 1 "/home/giuseppedp/tacs/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/assert.h" 1
 # 6 "<stdin>" 2
 # 1 "../workspace/multithread/../list.c" 1
@@ -1314,6 +1368,21 @@ void lfds711_stack_cleanup(struct lfds711_stack_state *ss,
 # 1 "/home/giuseppedp/tacs/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/string.h" 1
 # 5 "../workspace/multithread/../list.c" 2
 
+=======
+# 1 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/assert.h" 1
+# 6 "<stdin>" 2
+# 1 "../workspace/multithread/../list.c" 1
+# 1 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/stdlib.h" 1
+# 2 "../workspace/multithread/../list.c" 2
+# 1 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/stdio.h" 1
+# 3 "../workspace/multithread/../list.c" 2
+# 1 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/errno.h" 1
+# 4 "../workspace/multithread/../list.c" 2
+# 1 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/string.h" 1
+# 5 "../workspace/multithread/../list.c" 2
+
+
+>>>>>>> origin/main
 typedef struct NODE_PAYLOAD_S
  {
  struct lfds711_stack_element se;
@@ -1338,7 +1407,11 @@ int LIST_InsertHeadNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__s
    newNode=malloc(sizeof(*newNode));
    if(0 == newNode)
       {
+<<<<<<< HEAD
       rCode=ENOMEM;
+=======
+      rCode=12;
+>>>>>>> origin/main
       fprintf(stderr, "malloc() failed.\n");
       goto CLEANUP;
       }
@@ -1438,6 +1511,7 @@ int LIST_InsertTailNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__s
    newNode=malloc(sizeof(*newNode));
    if(0 == newNode)
       {
+<<<<<<< HEAD
       rCode=ENOMEM;
       fprintf(stderr, "malloc() failed.\n");
       goto CLEANUP;
@@ -1456,6 +1530,26 @@ int LIST_InsertTailNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__s
 
 CLEANUP:
 
+=======
+      rCode=12;
+      fprintf(stderr, "malloc() failed.\n");
+      goto CLEANUP;
+      }
+
+
+   newNode->payload.user_id = I__user_id;
+   newNode->payload.se = I__se;
+
+
+   newNode->next = 0;
+   if(tailNode)
+      tailNode->next = newNode;
+   else
+      *IO_head = newNode;
+
+CLEANUP:
+
+>>>>>>> origin/main
    return(rCode);
 }
 
@@ -1508,7 +1602,11 @@ int LIST_InsertNodeById(LIST_NODE_T **IO_head, int long long unsigned I__user_id
    newNode=malloc(sizeof(*newNode));
    if(0 == newNode)
       {
+<<<<<<< HEAD
       rCode=ENOMEM;
+=======
+      rCode=12;
+>>>>>>> origin/main
       fprintf(stderr, "malloc() failed.\n");
       goto CLEANUP;
       }
@@ -1650,7 +1748,11 @@ int LIST_Destroy(LIST_NODE_T **IO_head)
    return(rCode);
 }
 # 7 "<stdin>" 2
+<<<<<<< HEAD
 # 1 "/home/giuseppedp/tacs/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/fcntl.h" 1
+=======
+# 1 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/fcntl.h" 1
+>>>>>>> origin/main
 # 8 "<stdin>" 2
 # 17 "<stdin>"
 struct lfds711_stack_state ss;
@@ -1671,6 +1773,7 @@ void *push()
  struct test_data *td;
 
  int long long unsigned loop;
+<<<<<<< HEAD
 
  td = malloc(sizeof(struct test_data) * 10);
 
@@ -1728,6 +1831,80 @@ void writeIntofile(char *filename,LIST_NODE_T *listHead)
 
 LIST_NODE_T* createList(LIST_NODE_T *listHead)
 {
+=======
+
+ td = malloc(sizeof(struct test_data) * 1);
+
+ for (loop = 0; loop < 1; loop++)
+ {
+
+  td[loop].user_id = loop;
+  ( (td[loop].se).value = (void *) (lfds711_pal_uint_t) (&td[loop]) );
+  lfds711_stack_push(&ss, &td[loop].se);
+
+ }
+
+}
+
+void *pop()
+{
+>>>>>>> origin/main
+ struct lfds711_stack_element *se;
+ struct test_data *temp_td;
+
+ int res;
+<<<<<<< HEAD
+ res = lfds711_stack_pop(&ss, &se);
+ while (res!=0)
+=======
+ int count = 0;
+ int loop;
+ for (loop = 0; loop < 1; loop++)
+>>>>>>> origin/main
+ {
+  temp_td = 0;
+
+  res = lfds711_stack_pop(&ss, &se);
+
+
+  if(res == 0)
+   continue;
+  temp_td = ( (*se).value );
+<<<<<<< HEAD
+  LIST_InsertHeadNode(&listHead,temp_td->se,temp_td->user_id);
+  res = lfds711_stack_pop(&ss, &se);
+ }
+
+ return listHead;
+
+}
+
+=======
+  count++;
+
+ }
+
+
+}
+
+
+void writeIntofile(char *filename,LIST_NODE_T *listHead)
+{
+ int filefd = open(filename, O_WRONLY|O_CREAT|O_APPEND, 0666);
+ int saved = dup(1);
+ close(1);
+ dup(filefd);
+ PrintListPayloads(listHead);
+ close(filefd);
+ fflush(stdout);
+ dup2(saved, 1);
+ close(saved);
+}
+
+
+
+LIST_NODE_T* createList(LIST_NODE_T *listHead)
+{
  struct lfds711_stack_element *se;
  struct test_data *temp_td;
 
@@ -1744,6 +1921,7 @@ LIST_NODE_T* createList(LIST_NODE_T *listHead)
 
 }
 
+>>>>>>> origin/main
 
 
 void readFile(char* filename, LIST_NODE_T *listHead)
@@ -1777,6 +1955,7 @@ void readFile(char* filename, LIST_NODE_T *listHead)
 
   char *ptr = strtok(line, delim);
 
+<<<<<<< HEAD
 
   while(curNode)
         {
@@ -1795,6 +1974,26 @@ void readFile(char* filename, LIST_NODE_T *listHead)
    return;
   }
 
+=======
+
+  while(curNode)
+        {
+        if(curNode->payload.user_id != atoi(ptr))
+           break;
+   i++;
+        parent = curNode;
+        curNode=curNode->next;
+   ptr = strtok(0, delim);
+        }
+
+
+  if (i == size)
+  {
+   fclose(fp);
+   return;
+  }
+
+>>>>>>> origin/main
   i=0;
 
     }
@@ -1818,7 +2017,11 @@ int main()
  lfds711_stack_init_valid_on_current_logical_core(&ss, 0);
 
  pthread_t t1, t2;
+<<<<<<< HEAD
  pthread_mutex_init(&lock, 0);
+=======
+
+>>>>>>> origin/main
  pthread_create(&t1, 0, push, 0);
  pthread_create(&t2, 0, pop, 0);
  pthread_join(t1, 0);
@@ -1828,6 +2031,10 @@ int main()
  readFile("foo.txt",listHead);
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
 
  return (0);
 }

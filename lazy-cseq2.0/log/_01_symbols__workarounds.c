@@ -1,6 +1,12 @@
 list of functions:
    lfds711_misc_force_store(param: )  call count 1
+<<<<<<< HEAD
    __VERIFIER_atomic_compare_and_exchange(param: mptr, eptr, newval, weak_p, sm, fm)  call count 0
+=======
+   __atomic_compare_exchange_n(param: mptr, eptr, newval, weak_p, sm, fm)  call count 0
+   __VERIFIER_atomic_compare_and_exchange(param: mptr, eptr, newval, weak_p, sm, fm)  call count 0
+   __atomic_exchange_n(param: previous, new, memorder)  call count 0
+>>>>>>> origin/main
    __VERIFIER_atomic_exchange(param: previous, new, memorder)  call count 0
    __atomic_thread_fence(param: i)  call count 1
    __VERIFIER_atomic_swap_stack_top(param: top, oldtop, newtop)  call count 2
@@ -345,9 +351,15 @@ Variables:
       id167  'ss'  
          type 'struct lfds711_stack_state'  kind 'g'  arity '0'  
          size '[]'  
+<<<<<<< HEAD
          ref '[1600, 1618, 1653, 1658, 1736]'  
          deref '[]'  
          occurs '[1600, 1618, 1653, 1658, 1736]'  
+=======
+         ref '[1620, 1638, 1673, 1678, 1756]'  
+         deref '[]'  
+         occurs '[1620, 1638, 1673, 1678, 1756]'  
+>>>>>>> origin/main
       id168  'se'  
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
          size '[]'  
@@ -360,12 +372,21 @@ Variables:
          ref '[]'  
          deref '[]'  
          occurs '[]'  
+<<<<<<< HEAD
       id185  'lock'  
          type 'pthread_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
          ref '[1073, 1081, 1093, 1117, 1118, 1137, 1139, 1145, 1146, 1185, 1187, 1193, 1195, 1597, 1601, 1617, 1619, 1739]'  
          deref '[]'  
          occurs '[1073, 1081, 1093, 1117, 1118, 1137, 1139, 1145, 1146, 1185, 1187, 1193, 1195, 1597, 1601, 1617, 1619, 1739]'  
+=======
+      id170  'lock'  
+         type 'pthread_mutex_t'  kind 'g'  arity '0'  
+         size '[]'  
+         ref '[1092, 1100, 1112, 1136, 1137, 1156, 1158, 1164, 1165, 1204, 1206, 1212, 1214]'  
+         deref '[]'  
+         occurs '[1092, 1100, 1112, 1136, 1137, 1156, 1158, 1164, 1165, 1204, 1206, 1212, 1214]'  
+>>>>>>> origin/main
    lfds711_misc_force_store
       id17  'destination'  
          type 'volatile lfds711_pal_uint_t'  kind 'l'  arity '0'  
@@ -373,6 +394,7 @@ Variables:
          ref '[292]'  
          deref '[]'  
          occurs '[292]'  
+<<<<<<< HEAD
    __VERIFIER_atomic_compare_and_exchange
       id170  'mptr'  
          type 'volatile int long long unsigned *'  kind 'p'  arity '0'  
@@ -387,29 +409,102 @@ Variables:
          deref '[1009, 1016]'  
          occurs '[1009, 1016]'  
       id172  'newval'  
+=======
+   __atomic_compare_exchange_n
+      id171  'mptr'  
+         type 'volatile int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1017]'  
+      id172  'eptr'  
+         type 'volatile int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1017]'  
+      id173  'newval'  
          type 'volatile int long long unsigned'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+         occurs '[1017]'  
+      id174  'weak_p'  
+         type '_Bool'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1017]'  
+      id175  'sm'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1017]'  
+      id176  'fm'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1017]'  
+      id177  'res'  
+         type 'int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1019]'  
+   __VERIFIER_atomic_compare_and_exchange
+      id178  'mptr'  
+         type 'volatile int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1024, 1026]'  
+         occurs '[1024, 1026]'  
+      id179  'eptr'  
+         type 'volatile int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1024, 1031]'  
+         occurs '[1024, 1031]'  
+      id180  'newval'  
+>>>>>>> origin/main
+         type 'volatile int long long unsigned'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+<<<<<<< HEAD
          occurs '[1011, 1016]'  
       id173  'weak_p'  
+=======
+         occurs '[1026, 1031]'  
+      id181  'weak_p'  
+>>>>>>> origin/main
          type '_Bool'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
+<<<<<<< HEAD
       id174  'sm'  
+=======
+      id182  'sm'  
+>>>>>>> origin/main
          type 'int'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
+<<<<<<< HEAD
       id175  'fm'  
+=======
+      id183  'fm'  
+>>>>>>> origin/main
          type 'int'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
+<<<<<<< HEAD
    __VERIFIER_atomic_exchange
       id176  'previous'  
          type 'volatile int long long unsigned *'  kind 'p'  arity '0'  
@@ -418,31 +513,82 @@ Variables:
          deref '[1023, 1024]'  
          occurs '[1023, 1024]'  
       id177  'new'  
+=======
+   __atomic_exchange_n
+      id184  'previous'  
+         type 'volatile int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1038]'  
+      id185  'new'  
          type 'int long long unsigned'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+         occurs '[1038]'  
+      id186  'memorder'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1038]'  
+      id187  'res'  
+         type 'int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1040]'  
+   __VERIFIER_atomic_exchange
+      id188  'previous'  
+         type 'volatile int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1045, 1046]'  
+         occurs '[1045, 1046]'  
+      id189  'new'  
+>>>>>>> origin/main
+         type 'int long long unsigned'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+<<<<<<< HEAD
          occurs '[1024]'  
       id178  'memorder'  
+=======
+         occurs '[1046]'  
+      id190  'memorder'  
+>>>>>>> origin/main
          type 'int'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
+<<<<<<< HEAD
       id179  'old'  
+=======
+      id191  'old'  
+>>>>>>> origin/main
          type 'unsigned long int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1025]'  
    __atomic_thread_fence
       id180  'i'  
+=======
+         occurs '[1047]'  
+   __atomic_thread_fence
+      id192  'i'  
+>>>>>>> origin/main
          type 'int'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
    __VERIFIER_atomic_swap_stack_top
+<<<<<<< HEAD
       id181  'top'  
          type 'struct lfds711_stack_element * volatile *'  kind 'p'  arity '0'  
          size '[]'  
@@ -463,17 +609,46 @@ Variables:
          occurs '[1037]'  
    exponential_backoff
       id184  'loop'  
+=======
+      id193  'top'  
+         type 'struct lfds711_stack_element * volatile *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1056, 1058, 1063]'  
+         occurs '[1056, 1058, 1063]'  
+      id194  'oldtop'  
+         type 'struct lfds711_stack_element * volatile *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1056, 1063]'  
+         occurs '[1056, 1063]'  
+      id195  'newtop'  
+         type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1058]'  
+         occurs '[1058]'  
+   exponential_backoff
+      id196  'loop'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1053, 1053, 1053]'  
    lfds711_misc_internal_backoff_init
       id186  'bs'  
+=======
+         occurs '[1074, 1074, 1074]'  
+   lfds711_misc_internal_backoff_init
+      id197  'bs'  
+>>>>>>> origin/main
          type 'struct lfds711_misc_backoff_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1059, 1060, 1062, 1063, 1064, 1065, 1066]'  
       id187  'c'  
          type 'char *'  kind 'l'  arity '0'  
@@ -483,16 +658,33 @@ Variables:
          occurs '[1059, 1060]'  
    lfds711_stack_init_valid_on_current_logical_core
       id188  'ss'  
+=======
+         occurs '[1078, 1079, 1081, 1082, 1083, 1084, 1085]'  
+      id198  'c'  
+         type 'char *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1078, 1079]'  
+         occurs '[1078, 1079]'  
+   lfds711_stack_init_valid_on_current_logical_core
+      id199  'ss'  
+>>>>>>> origin/main
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1076, 1077, 1078, 1082, 1083, 1085, 1087, 1088]'  
       id189  'user_state'  
+=======
+         occurs '[1095, 1096, 1097, 1101, 1102, 1104, 1106, 1107]'  
+      id200  'user_state'  
+>>>>>>> origin/main
          type 'void *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1085]'  
       id190  'c'  
          type 'char *'  kind 'l'  arity '0'  
@@ -502,10 +694,22 @@ Variables:
          occurs '[1076, 1077, 1078]'  
    lfds711_stack_pop
       id191  'ss'  
+=======
+         occurs '[1104]'  
+      id201  'c'  
+         type 'char *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1095, 1096, 1097]'  
+         occurs '[1095, 1096, 1097]'  
+   lfds711_stack_pop
+      id202  'ss'  
+>>>>>>> origin/main
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1110, 1120, 1121, 1138]'  
       id192  'se'  
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
@@ -514,17 +718,33 @@ Variables:
          deref '[1129, 1153]'  
          occurs '[1111, 1129, 1153]'  
       id193  'result'  
+=======
+         occurs '[1129, 1139, 1140, 1157]'  
+      id203  'se'  
+         type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1148, 1172]'  
+         occurs '[1130, 1148, 1172]'  
+      id204  'result'  
+>>>>>>> origin/main
          type 'char unsigned'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1138, 1141, 1151]'  
       id194  'backoff_iteration'  
+=======
+         occurs '[1157, 1160, 1170]'  
+      id205  'backoff_iteration'  
+>>>>>>> origin/main
          type 'lfds711_pal_uint_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
+<<<<<<< HEAD
       id195  'new_top'  
          type 'struct lfds711_stack_element *'  kind 'l'  arity '1'  
          size '[2]'  
@@ -544,36 +764,79 @@ Variables:
          deref '[1110, 1111]'  
          occurs '[1110, 1111]'  
       id198  'i'  
+=======
+      id206  'new_top'  
+         type 'struct lfds711_stack_element *'  kind 'l'  arity '1'  
+         size '[2]'  
+         ref '[1157]'  
+         deref '[]'  
+         occurs '[1152, 1153, 1157]'  
+      id207  'original_top'  
+         type 'struct lfds711_stack_element * volatile'  kind 'l'  arity '1'  
+         size '[2]'  
+         ref '[1157]'  
+         deref '[]'  
+         occurs '[1139, 1140, 1146, 1152, 1153, 1157, 1172]'  
+      id208  'c'  
+         type 'char *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1129, 1130]'  
+         occurs '[1129, 1130]'  
+      id209  'i'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1148, 1149]'  
    lfds711_stack_push
       id199  'ss'  
+=======
+         occurs '[1167, 1168]'  
+   lfds711_stack_push
+      id210  'ss'  
+>>>>>>> origin/main
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1172, 1177, 1178, 1194]'  
       id200  'se'  
+=======
+         occurs '[1191, 1196, 1197, 1213]'  
+      id211  'se'  
+>>>>>>> origin/main
          type 'struct lfds711_stack_element *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1173, 1175, 1186]'  
       id201  'result'  
+=======
+         occurs '[1192, 1194, 1205]'  
+      id212  'result'  
+>>>>>>> origin/main
          type 'char unsigned'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1180, 1182, 1194, 1197]'  
       id202  'backoff_iteration'  
+=======
+         occurs '[1199, 1201, 1213, 1216]'  
+      id213  'backoff_iteration'  
+>>>>>>> origin/main
          type 'lfds711_pal_uint_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
+<<<<<<< HEAD
       id203  'new_top'  
          type 'struct lfds711_stack_element *'  kind 'l'  arity '1'  
          size '[2]'  
@@ -593,35 +856,78 @@ Variables:
          deref '[1172, 1173]'  
          occurs '[1172, 1173]'  
       id206  'i'  
+=======
+      id214  'new_top'  
+         type 'struct lfds711_stack_element *'  kind 'l'  arity '1'  
+         size '[2]'  
+         ref '[1213]'  
+         deref '[]'  
+         occurs '[1194, 1209, 1213]'  
+      id215  'original_top'  
+         type 'struct lfds711_stack_element * volatile'  kind 'l'  arity '1'  
+         size '[2]'  
+         ref '[1213]'  
+         deref '[]'  
+         occurs '[1196, 1197, 1205, 1209, 1213]'  
+      id216  'c'  
+         type 'char *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1191, 1192]'  
+         occurs '[1191, 1192]'  
+      id217  'i'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1200, 1201]'  
    lfds711_stack_cleanup
       id207  'ss'  
+=======
+         occurs '[1219, 1220]'  
+   lfds711_stack_cleanup
+      id218  'ss'  
+>>>>>>> origin/main
          type 'struct lfds711_stack_state'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1218, 1225, 1232]'  
       id208  'element_cleanup_callback'  
+=======
+         occurs '[1237, 1244, 1251]'  
+      id219  'element_cleanup_callback'  
+>>>>>>> origin/main
          type 'void (*)(struct lfds711_stack_state, struct lfds711_stack_element)'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1223, 1232]'  ptr-to-f 'True'
       id209  'se'  
+=======
+         occurs '[1242, 1251]'  ptr-to-f 'True'
+      id220  'se'  
+>>>>>>> origin/main
          type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1225, 1227, 1229, 1230, 1230]'  
       id210  'se_temp'  
+=======
+         occurs '[1244, 1246, 1248, 1249, 1249]'  
+      id221  'se_temp'  
+>>>>>>> origin/main
          type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1229, 1232]'  
       id211  'c'  
          type 'char *'  kind 'l'  arity '0'  
@@ -637,22 +943,50 @@ Variables:
          deref '[1273, 1274]'  
          occurs '[1273, 1274]'  
       id217  'I__se'  
+=======
+         occurs '[1248, 1251]'  
+      id222  'c'  
+         type 'char *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1237]'  
+         occurs '[1237]'  
+   LIST_InsertHeadNode
+      id227  'IO_head'  
+         type 'struct LIST_NODE_S **'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1293, 1294]'  
+         occurs '[1293, 1294]'  
+      id228  'I__se'  
+>>>>>>> origin/main
          type 'struct lfds711_stack_element'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1269]'  
       id218  'I__user_id'  
+=======
+         occurs '[1289]'  
+      id229  'I__user_id'  
+>>>>>>> origin/main
          type 'int long long unsigned'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1270]'  
       id219  'rCode'  
+=======
+         occurs '[1290]'  
+      id230  'rCode'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1263, 1278]'  
       id220  'newNode'  
          type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
@@ -662,48 +996,92 @@ Variables:
          occurs '[1260, 1260, 1260, 1261, 1269, 1270, 1273, 1274]'  
    PrintListPayloads
       id221  'head'  
+=======
+         occurs '[1283, 1298]'  
+      id231  'newNode'  
+         type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1280, 1280]'  
+         occurs '[1280, 1280, 1280, 1281, 1289, 1290, 1293, 1294]'  
+   PrintListPayloads
+      id232  'head'  
+>>>>>>> origin/main
          type 'struct LIST_NODE_S *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1287]'  
       id222  'rCode'  
+=======
+         occurs '[1307]'  
+      id233  'rCode'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1299]'  
       id223  'cur'  
+=======
+         occurs '[1319]'  
+      id234  'cur'  
+>>>>>>> origin/main
          type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1289, 1292, 1293, 1293, 1294]'  
    GetListSize
       id224  'head'  
+=======
+         occurs '[1309, 1312, 1313, 1313, 1314]'  
+   GetListSize
+      id235  'head'  
+>>>>>>> origin/main
          type 'struct LIST_NODE_S *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1308]'  
       id225  'cur'  
+=======
+         occurs '[1328]'  
+      id236  'cur'  
+>>>>>>> origin/main
          type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1310, 1313, 1313]'  
       id226  'nodeCnt'  
+=======
+         occurs '[1330, 1333, 1333]'  
+      id237  'nodeCnt'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1312, 1315]'  
    LIST_GetTailNode
       id227  'I__listHead'  
+=======
+         occurs '[1332, 1335]'  
+   LIST_GetTailNode
+      id238  'I__listHead'  
+>>>>>>> origin/main
          type 'struct LIST_NODE_S *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1325]'  
       id228  '_O_listTail'  
          type 'struct LIST_NODE_S **'  kind 'p'  arity '0'  
@@ -712,16 +1090,32 @@ Variables:
          deref '[1337]'  
          occurs '[1336, 1337]'  
       id229  'rCode'  
+=======
+         occurs '[1345]'  
+      id239  '_O_listTail'  
+         type 'struct LIST_NODE_S **'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1357]'  
+         occurs '[1356, 1357]'  
+      id240  'rCode'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1339]'  
       id230  'curNode'  
+=======
+         occurs '[1359]'  
+      id241  'curNode'  
+>>>>>>> origin/main
          type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1329, 1331, 1332, 1332, 1337]'  
    LIST_InsertTailNode
       id231  'IO_head'  
@@ -731,22 +1125,44 @@ Variables:
          deref '[1352, 1377]'  
          occurs '[1352, 1377]'  
       id232  'I__se'  
+=======
+         occurs '[1349, 1351, 1352, 1352, 1357]'  
+   LIST_InsertTailNode
+      id242  'IO_head'  
+         type 'struct LIST_NODE_S **'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1372, 1397]'  
+         occurs '[1372, 1397]'  
+      id243  'I__se'  
+>>>>>>> origin/main
          type 'struct lfds711_stack_element'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1370]'  
       id233  'I__user_id'  
+=======
+         occurs '[1390]'  
+      id244  'I__user_id'  
+>>>>>>> origin/main
          type 'int long long unsigned'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1369]'  
       id234  'rCode'  
+=======
+         occurs '[1389]'  
+      id245  'rCode'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1352, 1353, 1355, 1363, 1381]'  
       id235  'tailNode'  
          type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
@@ -762,16 +1178,39 @@ Variables:
          occurs '[1360, 1360, 1360, 1361, 1369, 1370, 1373, 1375, 1377]'  
    LIST_FetchParentNodeById
       id237  'I__head'  
+=======
+         occurs '[1372, 1373, 1375, 1383, 1401]'  
+      id246  'tailNode'  
+         type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[1372]'  
+         deref '[]'  
+         occurs '[1372, 1394, 1395]'  
+      id247  'newNode'  
+         type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1380, 1380]'  
+         occurs '[1380, 1380, 1380, 1381, 1389, 1390, 1393, 1395, 1397]'  
+   LIST_FetchParentNodeById
+      id248  'I__head'  
+>>>>>>> origin/main
          type 'struct LIST_NODE_S *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1391, 1394]'  
       id238  'I__user_id'  
+=======
+         occurs '[1411, 1414]'  
+      id249  'I__user_id'  
+>>>>>>> origin/main
          type 'int long long unsigned'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1403]'  
       id239  '_O_parent'  
          type 'struct LIST_NODE_S **'  kind 'p'  arity '0'  
@@ -780,22 +1219,43 @@ Variables:
          deref '[1412]'  
          occurs '[1411, 1412]'  
       id240  'rCode'  
+=======
+         occurs '[1423]'  
+      id250  '_O_parent'  
+         type 'struct LIST_NODE_S **'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1432]'  
+         occurs '[1431, 1432]'  
+      id251  'rCode'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1396, 1416]'  
       id241  'parent'  
+=======
+         occurs '[1416, 1436]'  
+      id252  'parent'  
+>>>>>>> origin/main
          type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1406, 1412]'  
       id242  'curNode'  
+=======
+         occurs '[1426, 1432]'  
+      id253  'curNode'  
+>>>>>>> origin/main
          type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1401, 1403, 1406, 1407, 1407]'  
    LIST_InsertNodeById
       id243  'IO_head'  
@@ -805,22 +1265,44 @@ Variables:
          deref '[1443, 1452, 1465, 1466]'  
          occurs '[1443, 1452, 1465, 1466]'  
       id244  'I__user_id'  
+=======
+         occurs '[1421, 1423, 1426, 1427, 1427]'  
+   LIST_InsertNodeById
+      id254  'IO_head'  
+         type 'struct LIST_NODE_S **'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1463, 1472, 1485, 1486]'  
+         occurs '[1463, 1472, 1485, 1486]'  
+      id255  'I__user_id'  
+>>>>>>> origin/main
          type 'int long long unsigned'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1439, 1443]'  
       id245  'I__se'  
+=======
+         occurs '[1459, 1463]'  
+      id256  'I__se'  
+>>>>>>> origin/main
          type 'struct lfds711_stack_element'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1440]'  
       id246  'rCode'  
+=======
+         occurs '[1460]'  
+      id257  'rCode'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1433, 1443, 1444, 1453, 1457, 1476]'  
       id247  'parent'  
          type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
@@ -836,16 +1318,39 @@ Variables:
          occurs '[1430, 1430, 1430, 1431, 1439, 1440, 1451, 1452, 1465, 1466, 1471, 1472]'  
    LIST_FetchNodeById
       id249  'I__head'  
+=======
+         occurs '[1453, 1463, 1464, 1473, 1477, 1496]'  
+      id258  'parent'  
+         type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[1463]'  
+         deref '[]'  
+         occurs '[1463, 1483, 1491, 1492]'  
+      id259  'newNode'  
+         type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1450, 1450]'  
+         occurs '[1450, 1450, 1450, 1451, 1459, 1460, 1471, 1472, 1485, 1486, 1491, 1492]'  
+   LIST_FetchNodeById
+      id260  'I__head'  
+>>>>>>> origin/main
          type 'struct LIST_NODE_S *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1486]'  
       id250  'I__user_id'  
+=======
+         occurs '[1506]'  
+      id261  'I__user_id'  
+>>>>>>> origin/main
          type 'int long long unsigned'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1491]'  
       id251  '_O_node'  
          type 'struct LIST_NODE_S **'  kind 'p'  arity '0'  
@@ -860,22 +1365,49 @@ Variables:
          deref '[1511]'  
          occurs '[1510, 1511]'  
       id253  'rCode'  
+=======
+         occurs '[1511]'  
+      id262  '_O_node'  
+         type 'struct LIST_NODE_S **'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1527]'  
+         occurs '[1526, 1527]'  
+      id263  '_O_parent'  
+         type 'struct LIST_NODE_S **'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1531]'  
+         occurs '[1530, 1531]'  
+      id264  'rCode'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1501, 1515]'  
       id254  'parent'  
+=======
+         occurs '[1521, 1535]'  
+      id265  'parent'  
+>>>>>>> origin/main
          type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1494, 1511]'  
       id255  'curNode'  
+=======
+         occurs '[1514, 1531]'  
+      id266  'curNode'  
+>>>>>>> origin/main
          type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1489, 1491, 1494, 1495, 1495, 1499, 1507]'  
    LIST_DeleteNodeById
       id256  'IO_head'  
@@ -885,16 +1417,33 @@ Variables:
          deref '[1528, 1545]'  
          occurs '[1528, 1545]'  
       id257  'I__user_id'  
+=======
+         occurs '[1509, 1511, 1514, 1515, 1515, 1519, 1527]'  
+   LIST_DeleteNodeById
+      id267  'IO_head'  
+         type 'struct LIST_NODE_S **'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1548, 1565]'  
+         occurs '[1548, 1565]'  
+      id268  'I__user_id'  
+>>>>>>> origin/main
          type 'int long long unsigned'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1528]'  
       id258  'rCode'  
+=======
+         occurs '[1548]'  
+      id269  'rCode'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1528, 1529, 1539, 1554]'  
       id259  'parent'  
          type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
@@ -916,16 +1465,45 @@ Variables:
          deref '[1564, 1566, 1568, 1568]'  
          occurs '[1564, 1566, 1568, 1568]'  
       id262  'rCode'  
+=======
+         occurs '[1548, 1549, 1559, 1574]'  
+      id270  'parent'  
+         type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[1548]'  
+         deref '[]'  
+         occurs '[1548, 1564, 1567]'  
+      id271  'delNode'  
+         type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[1548]'  
+         deref '[]'  
+         occurs '[1548, 1565, 1567, 1570]'  
+   LIST_Destroy
+      id272  'IO_head'  
+         type 'struct LIST_NODE_S **'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1584, 1586, 1588, 1588]'  
+         occurs '[1584, 1586, 1588, 1588]'  
+      id273  'rCode'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1572]'  
       id263  'delNode'  
+=======
+         occurs '[1592]'  
+      id274  'delNode'  
+>>>>>>> origin/main
          type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1569]'  
    push
       id266  'td'  
@@ -935,10 +1513,22 @@ Variables:
          deref '[]'  
          occurs '[1593, 1598, 1599, 1599, 1600]'  
       id267  'loop'  
+=======
+         occurs '[1589]'  
+   push
+      id277  'td'  
+         type 'struct test_data *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[1619, 1620]'  
+         deref '[]'  
+         occurs '[1613, 1618, 1619, 1619, 1620]'  
+      id278  'loop'  
+>>>>>>> origin/main
          type 'int long long unsigned'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1595, 1595, 1595, 1598, 1598, 1599, 1599, 1600]'  
    pop
       id268  'se'  
@@ -948,53 +1538,101 @@ Variables:
          deref '[1623]'  
          occurs '[1618, 1623]'  
       id269  'temp_td'  
+=======
+         occurs '[1615, 1615, 1615, 1618, 1618, 1619, 1619, 1620]'  
+   pop
+      id279  'se'  
+         type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[1638]'  
+         deref '[1643]'  
+         occurs '[1638, 1643]'  
+      id280  'temp_td'  
+>>>>>>> origin/main
          type 'struct test_data *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1616, 1623]'  
       id270  'res'  
+=======
+         occurs '[1636, 1643]'  
+      id281  'res'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1618, 1621]'  
       id271  'count'  
+=======
+         occurs '[1638, 1641]'  
+      id282  'count'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1624]'  
       id272  'loop'  
+=======
+         occurs '[1644]'  
+      id283  'loop'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1614, 1614, 1614]'  
    writeIntofile
       id273  'filename'  
+=======
+         occurs '[1634, 1634, 1634]'  
+   writeIntofile
+      id284  'filename'  
+>>>>>>> origin/main
          type 'char *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1634]'  
       id274  'listHead'  
+=======
+         occurs '[1654]'  
+      id285  'listHead'  
+>>>>>>> origin/main
          type 'struct LIST_NODE_S *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1638]'  
       id275  'filefd'  
+=======
+         occurs '[1658]'  
+      id286  'filefd'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1637, 1639]'  
       id276  'saved'  
+=======
+         occurs '[1657, 1659]'  
+      id287  'saved'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1641, 1642]'  
    createList
       id277  'listHead'  
@@ -1010,29 +1648,63 @@ Variables:
          deref '[1656]'  
          occurs '[1653, 1656, 1658]'  
       id279  'temp_td'  
+=======
+         occurs '[1661, 1662]'  
+   createList
+      id288  'listHead'  
+         type 'struct LIST_NODE_S *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[1677]'  
+         deref '[]'  
+         occurs '[1677, 1681]'  
+      id289  'se'  
+         type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[1673, 1678]'  
+         deref '[1676]'  
+         occurs '[1673, 1676, 1678]'  
+      id290  'temp_td'  
+>>>>>>> origin/main
          type 'struct test_data *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1656, 1657, 1657]'  
       id280  'res'  
+=======
+         occurs '[1676, 1677, 1677]'  
+      id291  'res'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1653, 1654, 1658]'  
    readFile
       id281  'filename'  
+=======
+         occurs '[1673, 1674, 1678]'  
+   readFile
+      id292  'filename'  
+>>>>>>> origin/main
          type 'char *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1684, 1687, 1723]'  
       id282  'listHead'  
+=======
+         occurs '[1704, 1707, 1743]'  
+      id293  'listHead'  
+>>>>>>> origin/main
          type 'struct LIST_NODE_S *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1674, 1687, 1723]'  
       id283  'line'  
          type 'char *'  kind 'l'  arity '0'  
@@ -1047,59 +1719,117 @@ Variables:
          deref '[]'  
          occurs '[1693]'  
       id285  'read'  
+=======
+         occurs '[1694, 1707, 1743]'  
+      id294  'line'  
+         type 'char *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[1713]'  
+         deref '[]'  
+         occurs '[1713, 1716]'  
+      id295  'len'  
+         type 'size_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[1713]'  
+         deref '[]'  
+         occurs '[1713]'  
+      id296  'read'  
+>>>>>>> origin/main
          type 'ssize_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1693]'  
       id286  'parent'  
+=======
+         occurs '[1713]'  
+      id297  'parent'  
+>>>>>>> origin/main
          type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1704]'  
       id287  'curNode'  
+=======
+         occurs '[1724]'  
+      id298  'curNode'  
+>>>>>>> origin/main
          type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1679, 1699, 1701, 1704, 1705, 1705]'  
       id288  'delim'  
+=======
+         occurs '[1699, 1719, 1721, 1724, 1725, 1725]'  
+      id299  'delim'  
+>>>>>>> origin/main
          type 'char'  kind 'l'  arity '1'  
          size '[-1]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1696, 1706]'  
       id289  'i'  
+=======
+         occurs '[1716, 1726]'  
+      id300  'i'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1703, 1710, 1716, 1721]'  
       id290  'size'  
+=======
+         occurs '[1723, 1730, 1736, 1741]'  
+      id301  'size'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1710, 1721]'  
       id291  'fp'  
+=======
+         occurs '[1730, 1741]'  
+      id302  'fp'  
+>>>>>>> origin/main
          type 'FILE *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1685, 1693, 1712]'  
       id292  'ptr'  
+=======
+         occurs '[1705, 1713, 1732]'  
+      id303  'ptr'  
+>>>>>>> origin/main
          type 'char *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1701, 1706]'  
    main
       id293  'listHead'  
+=======
+         occurs '[1721, 1726]'  
+   main
+      id304  'listHead'  
+>>>>>>> origin/main
          type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1745, 1745, 1746]'  
       id294  't1'  
          type 'pthread_t'  kind 'l'  arity '0'  
@@ -1113,6 +1843,21 @@ Variables:
          ref '[1741]'  
          deref '[]'  
          occurs '[1741, 1743]'  
+=======
+         occurs '[1765, 1765, 1766]'  
+      id305  't1'  
+         type 'pthread_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[1760]'  
+         deref '[]'  
+         occurs '[1760, 1762]'  
+      id306  't2'  
+         type 'pthread_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[1761]'  
+         deref '[]'  
+         occurs '[1761, 1763]'  
+>>>>>>> origin/main
 
 Fields:
    lfds711_prng_state
@@ -1257,6 +2002,7 @@ Fields:
       id165  'pop_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
       id166  'push_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
    NODE_PAYLOAD_S
+<<<<<<< HEAD
       id212  'se'  type 'struct lfds711_stack_element'  kind 'f'  arity '0'  size '[]'  
       id213  'user_id'  type 'int long long unsigned'  kind 'f'  arity '0'  size '[]'  
    LIST_NODE_S
@@ -1265,6 +2011,16 @@ Fields:
    test_data
       id264  'se'  type 'struct lfds711_stack_element'  kind 'f'  arity '0'  size '[]'  
       id265  'user_id'  type 'int long long unsigned'  kind 'f'  arity '0'  size '[]'  
+=======
+      id223  'se'  type 'struct lfds711_stack_element'  kind 'f'  arity '0'  size '[]'  
+      id224  'user_id'  type 'int long long unsigned'  kind 'f'  arity '0'  size '[]'  
+   LIST_NODE_S
+      id225  'next'  type 'struct LIST_NODE_S *'  kind 'f'  arity '0'  size '[]'  
+      id226  'payload'  type 'struct NODE_PAYLOAD_S'  kind 'f'  arity '0'  size '[]'  
+   test_data
+      id275  'se'  type 'struct lfds711_stack_element'  kind 'f'  arity '0'  size '[]'  
+      id276  'user_id'  type 'int long long unsigned'  kind 'f'  arity '0'  size '[]'  
+>>>>>>> origin/main
 
 Typedefs:
 NODE_PAYLOAD_T -> struct NODE_PAYLOAD_S
@@ -1309,9 +2065,20 @@ Pointer variables:
        var 'se'   type 'struct lfds711_stack_element **'   kind 'p'   arity '0'   size '[]'   
        var 'bs'   type 'struct lfds711_misc_backoff_state *'   kind 'p'   arity '0'   size '[]'   
    lfds711_misc_force_store
+<<<<<<< HEAD
    __VERIFIER_atomic_compare_and_exchange
        var 'mptr'   type 'volatile int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
        var 'eptr'   type 'volatile int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
+=======
+   __atomic_compare_exchange_n
+       var 'mptr'   type 'volatile int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
+       var 'eptr'   type 'volatile int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
+   __VERIFIER_atomic_compare_and_exchange
+       var 'mptr'   type 'volatile int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
+       var 'eptr'   type 'volatile int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
+   __atomic_exchange_n
+       var 'previous'   type 'volatile int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
+>>>>>>> origin/main
    __VERIFIER_atomic_exchange
        var 'previous'   type 'volatile int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
    __atomic_thread_fence
@@ -1418,6 +2185,19 @@ inline static void lfds711_misc_force_store()
 
 
 inline static void
+<<<<<<< HEAD
+=======
+function '__atomic_compare_exchange_n' ----------------------------------:
+static _Bool __atomic_compare_exchange_n(volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, _Bool weak_p, int sm, int fm)
+{
+    int res = __VERIFIER_atomic_compare_and_exchange(mptr, eptr, newval, weak_p, sm, fm);
+    return res;
+}
+
+
+volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, _Bool weak_p, int sm, int fm
+static _Bool
+>>>>>>> origin/main
 function '__VERIFIER_atomic_compare_and_exchange' ----------------------------------:
 static _Bool __VERIFIER_atomic_compare_and_exchange(volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, _Bool weak_p, int sm, int fm)
 {
@@ -1437,6 +2217,19 @@ static _Bool __VERIFIER_atomic_compare_and_exchange(volatile int long long unsig
 
 volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, _Bool weak_p, int sm, int fm
 static _Bool
+<<<<<<< HEAD
+=======
+function '__atomic_exchange_n' ----------------------------------:
+unsigned long __atomic_exchange_n(volatile int long long unsigned *previous, int long long unsigned new, int memorder)
+{
+    int res = __VERIFIER_atomic_exchange(previous, new, memorder);
+    return res;
+}
+
+
+volatile int long long unsigned *previous, int long long unsigned new, int memorder
+unsigned long
+>>>>>>> origin/main
 function '__VERIFIER_atomic_exchange' ----------------------------------:
 unsigned long __VERIFIER_atomic_exchange(volatile int long long unsigned *previous, int long long unsigned new, int memorder)
 {
@@ -1712,7 +2505,11 @@ int LIST_InsertHeadNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__s
     newNode = malloc(sizeof(*newNode));
     if (0 == newNode)
     {
+<<<<<<< HEAD
         rCode = ENOMEM;
+=======
+        rCode = 12;
+>>>>>>> origin/main
         fprintf(stderr, "malloc() failed.\n");
         goto CLEANUP;
     }
@@ -1804,7 +2601,11 @@ int LIST_InsertTailNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__s
     newNode = malloc(sizeof(*newNode));
     if (0 == newNode)
     {
+<<<<<<< HEAD
         rCode = ENOMEM;
+=======
+        rCode = 12;
+>>>>>>> origin/main
         fprintf(stderr, "malloc() failed.\n");
         goto CLEANUP;
     }
@@ -1866,7 +2667,11 @@ int LIST_InsertNodeById(LIST_NODE_T **IO_head, int long long unsigned I__user_id
     newNode = malloc(sizeof(*newNode));
     if (0 == newNode)
     {
+<<<<<<< HEAD
         rCode = ENOMEM;
+=======
+        rCode = 12;
+>>>>>>> origin/main
         fprintf(stderr, "malloc() failed.\n");
         goto CLEANUP;
     }
@@ -2001,6 +2806,7 @@ void *push()
 {
     struct test_data *td;
     int long long unsigned loop;
+<<<<<<< HEAD
     td = malloc((sizeof(struct test_data)) * 10);
     for (loop = 0; loop < 10; loop++)
     {
@@ -2019,6 +2825,14 @@ void *push()
         }
 
         ;
+=======
+    td = malloc((sizeof(struct test_data)) * 1);
+    for (loop = 0; loop < 1; loop++)
+    {
+        td[loop].user_id = loop;
+        td[loop].se.value = (void *) ((lfds711_pal_uint_t) (&td[loop]));
+        lfds711_stack_push(&ss, &td[loop].se);
+>>>>>>> origin/main
     }
 
 }
@@ -2034,6 +2848,7 @@ void *pop()
     int res;
     int count = 0;
     int loop;
+<<<<<<< HEAD
     for (loop = 0; loop < 10; loop++)
     {
         temp_td = 0;
@@ -2050,6 +2865,12 @@ void *pop()
         }
 
         ;
+=======
+    for (loop = 0; loop < 1; loop++)
+    {
+        temp_td = 0;
+        res = lfds711_stack_pop(&ss, &se);
+>>>>>>> origin/main
         if (res == 0)
                 continue;
 
@@ -2160,7 +2981,10 @@ int main()
     lfds711_stack_init_valid_on_current_logical_core(&ss, 0);
     pthread_t t1;
     pthread_t t2;
+<<<<<<< HEAD
     pthread_mutex_init(&lock, 0);
+=======
+>>>>>>> origin/main
     pthread_create(&t1, 0, push, 0);
     pthread_create(&t2, 0, pop, 0);
     pthread_join(t1, 0);
@@ -2176,6 +3000,11 @@ int
 Last statement, by function:
 function: lfds711_misc_force_store   stmt:     return;
 
+<<<<<<< HEAD
+=======
+function: __atomic_compare_exchange_n   stmt:     return res;
+
+>>>>>>> origin/main
 function: __VERIFIER_atomic_compare_and_exchange   stmt:     if ((*mptr) == (*eptr))
     {
         *mptr = newval;
@@ -2188,6 +3017,11 @@ function: __VERIFIER_atomic_compare_and_exchange   stmt:     if ((*mptr) == (*ep
     }
 
 
+<<<<<<< HEAD
+=======
+function: __atomic_exchange_n   stmt:     return res;
+
+>>>>>>> origin/main
 function: __VERIFIER_atomic_exchange   stmt:     return old;
 
 function: __atomic_thread_fence   stmt:     return old;
@@ -2250,6 +3084,7 @@ function: LIST_DeleteNodeById   stmt:     CLEANUP:
 
 function: LIST_Destroy   stmt:     return rCode;
 
+<<<<<<< HEAD
 function: push   stmt:     for (loop = 0; loop < 10; loop++)
     {
         if (0)
@@ -2286,6 +3121,20 @@ function: pop   stmt:     for (loop = 0; loop < 10; loop++)
         }
 
         ;
+=======
+function: push   stmt:     for (loop = 0; loop < 1; loop++)
+    {
+        td[loop].user_id = loop;
+        td[loop].se.value = (void *) ((lfds711_pal_uint_t) (&td[loop]));
+        lfds711_stack_push(&ss, &td[loop].se);
+    }
+
+
+function: pop   stmt:     for (loop = 0; loop < 1; loop++)
+    {
+        temp_td = 0;
+        res = lfds711_stack_pop(&ss, &se);
+>>>>>>> origin/main
         if (res == 0)
                 continue;
 
@@ -2725,6 +3574,7 @@ All symbols (new symbol table - work in progress):
    (412, 'query_output')  
    (413, 'lfds711_misc_internal_backoff_init')  
    (414, 'bs')  
+<<<<<<< HEAD
    (415, '__VERIFIER_atomic_compare_and_exchange')  
    (416, 'mptr')  
    (417, 'eptr')  
@@ -2885,3 +3735,178 @@ All symbols (new symbol table - work in progress):
    (572, 'listHead')  
    (573, 't1')  
    (574, 't2')  
+=======
+   (415, 'lock')  
+   (416, '__atomic_compare_exchange_n')  
+   (417, 'mptr')  
+   (418, 'eptr')  
+   (419, 'newval')  
+   (420, 'weak_p')  
+   (421, 'sm')  
+   (422, 'fm')  
+   (423, 'res')  
+   (424, '__VERIFIER_atomic_compare_and_exchange')  
+   (425, 'mptr')  
+   (426, 'eptr')  
+   (427, 'newval')  
+   (428, 'weak_p')  
+   (429, 'sm')  
+   (430, 'fm')  
+   (431, '__atomic_exchange_n')  
+   (432, 'previous')  
+   (433, 'new')  
+   (434, 'memorder')  
+   (435, 'res')  
+   (436, '__VERIFIER_atomic_exchange')  
+   (437, 'previous')  
+   (438, 'new')  
+   (439, 'memorder')  
+   (440, 'old')  
+   (441, '__atomic_thread_fence')  
+   (442, 'i')  
+   (443, '__VERIFIER_atomic_swap_stack_top')  
+   (444, 'top')  
+   (445, 'oldtop')  
+   (446, 'newtop')  
+   (447, 'exponential_backoff')  
+   (448, 'loop')  
+   (449, 'lfds711_misc_internal_backoff_init')  
+   (450, 'bs')  
+   (451, 'c')  
+   (452, 'c')  
+   (453, 'lfds711_stack_init_valid_on_current_logical_core')  
+   (454, 'ss')  
+   (455, 'user_state')  
+   (456, 'c')  
+   (457, 'c')  
+   (458, 'c')  
+   (459, 'lfds711_stack_pop')  
+   (460, 'ss')  
+   (461, 'se')  
+   (462, 'result')  
+   (463, 'backoff_iteration')  
+   (464, 'new_top')  
+   (465, 'original_top')  
+   (466, 'c')  
+   (467, 'c')  
+   (468, 'i')  
+   (469, 'lfds711_stack_push')  
+   (470, 'ss')  
+   (471, 'se')  
+   (472, 'result')  
+   (473, 'backoff_iteration')  
+   (474, 'new_top')  
+   (475, 'original_top')  
+   (476, 'c')  
+   (477, 'c')  
+   (478, 'i')  
+   (479, 'lfds711_stack_cleanup')  
+   (480, 'ss')  
+   (481, 'element_cleanup_callback')  
+   (482, 'ss')  
+   (483, 'se')  
+   (484, 'se')  
+   (485, 'se_temp')  
+   (486, 'c')  
+   (487, 'se')  
+   (488, 'user_id')  
+   (489, 'next')  
+   (490, 'payload')  
+   (491, 'LIST_InsertHeadNode')  
+   (492, 'IO_head')  
+   (493, 'I__se')  
+   (494, 'I__user_id')  
+   (495, 'rCode')  
+   (496, 'newNode')  
+   (497, 'PrintListPayloads')  
+   (498, 'head')  
+   (499, 'rCode')  
+   (500, 'cur')  
+   (501, 'GetListSize')  
+   (502, 'head')  
+   (503, 'cur')  
+   (504, 'nodeCnt')  
+   (505, 'LIST_GetTailNode')  
+   (506, 'I__listHead')  
+   (507, '_O_listTail')  
+   (508, 'rCode')  
+   (509, 'curNode')  
+   (510, 'LIST_InsertTailNode')  
+   (511, 'IO_head')  
+   (512, 'I__se')  
+   (513, 'I__user_id')  
+   (514, 'rCode')  
+   (515, 'tailNode')  
+   (516, 'newNode')  
+   (517, 'LIST_FetchParentNodeById')  
+   (518, 'I__head')  
+   (519, 'I__user_id')  
+   (520, '_O_parent')  
+   (521, 'rCode')  
+   (522, 'parent')  
+   (523, 'curNode')  
+   (524, 'LIST_InsertNodeById')  
+   (525, 'IO_head')  
+   (526, 'I__user_id')  
+   (527, 'I__se')  
+   (528, 'rCode')  
+   (529, 'parent')  
+   (530, 'newNode')  
+   (531, 'LIST_FetchNodeById')  
+   (532, 'I__head')  
+   (533, 'I__user_id')  
+   (534, '_O_node')  
+   (535, '_O_parent')  
+   (536, 'rCode')  
+   (537, 'parent')  
+   (538, 'curNode')  
+   (539, 'LIST_DeleteNodeById')  
+   (540, 'IO_head')  
+   (541, 'I__user_id')  
+   (542, 'rCode')  
+   (543, 'parent')  
+   (544, 'delNode')  
+   (545, 'LIST_Destroy')  
+   (546, 'IO_head')  
+   (547, 'rCode')  
+   (548, 'delNode')  
+   (549, 'ss')  
+   (550, 'se')  
+   (551, 'user_id')  
+   (552, 'push')  
+   (553, 'td')  
+   (554, 'loop')  
+   (555, 'pop')  
+   (556, 'se')  
+   (557, 'temp_td')  
+   (558, 'res')  
+   (559, 'count')  
+   (560, 'loop')  
+   (561, 'writeIntofile')  
+   (562, 'filename')  
+   (563, 'listHead')  
+   (564, 'filefd')  
+   (565, 'saved')  
+   (566, 'createList')  
+   (567, 'listHead')  
+   (568, 'se')  
+   (569, 'temp_td')  
+   (570, 'res')  
+   (571, 'readFile')  
+   (572, 'filename')  
+   (573, 'listHead')  
+   (574, 'line')  
+   (575, 'len')  
+   (576, 'read')  
+   (577, 'parent')  
+   (578, 'curNode')  
+   (579, 'delim')  
+   (580, 'i')  
+   (581, 'size')  
+   (582, 'fp')  
+   (583, 'ptr')  
+   (584, 'main')  
+   (585, 'listHead')  
+   (586, 't1')  
+   (587, 't2')  
+>>>>>>> origin/main

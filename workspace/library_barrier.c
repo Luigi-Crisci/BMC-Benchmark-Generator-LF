@@ -7,8 +7,14 @@
 #define false 0
 #define UNUSED __attribute__((unused))
 // Change function names, so that they are treated as Atomic by Lazy-Cseq
-#define __atomic_compare_exchange_n __VERIFIER_atomic_compare_and_exchange
-#define __atomic_exchange_n __VERIFIER_atomic_exchange
+
+pthread_mutex_t lock;
+static bool __atomic_compare_exchange_n(volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, bool weak_p UNUSED, int sm UNUSED, int fm UNUSED){
+	// pthread_mutex_lock(&lock);
+	int res = __VERIFIER_atomic_compare_and_exchange(mptr,eptr,newval,weak_p,sm,fm);
+	// pthread_mutex_unlock(&lock);
+	return res;
+}
 
 static bool __VERIFIER_atomic_compare_and_exchange(volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, bool weak_p UNUSED, int sm UNUSED, int fm UNUSED)
 {
@@ -24,12 +30,46 @@ static bool __VERIFIER_atomic_compare_and_exchange(volatile int long long unsign
 	}
 }
 
+unsigned long __atomic_exchange_n(volatile int long long unsigned *previous, int long long unsigned new, int memorder){
+	// pthread_mutex_lock(&lock);
+	int res = __VERIFIER_atomic_exchange(previous,new,memorder);
+	// pthread_mutex_unlock(&lock);
+	return res;
+}
+
 unsigned long __VERIFIER_atomic_exchange(volatile int long long unsigned *previous, int long long unsigned new, int memorder)
 {
 	unsigned long int old = *previous;
 	*previous = new;
 	return old;
 }
+
+
+// static bool __atomic_compare_exchange_n(volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, bool weak_p UNUSED, int sm UNUSED, int fm UNUSED)
+// {
+// 	// pthread_mutex_lock(&lock);
+// 	if (*mptr == *eptr)
+// 	{
+// 		*mptr = newval;
+// 		// pthread_mutex_unlock(&lock);
+// 		return 1;
+// 	}
+// 	else
+// 	{
+// 		*eptr = newval;
+// 		// pthread_mutex_unlock(&lock);
+// 		return 0;
+// 	}
+// }
+
+// unsigned long __atomic_exchange_n(volatile int long long unsigned *previous, int long long unsigned new, int memorder)
+// {
+// 	// pthread_mutex_lock(&lock);
+// 	unsigned long int old = *previous;
+// 	*previous = new;
+// 	// pthread_mutex_unlock(&lock);
+// 	return old;
+// }
 
 void __atomic_thread_fence(int i)
 {
@@ -71,7 +111,7 @@ void exponential_backoff(){
 // typedef int (__kernel_cmpxchg_t) (UWORD oldval, UWORD newval, UWORD *ptr);
 // #define __kernel_cmpxchg (*(__kernel_cmpxchg_t *) 0xffff0fc0)
 
-pthread_mutex_t lock;
+
 
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs)
 {

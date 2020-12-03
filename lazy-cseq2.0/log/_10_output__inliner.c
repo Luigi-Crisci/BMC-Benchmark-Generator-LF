@@ -555,6 +555,10 @@ void *__cs_param__query_input,
 void *__cs_param__query_output);
 #pragma warning( pop )
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *__cs_param__bs);
+<<<<<<< HEAD
+=======
+__cs_mutex_t lock;
+>>>>>>> origin/main
 _Bool __CSEQ_atomic_compare_and_exchange(int long long unsigned *__cs_param___CSEQ_atomic_compare_and_exchange_mptr, int long long unsigned *__cs_param___CSEQ_atomic_compare_and_exchange_eptr, int long long unsigned __cs_param___CSEQ_atomic_compare_and_exchange_newval, _Bool __cs_param___CSEQ_atomic_compare_and_exchange_weak_p, int __cs_param___CSEQ_atomic_compare_and_exchange_sm, int __cs_param___CSEQ_atomic_compare_and_exchange_fm)
 {
 ;
@@ -595,7 +599,10 @@ return 1;
 return 0;
     }
 }
+<<<<<<< HEAD
 __cs_mutex_t lock;
+=======
+>>>>>>> origin/main
 typedef struct NODE_PAYLOAD_S
 {
 struct lfds711_stack_element se;
@@ -616,10 +623,16 @@ void *push(void *__cs_param_push___cs_unused)
 {
 static struct test_data *__cs_local_push_td;
 static int long long unsigned __cs_local_push_loop;
+<<<<<<< HEAD
 __cs_local_push_td = __cs_safe_malloc((sizeof(struct test_data)) * 10);
 for (__cs_local_push_loop = 0; __cs_local_push_loop < 10; __cs_local_push_loop++)
     {
 ;
+=======
+__cs_local_push_td = __cs_safe_malloc((sizeof(struct test_data)) * 1);
+for (__cs_local_push_loop = 0; __cs_local_push_loop < 1; __cs_local_push_loop++)
+    {
+>>>>>>> origin/main
 __cs_local_push_td[__cs_local_push_loop].user_id = __cs_local_push_loop;
 __cs_local_push_td[__cs_local_push_loop].se.value = (void *) ((lfds711_pal_uint_t) (&__cs_local_push_td[__cs_local_push_loop]));
         {
@@ -692,7 +705,10 @@ break;
 goto __exit__lfds711_stack_push_1;
                      __exit__lfds711_stack_push_1: ;  
         }
+<<<<<<< HEAD
 ;
+=======
+>>>>>>> origin/main
     }
     __exit_push: ; __cs_exit(0);
 }
@@ -704,10 +720,16 @@ static int __cs_local_pop_res;
 static int __cs_local_pop_count;
 __cs_local_pop_count = 0;
 static int __cs_local_pop_loop;
+<<<<<<< HEAD
 for (__cs_local_pop_loop = 0; __cs_local_pop_loop < 10; __cs_local_pop_loop++)
     {
 __cs_local_pop_temp_td = 0;
 ;
+=======
+for (__cs_local_pop_loop = 0; __cs_local_pop_loop < 1; __cs_local_pop_loop++)
+    {
+__cs_local_pop_temp_td = 0;
+>>>>>>> origin/main
 static int __cs_retval__lfds711_stack_pop_1;
         {
             static struct lfds711_stack_state * __cs_param_lfds711_stack_pop_ss; __cs_param_lfds711_stack_pop_ss = &ss; static struct lfds711_stack_element ** __cs_param_lfds711_stack_pop_se; __cs_param_lfds711_stack_pop_se = &__cs_local_pop_se; 
@@ -833,7 +855,10 @@ __cs_retval__lfds711_stack_pop_1 = 1; goto __exit__lfds711_stack_pop_1;
         }
 __cs_local_pop_res = __cs_retval__lfds711_stack_pop_1;
 ;
+<<<<<<< HEAD
 ;
+=======
+>>>>>>> origin/main
 static _Bool __cs_local_pop___cs_tmp_if_cond_44;
 __cs_local_pop___cs_tmp_if_cond_44 = __cs_local_pop_res == 0;
 if (__cs_local_pop___cs_tmp_if_cond_44)
@@ -956,7 +981,19 @@ goto __exit__lfds711_misc_internal_backoff_init_2;
         {
 static lfds711_pal_uint_t __cs_local_lfds711_misc_force_store_destination; __cs_init_scalar(&__cs_local_lfds711_misc_force_store_destination, sizeof(lfds711_pal_uint_t));
             {
+<<<<<<< HEAD
 (void) __atomic_exchange_n(&__cs_local_lfds711_misc_force_store_destination, 0, 0);
+=======
+static unsigned long __cs_retval____atomic_exchange_n_1;
+                {
+                    static int long long unsigned * __cs_param___atomic_exchange_n_previous; __cs_param___atomic_exchange_n_previous = &__cs_local_lfds711_misc_force_store_destination; static int long long unsigned __cs_param___atomic_exchange_n_new; __cs_param___atomic_exchange_n_new = 0; static int __cs_param___atomic_exchange_n_memorder; __cs_param___atomic_exchange_n_memorder = 0; 
+static int __cs_local___atomic_exchange_n_res;
+__cs_local___atomic_exchange_n_res = __CSEQ_atomic_exchange(__cs_param___atomic_exchange_n_previous, __cs_param___atomic_exchange_n_new, __cs_param___atomic_exchange_n_memorder);
+__cs_retval____atomic_exchange_n_1 = __cs_local___atomic_exchange_n_res; goto __exit____atomic_exchange_n_1;
+                                     __exit____atomic_exchange_n_1: ;  
+                }
+(void) __cs_retval____atomic_exchange_n_1;
+>>>>>>> origin/main
             }
 ;
 goto __exit__lfds711_misc_force_store_1;
@@ -968,7 +1005,10 @@ goto __exit__lfds711_stack_init_valid_on_current_logical_core_1;
     }
 static __cs_t __cs_local_main_t1; ;
 static __cs_t __cs_local_main_t2; ;
+<<<<<<< HEAD
 __cs_mutex_init(&lock, 0);
+=======
+>>>>>>> origin/main
 __cs_create(&__cs_local_main_t1, 0, push, 0);
 __cs_create(&__cs_local_main_t2, 0, pop, 0);
 __cs_join(__cs_local_main_t1, 0);
@@ -1119,7 +1159,11 @@ static _Bool __cs_local_LIST_InsertHeadNode___cs_tmp_if_cond_21;
 __cs_local_LIST_InsertHeadNode___cs_tmp_if_cond_21 = 0 == __cs_local_LIST_InsertHeadNode_newNode;
 if (__cs_local_LIST_InsertHeadNode___cs_tmp_if_cond_21)
                 {
+<<<<<<< HEAD
 __cs_local_LIST_InsertHeadNode_rCode = ENOMEM;
+=======
+__cs_local_LIST_InsertHeadNode_rCode = 12;
+>>>>>>> origin/main
 fprintf(stderr, "malloc() failed.\n");
 goto CLEANUP_LIST_InsertHeadNode_0;
                 }

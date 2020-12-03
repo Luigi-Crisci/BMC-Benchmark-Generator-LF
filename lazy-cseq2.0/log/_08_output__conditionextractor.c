@@ -564,6 +564,16 @@ void *query_input,
 void *query_output);
 #pragma warning( pop )
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs);
+<<<<<<< HEAD
+=======
+__cs_mutex_t lock;
+_Bool __atomic_compare_exchange_n(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
+{
+int res;
+res = __CSEQ_atomic_compare_and_exchange(mptr, eptr, newval, weak_p, sm, fm);
+return res;
+}
+>>>>>>> origin/main
 _Bool __CSEQ_atomic_compare_and_exchange(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
 {
 ;_Bool __cs_tmp_if_cond_0; __cs_tmp_if_cond_0 = ((*mptr) == (*eptr)); 
@@ -578,6 +588,15 @@ return 1;
 return 0;
         }
 }
+<<<<<<< HEAD
+=======
+unsigned long __atomic_exchange_n(int long long unsigned *previous, int long long unsigned new, int memorder)
+{
+int res;
+res = __CSEQ_atomic_exchange(previous, new, memorder);
+return res;
+}
+>>>>>>> origin/main
 unsigned long __CSEQ_atomic_exchange(int long long unsigned *previous, int long long unsigned new, int memorder)
 {
 unsigned long int old;
@@ -611,7 +630,10 @@ for (loop = 0; loop < 10; loop++)
 ;
         }
 }
+<<<<<<< HEAD
 __cs_mutex_t lock;
+=======
+>>>>>>> origin/main
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs)
 {
 ;_Bool __cs_tmp_if_cond_2; __cs_tmp_if_cond_2 = (!(bs != 0)); 
@@ -875,7 +897,11 @@ newNode = __cs_safe_malloc(sizeof(*newNode));
 ;_Bool __cs_tmp_if_cond_21; __cs_tmp_if_cond_21 = (0 == newNode); 
         if (__cs_tmp_if_cond_21)
         {
+<<<<<<< HEAD
 rCode = ENOMEM;
+=======
+rCode = 12;
+>>>>>>> origin/main
 fprintf(stderr, "malloc() failed.\n");
 goto CLEANUP;
         }
@@ -957,7 +983,11 @@ newNode = __cs_safe_malloc(sizeof(*newNode));
 ;_Bool __cs_tmp_if_cond_26; __cs_tmp_if_cond_26 = (0 == newNode); 
         if (__cs_tmp_if_cond_26)
         {
+<<<<<<< HEAD
 rCode = ENOMEM;
+=======
+rCode = 12;
+>>>>>>> origin/main
 fprintf(stderr, "malloc() failed.\n");
 goto CLEANUP;
         }
@@ -1019,7 +1049,11 @@ newNode = __cs_safe_malloc(sizeof(*newNode));
 ;_Bool __cs_tmp_if_cond_31; __cs_tmp_if_cond_31 = (0 == newNode); 
         if (__cs_tmp_if_cond_31)
         {
+<<<<<<< HEAD
 rCode = ENOMEM;
+=======
+rCode = 12;
+>>>>>>> origin/main
 fprintf(stderr, "malloc() failed.\n");
 goto CLEANUP;
         }
@@ -1177,6 +1211,7 @@ void *push(void *__cs_unused)
 {
 struct test_data *td;
 int long long unsigned loop;
+<<<<<<< HEAD
 td = __cs_safe_malloc((sizeof(struct test_data)) * 10);
 for (loop = 0; loop < 10; loop++)
         {
@@ -1185,6 +1220,14 @@ td[loop].user_id = loop;
 td[loop].se.value = (void *) ((lfds711_pal_uint_t) (&td[loop]));
 lfds711_stack_push(&ss, &td[loop].se);
 ;
+=======
+td = __cs_safe_malloc((sizeof(struct test_data)) * 1);
+for (loop = 0; loop < 1; loop++)
+        {
+td[loop].user_id = loop;
+td[loop].se.value = (void *) ((lfds711_pal_uint_t) (&td[loop]));
+lfds711_stack_push(&ss, &td[loop].se);
+>>>>>>> origin/main
         }
 }
 void *pop(void *__cs_unused)
@@ -1195,12 +1238,19 @@ int res;
 int count;
 count = 0;
 int loop;
+<<<<<<< HEAD
 for (loop = 0; loop < 10; loop++)
         {
 temp_td = 0;
 ;
 res = lfds711_stack_pop(&ss, &se);
 ;
+=======
+for (loop = 0; loop < 1; loop++)
+        {
+temp_td = 0;
+res = lfds711_stack_pop(&ss, &se);
+>>>>>>> origin/main
 ;_Bool __cs_tmp_if_cond_44; __cs_tmp_if_cond_44 = (res == 0); 
                 if (__cs_tmp_if_cond_44)
                 {
@@ -1302,7 +1352,10 @@ listHead = 0;
 lfds711_stack_init_valid_on_current_logical_core(&ss, 0);
 __cs_t t1;
 __cs_t t2;
+<<<<<<< HEAD
 __cs_mutex_init(&lock, 0);
+=======
+>>>>>>> origin/main
 __cs_create(&t1, 0, push, 0);
 __cs_create(&t2, 0, pop, 0);
 __cs_join(t1, 0);

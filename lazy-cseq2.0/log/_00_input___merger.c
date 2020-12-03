@@ -7,12 +7,21 @@
 #include <fcntl.h>
 
 
+<<<<<<< HEAD
 #define VALUES 10
 //Set ATOMIC_OPERATION to make push and pop atomic
 //FIXME: Currently not working because of the presence of locks in push and pop method
 #define ATOMIC_OPERATION 0
 #define LOCK if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);}
 #define UNLOCK if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); }
+=======
+#define VALUES 1
+//Set ATOMIC_OPERATION to make push and pop atomic
+//FIXME: Currently not working because of the presence of locks in push and pop method
+#define ATOMIC_OPERATION 0
+// #define LOCK if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);}
+// #define UNLOCK if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); }
+>>>>>>> origin/main
 
 struct lfds711_stack_state ss;
 // pthread_mutex_t lock;
@@ -37,11 +46,19 @@ void *push()
 
 	for (loop = 0; loop < VALUES; loop++)
 	{
+<<<<<<< HEAD
 		LOCK;
 		td[loop].user_id = loop;
 		LFDS711_STACK_SET_VALUE_IN_ELEMENT(td[loop].se, &td[loop]);
 		lfds711_stack_push(&ss, &td[loop].se);
 		UNLOCK;
+=======
+		// LOCK;
+		td[loop].user_id = loop;
+		LFDS711_STACK_SET_VALUE_IN_ELEMENT(td[loop].se, &td[loop]);
+		lfds711_stack_push(&ss, &td[loop].se);
+		// UNLOCK;
+>>>>>>> origin/main
 	}
 	
 }
@@ -57,9 +74,15 @@ void *pop()
 	for (loop = 0; loop < VALUES; loop++)
 	{
 		temp_td = NULL;
+<<<<<<< HEAD
 		LOCK;
 		res = lfds711_stack_pop(&ss, &se);
 		UNLOCK;
+=======
+		// LOCK;
+		res = lfds711_stack_pop(&ss, &se);
+		// UNLOCK;
+>>>>>>> origin/main
 		
 		if(res == 0)
 			continue;
@@ -179,7 +202,11 @@ int main()
 	lfds711_stack_init_valid_on_current_logical_core(&ss, NULL);
 
 	pthread_t t1, t2;
+<<<<<<< HEAD
 	pthread_mutex_init(&lock, NULL);
+=======
+	// pthread_mutex_init(&lock, NULL);
+>>>>>>> origin/main
 	pthread_create(&t1, NULL, push, NULL);
 	pthread_create(&t2, NULL, pop, NULL);
 	pthread_join(t1, 0);
@@ -190,5 +217,9 @@ int main()
 	//Commented because cseq is unable to parse it
 	// lfds711_stack_cleanup(&ss, NULL);
 
+<<<<<<< HEAD
+=======
+	// assert(0);
+>>>>>>> origin/main
 	return (EXIT_SUCCESS);
 }

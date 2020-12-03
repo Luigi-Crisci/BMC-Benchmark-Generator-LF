@@ -1,0 +1,25 @@
+file ../workspace/multithread/_cs_stack_with_while.c line 802 function push_0: warning: conversion from `struct lfds711_stack_element * volatile *' to `signed long long int *': incompatible pointer types
+file ../workspace/multithread/_cs_stack_with_while.c line 802 function push_0: warning: conversion from `struct lfds711_stack_element * volatile *' to `signed long long int *': disregarding volatile
+file ../workspace/multithread/_cs_stack_with_while.c line 805 function push_0: warning: conversion from `struct lfds711_stack_element * volatile *' to `signed long long int *': incompatible pointer types
+file ../workspace/multithread/_cs_stack_with_while.c line 805 function push_0: warning: conversion from `struct lfds711_stack_element * volatile *' to `signed long long int *': disregarding volatile
+file ../workspace/multithread/_cs_stack_with_while.c line 808 function push_0: warning: conversion from `struct lfds711_stack_element **' to `signed long long int *': incompatible pointer types
+file ../workspace/multithread/_cs_stack_with_while.c line 876 function push_0: warning: conversion from `struct lfds711_stack_element * volatile *' to `signed long long int *': incompatible pointer types
+file ../workspace/multithread/_cs_stack_with_while.c line 876 function push_0: warning: conversion from `struct lfds711_stack_element * volatile *' to `signed long long int *': disregarding volatile
+file ../workspace/multithread/_cs_stack_with_while.c line 879 function push_0: warning: conversion from `struct lfds711_stack_element * volatile *' to `signed long long int *': incompatible pointer types
+file ../workspace/multithread/_cs_stack_with_while.c line 879 function push_0: warning: conversion from `struct lfds711_stack_element * volatile *' to `signed long long int *': disregarding volatile
+file ../workspace/multithread/_cs_stack_with_while.c line 882 function push_0: warning: conversion from `struct lfds711_stack_element **' to `signed long long int *': incompatible pointer types
+file ../workspace/multithread/_cs_stack_with_while.c line 1062 function pop_0: warning: conversion from `struct lfds711_stack_element * volatile *' to `signed long long int *': incompatible pointer types
+file ../workspace/multithread/_cs_stack_with_while.c line 1062 function pop_0: warning: conversion from `struct lfds711_stack_element * volatile *' to `signed long long int *': disregarding volatile
+file ../workspace/multithread/_cs_stack_with_while.c line 1065 function pop_0: warning: conversion from `struct lfds711_stack_element * volatile *' to `signed long long int *': incompatible pointer types
+file ../workspace/multithread/_cs_stack_with_while.c line 1065 function pop_0: warning: conversion from `struct lfds711_stack_element * volatile *' to `signed long long int *': disregarding volatile
+file ../workspace/multithread/_cs_stack_with_while.c line 1068 function pop_0: warning: conversion from `struct lfds711_stack_element **' to `signed long long int *': incompatible pointer types
+file ../workspace/multithread/_cs_stack_with_while.c line 1167 function pop_0: warning: conversion from `struct lfds711_stack_element * volatile *' to `signed long long int *': incompatible pointer types
+file ../workspace/multithread/_cs_stack_with_while.c line 1167 function pop_0: warning: conversion from `struct lfds711_stack_element * volatile *' to `signed long long int *': disregarding volatile
+file ../workspace/multithread/_cs_stack_with_while.c line 1170 function pop_0: warning: conversion from `struct lfds711_stack_element * volatile *' to `signed long long int *': incompatible pointer types
+file ../workspace/multithread/_cs_stack_with_while.c line 1170 function pop_0: warning: conversion from `struct lfds711_stack_element * volatile *' to `signed long long int *': disregarding volatile
+file ../workspace/multithread/_cs_stack_with_while.c line 1173 function pop_0: warning: conversion from `struct lfds711_stack_element **' to `signed long long int *': incompatible pointer types
+file ../workspace/multithread/_cs_stack_with_while.c line 1265 function pop_0: warning: conversion from `struct lfds711_stack_element * volatile *' to `signed long long int *': incompatible pointer types
+file ../workspace/multithread/_cs_stack_with_while.c line 1265 function pop_0: warning: conversion from `struct lfds711_stack_element * volatile *' to `signed long long int *': disregarding volatile
+file ../workspace/multithread/_cs_stack_with_while.c line 1268 function pop_0: warning: conversion from `struct lfds711_stack_element * volatile *' to `signed long long int *': incompatible pointer types
+file ../workspace/multithread/_cs_stack_with_while.c line 1268 function pop_0: warning: conversion from `struct lfds711_stack_element * volatile *' to `signed long long int *': disregarding volatile
+file ../workspace/multithread/_cs_stack_with_while.c line 1271 function pop_0: warning: conversion from `struct lfds711_stack_element **' to `signed long long int *': incompatible pointer types
