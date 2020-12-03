@@ -7,7 +7,7 @@
 #include <fcntl.h>
 
 
-#define VALUES 2000
+#define VALUES 10
 //Set ATOMIC_OPERATION to make push and pop atomic
 //FIXME: Currently not working because of the presence of locks in push and pop method
 #define ATOMIC_OPERATION 0
