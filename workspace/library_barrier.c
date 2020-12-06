@@ -9,12 +9,7 @@
 // Change function names, so that they are treated as Atomic by Lazy-Cseq
 
 pthread_mutex_t lock;
-static bool __atomic_compare_exchange_n(volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, bool weak_p UNUSED, int sm UNUSED, int fm UNUSED){
-	// pthread_mutex_lock(&lock);
-	int res = __VERIFIER_atomic_compare_and_exchange(mptr,eptr,newval,weak_p,sm,fm);
-	// pthread_mutex_unlock(&lock);
-	return res;
-}
+
 
 static bool __VERIFIER_atomic_compare_and_exchange(volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, bool weak_p UNUSED, int sm UNUSED, int fm UNUSED)
 {
@@ -30,12 +25,13 @@ static bool __VERIFIER_atomic_compare_and_exchange(volatile int long long unsign
 	}
 }
 
-unsigned long __atomic_exchange_n(volatile int long long unsigned *previous, int long long unsigned new, int memorder){
+static bool __atomic_compare_exchange_n(volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, bool weak_p UNUSED, int sm UNUSED, int fm UNUSED){
 	// pthread_mutex_lock(&lock);
-	int res = __VERIFIER_atomic_exchange(previous,new,memorder);
+	int res = __VERIFIER_atomic_compare_and_exchange(mptr,eptr,newval,weak_p,sm,fm);
 	// pthread_mutex_unlock(&lock);
 	return res;
 }
+
 
 unsigned long __VERIFIER_atomic_exchange(volatile int long long unsigned *previous, int long long unsigned new, int memorder)
 {
@@ -43,6 +39,17 @@ unsigned long __VERIFIER_atomic_exchange(volatile int long long unsigned *previo
 	*previous = new;
 	return old;
 }
+
+
+
+unsigned long __atomic_exchange_n(volatile int long long unsigned *previous, int long long unsigned new, int memorder){
+	// pthread_mutex_lock(&lock);
+	int res = __VERIFIER_atomic_exchange(previous,new,memorder);
+	// pthread_mutex_unlock(&lock);
+	return res;
+}
+
+
 
 
 // static bool __atomic_compare_exchange_n(volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, bool weak_p UNUSED, int sm UNUSED, int fm UNUSED)
