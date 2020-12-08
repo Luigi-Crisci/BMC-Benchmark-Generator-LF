@@ -3198,12 +3198,6 @@ pthread_join(t1, 0);
 pthread_join(t2, 0);
     
 # 1164 "<previous_module>"
-listHead = createList(listHead);
-    
-# 1165 "<previous_module>"
-readFile("foo.txt", listHead);
-    
-# 1166 "<previous_module>"
 return 0;
 }
 

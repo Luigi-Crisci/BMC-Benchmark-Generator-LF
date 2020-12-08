@@ -3699,12 +3699,6 @@ __cs_join(__cs_local_main_t1, 0);
 __cs_join(__cs_local_main_t2, 0);
         
 # 1317 "<previous_module>"
-__cs_local_main_listHead = createList(__cs_local_main_listHead);
-        
-# 1318 "<previous_module>"
-readFile("foo.txt", __cs_local_main_listHead);
-        
-# 1319 "<previous_module>"
 return 0;
 }
 

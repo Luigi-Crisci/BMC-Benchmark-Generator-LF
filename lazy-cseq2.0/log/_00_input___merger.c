@@ -185,8 +185,8 @@ int main()
 	pthread_join(t1, 0);
 	pthread_join(t2, 0);
 
-	listHead = createList(listHead);
-	readFile("foo.txt",listHead);
+	// listHead = createList(listHead);
+	// readFile("foo.txt",listHead);
 	//Commented because cseq is unable to parse it
 	// lfds711_stack_cleanup(&ss, NULL);
 

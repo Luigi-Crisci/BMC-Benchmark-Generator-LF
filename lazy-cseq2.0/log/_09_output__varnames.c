@@ -1412,7 +1412,5 @@ __cs_create(&__cs_local_main_t1, 0, push, 0);
 __cs_create(&__cs_local_main_t2, 0, pop, 0);
 __cs_join(__cs_local_main_t1, 0);
 __cs_join(__cs_local_main_t2, 0);
-__cs_local_main_listHead = createList(__cs_local_main_listHead);
-readFile("foo.txt", __cs_local_main_listHead);
 return 0;
 }

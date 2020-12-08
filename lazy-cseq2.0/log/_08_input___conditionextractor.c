@@ -1263,7 +1263,5 @@ __cs_create(&t1, 0, push, 0);
 __cs_create(&t2, 0, pop, 0);
 __cs_join(t1, 0);
 __cs_join(t2, 0);
-listHead = createList(listHead);
-readFile("foo.txt", listHead);
 return 0;
 }

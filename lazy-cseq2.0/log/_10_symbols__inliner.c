@@ -25,8 +25,8 @@ list of functions:
    push(param: __cs_param_push___cs_unused)  call count 0
    pop(param: __cs_param_pop___cs_unused)  call count 0
    writeIntofile(param: __cs_param_writeIntofile_filename, __cs_param_writeIntofile_listHead)  call count 2
-   createList(param: __cs_param_createList_listHead)  call count 1
-   readFile(param: __cs_param_readFile_filename, __cs_param_readFile_listHead)  call count 1
+   createList(param: __cs_param_createList_listHead)  call count 0
+   readFile(param: __cs_param_readFile_filename, __cs_param_readFile_listHead)  call count 0
    main(param: )  call count 0
 
 list of thread functions:
@@ -1500,7 +1500,7 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1407, 1415, 1415, 1416]'  
+         occurs '[1407]'  
       id363  '__cs_local_main_t1'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
@@ -2868,8 +2868,6 @@ int main()
     __cs_create(&__cs_local_main_t2, 0, pop, 0);
     __cs_join(__cs_local_main_t1, 0);
     __cs_join(__cs_local_main_t2, 0);
-    __cs_local_main_listHead = createList(__cs_local_main_listHead);
-    readFile("foo.txt", __cs_local_main_listHead);
     return 0;
 }
 

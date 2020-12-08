@@ -1844,8 +1844,8 @@ int main()
  pthread_join(t1, 0);
  pthread_join(t2, 0);
 
- listHead = createList(listHead);
- readFile("foo.txt",listHead);
+
+
 
 
 

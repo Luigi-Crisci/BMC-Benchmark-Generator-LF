@@ -3495,12 +3495,6 @@ __cs_join(t1, 0);
 __cs_join(t2, 0);
         
 # 1266 "<previous_module>"
-listHead = createList(listHead);
-        
-# 1267 "<previous_module>"
-readFile("foo.txt", listHead);
-        
-# 1268 "<previous_module>"
 return 0;
 }
 
