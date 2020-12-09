@@ -1,2 +1,3 @@
 *.o
 *.out
+lazy-cseq2.0/*
