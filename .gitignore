@@ -1,4 +1,4 @@
 *.o
 *.out
-lazy-cseq2.0/*
+lazy-cseq/*
 *log/*
