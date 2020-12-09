@@ -11,6 +11,9 @@ PREP = -E -P
 stack_with_while.out: stack_with_while.o
 				$(CC) $(CCFLAGS) -o $@ $? $(LIBS)
 
+generalized.out: generalized.o
+				$(CC) $(CCFLAGS) -o $@ $? $(LIBS)
+
 preprocessed_stack_with_while.out: preprocessed_stack_with_while.o
 				$(CC) $(CCFLAGS) -o $@ $? $(LIBS)
 

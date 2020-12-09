@@ -1,6 +1,7 @@
 list of functions:
    lfds711_misc_force_store(param: )  call count 1
 <<<<<<< HEAD
+<<<<<<< HEAD
    __CSEQ_atomic_compare_and_exchange(param: mptr, eptr, newval, weak_p, sm, fm)  call count 0
 =======
    __atomic_compare_exchange_n(param: mptr, eptr, newval, weak_p, sm, fm)  call count 0
@@ -10,27 +11,25 @@ list of functions:
    __CSEQ_atomic_exchange(param: previous, new, memorder)  call count 0
    __atomic_thread_fence(param: i)  call count 1
    __CSEQ_atomic_swap_stack_top(param: top, oldtop, newtop)  call count 2
+=======
+>>>>>>> origin/main
    exponential_backoff(param: )  call count 2
+   __CSEQ_atomic_swap_stack_top(param: top, oldtop, newtop)  call count 2
    lfds711_misc_internal_backoff_init(param: bs)  call count 2
    lfds711_stack_init_valid_on_current_logical_core(param: ss, user_state)  call count 1
-   lfds711_stack_pop(param: ss, se)  call count 3
-   lfds711_stack_push(param: ss, se)  call count 1
-   lfds711_stack_cleanup(param: ss, ss, se, element_cleanup_callback)  call count 0
-   LIST_InsertHeadNode(param: IO_head, I__se, I__user_id)  call count 1
-   PrintListPayloads(param: head)  call count 1
-   GetListSize(param: head)  call count 1
-   LIST_GetTailNode(param: I__listHead, _O_listTail)  call count 1
-   LIST_InsertTailNode(param: IO_head, I__se, I__user_id)  call count 0
-   LIST_FetchParentNodeById(param: I__head, I__user_id, _O_parent)  call count 1
-   LIST_InsertNodeById(param: IO_head, I__user_id, I__se)  call count 0
-   LIST_FetchNodeById(param: I__head, I__user_id, _O_node, _O_parent)  call count 1
-   LIST_DeleteNodeById(param: IO_head, I__user_id)  call count 0
-   LIST_Destroy(param: IO_head)  call count 0
+   lfds711_stack_pop(param: ss, se)  call count 2
+   lfds711_stack_push(param: ss, se)  call count 2
+   __CSEQ_atomic_compare_and_exchange(param: mptr, eptr, newval, weak_p, sm, fm)  call count 1
+   __atomic_compare_exchange_n(param: mptr, eptr, newval, weak_p, sm, fm)  call count 0
+   __CSEQ_atomic_exchange(param: previous, new, memorder)  call count 1
+   __atomic_exchange_n(param: previous, new, memorder)  call count 0
+   __atomic_thread_fence(param: i)  call count 0
+   init(param: )  call count 1
+   insert(param: s, id)  call count 1
+   delete(param: s)  call count 1
+   contains(param: s, id)  call count 0
    push(param: __cs_unused)  call count 0
    pop(param: __cs_unused)  call count 0
-   writeIntofile(param: filename, listHead)  call count 2
-   createList(param: listHead)  call count 1
-   readFile(param: filename, listHead)  call count 1
    main(param: )  call count 0
 
 list of thread functions:
@@ -349,8 +348,9 @@ Variables:
          deref '[]'  
          occurs '[]'  
       id167  'ss'  
-         type 'struct lfds711_stack_state'  kind 'g'  arity '0'  
+         type 'void *'  kind 'g'  arity '0'  
          size '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          ref '[1089, 1105, 1134, 1139, 1200]'  
          deref '[]'  
@@ -359,6 +359,11 @@ Variables:
          ref '[1100, 1114, 1142, 1147, 1208]'  
          deref '[]'  
          occurs '[1100, 1114, 1142, 1147, 1208]'  
+>>>>>>> origin/main
+=======
+         ref '[]'  
+         deref '[]'  
+         occurs '[890, 911, 922]'  
 >>>>>>> origin/main
       id168  'se'  
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
@@ -372,6 +377,7 @@ Variables:
          ref '[]'  
          deref '[]'  
          occurs '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
       id185  'lock'  
          type '__cs_mutex_t'  kind 'g'  arity '0'  
@@ -500,9 +506,20 @@ Variables:
       id183  'fm'  
 >>>>>>> origin/main
          type 'int'  kind 'p'  arity '0'  
+=======
+      id170  'library_lock'  
+         type '__cs_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[]'  
+         ref '[618, 643, 650, 677, 678, 692, 694, 698, 699, 744, 746, 748, 750]'  
          deref '[]'  
+         occurs '[618, 643, 650, 677, 678, 692, 694, 698, 699, 744, 746, 748, 750]'  
+      id218  'mystack'  
+         type 'struct lfds711_stack_state'  kind 'g'  arity '0'  
+>>>>>>> origin/main
+         size '[]'  
+         ref '[806, 807, 822]'  
+         deref '[]'  
+<<<<<<< HEAD
          occurs '[]'  
 <<<<<<< HEAD
    __CSEQ_atomic_exchange
@@ -517,27 +534,35 @@ Variables:
    __atomic_exchange_n
       id184  'previous'  
          type 'int long long unsigned *'  kind 'p'  arity '0'  
+=======
+         occurs '[806, 807, 822]'  
+      id239  'ATOMIC_OPERATION'  
+         type 'int'  kind 'g'  arity '0'  
+>>>>>>> origin/main
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[590]'  
-      id185  'new'  
-         type 'int long long unsigned'  kind 'p'  arity '0'  
+         occurs '[885, 891, 906, 912]'  
+      id240  'lock'  
+         type '__cs_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[]'  
+         ref '[887, 893, 908, 914, 921]'  
          deref '[]'  
-         occurs '[590]'  
-      id186  'memorder'  
-         type 'int'  kind 'p'  arity '0'  
+         occurs '[887, 893, 908, 914, 921]'  
+   lfds711_misc_force_store
+      id17  'destination'  
+         type 'lfds711_pal_uint_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[]'  
+         ref '[201]'  
          deref '[]'  
-         occurs '[590]'  
-      id187  'res'  
+         occurs '[201]'  
+   exponential_backoff
+      id171  'loop'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[590, 591]'  
    __CSEQ_atomic_exchange
       id188  'previous'  
@@ -611,21 +636,27 @@ Variables:
       id184  'loop'  
 =======
       id193  'top'  
+=======
+         occurs '[571, 571, 571]'  
+   __CSEQ_atomic_swap_stack_top
+      id172  'top'  
+>>>>>>> origin/main
          type 'struct lfds711_stack_element * volatile *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[606, 608, 613]'  
-         occurs '[606, 608, 613]'  
-      id194  'oldtop'  
+         deref '[579, 581, 586]'  
+         occurs '[579, 581, 586]'  
+      id173  'oldtop'  
          type 'struct lfds711_stack_element * volatile *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[606, 613]'  
-         occurs '[606, 613]'  
-      id195  'newtop'  
+         deref '[579, 586]'  
+         occurs '[579, 586]'  
+      id174  'newtop'  
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
+<<<<<<< HEAD
          deref '[608]'  
          occurs '[608]'  
    exponential_backoff
@@ -660,32 +691,43 @@ Variables:
       id189  'user_state'  
 =======
          occurs '[620, 620, 620]'  
+=======
+         deref '[581]'  
+         occurs '[581]'  
+>>>>>>> origin/main
    lfds711_misc_internal_backoff_init
-      id197  'bs'  
+      id175  'bs'  
          type 'struct lfds711_misc_backoff_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[635, 643, 644, 645, 646, 647]'  
-         occurs '[627, 635, 643, 644, 645, 646, 647]'  
-      id198  'c'  
+         deref '[600, 608, 609, 610, 611, 612]'  
+         occurs '[592, 600, 608, 609, 610, 611, 612]'  
+      id176  'c'  
          type 'char *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[631, 639]'  
-         occurs '[630, 631, 638, 639]'  
+         deref '[596, 604]'  
+         occurs '[595, 596, 603, 604]'  
    lfds711_stack_init_valid_on_current_logical_core
-      id199  'ss'  
+      id177  'ss'  
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
+<<<<<<< HEAD
          deref '[662, 670, 679, 680, 681, 682, 683]'  
          occurs '[654, 662, 670, 679, 680, 681, 682, 683]'  
       id200  'user_state'  
+>>>>>>> origin/main
+=======
+         deref '[627, 635, 644, 645, 646, 647, 648]'  
+         occurs '[619, 627, 635, 644, 645, 646, 647, 648]'  
+      id178  'user_state'  
 >>>>>>> origin/main
          type 'void *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[669]'  
       id190  'c'  
@@ -711,30 +753,41 @@ Variables:
 =======
          occurs '[681]'  
       id201  'c'  
+=======
+         occurs '[646]'  
+      id179  'c'  
+>>>>>>> origin/main
          type 'char *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[658, 666, 674]'  
-         occurs '[657, 658, 665, 666, 673, 674]'  
+         deref '[623, 631, 639]'  
+         occurs '[622, 623, 630, 631, 638, 639]'  
    lfds711_stack_pop
-      id202  'ss'  
+      id180  'ss'  
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[714, 715, 728]'  
-         occurs '[696, 714, 715, 728]'  
-      id203  'se'  
+         deref '[679, 680, 693]'  
+         occurs '[661, 679, 680, 693]'  
+      id181  'se'  
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
+<<<<<<< HEAD
          deref '[722, 744]'  
          occurs '[704, 722, 744]'  
       id204  'result'  
+>>>>>>> origin/main
+=======
+         deref '[687, 709]'  
+         occurs '[669, 687, 709]'  
+      id182  'result'  
 >>>>>>> origin/main
          type 'char unsigned'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[716, 718, 731]'  
       id194  'backoff_iteration'  
@@ -742,10 +795,15 @@ Variables:
          occurs '[728, 730, 743]'  
       id205  'backoff_iteration'  
 >>>>>>> origin/main
+=======
+         occurs '[693, 695, 708, 710]'  
+      id183  'backoff_iteration'  
+>>>>>>> origin/main
          type 'lfds711_pal_uint_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[681]'  
       id195  'new_top'  
@@ -770,29 +828,40 @@ Variables:
 =======
          occurs '[693]'  
       id206  'new_top'  
+=======
+         occurs '[658]'  
+      id184  'new_top'  
+>>>>>>> origin/main
          type 'struct lfds711_stack_element *'  kind 'l'  arity '1'  
          size '[2]'  
-         ref '[728]'  
+         ref '[693]'  
          deref '[]'  
-         occurs '[725, 726, 728]'  
-      id207  'original_top'  
+         occurs '[690, 691, 693]'  
+      id185  'original_top'  
          type 'struct lfds711_stack_element * volatile'  kind 'l'  arity '1'  
          size '[2]'  
-         ref '[728]'  
-         deref '[726]'  
-         occurs '[714, 715, 720, 725, 726, 728, 744]'  
-      id208  'c'  
+         ref '[693]'  
+         deref '[691]'  
+         occurs '[679, 680, 685, 690, 691, 693, 709]'  
+      id186  'c'  
          type 'char *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
+<<<<<<< HEAD
          deref '[700, 708]'  
          occurs '[699, 700, 707, 708]'  
       id209  'i'  
+>>>>>>> origin/main
+=======
+         deref '[665, 673]'  
+         occurs '[664, 665, 672, 673]'  
+      id187  'i'  
 >>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[705, 724, 725]'  
    lfds711_stack_push
@@ -811,25 +880,35 @@ Variables:
       id201  'result'  
 =======
          occurs '[717, 736, 737]'  
+=======
+         occurs '[682, 701, 702]'  
+>>>>>>> origin/main
    lfds711_stack_push
-      id210  'ss'  
+      id188  'ss'  
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[772, 773, 784]'  
-         occurs '[755, 772, 773, 784]'  
-      id211  'se'  
+         deref '[737, 738, 749]'  
+         occurs '[720, 737, 738, 749]'  
+      id189  'se'  
          type 'struct lfds711_stack_element *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
+<<<<<<< HEAD
          deref '[780]'  
          occurs '[763, 771, 780]'  
       id212  'result'  
+>>>>>>> origin/main
+=======
+         deref '[745]'  
+         occurs '[728, 736, 745]'  
+      id190  'result'  
 >>>>>>> origin/main
          type 'char unsigned'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[762, 765, 772, 774]'  
       id202  'backoff_iteration'  
@@ -837,10 +916,15 @@ Variables:
          occurs '[774, 777, 784, 786]'  
       id213  'backoff_iteration'  
 >>>>>>> origin/main
+=======
+         occurs '[739, 742, 749, 751]'  
+      id191  'backoff_iteration'  
+>>>>>>> origin/main
          type 'lfds711_pal_uint_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[740]'  
       id203  'new_top'  
@@ -865,29 +949,40 @@ Variables:
 =======
          occurs '[752]'  
       id214  'new_top'  
+=======
+         occurs '[717]'  
+      id192  'new_top'  
+>>>>>>> origin/main
          type 'struct lfds711_stack_element *'  kind 'l'  arity '1'  
          size '[2]'  
-         ref '[784]'  
+         ref '[749]'  
          deref '[]'  
-         occurs '[771, 782, 784]'  
-      id215  'original_top'  
+         occurs '[736, 747, 749]'  
+      id193  'original_top'  
          type 'struct lfds711_stack_element * volatile'  kind 'l'  arity '1'  
          size '[2]'  
-         ref '[784]'  
+         ref '[749]'  
          deref '[]'  
-         occurs '[772, 773, 780, 782, 784]'  
-      id216  'c'  
+         occurs '[737, 738, 745, 747, 749]'  
+      id194  'c'  
          type 'char *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
+<<<<<<< HEAD
          deref '[759, 767]'  
          occurs '[758, 759, 766, 767]'  
       id217  'i'  
+>>>>>>> origin/main
+=======
+         deref '[724, 732]'  
+         occurs '[723, 724, 731, 732]'  
+      id195  'i'  
 >>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[764, 778, 779]'  
    lfds711_stack_cleanup
@@ -1111,10 +1206,89 @@ Variables:
          occurs '[898, 900]'  
       id240  'rCode'  
 >>>>>>> origin/main
+=======
+         occurs '[741, 755, 756]'  
+   __CSEQ_atomic_compare_and_exchange
+      id196  'mptr'  
+         type 'int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[765, 767]'  
+         occurs '[765, 767]'  
+      id197  'eptr'  
+         type 'int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[765, 772]'  
+         occurs '[765, 772]'  
+      id198  'newval'  
+         type 'int long long unsigned'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[767, 772]'  
+      id199  'weak_p'  
+         type '_Bool'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id200  'sm'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id201  'fm'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+   __atomic_compare_exchange_n
+      id202  'mptr'  
+         type 'int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[779]'  
+      id203  'eptr'  
+         type 'int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[779]'  
+      id204  'newval'  
+         type 'int long long unsigned'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[779]'  
+      id205  'weak_p'  
+         type '_Bool'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[779]'  
+      id206  'sm'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[779]'  
+      id207  'fm'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[779]'  
+      id208  'res'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[876, 890]'  
       id230  'curNode'  
@@ -1159,10 +1333,22 @@ Variables:
          occurs '[925]'  
       id244  'I__user_id'  
 >>>>>>> origin/main
+=======
+         occurs '[779, 780]'  
+   __CSEQ_atomic_exchange
+      id209  'previous'  
+         type 'int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[785, 786]'  
+         occurs '[785, 786]'  
+      id210  'new'  
+>>>>>>> origin/main
          type 'int long long unsigned'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[912]'  
       id234  'rCode'  
@@ -1218,10 +1404,34 @@ Variables:
          occurs '[945, 946]'  
       id249  'I__user_id'  
 >>>>>>> origin/main
+=======
+         occurs '[786]'  
+      id211  'memorder'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id212  'old'  
+         type 'unsigned long int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[785, 787]'  
+   __atomic_exchange_n
+      id213  'previous'  
+         type 'int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[792]'  
+      id214  'new'  
+>>>>>>> origin/main
          type 'int long long unsigned'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[941]'  
       id239  '_O_parent'  
@@ -1241,10 +1451,21 @@ Variables:
          occurs '[960, 962]'  
       id251  'rCode'  
 >>>>>>> origin/main
+=======
+         occurs '[792]'  
+      id215  'memorder'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[792]'  
+      id216  'res'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[929, 936, 953]'  
       id241  'parent'  
@@ -1289,10 +1510,30 @@ Variables:
          occurs '[983, 990, 999, 1000]'  
       id255  'I__user_id'  
 >>>>>>> origin/main
+=======
+         occurs '[792, 793]'  
+   __atomic_thread_fence
+      id217  'i'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+   init
+   insert
+      id221  's'  
+         type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[815]'  
+      id222  'id'  
+>>>>>>> origin/main
          type 'int long long unsigned'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[969, 971]'  
       id245  'I__se'  
@@ -1335,14 +1576,33 @@ Variables:
          occurs '[970, 977, 983, 984, 991, 994, 1006]'  
       id258  'parent'  
          type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[983]'  
-         deref '[1003, 1004]'  
-         occurs '[983, 997, 1003, 1004]'  
-      id259  'newNode'  
-         type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
+=======
+         occurs '[813]'  
+      id223  'td'  
+         type 'struct test_data *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
+         deref '[813, 814, 815]'  
+         occurs '[812, 813, 814, 814, 815]'  
+   delete
+      id224  's'  
+         type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id225  'se'  
+         type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
+>>>>>>> origin/main
+         size '[]'  
+         ref '[822]'  
+         deref '[827]'  
+         occurs '[822, 827]'  
+      id226  'temp_td'  
+         type 'struct test_data *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+<<<<<<< HEAD
          deref '[974, 974, 981, 982, 989, 999, 1003]'  
          occurs '[973, 974, 974, 974, 975, 981, 982, 989, 990, 999, 1000, 1003, 1004]'  
    LIST_FetchNodeById
@@ -1382,22 +1642,48 @@ Variables:
          occurs '[1018]'  
       id262  '_O_node'  
          type 'struct LIST_NODE_S **'  kind 'p'  arity '0'  
+=======
+         deref '[829, 830]'  
+         occurs '[827, 829, 830]'  
+      id227  'res'  
+         type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[1032]'  
-         occurs '[1030, 1032]'  
-      id263  '_O_parent'  
-         type 'struct LIST_NODE_S **'  kind 'p'  arity '0'  
+         deref '[]'  
+         occurs '[822, 823, 825, 831]'  
+      id228  'id_popped'  
+         type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
+         deref '[]'  
+         occurs '[829]'  
+   contains
+      id229  's'  
+         type 'void *'  kind 'p'  arity '0'  
+>>>>>>> origin/main
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[855, 871]'  
+      id230  'id'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+<<<<<<< HEAD
          deref '[1036]'  
          occurs '[1034, 1036]'  
       id264  'rCode'  
+>>>>>>> origin/main
+=======
+         deref '[]'  
+         occurs '[861]'  
+      id231  'max_size'  
 >>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[999, 1015, 1027]'  
       id254  'parent'  
@@ -1453,10 +1739,33 @@ Variables:
          occurs '[1048]'  
       id269  'rCode'  
 >>>>>>> origin/main
+=======
+         occurs '[836, 846, 850, 852, 853]'  
+      id232  'actual_size'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+         occurs '[838, 850, 860, 861, 865, 869]'  
+      id233  'res'  
+         type 'int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[840, 848, 855, 856]'  
+      id234  'found'  
+         type 'int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[842, 848, 863, 875]'  
+      id235  'dimension'  
+>>>>>>> origin/main
+         type 'int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[1032, 1036, 1037, 1045, 1058]'  
       id259  'parent'  
@@ -1526,11 +1835,35 @@ Variables:
    push
       id277  '__cs_unused'  
 >>>>>>> origin/main
+=======
+         occurs '[844, 852, 853]'  
+      id236  'datas'  
+         type 'struct test_data **'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[861]'  
+         occurs '[846, 852, 852, 860, 861, 871, 874]'  
+      id237  'se'  
+         type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[855]'  
+         deref '[860]'  
+         occurs '[855, 860]'  
+      id238  'i'  
+         type 'int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[868, 869, 871, 872]'  
+   push
+      id241  '__cs_unused'  
+>>>>>>> origin/main
          type 'void *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
       id267  'td'  
          type 'struct test_data *'  kind 'l'  arity '0'  
@@ -1548,10 +1881,14 @@ Variables:
          occurs '[1095, 1098, 1099, 1099, 1100]'  
       id279  'loop'  
 >>>>>>> origin/main
+=======
+      id242  'loop'  
+>>>>>>> origin/main
          type 'int long long unsigned'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[1084, 1084, 1084, 1087, 1087, 1088, 1088, 1089]'  
    pop
@@ -1561,11 +1898,17 @@ Variables:
    pop
       id280  '__cs_unused'  
 >>>>>>> origin/main
+=======
+         occurs '[883, 883, 883, 890]'  
+   pop
+      id243  '__cs_unused'  
+>>>>>>> origin/main
          type 'void *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
       id270  'se'  
          type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
@@ -1594,10 +1937,14 @@ Variables:
          occurs '[1113, 1119]'  
       id283  'res'  
 >>>>>>> origin/main
+=======
+      id244  'res'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[1105, 1107]'  
       id273  'count'  
@@ -1605,10 +1952,15 @@ Variables:
          occurs '[1114, 1115]'  
       id284  'count'  
 >>>>>>> origin/main
+=======
+         occurs '[]'  
+      id245  'count'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[1099, 1112]'  
       id274  'loop'  
@@ -1616,10 +1968,15 @@ Variables:
          occurs '[1109, 1120]'  
       id285  'loop'  
 >>>>>>> origin/main
+=======
+         occurs '[902]'  
+      id246  'loop'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[1101, 1101, 1101]'  
    writeIntofile
@@ -1652,9 +2009,16 @@ Variables:
       id288  'filefd'  
 >>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
+=======
+         occurs '[904, 904, 904]'  
+   main
+      id247  't1'  
+         type '__cs_t'  kind 'l'  arity '0'  
+>>>>>>> origin/main
          size '[]'  
-         ref '[]'  
+         ref '[933]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[1118, 1122, 1124]'  
       id278  'saved'  
@@ -1764,9 +2128,39 @@ Variables:
          occurs '[1154, 1175, 1178]'  
       id297  'len'  
          type 'size_t'  kind 'l'  arity '0'  
+=======
+         occurs '[933, 935]'  
+      id248  't2'  
+         type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[1175]'  
+         ref '[]'  
          deref '[]'  
+         occurs '[]'  
+      id249  't3'  
+         type '__cs_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id250  't4'  
+         type '__cs_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id251  't5'  
+         type '__cs_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id252  't6'  
+         type '__cs_t'  kind 'l'  arity '0'  
+>>>>>>> origin/main
+         size '[]'  
+         ref '[934]'  
+         deref '[]'  
+<<<<<<< HEAD
          occurs '[1156, 1175]'  
       id298  'read'  
 >>>>>>> origin/main
@@ -1893,6 +2287,33 @@ Variables:
          ref '[1212]'  
          deref '[]'  
          occurs '[1212, 1214]'  
+>>>>>>> origin/main
+=======
+         occurs '[934, 936]'  
+      id253  't7'  
+         type '__cs_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id254  't8'  
+         type '__cs_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id255  't9'  
+         type '__cs_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id256  't10'  
+         type '__cs_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
 >>>>>>> origin/main
 
 Fields:
@@ -2037,6 +2458,7 @@ Fields:
       id164  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
       id165  'pop_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
       id166  'push_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
+<<<<<<< HEAD
    NODE_PAYLOAD_S
 <<<<<<< HEAD
       id212  'se'  type 'struct lfds711_stack_element'  kind 'f'  arity '0'  size '[]'  
@@ -2057,10 +2479,13 @@ Fields:
       id275  'se'  type 'struct lfds711_stack_element'  kind 'f'  arity '0'  size '[]'  
       id276  'user_id'  type 'int long long unsigned'  kind 'f'  arity '0'  size '[]'  
 >>>>>>> origin/main
+=======
+   test_data
+      id219  'se'  type 'struct lfds711_stack_element'  kind 'f'  arity '0'  size '[]'  
+      id220  'user_id'  type 'int long long unsigned'  kind 'f'  arity '0'  size '[]'  
+>>>>>>> origin/main
 
 Typedefs:
-NODE_PAYLOAD_T -> struct NODE_PAYLOAD_S
-LIST_NODE_T -> struct LIST_NODE_S
 
 Pointer variables:
    (global)
@@ -2098,9 +2523,11 @@ Pointer variables:
        var 'overwrite_occurred_flag'   type 'enum lfds711_misc_flag *'   kind 'p'   arity '0'   size '[]'   
        var 'overwritten_key'   type 'void **'   kind 'p'   arity '0'   size '[]'   
        var 'overwritten_value'   type 'void **'   kind 'p'   arity '0'   size '[]'   
+       var 'ss'   type 'void *'   kind 'g'   arity '0'   size '[]'   
        var 'se'   type 'struct lfds711_stack_element **'   kind 'p'   arity '0'   size '[]'   
        var 'bs'   type 'struct lfds711_misc_backoff_state *'   kind 'p'   arity '0'   size '[]'   
    lfds711_misc_force_store
+<<<<<<< HEAD
 <<<<<<< HEAD
    __CSEQ_atomic_compare_and_exchange
        var 'mptr'   type 'int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
@@ -2118,11 +2545,13 @@ Pointer variables:
    __CSEQ_atomic_exchange
        var 'previous'   type 'int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
    __atomic_thread_fence
+=======
+   exponential_backoff
+>>>>>>> origin/main
    __CSEQ_atomic_swap_stack_top
        var 'top'   type 'struct lfds711_stack_element * volatile *'   kind 'p'   arity '0'   size '[]'   
        var 'oldtop'   type 'struct lfds711_stack_element * volatile *'   kind 'p'   arity '0'   size '[]'   
        var 'newtop'   type 'struct lfds711_stack_element **'   kind 'p'   arity '0'   size '[]'   
-   exponential_backoff
    lfds711_misc_internal_backoff_init
        var 'bs'   type 'struct lfds711_misc_backoff_state *'   kind 'p'   arity '0'   size '[]'   
        var 'c'   type 'char *'   kind 'l'   arity '0'   size '[]'   
@@ -2140,73 +2569,34 @@ Pointer variables:
        var 'se'   type 'struct lfds711_stack_element *'   kind 'p'   arity '0'   size '[]'   
        var 'new_top'   type 'struct lfds711_stack_element *'   kind 'l'   arity '1'   size '[2]'   
        var 'c'   type 'char *'   kind 'l'   arity '0'   size '[]'   
-   lfds711_stack_cleanup
+   __CSEQ_atomic_compare_and_exchange
+       var 'mptr'   type 'int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
+       var 'eptr'   type 'int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
+   __atomic_compare_exchange_n
+       var 'mptr'   type 'int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
+       var 'eptr'   type 'int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
+   __CSEQ_atomic_exchange
+       var 'previous'   type 'int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
+   __atomic_exchange_n
+       var 'previous'   type 'int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
+   __atomic_thread_fence
+   init
+   insert
+       var 's'   type 'struct lfds711_stack_state *'   kind 'p'   arity '0'   size '[]'   
+       var 'td'   type 'struct test_data *'   kind 'l'   arity '0'   size '[]'   
+   delete
+       var 's'   type 'struct lfds711_stack_state *'   kind 'p'   arity '0'   size '[]'   
        var 'se'   type 'struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
-       var 'se_temp'   type 'struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
-       var 'c'   type 'char *'   kind 'l'   arity '0'   size '[]'   
-   LIST_InsertHeadNode
-       var 'IO_head'   type 'struct LIST_NODE_S **'   kind 'p'   arity '0'   size '[]'   
-       var 'newNode'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-   PrintListPayloads
-       var 'head'   type 'struct LIST_NODE_S *'   kind 'p'   arity '0'   size '[]'   
-       var 'cur'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-   GetListSize
-       var 'head'   type 'struct LIST_NODE_S *'   kind 'p'   arity '0'   size '[]'   
-       var 'cur'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-   LIST_GetTailNode
-       var 'I__listHead'   type 'struct LIST_NODE_S *'   kind 'p'   arity '0'   size '[]'   
-       var '_O_listTail'   type 'struct LIST_NODE_S **'   kind 'p'   arity '0'   size '[]'   
-       var 'curNode'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-   LIST_InsertTailNode
-       var 'IO_head'   type 'struct LIST_NODE_S **'   kind 'p'   arity '0'   size '[]'   
-       var 'tailNode'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-       var 'newNode'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-   LIST_FetchParentNodeById
-       var 'I__head'   type 'struct LIST_NODE_S *'   kind 'p'   arity '0'   size '[]'   
-       var '_O_parent'   type 'struct LIST_NODE_S **'   kind 'p'   arity '0'   size '[]'   
-       var 'parent'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-       var 'curNode'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-   LIST_InsertNodeById
-       var 'IO_head'   type 'struct LIST_NODE_S **'   kind 'p'   arity '0'   size '[]'   
-       var 'parent'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-       var 'newNode'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-   LIST_FetchNodeById
-       var 'I__head'   type 'struct LIST_NODE_S *'   kind 'p'   arity '0'   size '[]'   
-       var '_O_node'   type 'struct LIST_NODE_S **'   kind 'p'   arity '0'   size '[]'   
-       var '_O_parent'   type 'struct LIST_NODE_S **'   kind 'p'   arity '0'   size '[]'   
-       var 'parent'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-       var 'curNode'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-   LIST_DeleteNodeById
-       var 'IO_head'   type 'struct LIST_NODE_S **'   kind 'p'   arity '0'   size '[]'   
-       var 'parent'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-       var 'delNode'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-   LIST_Destroy
-       var 'IO_head'   type 'struct LIST_NODE_S **'   kind 'p'   arity '0'   size '[]'   
-       var 'delNode'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
+       var 'temp_td'   type 'struct test_data *'   kind 'l'   arity '0'   size '[]'   
+   contains
+       var 's'   type 'void *'   kind 'p'   arity '0'   size '[]'   
+       var 'datas'   type 'struct test_data **'   kind 'l'   arity '0'   size '[]'   
+       var 'se'   type 'struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
    push
        var '__cs_unused'   type 'void *'   kind 'p'   arity '0'   size '[]'   
-       var 'td'   type 'struct test_data *'   kind 'l'   arity '0'   size '[]'   
    pop
        var '__cs_unused'   type 'void *'   kind 'p'   arity '0'   size '[]'   
-       var 'se'   type 'struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
-       var 'temp_td'   type 'struct test_data *'   kind 'l'   arity '0'   size '[]'   
-   writeIntofile
-       var 'filename'   type 'char *'   kind 'p'   arity '0'   size '[]'   
-       var 'listHead'   type 'struct LIST_NODE_S *'   kind 'p'   arity '0'   size '[]'   
-   createList
-       var 'listHead'   type 'struct LIST_NODE_S *'   kind 'p'   arity '0'   size '[]'   
-       var 'se'   type 'struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
-       var 'temp_td'   type 'struct test_data *'   kind 'l'   arity '0'   size '[]'   
-   readFile
-       var 'filename'   type 'char *'   kind 'p'   arity '0'   size '[]'   
-       var 'listHead'   type 'struct LIST_NODE_S *'   kind 'p'   arity '0'   size '[]'   
-       var 'line'   type 'char *'   kind 'l'   arity '0'   size '[]'   
-       var 'parent'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-       var 'curNode'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-       var 'fp'   type 'FILE *'   kind 'l'   arity '0'   size '[]'   
-       var 'ptr'   type 'char *'   kind 'l'   arity '0'   size '[]'   
    main
-       var 'listHead'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
 
 Function blocks:
 function 'lfds711_misc_force_store' ----------------------------------:
@@ -2224,6 +2614,7 @@ void lfds711_misc_force_store()
 
 void
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 function '__atomic_compare_exchange_n' ----------------------------------:
 _Bool __atomic_compare_exchange_n(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
@@ -2239,21 +2630,21 @@ _Bool
 >>>>>>> origin/main
 function '__CSEQ_atomic_compare_and_exchange' ----------------------------------:
 _Bool __CSEQ_atomic_compare_and_exchange(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
+=======
+function 'exponential_backoff' ----------------------------------:
+void exponential_backoff()
+>>>>>>> origin/main
 {
-    if ((*mptr) == (*eptr))
+    int loop;
+    for (loop = 0; loop < 10; loop++)
     {
-        *mptr = newval;
-        return 1;
-    }
-    else
-    {
-        *eptr = newval;
-        return 0;
+        ;
     }
 
 }
 
 
+<<<<<<< HEAD
 int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm
 _Bool
 <<<<<<< HEAD
@@ -2279,16 +2670,9 @@ unsigned long __CSEQ_atomic_exchange(int long long unsigned *previous, int long 
     return old;
 }
 
+=======
+>>>>>>> origin/main
 
-int long long unsigned *previous, int long long unsigned new, int memorder
-unsigned long
-function '__atomic_thread_fence' ----------------------------------:
-void __atomic_thread_fence(int i)
-{
-}
-
-
-int i
 void
 function '__CSEQ_atomic_swap_stack_top' ----------------------------------:
 int __CSEQ_atomic_swap_stack_top(struct lfds711_stack_element * volatile *top, struct lfds711_stack_element * volatile *oldtop, struct lfds711_stack_element **newtop)
@@ -2309,20 +2693,6 @@ int __CSEQ_atomic_swap_stack_top(struct lfds711_stack_element * volatile *top, s
 
 struct lfds711_stack_element * volatile *top, struct lfds711_stack_element * volatile *oldtop, struct lfds711_stack_element **newtop
 int
-function 'exponential_backoff' ----------------------------------:
-void exponential_backoff()
-{
-    int loop;
-    for (loop = 0; loop < 10; loop++)
-    {
-        ;
-    }
-
-}
-
-
-
-void
 function 'lfds711_misc_internal_backoff_init' ----------------------------------:
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs)
 {
@@ -2358,7 +2728,7 @@ void
 function 'lfds711_stack_init_valid_on_current_logical_core' ----------------------------------:
 void lfds711_stack_init_valid_on_current_logical_core(struct lfds711_stack_state *ss, void *user_state)
 {
-    __cs_mutex_init(&lock, 0);
+    __cs_mutex_init(&library_lock, 0);
     if (!(ss != 0))
     {
         char *c;
@@ -2386,14 +2756,14 @@ void lfds711_stack_init_valid_on_current_logical_core(struct lfds711_stack_state
 
     ;
     ;
-    __cs_mutex_lock(&lock);
+    __cs_mutex_lock(&library_lock);
     (*ss).top[0] = 0;
     (*ss).top[1] = 0;
     (*ss).user_state = user_state;
     lfds711_misc_internal_backoff_init(&(*ss).pop_backoff);
     lfds711_misc_internal_backoff_init(&(*ss).push_backoff);
     lfds711_misc_force_store();
-    __cs_mutex_unlock(&lock);
+    __cs_mutex_unlock(&library_lock);
     return;
 }
 
@@ -2426,8 +2796,8 @@ int lfds711_stack_pop(struct lfds711_stack_state *ss, struct lfds711_stack_eleme
 
     ;
     ;
-    __cs_mutex_lock(&lock);
-    __cs_mutex_unlock(&lock);
+    __cs_mutex_lock(&library_lock);
+    __cs_mutex_unlock(&library_lock);
     original_top[1] = (*ss).top[1];
     original_top[0] = (*ss).top[0];
     int i;
@@ -2442,14 +2812,14 @@ int lfds711_stack_pop(struct lfds711_stack_state *ss, struct lfds711_stack_eleme
 
         new_top[1] = original_top[1] + 1;
         new_top[0] = (*original_top[0]).next;
-        __cs_mutex_lock(&lock);
+        __cs_mutex_lock(&library_lock);
         result = __CSEQ_atomic_swap_stack_top(&(*ss).top[0], &original_top[0], &new_top[0]);
-        __cs_mutex_unlock(&lock);
+        __cs_mutex_unlock(&library_lock);
         if (result == 0)
         {
             exponential_backoff();
-            __cs_mutex_lock(&lock);
-            __cs_mutex_unlock(&lock);
+            __cs_mutex_lock(&library_lock);
+            __cs_mutex_unlock(&library_lock);
         }
 
         i++;
@@ -2461,7 +2831,7 @@ int lfds711_stack_pop(struct lfds711_stack_state *ss, struct lfds711_stack_eleme
     }
     while (result == 0);
     *se = original_top[0];
-    return 1;
+    return result;
 }
 
 
@@ -2501,13 +2871,13 @@ void lfds711_stack_push(struct lfds711_stack_state *ss, struct lfds711_stack_ele
     i = 0;
     while (result == 0)
     {
-        __cs_mutex_lock(&lock);
+        __cs_mutex_lock(&library_lock);
         (*se).next = original_top[0];
-        __cs_mutex_unlock(&lock);
+        __cs_mutex_unlock(&library_lock);
         new_top[1] = original_top[1] + 1;
-        __cs_mutex_lock(&lock);
+        __cs_mutex_lock(&library_lock);
         result = __CSEQ_atomic_swap_stack_top(&(*ss).top[0], &original_top[0], &new_top[0]);
-        __cs_mutex_unlock(&lock);
+        __cs_mutex_unlock(&library_lock);
         if (result == 0)
         {
             exponential_backoff();
@@ -2527,42 +2897,29 @@ void lfds711_stack_push(struct lfds711_stack_state *ss, struct lfds711_stack_ele
 
 struct lfds711_stack_state *ss, struct lfds711_stack_element *se
 void
-function 'lfds711_stack_cleanup' ----------------------------------:
-void lfds711_stack_cleanup(struct lfds711_stack_state *ss, void (*element_cleanup_callback)(struct lfds711_stack_state, struct lfds711_stack_element))
+function '__CSEQ_atomic_compare_and_exchange' ----------------------------------:
+_Bool __CSEQ_atomic_compare_and_exchange(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
 {
-    struct lfds711_stack_element *se;
-    struct lfds711_stack_element *se_temp;
-    if (!(ss != 0))
+    if ((*mptr) == (*eptr))
     {
-        char *c;
-        c = 0;
-        *c = 0;
+        *mptr = newval;
+        return 1;
+    }
+    else
+    {
+        *eptr = newval;
+        return 0;
     }
 
-    ;
-    ;
-    __atomic_thread_fence(2);
-    if (element_cleanup_callback != 0)
-    {
-        se = (*ss).top[0];
-        while (se != 0)
-        {
-            se_temp = se;
-            se = (*se).next;
-            element_cleanup_callback(ss, se_temp);
-        }
-
-    }
-
-    return;
 }
 
 
-struct lfds711_stack_state *ss, void (*element_cleanup_callback)(struct lfds711_stack_state, struct lfds711_stack_element)
-void
-function 'LIST_InsertHeadNode' ----------------------------------:
-int LIST_InsertHeadNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__se, int long long unsigned I__user_id)
+int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm
+_Bool
+function '__atomic_compare_exchange_n' ----------------------------------:
+_Bool __atomic_compare_exchange_n(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
 {
+<<<<<<< HEAD
     int rCode;
     rCode = 0;
     LIST_NODE_T *newNode;
@@ -2586,85 +2943,51 @@ int LIST_InsertHeadNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__s
     CLEANUP:
     return rCode;
 
+=======
+    int res;
+    res = __CSEQ_atomic_compare_and_exchange(mptr, eptr, newval, weak_p, sm, fm);
+    return res;
+>>>>>>> origin/main
 }
 
 
-LIST_NODE_T **IO_head, struct lfds711_stack_element I__se, int long long unsigned I__user_id
-int
-function 'PrintListPayloads' ----------------------------------:
-int PrintListPayloads(LIST_NODE_T *head)
+int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm
+_Bool
+function '__CSEQ_atomic_exchange' ----------------------------------:
+unsigned long __CSEQ_atomic_exchange(int long long unsigned *previous, int long long unsigned new, int memorder)
 {
-    int rCode;
-    rCode = 0;
-    LIST_NODE_T *cur;
-    cur = head;
-    while (cur)
-    {
-        printf("%lld", (*cur).payload.user_id);
-        cur = (*cur).next;
-        if (cur != 0)
-        {
-            printf(",");
-        }
-
-    }
-
-    printf("\n");
-    return rCode;
+    unsigned long int old;
+    old = *previous;
+    *previous = new;
+    return old;
 }
 
 
-LIST_NODE_T *head
-int
-function 'GetListSize' ----------------------------------:
-int GetListSize(LIST_NODE_T *head)
+int long long unsigned *previous, int long long unsigned new, int memorder
+unsigned long
+function '__atomic_exchange_n' ----------------------------------:
+unsigned long __atomic_exchange_n(int long long unsigned *previous, int long long unsigned new, int memorder)
 {
-    LIST_NODE_T *cur;
-    cur = head;
-    int nodeCnt;
-    nodeCnt = 0;
-    while (cur)
-    {
-        ++nodeCnt;
-        cur = (*cur).next;
-    }
-
-    return nodeCnt;
+    int res;
+    res = __CSEQ_atomic_exchange(previous, new, memorder);
+    return res;
 }
 
 
-LIST_NODE_T *head
-int
-function 'LIST_GetTailNode' ----------------------------------:
-int LIST_GetTailNode(LIST_NODE_T *I__listHead, LIST_NODE_T **_O_listTail)
+int long long unsigned *previous, int long long unsigned new, int memorder
+unsigned long
+function '__atomic_thread_fence' ----------------------------------:
+void __atomic_thread_fence(int i)
 {
-    int rCode;
-    rCode = 0;
-    LIST_NODE_T *curNode;
-    curNode = I__listHead;
-    if (curNode)
-    {
-        while ((*curNode).next)
-        {
-            curNode = (*curNode).next;
-        }
-
-    }
-
-    if (_O_listTail)
-    {
-        *_O_listTail = curNode;
-    }
-
-    return rCode;
 }
 
 
-LIST_NODE_T *I__listHead, LIST_NODE_T **_O_listTail
-int
-function 'LIST_InsertTailNode' ----------------------------------:
-int LIST_InsertTailNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__se, int long long unsigned I__user_id)
+int i
+void
+function 'init' ----------------------------------:
+void *init()
 {
+<<<<<<< HEAD
     int rCode;
     rCode = 0;
     LIST_NODE_T *tailNode;
@@ -2704,53 +3027,32 @@ int LIST_InsertTailNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__s
     CLEANUP:
     return rCode;
 
+=======
+    lfds711_stack_init_valid_on_current_logical_core(&mystack, 0);
+    return (void *) (&mystack);
+>>>>>>> origin/main
 }
 
 
-LIST_NODE_T **IO_head, struct lfds711_stack_element I__se, int long long unsigned I__user_id
-int
-function 'LIST_FetchParentNodeById' ----------------------------------:
-int LIST_FetchParentNodeById(LIST_NODE_T *I__head, int long long unsigned I__user_id, LIST_NODE_T **_O_parent)
+
+void *
+function 'insert' ----------------------------------:
+void insert(struct lfds711_stack_state *s, int long long unsigned id)
 {
-    int rCode;
-    rCode = 0;
-    LIST_NODE_T *parent;
-    parent = 0;
-    LIST_NODE_T *curNode;
-    curNode = I__head;
-    if (0 == I__head)
-    {
-        rCode = ENOENT;
-        goto CLEANUP;
-    }
-
-    while (curNode)
-    {
-        if ((*curNode).payload.user_id > I__user_id)
-        {
-            break;
-        }
-
-        parent = curNode;
-        curNode = (*curNode).next;
-    }
-
-    if (_O_parent)
-    {
-        *_O_parent = parent;
-    }
-
-    CLEANUP:
-    return rCode;
-
+    struct test_data *td;
+    td = __cs_safe_malloc(sizeof(struct test_data));
+    (*td).user_id = id;
+    (*td).se.value = (void *) ((lfds711_pal_uint_t) td);
+    lfds711_stack_push((struct lfds711_stack_state *) s, &(*td).se);
 }
 
 
-LIST_NODE_T *I__head, int long long unsigned I__user_id, LIST_NODE_T **_O_parent
-int
-function 'LIST_InsertNodeById' ----------------------------------:
-int LIST_InsertNodeById(LIST_NODE_T **IO_head, int long long unsigned I__user_id, struct lfds711_stack_element I__se)
+struct lfds711_stack_state *s, int long long unsigned id
+void
+function 'delete' ----------------------------------:
+int delete(struct lfds711_stack_state *s)
 {
+<<<<<<< HEAD
     int rCode;
     rCode = 0;
     LIST_NODE_T *parent;
@@ -2789,132 +3091,86 @@ int LIST_InsertNodeById(LIST_NODE_T **IO_head, int long long unsigned I__user_id
     }
 
     if (0 == parent)
+=======
+    struct lfds711_stack_element *se;
+    struct test_data *temp_td;
+    int res;
+    res = lfds711_stack_pop(&mystack, &se);
+    if (res == 0)
+>>>>>>> origin/main
     {
-        (*newNode).next = *IO_head;
-        *IO_head = newNode;
-        goto CLEANUP;
+        return res;
     }
 
-    (*newNode).next = (*parent).next;
-    (*parent).next = newNode;
-    CLEANUP:
-    return rCode;
-
+    temp_td = (*se).value;
+    int id_popped;
+    id_popped = (*temp_td).user_id;
+    printf("%llu\n", (*temp_td).user_id);
+    return res;
 }
 
 
-LIST_NODE_T **IO_head, int long long unsigned I__user_id, struct lfds711_stack_element I__se
+struct lfds711_stack_state *s
 int
-function 'LIST_FetchNodeById' ----------------------------------:
-int LIST_FetchNodeById(LIST_NODE_T *I__head, int long long unsigned I__user_id, LIST_NODE_T **_O_node, LIST_NODE_T **_O_parent)
+function 'contains' ----------------------------------:
+int contains(void *s, int id)
 {
-    int rCode;
-    rCode = 0;
-    LIST_NODE_T *parent;
-    parent = 0;
-    LIST_NODE_T *curNode;
-    curNode = I__head;
-    while (curNode)
+    int max_size;
+    max_size = 20;
+    int actual_size;
+    actual_size = 0;
+    int res;
+    res = 1;
+    int found;
+    found = 0;
+    int dimension;
+    dimension = 2;
+    struct test_data **datas;
+    datas = __cs_safe_malloc((sizeof(struct test_data *)) * max_size);
+    struct lfds711_stack_element *se;
+    while ((found == 0) && (res != 0))
     {
-        if ((*curNode).payload.user_id == I__user_id)
+        if (actual_size == max_size)
         {
-            break;
+            datas = realloc(datas, ((sizeof(struct test_data *)) * max_size) * dimension);
+            max_size *= dimension;
         }
 
-        parent = curNode;
-        curNode = (*curNode).next;
+        res = lfds711_stack_pop((struct lfds711_stack_state *) s, &se);
+        if (res == 0)
+        {
+            continue;
+        }
+
+        datas[actual_size] = (*se).value;
+        if ((*datas[actual_size]).user_id == id)
+        {
+            found = 1;
+        }
+
+        actual_size++;
     }
 
-    if (0 == curNode)
+    int i;
+    i = 0;
+    while (i < actual_size)
     {
-        rCode = ENOENT;
-        goto CLEANUP;
+        lfds711_stack_push((struct lfds711_stack_state *) s, datas[i]);
+        i++;
     }
 
-    if (_O_node)
-    {
-        *_O_node = curNode;
-    }
-
-    if (_O_parent)
-    {
-        *_O_parent = parent;
-    }
-
-    CLEANUP:
-    return rCode;
-
+    free(datas);
+    return found;
 }
 
 
-LIST_NODE_T *I__head, int long long unsigned I__user_id, LIST_NODE_T **_O_node, LIST_NODE_T **_O_parent
-int
-function 'LIST_DeleteNodeById' ----------------------------------:
-int LIST_DeleteNodeById(LIST_NODE_T **IO_head, int long long unsigned I__user_id)
-{
-    int rCode;
-    rCode = 0;
-    LIST_NODE_T *parent;
-    LIST_NODE_T *delNode;
-    delNode = 0;
-    rCode = LIST_FetchNodeById(*IO_head, I__user_id, &delNode, &parent);
-    switch (rCode)
-    {
-        case 0:
-                break;
-
-        case ENOENT:
-                fprintf(stderr, "Matching node not found.\n");
-                goto CLEANUP;
-
-        default:
-                fprintf(stderr, "LIST_FetchNodeByName() reports: %d\n", rCode);
-                goto CLEANUP;
-
-    }
-
-    if (0 == parent)
-    {
-        *IO_head = (*delNode).next;
-    }
-    else
-    {
-        (*parent).next = (*delNode).next;
-    }
-
-    free(delNode);
-    CLEANUP:
-    return rCode;
-
-}
-
-
-LIST_NODE_T **IO_head, int long long unsigned I__user_id
-int
-function 'LIST_Destroy' ----------------------------------:
-int LIST_Destroy(LIST_NODE_T **IO_head)
-{
-    int rCode;
-    rCode = 0;
-    while (*IO_head)
-    {
-        LIST_NODE_T *delNode;
-        delNode = *IO_head;
-        *IO_head = (*(*IO_head)).next;
-        free(delNode);
-    }
-
-    return rCode;
-}
-
-
-LIST_NODE_T **IO_head
+void *s, int id
 int
 function 'push' ----------------------------------:
 void *push(void *__cs_unused)
 {
-    struct test_data *td;
     int long long unsigned loop;
+<<<<<<< HEAD
 <<<<<<< HEAD
     td = __cs_safe_malloc((sizeof(struct test_data)) * 10);
     for (loop = 0; loop < 10; loop++)
@@ -2932,6 +3188,23 @@ void *push(void *__cs_unused)
         td[loop].se.value = (void *) ((lfds711_pal_uint_t) (&td[loop]));
         lfds711_stack_push(&ss, &td[loop].se);
 >>>>>>> origin/main
+=======
+    for (loop = 0; loop < 5; loop++)
+    {
+        if (ATOMIC_OPERATION)
+        {
+            __cs_mutex_lock(&lock);
+        }
+
+        ;
+        insert(ss, loop);
+        if (ATOMIC_OPERATION)
+        {
+            __cs_mutex_unlock(&lock);
+        }
+
+        ;
+>>>>>>> origin/main
     }
 
 }
@@ -2942,12 +3215,11 @@ void *
 function 'pop' ----------------------------------:
 void *pop(void *__cs_unused)
 {
-    struct lfds711_stack_element *se;
-    struct test_data *temp_td;
     int res;
     int count;
     count = 0;
     int loop;
+<<<<<<< HEAD
 <<<<<<< HEAD
     for (loop = 0; loop < 10; loop++)
     {
@@ -3041,61 +3313,57 @@ void readFile(char *filename, LIST_NODE_T *listHead)
     }
 
     while ((read = getline(&line, &len, fp)) != (-1))
+=======
+    for (loop = 0; loop < 5; loop++)
+>>>>>>> origin/main
     {
-        char *ptr;
-        ptr = strtok(line, delim);
-        while (curNode)
+        if (ATOMIC_OPERATION)
         {
-            if ((*curNode).payload.user_id != atoi(ptr))
-            {
-                break;
-            }
-
-            i++;
-            parent = curNode;
-            curNode = (*curNode).next;
-            ptr = strtok(0, delim);
+            __cs_mutex_lock(&lock);
         }
 
-        if (i == size)
+        ;
+        delete(ss);
+        if (ATOMIC_OPERATION)
         {
-            fclose(fp);
-            return;
+            __cs_mutex_unlock(&lock);
         }
 
-        i = 0;
-    }
-
-    if (i != size)
-    {
-        writeIntofile(filename, listHead);
-        __CSEQ_assert(0);
-        return;
+        ;
     }
 
 }
 
 
-char *filename, LIST_NODE_T *listHead
-void
+void *__cs_unused
+void *
 function 'main' ----------------------------------:
 int main()
 {
-    LIST_NODE_T *listHead;
-    listHead = 0;
-    lfds711_stack_init_valid_on_current_logical_core(&ss, 0);
+    __cs_mutex_init(&lock, 0);
+    ss = init();
     __cs_t t1;
     __cs_t t2;
+<<<<<<< HEAD
 <<<<<<< HEAD
     __cs_mutex_init(&lock, 0);
 =======
 >>>>>>> origin/main
+=======
+    __cs_t t3;
+    __cs_t t4;
+    __cs_t t5;
+    __cs_t t6;
+    __cs_t t7;
+    __cs_t t8;
+    __cs_t t9;
+    __cs_t t10;
+>>>>>>> origin/main
     __cs_create(&t1, 0, push, 0);
-    __cs_create(&t2, 0, pop, 0);
+    __cs_create(&t6, 0, pop, 0);
     __cs_join(t1, 0);
-    __cs_join(t2, 0);
-    listHead = createList(listHead);
-    readFile("foo.txt", listHead);
+    __cs_join(t6, 0);
+    __CSEQ_assert(0);
     return 0;
 }
 
@@ -3105,6 +3373,7 @@ int
 Last statement, by function:
 function: lfds711_misc_force_store   stmt:     return;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 function: __atomic_compare_exchange_n   stmt:     return res;
@@ -3116,12 +3385,15 @@ function: __CSEQ_atomic_compare_and_exchange   stmt:     if ((*mptr) == (*eptr))
         return 1;
     }
     else
+=======
+function: exponential_backoff   stmt:     for (loop = 0; loop < 10; loop++)
+>>>>>>> origin/main
     {
-        *eptr = newval;
-        return 0;
+        ;
     }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 function: __atomic_exchange_n   stmt:     return res;
@@ -3131,6 +3403,8 @@ function: __CSEQ_atomic_exchange   stmt:     return old;
 
 function: __atomic_thread_fence   stmt:     return old;
 
+=======
+>>>>>>> origin/main
 function: __CSEQ_atomic_swap_stack_top   stmt:     if ((*oldtop) == (*top))
     {
         *top = *newtop;
@@ -3143,54 +3417,43 @@ function: __CSEQ_atomic_swap_stack_top   stmt:     if ((*oldtop) == (*top))
     }
 
 
-function: exponential_backoff   stmt:     for (loop = 0; loop < 10; loop++)
-    {
-        ;
-    }
-
-
 function: lfds711_misc_internal_backoff_init   stmt:     return;
 
 function: lfds711_stack_init_valid_on_current_logical_core   stmt:     return;
 
-function: lfds711_stack_pop   stmt:     return 1;
+function: lfds711_stack_pop   stmt:     return result;
 
 function: lfds711_stack_push   stmt:     return;
 
-function: lfds711_stack_cleanup   stmt:     return;
-
-function: LIST_InsertHeadNode   stmt:     CLEANUP:
-    return rCode;
-
-
-function: PrintListPayloads   stmt:     return rCode;
-
-function: GetListSize   stmt:     return nodeCnt;
-
-function: LIST_GetTailNode   stmt:     return rCode;
-
-function: LIST_InsertTailNode   stmt:     CLEANUP:
-    return rCode;
+function: __CSEQ_atomic_compare_and_exchange   stmt:     if ((*mptr) == (*eptr))
+    {
+        *mptr = newval;
+        return 1;
+    }
+    else
+    {
+        *eptr = newval;
+        return 0;
+    }
 
 
-function: LIST_FetchParentNodeById   stmt:     CLEANUP:
-    return rCode;
+function: __atomic_compare_exchange_n   stmt:     return res;
 
+function: __CSEQ_atomic_exchange   stmt:     return old;
 
-function: LIST_InsertNodeById   stmt:     CLEANUP:
-    return rCode;
+function: __atomic_exchange_n   stmt:     return res;
 
+function: __atomic_thread_fence   stmt:     return res;
 
-function: LIST_FetchNodeById   stmt:     CLEANUP:
-    return rCode;
+function: init   stmt:     return (void *) (&mystack);
 
+function: insert   stmt:     lfds711_stack_push((struct lfds711_stack_state *) s, &(*td).se);
 
-function: LIST_DeleteNodeById   stmt:     CLEANUP:
-    return rCode;
+function: delete   stmt:     return res;
 
+function: contains   stmt:     return found;
 
-function: LIST_Destroy   stmt:     return rCode;
-
+<<<<<<< HEAD
 <<<<<<< HEAD
 function: push   stmt:     for (loop = 0; loop < 10; loop++)
     {
@@ -3210,37 +3473,50 @@ function: pop   stmt:     for (loop = 0; loop < 10; loop++)
         ;
 =======
 function: push   stmt:     for (loop = 0; loop < 1; loop++)
+=======
+function: push   stmt:     for (loop = 0; loop < 5; loop++)
+>>>>>>> origin/main
     {
-        td[loop].user_id = loop;
-        td[loop].se.value = (void *) ((lfds711_pal_uint_t) (&td[loop]));
-        lfds711_stack_push(&ss, &td[loop].se);
-    }
+        if (ATOMIC_OPERATION)
+        {
+            __cs_mutex_lock(&lock);
+        }
 
-
+<<<<<<< HEAD
 function: pop   stmt:     for (loop = 0; loop < 1; loop++)
     {
         temp_td = 0;
         res = lfds711_stack_pop(&ss, &se);
 >>>>>>> origin/main
         if (res == 0)
+=======
+        ;
+        insert(ss, loop);
+        if (ATOMIC_OPERATION)
+>>>>>>> origin/main
         {
-            continue;
+            __cs_mutex_unlock(&lock);
         }
 
-        temp_td = (*se).value;
-        count++;
+        ;
     }
 
 
-function: writeIntofile   stmt:     close(saved);
-
-function: createList   stmt:     return listHead;
-
-function: readFile   stmt:     if (i != size)
+function: pop   stmt:     for (loop = 0; loop < 5; loop++)
     {
-        writeIntofile(filename, listHead);
-        __CSEQ_assert(0);
-        return;
+        if (ATOMIC_OPERATION)
+        {
+            __cs_mutex_lock(&lock);
+        }
+
+        ;
+        delete(ss);
+        if (ATOMIC_OPERATION)
+        {
+            __cs_mutex_unlock(&lock);
+        }
+
+        ;
     }
 
 
@@ -3664,6 +3940,7 @@ All symbols (new symbol table - work in progress):
    (413, 'lfds711_misc_internal_backoff_init')  
    (414, 'bs')  
 <<<<<<< HEAD
+<<<<<<< HEAD
    (415, '__CSEQ_atomic_compare_and_exchange')  
    (416, 'mptr')  
    (417, 'eptr')  
@@ -4002,4 +4279,117 @@ All symbols (new symbol table - work in progress):
    (587, 'listHead')  
    (588, 't1')  
    (589, 't2')  
+>>>>>>> origin/main
+=======
+   (415, 'library_lock')  
+   (416, 'exponential_backoff')  
+   (417, 'loop')  
+   (418, '__CSEQ_atomic_swap_stack_top')  
+   (419, 'top')  
+   (420, 'oldtop')  
+   (421, 'newtop')  
+   (422, 'lfds711_misc_internal_backoff_init')  
+   (423, 'bs')  
+   (424, 'c')  
+   (425, 'c')  
+   (426, 'lfds711_stack_init_valid_on_current_logical_core')  
+   (427, 'ss')  
+   (428, 'user_state')  
+   (429, 'c')  
+   (430, 'c')  
+   (431, 'c')  
+   (432, 'lfds711_stack_pop')  
+   (433, 'ss')  
+   (434, 'se')  
+   (435, 'result')  
+   (436, 'backoff_iteration')  
+   (437, 'new_top')  
+   (438, 'original_top')  
+   (439, 'c')  
+   (440, 'c')  
+   (441, 'i')  
+   (442, 'lfds711_stack_push')  
+   (443, 'ss')  
+   (444, 'se')  
+   (445, 'result')  
+   (446, 'backoff_iteration')  
+   (447, 'new_top')  
+   (448, 'original_top')  
+   (449, 'c')  
+   (450, 'c')  
+   (451, 'i')  
+   (452, '__CSEQ_atomic_compare_and_exchange')  
+   (453, 'mptr')  
+   (454, 'eptr')  
+   (455, 'newval')  
+   (456, 'weak_p')  
+   (457, 'sm')  
+   (458, 'fm')  
+   (459, '__atomic_compare_exchange_n')  
+   (460, 'mptr')  
+   (461, 'eptr')  
+   (462, 'newval')  
+   (463, 'weak_p')  
+   (464, 'sm')  
+   (465, 'fm')  
+   (466, 'res')  
+   (467, '__CSEQ_atomic_exchange')  
+   (468, 'previous')  
+   (469, 'new')  
+   (470, 'memorder')  
+   (471, 'old')  
+   (472, '__atomic_exchange_n')  
+   (473, 'previous')  
+   (474, 'new')  
+   (475, 'memorder')  
+   (476, 'res')  
+   (477, '__atomic_thread_fence')  
+   (478, 'i')  
+   (479, 'mystack')  
+   (480, 'se')  
+   (481, 'user_id')  
+   (482, 'init')  
+   (483, 'insert')  
+   (484, 's')  
+   (485, 'id')  
+   (486, 'td')  
+   (487, 'delete')  
+   (488, 's')  
+   (489, 'se')  
+   (490, 'temp_td')  
+   (491, 'res')  
+   (492, 'id_popped')  
+   (493, 'contains')  
+   (494, 's')  
+   (495, 'id')  
+   (496, 'max_size')  
+   (497, 'actual_size')  
+   (498, 'res')  
+   (499, 'found')  
+   (500, 'dimension')  
+   (501, 'datas')  
+   (502, 'se')  
+   (503, 'i')  
+   (504, 'ATOMIC_OPERATION')  
+   (505, 'ss')  
+   (506, 'lock')  
+   (507, 'push')  
+   (508, '__cs_unused')  
+   (509, 'loop')  
+   (510, 'pop')  
+   (511, '__cs_unused')  
+   (512, 'res')  
+   (513, 'count')  
+   (514, 'loop')  
+   (515, 'main')  
+   (516, 't1')  
+   (517, 't2')  
+   (518, 't3')  
+   (519, 't4')  
+   (520, 't5')  
+   (521, 't6')  
+   (522, 't7')  
+   (523, 't8')  
+   (524, 't9')  
+   (525, 't10')  
 >>>>>>> origin/main

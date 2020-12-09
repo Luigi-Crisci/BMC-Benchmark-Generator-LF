@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+<<<<<<< HEAD
 #include "../library_barrier.c"
 #include <assert.h>
 #include "../list.c"
@@ -22,30 +23,30 @@
 // #define LOCK if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);}
 // #define UNLOCK if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); }
 >>>>>>> origin/main
+=======
+>>>>>>> origin/main
 
-struct lfds711_stack_state ss;
-// pthread_mutex_t lock;
+//Using the interface
+#include "../inteface/interface.c"
 
-struct test_data
-{
-	struct lfds711_stack_element
-		se;
+#include <assert.h>
 
-	int long long unsigned
-		user_id;
-};
+#define VALUES 5
+//Set ATOMIC_OPERATION to make push and pop atomic
+int volatile ATOMIC_OPERATION = 0;
+#define LOCK if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);}
+#define UNLOCK if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); }
 
+void* ss;
+pthread_mutex_t lock;
 
 void *push()
 {
-	struct test_data *td;
-
 	int long long unsigned loop;
-
-	td = malloc(sizeof(struct test_data) * VALUES);
 
 	for (loop = 0; loop < VALUES; loop++)
 	{
+<<<<<<< HEAD
 <<<<<<< HEAD
 		LOCK;
 		td[loop].user_id = loop;
@@ -59,20 +60,22 @@ void *push()
 		lfds711_stack_push(&ss, &td[loop].se);
 		// UNLOCK;
 >>>>>>> origin/main
+=======
+		LOCK;
+		insert(ss,loop);
+		UNLOCK;
+>>>>>>> origin/main
 	}
-	
 }
 
 void *pop()
 {
-	struct lfds711_stack_element *se;
-	struct test_data *temp_td;
-
 	int res;
 	int count = 0;
 	int loop;
 	for (loop = 0; loop < VALUES; loop++)
 	{
+<<<<<<< HEAD
 		temp_td = NULL;
 <<<<<<< HEAD
 		LOCK;
@@ -122,94 +125,45 @@ LIST_NODE_T* createList(LIST_NODE_T *listHead)
 		temp_td = LFDS711_STACK_GET_VALUE_FROM_ELEMENT(*se);
 		LIST_InsertHeadNode(&listHead,temp_td->se,temp_td->user_id);
 		res = lfds711_stack_pop(&ss, &se);
+=======
+		LOCK;
+		delete(ss);
+		UNLOCK;
+>>>>>>> origin/main
 	}
-
-	return listHead;
-	
 }
-
-
-//Function to generate assert conditions
-void readFile(char* filename, LIST_NODE_T *listHead)
-{
-	char *line = NULL;
-	size_t len = 0;
-	ssize_t read;
-
-	LIST_NODE_T *parent = NULL;
-	LIST_NODE_T *curNode = listHead;
-
-	char delim[] = ",";
-	int i = 0;
-
-	int size = GetListSize(curNode);
-
-
-
-	//Create file that contains the new linked list if it doesn't exist yet	
-	FILE *fp = fopen(filename, "r"); 
-	if(!fp)
-		{
-			writeIntofile(filename, listHead);
-			assert(0);
-			return;
-		}
-
-	//Iterate line by line through the file. If it reach the end of the file we already met this assert condition.
-	while ((read = getline(&line, &len, fp)) != -1) 
-	{
-		//Split string for each ","
-		char *ptr = strtok(line, delim);
-
-		//While there is a node in the list created compare it with the file
-		while(curNode)
-      		{
-      		if(curNode->payload.user_id != atoi(ptr))
-         		break;
-			i++;
-      		parent = curNode;
-      		curNode=curNode->next;
-			ptr = strtok(NULL, delim);
-      		}
-		
-		//list already into the file
-		if (i == size)
-		{
-			fclose(fp);         
-			return;
-		}
-		
-		i=0;
-		
-    }    
-
-	//If i!=size then elements didn't match with any line so it's a new assert  
-	if(i!=size)
-	{
-		writeIntofile(filename, listHead);
-		assert(0);         
-		return;
-	}
-
-}
-
 
 
 int main()
 {
-	LIST_NODE_T *listHead = NULL;
 
-	lfds711_stack_init_valid_on_current_logical_core(&ss, NULL);
 
+<<<<<<< HEAD
 	pthread_t t1, t2;
 <<<<<<< HEAD
 	pthread_mutex_init(&lock, NULL);
 =======
 	// pthread_mutex_init(&lock, NULL);
 >>>>>>> origin/main
+=======
+	pthread_mutex_init(&lock, NULL);
+	ss = init();
+	
+	pthread_t t1, t2,t3,t4,t5,t6,t7,t8,t9,t10;
+>>>>>>> origin/main
 	pthread_create(&t1, NULL, push, NULL);
-	pthread_create(&t2, NULL, pop, NULL);
+	// pthread_create(&t2, NULL, push, NULL);
+	// pthread_create(&t3, NULL, push, NULL);
+	// pthread_create(&t4, NULL, push, NULL);
+	// pthread_create(&t5, NULL, push, NULL);
+	// sleep(1);
+	pthread_create(&t6, NULL, pop, NULL);
+	// pthread_create(&t7, NULL, pop, NULL);
+	// pthread_create(&t8, NULL, pop, NULL);
+	// pthread_create(&t9, NULL, pop, NULL);
+	// pthread_create(&t10, NULL, pop, NULL);
 	pthread_join(t1, 0);
+<<<<<<< HEAD
 	pthread_join(t2, 0);
 
 	listHead = createList(listHead);
@@ -220,6 +174,19 @@ int main()
 <<<<<<< HEAD
 =======
 	// assert(0);
+>>>>>>> origin/main
+=======
+	// pthread_join(t2, 0);
+	// pthread_join(t3, 0);
+	// pthread_join(t4, 0);
+	// pthread_join(t5, 0);
+	pthread_join(t6, 0);
+	// pthread_join(t7, 0);
+	// pthread_join(t8, 0);
+	// pthread_join(t9, 0);
+	// pthread_join(t10, 0);
+
+	assert(0);
 >>>>>>> origin/main
 	return (EXIT_SUCCESS);
 }

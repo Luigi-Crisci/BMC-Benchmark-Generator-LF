@@ -461,1165 +461,1166 @@ typedef int loff_t;
 # 174 "<previous_module>"
 typedef int _____STOPSTRIPPINGFROMHERE_____;
 
-# 181 "<previous_module>"
+# 183 "<previous_module>"
 #pragma warning( push )
 
-# 182 "<previous_module>"
+# 184 "<previous_module>"
 #pragma warning( disable : 4324 )
 
-# 183 "<previous_module>"
+# 185 "<previous_module>"
 #pragma prefast( disable : 28113 28182 28183, "blah" )
 
-# 186 "<previous_module>"
+# 188 "<previous_module>"
 typedef int long long lfds711_pal_int_t;
 
-# 187 "<previous_module>"
+# 189 "<previous_module>"
 typedef int long long unsigned lfds711_pal_uint_t;
 
-# 189 "<previous_module>"
+# 191 "<previous_module>"
 struct lfds711_prng_state
 {
         
-# 192 "<previous_module>"
+# 194 "<previous_module>"
 
-# 191 "<previous_module>"
+# 193 "<previous_module>"
 lfds711_pal_uint_t entropy;
 };
 
-# 195 "<previous_module>"
+# 197 "<previous_module>"
 struct lfds711_prng_st_state
 {
         
-# 198 "<previous_module>"
+# 200 "<previous_module>"
 
-# 197 "<previous_module>"
+# 199 "<previous_module>"
 lfds711_pal_uint_t entropy;
 };
 
-# 202 "<previous_module>"
+# 204 "<previous_module>"
 void lfds711_prng_init_valid_on_current_logical_core(struct lfds711_prng_state *ps, lfds711_pal_uint_t seed);
 
-# 203 "<previous_module>"
+# 205 "<previous_module>"
 void lfds711_prng_st_init(struct lfds711_prng_st_state *psts, lfds711_pal_uint_t seed);
 
-# 204 "<previous_module>"
+# 206 "<previous_module>"
 enum lfds711_misc_cas_strength {LFDS711_MISC_CAS_STRENGTH_STRONG = 
-# 207 "<previous_module>"
+# 209 "<previous_module>"
 0, LFDS711_MISC_CAS_STRENGTH_WEAK = 
-# 208 "<previous_module>"
+# 210 "<previous_module>"
 1};
 
-# 211 "<previous_module>"
+# 213 "<previous_module>"
 enum lfds711_misc_validity {LFDS711_MISC_VALIDITY_UNKNOWN, LFDS711_MISC_VALIDITY_VALID, LFDS711_MISC_VALIDITY_INVALID_LOOP, LFDS711_MISC_VALIDITY_INVALID_MISSING_ELEMENTS, LFDS711_MISC_VALIDITY_INVALID_ADDITIONAL_ELEMENTS, LFDS711_MISC_VALIDITY_INVALID_TEST_DATA, LFDS711_MISC_VALIDITY_INVALID_ORDER, LFDS711_MISC_VALIDITY_INVALID_ATOMIC_FAILED, LFDS711_MISC_VALIDITY_INDETERMINATE_NONATOMIC_PASSED};
 
-# 224 "<previous_module>"
+# 226 "<previous_module>"
 enum lfds711_misc_flag {LFDS711_MISC_FLAG_LOWERED, LFDS711_MISC_FLAG_RAISED};
 
-# 230 "<previous_module>"
+# 232 "<previous_module>"
 enum lfds711_misc_query {LFDS711_MISC_QUERY_GET_BUILD_AND_VERSION_STRING};
 
-# 235 "<previous_module>"
+# 237 "<previous_module>"
 enum lfds711_misc_data_structure {LFDS711_MISC_DATA_STRUCTURE_BTREE_AU, LFDS711_MISC_DATA_STRUCTURE_FREELIST, LFDS711_MISC_DATA_STRUCTURE_HASH_A, LFDS711_MISC_DATA_STRUCTURE_LIST_AOS, LFDS711_MISC_DATA_STRUCTURE_LIST_ASU, LFDS711_MISC_DATA_STRUCTURE_QUEUE_BMM, LFDS711_MISC_DATA_STRUCTURE_QUEUE_BSS, LFDS711_MISC_DATA_STRUCTURE_QUEUE_UMM, LFDS711_MISC_DATA_STRUCTURE_RINGBUFFER, LFDS711_MISC_DATA_STRUCTURE_STACK, LFDS711_MISC_DATA_STRUCTURE_COUNT};
 
-# 251 "<previous_module>"
+# 253 "<previous_module>"
 struct lfds711_misc_backoff_state
 {
         
-# 254 "<previous_module>"
+# 256 "<previous_module>"
 
-# 253 "<previous_module>"
+# 255 "<previous_module>"
 lfds711_pal_uint_t lock;
         
-# 257 "<previous_module>"
+# 259 "<previous_module>"
 
-# 256 "<previous_module>"
+# 258 "<previous_module>"
 lfds711_pal_uint_t backoff_iteration_frequency_counters[2];
         
-# 258 "<previous_module>"
+# 260 "<previous_module>"
 lfds711_pal_uint_t metric;
         
-# 259 "<previous_module>"
+# 261 "<previous_module>"
 lfds711_pal_uint_t total_operations;
 };
 
-# 262 "<previous_module>"
+# 264 "<previous_module>"
 struct lfds711_misc_globals
 {
         
-# 265 "<previous_module>"
+# 267 "<previous_module>"
 
-# 264 "<previous_module>"
+# 266 "<previous_module>"
 struct lfds711_prng_state ps;
 };
 
-# 268 "<previous_module>"
+# 270 "<previous_module>"
 struct lfds711_misc_validation_info
 {
         
-# 271 "<previous_module>"
+# 273 "<previous_module>"
 
-# 270 "<previous_module>"
+# 272 "<previous_module>"
 lfds711_pal_uint_t min_elements;
         
-# 272 "<previous_module>"
+# 274 "<previous_module>"
 lfds711_pal_uint_t max_elements;
 };
 
-# 277 "<previous_module>"
+# 279 "<previous_module>"
 
-# 276 "<previous_module>"
+# 278 "<previous_module>"
 struct lfds711_misc_globals lfds711_misc_globals;
 
-# 280 "<previous_module>"
+# 282 "<previous_module>"
 static void lfds711_misc_force_store(void);
 
-# 282 "<previous_module>"
+# 284 "<previous_module>"
 void lfds711_misc_query(enum lfds711_misc_query query_type, void *query_input, void *query_output);
 
-# 285 "<previous_module>"
+# 287 "<previous_module>"
 #pragma prefast( disable : 28112, "blah" )
 
-# 287 "<previous_module>"
+# 289 "<previous_module>"
 void lfds711_misc_force_store()
 
-# 288 "<previous_module>"
+# 290 "<previous_module>"
 {
         
-# 290 "<previous_module>"
+# 292 "<previous_module>"
 
-# 289 "<previous_module>"
+# 291 "<previous_module>"
 lfds711_pal_uint_t destination;
 
-# 292 "<previous_module>"
+# 294 "<previous_module>"
         {
                 (void) __atomic_exchange_n(&destination, 0, 0);
         }
         ;
         
-# 294 "<previous_module>"
+# 296 "<previous_module>"
 return;
 }
 
 
-# 296 "<previous_module>"
+# 298 "<previous_module>"
 enum lfds711_btree_au_absolute_position {LFDS711_BTREE_AU_ABSOLUTE_POSITION_ROOT, LFDS711_BTREE_AU_ABSOLUTE_POSITION_SMALLEST_IN_TREE, LFDS711_BTREE_AU_ABSOLUTE_POSITION_LARGEST_IN_TREE};
 
-# 303 "<previous_module>"
+# 305 "<previous_module>"
 enum lfds711_btree_au_existing_key {LFDS711_BTREE_AU_EXISTING_KEY_OVERWRITE, LFDS711_BTREE_AU_EXISTING_KEY_FAIL};
 
-# 309 "<previous_module>"
+# 311 "<previous_module>"
 enum lfds711_btree_au_insert_result {LFDS711_BTREE_AU_INSERT_RESULT_FAILURE_EXISTING_KEY, LFDS711_BTREE_AU_INSERT_RESULT_SUCCESS_OVERWRITE, LFDS711_BTREE_AU_INSERT_RESULT_SUCCESS};
 
-# 316 "<previous_module>"
+# 318 "<previous_module>"
 enum lfds711_btree_au_query {LFDS711_BTREE_AU_QUERY_GET_POTENTIALLY_INACCURATE_COUNT, LFDS711_BTREE_AU_QUERY_SINGLETHREADED_VALIDATE};
 
-# 322 "<previous_module>"
+# 324 "<previous_module>"
 enum lfds711_btree_au_relative_position {LFDS711_BTREE_AU_RELATIVE_POSITION_UP, LFDS711_BTREE_AU_RELATIVE_POSITION_LEFT, LFDS711_BTREE_AU_RELATIVE_POSITION_RIGHT, LFDS711_BTREE_AU_RELATIVE_POSITION_SMALLEST_ELEMENT_BELOW_CURRENT_ELEMENT, LFDS711_BTREE_AU_RELATIVE_POSITION_LARGEST_ELEMENT_BELOW_CURRENT_ELEMENT, LFDS711_BTREE_AU_RELATIVE_POSITION_NEXT_SMALLER_ELEMENT_IN_ENTIRE_TREE, LFDS711_BTREE_AU_RELATIVE_POSITION_NEXT_LARGER_ELEMENT_IN_ENTIRE_TREE};
 
-# 334 "<previous_module>"
+# 336 "<previous_module>"
 struct lfds711_btree_au_element
 {
         
-# 342 "<previous_module>"
+# 344 "<previous_module>"
 
-# 341 "<previous_module>"
+# 343 "<previous_module>"
 struct lfds711_btree_au_element * volatile left;
         
-# 343 "<previous_module>"
+# 345 "<previous_module>"
 struct lfds711_btree_au_element * volatile right;
         
-# 344 "<previous_module>"
+# 346 "<previous_module>"
 struct lfds711_btree_au_element * volatile up;
         
-# 347 "<previous_module>"
+# 349 "<previous_module>"
 
-# 346 "<previous_module>"
+# 348 "<previous_module>"
 void * volatile value;
         
-# 350 "<previous_module>"
+# 352 "<previous_module>"
 
-# 349 "<previous_module>"
+# 351 "<previous_module>"
 void *key;
 };
 
-# 353 "<previous_module>"
+# 355 "<previous_module>"
 struct lfds711_btree_au_state
 {
         
-# 356 "<previous_module>"
+# 358 "<previous_module>"
 
-# 355 "<previous_module>"
+# 357 "<previous_module>"
 struct lfds711_btree_au_element * volatile root;
         
-# 359 "<previous_module>"
+# 361 "<previous_module>"
 
-# 358 "<previous_module>"
+# 360 "<previous_module>"
 int (*key_compare_function)(const void *new_key, const void *existing_key);
         
-# 362 "<previous_module>"
+# 364 "<previous_module>"
 
-# 361 "<previous_module>"
+# 363 "<previous_module>"
 enum lfds711_btree_au_existing_key existing_key;
         
-# 365 "<previous_module>"
+# 367 "<previous_module>"
 
-# 364 "<previous_module>"
+# 366 "<previous_module>"
 void *user_state;
         
-# 368 "<previous_module>"
+# 370 "<previous_module>"
 
-# 367 "<previous_module>"
+# 369 "<previous_module>"
 struct lfds711_misc_backoff_state insert_backoff;
 };
 
-# 372 "<previous_module>"
-void lfds711_btree_au_init_valid_on_current_logical_core(struct lfds711_btree_au_state *baus, 
-# 373 "<previous_module>"
-int (*key_compare_function)(const void *new_key, const void *existing_key), 
 # 374 "<previous_module>"
-enum lfds711_btree_au_existing_key existing_key, 
+void lfds711_btree_au_init_valid_on_current_logical_core(struct lfds711_btree_au_state *baus, 
 # 375 "<previous_module>"
+int (*key_compare_function)(const void *new_key, const void *existing_key), 
+# 376 "<previous_module>"
+enum lfds711_btree_au_existing_key existing_key, 
+# 377 "<previous_module>"
 void *user_state);
 
-# 378 "<previous_module>"
+# 380 "<previous_module>"
 void lfds711_btree_au_cleanup(struct lfds711_btree_au_state *baus, 
-# 379 "<previous_module>"
+# 381 "<previous_module>"
 void (*element_cleanup_callback)(struct lfds711_btree_au_state *baus, struct lfds711_btree_au_element *baue));
 
-# 381 "<previous_module>"
-enum lfds711_btree_au_insert_result lfds711_btree_au_insert(struct lfds711_btree_au_state *baus, 
-# 382 "<previous_module>"
-struct lfds711_btree_au_element *baue, 
 # 383 "<previous_module>"
+enum lfds711_btree_au_insert_result lfds711_btree_au_insert(struct lfds711_btree_au_state *baus, 
+# 384 "<previous_module>"
+struct lfds711_btree_au_element *baue, 
+# 385 "<previous_module>"
 struct lfds711_btree_au_element **existing_baue);
 
-# 386 "<previous_module>"
-int lfds711_btree_au_get_by_key(struct lfds711_btree_au_state *baus, 
-# 387 "<previous_module>"
-int (*key_compare_function)(const void *new_key, const void *existing_key), 
 # 388 "<previous_module>"
-void *key, 
+int lfds711_btree_au_get_by_key(struct lfds711_btree_au_state *baus, 
 # 389 "<previous_module>"
+int (*key_compare_function)(const void *new_key, const void *existing_key), 
+# 390 "<previous_module>"
+void *key, 
+# 391 "<previous_module>"
 struct lfds711_btree_au_element **baue);
 
-# 391 "<previous_module>"
-int lfds711_btree_au_get_by_absolute_position_and_then_by_relative_position(struct lfds711_btree_au_state *baus, 
-# 392 "<previous_module>"
-struct lfds711_btree_au_element **baue, 
 # 393 "<previous_module>"
-enum lfds711_btree_au_absolute_position absolute_position, 
+int lfds711_btree_au_get_by_absolute_position_and_then_by_relative_position(struct lfds711_btree_au_state *baus, 
 # 394 "<previous_module>"
+struct lfds711_btree_au_element **baue, 
+# 395 "<previous_module>"
+enum lfds711_btree_au_absolute_position absolute_position, 
+# 396 "<previous_module>"
 enum lfds711_btree_au_relative_position relative_position);
 
-# 397 "<previous_module>"
-int lfds711_btree_au_get_by_absolute_position(struct lfds711_btree_au_state *baus, 
-# 398 "<previous_module>"
-struct lfds711_btree_au_element **baue, 
 # 399 "<previous_module>"
+int lfds711_btree_au_get_by_absolute_position(struct lfds711_btree_au_state *baus, 
+# 400 "<previous_module>"
+struct lfds711_btree_au_element **baue, 
+# 401 "<previous_module>"
 enum lfds711_btree_au_absolute_position absolute_position);
 
-# 401 "<previous_module>"
+# 403 "<previous_module>"
 int lfds711_btree_au_get_by_relative_position(struct lfds711_btree_au_element **baue, 
-# 402 "<previous_module>"
+# 404 "<previous_module>"
 enum lfds711_btree_au_relative_position relative_position);
 
-# 404 "<previous_module>"
-void lfds711_btree_au_query(struct lfds711_btree_au_state *baus, 
-# 405 "<previous_module>"
-enum lfds711_btree_au_query query_type, 
 # 406 "<previous_module>"
-void *query_input, 
+void lfds711_btree_au_query(struct lfds711_btree_au_state *baus, 
 # 407 "<previous_module>"
+enum lfds711_btree_au_query query_type, 
+# 408 "<previous_module>"
+void *query_input, 
+# 409 "<previous_module>"
 void *query_output);
 
-# 408 "<previous_module>"
+# 410 "<previous_module>"
 enum lfds711_freelist_query {LFDS711_FREELIST_QUERY_SINGLETHREADED_GET_COUNT, LFDS711_FREELIST_QUERY_SINGLETHREADED_VALIDATE, LFDS711_FREELIST_QUERY_GET_ELIMINATION_ARRAY_EXTRA_ELEMENTS_IN_FREELIST_ELEMENTS};
 
-# 416 "<previous_module>"
+# 418 "<previous_module>"
 struct lfds711_freelist_element
 {
         
-# 419 "<previous_module>"
+# 421 "<previous_module>"
 
-# 418 "<previous_module>"
+# 420 "<previous_module>"
 struct lfds711_freelist_element *next;
         
-# 422 "<previous_module>"
+# 424 "<previous_module>"
 
-# 421 "<previous_module>"
+# 423 "<previous_module>"
 void *key;
         
-# 423 "<previous_module>"
+# 425 "<previous_module>"
 void *value;
 };
 
-# 426 "<previous_module>"
+# 428 "<previous_module>"
 struct lfds711_freelist_state
 {
         
-# 429 "<previous_module>"
+# 431 "<previous_module>"
 
-# 428 "<previous_module>"
+# 430 "<previous_module>"
 struct lfds711_freelist_element * volatile top[2];
         
-# 432 "<previous_module>"
+# 434 "<previous_module>"
 
-# 431 "<previous_module>"
+# 433 "<previous_module>"
 lfds711_pal_uint_t elimination_array_size_in_elements;
         
-# 435 "<previous_module>"
+# 437 "<previous_module>"
 
-# 434 "<previous_module>"
+# 436 "<previous_module>"
 struct lfds711_freelist_element * volatile (*elimination_array)[128 / (sizeof(struct lfds711_freelist_element *))];
         
-# 438 "<previous_module>"
+# 440 "<previous_module>"
 
-# 437 "<previous_module>"
+# 439 "<previous_module>"
 void *user_state;
         
-# 441 "<previous_module>"
+# 443 "<previous_module>"
 
-# 440 "<previous_module>"
+# 442 "<previous_module>"
 struct lfds711_misc_backoff_state pop_backoff;
         
-# 442 "<previous_module>"
+# 444 "<previous_module>"
 struct lfds711_misc_backoff_state push_backoff;
 };
 
-# 446 "<previous_module>"
-void lfds711_freelist_init_valid_on_current_logical_core(struct lfds711_freelist_state *fs, 
-# 447 "<previous_module>"
-struct lfds711_freelist_element * volatile (*elimination_array)[128 / (sizeof(struct lfds711_freelist_element *))], 
 # 448 "<previous_module>"
-lfds711_pal_uint_t elimination_array_size_in_elements, 
+void lfds711_freelist_init_valid_on_current_logical_core(struct lfds711_freelist_state *fs, 
 # 449 "<previous_module>"
+struct lfds711_freelist_element * volatile (*elimination_array)[128 / (sizeof(struct lfds711_freelist_element *))], 
+# 450 "<previous_module>"
+lfds711_pal_uint_t elimination_array_size_in_elements, 
+# 451 "<previous_module>"
 void *user_state);
 
-# 452 "<previous_module>"
+# 454 "<previous_module>"
 void lfds711_freelist_cleanup(struct lfds711_freelist_state *fs, 
-# 453 "<previous_module>"
+# 455 "<previous_module>"
 void (*element_cleanup_callback)(struct lfds711_freelist_state *fs, struct lfds711_freelist_element *fe));
 
-# 455 "<previous_module>"
-void lfds711_freelist_push(struct lfds711_freelist_state *fs, 
-# 456 "<previous_module>"
-struct lfds711_freelist_element *fe, 
 # 457 "<previous_module>"
-struct lfds711_prng_st_state *psts);
-
+void lfds711_freelist_push(struct lfds711_freelist_state *fs, 
+# 458 "<previous_module>"
+struct lfds711_freelist_element *fe, 
 # 459 "<previous_module>"
-int lfds711_freelist_pop(struct lfds711_freelist_state *fs, 
-# 460 "<previous_module>"
-struct lfds711_freelist_element **fe, 
-# 461 "<previous_module>"
 struct lfds711_prng_st_state *psts);
 
+# 461 "<previous_module>"
+int lfds711_freelist_pop(struct lfds711_freelist_state *fs, 
+# 462 "<previous_module>"
+struct lfds711_freelist_element **fe, 
 # 463 "<previous_module>"
-void lfds711_freelist_query(struct lfds711_freelist_state *fs, 
-# 464 "<previous_module>"
-enum lfds711_freelist_query query_type, 
+struct lfds711_prng_st_state *psts);
+
 # 465 "<previous_module>"
-void *query_input, 
+void lfds711_freelist_query(struct lfds711_freelist_state *fs, 
 # 466 "<previous_module>"
+enum lfds711_freelist_query query_type, 
+# 467 "<previous_module>"
+void *query_input, 
+# 468 "<previous_module>"
 void *query_output);
 
-# 467 "<previous_module>"
+# 469 "<previous_module>"
 enum lfds711_hash_a_existing_key {LFDS711_HASH_A_EXISTING_KEY_OVERWRITE, LFDS711_HASH_A_EXISTING_KEY_FAIL};
 
-# 473 "<previous_module>"
+# 475 "<previous_module>"
 enum lfds711_hash_a_insert_result {LFDS711_HASH_A_PUT_RESULT_FAILURE_EXISTING_KEY, LFDS711_HASH_A_PUT_RESULT_SUCCESS_OVERWRITE, LFDS711_HASH_A_PUT_RESULT_SUCCESS};
 
-# 480 "<previous_module>"
+# 482 "<previous_module>"
 enum lfds711_hash_a_query {LFDS711_HASH_A_QUERY_GET_POTENTIALLY_INACCURATE_COUNT, LFDS711_HASH_A_QUERY_SINGLETHREADED_VALIDATE};
 
-# 487 "<previous_module>"
+# 489 "<previous_module>"
 struct lfds711_hash_a_element
 {
         
-# 490 "<previous_module>"
+# 492 "<previous_module>"
 
-# 489 "<previous_module>"
+# 491 "<previous_module>"
 struct lfds711_btree_au_element baue;
         
-# 493 "<previous_module>"
+# 495 "<previous_module>"
 
-# 492 "<previous_module>"
+# 494 "<previous_module>"
 void *key;
         
-# 496 "<previous_module>"
+# 498 "<previous_module>"
 
-# 495 "<previous_module>"
+# 497 "<previous_module>"
 void * volatile value;
 };
 
-# 499 "<previous_module>"
+# 501 "<previous_module>"
 struct lfds711_hash_a_iterate
 {
         
-# 502 "<previous_module>"
+# 504 "<previous_module>"
 
-# 501 "<previous_module>"
+# 503 "<previous_module>"
 struct lfds711_btree_au_element *baue;
         
-# 505 "<previous_module>"
+# 507 "<previous_module>"
 
-# 504 "<previous_module>"
+# 506 "<previous_module>"
 struct lfds711_btree_au_state *baus;
         
-# 506 "<previous_module>"
+# 508 "<previous_module>"
 struct lfds711_btree_au_state *baus_end;
 };
 
-# 509 "<previous_module>"
+# 511 "<previous_module>"
 struct lfds711_hash_a_state
 {
         
-# 512 "<previous_module>"
+# 514 "<previous_module>"
 
-# 511 "<previous_module>"
+# 513 "<previous_module>"
 enum lfds711_hash_a_existing_key existing_key;
         
-# 515 "<previous_module>"
+# 517 "<previous_module>"
 
-# 514 "<previous_module>"
+# 516 "<previous_module>"
 int (*key_compare_function)(const void *new_key, const void *existing_key);
         
-# 518 "<previous_module>"
+# 520 "<previous_module>"
 
-# 517 "<previous_module>"
+# 519 "<previous_module>"
 lfds711_pal_uint_t array_size;
         
-# 521 "<previous_module>"
+# 523 "<previous_module>"
 
-# 520 "<previous_module>"
+# 522 "<previous_module>"
 struct lfds711_btree_au_state *baus_array;
         
-# 524 "<previous_module>"
+# 526 "<previous_module>"
 
-# 523 "<previous_module>"
+# 525 "<previous_module>"
 void (*element_cleanup_callback)(struct lfds711_hash_a_state *has, struct lfds711_hash_a_element *hae);
         
-# 525 "<previous_module>"
+# 527 "<previous_module>"
 void (*key_hash_function)(const void *key, lfds711_pal_uint_t *hash);
         
-# 526 "<previous_module>"
+# 528 "<previous_module>"
 void *user_state;
 };
 
-# 530 "<previous_module>"
-void lfds711_hash_a_init_valid_on_current_logical_core(struct lfds711_hash_a_state *has, 
-# 531 "<previous_module>"
-struct lfds711_btree_au_state *baus_array, 
 # 532 "<previous_module>"
-lfds711_pal_uint_t array_size, 
+void lfds711_hash_a_init_valid_on_current_logical_core(struct lfds711_hash_a_state *has, 
 # 533 "<previous_module>"
-int (*key_compare_function)(const void *new_key, const void *existing_key), 
+struct lfds711_btree_au_state *baus_array, 
 # 534 "<previous_module>"
-void (*key_hash_function)(const void *key, lfds711_pal_uint_t *hash), 
+lfds711_pal_uint_t array_size, 
 # 535 "<previous_module>"
-enum lfds711_hash_a_existing_key existing_key, 
+int (*key_compare_function)(const void *new_key, const void *existing_key), 
 # 536 "<previous_module>"
+void (*key_hash_function)(const void *key, lfds711_pal_uint_t *hash), 
+# 537 "<previous_module>"
+enum lfds711_hash_a_existing_key existing_key, 
+# 538 "<previous_module>"
 void *user_state);
 
-# 539 "<previous_module>"
+# 541 "<previous_module>"
 void lfds711_hash_a_cleanup(struct lfds711_hash_a_state *has, 
-# 540 "<previous_module>"
+# 542 "<previous_module>"
 void (*element_cleanup_function)(struct lfds711_hash_a_state *has, struct lfds711_hash_a_element *hae));
 
-# 542 "<previous_module>"
-enum lfds711_hash_a_insert_result lfds711_hash_a_insert(struct lfds711_hash_a_state *has, 
-# 543 "<previous_module>"
-struct lfds711_hash_a_element *hae, 
 # 544 "<previous_module>"
+enum lfds711_hash_a_insert_result lfds711_hash_a_insert(struct lfds711_hash_a_state *has, 
+# 545 "<previous_module>"
+struct lfds711_hash_a_element *hae, 
+# 546 "<previous_module>"
 struct lfds711_hash_a_element **existing_hae);
 
-# 547 "<previous_module>"
-int lfds711_hash_a_get_by_key(struct lfds711_hash_a_state *has, 
-# 548 "<previous_module>"
-int (*key_compare_function)(const void *new_key, const void *existing_key), 
 # 549 "<previous_module>"
-void (*key_hash_function)(const void *key, lfds711_pal_uint_t *hash), 
+int lfds711_hash_a_get_by_key(struct lfds711_hash_a_state *has, 
 # 550 "<previous_module>"
-void *key, 
+int (*key_compare_function)(const void *new_key, const void *existing_key), 
 # 551 "<previous_module>"
+void (*key_hash_function)(const void *key, lfds711_pal_uint_t *hash), 
+# 552 "<previous_module>"
+void *key, 
+# 553 "<previous_module>"
 struct lfds711_hash_a_element **hae);
 
-# 553 "<previous_module>"
+# 555 "<previous_module>"
 void lfds711_hash_a_iterate_init(struct lfds711_hash_a_state *has, struct lfds711_hash_a_iterate *hai);
 
-# 554 "<previous_module>"
+# 556 "<previous_module>"
 int lfds711_hash_a_iterate(struct lfds711_hash_a_iterate *hai, struct lfds711_hash_a_element **hae);
 
-# 556 "<previous_module>"
-void lfds711_hash_a_query(struct lfds711_hash_a_state *has, 
-# 557 "<previous_module>"
-enum lfds711_hash_a_query query_type, 
 # 558 "<previous_module>"
-void *query_input, 
+void lfds711_hash_a_query(struct lfds711_hash_a_state *has, 
 # 559 "<previous_module>"
+enum lfds711_hash_a_query query_type, 
+# 560 "<previous_module>"
+void *query_input, 
+# 561 "<previous_module>"
 void *query_output);
 
-# 560 "<previous_module>"
+# 562 "<previous_module>"
 enum lfds711_list_aso_existing_key {LFDS711_LIST_ASO_EXISTING_KEY_OVERWRITE, LFDS711_LIST_ASO_EXISTING_KEY_FAIL};
 
-# 566 "<previous_module>"
+# 568 "<previous_module>"
 enum lfds711_list_aso_insert_result {LFDS711_LIST_ASO_INSERT_RESULT_FAILURE_EXISTING_KEY, LFDS711_LIST_ASO_INSERT_RESULT_SUCCESS_OVERWRITE, LFDS711_LIST_ASO_INSERT_RESULT_SUCCESS};
 
-# 573 "<previous_module>"
+# 575 "<previous_module>"
 enum lfds711_list_aso_query {LFDS711_LIST_ASO_QUERY_GET_POTENTIALLY_INACCURATE_COUNT, LFDS711_LIST_ASO_QUERY_SINGLETHREADED_VALIDATE};
 
-# 580 "<previous_module>"
+# 582 "<previous_module>"
 struct lfds711_list_aso_element
 {
         
-# 583 "<previous_module>"
+# 585 "<previous_module>"
 
-# 582 "<previous_module>"
+# 584 "<previous_module>"
 struct lfds711_list_aso_element * volatile next;
         
-# 586 "<previous_module>"
+# 588 "<previous_module>"
 
-# 585 "<previous_module>"
+# 587 "<previous_module>"
 void * volatile value;
         
-# 589 "<previous_module>"
+# 591 "<previous_module>"
 
-# 588 "<previous_module>"
+# 590 "<previous_module>"
 void *key;
 };
 
-# 592 "<previous_module>"
+# 594 "<previous_module>"
 struct lfds711_list_aso_state
 {
         
-# 595 "<previous_module>"
+# 597 "<previous_module>"
 
-# 594 "<previous_module>"
+# 596 "<previous_module>"
 struct lfds711_list_aso_element dummy_element;
         
-# 598 "<previous_module>"
+# 600 "<previous_module>"
 
-# 597 "<previous_module>"
+# 599 "<previous_module>"
 struct lfds711_list_aso_element *start;
         
-# 601 "<previous_module>"
+# 603 "<previous_module>"
 
-# 600 "<previous_module>"
+# 602 "<previous_module>"
 int (*key_compare_function)(const void *new_key, const void *existing_key);
         
-# 604 "<previous_module>"
+# 606 "<previous_module>"
 
-# 603 "<previous_module>"
+# 605 "<previous_module>"
 enum lfds711_list_aso_existing_key existing_key;
         
-# 607 "<previous_module>"
+# 609 "<previous_module>"
 
-# 606 "<previous_module>"
+# 608 "<previous_module>"
 void *user_state;
         
-# 610 "<previous_module>"
+# 612 "<previous_module>"
 
-# 609 "<previous_module>"
+# 611 "<previous_module>"
 struct lfds711_misc_backoff_state insert_backoff;
 };
 
-# 614 "<previous_module>"
-void lfds711_list_aso_init_valid_on_current_logical_core(struct lfds711_list_aso_state *lasos, 
-# 615 "<previous_module>"
-int (*key_compare_function)(const void *new_key, const void *existing_key), 
 # 616 "<previous_module>"
-enum lfds711_list_aso_existing_key existing_key, 
+void lfds711_list_aso_init_valid_on_current_logical_core(struct lfds711_list_aso_state *lasos, 
 # 617 "<previous_module>"
+int (*key_compare_function)(const void *new_key, const void *existing_key), 
+# 618 "<previous_module>"
+enum lfds711_list_aso_existing_key existing_key, 
+# 619 "<previous_module>"
 void *user_state);
 
-# 620 "<previous_module>"
+# 622 "<previous_module>"
 void lfds711_list_aso_cleanup(struct lfds711_list_aso_state *lasos, 
-# 621 "<previous_module>"
+# 623 "<previous_module>"
 void (*element_cleanup_callback)(struct lfds711_list_aso_state *lasos, struct lfds711_list_aso_element *lasoe));
 
-# 623 "<previous_module>"
-enum lfds711_list_aso_insert_result lfds711_list_aso_insert(struct lfds711_list_aso_state *lasos, 
-# 624 "<previous_module>"
-struct lfds711_list_aso_element *lasoe, 
 # 625 "<previous_module>"
+enum lfds711_list_aso_insert_result lfds711_list_aso_insert(struct lfds711_list_aso_state *lasos, 
+# 626 "<previous_module>"
+struct lfds711_list_aso_element *lasoe, 
+# 627 "<previous_module>"
 struct lfds711_list_aso_element **existing_lasoe);
 
-# 627 "<previous_module>"
-int lfds711_list_aso_get_by_key(struct lfds711_list_aso_state *lasos, 
-# 628 "<previous_module>"
-void *key, 
 # 629 "<previous_module>"
+int lfds711_list_aso_get_by_key(struct lfds711_list_aso_state *lasos, 
+# 630 "<previous_module>"
+void *key, 
+# 631 "<previous_module>"
 struct lfds711_list_aso_element **lasoe);
 
-# 631 "<previous_module>"
-void lfds711_list_aso_query(struct lfds711_list_aso_state *lasos, 
-# 632 "<previous_module>"
-enum lfds711_list_aso_query query_type, 
 # 633 "<previous_module>"
-void *query_input, 
+void lfds711_list_aso_query(struct lfds711_list_aso_state *lasos, 
 # 634 "<previous_module>"
+enum lfds711_list_aso_query query_type, 
+# 635 "<previous_module>"
+void *query_input, 
+# 636 "<previous_module>"
 void *query_output);
 
-# 635 "<previous_module>"
+# 637 "<previous_module>"
 enum lfds711_list_asu_position {LFDS711_LIST_ASU_POSITION_START, LFDS711_LIST_ASU_POSITION_END, LFDS711_LIST_ASU_POSITION_AFTER};
 
-# 642 "<previous_module>"
+# 644 "<previous_module>"
 enum lfds711_list_asu_query {LFDS711_LIST_ASU_QUERY_GET_POTENTIALLY_INACCURATE_COUNT, LFDS711_LIST_ASU_QUERY_SINGLETHREADED_VALIDATE};
 
-# 649 "<previous_module>"
+# 651 "<previous_module>"
 struct lfds711_list_asu_element
 {
         
-# 652 "<previous_module>"
+# 654 "<previous_module>"
 
-# 651 "<previous_module>"
+# 653 "<previous_module>"
 struct lfds711_list_asu_element * volatile next;
         
-# 655 "<previous_module>"
+# 657 "<previous_module>"
 
-# 654 "<previous_module>"
+# 656 "<previous_module>"
 void * volatile value;
         
-# 658 "<previous_module>"
+# 660 "<previous_module>"
 
-# 657 "<previous_module>"
+# 659 "<previous_module>"
 void *key;
 };
 
-# 661 "<previous_module>"
+# 663 "<previous_module>"
 struct lfds711_list_asu_state
 {
         
-# 664 "<previous_module>"
+# 666 "<previous_module>"
 
-# 663 "<previous_module>"
+# 665 "<previous_module>"
 struct lfds711_list_asu_element dummy_element;
         
-# 667 "<previous_module>"
+# 669 "<previous_module>"
 
-# 666 "<previous_module>"
+# 668 "<previous_module>"
 struct lfds711_list_asu_element * volatile end;
         
-# 670 "<previous_module>"
+# 672 "<previous_module>"
 
-# 669 "<previous_module>"
+# 671 "<previous_module>"
 struct lfds711_list_asu_element *start;
         
-# 673 "<previous_module>"
+# 675 "<previous_module>"
 
-# 672 "<previous_module>"
+# 674 "<previous_module>"
 void *user_state;
         
-# 676 "<previous_module>"
+# 678 "<previous_module>"
 
-# 675 "<previous_module>"
+# 677 "<previous_module>"
 struct lfds711_misc_backoff_state after_backoff;
         
-# 677 "<previous_module>"
+# 679 "<previous_module>"
 struct lfds711_misc_backoff_state end_backoff;
         
-# 678 "<previous_module>"
+# 680 "<previous_module>"
 struct lfds711_misc_backoff_state start_backoff;
 };
 
-# 682 "<previous_module>"
+# 684 "<previous_module>"
 void lfds711_list_asu_init_valid_on_current_logical_core(struct lfds711_list_asu_state *lasus, 
-# 683 "<previous_module>"
+# 685 "<previous_module>"
 void *user_state);
 
-# 686 "<previous_module>"
+# 688 "<previous_module>"
 void lfds711_list_asu_cleanup(struct lfds711_list_asu_state *lasus, 
-# 687 "<previous_module>"
+# 689 "<previous_module>"
 void (*element_cleanup_callback)(struct lfds711_list_asu_state *lasus, struct lfds711_list_asu_element *lasue));
 
-# 689 "<previous_module>"
-void lfds711_list_asu_insert_at_position(struct lfds711_list_asu_state *lasus, 
-# 690 "<previous_module>"
-struct lfds711_list_asu_element *lasue, 
 # 691 "<previous_module>"
-struct lfds711_list_asu_element *lasue_predecessor, 
+void lfds711_list_asu_insert_at_position(struct lfds711_list_asu_state *lasus, 
 # 692 "<previous_module>"
+struct lfds711_list_asu_element *lasue, 
+# 693 "<previous_module>"
+struct lfds711_list_asu_element *lasue_predecessor, 
+# 694 "<previous_module>"
 enum lfds711_list_asu_position position);
 
-# 694 "<previous_module>"
+# 696 "<previous_module>"
 void lfds711_list_asu_insert_at_start(struct lfds711_list_asu_state *lasus, 
-# 695 "<previous_module>"
-struct lfds711_list_asu_element *lasue);
-
 # 697 "<previous_module>"
-void lfds711_list_asu_insert_at_end(struct lfds711_list_asu_state *lasus, 
-# 698 "<previous_module>"
 struct lfds711_list_asu_element *lasue);
 
+# 699 "<previous_module>"
+void lfds711_list_asu_insert_at_end(struct lfds711_list_asu_state *lasus, 
 # 700 "<previous_module>"
-void lfds711_list_asu_insert_after_element(struct lfds711_list_asu_state *lasus, 
-# 701 "<previous_module>"
-struct lfds711_list_asu_element *lasue, 
+struct lfds711_list_asu_element *lasue);
+
 # 702 "<previous_module>"
+void lfds711_list_asu_insert_after_element(struct lfds711_list_asu_state *lasus, 
+# 703 "<previous_module>"
+struct lfds711_list_asu_element *lasue, 
+# 704 "<previous_module>"
 struct lfds711_list_asu_element *lasue_predecessor);
 
-# 704 "<previous_module>"
-int lfds711_list_asu_get_by_key(struct lfds711_list_asu_state *lasus, 
-# 705 "<previous_module>"
-int (*key_compare_function)(const void *new_key, const void *existing_key), 
 # 706 "<previous_module>"
-void *key, 
+int lfds711_list_asu_get_by_key(struct lfds711_list_asu_state *lasus, 
 # 707 "<previous_module>"
+int (*key_compare_function)(const void *new_key, const void *existing_key), 
+# 708 "<previous_module>"
+void *key, 
+# 709 "<previous_module>"
 struct lfds711_list_asu_element **lasue);
 
-# 709 "<previous_module>"
-void lfds711_list_asu_query(struct lfds711_list_asu_state *lasus, 
-# 710 "<previous_module>"
-enum lfds711_list_asu_query query_type, 
 # 711 "<previous_module>"
-void *query_input, 
+void lfds711_list_asu_query(struct lfds711_list_asu_state *lasus, 
 # 712 "<previous_module>"
+enum lfds711_list_asu_query query_type, 
+# 713 "<previous_module>"
+void *query_input, 
+# 714 "<previous_module>"
 void *query_output);
 
-# 717 "<previous_module>"
+# 719 "<previous_module>"
 enum lfds711_queue_bmm_query {LFDS711_QUEUE_BMM_QUERY_GET_POTENTIALLY_INACCURATE_COUNT, LFDS711_QUEUE_BMM_QUERY_SINGLETHREADED_VALIDATE};
 
-# 724 "<previous_module>"
+# 726 "<previous_module>"
 struct lfds711_queue_bmm_element
 {
         
-# 727 "<previous_module>"
+# 729 "<previous_module>"
 
-# 726 "<previous_module>"
+# 728 "<previous_module>"
 lfds711_pal_uint_t sequence_number;
         
-# 730 "<previous_module>"
+# 732 "<previous_module>"
 
-# 729 "<previous_module>"
+# 731 "<previous_module>"
 void * volatile key;
         
-# 731 "<previous_module>"
+# 733 "<previous_module>"
 void * volatile value;
 };
 
-# 734 "<previous_module>"
+# 736 "<previous_module>"
 struct lfds711_queue_bmm_state
 {
         
-# 737 "<previous_module>"
+# 739 "<previous_module>"
 
-# 736 "<previous_module>"
+# 738 "<previous_module>"
 lfds711_pal_uint_t number_elements;
         
-# 738 "<previous_module>"
+# 740 "<previous_module>"
 lfds711_pal_uint_t mask;
         
-# 741 "<previous_module>"
+# 743 "<previous_module>"
 
-# 740 "<previous_module>"
+# 742 "<previous_module>"
 lfds711_pal_uint_t read_index;
         
-# 742 "<previous_module>"
+# 744 "<previous_module>"
 lfds711_pal_uint_t write_index;
         
-# 745 "<previous_module>"
+# 747 "<previous_module>"
 
-# 744 "<previous_module>"
+# 746 "<previous_module>"
 struct lfds711_queue_bmm_element *element_array;
         
-# 748 "<previous_module>"
+# 750 "<previous_module>"
 
-# 747 "<previous_module>"
+# 749 "<previous_module>"
 void *user_state;
         
-# 751 "<previous_module>"
+# 753 "<previous_module>"
 
-# 750 "<previous_module>"
+# 752 "<previous_module>"
 struct lfds711_misc_backoff_state dequeue_backoff;
         
-# 752 "<previous_module>"
+# 754 "<previous_module>"
 struct lfds711_misc_backoff_state enqueue_backoff;
 };
 
-# 756 "<previous_module>"
-void lfds711_queue_bmm_init_valid_on_current_logical_core(struct lfds711_queue_bmm_state *qbmms, 
-# 757 "<previous_module>"
-struct lfds711_queue_bmm_element *element_array, 
 # 758 "<previous_module>"
-lfds711_pal_uint_t number_elements, 
+void lfds711_queue_bmm_init_valid_on_current_logical_core(struct lfds711_queue_bmm_state *qbmms, 
 # 759 "<previous_module>"
+struct lfds711_queue_bmm_element *element_array, 
+# 760 "<previous_module>"
+lfds711_pal_uint_t number_elements, 
+# 761 "<previous_module>"
 void *user_state);
 
-# 761 "<previous_module>"
-void lfds711_queue_bmm_cleanup(struct lfds711_queue_bmm_state *qbmms, 
-# 762 "<previous_module>"
-void (*element_cleanup_callback)(struct lfds711_queue_bmm_state *qbmms, 
 # 763 "<previous_module>"
-void *key, 
+void lfds711_queue_bmm_cleanup(struct lfds711_queue_bmm_state *qbmms, 
 # 764 "<previous_module>"
+void (*element_cleanup_callback)(struct lfds711_queue_bmm_state *qbmms, 
+# 765 "<previous_module>"
+void *key, 
+# 766 "<previous_module>"
 void *value));
 
-# 766 "<previous_module>"
-int lfds711_queue_bmm_enqueue(struct lfds711_queue_bmm_state *qbmms, 
-# 767 "<previous_module>"
-void *key, 
 # 768 "<previous_module>"
+int lfds711_queue_bmm_enqueue(struct lfds711_queue_bmm_state *qbmms, 
+# 769 "<previous_module>"
+void *key, 
+# 770 "<previous_module>"
 void *value);
 
-# 770 "<previous_module>"
-int lfds711_queue_bmm_dequeue(struct lfds711_queue_bmm_state *qbmms, 
-# 771 "<previous_module>"
-void **key, 
 # 772 "<previous_module>"
+int lfds711_queue_bmm_dequeue(struct lfds711_queue_bmm_state *qbmms, 
+# 773 "<previous_module>"
+void **key, 
+# 774 "<previous_module>"
 void **value);
 
-# 774 "<previous_module>"
-void lfds711_queue_bmm_query(struct lfds711_queue_bmm_state *qbmms, 
-# 775 "<previous_module>"
-enum lfds711_queue_bmm_query query_type, 
 # 776 "<previous_module>"
-void *query_input, 
+void lfds711_queue_bmm_query(struct lfds711_queue_bmm_state *qbmms, 
 # 777 "<previous_module>"
+enum lfds711_queue_bmm_query query_type, 
+# 778 "<previous_module>"
+void *query_input, 
+# 779 "<previous_module>"
 void *query_output);
 
-# 782 "<previous_module>"
+# 784 "<previous_module>"
 enum lfds711_queue_bss_query {LFDS711_QUEUE_BSS_QUERY_GET_POTENTIALLY_INACCURATE_COUNT, LFDS711_QUEUE_BSS_QUERY_VALIDATE};
 
-# 789 "<previous_module>"
+# 791 "<previous_module>"
 struct lfds711_queue_bss_element
 {
         
-# 792 "<previous_module>"
+# 794 "<previous_module>"
 
-# 791 "<previous_module>"
+# 793 "<previous_module>"
 void * volatile key;
         
-# 793 "<previous_module>"
+# 795 "<previous_module>"
 void * volatile value;
 };
 
-# 796 "<previous_module>"
+# 798 "<previous_module>"
 struct lfds711_queue_bss_state
 {
         
-# 799 "<previous_module>"
+# 801 "<previous_module>"
 
-# 798 "<previous_module>"
+# 800 "<previous_module>"
 lfds711_pal_uint_t number_elements;
         
-# 800 "<previous_module>"
+# 802 "<previous_module>"
 lfds711_pal_uint_t mask;
         
-# 803 "<previous_module>"
+# 805 "<previous_module>"
 
-# 802 "<previous_module>"
+# 804 "<previous_module>"
 lfds711_pal_uint_t read_index;
         
-# 804 "<previous_module>"
+# 806 "<previous_module>"
 lfds711_pal_uint_t write_index;
         
-# 807 "<previous_module>"
+# 809 "<previous_module>"
 
-# 806 "<previous_module>"
+# 808 "<previous_module>"
 struct lfds711_queue_bss_element *element_array;
         
-# 810 "<previous_module>"
+# 812 "<previous_module>"
 
-# 809 "<previous_module>"
+# 811 "<previous_module>"
 void *user_state;
 };
 
-# 814 "<previous_module>"
-void lfds711_queue_bss_init_valid_on_current_logical_core(struct lfds711_queue_bss_state *qbsss, 
-# 815 "<previous_module>"
-struct lfds711_queue_bss_element *element_array, 
 # 816 "<previous_module>"
-lfds711_pal_uint_t number_elements, 
+void lfds711_queue_bss_init_valid_on_current_logical_core(struct lfds711_queue_bss_state *qbsss, 
 # 817 "<previous_module>"
+struct lfds711_queue_bss_element *element_array, 
+# 818 "<previous_module>"
+lfds711_pal_uint_t number_elements, 
+# 819 "<previous_module>"
 void *user_state);
 
-# 821 "<previous_module>"
+# 823 "<previous_module>"
 void lfds711_queue_bss_cleanup(struct lfds711_queue_bss_state *qbsss, 
-# 822 "<previous_module>"
+# 824 "<previous_module>"
 void (*element_cleanup_callback)(struct lfds711_queue_bss_state *qbsss, void *key, void *value));
 
-# 824 "<previous_module>"
-int lfds711_queue_bss_enqueue(struct lfds711_queue_bss_state *qbsss, 
-# 825 "<previous_module>"
-void *key, 
 # 826 "<previous_module>"
+int lfds711_queue_bss_enqueue(struct lfds711_queue_bss_state *qbsss, 
+# 827 "<previous_module>"
+void *key, 
+# 828 "<previous_module>"
 void *value);
 
-# 828 "<previous_module>"
-int lfds711_queue_bss_dequeue(struct lfds711_queue_bss_state *qbsss, 
-# 829 "<previous_module>"
-void **key, 
 # 830 "<previous_module>"
+int lfds711_queue_bss_dequeue(struct lfds711_queue_bss_state *qbsss, 
+# 831 "<previous_module>"
+void **key, 
+# 832 "<previous_module>"
 void **value);
 
-# 832 "<previous_module>"
-void lfds711_queue_bss_query(struct lfds711_queue_bss_state *qbsss, 
-# 833 "<previous_module>"
-enum lfds711_queue_bss_query query_type, 
 # 834 "<previous_module>"
-void *query_input, 
+void lfds711_queue_bss_query(struct lfds711_queue_bss_state *qbsss, 
 # 835 "<previous_module>"
+enum lfds711_queue_bss_query query_type, 
+# 836 "<previous_module>"
+void *query_input, 
+# 837 "<previous_module>"
 void *query_output);
 
-# 836 "<previous_module>"
+# 838 "<previous_module>"
 enum lfds711_queue_umm_query {LFDS711_QUEUE_UMM_QUERY_SINGLETHREADED_GET_COUNT, LFDS711_QUEUE_UMM_QUERY_SINGLETHREADED_VALIDATE};
 
-# 843 "<previous_module>"
+# 845 "<previous_module>"
 struct lfds711_queue_umm_element
 {
         
-# 846 "<previous_module>"
+# 848 "<previous_module>"
 
-# 845 "<previous_module>"
+# 847 "<previous_module>"
 struct lfds711_queue_umm_element * volatile next[2];
         
-# 849 "<previous_module>"
+# 851 "<previous_module>"
 
-# 848 "<previous_module>"
+# 850 "<previous_module>"
 void *key;
         
-# 850 "<previous_module>"
+# 852 "<previous_module>"
 void *value;
 };
 
-# 853 "<previous_module>"
+# 855 "<previous_module>"
 struct lfds711_queue_umm_state
 {
         
-# 856 "<previous_module>"
+# 858 "<previous_module>"
 
-# 855 "<previous_module>"
+# 857 "<previous_module>"
 struct lfds711_queue_umm_element * volatile enqueue[2];
         
-# 857 "<previous_module>"
+# 859 "<previous_module>"
 struct lfds711_queue_umm_element * volatile dequeue[2];
         
-# 860 "<previous_module>"
+# 862 "<previous_module>"
 
-# 859 "<previous_module>"
+# 861 "<previous_module>"
 lfds711_pal_uint_t aba_counter;
         
-# 863 "<previous_module>"
+# 865 "<previous_module>"
 
-# 862 "<previous_module>"
+# 864 "<previous_module>"
 void *user_state;
         
-# 866 "<previous_module>"
+# 868 "<previous_module>"
 
-# 865 "<previous_module>"
+# 867 "<previous_module>"
 struct lfds711_misc_backoff_state dequeue_backoff;
         
-# 867 "<previous_module>"
+# 869 "<previous_module>"
 struct lfds711_misc_backoff_state enqueue_backoff;
 };
 
-# 871 "<previous_module>"
-void lfds711_queue_umm_init_valid_on_current_logical_core(struct lfds711_queue_umm_state *qumms, 
-# 872 "<previous_module>"
-struct lfds711_queue_umm_element *qumme_dummy, 
 # 873 "<previous_module>"
+void lfds711_queue_umm_init_valid_on_current_logical_core(struct lfds711_queue_umm_state *qumms, 
+# 874 "<previous_module>"
+struct lfds711_queue_umm_element *qumme_dummy, 
+# 875 "<previous_module>"
 void *user_state);
 
-# 876 "<previous_module>"
+# 878 "<previous_module>"
 void lfds711_queue_umm_cleanup(struct lfds711_queue_umm_state *qumms, 
-# 877 "<previous_module>"
+# 879 "<previous_module>"
 void (*element_cleanup_callback)(struct lfds711_queue_umm_state *qumms, struct lfds711_queue_umm_element *qumme, enum lfds711_misc_flag dummy_element_flag));
 
-# 879 "<previous_module>"
+# 881 "<previous_module>"
 void lfds711_queue_umm_enqueue(struct lfds711_queue_umm_state *qumms, 
-# 880 "<previous_module>"
+# 882 "<previous_module>"
 struct lfds711_queue_umm_element *qumme);
 
-# 882 "<previous_module>"
+# 884 "<previous_module>"
 int lfds711_queue_umm_dequeue(struct lfds711_queue_umm_state *qumms, 
-# 883 "<previous_module>"
+# 885 "<previous_module>"
 struct lfds711_queue_umm_element **qumme);
 
-# 885 "<previous_module>"
-void lfds711_queue_umm_query(struct lfds711_queue_umm_state *qumms, 
-# 886 "<previous_module>"
-enum lfds711_queue_umm_query query_type, 
 # 887 "<previous_module>"
-void *query_input, 
+void lfds711_queue_umm_query(struct lfds711_queue_umm_state *qumms, 
 # 888 "<previous_module>"
+enum lfds711_queue_umm_query query_type, 
+# 889 "<previous_module>"
+void *query_input, 
+# 890 "<previous_module>"
 void *query_output);
 
-# 893 "<previous_module>"
+# 895 "<previous_module>"
 enum lfds711_ringbuffer_query {LFDS711_RINGBUFFER_QUERY_SINGLETHREADED_GET_COUNT, LFDS711_RINGBUFFER_QUERY_SINGLETHREADED_VALIDATE};
 
-# 900 "<previous_module>"
+# 902 "<previous_module>"
 struct lfds711_ringbuffer_element
 {
         
-# 903 "<previous_module>"
+# 905 "<previous_module>"
 
-# 902 "<previous_module>"
+# 904 "<previous_module>"
 struct lfds711_freelist_element fe;
         
-# 906 "<previous_module>"
+# 908 "<previous_module>"
 
-# 905 "<previous_module>"
+# 907 "<previous_module>"
 struct lfds711_queue_umm_element qumme;
         
-# 909 "<previous_module>"
+# 911 "<previous_module>"
 
-# 908 "<previous_module>"
+# 910 "<previous_module>"
 struct lfds711_queue_umm_element *qumme_use;
         
-# 912 "<previous_module>"
+# 914 "<previous_module>"
 
-# 911 "<previous_module>"
+# 913 "<previous_module>"
 void *key;
         
-# 913 "<previous_module>"
+# 915 "<previous_module>"
 void *value;
 };
 
-# 916 "<previous_module>"
+# 918 "<previous_module>"
 struct lfds711_ringbuffer_state
 {
         
-# 919 "<previous_module>"
+# 921 "<previous_module>"
 
-# 918 "<previous_module>"
+# 920 "<previous_module>"
 struct lfds711_freelist_state fs;
         
-# 922 "<previous_module>"
+# 924 "<previous_module>"
 
-# 921 "<previous_module>"
+# 923 "<previous_module>"
 struct lfds711_queue_umm_state qumms;
         
-# 925 "<previous_module>"
+# 927 "<previous_module>"
 
-# 924 "<previous_module>"
+# 926 "<previous_module>"
 void (*element_cleanup_callback)(struct lfds711_ringbuffer_state *rs, void *key, void *value, enum lfds711_misc_flag unread_flag);
         
-# 926 "<previous_module>"
+# 928 "<previous_module>"
 void *user_state;
 };
 
-# 930 "<previous_module>"
-void lfds711_ringbuffer_init_valid_on_current_logical_core(struct lfds711_ringbuffer_state *rs, 
-# 931 "<previous_module>"
-struct lfds711_ringbuffer_element *re_array_inc_dummy, 
 # 932 "<previous_module>"
-lfds711_pal_uint_t number_elements_inc_dummy, 
+void lfds711_ringbuffer_init_valid_on_current_logical_core(struct lfds711_ringbuffer_state *rs, 
 # 933 "<previous_module>"
+struct lfds711_ringbuffer_element *re_array_inc_dummy, 
+# 934 "<previous_module>"
+lfds711_pal_uint_t number_elements_inc_dummy, 
+# 935 "<previous_module>"
 void *user_state);
 
-# 936 "<previous_module>"
+# 938 "<previous_module>"
 void lfds711_ringbuffer_cleanup(struct lfds711_ringbuffer_state *rs, 
-# 937 "<previous_module>"
+# 939 "<previous_module>"
 void (*element_cleanup_callback)(struct lfds711_ringbuffer_state *rs, void *key, void *value, enum lfds711_misc_flag unread_flag));
 
-# 939 "<previous_module>"
-int lfds711_ringbuffer_read(struct lfds711_ringbuffer_state *rs, 
-# 940 "<previous_module>"
-void **key, 
 # 941 "<previous_module>"
+int lfds711_ringbuffer_read(struct lfds711_ringbuffer_state *rs, 
+# 942 "<previous_module>"
+void **key, 
+# 943 "<previous_module>"
 void **value);
 
-# 943 "<previous_module>"
-void lfds711_ringbuffer_write(struct lfds711_ringbuffer_state *rs, 
-# 944 "<previous_module>"
-void *key, 
 # 945 "<previous_module>"
-void *value, 
+void lfds711_ringbuffer_write(struct lfds711_ringbuffer_state *rs, 
 # 946 "<previous_module>"
-enum lfds711_misc_flag *overwrite_occurred_flag, 
+void *key, 
 # 947 "<previous_module>"
-void **overwritten_key, 
+void *value, 
 # 948 "<previous_module>"
+enum lfds711_misc_flag *overwrite_occurred_flag, 
+# 949 "<previous_module>"
+void **overwritten_key, 
+# 950 "<previous_module>"
 void **overwritten_value);
 
-# 950 "<previous_module>"
-void lfds711_ringbuffer_query(struct lfds711_ringbuffer_state *rs, 
-# 951 "<previous_module>"
-enum lfds711_ringbuffer_query query_type, 
 # 952 "<previous_module>"
-void *query_input, 
+void lfds711_ringbuffer_query(struct lfds711_ringbuffer_state *rs, 
 # 953 "<previous_module>"
+enum lfds711_ringbuffer_query query_type, 
+# 954 "<previous_module>"
+void *query_input, 
+# 955 "<previous_module>"
 void *query_output);
 
-# 954 "<previous_module>"
+# 956 "<previous_module>"
 enum lfds711_stack_query {LFDS711_STACK_QUERY_SINGLETHREADED_GET_COUNT, LFDS711_STACK_QUERY_SINGLETHREADED_VALIDATE};
 
-# 961 "<previous_module>"
+# 963 "<previous_module>"
 struct lfds711_stack_element
 {
         
-# 964 "<previous_module>"
+# 966 "<previous_module>"
 
-# 963 "<previous_module>"
+# 965 "<previous_module>"
 struct lfds711_stack_element *next;
         
-# 967 "<previous_module>"
+# 969 "<previous_module>"
 
-# 966 "<previous_module>"
+# 968 "<previous_module>"
 void *key;
         
-# 968 "<previous_module>"
+# 970 "<previous_module>"
 void *value;
 };
 
-# 971 "<previous_module>"
+# 973 "<previous_module>"
 struct lfds711_stack_state
 {
         
-# 974 "<previous_module>"
+# 976 "<previous_module>"
 
-# 973 "<previous_module>"
+# 975 "<previous_module>"
 struct lfds711_stack_element * volatile top[2];
         
-# 977 "<previous_module>"
+# 979 "<previous_module>"
 
-# 976 "<previous_module>"
+# 978 "<previous_module>"
 void *user_state;
         
-# 980 "<previous_module>"
+# 982 "<previous_module>"
 
-# 979 "<previous_module>"
+# 981 "<previous_module>"
 struct lfds711_misc_backoff_state pop_backoff;
         
-# 981 "<previous_module>"
+# 983 "<previous_module>"
 struct lfds711_misc_backoff_state push_backoff;
 };
 
-# 985 "<previous_module>"
+# 987 "<previous_module>"
 void lfds711_stack_init_valid_on_current_logical_core(struct lfds711_stack_state *ss, 
-# 986 "<previous_module>"
+# 988 "<previous_module>"
 void *user_state);
 
-# 989 "<previous_module>"
+# 991 "<previous_module>"
 void lfds711_stack_cleanup(struct lfds711_stack_state *ss, 
-# 990 "<previous_module>"
+# 992 "<previous_module>"
 void (*element_cleanup_callback)(struct lfds711_stack_state *ss, struct lfds711_stack_element *se));
 
-# 992 "<previous_module>"
+# 994 "<previous_module>"
 void lfds711_stack_push(struct lfds711_stack_state *ss, 
-# 993 "<previous_module>"
+# 995 "<previous_module>"
 struct lfds711_stack_element *se);
 
-# 995 "<previous_module>"
+# 997 "<previous_module>"
 int lfds711_stack_pop(struct lfds711_stack_state *ss, 
-# 996 "<previous_module>"
+# 998 "<previous_module>"
 struct lfds711_stack_element **se);
 
-# 998 "<previous_module>"
-void lfds711_stack_query(struct lfds711_stack_state *ss, 
-# 999 "<previous_module>"
-enum lfds711_stack_query query_type, 
 # 1000 "<previous_module>"
-void *query_input, 
+void lfds711_stack_query(struct lfds711_stack_state *ss, 
 # 1001 "<previous_module>"
+enum lfds711_stack_query query_type, 
+# 1002 "<previous_module>"
+void *query_input, 
+# 1003 "<previous_module>"
 void *query_output);
 
-# 1004 "<previous_module>"
+# 1006 "<previous_module>"
 #pragma warning( pop )
 
-# 1006 "<previous_module>"
+# 1008 "<previous_module>"
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1007 "<previous_module>"
 _Bool __VERIFIER_atomic_compare_and_exchange(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
@@ -1640,40 +1641,58 @@ if ((*mptr) == (*eptr))
 =======
 # 1014 "<previous_module>"
 pthread_mutex_t lock;
+=======
+# 1010 "<previous_module>"
+pthread_mutex_t library_lock;
+>>>>>>> origin/main
 
 # 1015 "<previous_module>"
-_Bool __atomic_compare_exchange_n(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
+void exponential_backoff()
+
+# 1016 "<previous_module>"
 {
         
 # 1017 "<previous_module>"
-int res; res = __VERIFIER_atomic_compare_and_exchange(mptr, eptr, newval, weak_p, sm, fm);
+int loop;
         
+# 1018 "<previous_module>"
+for (loop = 0; loop < 10; loop++)
+        {
+                
 # 1019 "<previous_module>"
-return res;
+;
+        }
+
 }
 
 
 # 1022 "<previous_module>"
-_Bool __VERIFIER_atomic_compare_and_exchange(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
-
+int __VERIFIER_atomic_swap_stack_top(struct lfds711_stack_element * volatile *top, struct lfds711_stack_element * volatile *oldtop, 
 # 1023 "<previous_module>"
+struct lfds711_stack_element **newtop)
+
+# 1024 "<previous_module>"
 {
         
-# 1024 "<previous_module>"
-if ((*mptr) == (*eptr))
-
 # 1025 "<previous_module>"
+if ((*oldtop) == (*top))
+
+# 1026 "<previous_module>"
         {
                 
-# 1026 "<previous_module>"
-*mptr = newval;
-                
 # 1027 "<previous_module>"
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
+*top = *newtop;
+                
+# 1028 "<previous_module>"
 >>>>>>> origin/main
 return 1;
         }
         else
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1015 "<previous_module>"
         {
@@ -1686,10 +1705,18 @@ return 1;
 # 1030 "<previous_module>"
         {
                 
+=======
+>>>>>>> origin/main
 # 1031 "<previous_module>"
-*eptr = newval;
+        {
                 
 # 1032 "<previous_module>"
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
+*oldtop = *top;
+                
+# 1033 "<previous_module>"
 >>>>>>> origin/main
 return 0;
         }
@@ -1697,6 +1724,7 @@ return 0;
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1021 "<previous_module>"
 unsigned long __VERIFIER_atomic_exchange(int long long unsigned *previous, int long long unsigned new, int memorder)
@@ -1714,26 +1742,42 @@ unsigned long int old; old = *previous;
 =======
 # 1036 "<previous_module>"
 unsigned long __atomic_exchange_n(int long long unsigned *previous, int long long unsigned new, int memorder)
-{
-        
-# 1038 "<previous_module>"
-int res; res = __VERIFIER_atomic_exchange(previous, new, memorder);
-        
+=======
+# 1039 "<previous_module>"
+void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs)
+
 # 1040 "<previous_module>"
-return res;
-}
-
-
-# 1043 "<previous_module>"
-unsigned long __VERIFIER_atomic_exchange(int long long unsigned *previous, int long long unsigned new, int memorder)
-
-# 1044 "<previous_module>"
+>>>>>>> origin/main
 {
+        
+# 1041 "<previous_module>"
+if (!(bs != 0))
+        {
+                char *c; c = 0;
+                *c = 0;
+        }
+
+        ;
+        ;
+        
+# 1042 "<previous_module>"
+if (!((((lfds711_pal_uint_t) (&(*bs).lock)) % 128) == 0))
+        {
+                char *c; c = 0;
+                *c = 0;
+        }
+
+        ;
+        ;
+        
+# 1044 "<previous_module>"
+(*bs).lock = LFDS711_MISC_FLAG_LOWERED;
         
 # 1045 "<previous_module>"
-unsigned long int old; old = *previous;
+(*bs).backoff_iteration_frequency_counters[0] = 0;
         
 # 1046 "<previous_module>"
+<<<<<<< HEAD
 *previous = new;
         
 # 1047 "<previous_module>"
@@ -1918,20 +1962,27 @@ if (!((((lfds711_pal_uint_t) (&(*bs).lock)) % 128) == 0))
 (*bs).backoff_iteration_frequency_counters[0] = 0;
         
 # 1083 "<previous_module>"
+=======
+>>>>>>> origin/main
 (*bs).backoff_iteration_frequency_counters[1] = 0;
         
-# 1084 "<previous_module>"
+# 1047 "<previous_module>"
 (*bs).metric = 1;
         
-# 1085 "<previous_module>"
+# 1048 "<previous_module>"
 (*bs).total_operations = 0;
         
+<<<<<<< HEAD
 # 1086 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 1049 "<previous_module>"
 >>>>>>> origin/main
 return;
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1070 "<previous_module>"
 void lfds711_stack_init_valid_on_current_logical_core(struct lfds711_stack_state *ss, 
@@ -1947,17 +1998,24 @@ pthread_mutex_init(&lock, 0);
 # 1076 "<previous_module>"
 =======
 # 1089 "<previous_module>"
+=======
+# 1052 "<previous_module>"
+>>>>>>> origin/main
 void lfds711_stack_init_valid_on_current_logical_core(struct lfds711_stack_state *ss, 
-# 1090 "<previous_module>"
+# 1053 "<previous_module>"
 void *user_state)
 
-# 1091 "<previous_module>"
+# 1054 "<previous_module>"
 {
         
-# 1092 "<previous_module>"
-pthread_mutex_init(&lock, 0);
+# 1055 "<previous_module>"
+pthread_mutex_init(&library_lock, 0);
         
+<<<<<<< HEAD
 # 1095 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 1057 "<previous_module>"
 >>>>>>> origin/main
 if (!(ss != 0))
         {
@@ -1969,9 +2027,13 @@ if (!(ss != 0))
         ;
         
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 1077 "<previous_module>"
 =======
 # 1096 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 1058 "<previous_module>"
 >>>>>>> origin/main
 if (!((((lfds711_pal_uint_t) (*ss).top) % 128) == 0))
         {
@@ -1983,9 +2045,13 @@ if (!((((lfds711_pal_uint_t) (*ss).top) % 128) == 0))
         ;
         
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 1078 "<previous_module>"
 =======
 # 1097 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 1059 "<previous_module>"
 >>>>>>> origin/main
 if (!((((lfds711_pal_uint_t) (&(*ss).user_state)) % 128) == 0))
         {
@@ -1996,6 +2062,7 @@ if (!((((lfds711_pal_uint_t) (&(*ss).user_state)) % 128) == 0))
         ;
         ;
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1081 "<previous_module>"
 pthread_mutex_lock(&lock);
@@ -2025,34 +2092,43 @@ pthread_mutex_unlock(&lock);
 =======
 # 1100 "<previous_module>"
 pthread_mutex_lock(&lock);
+=======
+# 1062 "<previous_module>"
+pthread_mutex_lock(&library_lock);
+>>>>>>> origin/main
         
-# 1101 "<previous_module>"
+# 1063 "<previous_module>"
 (*ss).top[0] = 0;
         
-# 1102 "<previous_module>"
+# 1064 "<previous_module>"
 (*ss).top[1] = 0;
         
-# 1104 "<previous_module>"
+# 1066 "<previous_module>"
 (*ss).user_state = user_state;
         
-# 1106 "<previous_module>"
+# 1068 "<previous_module>"
 lfds711_misc_internal_backoff_init(&(*ss).pop_backoff);
         
-# 1107 "<previous_module>"
+# 1069 "<previous_module>"
 lfds711_misc_internal_backoff_init(&(*ss).push_backoff);
         
-# 1110 "<previous_module>"
+# 1072 "<previous_module>"
 lfds711_misc_force_store();
         
-# 1112 "<previous_module>"
-pthread_mutex_unlock(&lock);
+# 1074 "<previous_module>"
+pthread_mutex_unlock(&library_lock);
         
+<<<<<<< HEAD
 # 1114 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 1076 "<previous_module>"
 >>>>>>> origin/main
 return;
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1098 "<previous_module>"
 int lfds711_stack_pop(struct lfds711_stack_state *ss, 
@@ -2081,30 +2157,37 @@ struct lfds711_stack_element * volatile original_top[2];
 # 1110 "<previous_module>"
 =======
 # 1117 "<previous_module>"
+=======
+# 1079 "<previous_module>"
+>>>>>>> origin/main
 int lfds711_stack_pop(struct lfds711_stack_state *ss, 
-# 1118 "<previous_module>"
+# 1080 "<previous_module>"
 struct lfds711_stack_element **se)
 
-# 1119 "<previous_module>"
+# 1081 "<previous_module>"
 {
         
-# 1121 "<previous_module>"
+# 1083 "<previous_module>"
 
-# 1120 "<previous_module>"
+# 1082 "<previous_module>"
 char unsigned result;
         
-# 1124 "<previous_module>"
+# 1086 "<previous_module>"
 
-# 1123 "<previous_module>"
+# 1085 "<previous_module>"
 lfds711_pal_uint_t backoff_iteration; backoff_iteration = 0;
         
-# 1126 "<previous_module>"
+# 1088 "<previous_module>"
 struct lfds711_stack_element *new_top[2];
         
-# 1127 "<previous_module>"
+# 1089 "<previous_module>"
 struct lfds711_stack_element * volatile original_top[2];
         
+<<<<<<< HEAD
 # 1129 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 1091 "<previous_module>"
 >>>>>>> origin/main
 if (!(ss != 0))
         {
@@ -2116,9 +2199,13 @@ if (!(ss != 0))
         ;
         
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 1111 "<previous_module>"
 =======
 # 1130 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 1092 "<previous_module>"
 >>>>>>> origin/main
 if (!(se != 0))
         {
@@ -2129,6 +2216,7 @@ if (!(se != 0))
         ;
         ;
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1117 "<previous_module>"
 pthread_mutex_lock(&lock);
@@ -2164,40 +2252,49 @@ if (original_top[0] == 0)
 =======
 # 1136 "<previous_module>"
 pthread_mutex_lock(&lock);
+=======
+# 1098 "<previous_module>"
+pthread_mutex_lock(&library_lock);
+>>>>>>> origin/main
         
-# 1137 "<previous_module>"
-pthread_mutex_unlock(&lock);
+# 1099 "<previous_module>"
+pthread_mutex_unlock(&library_lock);
         
-# 1139 "<previous_module>"
+# 1101 "<previous_module>"
 original_top[1] = (*ss).top[1];
         
-# 1140 "<previous_module>"
+# 1102 "<previous_module>"
 original_top[0] = (*ss).top[0];
         
-# 1142 "<previous_module>"
+# 1104 "<previous_module>"
 int i; i = 0;
         
-# 1144 "<previous_module>"
+# 1106 "<previous_module>"
 do
 
-# 1145 "<previous_module>"
+# 1107 "<previous_module>"
         {
                 
-# 1146 "<previous_module>"
+# 1108 "<previous_module>"
 if (original_top[0] == 0)
 
-# 1147 "<previous_module>"
+# 1109 "<previous_module>"
                 {
                         
-# 1148 "<previous_module>"
+# 1110 "<previous_module>"
 *se = 0;
                         
+<<<<<<< HEAD
 # 1149 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 1111 "<previous_module>"
 >>>>>>> origin/main
 return 0;
                 }
 
                 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1133 "<previous_module>"
 new_top[1] = original_top[1] + 1;
@@ -2229,32 +2326,36 @@ pthread_mutex_lock(&lock);
 # 1146 "<previous_module>"
 =======
 # 1152 "<previous_module>"
+=======
+# 1114 "<previous_module>"
+>>>>>>> origin/main
 new_top[1] = original_top[1] + 1;
                 
-# 1153 "<previous_module>"
+# 1115 "<previous_module>"
 new_top[0] = (*original_top[0]).next;
                 
-# 1156 "<previous_module>"
-pthread_mutex_lock(&lock);
+# 1118 "<previous_module>"
+pthread_mutex_lock(&library_lock);
                 
-# 1157 "<previous_module>"
+# 1119 "<previous_module>"
 result = __VERIFIER_atomic_swap_stack_top(&(*ss).top[0], &original_top[0], &new_top[0]);
                 
-# 1158 "<previous_module>"
-pthread_mutex_unlock(&lock);
+# 1120 "<previous_module>"
+pthread_mutex_unlock(&library_lock);
                 
-# 1160 "<previous_module>"
+# 1122 "<previous_module>"
 if (result == 0)
 
-# 1161 "<previous_module>"
+# 1123 "<previous_module>"
                 {
                         
-# 1163 "<previous_module>"
+# 1125 "<previous_module>"
 exponential_backoff();
                         
-# 1164 "<previous_module>"
-pthread_mutex_lock(&lock);
+# 1126 "<previous_module>"
+pthread_mutex_lock(&library_lock);
                         
+<<<<<<< HEAD
 # 1165 "<previous_module>"
 >>>>>>> origin/main
 pthread_mutex_unlock(&lock);
@@ -2272,19 +2373,32 @@ if (i > 1000)
 # 1150 "<previous_module>"
 =======
 # 1167 "<previous_module>"
+=======
+# 1127 "<previous_module>"
+pthread_mutex_unlock(&library_lock);
+                }
+
+                
+# 1129 "<previous_module>"
+>>>>>>> origin/main
 i++;
                 
-# 1168 "<previous_module>"
+# 1130 "<previous_module>"
 if (i > 1000)
                 {
                         
+<<<<<<< HEAD
 # 1169 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 1131 "<previous_module>"
 >>>>>>> origin/main
 break;
                 }
 
         }
         while (
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1151 "<previous_module>"
 result == 0);
@@ -2295,11 +2409,15 @@ result == 0);
 # 1157 "<previous_module>"
 =======
 # 1170 "<previous_module>"
+=======
+# 1132 "<previous_module>"
+>>>>>>> origin/main
 result == 0);
         
-# 1172 "<previous_module>"
+# 1134 "<previous_module>"
 *se = original_top[0];
         
+<<<<<<< HEAD
 # 1176 "<previous_module>"
 >>>>>>> origin/main
 return 1;
@@ -2334,30 +2452,42 @@ struct lfds711_stack_element * volatile original_top[2];
 # 1172 "<previous_module>"
 =======
 # 1179 "<previous_module>"
+=======
+# 1138 "<previous_module>"
+return result;
+}
+
+
+# 1141 "<previous_module>"
+>>>>>>> origin/main
 void lfds711_stack_push(struct lfds711_stack_state *ss, 
-# 1180 "<previous_module>"
+# 1142 "<previous_module>"
 struct lfds711_stack_element *se)
 
-# 1181 "<previous_module>"
+# 1143 "<previous_module>"
 {
         
-# 1183 "<previous_module>"
+# 1145 "<previous_module>"
 
-# 1182 "<previous_module>"
+# 1144 "<previous_module>"
 char unsigned result;
         
-# 1186 "<previous_module>"
+# 1148 "<previous_module>"
 
-# 1185 "<previous_module>"
+# 1147 "<previous_module>"
 lfds711_pal_uint_t backoff_iteration; backoff_iteration = 0;
         
-# 1188 "<previous_module>"
+# 1150 "<previous_module>"
 struct lfds711_stack_element *new_top[2];
         
-# 1189 "<previous_module>"
+# 1151 "<previous_module>"
 struct lfds711_stack_element * volatile original_top[2];
         
+<<<<<<< HEAD
 # 1191 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 1153 "<previous_module>"
 >>>>>>> origin/main
 if (!(ss != 0))
         {
@@ -2369,9 +2499,13 @@ if (!(ss != 0))
         ;
         
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 1173 "<previous_module>"
 =======
 # 1192 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 1154 "<previous_module>"
 >>>>>>> origin/main
 if (!(se != 0))
         {
@@ -2382,6 +2516,7 @@ if (!(se != 0))
         ;
         ;
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1175 "<previous_module>"
 new_top[0] = se;
@@ -2479,10 +2614,60 @@ if (result == 0)
                         
 # 1218 "<previous_module>"
 >>>>>>> origin/main
+=======
+# 1156 "<previous_module>"
+new_top[0] = se;
+        
+# 1158 "<previous_module>"
+original_top[1] = (*ss).top[1];
+        
+# 1159 "<previous_module>"
+original_top[0] = (*ss).top[0];
+        
+# 1161 "<previous_module>"
+result = 0;
+        
+# 1162 "<previous_module>"
+int i; i = 0;
+        
+# 1163 "<previous_module>"
+while (result == 0)
+
+# 1164 "<previous_module>"
+        {
+                
+# 1167 "<previous_module>"
+pthread_mutex_lock(&library_lock);
+                
+# 1169 "<previous_module>"
+(*se).next = original_top[0];
+                
+# 1170 "<previous_module>"
+pthread_mutex_unlock(&library_lock);
+                
+# 1173 "<previous_module>"
+new_top[1] = original_top[1] + 1;
+                
+# 1176 "<previous_module>"
+pthread_mutex_lock(&library_lock);
+                
+# 1177 "<previous_module>"
+result = __VERIFIER_atomic_swap_stack_top(&(*ss).top[0], &original_top[0], &new_top[0]);
+                
+# 1178 "<previous_module>"
+pthread_mutex_unlock(&library_lock);
+                
+# 1180 "<previous_module>"
+if (result == 0)
+                {
+                        
+# 1182 "<previous_module>"
+>>>>>>> origin/main
 exponential_backoff();
                 }
 
                 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1200 "<previous_module>"
 i++;
@@ -2502,6 +2687,16 @@ if (i > 1000)
                         
 # 1221 "<previous_module>"
 >>>>>>> origin/main
+=======
+# 1183 "<previous_module>"
+i++;
+                
+# 1184 "<previous_module>"
+if (i > 1000)
+                {
+                        
+# 1185 "<previous_module>"
+>>>>>>> origin/main
 break;
                 }
 
@@ -2509,14 +2704,19 @@ break;
 
         
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 1207 "<previous_module>"
 =======
 # 1226 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 1189 "<previous_module>"
 >>>>>>> origin/main
 return;
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1211 "<previous_module>"
 void lfds711_stack_cleanup(struct lfds711_stack_state *ss, 
@@ -2540,12 +2740,18 @@ struct lfds711_stack_element *se_temp;
 void lfds711_stack_cleanup(struct lfds711_stack_state *ss, 
 # 1231 "<previous_module>"
 void (*element_cleanup_callback)(struct lfds711_stack_state *ss, struct lfds711_stack_element *se))
+=======
+# 1196 "<previous_module>"
+_Bool __VERIFIER_atomic_compare_and_exchange(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
+>>>>>>> origin/main
 
-# 1232 "<previous_module>"
+# 1197 "<previous_module>"
 {
         
-# 1234 "<previous_module>"
+# 1198 "<previous_module>"
+if ((*mptr) == (*eptr))
 
+<<<<<<< HEAD
 # 1233 "<previous_module>"
 struct lfds711_stack_element *se;
         
@@ -2555,11 +2761,20 @@ struct lfds711_stack_element *se_temp;
 # 1237 "<previous_module>"
 >>>>>>> origin/main
 if (!(ss != 0))
+=======
+# 1199 "<previous_module>"
+>>>>>>> origin/main
         {
-                char *c; c = 0;
-                *c = 0;
+                
+# 1200 "<previous_module>"
+*mptr = newval;
+                
+# 1201 "<previous_module>"
+return 1;
         }
+        else
 
+<<<<<<< HEAD
         ;
         ;
         
@@ -2597,14 +2812,19 @@ __atomic_thread_fence(2);
 if (element_cleanup_callback != 0)
 
 # 1243 "<previous_module>"
+=======
+# 1204 "<previous_module>"
+>>>>>>> origin/main
         {
                 
-# 1244 "<previous_module>"
-se = (*ss).top[0];
+# 1205 "<previous_module>"
+*eptr = newval;
                 
-# 1246 "<previous_module>"
-while (se != 0)
+# 1206 "<previous_module>"
+return 0;
+        }
 
+<<<<<<< HEAD
 # 1247 "<previous_module>"
                 {
                         
@@ -2618,9 +2838,12 @@ se = (*se).next;
 >>>>>>> origin/main
 element_cleanup_callback(ss, se_temp);
                 }
+=======
+}
+>>>>>>> origin/main
 
-        }
 
+<<<<<<< HEAD
         
 <<<<<<< HEAD
 # 1236 "<previous_module>"
@@ -2707,10 +2930,15 @@ NODE_PAYLOAD_T payload;
 
 # 1274 "<previous_module>"
 int LIST_InsertHeadNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__se, int long long unsigned I__user_id)
+=======
+# 1210 "<previous_module>"
+_Bool __atomic_compare_exchange_n(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
+>>>>>>> origin/main
 
-# 1275 "<previous_module>"
+# 1211 "<previous_module>"
 {
         
+<<<<<<< HEAD
 # 1276 "<previous_module>"
 int rCode; rCode = 0;
         
@@ -2811,10 +3039,23 @@ if (cur != 0)
 =======
 # 1304 "<previous_module>"
 int PrintListPayloads(LIST_NODE_T *head)
+=======
+# 1212 "<previous_module>"
+int res; res = __VERIFIER_atomic_compare_and_exchange(mptr, eptr, newval, weak_p, sm, fm);
+        
+# 1213 "<previous_module>"
+return res;
+}
 
-# 1305 "<previous_module>"
+
+# 1216 "<previous_module>"
+unsigned long __VERIFIER_atomic_exchange(int long long unsigned *previous, int long long unsigned new, int memorder)
+>>>>>>> origin/main
+
+# 1217 "<previous_module>"
 {
         
+<<<<<<< HEAD
 # 1306 "<previous_module>"
 int rCode; rCode = 0;
         
@@ -2886,10 +3127,26 @@ while (cur)
 =======
 # 1326 "<previous_module>"
 int GetListSize(LIST_NODE_T *head)
+=======
+# 1218 "<previous_module>"
+unsigned long int old; old = *previous;
+        
+# 1219 "<previous_module>"
+*previous = new;
+        
+# 1220 "<previous_module>"
+return old;
+}
 
-# 1327 "<previous_module>"
+
+# 1223 "<previous_module>"
+unsigned long __atomic_exchange_n(int long long unsigned *previous, int long long unsigned new, int memorder)
+>>>>>>> origin/main
+
+# 1224 "<previous_module>"
 {
         
+<<<<<<< HEAD
 # 1328 "<previous_module>"
 LIST_NODE_T *cur; cur = head;
         
@@ -2947,9 +3204,22 @@ while ((*curNode).next)
 =======
 # 1342 "<previous_module>"
 int LIST_GetTailNode(LIST_NODE_T *I__listHead, LIST_NODE_T **_O_listTail)
+=======
+# 1225 "<previous_module>"
+int res; res = __VERIFIER_atomic_exchange(previous, new, memorder);
+        
+# 1226 "<previous_module>"
+return res;
+}
 
-# 1343 "<previous_module>"
+
+# 1230 "<previous_module>"
+void __atomic_thread_fence(int i)
+>>>>>>> origin/main
+
+# 1231 "<previous_module>"
 {
+<<<<<<< HEAD
         
 # 1344 "<previous_module>"
 int rCode; rCode = 0;
@@ -3033,10 +3303,19 @@ fprintf(stderr, "LIST_GetTailNode() reports: %d\n", rCode);
 =======
 # 1365 "<previous_module>"
 int LIST_InsertTailNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__se, int long long unsigned I__user_id)
+=======
+}
 
-# 1366 "<previous_module>"
+
+# 1234 "<previous_module>"
+struct lfds711_stack_state mystack;
+>>>>>>> origin/main
+
+# 1235 "<previous_module>"
+struct test_data
 {
         
+<<<<<<< HEAD
 # 1367 "<previous_module>"
 int rCode; rCode = 0;
         
@@ -3062,8 +3341,14 @@ fprintf(stderr, "LIST_GetTailNode() reports: %d\n", rCode);
 >>>>>>> origin/main
 goto CLEANUP;
         }
+=======
+# 1238 "<previous_module>"
+>>>>>>> origin/main
 
+# 1237 "<previous_module>"
+struct lfds711_stack_element se;
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1360 "<previous_module>"
 newNode = malloc(sizeof(*newNode));
@@ -3146,8 +3431,21 @@ if (tailNode)
 >>>>>>> origin/main
 *IO_head = newNode;
         }
+=======
+# 1241 "<previous_module>"
 
+# 1240 "<previous_module>"
+int long long unsigned user_id;
+};
+
+# 1244 "<previous_module>"
+void *init()
+>>>>>>> origin/main
+
+# 1245 "<previous_module>"
+{
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1379 "<previous_module>"
 CLEANUP:
@@ -3193,19 +3491,32 @@ rCode = ENOENT;
 =======
 # 1407 "<previous_module>"
 int LIST_FetchParentNodeById(LIST_NODE_T *I__head, int long long unsigned I__user_id, LIST_NODE_T **_O_parent)
+=======
+# 1246 "<previous_module>"
+lfds711_stack_init_valid_on_current_logical_core(&mystack, 0);
+        
+# 1247 "<previous_module>"
+return (void *) (&mystack);
+}
 
-# 1408 "<previous_module>"
+
+# 1250 "<previous_module>"
+void insert(struct lfds711_stack_state *s, int long long unsigned id)
+>>>>>>> origin/main
+
+# 1251 "<previous_module>"
 {
         
-# 1409 "<previous_module>"
-int rCode; rCode = 0;
+# 1252 "<previous_module>"
+struct test_data *td; td = malloc(sizeof(struct test_data));
         
-# 1410 "<previous_module>"
-LIST_NODE_T *parent; parent = 0;
+# 1253 "<previous_module>"
+(*td).user_id = id;
         
-# 1411 "<previous_module>"
-LIST_NODE_T *curNode; curNode = I__head;
+# 1254 "<previous_module>"
+(*td).se.value = (void *) ((lfds711_pal_uint_t) td);
         
+<<<<<<< HEAD
 # 1414 "<previous_module>"
 if (0 == I__head)
 
@@ -3333,10 +3644,20 @@ fprintf(stderr, "malloc() failed.\n");
 =======
 # 1443 "<previous_module>"
 int LIST_InsertNodeById(LIST_NODE_T **IO_head, int long long unsigned I__user_id, struct lfds711_stack_element I__se)
+=======
+# 1255 "<previous_module>"
+lfds711_stack_push((struct lfds711_stack_state *) s, &(*td).se);
+}
 
-# 1444 "<previous_module>"
+
+# 1258 "<previous_module>"
+int delete(struct lfds711_stack_state *s)
+>>>>>>> origin/main
+
+# 1259 "<previous_module>"
 {
         
+<<<<<<< HEAD
 # 1445 "<previous_module>"
 int rCode; rCode = 0;
         
@@ -3419,10 +3740,15 @@ fprintf(stderr, "LIST_FetchParentNodeByName() reports: %d\n", rCode);
         
 # 1460 "<previous_module>"
 (*newNode).payload.se = I__se;
+=======
+# 1260 "<previous_module>"
+struct lfds711_stack_element *se;
+>>>>>>> origin/main
         
-# 1463 "<previous_module>"
-rCode = LIST_FetchParentNodeById(*IO_head, I__user_id, &parent);
+# 1261 "<previous_module>"
+struct test_data *temp_td;
         
+<<<<<<< HEAD
 # 1464 "<previous_module>"
 switch (rCode)
 
@@ -3512,13 +3838,30 @@ CLEANUP:
 =======
 # 1491 "<previous_module>"
 (*newNode).next = (*parent).next;
+=======
+# 1262 "<previous_module>"
+int res; res = lfds711_stack_pop(&mystack, &se);
         
-# 1492 "<previous_module>"
-(*parent).next = newNode;
+# 1265 "<previous_module>"
+if (res == 0)
+        {
+                
+# 1266 "<previous_module>"
+return res;
+        }
+
         
-# 1494 "<previous_module>"
-CLEANUP:
+# 1267 "<previous_module>"
+temp_td = (*se).value;
+>>>>>>> origin/main
         
+# 1268 "<previous_module>"
+int id_popped; id_popped = (*temp_td).user_id;
+        
+# 1269 "<previous_module>"
+printf("%llu\n", (*temp_td).user_id);
+        
+<<<<<<< HEAD
 # 1496 "<previous_module>"
 >>>>>>> origin/main
 return rCode;
@@ -3556,29 +3899,45 @@ if ((*curNode).payload.user_id == I__user_id)
 =======
 # 1502 "<previous_module>"
 int LIST_FetchNodeById(LIST_NODE_T *I__head, int long long unsigned I__user_id, LIST_NODE_T **_O_node, LIST_NODE_T **_O_parent)
+=======
+# 1271 "<previous_module>"
+return res;
+}
 
-# 1503 "<previous_module>"
+
+# 1280 "<previous_module>"
+int contains(void *s, int id)
+>>>>>>> origin/main
+
+# 1281 "<previous_module>"
 {
         
-# 1504 "<previous_module>"
-int rCode; rCode = 0;
+# 1282 "<previous_module>"
+int max_size; max_size = 20;
+        int actual_size; actual_size = 0;
+        int res; res = 1;
+        int found; found = 0;
+        int dimension; dimension = 2;
         
-# 1505 "<previous_module>"
-LIST_NODE_T *parent; parent = 0;
+# 1283 "<previous_module>"
+struct test_data **datas; datas = malloc((sizeof(struct test_data *)) * max_size);
         
-# 1506 "<previous_module>"
-LIST_NODE_T *curNode; curNode = I__head;
+# 1284 "<previous_module>"
+struct lfds711_stack_element *se;
         
-# 1509 "<previous_module>"
-while (curNode)
+# 1286 "<previous_module>"
+while ((found == 0) && (res != 0))
 
-# 1510 "<previous_module>"
+# 1287 "<previous_module>"
         {
                 
-# 1511 "<previous_module>"
-if ((*curNode).payload.user_id == I__user_id)
+# 1288 "<previous_module>"
+if (actual_size == max_size)
+
+# 1289 "<previous_module>"
                 {
                         
+<<<<<<< HEAD
 # 1512 "<previous_module>"
 >>>>>>> origin/main
 break;
@@ -3750,30 +4109,36 @@ switch (rCode)
 
 # 1550 "<previous_module>"
         {
-                
-# 1551 "<previous_module>"
-case 0:
+=======
+# 1290 "<previous_module>"
+datas = realloc(datas, ((sizeof(struct test_data *)) * max_size) * dimension);
                         
-# 1552 "<previous_module>"
-break;
+# 1291 "<previous_module>"
+max_size *= dimension;
+                }
 
                 
-# 1554 "<previous_module>"
-case ENOENT:
+# 1294 "<previous_module>"
+res = lfds711_stack_pop((struct lfds711_stack_state *) s, &se);
+>>>>>>> origin/main
+                
+# 1295 "<previous_module>"
+if (res == 0)
+                {
                         
-# 1555 "<previous_module>"
-fprintf(stderr, "Matching node not found.\n");
-                        
-# 1556 "<previous_module>"
-goto CLEANUP;
+# 1296 "<previous_module>"
+continue;
+                }
 
                 
-# 1558 "<previous_module>"
-default:
+# 1298 "<previous_module>"
+datas[actual_size] = (*se).value;
+                
+# 1299 "<previous_module>"
+if ((*datas[actual_size]).user_id == id)
+                {
                         
-# 1559 "<previous_module>"
-fprintf(stderr, "LIST_FetchNodeByName() reports: %d\n", rCode);
-                        
+<<<<<<< HEAD
 # 1560 "<previous_module>"
 >>>>>>> origin/main
 goto CLEANUP;
@@ -3949,43 +4314,66 @@ lfds711_stack_push(&ss, &td[loop].se);
 =======
 # 1594 "<previous_module>"
 struct lfds711_stack_state ss;
+=======
+# 1300 "<previous_module>"
+found = 1;
+                }
 
-# 1597 "<previous_module>"
-struct test_data
-{
-        
-# 1600 "<previous_module>"
+                
+# 1301 "<previous_module>"
+actual_size++;
+        }
 
-# 1599 "<previous_module>"
-struct lfds711_stack_element se;
         
-# 1603 "<previous_module>"
-
-# 1602 "<previous_module>"
-int long long unsigned user_id;
-};
-
-# 1607 "<previous_module>"
-void *push(void *__cs_unused)
-
-# 1608 "<previous_module>"
-{
+# 1305 "<previous_module>"
+int i; i = 0;
         
-# 1609 "<previous_module>"
-struct test_data *td;
-        
-# 1611 "<previous_module>"
-int long long unsigned loop;
-        
-# 1613 "<previous_module>"
-td = malloc((sizeof(struct test_data)) * 1);
-        
-# 1615 "<previous_module>"
-for (loop = 0; loop < 1; loop++)
-
-# 1616 "<previous_module>"
+# 1306 "<previous_module>"
+while (i < actual_size)
         {
                 
+# 1307 "<previous_module>"
+lfds711_stack_push((struct lfds711_stack_state *) s, datas[i]);
+                
+# 1308 "<previous_module>"
+i++;
+        }
+
+        
+# 1311 "<previous_module>"
+free(datas);
+        
+# 1312 "<previous_module>"
+return found;
+}
+
+
+# 1318 "<previous_module>"
+int ATOMIC_OPERATION = 0;
+>>>>>>> origin/main
+
+# 1322 "<previous_module>"
+void *ss;
+
+# 1323 "<previous_module>"
+pthread_mutex_t lock;
+
+# 1325 "<previous_module>"
+void *push(void *__cs_unused)
+
+# 1326 "<previous_module>"
+{
+        
+# 1327 "<previous_module>"
+int long long unsigned loop;
+        
+# 1329 "<previous_module>"
+for (loop = 0; loop < 5; loop++)
+
+# 1330 "<previous_module>"
+        {
+                
+<<<<<<< HEAD
 # 1618 "<previous_module>"
 td[loop].user_id = loop;
                 
@@ -4071,19 +4459,23 @@ int loop;
         
 # 1634 "<previous_module>"
 for (loop = 0; loop < 1; loop++)
-
-# 1635 "<previous_module>"
-        {
-                
-# 1636 "<previous_module>"
-temp_td = 0;
-                
-# 1638 "<previous_module>"
-res = lfds711_stack_pop(&ss, &se);
-                
-# 1641 "<previous_module>"
-if (res == 0)
+=======
+# 1331 "<previous_module>"
+if (ATOMIC_OPERATION)
                 {
+                        pthread_mutex_lock(&lock);
+                }
+>>>>>>> origin/main
+
+                ;
+                
+# 1332 "<previous_module>"
+insert(ss, loop);
+                
+# 1333 "<previous_module>"
+if (ATOMIC_OPERATION)
+                {
+<<<<<<< HEAD
                         
 # 1642 "<previous_module>"
 >>>>>>> origin/main
@@ -4103,11 +4495,18 @@ temp_td = (*se).value;
 # 1644 "<previous_module>"
 >>>>>>> origin/main
 count++;
+=======
+                        pthread_mutex_unlock(&lock);
+                }
+
+                ;
+>>>>>>> origin/main
         }
 
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1632 "<previous_module>"
 void writeIntofile(char *filename, LIST_NODE_T *listHead)
@@ -4212,19 +4611,18 @@ LIST_InsertHeadNode(&listHead, (*temp_td).se, (*temp_td).user_id);
 =======
 # 1667 "<previous_module>"
 LIST_NODE_T *createList(LIST_NODE_T *listHead)
+=======
+# 1337 "<previous_module>"
+void *pop(void *__cs_unused)
+>>>>>>> origin/main
 
-# 1668 "<previous_module>"
+# 1338 "<previous_module>"
 {
         
-# 1669 "<previous_module>"
-struct lfds711_stack_element *se;
-        
-# 1670 "<previous_module>"
-struct test_data *temp_td;
-        
-# 1672 "<previous_module>"
+# 1339 "<previous_module>"
 int res;
         
+<<<<<<< HEAD
 # 1673 "<previous_module>"
 res = lfds711_stack_pop(&ss, &se);
         
@@ -4378,18 +4776,24 @@ if ((*curNode).payload.user_id != atoi(ptr))
 =======
 # 1713 "<previous_module>"
 while ((read = getline(&line, &len, fp)) != (-1))
+=======
+# 1340 "<previous_module>"
+int count; count = 0;
+        
+# 1341 "<previous_module>"
+int loop;
+        
+# 1342 "<previous_module>"
+for (loop = 0; loop < 5; loop++)
+>>>>>>> origin/main
 
-# 1714 "<previous_module>"
+# 1343 "<previous_module>"
         {
                 
-# 1716 "<previous_module>"
-char *ptr; ptr = strtok(line, delim);
-                
-# 1719 "<previous_module>"
-while (curNode)
-
-# 1720 "<previous_module>"
+# 1344 "<previous_module>"
+if (ATOMIC_OPERATION)
                 {
+<<<<<<< HEAD
                         
 # 1721 "<previous_module>"
 if ((*curNode).payload.user_id != atoi(ptr))
@@ -4425,9 +4829,14 @@ curNode = (*curNode).next;
 # 1726 "<previous_module>"
 >>>>>>> origin/main
 ptr = strtok(0, delim);
+=======
+                        pthread_mutex_lock(&lock);
+>>>>>>> origin/main
                 }
 
+                ;
                 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1710 "<previous_module>"
 if (i == size)
@@ -4494,11 +4903,24 @@ assert(0);
 # 1745 "<previous_module>"
 >>>>>>> origin/main
 return;
+=======
+# 1345 "<previous_module>"
+delete(ss);
+                
+# 1346 "<previous_module>"
+if (ATOMIC_OPERATION)
+                {
+                        pthread_mutex_unlock(&lock);
+                }
+
+                ;
+>>>>>>> origin/main
         }
 
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1732 "<previous_module>"
 int main()
@@ -4540,40 +4962,52 @@ readFile("foo.txt", listHead);
 # 1750 "<previous_module>"
 =======
 # 1752 "<previous_module>"
+=======
+# 1351 "<previous_module>"
+>>>>>>> origin/main
 int main()
 
-# 1753 "<previous_module>"
+# 1352 "<previous_module>"
 {
         
-# 1754 "<previous_module>"
-LIST_NODE_T *listHead; listHead = 0;
+# 1355 "<previous_module>"
+pthread_mutex_init(&lock, 0);
         
-# 1756 "<previous_module>"
-lfds711_stack_init_valid_on_current_logical_core(&ss, 0);
+# 1356 "<previous_module>"
+ss = init();
         
-# 1758 "<previous_module>"
+# 1358 "<previous_module>"
 pthread_t t1;
         pthread_t t2;
+        pthread_t t3;
+        pthread_t t4;
+        pthread_t t5;
+        pthread_t t6;
+        pthread_t t7;
+        pthread_t t8;
+        pthread_t t9;
+        pthread_t t10;
         
-# 1760 "<previous_module>"
+# 1359 "<previous_module>"
 pthread_create(&t1, 0, push, 0);
         
-# 1761 "<previous_module>"
-pthread_create(&t2, 0, pop, 0);
+# 1365 "<previous_module>"
+pthread_create(&t6, 0, pop, 0);
         
-# 1762 "<previous_module>"
+# 1370 "<previous_module>"
 pthread_join(t1, 0);
         
-# 1763 "<previous_module>"
-pthread_join(t2, 0);
+# 1375 "<previous_module>"
+pthread_join(t6, 0);
         
-# 1765 "<previous_module>"
-listHead = createList(listHead);
+# 1381 "<previous_module>"
+assert(0);
         
-# 1766 "<previous_module>"
-readFile("foo.txt", listHead);
-        
+<<<<<<< HEAD
 # 1771 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 1382 "<previous_module>"
 >>>>>>> origin/main
 return 0;
 }

@@ -1466,6 +1466,7 @@ void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *__cs_
 
 # 567 "<previous_module>"
 <<<<<<< HEAD
+<<<<<<< HEAD
 _Bool __CSEQ_atomic_compare_and_exchange(int long long unsigned *__cs_param___CSEQ_atomic_compare_and_exchange_mptr, int long long unsigned *__cs_param___CSEQ_atomic_compare_and_exchange_eptr, int long long unsigned __cs_param___CSEQ_atomic_compare_and_exchange_newval, _Bool __cs_param___CSEQ_atomic_compare_and_exchange_weak_p, int __cs_param___CSEQ_atomic_compare_and_exchange_sm, int __cs_param___CSEQ_atomic_compare_and_exchange_fm)
 
 # 568 "<previous_module>"
@@ -1474,17 +1475,21 @@ _Bool __CSEQ_atomic_compare_and_exchange(int long long unsigned *__cs_param___CS
 # 569 "<previous_module>"
 =======
 __cs_mutex_t lock;
+=======
+__cs_mutex_t library_lock;
+>>>>>>> origin/main
 
 # 568 "<previous_module>"
-_Bool __atomic_compare_exchange_n(int long long unsigned *__cs_param___atomic_compare_exchange_n_mptr, int long long unsigned *__cs_param___atomic_compare_exchange_n_eptr, int long long unsigned __cs_param___atomic_compare_exchange_n_newval, _Bool __cs_param___atomic_compare_exchange_n_weak_p, int __cs_param___atomic_compare_exchange_n_sm, int __cs_param___atomic_compare_exchange_n_fm)
+void exponential_backoff()
 
 # 569 "<previous_module>"
 {
         
 # 570 "<previous_module>"
-int __cs_local___atomic_compare_exchange_n_res;
+int __cs_local_exponential_backoff_loop;
         
 # 571 "<previous_module>"
+<<<<<<< HEAD
 __cs_local___atomic_compare_exchange_n_res = __CSEQ_atomic_compare_and_exchange(__cs_param___atomic_compare_exchange_n_mptr, __cs_param___atomic_compare_exchange_n_eptr, __cs_param___atomic_compare_exchange_n_newval, __cs_param___atomic_compare_exchange_n_weak_p, __cs_param___atomic_compare_exchange_n_sm, __cs_param___atomic_compare_exchange_n_fm);
         
 # 572 "<previous_module>"
@@ -1549,11 +1554,21 @@ return 1;
 # 585 "<previous_module>"
 >>>>>>> origin/main
 return 0;
+=======
+for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loop < 10; __cs_local_exponential_backoff_loop++)
+
+# 572 "<previous_module>"
+        {
+                
+# 573 "<previous_module>"
+;
+>>>>>>> origin/main
         }
 
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 581 "<previous_module>"
 unsigned long __CSEQ_atomic_exchange(int long long unsigned *__cs_param___CSEQ_atomic_exchange_previous, int long long unsigned __cs_param___CSEQ_atomic_exchange_new, int __cs_param___CSEQ_atomic_exchange_memorder)
@@ -1637,19 +1652,27 @@ struct lfds711_stack_element **__cs_param___CSEQ_atomic_swap_stack_top_newtop)
 # 594 "<previous_module>"
 =======
 # 604 "<previous_module>"
+=======
+# 576 "<previous_module>"
+>>>>>>> origin/main
 int __CSEQ_atomic_swap_stack_top(struct lfds711_stack_element * volatile *__cs_param___CSEQ_atomic_swap_stack_top_top, struct lfds711_stack_element * volatile *__cs_param___CSEQ_atomic_swap_stack_top_oldtop, 
-# 605 "<previous_module>"
+# 577 "<previous_module>"
 struct lfds711_stack_element **__cs_param___CSEQ_atomic_swap_stack_top_newtop)
 
-# 606 "<previous_module>"
+# 578 "<previous_module>"
 {
         
+<<<<<<< HEAD
 # 607 "<previous_module>"
 >>>>>>> origin/main
+=======
+# 579 "<previous_module>"
+>>>>>>> origin/main
 ;
-        _Bool __cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_1;
-        __cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_1 = (*__cs_param___CSEQ_atomic_swap_stack_top_oldtop) == (*__cs_param___CSEQ_atomic_swap_stack_top_top);
+        _Bool __cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_0;
+        __cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_0 = (*__cs_param___CSEQ_atomic_swap_stack_top_oldtop) == (*__cs_param___CSEQ_atomic_swap_stack_top_top);
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 595 "<previous_module>"
 if (__cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_1)
@@ -1664,19 +1687,28 @@ if (__cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_1)
 =======
 # 608 "<previous_module>"
 if (__cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_1)
+=======
+# 580 "<previous_module>"
+if (__cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_0)
+>>>>>>> origin/main
 
-# 609 "<previous_module>"
+# 581 "<previous_module>"
         {
                 
-# 610 "<previous_module>"
+# 582 "<previous_module>"
 *__cs_param___CSEQ_atomic_swap_stack_top_top = *__cs_param___CSEQ_atomic_swap_stack_top_newtop;
                 
+<<<<<<< HEAD
 # 611 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 583 "<previous_module>"
 >>>>>>> origin/main
 return 1;
         }
         else
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 601 "<previous_module>"
         {
@@ -1687,12 +1719,19 @@ return 1;
 # 603 "<previous_module>"
 =======
 # 614 "<previous_module>"
+=======
+# 586 "<previous_module>"
+>>>>>>> origin/main
         {
                 
-# 615 "<previous_module>"
+# 587 "<previous_module>"
 *__cs_param___CSEQ_atomic_swap_stack_top_oldtop = *__cs_param___CSEQ_atomic_swap_stack_top_top;
                 
+<<<<<<< HEAD
 # 616 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 588 "<previous_module>"
 >>>>>>> origin/main
 return 0;
         }
@@ -1700,6 +1739,7 @@ return 0;
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 606 "<previous_module>"
 void exponential_backoff()
@@ -1754,17 +1794,25 @@ void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *__cs_
 # 617 "<previous_module>"
 =======
 # 627 "<previous_module>"
+=======
+# 591 "<previous_module>"
+>>>>>>> origin/main
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *__cs_param_lfds711_misc_internal_backoff_init_bs)
 
-# 628 "<previous_module>"
+# 592 "<previous_module>"
 {
         
+<<<<<<< HEAD
 # 629 "<previous_module>"
 >>>>>>> origin/main
+=======
+# 593 "<previous_module>"
+>>>>>>> origin/main
 ;
-        _Bool __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2;
-        __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2 = !(__cs_param_lfds711_misc_internal_backoff_init_bs != 0);
+        _Bool __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1;
+        __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1 = !(__cs_param_lfds711_misc_internal_backoff_init_bs != 0);
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 618 "<previous_module>"
 if (__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2)
@@ -1782,22 +1830,31 @@ __cs_local_lfds711_misc_internal_backoff_init_c = 0;
 =======
 # 630 "<previous_module>"
 if (__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2)
+=======
+# 594 "<previous_module>"
+if (__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1)
+>>>>>>> origin/main
 
-# 631 "<previous_module>"
+# 595 "<previous_module>"
         {
                 
-# 632 "<previous_module>"
+# 596 "<previous_module>"
 char *__cs_local_lfds711_misc_internal_backoff_init_c;
                 
-# 633 "<previous_module>"
+# 597 "<previous_module>"
 __cs_local_lfds711_misc_internal_backoff_init_c = 0;
                 
+<<<<<<< HEAD
 # 634 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 598 "<previous_module>"
 >>>>>>> origin/main
 *__cs_local_lfds711_misc_internal_backoff_init_c = 0;
         }
 
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 624 "<previous_module>"
 ;
@@ -1808,17 +1865,25 @@ __cs_local_lfds711_misc_internal_backoff_init_c = 0;
 # 626 "<previous_module>"
 =======
 # 636 "<previous_module>"
-;
-        
-# 637 "<previous_module>"
-;
-        
-# 638 "<previous_module>"
+=======
+# 600 "<previous_module>"
 >>>>>>> origin/main
 ;
-        _Bool __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_3;
-        __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_3 = !((((lfds711_pal_uint_t) (&(*__cs_param_lfds711_misc_internal_backoff_init_bs).lock)) % 128) == 0);
         
+# 601 "<previous_module>"
+;
+        
+<<<<<<< HEAD
+# 638 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 602 "<previous_module>"
+>>>>>>> origin/main
+;
+        _Bool __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2;
+        __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2 = !((((lfds711_pal_uint_t) (&(*__cs_param_lfds711_misc_internal_backoff_init_bs).lock)) % 128) == 0);
+        
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 627 "<previous_module>"
 if (__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_3)
@@ -1836,22 +1901,31 @@ __cs_local_lfds711_misc_internal_backoff_init_c = 0;
 =======
 # 639 "<previous_module>"
 if (__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_3)
+=======
+# 603 "<previous_module>"
+if (__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2)
+>>>>>>> origin/main
 
-# 640 "<previous_module>"
+# 604 "<previous_module>"
         {
                 
-# 641 "<previous_module>"
+# 605 "<previous_module>"
 char *__cs_local_lfds711_misc_internal_backoff_init_c;
                 
-# 642 "<previous_module>"
+# 606 "<previous_module>"
 __cs_local_lfds711_misc_internal_backoff_init_c = 0;
                 
+<<<<<<< HEAD
 # 643 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 607 "<previous_module>"
 >>>>>>> origin/main
 *__cs_local_lfds711_misc_internal_backoff_init_c = 0;
         }
 
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 633 "<previous_module>"
 ;
@@ -1877,32 +1951,40 @@ __cs_local_lfds711_misc_internal_backoff_init_c = 0;
 # 640 "<previous_module>"
 =======
 # 645 "<previous_module>"
+=======
+# 609 "<previous_module>"
+>>>>>>> origin/main
 ;
         
-# 646 "<previous_module>"
+# 610 "<previous_module>"
 ;
         
-# 647 "<previous_module>"
+# 611 "<previous_module>"
 (*__cs_param_lfds711_misc_internal_backoff_init_bs).lock = LFDS711_MISC_FLAG_LOWERED;
         
-# 648 "<previous_module>"
+# 612 "<previous_module>"
 (*__cs_param_lfds711_misc_internal_backoff_init_bs).backoff_iteration_frequency_counters[0] = 0;
         
-# 649 "<previous_module>"
+# 613 "<previous_module>"
 (*__cs_param_lfds711_misc_internal_backoff_init_bs).backoff_iteration_frequency_counters[1] = 0;
         
-# 650 "<previous_module>"
+# 614 "<previous_module>"
 (*__cs_param_lfds711_misc_internal_backoff_init_bs).metric = 1;
         
-# 651 "<previous_module>"
+# 615 "<previous_module>"
 (*__cs_param_lfds711_misc_internal_backoff_init_bs).total_operations = 0;
         
+<<<<<<< HEAD
 # 652 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 616 "<previous_module>"
 >>>>>>> origin/main
 return;
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 642 "<previous_module>"
 void lfds711_stack_init_valid_on_current_logical_core(struct lfds711_stack_state *__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss, 
@@ -1918,22 +2000,30 @@ __cs_mutex_init(&lock, 0);
 # 646 "<previous_module>"
 =======
 # 654 "<previous_module>"
+=======
+# 618 "<previous_module>"
+>>>>>>> origin/main
 void lfds711_stack_init_valid_on_current_logical_core(struct lfds711_stack_state *__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss, 
-# 655 "<previous_module>"
+# 619 "<previous_module>"
 void *__cs_param_lfds711_stack_init_valid_on_current_logical_core_user_state)
 
-# 656 "<previous_module>"
+# 620 "<previous_module>"
 {
         
-# 657 "<previous_module>"
-__cs_mutex_init(&lock, 0);
+# 621 "<previous_module>"
+__cs_mutex_init(&library_lock, 0);
         
+<<<<<<< HEAD
 # 658 "<previous_module>"
 >>>>>>> origin/main
+=======
+# 622 "<previous_module>"
+>>>>>>> origin/main
 ;
-        _Bool __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4;
-        __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4 = !(__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss != 0);
+        _Bool __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_3;
+        __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_3 = !(__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss != 0);
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 647 "<previous_module>"
 if (__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4)
@@ -1951,22 +2041,31 @@ __cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
 =======
 # 659 "<previous_module>"
 if (__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4)
+=======
+# 623 "<previous_module>"
+if (__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_3)
+>>>>>>> origin/main
 
-# 660 "<previous_module>"
+# 624 "<previous_module>"
         {
                 
-# 661 "<previous_module>"
+# 625 "<previous_module>"
 char *__cs_local_lfds711_stack_init_valid_on_current_logical_core_c;
                 
-# 662 "<previous_module>"
+# 626 "<previous_module>"
 __cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
                 
+<<<<<<< HEAD
 # 663 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 627 "<previous_module>"
 >>>>>>> origin/main
 *__cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
         }
 
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 653 "<previous_module>"
 ;
@@ -1977,17 +2076,25 @@ __cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
 # 655 "<previous_module>"
 =======
 # 665 "<previous_module>"
-;
-        
-# 666 "<previous_module>"
-;
-        
-# 667 "<previous_module>"
+=======
+# 629 "<previous_module>"
 >>>>>>> origin/main
 ;
-        _Bool __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5;
-        __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5 = !((((lfds711_pal_uint_t) (*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).top) % 128) == 0);
         
+# 630 "<previous_module>"
+;
+        
+<<<<<<< HEAD
+# 667 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 631 "<previous_module>"
+>>>>>>> origin/main
+;
+        _Bool __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4;
+        __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4 = !((((lfds711_pal_uint_t) (*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).top) % 128) == 0);
+        
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 656 "<previous_module>"
 if (__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5)
@@ -2005,22 +2112,31 @@ __cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
 =======
 # 668 "<previous_module>"
 if (__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5)
+=======
+# 632 "<previous_module>"
+if (__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4)
+>>>>>>> origin/main
 
-# 669 "<previous_module>"
+# 633 "<previous_module>"
         {
                 
-# 670 "<previous_module>"
+# 634 "<previous_module>"
 char *__cs_local_lfds711_stack_init_valid_on_current_logical_core_c;
                 
-# 671 "<previous_module>"
+# 635 "<previous_module>"
 __cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
                 
+<<<<<<< HEAD
 # 672 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 636 "<previous_module>"
 >>>>>>> origin/main
 *__cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
         }
 
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 662 "<previous_module>"
 ;
@@ -2031,17 +2147,25 @@ __cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
 # 664 "<previous_module>"
 =======
 # 674 "<previous_module>"
-;
-        
-# 675 "<previous_module>"
-;
-        
-# 676 "<previous_module>"
+=======
+# 638 "<previous_module>"
 >>>>>>> origin/main
 ;
-        _Bool __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_6;
-        __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_6 = !((((lfds711_pal_uint_t) (&(*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).user_state)) % 128) == 0);
         
+# 639 "<previous_module>"
+;
+        
+<<<<<<< HEAD
+# 676 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 640 "<previous_module>"
+>>>>>>> origin/main
+;
+        _Bool __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5;
+        __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5 = !((((lfds711_pal_uint_t) (&(*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).user_state)) % 128) == 0);
+        
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 665 "<previous_module>"
 if (__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_6)
@@ -2059,22 +2183,31 @@ __cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
 =======
 # 677 "<previous_module>"
 if (__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_6)
+=======
+# 641 "<previous_module>"
+if (__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5)
+>>>>>>> origin/main
 
-# 678 "<previous_module>"
+# 642 "<previous_module>"
         {
                 
-# 679 "<previous_module>"
+# 643 "<previous_module>"
 char *__cs_local_lfds711_stack_init_valid_on_current_logical_core_c;
                 
-# 680 "<previous_module>"
+# 644 "<previous_module>"
 __cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
                 
+<<<<<<< HEAD
 # 681 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 645 "<previous_module>"
 >>>>>>> origin/main
 *__cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
         }
 
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 671 "<previous_module>"
 ;
@@ -2109,41 +2242,49 @@ __cs_mutex_unlock(&lock);
 # 681 "<previous_module>"
 =======
 # 683 "<previous_module>"
+=======
+# 647 "<previous_module>"
+>>>>>>> origin/main
 ;
         
-# 684 "<previous_module>"
+# 648 "<previous_module>"
 ;
         
-# 685 "<previous_module>"
-__cs_mutex_lock(&lock);
+# 649 "<previous_module>"
+__cs_mutex_lock(&library_lock);
         
-# 686 "<previous_module>"
+# 650 "<previous_module>"
 (*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).top[0] = 0;
         
-# 687 "<previous_module>"
+# 651 "<previous_module>"
 (*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).top[1] = 0;
         
-# 688 "<previous_module>"
+# 652 "<previous_module>"
 (*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).user_state = __cs_param_lfds711_stack_init_valid_on_current_logical_core_user_state;
         
-# 689 "<previous_module>"
+# 653 "<previous_module>"
 lfds711_misc_internal_backoff_init(&(*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).pop_backoff);
         
-# 690 "<previous_module>"
+# 654 "<previous_module>"
 lfds711_misc_internal_backoff_init(&(*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).push_backoff);
         
-# 691 "<previous_module>"
+# 655 "<previous_module>"
 lfds711_misc_force_store();
         
-# 692 "<previous_module>"
-__cs_mutex_unlock(&lock);
+# 656 "<previous_module>"
+__cs_mutex_unlock(&library_lock);
         
+<<<<<<< HEAD
 # 693 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 657 "<previous_module>"
 >>>>>>> origin/main
 return;
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 683 "<previous_module>"
 int lfds711_stack_pop(struct lfds711_stack_state *__cs_param_lfds711_stack_pop_ss, 
@@ -2171,34 +2312,42 @@ struct lfds711_stack_element * volatile __cs_local_lfds711_stack_pop_original_to
 # 691 "<previous_module>"
 =======
 # 695 "<previous_module>"
+=======
+# 659 "<previous_module>"
+>>>>>>> origin/main
 int lfds711_stack_pop(struct lfds711_stack_state *__cs_param_lfds711_stack_pop_ss, 
-# 696 "<previous_module>"
+# 660 "<previous_module>"
 struct lfds711_stack_element **__cs_param_lfds711_stack_pop_se)
 
-# 697 "<previous_module>"
+# 661 "<previous_module>"
 {
         
-# 698 "<previous_module>"
+# 662 "<previous_module>"
 char unsigned __cs_local_lfds711_stack_pop_result;
         
-# 699 "<previous_module>"
+# 663 "<previous_module>"
 lfds711_pal_uint_t __cs_local_lfds711_stack_pop_backoff_iteration;
         
-# 700 "<previous_module>"
+# 664 "<previous_module>"
 __cs_local_lfds711_stack_pop_backoff_iteration = 0;
         
-# 701 "<previous_module>"
+# 665 "<previous_module>"
 struct lfds711_stack_element *__cs_local_lfds711_stack_pop_new_top[2];
         
-# 702 "<previous_module>"
+# 666 "<previous_module>"
 struct lfds711_stack_element * volatile __cs_local_lfds711_stack_pop_original_top[2];
         
+<<<<<<< HEAD
 # 703 "<previous_module>"
 >>>>>>> origin/main
+=======
+# 667 "<previous_module>"
+>>>>>>> origin/main
 ;
-        _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_7;
-        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_7 = !(__cs_param_lfds711_stack_pop_ss != 0);
+        _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_6;
+        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_6 = !(__cs_param_lfds711_stack_pop_ss != 0);
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 692 "<previous_module>"
 if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7)
@@ -2216,22 +2365,31 @@ __cs_local_lfds711_stack_pop_c = 0;
 =======
 # 704 "<previous_module>"
 if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7)
+=======
+# 668 "<previous_module>"
+if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_6)
+>>>>>>> origin/main
 
-# 705 "<previous_module>"
+# 669 "<previous_module>"
         {
                 
-# 706 "<previous_module>"
+# 670 "<previous_module>"
 char *__cs_local_lfds711_stack_pop_c;
                 
-# 707 "<previous_module>"
+# 671 "<previous_module>"
 __cs_local_lfds711_stack_pop_c = 0;
                 
+<<<<<<< HEAD
 # 708 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 672 "<previous_module>"
 >>>>>>> origin/main
 *__cs_local_lfds711_stack_pop_c = 0;
         }
 
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 698 "<previous_module>"
 ;
@@ -2242,17 +2400,25 @@ __cs_local_lfds711_stack_pop_c = 0;
 # 700 "<previous_module>"
 =======
 # 710 "<previous_module>"
-;
-        
-# 711 "<previous_module>"
-;
-        
-# 712 "<previous_module>"
+=======
+# 674 "<previous_module>"
 >>>>>>> origin/main
 ;
-        _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_8;
-        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_8 = !(__cs_param_lfds711_stack_pop_se != 0);
         
+# 675 "<previous_module>"
+;
+        
+<<<<<<< HEAD
+# 712 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 676 "<previous_module>"
+>>>>>>> origin/main
+;
+        _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_7;
+        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_7 = !(__cs_param_lfds711_stack_pop_se != 0);
+        
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 701 "<previous_module>"
 if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8)
@@ -2270,22 +2436,31 @@ __cs_local_lfds711_stack_pop_c = 0;
 =======
 # 713 "<previous_module>"
 if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8)
+=======
+# 677 "<previous_module>"
+if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7)
+>>>>>>> origin/main
 
-# 714 "<previous_module>"
+# 678 "<previous_module>"
         {
                 
-# 715 "<previous_module>"
+# 679 "<previous_module>"
 char *__cs_local_lfds711_stack_pop_c;
                 
-# 716 "<previous_module>"
+# 680 "<previous_module>"
 __cs_local_lfds711_stack_pop_c = 0;
                 
+<<<<<<< HEAD
 # 717 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 681 "<previous_module>"
 >>>>>>> origin/main
 *__cs_local_lfds711_stack_pop_c = 0;
         }
 
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 707 "<previous_module>"
 ;
@@ -2326,47 +2501,55 @@ for (__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1 = 0; __cs_local_lfds711
 # 719 "<previous_module>"
 =======
 # 719 "<previous_module>"
-;
-        
-# 720 "<previous_module>"
-;
-        
-# 721 "<previous_module>"
-__cs_mutex_lock(&lock);
-        
-# 722 "<previous_module>"
-__cs_mutex_unlock(&lock);
-        
-# 723 "<previous_module>"
-__cs_local_lfds711_stack_pop_original_top[1] = (*__cs_param_lfds711_stack_pop_ss).top[1];
-        
-# 724 "<previous_module>"
-__cs_local_lfds711_stack_pop_original_top[0] = (*__cs_param_lfds711_stack_pop_ss).top[0];
-        
-# 725 "<previous_module>"
-int __cs_local_lfds711_stack_pop_i;
-        
-# 726 "<previous_module>"
-__cs_local_lfds711_stack_pop_i = 0;
-        
-# 727 "<previous_module>"
-;
-        
-# 728 "<previous_module>"
-int __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1;
-        
-# 729 "<previous_module>"
-for (__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1 = 0; __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1 < 1; __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1++)
-
-# 730 "<previous_module>"
-        {
-                
-# 731 "<previous_module>"
+=======
+# 683 "<previous_module>"
 >>>>>>> origin/main
 ;
-                _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_9;
-                __cs_local_lfds711_stack_pop___cs_tmp_if_cond_9 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+        
+# 684 "<previous_module>"
+;
+        
+# 685 "<previous_module>"
+__cs_mutex_lock(&library_lock);
+        
+# 686 "<previous_module>"
+__cs_mutex_unlock(&library_lock);
+        
+# 687 "<previous_module>"
+__cs_local_lfds711_stack_pop_original_top[1] = (*__cs_param_lfds711_stack_pop_ss).top[1];
+        
+# 688 "<previous_module>"
+__cs_local_lfds711_stack_pop_original_top[0] = (*__cs_param_lfds711_stack_pop_ss).top[0];
+        
+# 689 "<previous_module>"
+int __cs_local_lfds711_stack_pop_i;
+        
+# 690 "<previous_module>"
+__cs_local_lfds711_stack_pop_i = 0;
+        
+# 691 "<previous_module>"
+;
+        
+# 692 "<previous_module>"
+int __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1;
+        
+# 693 "<previous_module>"
+for (__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1 = 0; __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1 < 1; __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1++)
+
+# 694 "<previous_module>"
+        {
                 
+<<<<<<< HEAD
+# 731 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 695 "<previous_module>"
+>>>>>>> origin/main
+;
+                _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_8;
+                __cs_local_lfds711_stack_pop___cs_tmp_if_cond_8 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+                
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 720 "<previous_module>"
 if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9)
@@ -2381,19 +2564,28 @@ if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9)
 =======
 # 732 "<previous_module>"
 if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9)
+=======
+# 696 "<previous_module>"
+if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8)
+>>>>>>> origin/main
 
-# 733 "<previous_module>"
+# 697 "<previous_module>"
                 {
                         
-# 734 "<previous_module>"
+# 698 "<previous_module>"
 *__cs_param_lfds711_stack_pop_se = 0;
                         
+<<<<<<< HEAD
 # 735 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 699 "<previous_module>"
 >>>>>>> origin/main
 return 0;
                 }
 
                 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 725 "<previous_module>"
 __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
@@ -2413,26 +2605,34 @@ __cs_mutex_unlock(&lock);
 # 730 "<previous_module>"
 =======
 # 737 "<previous_module>"
+=======
+# 701 "<previous_module>"
+>>>>>>> origin/main
 __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
                 
-# 738 "<previous_module>"
+# 702 "<previous_module>"
 __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
                 
-# 739 "<previous_module>"
-__cs_mutex_lock(&lock);
+# 703 "<previous_module>"
+__cs_mutex_lock(&library_lock);
                 
-# 740 "<previous_module>"
+# 704 "<previous_module>"
 __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
                 
-# 741 "<previous_module>"
-__cs_mutex_unlock(&lock);
+# 705 "<previous_module>"
+__cs_mutex_unlock(&library_lock);
                 
+<<<<<<< HEAD
 # 742 "<previous_module>"
 >>>>>>> origin/main
+=======
+# 706 "<previous_module>"
+>>>>>>> origin/main
 ;
-                _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_10;
-                __cs_local_lfds711_stack_pop___cs_tmp_if_cond_10 = __cs_local_lfds711_stack_pop_result == 0;
+                _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_9;
+                __cs_local_lfds711_stack_pop___cs_tmp_if_cond_9 = __cs_local_lfds711_stack_pop_result == 0;
                 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 731 "<previous_module>"
 if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10)
@@ -2450,16 +2650,21 @@ __cs_mutex_lock(&lock);
 =======
 # 743 "<previous_module>"
 if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10)
+=======
+# 707 "<previous_module>"
+if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9)
+>>>>>>> origin/main
 
-# 744 "<previous_module>"
+# 708 "<previous_module>"
                 {
                         
-# 745 "<previous_module>"
+# 709 "<previous_module>"
 exponential_backoff();
                         
-# 746 "<previous_module>"
-__cs_mutex_lock(&lock);
+# 710 "<previous_module>"
+__cs_mutex_lock(&library_lock);
                         
+<<<<<<< HEAD
 # 747 "<previous_module>"
 >>>>>>> origin/main
 __cs_mutex_unlock(&lock);
@@ -2477,10 +2682,22 @@ __cs_local_lfds711_stack_pop_i++;
                 
 # 750 "<previous_module>"
 >>>>>>> origin/main
-;
-                _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
-                __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_i > 1000;
+=======
+# 711 "<previous_module>"
+__cs_mutex_unlock(&library_lock);
+                }
+
                 
+# 713 "<previous_module>"
+__cs_local_lfds711_stack_pop_i++;
+                
+# 714 "<previous_module>"
+>>>>>>> origin/main
+;
+                _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_10;
+                __cs_local_lfds711_stack_pop___cs_tmp_if_cond_10 = __cs_local_lfds711_stack_pop_i > 1000;
+                
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 739 "<previous_module>"
 if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
@@ -2492,11 +2709,19 @@ if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
 =======
 # 751 "<previous_module>"
 if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
+=======
+# 715 "<previous_module>"
+if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10)
+>>>>>>> origin/main
 
-# 752 "<previous_module>"
+# 716 "<previous_module>"
                 {
                         
+<<<<<<< HEAD
 # 753 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 717 "<previous_module>"
 >>>>>>> origin/main
 break;
                 }
@@ -2504,6 +2729,7 @@ break;
         }
 
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 744 "<previous_module>"
 while (
@@ -2516,19 +2742,27 @@ __cs_local_lfds711_stack_pop_result == 0)
 # 747 "<previous_module>"
 =======
 # 756 "<previous_module>"
+=======
+# 720 "<previous_module>"
+>>>>>>> origin/main
 while (
-# 757 "<previous_module>"
+# 721 "<previous_module>"
 __cs_local_lfds711_stack_pop_result == 0)
 
-# 758 "<previous_module>"
+# 722 "<previous_module>"
         {
                 
+<<<<<<< HEAD
 # 759 "<previous_module>"
 >>>>>>> origin/main
+=======
+# 723 "<previous_module>"
+>>>>>>> origin/main
 ;
-                _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
-                __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+                _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
+                __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
                 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 748 "<previous_module>"
 if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
@@ -2543,19 +2777,28 @@ if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
 =======
 # 760 "<previous_module>"
 if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
+=======
+# 724 "<previous_module>"
+if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
+>>>>>>> origin/main
 
-# 761 "<previous_module>"
+# 725 "<previous_module>"
                 {
                         
-# 762 "<previous_module>"
+# 726 "<previous_module>"
 *__cs_param_lfds711_stack_pop_se = 0;
                         
+<<<<<<< HEAD
 # 763 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 727 "<previous_module>"
 >>>>>>> origin/main
 return 0;
                 }
 
                 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 753 "<previous_module>"
 __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
@@ -2575,26 +2818,34 @@ __cs_mutex_unlock(&lock);
 # 758 "<previous_module>"
 =======
 # 765 "<previous_module>"
+=======
+# 729 "<previous_module>"
+>>>>>>> origin/main
 __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
                 
-# 766 "<previous_module>"
+# 730 "<previous_module>"
 __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
                 
-# 767 "<previous_module>"
-__cs_mutex_lock(&lock);
+# 731 "<previous_module>"
+__cs_mutex_lock(&library_lock);
                 
-# 768 "<previous_module>"
+# 732 "<previous_module>"
 __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
                 
-# 769 "<previous_module>"
-__cs_mutex_unlock(&lock);
+# 733 "<previous_module>"
+__cs_mutex_unlock(&library_lock);
                 
+<<<<<<< HEAD
 # 770 "<previous_module>"
 >>>>>>> origin/main
+=======
+# 734 "<previous_module>"
+>>>>>>> origin/main
 ;
-                _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
-                __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_result == 0;
+                _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
+                __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
                 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 759 "<previous_module>"
 if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
@@ -2612,16 +2863,21 @@ __cs_mutex_lock(&lock);
 =======
 # 771 "<previous_module>"
 if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
+=======
+# 735 "<previous_module>"
+if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
+>>>>>>> origin/main
 
-# 772 "<previous_module>"
+# 736 "<previous_module>"
                 {
                         
-# 773 "<previous_module>"
+# 737 "<previous_module>"
 exponential_backoff();
                         
-# 774 "<previous_module>"
-__cs_mutex_lock(&lock);
+# 738 "<previous_module>"
+__cs_mutex_lock(&library_lock);
                         
+<<<<<<< HEAD
 # 775 "<previous_module>"
 >>>>>>> origin/main
 __cs_mutex_unlock(&lock);
@@ -2639,10 +2895,22 @@ __cs_local_lfds711_stack_pop_i++;
                 
 # 778 "<previous_module>"
 >>>>>>> origin/main
-;
-                _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_14;
-                __cs_local_lfds711_stack_pop___cs_tmp_if_cond_14 = __cs_local_lfds711_stack_pop_i > 1000;
+=======
+# 739 "<previous_module>"
+__cs_mutex_unlock(&library_lock);
+                }
+
                 
+# 741 "<previous_module>"
+__cs_local_lfds711_stack_pop_i++;
+                
+# 742 "<previous_module>"
+>>>>>>> origin/main
+;
+                _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
+                __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
+                
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 767 "<previous_module>"
 if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_14)
@@ -2654,11 +2922,19 @@ if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_14)
 =======
 # 779 "<previous_module>"
 if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_14)
+=======
+# 743 "<previous_module>"
+if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
+>>>>>>> origin/main
 
-# 780 "<previous_module>"
+# 744 "<previous_module>"
                 {
                         
+<<<<<<< HEAD
 # 781 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 745 "<previous_module>"
 >>>>>>> origin/main
 break;
                 }
@@ -2666,6 +2942,7 @@ break;
         }
 
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 772 "<previous_module>"
 *__cs_param_lfds711_stack_pop_se = __cs_local_lfds711_stack_pop_original_top[0];
@@ -2708,34 +2985,50 @@ struct lfds711_stack_element * volatile __cs_local_lfds711_stack_push_original_t
 # 783 "<previous_module>"
 =======
 # 787 "<previous_module>"
+=======
+# 748 "<previous_module>"
+*__cs_param_lfds711_stack_pop_se = __cs_local_lfds711_stack_pop_original_top[0];
+        
+# 749 "<previous_module>"
+return __cs_local_lfds711_stack_pop_result;
+}
+
+
+# 751 "<previous_module>"
+>>>>>>> origin/main
 void lfds711_stack_push(struct lfds711_stack_state *__cs_param_lfds711_stack_push_ss, 
-# 788 "<previous_module>"
+# 752 "<previous_module>"
 struct lfds711_stack_element *__cs_param_lfds711_stack_push_se)
 
-# 789 "<previous_module>"
+# 753 "<previous_module>"
 {
         
-# 790 "<previous_module>"
+# 754 "<previous_module>"
 char unsigned __cs_local_lfds711_stack_push_result;
         
-# 791 "<previous_module>"
+# 755 "<previous_module>"
 lfds711_pal_uint_t __cs_local_lfds711_stack_push_backoff_iteration;
         
-# 792 "<previous_module>"
+# 756 "<previous_module>"
 __cs_local_lfds711_stack_push_backoff_iteration = 0;
         
-# 793 "<previous_module>"
+# 757 "<previous_module>"
 struct lfds711_stack_element *__cs_local_lfds711_stack_push_new_top[2];
         
-# 794 "<previous_module>"
+# 758 "<previous_module>"
 struct lfds711_stack_element * volatile __cs_local_lfds711_stack_push_original_top[2];
         
+<<<<<<< HEAD
 # 795 "<previous_module>"
 >>>>>>> origin/main
+=======
+# 759 "<previous_module>"
+>>>>>>> origin/main
 ;
-        _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_15;
-        __cs_local_lfds711_stack_push___cs_tmp_if_cond_15 = !(__cs_param_lfds711_stack_push_ss != 0);
+        _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_14;
+        __cs_local_lfds711_stack_push___cs_tmp_if_cond_14 = !(__cs_param_lfds711_stack_push_ss != 0);
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 784 "<previous_module>"
 if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
@@ -2753,22 +3046,31 @@ __cs_local_lfds711_stack_push_c = 0;
 =======
 # 796 "<previous_module>"
 if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
+=======
+# 760 "<previous_module>"
+if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_14)
+>>>>>>> origin/main
 
-# 797 "<previous_module>"
+# 761 "<previous_module>"
         {
                 
-# 798 "<previous_module>"
+# 762 "<previous_module>"
 char *__cs_local_lfds711_stack_push_c;
                 
-# 799 "<previous_module>"
+# 763 "<previous_module>"
 __cs_local_lfds711_stack_push_c = 0;
                 
+<<<<<<< HEAD
 # 800 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 764 "<previous_module>"
 >>>>>>> origin/main
 *__cs_local_lfds711_stack_push_c = 0;
         }
 
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 790 "<previous_module>"
 ;
@@ -2779,17 +3081,25 @@ __cs_local_lfds711_stack_push_c = 0;
 # 792 "<previous_module>"
 =======
 # 802 "<previous_module>"
-;
-        
-# 803 "<previous_module>"
-;
-        
-# 804 "<previous_module>"
+=======
+# 766 "<previous_module>"
 >>>>>>> origin/main
 ;
-        _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = !(__cs_param_lfds711_stack_push_se != 0);
         
+# 767 "<previous_module>"
+;
+        
+<<<<<<< HEAD
+# 804 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 768 "<previous_module>"
+>>>>>>> origin/main
+;
+        _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_15;
+        __cs_local_lfds711_stack_push___cs_tmp_if_cond_15 = !(__cs_param_lfds711_stack_push_se != 0);
+        
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 793 "<previous_module>"
 if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
@@ -2807,22 +3117,31 @@ __cs_local_lfds711_stack_push_c = 0;
 =======
 # 805 "<previous_module>"
 if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+=======
+# 769 "<previous_module>"
+if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
+>>>>>>> origin/main
 
-# 806 "<previous_module>"
+# 770 "<previous_module>"
         {
                 
-# 807 "<previous_module>"
+# 771 "<previous_module>"
 char *__cs_local_lfds711_stack_push_c;
                 
-# 808 "<previous_module>"
+# 772 "<previous_module>"
 __cs_local_lfds711_stack_push_c = 0;
                 
+<<<<<<< HEAD
 # 809 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 773 "<previous_module>"
 >>>>>>> origin/main
 *__cs_local_lfds711_stack_push_c = 0;
         }
 
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 799 "<previous_module>"
 ;
@@ -2917,23 +3236,70 @@ __cs_mutex_lock(&lock);
 __cs_mutex_unlock(&lock);
                 
 # 824 "<previous_module>"
+=======
+# 775 "<previous_module>"
+;
+        
+# 776 "<previous_module>"
+;
+        
+# 777 "<previous_module>"
+__cs_local_lfds711_stack_push_new_top[0] = __cs_param_lfds711_stack_push_se;
+        
+# 778 "<previous_module>"
+__cs_local_lfds711_stack_push_original_top[1] = (*__cs_param_lfds711_stack_push_ss).top[1];
+        
+# 779 "<previous_module>"
+__cs_local_lfds711_stack_push_original_top[0] = (*__cs_param_lfds711_stack_push_ss).top[0];
+        
+# 780 "<previous_module>"
+__cs_local_lfds711_stack_push_result = 0;
+        
+# 781 "<previous_module>"
+int __cs_local_lfds711_stack_push_i;
+        
+# 782 "<previous_module>"
+__cs_local_lfds711_stack_push_i = 0;
+        
+# 783 "<previous_module>"
+while (__cs_local_lfds711_stack_push_result == 0)
+
+# 784 "<previous_module>"
+        {
+                
+# 785 "<previous_module>"
+__cs_mutex_lock(&library_lock);
+                
+# 786 "<previous_module>"
+(*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+                
+# 787 "<previous_module>"
+__cs_mutex_unlock(&library_lock);
+                
+# 788 "<previous_module>"
+>>>>>>> origin/main
 __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
                 
-# 825 "<previous_module>"
-__cs_mutex_lock(&lock);
+# 789 "<previous_module>"
+__cs_mutex_lock(&library_lock);
                 
-# 826 "<previous_module>"
+# 790 "<previous_module>"
 __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
                 
-# 827 "<previous_module>"
-__cs_mutex_unlock(&lock);
+# 791 "<previous_module>"
+__cs_mutex_unlock(&library_lock);
                 
+<<<<<<< HEAD
 # 828 "<previous_module>"
 >>>>>>> origin/main
+=======
+# 792 "<previous_module>"
+>>>>>>> origin/main
 ;
-                _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_result == 0;
+                _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
+                __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
                 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 817 "<previous_module>"
 if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
@@ -2945,16 +3311,25 @@ if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
 =======
 # 829 "<previous_module>"
 if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+=======
+# 793 "<previous_module>"
+if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+>>>>>>> origin/main
 
-# 830 "<previous_module>"
+# 794 "<previous_module>"
                 {
                         
+<<<<<<< HEAD
 # 831 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 795 "<previous_module>"
 >>>>>>> origin/main
 exponential_backoff();
                 }
 
                 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 821 "<previous_module>"
 __cs_local_lfds711_stack_push_i++;
@@ -2966,10 +3341,17 @@ __cs_local_lfds711_stack_push_i++;
                 
 # 834 "<previous_module>"
 >>>>>>> origin/main
-;
-                _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_18;
-                __cs_local_lfds711_stack_push___cs_tmp_if_cond_18 = __cs_local_lfds711_stack_push_i > 1000;
+=======
+# 797 "<previous_module>"
+__cs_local_lfds711_stack_push_i++;
                 
+# 798 "<previous_module>"
+>>>>>>> origin/main
+;
+                _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 823 "<previous_module>"
 if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_18)
@@ -2981,11 +3363,19 @@ if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_18)
 =======
 # 835 "<previous_module>"
 if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_18)
+=======
+# 799 "<previous_module>"
+if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+>>>>>>> origin/main
 
-# 836 "<previous_module>"
+# 800 "<previous_module>"
                 {
                         
+<<<<<<< HEAD
 # 837 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 801 "<previous_module>"
 >>>>>>> origin/main
 break;
                 }
@@ -2994,14 +3384,19 @@ break;
 
         
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 828 "<previous_module>"
 =======
 # 840 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 804 "<previous_module>"
 >>>>>>> origin/main
 return;
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 830 "<previous_module>"
 void lfds711_stack_cleanup(struct lfds711_stack_state *__cs_param_lfds711_stack_cleanup_ss, 
@@ -3023,10 +3418,15 @@ struct lfds711_stack_element *__cs_local_lfds711_stack_cleanup_se_temp;
 void lfds711_stack_cleanup(struct lfds711_stack_state *__cs_param_lfds711_stack_cleanup_ss, 
 # 843 "<previous_module>"
 void (*__cs_param_lfds711_stack_cleanup_element_cleanup_callback)(struct lfds711_stack_state *ss, struct lfds711_stack_element *se))
+=======
+# 806 "<previous_module>"
+_Bool __CSEQ_atomic_compare_and_exchange(int long long unsigned *__cs_param___CSEQ_atomic_compare_and_exchange_mptr, int long long unsigned *__cs_param___CSEQ_atomic_compare_and_exchange_eptr, int long long unsigned __cs_param___CSEQ_atomic_compare_and_exchange_newval, _Bool __cs_param___CSEQ_atomic_compare_and_exchange_weak_p, int __cs_param___CSEQ_atomic_compare_and_exchange_sm, int __cs_param___CSEQ_atomic_compare_and_exchange_fm)
+>>>>>>> origin/main
 
-# 844 "<previous_module>"
+# 807 "<previous_module>"
 {
         
+<<<<<<< HEAD
 # 845 "<previous_module>"
 struct lfds711_stack_element *__cs_local_lfds711_stack_cleanup_se;
         
@@ -3035,10 +3435,14 @@ struct lfds711_stack_element *__cs_local_lfds711_stack_cleanup_se_temp;
         
 # 847 "<previous_module>"
 >>>>>>> origin/main
+=======
+# 808 "<previous_module>"
+>>>>>>> origin/main
 ;
-        _Bool __cs_local_lfds711_stack_cleanup___cs_tmp_if_cond_19;
-        __cs_local_lfds711_stack_cleanup___cs_tmp_if_cond_19 = !(__cs_param_lfds711_stack_cleanup_ss != 0);
+        _Bool __cs_local___CSEQ_atomic_compare_and_exchange___cs_tmp_if_cond_18;
+        __cs_local___CSEQ_atomic_compare_and_exchange___cs_tmp_if_cond_18 = (*__cs_param___CSEQ_atomic_compare_and_exchange_mptr) == (*__cs_param___CSEQ_atomic_compare_and_exchange_eptr);
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 836 "<previous_module>"
 if (__cs_local_lfds711_stack_cleanup___cs_tmp_if_cond_19)
@@ -3056,21 +3460,29 @@ __cs_local_lfds711_stack_cleanup_c = 0;
 =======
 # 848 "<previous_module>"
 if (__cs_local_lfds711_stack_cleanup___cs_tmp_if_cond_19)
+=======
+# 809 "<previous_module>"
+if (__cs_local___CSEQ_atomic_compare_and_exchange___cs_tmp_if_cond_18)
+>>>>>>> origin/main
 
-# 849 "<previous_module>"
+# 810 "<previous_module>"
         {
                 
-# 850 "<previous_module>"
-char *__cs_local_lfds711_stack_cleanup_c;
+# 811 "<previous_module>"
+*__cs_param___CSEQ_atomic_compare_and_exchange_mptr = __cs_param___CSEQ_atomic_compare_and_exchange_newval;
                 
-# 851 "<previous_module>"
-__cs_local_lfds711_stack_cleanup_c = 0;
-                
+<<<<<<< HEAD
 # 852 "<previous_module>"
 >>>>>>> origin/main
 *__cs_local_lfds711_stack_cleanup_c = 0;
+=======
+# 812 "<previous_module>"
+return 1;
+>>>>>>> origin/main
         }
+        else
 
+<<<<<<< HEAD
         
 <<<<<<< HEAD
 # 842 "<previous_module>"
@@ -3127,11 +3539,15 @@ __cs_local_lfds711_stack_cleanup_se = (*__cs_local_lfds711_stack_cleanup_se).nex
 if (__cs_local_lfds711_stack_cleanup___cs_tmp_if_cond_20)
 
 # 859 "<previous_module>"
+=======
+# 815 "<previous_module>"
+>>>>>>> origin/main
         {
                 
-# 860 "<previous_module>"
-__cs_local_lfds711_stack_cleanup_se = (*__cs_param_lfds711_stack_cleanup_ss).top[0];
+# 816 "<previous_module>"
+*__cs_param___CSEQ_atomic_compare_and_exchange_eptr = __cs_param___CSEQ_atomic_compare_and_exchange_newval;
                 
+<<<<<<< HEAD
 # 861 "<previous_module>"
 while (__cs_local_lfds711_stack_cleanup_se != 0)
 
@@ -3231,10 +3647,22 @@ NODE_PAYLOAD_T payload;
 
 # 880 "<previous_module>"
 int LIST_InsertHeadNode(LIST_NODE_T **__cs_param_LIST_InsertHeadNode_IO_head, struct lfds711_stack_element __cs_param_LIST_InsertHeadNode_I__se, int long long unsigned __cs_param_LIST_InsertHeadNode_I__user_id)
+=======
+# 817 "<previous_module>"
+return 0;
+        }
 
-# 881 "<previous_module>"
+}
+
+
+# 820 "<previous_module>"
+_Bool __atomic_compare_exchange_n(int long long unsigned *__cs_param___atomic_compare_exchange_n_mptr, int long long unsigned *__cs_param___atomic_compare_exchange_n_eptr, int long long unsigned __cs_param___atomic_compare_exchange_n_newval, _Bool __cs_param___atomic_compare_exchange_n_weak_p, int __cs_param___atomic_compare_exchange_n_sm, int __cs_param___atomic_compare_exchange_n_fm)
+>>>>>>> origin/main
+
+# 821 "<previous_module>"
 {
         
+<<<<<<< HEAD
 # 882 "<previous_module>"
 int __cs_local_LIST_InsertHeadNode_rCode;
         
@@ -3318,10 +3746,15 @@ CLEANUP:
         
 # 897 "<previous_module>"
 *__cs_param_LIST_InsertHeadNode_IO_head = __cs_local_LIST_InsertHeadNode_newNode;
+=======
+# 822 "<previous_module>"
+int __cs_local___atomic_compare_exchange_n_res;
+>>>>>>> origin/main
         
-# 898 "<previous_module>"
-CLEANUP:
+# 823 "<previous_module>"
+__cs_local___atomic_compare_exchange_n_res = __CSEQ_atomic_compare_and_exchange(__cs_param___atomic_compare_exchange_n_mptr, __cs_param___atomic_compare_exchange_n_eptr, __cs_param___atomic_compare_exchange_n_newval, __cs_param___atomic_compare_exchange_n_weak_p, __cs_param___atomic_compare_exchange_n_sm, __cs_param___atomic_compare_exchange_n_fm);
         
+<<<<<<< HEAD
 # 899 "<previous_module>"
 >>>>>>> origin/main
 return __cs_local_LIST_InsertHeadNode_rCode;
@@ -3364,22 +3797,23 @@ __cs_local_PrintListPayloads_cur = (*__cs_local_PrintListPayloads_cur).next;
 =======
 # 901 "<previous_module>"
 int PrintListPayloads(LIST_NODE_T *__cs_param_PrintListPayloads_head)
+=======
+# 824 "<previous_module>"
+return __cs_local___atomic_compare_exchange_n_res;
+}
 
-# 902 "<previous_module>"
+
+# 826 "<previous_module>"
+unsigned long __CSEQ_atomic_exchange(int long long unsigned *__cs_param___CSEQ_atomic_exchange_previous, int long long unsigned __cs_param___CSEQ_atomic_exchange_new, int __cs_param___CSEQ_atomic_exchange_memorder)
+>>>>>>> origin/main
+
+# 827 "<previous_module>"
 {
         
-# 903 "<previous_module>"
-int __cs_local_PrintListPayloads_rCode;
+# 828 "<previous_module>"
+unsigned long int __cs_local___CSEQ_atomic_exchange_old;
         
-# 904 "<previous_module>"
-__cs_local_PrintListPayloads_rCode = 0;
-        
-# 905 "<previous_module>"
-LIST_NODE_T *__cs_local_PrintListPayloads_cur;
-        
-# 906 "<previous_module>"
-__cs_local_PrintListPayloads_cur = __cs_param_PrintListPayloads_head;
-        
+<<<<<<< HEAD
 # 907 "<previous_module>"
 while (__cs_local_PrintListPayloads_cur)
 
@@ -3468,22 +3902,29 @@ while (__cs_local_GetListSize_cur)
 =======
 # 920 "<previous_module>"
 int GetListSize(LIST_NODE_T *__cs_param_GetListSize_head)
+=======
+# 829 "<previous_module>"
+__cs_local___CSEQ_atomic_exchange_old = *__cs_param___CSEQ_atomic_exchange_previous;
+        
+# 830 "<previous_module>"
+*__cs_param___CSEQ_atomic_exchange_previous = __cs_param___CSEQ_atomic_exchange_new;
+        
+# 831 "<previous_module>"
+return __cs_local___CSEQ_atomic_exchange_old;
+}
 
-# 921 "<previous_module>"
+
+# 833 "<previous_module>"
+unsigned long __atomic_exchange_n(int long long unsigned *__cs_param___atomic_exchange_n_previous, int long long unsigned __cs_param___atomic_exchange_n_new, int __cs_param___atomic_exchange_n_memorder)
+>>>>>>> origin/main
+
+# 834 "<previous_module>"
 {
         
-# 922 "<previous_module>"
-LIST_NODE_T *__cs_local_GetListSize_cur;
+# 835 "<previous_module>"
+int __cs_local___atomic_exchange_n_res;
         
-# 923 "<previous_module>"
-__cs_local_GetListSize_cur = __cs_param_GetListSize_head;
-        
-# 924 "<previous_module>"
-int __cs_local_GetListSize_nodeCnt;
-        
-# 925 "<previous_module>"
-__cs_local_GetListSize_nodeCnt = 0;
-        
+<<<<<<< HEAD
 # 926 "<previous_module>"
 while (__cs_local_GetListSize_cur)
 
@@ -3531,9 +3972,22 @@ __cs_local_LIST_GetTailNode_curNode = __cs_param_LIST_GetTailNode_I__listHead;
 =======
 # 933 "<previous_module>"
 int LIST_GetTailNode(LIST_NODE_T *__cs_param_LIST_GetTailNode_I__listHead, LIST_NODE_T **__cs_param_LIST_GetTailNode__O_listTail)
+=======
+# 836 "<previous_module>"
+__cs_local___atomic_exchange_n_res = __CSEQ_atomic_exchange(__cs_param___atomic_exchange_n_previous, __cs_param___atomic_exchange_n_new, __cs_param___atomic_exchange_n_memorder);
+        
+# 837 "<previous_module>"
+return __cs_local___atomic_exchange_n_res;
+}
 
-# 934 "<previous_module>"
+
+# 839 "<previous_module>"
+void __atomic_thread_fence(int __cs_param___atomic_thread_fence_i)
+>>>>>>> origin/main
+
+# 840 "<previous_module>"
 {
+<<<<<<< HEAD
         
 # 935 "<previous_module>"
 int __cs_local_LIST_GetTailNode_rCode;
@@ -3584,10 +4038,19 @@ while ((*__cs_local_LIST_GetTailNode_curNode).next)
 >>>>>>> origin/main
 __cs_local_LIST_GetTailNode_curNode = (*__cs_local_LIST_GetTailNode_curNode).next;
                 }
+=======
+}
 
-        }
+>>>>>>> origin/main
 
+# 842 "<previous_module>"
+struct lfds711_stack_state mystack;
+
+# 843 "<previous_module>"
+struct test_data
+{
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 935 "<previous_module>"
 =======
@@ -3616,8 +4079,22 @@ if (__cs_local_LIST_GetTailNode___cs_tmp_if_cond_24)
 >>>>>>> origin/main
 *__cs_param_LIST_GetTailNode__O_listTail = __cs_local_LIST_GetTailNode_curNode;
         }
-
+=======
+# 845 "<previous_module>"
+struct lfds711_stack_element se;
         
+# 846 "<previous_module>"
+int long long unsigned user_id;
+};
+
+# 848 "<previous_module>"
+void *init()
+>>>>>>> origin/main
+
+# 849 "<previous_module>"
+{
+        
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 940 "<previous_module>"
 =======
@@ -3656,25 +4133,32 @@ __cs_local_LIST_InsertTailNode_rCode = LIST_GetTailNode(*__cs_param_LIST_InsertT
 =======
 # 954 "<previous_module>"
 int LIST_InsertTailNode(LIST_NODE_T **__cs_param_LIST_InsertTailNode_IO_head, struct lfds711_stack_element __cs_param_LIST_InsertTailNode_I__se, int long long unsigned __cs_param_LIST_InsertTailNode_I__user_id)
+=======
+# 850 "<previous_module>"
+lfds711_stack_init_valid_on_current_logical_core(&mystack, 0);
+        
+# 851 "<previous_module>"
+return (void *) (&mystack);
+}
 
-# 955 "<previous_module>"
+
+# 853 "<previous_module>"
+void insert(struct lfds711_stack_state *__cs_param_insert_s, int long long unsigned __cs_param_insert_id)
+>>>>>>> origin/main
+
+# 854 "<previous_module>"
 {
         
-# 956 "<previous_module>"
-int __cs_local_LIST_InsertTailNode_rCode;
+# 855 "<previous_module>"
+struct test_data *__cs_local_insert_td;
         
-# 957 "<previous_module>"
-__cs_local_LIST_InsertTailNode_rCode = 0;
+# 856 "<previous_module>"
+__cs_local_insert_td = __cs_safe_malloc(sizeof(struct test_data));
         
-# 958 "<previous_module>"
-LIST_NODE_T *__cs_local_LIST_InsertTailNode_tailNode;
+# 857 "<previous_module>"
+(*__cs_local_insert_td).user_id = __cs_param_insert_id;
         
-# 959 "<previous_module>"
-LIST_NODE_T *__cs_local_LIST_InsertTailNode_newNode;
-        
-# 960 "<previous_module>"
-__cs_local_LIST_InsertTailNode_newNode = 0;
-        
+<<<<<<< HEAD
 # 961 "<previous_module>"
 __cs_local_LIST_InsertTailNode_rCode = LIST_GetTailNode(*__cs_param_LIST_InsertTailNode_IO_head, &__cs_local_LIST_InsertTailNode_tailNode);
         
@@ -5020,39 +5504,46 @@ lfds711_stack_push(&ss, &__cs_local_push_td[__cs_local_push_loop].se);
 =======
 # 1182 "<previous_module>"
 struct lfds711_stack_state ss;
+=======
+# 858 "<previous_module>"
+(*__cs_local_insert_td).se.value = (void *) ((lfds711_pal_uint_t) __cs_local_insert_td);
+        
+# 859 "<previous_module>"
+lfds711_stack_push((struct lfds711_stack_state *) __cs_param_insert_s, &(*__cs_local_insert_td).se);
+}
 
-# 1183 "<previous_module>"
-struct test_data
+
+# 861 "<previous_module>"
+int delete(struct lfds711_stack_state *__cs_param_delete_s)
+>>>>>>> origin/main
+
+# 862 "<previous_module>"
 {
         
-# 1185 "<previous_module>"
-struct lfds711_stack_element se;
+# 863 "<previous_module>"
+struct lfds711_stack_element *__cs_local_delete_se;
         
-# 1186 "<previous_module>"
-int long long unsigned user_id;
-};
+# 864 "<previous_module>"
+struct test_data *__cs_local_delete_temp_td;
+        
+# 865 "<previous_module>"
+int __cs_local_delete_res;
+        
+# 866 "<previous_module>"
+__cs_local_delete_res = lfds711_stack_pop(&mystack, &__cs_local_delete_se);
+        
+# 867 "<previous_module>"
+;
+        _Bool __cs_local_delete___cs_tmp_if_cond_19;
+        __cs_local_delete___cs_tmp_if_cond_19 = __cs_local_delete_res == 0;
+        
+# 868 "<previous_module>"
+if (__cs_local_delete___cs_tmp_if_cond_19)
 
-# 1188 "<previous_module>"
-void *push(void *__cs_param_push___cs_unused)
-
-# 1189 "<previous_module>"
-{
-        
-# 1190 "<previous_module>"
-struct test_data *__cs_local_push_td;
-        
-# 1191 "<previous_module>"
-int long long unsigned __cs_local_push_loop;
-        
-# 1192 "<previous_module>"
-__cs_local_push_td = __cs_safe_malloc((sizeof(struct test_data)) * 1);
-        
-# 1193 "<previous_module>"
-for (__cs_local_push_loop = 0; __cs_local_push_loop < 1; __cs_local_push_loop++)
-
-# 1194 "<previous_module>"
+# 869 "<previous_module>"
         {
                 
+<<<<<<< HEAD
 # 1195 "<previous_module>"
 __cs_local_push_td[__cs_local_push_loop].user_id = __cs_local_push_loop;
                 
@@ -5114,46 +5605,114 @@ __cs_local_pop_res = lfds711_stack_pop(&ss, &__cs_local_pop_se);
 =======
 # 1200 "<previous_module>"
 void *pop(void *__cs_param_pop___cs_unused)
+=======
+# 870 "<previous_module>"
+return __cs_local_delete_res;
+        }
 
-# 1201 "<previous_module>"
+        
+# 872 "<previous_module>"
+__cs_local_delete_temp_td = (*__cs_local_delete_se).value;
+        
+# 873 "<previous_module>"
+int __cs_local_delete_id_popped;
+        
+# 874 "<previous_module>"
+__cs_local_delete_id_popped = (*__cs_local_delete_temp_td).user_id;
+        
+# 875 "<previous_module>"
+printf("%llu\n", (*__cs_local_delete_temp_td).user_id);
+        
+# 876 "<previous_module>"
+return __cs_local_delete_res;
+}
+
+
+# 878 "<previous_module>"
+int contains(void *__cs_param_contains_s, int __cs_param_contains_id)
+>>>>>>> origin/main
+
+# 879 "<previous_module>"
 {
         
-# 1202 "<previous_module>"
-struct lfds711_stack_element *__cs_local_pop_se;
+# 880 "<previous_module>"
+int __cs_local_contains_max_size;
         
-# 1203 "<previous_module>"
-struct test_data *__cs_local_pop_temp_td;
+# 881 "<previous_module>"
+__cs_local_contains_max_size = 20;
         
-# 1204 "<previous_module>"
-int __cs_local_pop_res;
+# 882 "<previous_module>"
+int __cs_local_contains_actual_size;
         
-# 1205 "<previous_module>"
-int __cs_local_pop_count;
+# 883 "<previous_module>"
+__cs_local_contains_actual_size = 0;
         
-# 1206 "<previous_module>"
-__cs_local_pop_count = 0;
+# 884 "<previous_module>"
+int __cs_local_contains_res;
         
-# 1207 "<previous_module>"
-int __cs_local_pop_loop;
+# 885 "<previous_module>"
+__cs_local_contains_res = 1;
         
-# 1208 "<previous_module>"
-for (__cs_local_pop_loop = 0; __cs_local_pop_loop < 1; __cs_local_pop_loop++)
+# 886 "<previous_module>"
+int __cs_local_contains_found;
+        
+# 887 "<previous_module>"
+__cs_local_contains_found = 0;
+        
+# 888 "<previous_module>"
+int __cs_local_contains_dimension;
+        
+# 889 "<previous_module>"
+__cs_local_contains_dimension = 2;
+        
+# 890 "<previous_module>"
+struct test_data **__cs_local_contains_datas;
+        
+# 891 "<previous_module>"
+__cs_local_contains_datas = __cs_safe_malloc((sizeof(struct test_data *)) * __cs_local_contains_max_size);
+        
+# 892 "<previous_module>"
+struct lfds711_stack_element *__cs_local_contains_se;
+        
+# 893 "<previous_module>"
+while ((__cs_local_contains_found == 0) && (__cs_local_contains_res != 0))
 
-# 1209 "<previous_module>"
+# 894 "<previous_module>"
         {
                 
-# 1210 "<previous_module>"
-__cs_local_pop_temp_td = 0;
+# 895 "<previous_module>"
+;
+                _Bool __cs_local_contains___cs_tmp_if_cond_20;
+                __cs_local_contains___cs_tmp_if_cond_20 = __cs_local_contains_actual_size == __cs_local_contains_max_size;
                 
-# 1211 "<previous_module>"
-__cs_local_pop_res = lfds711_stack_pop(&ss, &__cs_local_pop_se);
+# 896 "<previous_module>"
+if (__cs_local_contains___cs_tmp_if_cond_20)
+
+# 897 "<previous_module>"
+                {
+                        
+# 898 "<previous_module>"
+__cs_local_contains_datas = realloc(__cs_local_contains_datas, ((sizeof(struct test_data *)) * __cs_local_contains_max_size) * __cs_local_contains_dimension);
+                        
+# 899 "<previous_module>"
+__cs_local_contains_max_size *= __cs_local_contains_dimension;
+                }
+
                 
+# 901 "<previous_module>"
+__cs_local_contains_res = lfds711_stack_pop((struct lfds711_stack_state *) __cs_param_contains_s, &__cs_local_contains_se);
+                
+<<<<<<< HEAD
 # 1212 "<previous_module>"
 >>>>>>> origin/main
+=======
+# 902 "<previous_module>"
+>>>>>>> origin/main
 ;
-                _Bool __cs_local_pop___cs_tmp_if_cond_44;
-                __cs_local_pop___cs_tmp_if_cond_44 = __cs_local_pop_res == 0;
+                _Bool __cs_local_contains___cs_tmp_if_cond_21;
+                __cs_local_contains___cs_tmp_if_cond_21 = __cs_local_contains_res == 0;
                 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1205 "<previous_module>"
 if (__cs_local_pop___cs_tmp_if_cond_44)
@@ -5165,16 +5724,25 @@ if (__cs_local_pop___cs_tmp_if_cond_44)
 =======
 # 1213 "<previous_module>"
 if (__cs_local_pop___cs_tmp_if_cond_44)
+=======
+# 903 "<previous_module>"
+if (__cs_local_contains___cs_tmp_if_cond_21)
+>>>>>>> origin/main
 
-# 1214 "<previous_module>"
+# 904 "<previous_module>"
                 {
                         
+<<<<<<< HEAD
 # 1215 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 905 "<previous_module>"
 >>>>>>> origin/main
 continue;
                 }
 
                 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1209 "<previous_module>"
 __cs_local_pop_temp_td = (*__cs_local_pop_se).value;
@@ -5190,8 +5758,27 @@ __cs_local_pop_count++;
         }
 
 }
+=======
+# 907 "<previous_module>"
+__cs_local_contains_datas[__cs_local_contains_actual_size] = (*__cs_local_contains_se).value;
+                
+# 908 "<previous_module>"
+;
+                _Bool __cs_local_contains___cs_tmp_if_cond_22;
+                __cs_local_contains___cs_tmp_if_cond_22 = (*__cs_local_contains_datas[__cs_local_contains_actual_size]).user_id == __cs_param_contains_id;
+                
+# 909 "<previous_module>"
+if (__cs_local_contains___cs_tmp_if_cond_22)
+>>>>>>> origin/main
 
+# 910 "<previous_module>"
+                {
+                        
+# 911 "<previous_module>"
+__cs_local_contains_found = 1;
+                }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1213 "<previous_module>"
 void writeIntofile(char *__cs_param_writeIntofile_filename, LIST_NODE_T *__cs_param_writeIntofile_listHead)
@@ -5233,40 +5820,38 @@ dup2(__cs_local_writeIntofile_saved, 1);
 =======
 # 1221 "<previous_module>"
 void writeIntofile(char *__cs_param_writeIntofile_filename, LIST_NODE_T *__cs_param_writeIntofile_listHead)
+=======
+                
+# 913 "<previous_module>"
+__cs_local_contains_actual_size++;
+        }
+>>>>>>> origin/main
 
-# 1222 "<previous_module>"
-{
         
-# 1223 "<previous_module>"
-int __cs_local_writeIntofile_filefd;
+# 915 "<previous_module>"
+int __cs_local_contains_i;
         
-# 1224 "<previous_module>"
-__cs_local_writeIntofile_filefd = open(__cs_param_writeIntofile_filename, (O_WRONLY | O_CREAT) | O_APPEND, 0666);
+# 916 "<previous_module>"
+__cs_local_contains_i = 0;
         
-# 1225 "<previous_module>"
-int __cs_local_writeIntofile_saved;
+# 917 "<previous_module>"
+while (__cs_local_contains_i < __cs_local_contains_actual_size)
+
+# 918 "<previous_module>"
+        {
+                
+# 919 "<previous_module>"
+lfds711_stack_push((struct lfds711_stack_state *) __cs_param_contains_s, __cs_local_contains_datas[__cs_local_contains_i]);
+                
+# 920 "<previous_module>"
+__cs_local_contains_i++;
+        }
+
         
-# 1226 "<previous_module>"
-__cs_local_writeIntofile_saved = dup(1);
+# 922 "<previous_module>"
+free(__cs_local_contains_datas);
         
-# 1227 "<previous_module>"
-close(1);
-        
-# 1228 "<previous_module>"
-dup(__cs_local_writeIntofile_filefd);
-        
-# 1229 "<previous_module>"
-PrintListPayloads(__cs_param_writeIntofile_listHead);
-        
-# 1230 "<previous_module>"
-close(__cs_local_writeIntofile_filefd);
-        
-# 1231 "<previous_module>"
-fflush(stdout);
-        
-# 1232 "<previous_module>"
-dup2(__cs_local_writeIntofile_saved, 1);
-        
+<<<<<<< HEAD
 # 1233 "<previous_module>"
 >>>>>>> origin/main
 close(__cs_local_writeIntofile_saved);
@@ -5308,34 +5893,76 @@ LIST_InsertHeadNode(&__cs_param_createList_listHead, (*__cs_local_createList_tem
 =======
 # 1235 "<previous_module>"
 LIST_NODE_T *createList(LIST_NODE_T *__cs_param_createList_listHead)
+=======
+# 923 "<previous_module>"
+return __cs_local_contains_found;
+}
 
-# 1236 "<previous_module>"
+
+# 925 "<previous_module>"
+int ATOMIC_OPERATION = 0;
+
+# 926 "<previous_module>"
+void *ss;
+
+# 927 "<previous_module>"
+__cs_mutex_t lock;
+
+# 928 "<previous_module>"
+void *push(void *__cs_param_push___cs_unused)
+>>>>>>> origin/main
+
+# 929 "<previous_module>"
 {
         
-# 1237 "<previous_module>"
-struct lfds711_stack_element *__cs_local_createList_se;
+# 930 "<previous_module>"
+int long long unsigned __cs_local_push_loop;
         
-# 1238 "<previous_module>"
-struct test_data *__cs_local_createList_temp_td;
-        
-# 1239 "<previous_module>"
-int __cs_local_createList_res;
-        
-# 1240 "<previous_module>"
-__cs_local_createList_res = lfds711_stack_pop(&ss, &__cs_local_createList_se);
-        
-# 1241 "<previous_module>"
-while (__cs_local_createList_res != 0)
+# 931 "<previous_module>"
+for (__cs_local_push_loop = 0; __cs_local_push_loop < 5; __cs_local_push_loop++)
 
-# 1242 "<previous_module>"
+# 932 "<previous_module>"
         {
                 
-# 1243 "<previous_module>"
-__cs_local_createList_temp_td = (*__cs_local_createList_se).value;
+# 933 "<previous_module>"
+;
+                _Bool __cs_local_push___cs_tmp_if_cond_23;
+                __cs_local_push___cs_tmp_if_cond_23 = ATOMIC_OPERATION;
                 
-# 1244 "<previous_module>"
-LIST_InsertHeadNode(&__cs_param_createList_listHead, (*__cs_local_createList_temp_td).se, (*__cs_local_createList_temp_td).user_id);
+# 934 "<previous_module>"
+if (__cs_local_push___cs_tmp_if_cond_23)
+
+# 935 "<previous_module>"
+                {
+                        
+# 936 "<previous_module>"
+__cs_mutex_lock(&lock);
+                }
+
                 
+# 938 "<previous_module>"
+;
+                
+# 939 "<previous_module>"
+insert(ss, __cs_local_push_loop);
+                
+# 940 "<previous_module>"
+;
+                _Bool __cs_local_push___cs_tmp_if_cond_24;
+                __cs_local_push___cs_tmp_if_cond_24 = ATOMIC_OPERATION;
+                
+# 941 "<previous_module>"
+if (__cs_local_push___cs_tmp_if_cond_24)
+
+# 942 "<previous_module>"
+                {
+                        
+# 943 "<previous_module>"
+__cs_mutex_unlock(&lock);
+                }
+
+                
+<<<<<<< HEAD
 # 1245 "<previous_module>"
 >>>>>>> origin/main
 __cs_local_createList_res = lfds711_stack_pop(&ss, &__cs_local_createList_se);
@@ -5410,58 +6037,28 @@ __cs_local_readFile_fp = fopen(__cs_param_readFile_filename, "r");
 =======
 # 1249 "<previous_module>"
 void readFile(char *__cs_param_readFile_filename, LIST_NODE_T *__cs_param_readFile_listHead)
+=======
+# 945 "<previous_module>"
+;
+        }
 
-# 1250 "<previous_module>"
+}
+
+
+# 948 "<previous_module>"
+void *pop(void *__cs_param_pop___cs_unused)
+>>>>>>> origin/main
+
+# 949 "<previous_module>"
 {
         
-# 1251 "<previous_module>"
-char *__cs_local_readFile_line;
+# 950 "<previous_module>"
+int __cs_local_pop_res;
         
-# 1252 "<previous_module>"
-__cs_local_readFile_line = 0;
+# 951 "<previous_module>"
+int __cs_local_pop_count;
         
-# 1253 "<previous_module>"
-size_t __cs_local_readFile_len;
-        
-# 1254 "<previous_module>"
-__cs_local_readFile_len = 0;
-        
-# 1255 "<previous_module>"
-ssize_t __cs_local_readFile_read;
-        
-# 1256 "<previous_module>"
-LIST_NODE_T *__cs_local_readFile_parent;
-        
-# 1257 "<previous_module>"
-__cs_local_readFile_parent = 0;
-        
-# 1258 "<previous_module>"
-LIST_NODE_T *__cs_local_readFile_curNode;
-        
-# 1259 "<previous_module>"
-__cs_local_readFile_curNode = __cs_param_readFile_listHead;
-        
-# 1260 "<previous_module>"
-char __cs_local_readFile_delim[] = ",";
-        
-# 1261 "<previous_module>"
-int __cs_local_readFile_i;
-        
-# 1262 "<previous_module>"
-__cs_local_readFile_i = 0;
-        
-# 1263 "<previous_module>"
-int __cs_local_readFile_size;
-        
-# 1264 "<previous_module>"
-__cs_local_readFile_size = GetListSize(__cs_local_readFile_curNode);
-        
-# 1265 "<previous_module>"
-FILE *__cs_local_readFile_fp;
-        
-# 1266 "<previous_module>"
-__cs_local_readFile_fp = fopen(__cs_param_readFile_filename, "r");
-        
+<<<<<<< HEAD
 # 1267 "<previous_module>"
 >>>>>>> origin/main
 ;
@@ -5524,22 +6121,32 @@ while (__cs_local_readFile_curNode)
 =======
 # 1274 "<previous_module>"
 while ((__cs_local_readFile_read = getline(&__cs_local_readFile_line, &__cs_local_readFile_len, __cs_local_readFile_fp)) != (-1))
+=======
+# 952 "<previous_module>"
+__cs_local_pop_count = 0;
+        
+# 953 "<previous_module>"
+int __cs_local_pop_loop;
+        
+# 954 "<previous_module>"
+for (__cs_local_pop_loop = 0; __cs_local_pop_loop < 5; __cs_local_pop_loop++)
+>>>>>>> origin/main
 
-# 1275 "<previous_module>"
+# 955 "<previous_module>"
         {
                 
-# 1276 "<previous_module>"
-char *__cs_local_readFile_ptr;
+# 956 "<previous_module>"
+;
+                _Bool __cs_local_pop___cs_tmp_if_cond_25;
+                __cs_local_pop___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
                 
-# 1277 "<previous_module>"
-__cs_local_readFile_ptr = strtok(__cs_local_readFile_line, __cs_local_readFile_delim);
-                
-# 1278 "<previous_module>"
-while (__cs_local_readFile_curNode)
+# 957 "<previous_module>"
+if (__cs_local_pop___cs_tmp_if_cond_25)
 
-# 1279 "<previous_module>"
+# 958 "<previous_module>"
                 {
                         
+<<<<<<< HEAD
 # 1280 "<previous_module>"
 >>>>>>> origin/main
 ;
@@ -5599,10 +6206,25 @@ __cs_local_readFile_ptr = strtok(0, __cs_local_readFile_delim);
 =======
 # 1290 "<previous_module>"
 >>>>>>> origin/main
-;
-                _Bool __cs_local_readFile___cs_tmp_if_cond_47;
-                __cs_local_readFile___cs_tmp_if_cond_47 = __cs_local_readFile_i == __cs_local_readFile_size;
+=======
+# 959 "<previous_module>"
+__cs_mutex_lock(&lock);
+                }
+
                 
+# 961 "<previous_module>"
+;
+                
+# 962 "<previous_module>"
+delete(ss);
+                
+# 963 "<previous_module>"
+>>>>>>> origin/main
+;
+                _Bool __cs_local_pop___cs_tmp_if_cond_26;
+                __cs_local_pop___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
+                
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1283 "<previous_module>"
 if (__cs_local_readFile___cs_tmp_if_cond_47)
@@ -5617,10 +6239,15 @@ fclose(__cs_local_readFile_fp);
 =======
 # 1291 "<previous_module>"
 if (__cs_local_readFile___cs_tmp_if_cond_47)
+=======
+# 964 "<previous_module>"
+if (__cs_local_pop___cs_tmp_if_cond_26)
+>>>>>>> origin/main
 
-# 1292 "<previous_module>"
+# 965 "<previous_module>"
                 {
                         
+<<<<<<< HEAD
 # 1293 "<previous_module>"
 fclose(__cs_local_readFile_fp);
                         
@@ -5678,11 +6305,21 @@ __CSEQ_assert(0);
 # 1303 "<previous_module>"
 >>>>>>> origin/main
 return;
+=======
+# 966 "<previous_module>"
+__cs_mutex_unlock(&lock);
+                }
+
+                
+# 968 "<previous_module>"
+;
+>>>>>>> origin/main
         }
 
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 1298 "<previous_module>"
 int main()
@@ -5729,45 +6366,70 @@ readFile("foo.txt", __cs_local_main_listHead);
 # 1312 "<previous_module>"
 =======
 # 1306 "<previous_module>"
+=======
+# 971 "<previous_module>"
+>>>>>>> origin/main
 int main()
 
-# 1307 "<previous_module>"
+# 972 "<previous_module>"
 {
         
-# 1308 "<previous_module>"
-LIST_NODE_T *__cs_local_main_listHead;
+# 973 "<previous_module>"
+__cs_mutex_init(&lock, 0);
         
-# 1309 "<previous_module>"
-__cs_local_main_listHead = 0;
+# 974 "<previous_module>"
+ss = init();
         
-# 1310 "<previous_module>"
-lfds711_stack_init_valid_on_current_logical_core(&ss, 0);
-        
-# 1311 "<previous_module>"
+# 975 "<previous_module>"
 __cs_t __cs_local_main_t1;
         
-# 1312 "<previous_module>"
+# 976 "<previous_module>"
 __cs_t __cs_local_main_t2;
         
-# 1313 "<previous_module>"
+# 977 "<previous_module>"
+__cs_t __cs_local_main_t3;
+        
+# 978 "<previous_module>"
+__cs_t __cs_local_main_t4;
+        
+# 979 "<previous_module>"
+__cs_t __cs_local_main_t5;
+        
+# 980 "<previous_module>"
+__cs_t __cs_local_main_t6;
+        
+# 981 "<previous_module>"
+__cs_t __cs_local_main_t7;
+        
+# 982 "<previous_module>"
+__cs_t __cs_local_main_t8;
+        
+# 983 "<previous_module>"
+__cs_t __cs_local_main_t9;
+        
+# 984 "<previous_module>"
+__cs_t __cs_local_main_t10;
+        
+# 985 "<previous_module>"
 __cs_create(&__cs_local_main_t1, 0, push, 0);
         
-# 1314 "<previous_module>"
-__cs_create(&__cs_local_main_t2, 0, pop, 0);
+# 986 "<previous_module>"
+__cs_create(&__cs_local_main_t6, 0, pop, 0);
         
-# 1315 "<previous_module>"
+# 987 "<previous_module>"
 __cs_join(__cs_local_main_t1, 0);
         
-# 1316 "<previous_module>"
-__cs_join(__cs_local_main_t2, 0);
+# 988 "<previous_module>"
+__cs_join(__cs_local_main_t6, 0);
         
-# 1317 "<previous_module>"
-__cs_local_main_listHead = createList(__cs_local_main_listHead);
+# 989 "<previous_module>"
+__CSEQ_assert(0);
         
-# 1318 "<previous_module>"
-readFile("foo.txt", __cs_local_main_listHead);
-        
+<<<<<<< HEAD
 # 1319 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 990 "<previous_module>"
 >>>>>>> origin/main
 return 0;
 }

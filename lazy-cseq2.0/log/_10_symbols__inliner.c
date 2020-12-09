@@ -1,6 +1,7 @@
 list of functions:
    lfds711_misc_force_store(param: )  call count 1
 <<<<<<< HEAD
+<<<<<<< HEAD
    __CSEQ_atomic_compare_and_exchange(param: __cs_param___CSEQ_atomic_compare_and_exchange_mptr, __cs_param___CSEQ_atomic_compare_and_exchange_eptr, __cs_param___CSEQ_atomic_compare_and_exchange_newval, __cs_param___CSEQ_atomic_compare_and_exchange_weak_p, __cs_param___CSEQ_atomic_compare_and_exchange_sm, __cs_param___CSEQ_atomic_compare_and_exchange_fm)  call count 0
 =======
    __atomic_compare_exchange_n(param: __cs_param___atomic_compare_exchange_n_mptr, __cs_param___atomic_compare_exchange_n_eptr, __cs_param___atomic_compare_exchange_n_newval, __cs_param___atomic_compare_exchange_n_weak_p, __cs_param___atomic_compare_exchange_n_sm, __cs_param___atomic_compare_exchange_n_fm)  call count 0
@@ -10,27 +11,25 @@ list of functions:
    __CSEQ_atomic_exchange(param: __cs_param___CSEQ_atomic_exchange_previous, __cs_param___CSEQ_atomic_exchange_new, __cs_param___CSEQ_atomic_exchange_memorder)  call count 0
    __atomic_thread_fence(param: __cs_param___atomic_thread_fence_i)  call count 1
    __CSEQ_atomic_swap_stack_top(param: __cs_param___CSEQ_atomic_swap_stack_top_top, __cs_param___CSEQ_atomic_swap_stack_top_oldtop, __cs_param___CSEQ_atomic_swap_stack_top_newtop)  call count 3
+=======
+>>>>>>> origin/main
    exponential_backoff(param: )  call count 3
+   __CSEQ_atomic_swap_stack_top(param: __cs_param___CSEQ_atomic_swap_stack_top_top, __cs_param___CSEQ_atomic_swap_stack_top_oldtop, __cs_param___CSEQ_atomic_swap_stack_top_newtop)  call count 3
    lfds711_misc_internal_backoff_init(param: __cs_param_lfds711_misc_internal_backoff_init_bs)  call count 2
    lfds711_stack_init_valid_on_current_logical_core(param: __cs_param_lfds711_stack_init_valid_on_current_logical_core_ss, __cs_param_lfds711_stack_init_valid_on_current_logical_core_user_state)  call count 1
-   lfds711_stack_pop(param: __cs_param_lfds711_stack_pop_ss, __cs_param_lfds711_stack_pop_se)  call count 3
-   lfds711_stack_push(param: __cs_param_lfds711_stack_push_ss, __cs_param_lfds711_stack_push_se)  call count 1
-   lfds711_stack_cleanup(param: __cs_param_lfds711_stack_cleanup_ss, ss, se, __cs_param_lfds711_stack_cleanup_element_cleanup_callback)  call count 0
-   LIST_InsertHeadNode(param: __cs_param_LIST_InsertHeadNode_IO_head, __cs_param_LIST_InsertHeadNode_I__se, __cs_param_LIST_InsertHeadNode_I__user_id)  call count 1
-   PrintListPayloads(param: __cs_param_PrintListPayloads_head)  call count 1
-   GetListSize(param: __cs_param_GetListSize_head)  call count 1
-   LIST_GetTailNode(param: __cs_param_LIST_GetTailNode_I__listHead, __cs_param_LIST_GetTailNode__O_listTail)  call count 1
-   LIST_InsertTailNode(param: __cs_param_LIST_InsertTailNode_IO_head, __cs_param_LIST_InsertTailNode_I__se, __cs_param_LIST_InsertTailNode_I__user_id)  call count 0
-   LIST_FetchParentNodeById(param: __cs_param_LIST_FetchParentNodeById_I__head, __cs_param_LIST_FetchParentNodeById_I__user_id, __cs_param_LIST_FetchParentNodeById__O_parent)  call count 1
-   LIST_InsertNodeById(param: __cs_param_LIST_InsertNodeById_IO_head, __cs_param_LIST_InsertNodeById_I__user_id, __cs_param_LIST_InsertNodeById_I__se)  call count 0
-   LIST_FetchNodeById(param: __cs_param_LIST_FetchNodeById_I__head, __cs_param_LIST_FetchNodeById_I__user_id, __cs_param_LIST_FetchNodeById__O_node, __cs_param_LIST_FetchNodeById__O_parent)  call count 1
-   LIST_DeleteNodeById(param: __cs_param_LIST_DeleteNodeById_IO_head, __cs_param_LIST_DeleteNodeById_I__user_id)  call count 0
-   LIST_Destroy(param: __cs_param_LIST_Destroy_IO_head)  call count 0
+   lfds711_stack_pop(param: __cs_param_lfds711_stack_pop_ss, __cs_param_lfds711_stack_pop_se)  call count 2
+   lfds711_stack_push(param: __cs_param_lfds711_stack_push_ss, __cs_param_lfds711_stack_push_se)  call count 2
+   __CSEQ_atomic_compare_and_exchange(param: __cs_param___CSEQ_atomic_compare_and_exchange_mptr, __cs_param___CSEQ_atomic_compare_and_exchange_eptr, __cs_param___CSEQ_atomic_compare_and_exchange_newval, __cs_param___CSEQ_atomic_compare_and_exchange_weak_p, __cs_param___CSEQ_atomic_compare_and_exchange_sm, __cs_param___CSEQ_atomic_compare_and_exchange_fm)  call count 1
+   __atomic_compare_exchange_n(param: __cs_param___atomic_compare_exchange_n_mptr, __cs_param___atomic_compare_exchange_n_eptr, __cs_param___atomic_compare_exchange_n_newval, __cs_param___atomic_compare_exchange_n_weak_p, __cs_param___atomic_compare_exchange_n_sm, __cs_param___atomic_compare_exchange_n_fm)  call count 0
+   __CSEQ_atomic_exchange(param: __cs_param___CSEQ_atomic_exchange_previous, __cs_param___CSEQ_atomic_exchange_new, __cs_param___CSEQ_atomic_exchange_memorder)  call count 1
+   __atomic_exchange_n(param: __cs_param___atomic_exchange_n_previous, __cs_param___atomic_exchange_n_new, __cs_param___atomic_exchange_n_memorder)  call count 0
+   __atomic_thread_fence(param: __cs_param___atomic_thread_fence_i)  call count 0
+   init(param: )  call count 1
+   insert(param: __cs_param_insert_s, __cs_param_insert_id)  call count 1
+   delete(param: __cs_param_delete_s)  call count 1
+   contains(param: __cs_param_contains_s, __cs_param_contains_id)  call count 0
    push(param: __cs_param_push___cs_unused)  call count 0
    pop(param: __cs_param_pop___cs_unused)  call count 0
-   writeIntofile(param: __cs_param_writeIntofile_filename, __cs_param_writeIntofile_listHead)  call count 2
-   createList(param: __cs_param_createList_listHead)  call count 1
-   readFile(param: __cs_param_readFile_filename, __cs_param_readFile_listHead)  call count 1
    main(param: )  call count 0
 
 list of thread functions:
@@ -367,6 +366,7 @@ Variables:
          deref '[]'  
          occurs '[]'  
 <<<<<<< HEAD
+<<<<<<< HEAD
       id190  'lock'  
          type '__cs_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
@@ -381,14 +381,18 @@ Variables:
          occurs '[1274, 1290, 1322, 1327, 1400]'  
 =======
       id173  'lock'  
+=======
+      id173  'library_lock'  
+>>>>>>> origin/main
          type '__cs_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[665, 699, 706, 739, 740, 759, 761, 768, 769, 793, 795, 802, 803, 855, 857, 859, 861]'  
+         ref '[627, 661, 668, 701, 702, 721, 723, 730, 731, 755, 757, 764, 765, 817, 819, 821, 823]'  
          deref '[]'  
-         occurs '[665, 699, 706, 739, 740, 759, 761, 768, 769, 793, 795, 802, 803, 855, 857, 859, 861]'  
-      id325  'ss'  
+         occurs '[627, 661, 668, 701, 702, 721, 723, 730, 731, 755, 757, 764, 765, 817, 819, 821, 823]'  
+      id241  'mystack'  
          type 'struct lfds711_stack_state'  kind 'g'  arity '0'  
          size '[]'  
+<<<<<<< HEAD
          ref '[1285, 1299, 1330, 1335, 1408]'  
          deref '[]'  
          occurs '[1285, 1299, 1330, 1335, 1408]'  
@@ -534,27 +538,43 @@ Variables:
    __atomic_exchange_n
       id188  '__cs_param___atomic_exchange_n_previous'  
          type 'int long long unsigned *'  kind 'p'  arity '0'  
+=======
+         ref '[888, 889, 904]'  
+         deref '[]'  
+         occurs '[888, 889, 904]'  
+      id266  'ATOMIC_OPERATION'  
+         type 'int'  kind 'g'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[593]'  
-      id189  '__cs_param___atomic_exchange_n_new'  
-         type 'int long long unsigned'  kind 'p'  arity '0'  
+         occurs '[981, 990, 1008, 1017]'  
+      id267  'ss'  
+         type 'void *'  kind 'g'  arity '0'  
+>>>>>>> origin/main
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[593]'  
-      id190  '__cs_param___atomic_exchange_n_memorder'  
-         type 'int'  kind 'p'  arity '0'  
+         occurs '[987, 1014, 1028]'  
+      id268  'lock'  
+         type '__cs_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[]'  
+         ref '[984, 993, 1011, 1020, 1027]'  
          deref '[]'  
-         occurs '[593]'  
-      id191  '__cs_local___atomic_exchange_n_res'  
+         occurs '[984, 993, 1011, 1020, 1027]'  
+   lfds711_misc_force_store
+      id17  '__cs_local_lfds711_misc_force_store_destination'  
+         type 'lfds711_pal_uint_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[201]'  
+         deref '[]'  
+         occurs '[201]'  
+   exponential_backoff
+      id174  '__cs_local_exponential_backoff_loop'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[593, 594]'  
    __CSEQ_atomic_exchange
       id192  '__cs_param___CSEQ_atomic_exchange_previous'  
@@ -627,29 +647,41 @@ Variables:
       id188  '__cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_1'  
 =======
       id197  '__cs_param___CSEQ_atomic_swap_stack_top_top'  
+=======
+         occurs '[571, 571, 571]'  
+   __CSEQ_atomic_swap_stack_top
+      id175  '__cs_param___CSEQ_atomic_swap_stack_top_top'  
+>>>>>>> origin/main
          type 'struct lfds711_stack_element * volatile *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[611, 614, 619]'  
-         occurs '[611, 614, 619]'  
-      id198  '__cs_param___CSEQ_atomic_swap_stack_top_oldtop'  
+         deref '[581, 584, 589]'  
+         occurs '[581, 584, 589]'  
+      id176  '__cs_param___CSEQ_atomic_swap_stack_top_oldtop'  
          type 'struct lfds711_stack_element * volatile *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[611, 619]'  
-         occurs '[611, 619]'  
-      id199  '__cs_param___CSEQ_atomic_swap_stack_top_newtop'  
+         deref '[581, 589]'  
+         occurs '[581, 589]'  
+      id177  '__cs_param___CSEQ_atomic_swap_stack_top_newtop'  
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
+<<<<<<< HEAD
          deref '[614]'  
          occurs '[614]'  
       id200  '__cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_1'  
+>>>>>>> origin/main
+=======
+         deref '[584]'  
+         occurs '[584]'  
+      id178  '__cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_0'  
 >>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[598, 599]'  
    exponential_backoff
@@ -675,19 +707,29 @@ Variables:
       id192  '__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2'  
 =======
          occurs '[626, 626, 626]'  
+=======
+         occurs '[581, 582]'  
+>>>>>>> origin/main
    lfds711_misc_internal_backoff_init
-      id202  '__cs_param_lfds711_misc_internal_backoff_init_bs'  
+      id179  '__cs_param_lfds711_misc_internal_backoff_init_bs'  
          type 'struct lfds711_misc_backoff_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
+<<<<<<< HEAD
          deref '[646, 655, 656, 657, 658, 659]'  
          occurs '[635, 646, 655, 656, 657, 658, 659]'  
       id203  '__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2'  
+>>>>>>> origin/main
+=======
+         deref '[608, 617, 618, 619, 620, 621]'  
+         occurs '[597, 608, 617, 618, 619, 620, 621]'  
+      id180  '__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1'  
 >>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[623, 624]'  
       id193  '__cs_local_lfds711_misc_internal_backoff_init_c'  
@@ -707,10 +749,21 @@ Variables:
          occurs '[639, 640, 650, 651]'  
       id205  '__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_3'  
 >>>>>>> origin/main
+=======
+         occurs '[597, 598]'  
+      id181  '__cs_local_lfds711_misc_internal_backoff_init_c'  
+         type 'char *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[602, 613]'  
+         occurs '[601, 602, 612, 613]'  
+      id182  '__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[634, 635]'  
    lfds711_stack_init_valid_on_current_logical_core
@@ -723,19 +776,29 @@ Variables:
       id196  '__cs_param_lfds711_stack_init_valid_on_current_logical_core_user_state'  
 =======
          occurs '[646, 647]'  
+=======
+         occurs '[608, 609]'  
+>>>>>>> origin/main
    lfds711_stack_init_valid_on_current_logical_core
-      id206  '__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss'  
+      id183  '__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss'  
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
+<<<<<<< HEAD
          deref '[679, 690, 700, 701, 702, 703, 704]'  
          occurs '[668, 679, 690, 700, 701, 702, 703, 704]'  
       id207  '__cs_param_lfds711_stack_init_valid_on_current_logical_core_user_state'  
+>>>>>>> origin/main
+=======
+         deref '[641, 652, 662, 663, 664, 665, 666]'  
+         occurs '[630, 641, 652, 662, 663, 664, 665, 666]'  
+      id184  '__cs_param_lfds711_stack_init_valid_on_current_logical_core_user_state'  
 >>>>>>> origin/main
          type 'void *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[690]'  
       id197  '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4'  
@@ -743,10 +806,15 @@ Variables:
          occurs '[702]'  
       id208  '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4'  
 >>>>>>> origin/main
+=======
+         occurs '[664]'  
+      id185  '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_3'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[656, 657]'  
       id198  '__cs_local_lfds711_stack_init_valid_on_current_logical_core_c'  
@@ -766,10 +834,21 @@ Variables:
          occurs '[672, 673, 683, 684, 694, 695]'  
       id210  '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5'  
 >>>>>>> origin/main
+=======
+         occurs '[630, 631]'  
+      id186  '__cs_local_lfds711_stack_init_valid_on_current_logical_core_c'  
+         type 'char *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[635, 646, 657]'  
+         occurs '[634, 635, 645, 646, 656, 657]'  
+      id187  '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[667, 668]'  
       id200  '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_6'  
@@ -777,10 +856,15 @@ Variables:
          occurs '[679, 680]'  
       id211  '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_6'  
 >>>>>>> origin/main
+=======
+         occurs '[641, 642]'  
+      id188  '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[678, 679]'  
    lfds711_stack_pop
@@ -799,25 +883,35 @@ Variables:
       id203  '__cs_local_lfds711_stack_pop_result'  
 =======
          occurs '[690, 691]'  
+=======
+         occurs '[652, 653]'  
+>>>>>>> origin/main
    lfds711_stack_pop
-      id212  '__cs_param_lfds711_stack_pop_ss'  
+      id189  '__cs_param_lfds711_stack_pop_ss'  
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[741, 742, 760, 794]'  
-         occurs '[719, 741, 742, 760, 794]'  
-      id213  '__cs_param_lfds711_stack_pop_se'  
+         deref '[703, 704, 722, 756]'  
+         occurs '[681, 703, 704, 722, 756]'  
+      id190  '__cs_param_lfds711_stack_pop_se'  
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
+<<<<<<< HEAD
          deref '[754, 788, 814]'  
          occurs '[730, 754, 788, 814]'  
       id214  '__cs_local_lfds711_stack_pop_result'  
+>>>>>>> origin/main
+=======
+         deref '[716, 750, 776]'  
+         occurs '[692, 716, 750, 776]'  
+      id191  '__cs_local_lfds711_stack_pop_result'  
 >>>>>>> origin/main
          type 'char unsigned'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[748, 752, 769, 782, 786]'  
       id204  '__cs_local_lfds711_stack_pop_backoff_iteration'  
@@ -825,10 +919,15 @@ Variables:
          occurs '[760, 764, 781, 794, 798]'  
       id215  '__cs_local_lfds711_stack_pop_backoff_iteration'  
 >>>>>>> origin/main
+=======
+         occurs '[722, 726, 743, 756, 760, 777]'  
+      id192  '__cs_local_lfds711_stack_pop_backoff_iteration'  
+>>>>>>> origin/main
          type 'lfds711_pal_uint_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[702]'  
       id205  '__cs_local_lfds711_stack_pop_new_top'  
@@ -847,23 +946,35 @@ Variables:
 =======
          occurs '[714]'  
       id216  '__cs_local_lfds711_stack_pop_new_top'  
+=======
+         occurs '[676]'  
+      id193  '__cs_local_lfds711_stack_pop_new_top'  
+>>>>>>> origin/main
          type 'struct lfds711_stack_element *'  kind 'l'  arity '1'  
          size '[2]'  
-         ref '[760, 794]'  
+         ref '[722, 756]'  
          deref '[]'  
-         occurs '[757, 758, 760, 791, 792, 794]'  
-      id217  '__cs_local_lfds711_stack_pop_original_top'  
+         occurs '[719, 720, 722, 753, 754, 756]'  
+      id194  '__cs_local_lfds711_stack_pop_original_top'  
          type 'struct lfds711_stack_element * volatile'  kind 'l'  arity '1'  
          size '[2]'  
+<<<<<<< HEAD
          ref '[760, 794]'  
          deref '[758, 792]'  
          occurs '[741, 742, 751, 757, 758, 760, 785, 791, 792, 794, 814]'  
       id218  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7'  
 >>>>>>> origin/main
+=======
+         ref '[722, 756]'  
+         deref '[720, 754]'  
+         occurs '[703, 704, 713, 719, 720, 722, 747, 753, 754, 756, 776]'  
+      id195  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_6'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[707, 708]'  
       id208  '__cs_local_lfds711_stack_pop_c'  
@@ -883,10 +994,21 @@ Variables:
          occurs '[723, 724, 734, 735]'  
       id220  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8'  
 >>>>>>> origin/main
+=======
+         occurs '[681, 682]'  
+      id196  '__cs_local_lfds711_stack_pop_c'  
+         type 'char *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[686, 697]'  
+         occurs '[685, 686, 696, 697]'  
+      id197  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[718, 719]'  
       id210  '__cs_local_lfds711_stack_pop_i'  
@@ -894,10 +1016,15 @@ Variables:
          occurs '[730, 731]'  
       id221  '__cs_local_lfds711_stack_pop_i'  
 >>>>>>> origin/main
+=======
+         occurs '[692, 693]'  
+      id198  '__cs_local_lfds711_stack_pop_i'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[732, 759, 762, 793, 796]'  
       id211  '__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1'  
@@ -905,10 +1032,15 @@ Variables:
          occurs '[744, 771, 774, 805, 808]'  
       id222  '__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1'  
 >>>>>>> origin/main
+=======
+         occurs '[706, 733, 736, 767, 770]'  
+      id199  '__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[735, 735, 735]'  
       id212  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9'  
@@ -916,10 +1048,15 @@ Variables:
          occurs '[747, 747, 747]'  
       id223  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9'  
 >>>>>>> origin/main
+=======
+         occurs '[709, 709, 709]'  
+      id200  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[739, 740]'  
       id213  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10'  
@@ -927,10 +1064,15 @@ Variables:
          occurs '[751, 752]'  
       id224  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10'  
 >>>>>>> origin/main
+=======
+         occurs '[713, 714]'  
+      id201  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[752, 753]'  
       id214  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11'  
@@ -938,10 +1080,15 @@ Variables:
          occurs '[764, 765]'  
       id225  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11'  
 >>>>>>> origin/main
+=======
+         occurs '[726, 727]'  
+      id202  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[762, 763]'  
       id215  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12'  
@@ -949,10 +1096,15 @@ Variables:
          occurs '[774, 775]'  
       id226  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12'  
 >>>>>>> origin/main
+=======
+         occurs '[736, 737]'  
+      id203  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[773, 774]'  
       id216  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13'  
@@ -960,10 +1112,15 @@ Variables:
          occurs '[785, 786]'  
       id227  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13'  
 >>>>>>> origin/main
+=======
+         occurs '[747, 748]'  
+      id204  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[786, 787]'  
       id217  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_14'  
@@ -971,10 +1128,15 @@ Variables:
          occurs '[798, 799]'  
       id228  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_14'  
 >>>>>>> origin/main
+=======
+         occurs '[760, 761]'  
+      id205  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[796, 797]'  
    lfds711_stack_push
@@ -993,25 +1155,35 @@ Variables:
       id220  '__cs_local_lfds711_stack_push_result'  
 =======
          occurs '[808, 809]'  
+=======
+         occurs '[770, 771]'  
+>>>>>>> origin/main
    lfds711_stack_push
-      id229  '__cs_param_lfds711_stack_push_ss'  
+      id206  '__cs_param_lfds711_stack_push_ss'  
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[848, 849, 860]'  
-         occurs '[827, 848, 849, 860]'  
-      id230  '__cs_param_lfds711_stack_push_se'  
+         deref '[810, 811, 822]'  
+         occurs '[789, 810, 811, 822]'  
+      id207  '__cs_param_lfds711_stack_push_se'  
          type 'struct lfds711_stack_element *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
+<<<<<<< HEAD
          deref '[856]'  
          occurs '[838, 847, 856]'  
       id231  '__cs_local_lfds711_stack_push_result'  
+>>>>>>> origin/main
+=======
+         deref '[818]'  
+         occurs '[800, 809, 818]'  
+      id208  '__cs_local_lfds711_stack_push_result'  
 >>>>>>> origin/main
          type 'char unsigned'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[838, 841, 848, 852]'  
       id221  '__cs_local_lfds711_stack_push_backoff_iteration'  
@@ -1019,10 +1191,15 @@ Variables:
          occurs '[850, 853, 860, 864]'  
       id232  '__cs_local_lfds711_stack_push_backoff_iteration'  
 >>>>>>> origin/main
+=======
+         occurs '[812, 815, 822, 826]'  
+      id209  '__cs_local_lfds711_stack_push_backoff_iteration'  
+>>>>>>> origin/main
          type 'lfds711_pal_uint_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[810]'  
       id222  '__cs_local_lfds711_stack_push_new_top'  
@@ -1041,23 +1218,33 @@ Variables:
 =======
          occurs '[822]'  
       id233  '__cs_local_lfds711_stack_push_new_top'  
+=======
+         occurs '[784]'  
+      id210  '__cs_local_lfds711_stack_push_new_top'  
+>>>>>>> origin/main
          type 'struct lfds711_stack_element *'  kind 'l'  arity '1'  
          size '[2]'  
-         ref '[860]'  
+         ref '[822]'  
          deref '[]'  
-         occurs '[847, 858, 860]'  
-      id234  '__cs_local_lfds711_stack_push_original_top'  
+         occurs '[809, 820, 822]'  
+      id211  '__cs_local_lfds711_stack_push_original_top'  
          type 'struct lfds711_stack_element * volatile'  kind 'l'  arity '1'  
          size '[2]'  
-         ref '[860]'  
+         ref '[822]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[848, 849, 856, 858, 860]'  
       id235  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_15'  
+>>>>>>> origin/main
+=======
+         occurs '[810, 811, 818, 820, 822]'  
+      id212  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_14'  
 >>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[815, 816]'  
       id225  '__cs_local_lfds711_stack_push_c'  
@@ -1077,10 +1264,21 @@ Variables:
          occurs '[831, 832, 842, 843]'  
       id237  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_16'  
 >>>>>>> origin/main
+=======
+         occurs '[789, 790]'  
+      id213  '__cs_local_lfds711_stack_push_c'  
+         type 'char *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[794, 805]'  
+         occurs '[793, 794, 804, 805]'  
+      id214  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_15'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[826, 827]'  
       id227  '__cs_local_lfds711_stack_push_i'  
@@ -1088,10 +1286,15 @@ Variables:
          occurs '[838, 839]'  
       id238  '__cs_local_lfds711_stack_push_i'  
 >>>>>>> origin/main
+=======
+         occurs '[800, 801]'  
+      id215  '__cs_local_lfds711_stack_push_i'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[840, 857, 860]'  
       id228  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_17'  
@@ -1099,10 +1302,15 @@ Variables:
          occurs '[852, 869, 872]'  
       id239  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_17'  
 >>>>>>> origin/main
+=======
+         occurs '[814, 831, 834]'  
+      id216  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_16'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[852, 853]'  
       id229  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_18'  
@@ -1110,10 +1318,15 @@ Variables:
          occurs '[864, 865]'  
       id240  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_18'  
 >>>>>>> origin/main
+=======
+         occurs '[826, 827]'  
+      id217  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_17'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[860, 861]'  
    lfds711_stack_cleanup
@@ -1192,10 +1405,52 @@ Variables:
          occurs '[891, 892]'  
       id247  '__cs_local_lfds711_stack_cleanup___cs_tmp_if_cond_20'  
 >>>>>>> origin/main
+=======
+         occurs '[834, 835]'  
+   __CSEQ_atomic_compare_and_exchange
+      id218  '__cs_param___CSEQ_atomic_compare_and_exchange_mptr'  
+         type 'int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[846, 849]'  
+         occurs '[846, 849]'  
+      id219  '__cs_param___CSEQ_atomic_compare_and_exchange_eptr'  
+         type 'int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[846, 854]'  
+         occurs '[846, 854]'  
+      id220  '__cs_param___CSEQ_atomic_compare_and_exchange_newval'  
+         type 'int long long unsigned'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[849, 854]'  
+      id221  '__cs_param___CSEQ_atomic_compare_and_exchange_weak_p'  
+         type '_Bool'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id222  '__cs_param___CSEQ_atomic_compare_and_exchange_sm'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id223  '__cs_param___CSEQ_atomic_compare_and_exchange_fm'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id224  '__cs_local___CSEQ_atomic_compare_and_exchange___cs_tmp_if_cond_18'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[887, 888]'  
    LIST_InsertHeadNode
@@ -1228,10 +1483,28 @@ Variables:
          occurs '[938]'  
       id254  '__cs_param_LIST_InsertHeadNode_I__user_id'  
 >>>>>>> origin/main
+=======
+         occurs '[846, 847]'  
+   __atomic_compare_exchange_n
+      id225  '__cs_param___atomic_compare_exchange_n_mptr'  
+         type 'int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[861]'  
+      id226  '__cs_param___atomic_compare_exchange_n_eptr'  
+         type 'int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[861]'  
+      id227  '__cs_param___atomic_compare_exchange_n_newval'  
+>>>>>>> origin/main
          type 'int long long unsigned'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[927]'  
       id244  '__cs_local_LIST_InsertHeadNode_rCode'  
@@ -1286,10 +1559,33 @@ Variables:
          occurs '[950]'  
       id259  '__cs_local_PrintListPayloads_rCode'  
 >>>>>>> origin/main
+=======
+         occurs '[861]'  
+      id228  '__cs_param___atomic_compare_exchange_n_weak_p'  
+         type '_Bool'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[861]'  
+      id229  '__cs_param___atomic_compare_exchange_n_sm'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[861]'  
+      id230  '__cs_param___atomic_compare_exchange_n_fm'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[861]'  
+      id231  '__cs_local___atomic_compare_exchange_n_res'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[936, 952]'  
       id249  '__cs_local_PrintListPayloads_cur'  
@@ -1381,10 +1677,59 @@ Variables:
          occurs '[997, 1000]'  
       id267  '__cs_local_LIST_GetTailNode_rCode'  
 >>>>>>> origin/main
+=======
+         occurs '[861, 862]'  
+   __CSEQ_atomic_exchange
+      id232  '__cs_param___CSEQ_atomic_exchange_previous'  
+         type 'int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[867, 868]'  
+         occurs '[867, 868]'  
+      id233  '__cs_param___CSEQ_atomic_exchange_new'  
+         type 'int long long unsigned'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[868]'  
+      id234  '__cs_param___CSEQ_atomic_exchange_memorder'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id235  '__cs_local___CSEQ_atomic_exchange_old'  
+         type 'unsigned long int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[867, 869]'  
+   __atomic_exchange_n
+      id236  '__cs_param___atomic_exchange_n_previous'  
+         type 'int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[874]'  
+      id237  '__cs_param___atomic_exchange_n_new'  
+         type 'int long long unsigned'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[874]'  
+      id238  '__cs_param___atomic_exchange_n_memorder'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[874]'  
+      id239  '__cs_local___atomic_exchange_n_res'  
+>>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[970, 990]'  
       id257  '__cs_local_LIST_GetTailNode_curNode'  
@@ -1485,14 +1830,54 @@ Variables:
          occurs '[1007, 1011, 1014, 1017, 1026, 1045]'  
       id275  '__cs_local_LIST_InsertTailNode_tailNode'  
          type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[1011]'  
-         deref '[1038]'  
-         occurs '[1011, 1035, 1038]'  
-      id276  '__cs_local_LIST_InsertTailNode_newNode'  
-         type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
+=======
+         occurs '[874, 875]'  
+   __atomic_thread_fence
+      id240  '__cs_param___atomic_thread_fence_i'  
+         type 'int'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+   init
+   insert
+      id244  '__cs_param_insert_s'  
+         type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[897]'  
+      id245  '__cs_param_insert_id'  
+         type 'int long long unsigned'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[895]'  
+      id246  '__cs_local_insert_td'  
+         type 'struct test_data *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[895, 896, 897]'  
+         occurs '[894, 895, 896, 896, 897]'  
+   delete
+      id247  '__cs_param_delete_s'  
+         type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id248  '__cs_local_delete_se'  
+         type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
+>>>>>>> origin/main
+         size '[]'  
+         ref '[904]'  
+         deref '[912]'  
+         occurs '[904, 912]'  
+      id249  '__cs_local_delete_temp_td'  
+         type 'struct test_data *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+<<<<<<< HEAD
          deref '[1020, 1020, 1030, 1031, 1032]'  
          occurs '[1010, 1020, 1020, 1020, 1023, 1030, 1031, 1032, 1038, 1042]'  
       id277  '__cs_local_LIST_InsertTailNode___cs_tmp_if_cond_25'  
@@ -1508,10 +1893,22 @@ Variables:
          occurs '[1014, 1015]'  
       id278  '__cs_local_LIST_InsertTailNode___cs_tmp_if_cond_26'  
 >>>>>>> origin/main
+=======
+         deref '[914, 915]'  
+         occurs '[912, 914, 915]'  
+      id250  '__cs_local_delete_res'  
+         type 'int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[904, 907, 910, 916]'  
+      id251  '__cs_local_delete___cs_tmp_if_cond_19'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[1011, 1012]'  
       id268  '__cs_local_LIST_InsertTailNode___cs_tmp_if_cond_27'  
@@ -1566,10 +1963,34 @@ Variables:
          occurs '[1077, 1080]'  
       id283  '__cs_local_LIST_FetchParentNodeById_rCode'  
 >>>>>>> origin/main
+=======
+         occurs '[907, 908]'  
+      id252  '__cs_local_delete_id_popped'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+         occurs '[914]'  
+   contains
+      id253  '__cs_param_contains_s'  
+         type 'void *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[943, 965]'  
+      id254  '__cs_param_contains_id'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[954]'  
+      id255  '__cs_local_contains_max_size'  
+>>>>>>> origin/main
+         type 'int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[1038, 1048, 1071]'  
       id273  '__cs_local_LIST_FetchParentNodeById_parent'  
@@ -1704,10 +2125,63 @@ Variables:
          occurs '[1091, 1092, 1092, 1092, 1095, 1102, 1103, 1122, 1123, 1146, 1147, 1150, 1151]'  
       id295  '__cs_local_LIST_InsertNodeById___cs_tmp_if_cond_31'  
 >>>>>>> origin/main
+=======
+         occurs '[921, 931, 937, 940, 941]'  
+      id256  '__cs_local_contains_actual_size'  
+         type 'int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[923, 937, 951, 954, 959, 963]'  
+      id257  '__cs_local_contains_res'  
+         type 'int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[925, 933, 943, 946]'  
+      id258  '__cs_local_contains_found'  
+         type 'int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[927, 933, 957, 969]'  
+      id259  '__cs_local_contains_dimension'  
+         type 'int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[929, 940, 941]'  
+      id260  '__cs_local_contains_datas'  
+         type 'struct test_data **'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[954]'  
+         occurs '[931, 940, 940, 951, 954, 965, 968]'  
+      id261  '__cs_local_contains_se'  
+         type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[943]'  
+         deref '[951]'  
+         occurs '[943, 951]'  
+      id262  '__cs_local_contains___cs_tmp_if_cond_20'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+         occurs '[937, 938]'  
+      id263  '__cs_local_contains___cs_tmp_if_cond_21'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[946, 947]'  
+      id264  '__cs_local_contains___cs_tmp_if_cond_22'  
+>>>>>>> origin/main
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[1083, 1084]'  
       id285  '__cs_local_LIST_InsertNodeById___cs_switch_cond_LIST_InsertNodeById_1'  
@@ -1748,10 +2222,34 @@ Variables:
          occurs '[1117, 1118]'  
       id299  '__cs_local_LIST_InsertNodeById___cs_tmp_if_cond_34'  
 >>>>>>> origin/main
+=======
+         occurs '[954, 955]'  
+      id265  '__cs_local_contains_i'  
+         type 'int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[962, 963, 965, 966]'  
+   push
+      id269  '__cs_param_push___cs_unused'  
+         type 'void *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id270  '__cs_local_push_loop'  
+         type 'int long long unsigned'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[977, 977, 977, 987]'  
+      id271  '__cs_local_push___cs_tmp_if_cond_23'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[1118, 1119]'  
       id289  '__cs_local_LIST_InsertNodeById___cs_tmp_if_cond_35'  
@@ -1759,10 +2257,15 @@ Variables:
          occurs '[1130, 1131]'  
       id300  '__cs_local_LIST_InsertNodeById___cs_tmp_if_cond_35'  
 >>>>>>> origin/main
+=======
+         occurs '[981, 982]'  
+      id272  '__cs_local_push___cs_tmp_if_cond_24'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[1131, 1132]'  
    LIST_FetchNodeById
@@ -1818,10 +2321,28 @@ Variables:
          occurs '[1192, 1195]'  
       id305  '__cs_local_LIST_FetchNodeById_rCode'  
 >>>>>>> origin/main
+=======
+         occurs '[990, 991]'  
+   pop
+      id273  '__cs_param_pop___cs_unused'  
+         type 'void *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id274  '__cs_local_pop_res'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+         occurs '[]'  
+      id275  '__cs_local_pop_count'  
+>>>>>>> origin/main
+         type 'int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[1146, 1168, 1186]'  
       id295  '__cs_local_LIST_FetchNodeById_parent'  
@@ -1852,10 +2373,21 @@ Variables:
          occurs '[1162, 1163, 1167, 1172, 1173, 1173, 1177, 1188]'  
       id308  '__cs_local_LIST_FetchNodeById___cs_tmp_if_cond_36'  
 >>>>>>> origin/main
+=======
+         occurs '[1002]'  
+      id276  '__cs_local_pop_loop'  
+         type 'int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1004, 1004, 1004]'  
+      id277  '__cs_local_pop___cs_tmp_if_cond_25'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[1155, 1156]'  
       id298  '__cs_local_LIST_FetchNodeById___cs_tmp_if_cond_37'  
@@ -1863,10 +2395,15 @@ Variables:
          occurs '[1167, 1168]'  
       id309  '__cs_local_LIST_FetchNodeById___cs_tmp_if_cond_37'  
 >>>>>>> origin/main
+=======
+         occurs '[1008, 1009]'  
+      id278  '__cs_local_pop___cs_tmp_if_cond_26'  
+>>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[1165, 1166]'  
       id299  '__cs_local_LIST_FetchNodeById___cs_tmp_if_cond_38'  
@@ -1875,9 +2412,16 @@ Variables:
       id310  '__cs_local_LIST_FetchNodeById___cs_tmp_if_cond_38'  
 >>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
+=======
+         occurs '[1017, 1018]'  
+   main
+      id279  '__cs_local_main_t1'  
+         type '__cs_t'  kind 'l'  arity '0'  
+>>>>>>> origin/main
          size '[]'  
-         ref '[]'  
+         ref '[1039]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[1173, 1174]'  
       id300  '__cs_local_LIST_FetchNodeById___cs_tmp_if_cond_39'  
@@ -1968,9 +2512,39 @@ Variables:
       id318  '__cs_local_LIST_DeleteNodeById___cs_tmp_if_cond_40'  
 >>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
+=======
+         occurs '[1039, 1041]'  
+      id280  '__cs_local_main_t2'  
+         type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+         occurs '[]'  
+      id281  '__cs_local_main_t3'  
+         type '__cs_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id282  '__cs_local_main_t4'  
+         type '__cs_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id283  '__cs_local_main_t5'  
+         type '__cs_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id284  '__cs_local_main_t6'  
+         type '__cs_t'  kind 'l'  arity '0'  
+>>>>>>> origin/main
+         size '[]'  
+         ref '[1040]'  
+         deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[1201, 1202]'  
       id308  '__cs_local_LIST_DeleteNodeById___cs_tmp_if_cond_41'  
@@ -2085,10 +2659,34 @@ Variables:
       id331  '__cs_param_pop___cs_unused'  
 >>>>>>> origin/main
          type 'void *'  kind 'p'  arity '0'  
+=======
+         occurs '[1040, 1042]'  
+      id285  '__cs_local_main_t7'  
+         type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
+      id286  '__cs_local_main_t8'  
+         type '__cs_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id287  '__cs_local_main_t9'  
+         type '__cs_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id288  '__cs_local_main_t10'  
+         type '__cs_t'  kind 'l'  arity '0'  
+>>>>>>> origin/main
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
       id321  '__cs_local_pop_se'  
          type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
@@ -2472,6 +3070,8 @@ Variables:
          deref '[]'  
          occurs '[1412, 1414]'  
 >>>>>>> origin/main
+=======
+>>>>>>> origin/main
 
 Fields:
    lfds711_prng_state
@@ -2618,6 +3218,7 @@ Fields:
       id167  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
       id168  'pop_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
       id169  'push_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
+<<<<<<< HEAD
    NODE_PAYLOAD_S
 <<<<<<< HEAD
       id237  'se'  type 'struct lfds711_stack_element'  kind 'f'  arity '0'  size '[]'  
@@ -2638,10 +3239,13 @@ Fields:
       id326  'se'  type 'struct lfds711_stack_element'  kind 'f'  arity '0'  size '[]'  
       id327  'user_id'  type 'int long long unsigned'  kind 'f'  arity '0'  size '[]'  
 >>>>>>> origin/main
+=======
+   test_data
+      id242  'se'  type 'struct lfds711_stack_element'  kind 'f'  arity '0'  size '[]'  
+      id243  'user_id'  type 'int long long unsigned'  kind 'f'  arity '0'  size '[]'  
+>>>>>>> origin/main
 
 Typedefs:
-NODE_PAYLOAD_T -> struct NODE_PAYLOAD_S
-LIST_NODE_T -> struct LIST_NODE_S
 
 Pointer variables:
    (global)
@@ -2682,7 +3286,9 @@ Pointer variables:
        var '__cs_param__ss'   type 'struct lfds711_stack_state *'   kind 'p'   arity '0'   size '[]'   
        var '__cs_param__se'   type 'struct lfds711_stack_element **'   kind 'p'   arity '0'   size '[]'   
        var '__cs_param__bs'   type 'struct lfds711_misc_backoff_state *'   kind 'p'   arity '0'   size '[]'   
+       var 'ss'   type 'void *'   kind 'g'   arity '0'   size '[]'   
    lfds711_misc_force_store
+<<<<<<< HEAD
 <<<<<<< HEAD
    __CSEQ_atomic_compare_and_exchange
        var '__cs_param___CSEQ_atomic_compare_and_exchange_mptr'   type 'int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
@@ -2700,11 +3306,13 @@ Pointer variables:
    __CSEQ_atomic_exchange
        var '__cs_param___CSEQ_atomic_exchange_previous'   type 'int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
    __atomic_thread_fence
+=======
+   exponential_backoff
+>>>>>>> origin/main
    __CSEQ_atomic_swap_stack_top
        var '__cs_param___CSEQ_atomic_swap_stack_top_top'   type 'struct lfds711_stack_element * volatile *'   kind 'p'   arity '0'   size '[]'   
        var '__cs_param___CSEQ_atomic_swap_stack_top_oldtop'   type 'struct lfds711_stack_element * volatile *'   kind 'p'   arity '0'   size '[]'   
        var '__cs_param___CSEQ_atomic_swap_stack_top_newtop'   type 'struct lfds711_stack_element **'   kind 'p'   arity '0'   size '[]'   
-   exponential_backoff
    lfds711_misc_internal_backoff_init
        var '__cs_param_lfds711_misc_internal_backoff_init_bs'   type 'struct lfds711_misc_backoff_state *'   kind 'p'   arity '0'   size '[]'   
        var '__cs_local_lfds711_misc_internal_backoff_init_c'   type 'char *'   kind 'l'   arity '0'   size '[]'   
@@ -2722,74 +3330,34 @@ Pointer variables:
        var '__cs_param_lfds711_stack_push_se'   type 'struct lfds711_stack_element *'   kind 'p'   arity '0'   size '[]'   
        var '__cs_local_lfds711_stack_push_new_top'   type 'struct lfds711_stack_element *'   kind 'l'   arity '1'   size '[2]'   
        var '__cs_local_lfds711_stack_push_c'   type 'char *'   kind 'l'   arity '0'   size '[]'   
-   lfds711_stack_cleanup
-       var '__cs_param_lfds711_stack_cleanup_ss'   type 'struct lfds711_stack_state *'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_local_lfds711_stack_cleanup_se'   type 'struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_local_lfds711_stack_cleanup_se_temp'   type 'struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_local_lfds711_stack_cleanup_c'   type 'char *'   kind 'l'   arity '0'   size '[]'   
-   LIST_InsertHeadNode
-       var '__cs_param_LIST_InsertHeadNode_IO_head'   type 'struct LIST_NODE_S **'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_local_LIST_InsertHeadNode_newNode'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-   PrintListPayloads
-       var '__cs_param_PrintListPayloads_head'   type 'struct LIST_NODE_S *'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_local_PrintListPayloads_cur'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-   GetListSize
-       var '__cs_param_GetListSize_head'   type 'struct LIST_NODE_S *'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_local_GetListSize_cur'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-   LIST_GetTailNode
-       var '__cs_param_LIST_GetTailNode_I__listHead'   type 'struct LIST_NODE_S *'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_param_LIST_GetTailNode__O_listTail'   type 'struct LIST_NODE_S **'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_local_LIST_GetTailNode_curNode'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-   LIST_InsertTailNode
-       var '__cs_param_LIST_InsertTailNode_IO_head'   type 'struct LIST_NODE_S **'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_local_LIST_InsertTailNode_tailNode'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_local_LIST_InsertTailNode_newNode'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-   LIST_FetchParentNodeById
-       var '__cs_param_LIST_FetchParentNodeById_I__head'   type 'struct LIST_NODE_S *'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_param_LIST_FetchParentNodeById__O_parent'   type 'struct LIST_NODE_S **'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_local_LIST_FetchParentNodeById_parent'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_local_LIST_FetchParentNodeById_curNode'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-   LIST_InsertNodeById
-       var '__cs_param_LIST_InsertNodeById_IO_head'   type 'struct LIST_NODE_S **'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_local_LIST_InsertNodeById_parent'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_local_LIST_InsertNodeById_newNode'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-   LIST_FetchNodeById
-       var '__cs_param_LIST_FetchNodeById_I__head'   type 'struct LIST_NODE_S *'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_param_LIST_FetchNodeById__O_node'   type 'struct LIST_NODE_S **'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_param_LIST_FetchNodeById__O_parent'   type 'struct LIST_NODE_S **'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_local_LIST_FetchNodeById_parent'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_local_LIST_FetchNodeById_curNode'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-   LIST_DeleteNodeById
-       var '__cs_param_LIST_DeleteNodeById_IO_head'   type 'struct LIST_NODE_S **'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_local_LIST_DeleteNodeById_parent'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_local_LIST_DeleteNodeById_delNode'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-   LIST_Destroy
-       var '__cs_param_LIST_Destroy_IO_head'   type 'struct LIST_NODE_S **'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_local_LIST_Destroy_delNode'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
+   __CSEQ_atomic_compare_and_exchange
+       var '__cs_param___CSEQ_atomic_compare_and_exchange_mptr'   type 'int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
+       var '__cs_param___CSEQ_atomic_compare_and_exchange_eptr'   type 'int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
+   __atomic_compare_exchange_n
+       var '__cs_param___atomic_compare_exchange_n_mptr'   type 'int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
+       var '__cs_param___atomic_compare_exchange_n_eptr'   type 'int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
+   __CSEQ_atomic_exchange
+       var '__cs_param___CSEQ_atomic_exchange_previous'   type 'int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
+   __atomic_exchange_n
+       var '__cs_param___atomic_exchange_n_previous'   type 'int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
+   __atomic_thread_fence
+   init
+   insert
+       var '__cs_param_insert_s'   type 'struct lfds711_stack_state *'   kind 'p'   arity '0'   size '[]'   
+       var '__cs_local_insert_td'   type 'struct test_data *'   kind 'l'   arity '0'   size '[]'   
+   delete
+       var '__cs_param_delete_s'   type 'struct lfds711_stack_state *'   kind 'p'   arity '0'   size '[]'   
+       var '__cs_local_delete_se'   type 'struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
+       var '__cs_local_delete_temp_td'   type 'struct test_data *'   kind 'l'   arity '0'   size '[]'   
+   contains
+       var '__cs_param_contains_s'   type 'void *'   kind 'p'   arity '0'   size '[]'   
+       var '__cs_local_contains_datas'   type 'struct test_data **'   kind 'l'   arity '0'   size '[]'   
+       var '__cs_local_contains_se'   type 'struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
    push
        var '__cs_param_push___cs_unused'   type 'void *'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_local_push_td'   type 'struct test_data *'   kind 'l'   arity '0'   size '[]'   
    pop
        var '__cs_param_pop___cs_unused'   type 'void *'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_local_pop_se'   type 'struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_local_pop_temp_td'   type 'struct test_data *'   kind 'l'   arity '0'   size '[]'   
-   writeIntofile
-       var '__cs_param_writeIntofile_filename'   type 'char *'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_param_writeIntofile_listHead'   type 'struct LIST_NODE_S *'   kind 'p'   arity '0'   size '[]'   
-   createList
-       var '__cs_param_createList_listHead'   type 'struct LIST_NODE_S *'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_local_createList_se'   type 'struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_local_createList_temp_td'   type 'struct test_data *'   kind 'l'   arity '0'   size '[]'   
-   readFile
-       var '__cs_param_readFile_filename'   type 'char *'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_param_readFile_listHead'   type 'struct LIST_NODE_S *'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_local_readFile_line'   type 'char *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_local_readFile_parent'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_local_readFile_curNode'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_local_readFile_fp'   type 'FILE *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_local_readFile_ptr'   type 'char *'   kind 'l'   arity '0'   size '[]'   
    main
-       var '__cs_local_main_listHead'   type 'struct LIST_NODE_S *'   kind 'l'   arity '0'   size '[]'   
 
 Function blocks:
 function 'lfds711_misc_force_store' ----------------------------------:
@@ -2807,6 +3375,7 @@ void lfds711_misc_force_store()
 
 void
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 function '__atomic_compare_exchange_n' ----------------------------------:
 _Bool __atomic_compare_exchange_n(int long long unsigned *__cs_param___atomic_compare_exchange_n_mptr, int long long unsigned *__cs_param___atomic_compare_exchange_n_eptr, int long long unsigned __cs_param___atomic_compare_exchange_n_newval, _Bool __cs_param___atomic_compare_exchange_n_weak_p, int __cs_param___atomic_compare_exchange_n_sm, int __cs_param___atomic_compare_exchange_n_fm)
@@ -2822,24 +3391,21 @@ _Bool
 >>>>>>> origin/main
 function '__CSEQ_atomic_compare_and_exchange' ----------------------------------:
 _Bool __CSEQ_atomic_compare_and_exchange(int long long unsigned *__cs_param___CSEQ_atomic_compare_and_exchange_mptr, int long long unsigned *__cs_param___CSEQ_atomic_compare_and_exchange_eptr, int long long unsigned __cs_param___CSEQ_atomic_compare_and_exchange_newval, _Bool __cs_param___CSEQ_atomic_compare_and_exchange_weak_p, int __cs_param___CSEQ_atomic_compare_and_exchange_sm, int __cs_param___CSEQ_atomic_compare_and_exchange_fm)
+=======
+function 'exponential_backoff' ----------------------------------:
+void exponential_backoff()
+>>>>>>> origin/main
 {
-    ;
-    _Bool __cs_local___CSEQ_atomic_compare_and_exchange___cs_tmp_if_cond_0;
-    __cs_local___CSEQ_atomic_compare_and_exchange___cs_tmp_if_cond_0 = (*__cs_param___CSEQ_atomic_compare_and_exchange_mptr) == (*__cs_param___CSEQ_atomic_compare_and_exchange_eptr);
-    if (__cs_local___CSEQ_atomic_compare_and_exchange___cs_tmp_if_cond_0)
+    int __cs_local_exponential_backoff_loop;
+    for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loop < 10; __cs_local_exponential_backoff_loop++)
     {
-        *__cs_param___CSEQ_atomic_compare_and_exchange_mptr = __cs_param___CSEQ_atomic_compare_and_exchange_newval;
-        return 1;
-    }
-    else
-    {
-        *__cs_param___CSEQ_atomic_compare_and_exchange_eptr = __cs_param___CSEQ_atomic_compare_and_exchange_newval;
-        return 0;
+        ;
     }
 
 }
 
 
+<<<<<<< HEAD
 int long long unsigned *__cs_param___CSEQ_atomic_compare_and_exchange_mptr, int long long unsigned *__cs_param___CSEQ_atomic_compare_and_exchange_eptr, int long long unsigned __cs_param___CSEQ_atomic_compare_and_exchange_newval, _Bool __cs_param___CSEQ_atomic_compare_and_exchange_weak_p, int __cs_param___CSEQ_atomic_compare_and_exchange_sm, int __cs_param___CSEQ_atomic_compare_and_exchange_fm
 _Bool
 <<<<<<< HEAD
@@ -2873,16 +3439,17 @@ void __atomic_thread_fence(int __cs_param___atomic_thread_fence_i)
 {
 }
 
+=======
+>>>>>>> origin/main
 
-int __cs_param___atomic_thread_fence_i
 void
 function '__CSEQ_atomic_swap_stack_top' ----------------------------------:
 int __CSEQ_atomic_swap_stack_top(struct lfds711_stack_element * volatile *__cs_param___CSEQ_atomic_swap_stack_top_top, struct lfds711_stack_element * volatile *__cs_param___CSEQ_atomic_swap_stack_top_oldtop, struct lfds711_stack_element **__cs_param___CSEQ_atomic_swap_stack_top_newtop)
 {
     ;
-    _Bool __cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_1;
-    __cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_1 = (*__cs_param___CSEQ_atomic_swap_stack_top_oldtop) == (*__cs_param___CSEQ_atomic_swap_stack_top_top);
-    if (__cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_1)
+    _Bool __cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_0;
+    __cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_0 = (*__cs_param___CSEQ_atomic_swap_stack_top_oldtop) == (*__cs_param___CSEQ_atomic_swap_stack_top_top);
+    if (__cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_0)
     {
         *__cs_param___CSEQ_atomic_swap_stack_top_top = *__cs_param___CSEQ_atomic_swap_stack_top_newtop;
         return 1;
@@ -2898,27 +3465,13 @@ int __CSEQ_atomic_swap_stack_top(struct lfds711_stack_element * volatile *__cs_p
 
 struct lfds711_stack_element * volatile *__cs_param___CSEQ_atomic_swap_stack_top_top, struct lfds711_stack_element * volatile *__cs_param___CSEQ_atomic_swap_stack_top_oldtop, struct lfds711_stack_element **__cs_param___CSEQ_atomic_swap_stack_top_newtop
 int
-function 'exponential_backoff' ----------------------------------:
-void exponential_backoff()
-{
-    int __cs_local_exponential_backoff_loop;
-    for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loop < 10; __cs_local_exponential_backoff_loop++)
-    {
-        ;
-    }
-
-}
-
-
-
-void
 function 'lfds711_misc_internal_backoff_init' ----------------------------------:
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *__cs_param_lfds711_misc_internal_backoff_init_bs)
 {
     ;
-    _Bool __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2;
-    __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2 = !(__cs_param_lfds711_misc_internal_backoff_init_bs != 0);
-    if (__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2)
+    _Bool __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1;
+    __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1 = !(__cs_param_lfds711_misc_internal_backoff_init_bs != 0);
+    if (__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1)
     {
         char *__cs_local_lfds711_misc_internal_backoff_init_c;
         __cs_local_lfds711_misc_internal_backoff_init_c = 0;
@@ -2928,9 +3481,9 @@ void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *__cs_
     ;
     ;
     ;
-    _Bool __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_3;
-    __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_3 = !((((lfds711_pal_uint_t) (&(*__cs_param_lfds711_misc_internal_backoff_init_bs).lock)) % 128) == 0);
-    if (__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_3)
+    _Bool __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2;
+    __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2 = !((((lfds711_pal_uint_t) (&(*__cs_param_lfds711_misc_internal_backoff_init_bs).lock)) % 128) == 0);
+    if (__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2)
     {
         char *__cs_local_lfds711_misc_internal_backoff_init_c;
         __cs_local_lfds711_misc_internal_backoff_init_c = 0;
@@ -2953,10 +3506,22 @@ void
 function 'lfds711_stack_init_valid_on_current_logical_core' ----------------------------------:
 void lfds711_stack_init_valid_on_current_logical_core(struct lfds711_stack_state *__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss, void *__cs_param_lfds711_stack_init_valid_on_current_logical_core_user_state)
 {
-    __cs_mutex_init(&lock, 0);
+    __cs_mutex_init(&library_lock, 0);
+    ;
+    _Bool __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_3;
+    __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_3 = !(__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss != 0);
+    if (__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_3)
+    {
+        char *__cs_local_lfds711_stack_init_valid_on_current_logical_core_c;
+        __cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
+        *__cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
+    }
+
+    ;
+    ;
     ;
     _Bool __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4;
-    __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4 = !(__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss != 0);
+    __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4 = !((((lfds711_pal_uint_t) (*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).top) % 128) == 0);
     if (__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4)
     {
         char *__cs_local_lfds711_stack_init_valid_on_current_logical_core_c;
@@ -2968,7 +3533,7 @@ void lfds711_stack_init_valid_on_current_logical_core(struct lfds711_stack_state
     ;
     ;
     _Bool __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5;
-    __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5 = !((((lfds711_pal_uint_t) (*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).top) % 128) == 0);
+    __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5 = !((((lfds711_pal_uint_t) (&(*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).user_state)) % 128) == 0);
     if (__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5)
     {
         char *__cs_local_lfds711_stack_init_valid_on_current_logical_core_c;
@@ -2978,26 +3543,14 @@ void lfds711_stack_init_valid_on_current_logical_core(struct lfds711_stack_state
 
     ;
     ;
-    ;
-    _Bool __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_6;
-    __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_6 = !((((lfds711_pal_uint_t) (&(*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).user_state)) % 128) == 0);
-    if (__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_6)
-    {
-        char *__cs_local_lfds711_stack_init_valid_on_current_logical_core_c;
-        __cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
-        *__cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
-    }
-
-    ;
-    ;
-    __cs_mutex_lock(&lock);
+    __cs_mutex_lock(&library_lock);
     (*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).top[0] = 0;
     (*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).top[1] = 0;
     (*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).user_state = __cs_param_lfds711_stack_init_valid_on_current_logical_core_user_state;
     lfds711_misc_internal_backoff_init(&(*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).pop_backoff);
     lfds711_misc_internal_backoff_init(&(*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).push_backoff);
     lfds711_misc_force_store();
-    __cs_mutex_unlock(&lock);
+    __cs_mutex_unlock(&library_lock);
     return;
 }
 
@@ -3013,8 +3566,20 @@ int lfds711_stack_pop(struct lfds711_stack_state *__cs_param_lfds711_stack_pop_s
     struct lfds711_stack_element *__cs_local_lfds711_stack_pop_new_top[2];
     struct lfds711_stack_element * volatile __cs_local_lfds711_stack_pop_original_top[2];
     ;
+    _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_6;
+    __cs_local_lfds711_stack_pop___cs_tmp_if_cond_6 = !(__cs_param_lfds711_stack_pop_ss != 0);
+    if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_6)
+    {
+        char *__cs_local_lfds711_stack_pop_c;
+        __cs_local_lfds711_stack_pop_c = 0;
+        *__cs_local_lfds711_stack_pop_c = 0;
+    }
+
+    ;
+    ;
+    ;
     _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_7;
-    __cs_local_lfds711_stack_pop___cs_tmp_if_cond_7 = !(__cs_param_lfds711_stack_pop_ss != 0);
+    __cs_local_lfds711_stack_pop___cs_tmp_if_cond_7 = !(__cs_param_lfds711_stack_pop_se != 0);
     if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7)
     {
         char *__cs_local_lfds711_stack_pop_c;
@@ -3024,20 +3589,8 @@ int lfds711_stack_pop(struct lfds711_stack_state *__cs_param_lfds711_stack_pop_s
 
     ;
     ;
-    ;
-    _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_8;
-    __cs_local_lfds711_stack_pop___cs_tmp_if_cond_8 = !(__cs_param_lfds711_stack_pop_se != 0);
-    if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8)
-    {
-        char *__cs_local_lfds711_stack_pop_c;
-        __cs_local_lfds711_stack_pop_c = 0;
-        *__cs_local_lfds711_stack_pop_c = 0;
-    }
-
-    ;
-    ;
-    __cs_mutex_lock(&lock);
-    __cs_mutex_unlock(&lock);
+    __cs_mutex_lock(&library_lock);
+    __cs_mutex_unlock(&library_lock);
     __cs_local_lfds711_stack_pop_original_top[1] = (*__cs_param_lfds711_stack_pop_ss).top[1];
     __cs_local_lfds711_stack_pop_original_top[0] = (*__cs_param_lfds711_stack_pop_ss).top[0];
     int __cs_local_lfds711_stack_pop_i;
@@ -3047,9 +3600,9 @@ int lfds711_stack_pop(struct lfds711_stack_state *__cs_param_lfds711_stack_pop_s
     for (__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1 = 0; __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1 < 1; __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1++)
     {
         ;
-        _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_9;
-        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_9 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
-        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9)
+        _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_8;
+        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_8 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8)
         {
             *__cs_param_lfds711_stack_pop_se = 0;
             return 0;
@@ -3057,24 +3610,24 @@ int lfds711_stack_pop(struct lfds711_stack_state *__cs_param_lfds711_stack_pop_s
 
         __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
         __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
-        __cs_mutex_lock(&lock);
+        __cs_mutex_lock(&library_lock);
         __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
-        __cs_mutex_unlock(&lock);
+        __cs_mutex_unlock(&library_lock);
         ;
-        _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_10;
-        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_10 = __cs_local_lfds711_stack_pop_result == 0;
-        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10)
+        _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_9;
+        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_9 = __cs_local_lfds711_stack_pop_result == 0;
+        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9)
         {
             exponential_backoff();
-            __cs_mutex_lock(&lock);
-            __cs_mutex_unlock(&lock);
+            __cs_mutex_lock(&library_lock);
+            __cs_mutex_unlock(&library_lock);
         }
 
         __cs_local_lfds711_stack_pop_i++;
         ;
-        _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
-        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_i > 1000;
-        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
+        _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_10;
+        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_10 = __cs_local_lfds711_stack_pop_i > 1000;
+        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10)
         {
             break;
         }
@@ -3084,9 +3637,9 @@ int lfds711_stack_pop(struct lfds711_stack_state *__cs_param_lfds711_stack_pop_s
     while (__cs_local_lfds711_stack_pop_result == 0)
     {
         ;
-        _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
-        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
-        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
+        _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
+        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
         {
             *__cs_param_lfds711_stack_pop_se = 0;
             return 0;
@@ -3094,24 +3647,24 @@ int lfds711_stack_pop(struct lfds711_stack_state *__cs_param_lfds711_stack_pop_s
 
         __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
         __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
-        __cs_mutex_lock(&lock);
+        __cs_mutex_lock(&library_lock);
         __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
-        __cs_mutex_unlock(&lock);
+        __cs_mutex_unlock(&library_lock);
         ;
-        _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
-        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_result == 0;
-        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
+        _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
+        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
+        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
         {
             exponential_backoff();
-            __cs_mutex_lock(&lock);
-            __cs_mutex_unlock(&lock);
+            __cs_mutex_lock(&library_lock);
+            __cs_mutex_unlock(&library_lock);
         }
 
         __cs_local_lfds711_stack_pop_i++;
         ;
-        _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_14;
-        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_14 = __cs_local_lfds711_stack_pop_i > 1000;
-        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_14)
+        _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
+        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
+        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
         {
             break;
         }
@@ -3119,7 +3672,7 @@ int lfds711_stack_pop(struct lfds711_stack_state *__cs_param_lfds711_stack_pop_s
     }
 
     *__cs_param_lfds711_stack_pop_se = __cs_local_lfds711_stack_pop_original_top[0];
-    return 1;
+    return __cs_local_lfds711_stack_pop_result;
 }
 
 
@@ -3134,9 +3687,9 @@ void lfds711_stack_push(struct lfds711_stack_state *__cs_param_lfds711_stack_pus
     struct lfds711_stack_element *__cs_local_lfds711_stack_push_new_top[2];
     struct lfds711_stack_element * volatile __cs_local_lfds711_stack_push_original_top[2];
     ;
-    _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_15;
-    __cs_local_lfds711_stack_push___cs_tmp_if_cond_15 = !(__cs_param_lfds711_stack_push_ss != 0);
-    if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
+    _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_14;
+    __cs_local_lfds711_stack_push___cs_tmp_if_cond_14 = !(__cs_param_lfds711_stack_push_ss != 0);
+    if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_14)
     {
         char *__cs_local_lfds711_stack_push_c;
         __cs_local_lfds711_stack_push_c = 0;
@@ -3146,9 +3699,9 @@ void lfds711_stack_push(struct lfds711_stack_state *__cs_param_lfds711_stack_pus
     ;
     ;
     ;
-    _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-    __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = !(__cs_param_lfds711_stack_push_se != 0);
-    if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+    _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_15;
+    __cs_local_lfds711_stack_push___cs_tmp_if_cond_15 = !(__cs_param_lfds711_stack_push_se != 0);
+    if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
     {
         char *__cs_local_lfds711_stack_push_c;
         __cs_local_lfds711_stack_push_c = 0;
@@ -3165,26 +3718,26 @@ void lfds711_stack_push(struct lfds711_stack_state *__cs_param_lfds711_stack_pus
     __cs_local_lfds711_stack_push_i = 0;
     while (__cs_local_lfds711_stack_push_result == 0)
     {
-        __cs_mutex_lock(&lock);
+        __cs_mutex_lock(&library_lock);
         (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-        __cs_mutex_unlock(&lock);
+        __cs_mutex_unlock(&library_lock);
         __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-        __cs_mutex_lock(&lock);
+        __cs_mutex_lock(&library_lock);
         __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-        __cs_mutex_unlock(&lock);
+        __cs_mutex_unlock(&library_lock);
         ;
-        _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_result == 0;
-        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+        _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
+        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
+        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
         {
             exponential_backoff();
         }
 
         __cs_local_lfds711_stack_push_i++;
         ;
-        _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_18;
-        __cs_local_lfds711_stack_push___cs_tmp_if_cond_18 = __cs_local_lfds711_stack_push_i > 1000;
-        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_18)
+        _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
         {
             break;
         }
@@ -3197,48 +3750,32 @@ void lfds711_stack_push(struct lfds711_stack_state *__cs_param_lfds711_stack_pus
 
 struct lfds711_stack_state *__cs_param_lfds711_stack_push_ss, struct lfds711_stack_element *__cs_param_lfds711_stack_push_se
 void
-function 'lfds711_stack_cleanup' ----------------------------------:
-void lfds711_stack_cleanup(struct lfds711_stack_state *__cs_param_lfds711_stack_cleanup_ss, void (*__cs_param_lfds711_stack_cleanup_element_cleanup_callback)(struct lfds711_stack_state, struct lfds711_stack_element))
+function '__CSEQ_atomic_compare_and_exchange' ----------------------------------:
+_Bool __CSEQ_atomic_compare_and_exchange(int long long unsigned *__cs_param___CSEQ_atomic_compare_and_exchange_mptr, int long long unsigned *__cs_param___CSEQ_atomic_compare_and_exchange_eptr, int long long unsigned __cs_param___CSEQ_atomic_compare_and_exchange_newval, _Bool __cs_param___CSEQ_atomic_compare_and_exchange_weak_p, int __cs_param___CSEQ_atomic_compare_and_exchange_sm, int __cs_param___CSEQ_atomic_compare_and_exchange_fm)
 {
-    struct lfds711_stack_element *__cs_local_lfds711_stack_cleanup_se;
-    struct lfds711_stack_element *__cs_local_lfds711_stack_cleanup_se_temp;
     ;
-    _Bool __cs_local_lfds711_stack_cleanup___cs_tmp_if_cond_19;
-    __cs_local_lfds711_stack_cleanup___cs_tmp_if_cond_19 = !(__cs_param_lfds711_stack_cleanup_ss != 0);
-    if (__cs_local_lfds711_stack_cleanup___cs_tmp_if_cond_19)
+    _Bool __cs_local___CSEQ_atomic_compare_and_exchange___cs_tmp_if_cond_18;
+    __cs_local___CSEQ_atomic_compare_and_exchange___cs_tmp_if_cond_18 = (*__cs_param___CSEQ_atomic_compare_and_exchange_mptr) == (*__cs_param___CSEQ_atomic_compare_and_exchange_eptr);
+    if (__cs_local___CSEQ_atomic_compare_and_exchange___cs_tmp_if_cond_18)
     {
-        char *__cs_local_lfds711_stack_cleanup_c;
-        __cs_local_lfds711_stack_cleanup_c = 0;
-        *__cs_local_lfds711_stack_cleanup_c = 0;
+        *__cs_param___CSEQ_atomic_compare_and_exchange_mptr = __cs_param___CSEQ_atomic_compare_and_exchange_newval;
+        return 1;
+    }
+    else
+    {
+        *__cs_param___CSEQ_atomic_compare_and_exchange_eptr = __cs_param___CSEQ_atomic_compare_and_exchange_newval;
+        return 0;
     }
 
-    ;
-    ;
-    __atomic_thread_fence(2);
-    ;
-    _Bool __cs_local_lfds711_stack_cleanup___cs_tmp_if_cond_20;
-    __cs_local_lfds711_stack_cleanup___cs_tmp_if_cond_20 = __cs_param_lfds711_stack_cleanup_element_cleanup_callback != 0;
-    if (__cs_local_lfds711_stack_cleanup___cs_tmp_if_cond_20)
-    {
-        __cs_local_lfds711_stack_cleanup_se = (*__cs_param_lfds711_stack_cleanup_ss).top[0];
-        while (__cs_local_lfds711_stack_cleanup_se != 0)
-        {
-            __cs_local_lfds711_stack_cleanup_se_temp = __cs_local_lfds711_stack_cleanup_se;
-            __cs_local_lfds711_stack_cleanup_se = (*__cs_local_lfds711_stack_cleanup_se).next;
-            __cs_param_lfds711_stack_cleanup_element_cleanup_callback(__cs_param_lfds711_stack_cleanup_ss, __cs_local_lfds711_stack_cleanup_se_temp);
-        }
-
-    }
-
-    return;
 }
 
 
-struct lfds711_stack_state *__cs_param_lfds711_stack_cleanup_ss, void (*__cs_param_lfds711_stack_cleanup_element_cleanup_callback)(struct lfds711_stack_state, struct lfds711_stack_element)
-void
-function 'LIST_InsertHeadNode' ----------------------------------:
-int LIST_InsertHeadNode(LIST_NODE_T **__cs_param_LIST_InsertHeadNode_IO_head, struct lfds711_stack_element __cs_param_LIST_InsertHeadNode_I__se, int long long unsigned __cs_param_LIST_InsertHeadNode_I__user_id)
+int long long unsigned *__cs_param___CSEQ_atomic_compare_and_exchange_mptr, int long long unsigned *__cs_param___CSEQ_atomic_compare_and_exchange_eptr, int long long unsigned __cs_param___CSEQ_atomic_compare_and_exchange_newval, _Bool __cs_param___CSEQ_atomic_compare_and_exchange_weak_p, int __cs_param___CSEQ_atomic_compare_and_exchange_sm, int __cs_param___CSEQ_atomic_compare_and_exchange_fm
+_Bool
+function '__atomic_compare_exchange_n' ----------------------------------:
+_Bool __atomic_compare_exchange_n(int long long unsigned *__cs_param___atomic_compare_exchange_n_mptr, int long long unsigned *__cs_param___atomic_compare_exchange_n_eptr, int long long unsigned __cs_param___atomic_compare_exchange_n_newval, _Bool __cs_param___atomic_compare_exchange_n_weak_p, int __cs_param___atomic_compare_exchange_n_sm, int __cs_param___atomic_compare_exchange_n_fm)
 {
+<<<<<<< HEAD
     int __cs_local_LIST_InsertHeadNode_rCode;
     __cs_local_LIST_InsertHeadNode_rCode = 0;
     LIST_NODE_T *__cs_local_LIST_InsertHeadNode_newNode;
@@ -3265,94 +3802,74 @@ int LIST_InsertHeadNode(LIST_NODE_T **__cs_param_LIST_InsertHeadNode_IO_head, st
     CLEANUP:
     return __cs_local_LIST_InsertHeadNode_rCode;
 
+=======
+    int __cs_local___atomic_compare_exchange_n_res;
+    __cs_local___atomic_compare_exchange_n_res = __CSEQ_atomic_compare_and_exchange(__cs_param___atomic_compare_exchange_n_mptr, __cs_param___atomic_compare_exchange_n_eptr, __cs_param___atomic_compare_exchange_n_newval, __cs_param___atomic_compare_exchange_n_weak_p, __cs_param___atomic_compare_exchange_n_sm, __cs_param___atomic_compare_exchange_n_fm);
+    return __cs_local___atomic_compare_exchange_n_res;
+>>>>>>> origin/main
 }
 
 
-LIST_NODE_T **__cs_param_LIST_InsertHeadNode_IO_head, struct lfds711_stack_element __cs_param_LIST_InsertHeadNode_I__se, int long long unsigned __cs_param_LIST_InsertHeadNode_I__user_id
-int
-function 'PrintListPayloads' ----------------------------------:
-int PrintListPayloads(LIST_NODE_T *__cs_param_PrintListPayloads_head)
+int long long unsigned *__cs_param___atomic_compare_exchange_n_mptr, int long long unsigned *__cs_param___atomic_compare_exchange_n_eptr, int long long unsigned __cs_param___atomic_compare_exchange_n_newval, _Bool __cs_param___atomic_compare_exchange_n_weak_p, int __cs_param___atomic_compare_exchange_n_sm, int __cs_param___atomic_compare_exchange_n_fm
+_Bool
+function '__CSEQ_atomic_exchange' ----------------------------------:
+unsigned long __CSEQ_atomic_exchange(int long long unsigned *__cs_param___CSEQ_atomic_exchange_previous, int long long unsigned __cs_param___CSEQ_atomic_exchange_new, int __cs_param___CSEQ_atomic_exchange_memorder)
 {
-    int __cs_local_PrintListPayloads_rCode;
-    __cs_local_PrintListPayloads_rCode = 0;
-    LIST_NODE_T *__cs_local_PrintListPayloads_cur;
-    __cs_local_PrintListPayloads_cur = __cs_param_PrintListPayloads_head;
-    while (__cs_local_PrintListPayloads_cur)
-    {
-        printf("%lld", (*__cs_local_PrintListPayloads_cur).payload.user_id);
-        __cs_local_PrintListPayloads_cur = (*__cs_local_PrintListPayloads_cur).next;
-        ;
-        _Bool __cs_local_PrintListPayloads___cs_tmp_if_cond_22;
-        __cs_local_PrintListPayloads___cs_tmp_if_cond_22 = __cs_local_PrintListPayloads_cur != 0;
-        if (__cs_local_PrintListPayloads___cs_tmp_if_cond_22)
-        {
-            printf(",");
-        }
-
-    }
-
-    printf("\n");
-    return __cs_local_PrintListPayloads_rCode;
+    unsigned long int __cs_local___CSEQ_atomic_exchange_old;
+    __cs_local___CSEQ_atomic_exchange_old = *__cs_param___CSEQ_atomic_exchange_previous;
+    *__cs_param___CSEQ_atomic_exchange_previous = __cs_param___CSEQ_atomic_exchange_new;
+    return __cs_local___CSEQ_atomic_exchange_old;
 }
 
 
-LIST_NODE_T *__cs_param_PrintListPayloads_head
-int
-function 'GetListSize' ----------------------------------:
-int GetListSize(LIST_NODE_T *__cs_param_GetListSize_head)
+int long long unsigned *__cs_param___CSEQ_atomic_exchange_previous, int long long unsigned __cs_param___CSEQ_atomic_exchange_new, int __cs_param___CSEQ_atomic_exchange_memorder
+unsigned long
+function '__atomic_exchange_n' ----------------------------------:
+unsigned long __atomic_exchange_n(int long long unsigned *__cs_param___atomic_exchange_n_previous, int long long unsigned __cs_param___atomic_exchange_n_new, int __cs_param___atomic_exchange_n_memorder)
 {
-    LIST_NODE_T *__cs_local_GetListSize_cur;
-    __cs_local_GetListSize_cur = __cs_param_GetListSize_head;
-    int __cs_local_GetListSize_nodeCnt;
-    __cs_local_GetListSize_nodeCnt = 0;
-    while (__cs_local_GetListSize_cur)
-    {
-        ++__cs_local_GetListSize_nodeCnt;
-        __cs_local_GetListSize_cur = (*__cs_local_GetListSize_cur).next;
-    }
-
-    return __cs_local_GetListSize_nodeCnt;
+    int __cs_local___atomic_exchange_n_res;
+    __cs_local___atomic_exchange_n_res = __CSEQ_atomic_exchange(__cs_param___atomic_exchange_n_previous, __cs_param___atomic_exchange_n_new, __cs_param___atomic_exchange_n_memorder);
+    return __cs_local___atomic_exchange_n_res;
 }
 
 
-LIST_NODE_T *__cs_param_GetListSize_head
-int
-function 'LIST_GetTailNode' ----------------------------------:
-int LIST_GetTailNode(LIST_NODE_T *__cs_param_LIST_GetTailNode_I__listHead, LIST_NODE_T **__cs_param_LIST_GetTailNode__O_listTail)
+int long long unsigned *__cs_param___atomic_exchange_n_previous, int long long unsigned __cs_param___atomic_exchange_n_new, int __cs_param___atomic_exchange_n_memorder
+unsigned long
+function '__atomic_thread_fence' ----------------------------------:
+void __atomic_thread_fence(int __cs_param___atomic_thread_fence_i)
 {
-    int __cs_local_LIST_GetTailNode_rCode;
-    __cs_local_LIST_GetTailNode_rCode = 0;
-    LIST_NODE_T *__cs_local_LIST_GetTailNode_curNode;
-    __cs_local_LIST_GetTailNode_curNode = __cs_param_LIST_GetTailNode_I__listHead;
-    ;
-    _Bool __cs_local_LIST_GetTailNode___cs_tmp_if_cond_23;
-    __cs_local_LIST_GetTailNode___cs_tmp_if_cond_23 = __cs_local_LIST_GetTailNode_curNode;
-    if (__cs_local_LIST_GetTailNode___cs_tmp_if_cond_23)
-    {
-        while ((*__cs_local_LIST_GetTailNode_curNode).next)
-        {
-            __cs_local_LIST_GetTailNode_curNode = (*__cs_local_LIST_GetTailNode_curNode).next;
-        }
-
-    }
-
-    ;
-    _Bool __cs_local_LIST_GetTailNode___cs_tmp_if_cond_24;
-    __cs_local_LIST_GetTailNode___cs_tmp_if_cond_24 = __cs_param_LIST_GetTailNode__O_listTail;
-    if (__cs_local_LIST_GetTailNode___cs_tmp_if_cond_24)
-    {
-        *__cs_param_LIST_GetTailNode__O_listTail = __cs_local_LIST_GetTailNode_curNode;
-    }
-
-    return __cs_local_LIST_GetTailNode_rCode;
 }
 
 
-LIST_NODE_T *__cs_param_LIST_GetTailNode_I__listHead, LIST_NODE_T **__cs_param_LIST_GetTailNode__O_listTail
-int
-function 'LIST_InsertTailNode' ----------------------------------:
-int LIST_InsertTailNode(LIST_NODE_T **__cs_param_LIST_InsertTailNode_IO_head, struct lfds711_stack_element __cs_param_LIST_InsertTailNode_I__se, int long long unsigned __cs_param_LIST_InsertTailNode_I__user_id)
+int __cs_param___atomic_thread_fence_i
+void
+function 'init' ----------------------------------:
+void *init()
 {
+    lfds711_stack_init_valid_on_current_logical_core(&mystack, 0);
+    return (void *) (&mystack);
+}
+
+
+
+void *
+function 'insert' ----------------------------------:
+void insert(struct lfds711_stack_state *__cs_param_insert_s, int long long unsigned __cs_param_insert_id)
+{
+    struct test_data *__cs_local_insert_td;
+    __cs_local_insert_td = __cs_safe_malloc(sizeof(struct test_data));
+    (*__cs_local_insert_td).user_id = __cs_param_insert_id;
+    (*__cs_local_insert_td).se.value = (void *) ((lfds711_pal_uint_t) __cs_local_insert_td);
+    lfds711_stack_push((struct lfds711_stack_state *) __cs_param_insert_s, &(*__cs_local_insert_td).se);
+}
+
+
+struct lfds711_stack_state *__cs_param_insert_s, int long long unsigned __cs_param_insert_id
+void
+function 'delete' ----------------------------------:
+int delete(struct lfds711_stack_state *__cs_param_delete_s)
+{
+<<<<<<< HEAD
     int __cs_local_LIST_InsertTailNode_rCode;
     __cs_local_LIST_InsertTailNode_rCode = 0;
     LIST_NODE_T *__cs_local_LIST_InsertTailNode_tailNode;
@@ -3386,54 +3903,58 @@ int LIST_InsertTailNode(LIST_NODE_T **__cs_param_LIST_InsertTailNode_IO_head, st
     (*__cs_local_LIST_InsertTailNode_newNode).payload.user_id = __cs_param_LIST_InsertTailNode_I__user_id;
     (*__cs_local_LIST_InsertTailNode_newNode).payload.se = __cs_param_LIST_InsertTailNode_I__se;
     (*__cs_local_LIST_InsertTailNode_newNode).next = 0;
+=======
+    struct lfds711_stack_element *__cs_local_delete_se;
+    struct test_data *__cs_local_delete_temp_td;
+    int __cs_local_delete_res;
+    __cs_local_delete_res = lfds711_stack_pop(&mystack, &__cs_local_delete_se);
+>>>>>>> origin/main
     ;
-    _Bool __cs_local_LIST_InsertTailNode___cs_tmp_if_cond_27;
-    __cs_local_LIST_InsertTailNode___cs_tmp_if_cond_27 = __cs_local_LIST_InsertTailNode_tailNode;
-    if (__cs_local_LIST_InsertTailNode___cs_tmp_if_cond_27)
+    _Bool __cs_local_delete___cs_tmp_if_cond_19;
+    __cs_local_delete___cs_tmp_if_cond_19 = __cs_local_delete_res == 0;
+    if (__cs_local_delete___cs_tmp_if_cond_19)
     {
-        (*__cs_local_LIST_InsertTailNode_tailNode).next = __cs_local_LIST_InsertTailNode_newNode;
-    }
-    else
-    {
-        *__cs_param_LIST_InsertTailNode_IO_head = __cs_local_LIST_InsertTailNode_newNode;
+        return __cs_local_delete_res;
     }
 
-    CLEANUP:
-    return __cs_local_LIST_InsertTailNode_rCode;
-
+    __cs_local_delete_temp_td = (*__cs_local_delete_se).value;
+    int __cs_local_delete_id_popped;
+    __cs_local_delete_id_popped = (*__cs_local_delete_temp_td).user_id;
+    printf("%llu\n", (*__cs_local_delete_temp_td).user_id);
+    return __cs_local_delete_res;
 }
 
 
-LIST_NODE_T **__cs_param_LIST_InsertTailNode_IO_head, struct lfds711_stack_element __cs_param_LIST_InsertTailNode_I__se, int long long unsigned __cs_param_LIST_InsertTailNode_I__user_id
+struct lfds711_stack_state *__cs_param_delete_s
 int
-function 'LIST_FetchParentNodeById' ----------------------------------:
-int LIST_FetchParentNodeById(LIST_NODE_T *__cs_param_LIST_FetchParentNodeById_I__head, int long long unsigned __cs_param_LIST_FetchParentNodeById_I__user_id, LIST_NODE_T **__cs_param_LIST_FetchParentNodeById__O_parent)
+function 'contains' ----------------------------------:
+int contains(void *__cs_param_contains_s, int __cs_param_contains_id)
 {
-    int __cs_local_LIST_FetchParentNodeById_rCode;
-    __cs_local_LIST_FetchParentNodeById_rCode = 0;
-    LIST_NODE_T *__cs_local_LIST_FetchParentNodeById_parent;
-    __cs_local_LIST_FetchParentNodeById_parent = 0;
-    LIST_NODE_T *__cs_local_LIST_FetchParentNodeById_curNode;
-    __cs_local_LIST_FetchParentNodeById_curNode = __cs_param_LIST_FetchParentNodeById_I__head;
-    ;
-    _Bool __cs_local_LIST_FetchParentNodeById___cs_tmp_if_cond_28;
-    __cs_local_LIST_FetchParentNodeById___cs_tmp_if_cond_28 = 0 == __cs_param_LIST_FetchParentNodeById_I__head;
-    if (__cs_local_LIST_FetchParentNodeById___cs_tmp_if_cond_28)
-    {
-        __cs_local_LIST_FetchParentNodeById_rCode = ENOENT;
-        goto CLEANUP;
-    }
-
-    while (__cs_local_LIST_FetchParentNodeById_curNode)
+    int __cs_local_contains_max_size;
+    __cs_local_contains_max_size = 20;
+    int __cs_local_contains_actual_size;
+    __cs_local_contains_actual_size = 0;
+    int __cs_local_contains_res;
+    __cs_local_contains_res = 1;
+    int __cs_local_contains_found;
+    __cs_local_contains_found = 0;
+    int __cs_local_contains_dimension;
+    __cs_local_contains_dimension = 2;
+    struct test_data **__cs_local_contains_datas;
+    __cs_local_contains_datas = __cs_safe_malloc((sizeof(struct test_data *)) * __cs_local_contains_max_size);
+    struct lfds711_stack_element *__cs_local_contains_se;
+    while ((__cs_local_contains_found == 0) && (__cs_local_contains_res != 0))
     {
         ;
-        _Bool __cs_local_LIST_FetchParentNodeById___cs_tmp_if_cond_29;
-        __cs_local_LIST_FetchParentNodeById___cs_tmp_if_cond_29 = (*__cs_local_LIST_FetchParentNodeById_curNode).payload.user_id > __cs_param_LIST_FetchParentNodeById_I__user_id;
-        if (__cs_local_LIST_FetchParentNodeById___cs_tmp_if_cond_29)
+        _Bool __cs_local_contains___cs_tmp_if_cond_20;
+        __cs_local_contains___cs_tmp_if_cond_20 = __cs_local_contains_actual_size == __cs_local_contains_max_size;
+        if (__cs_local_contains___cs_tmp_if_cond_20)
         {
-            break;
+            __cs_local_contains_datas = realloc(__cs_local_contains_datas, ((sizeof(struct test_data *)) * __cs_local_contains_max_size) * __cs_local_contains_dimension);
+            __cs_local_contains_max_size *= __cs_local_contains_dimension;
         }
 
+<<<<<<< HEAD
         __cs_local_LIST_FetchParentNodeById_parent = __cs_local_LIST_FetchParentNodeById_curNode;
         __cs_local_LIST_FetchParentNodeById_curNode = (*__cs_local_LIST_FetchParentNodeById_curNode).next;
     }
@@ -3497,148 +4018,69 @@ int LIST_InsertNodeById(LIST_NODE_T **__cs_param_LIST_InsertNodeById_IO_head, in
     if (__cs_local_LIST_InsertNodeById___cs_tmp_if_cond_33)
     {
         __cs_switch_LIST_InsertNodeById_1_case_2:
+=======
+        __cs_local_contains_res = lfds711_stack_pop((struct lfds711_stack_state *) __cs_param_contains_s, &__cs_local_contains_se);
+>>>>>>> origin/main
         ;
-
-        (*__cs_local_LIST_InsertNodeById_newNode).next = 0;
-        *__cs_param_LIST_InsertNodeById_IO_head = __cs_local_LIST_InsertNodeById_newNode;
-        __cs_local_LIST_InsertNodeById_rCode = 0;
-        goto CLEANUP;
-        goto __cs_switch_LIST_InsertNodeById_1_case_3;
-    }
-
-    ;
-    _Bool __cs_local_LIST_InsertNodeById___cs_tmp_if_cond_34;
-    __cs_local_LIST_InsertNodeById___cs_tmp_if_cond_34 = !((__cs_local_LIST_InsertNodeById___cs_switch_cond_LIST_InsertNodeById_1 == 0) || (__cs_local_LIST_InsertNodeById___cs_switch_cond_LIST_InsertNodeById_1 == ENOENT));
-    if (__cs_local_LIST_InsertNodeById___cs_tmp_if_cond_34)
-    {
-        __cs_switch_LIST_InsertNodeById_1_case_3:
-        ;
-
-        fprintf(stderr, "LIST_FetchParentNodeByName() reports: %d\n", __cs_local_LIST_InsertNodeById_rCode);
-        goto CLEANUP;
-        goto __cs_switch_LIST_InsertNodeById_1_exit;
-    }
-
-    __cs_switch_LIST_InsertNodeById_1_exit:
-    ;
-
-    ;
-    _Bool __cs_local_LIST_InsertNodeById___cs_tmp_if_cond_35;
-    __cs_local_LIST_InsertNodeById___cs_tmp_if_cond_35 = 0 == __cs_local_LIST_InsertNodeById_parent;
-    if (__cs_local_LIST_InsertNodeById___cs_tmp_if_cond_35)
-    {
-        (*__cs_local_LIST_InsertNodeById_newNode).next = *__cs_param_LIST_InsertNodeById_IO_head;
-        *__cs_param_LIST_InsertNodeById_IO_head = __cs_local_LIST_InsertNodeById_newNode;
-        goto CLEANUP;
-    }
-
-    (*__cs_local_LIST_InsertNodeById_newNode).next = (*__cs_local_LIST_InsertNodeById_parent).next;
-    (*__cs_local_LIST_InsertNodeById_parent).next = __cs_local_LIST_InsertNodeById_newNode;
-    CLEANUP:
-    return __cs_local_LIST_InsertNodeById_rCode;
-
-}
-
-
-LIST_NODE_T **__cs_param_LIST_InsertNodeById_IO_head, int long long unsigned __cs_param_LIST_InsertNodeById_I__user_id, struct lfds711_stack_element __cs_param_LIST_InsertNodeById_I__se
-int
-function 'LIST_FetchNodeById' ----------------------------------:
-int LIST_FetchNodeById(LIST_NODE_T *__cs_param_LIST_FetchNodeById_I__head, int long long unsigned __cs_param_LIST_FetchNodeById_I__user_id, LIST_NODE_T **__cs_param_LIST_FetchNodeById__O_node, LIST_NODE_T **__cs_param_LIST_FetchNodeById__O_parent)
-{
-    int __cs_local_LIST_FetchNodeById_rCode;
-    __cs_local_LIST_FetchNodeById_rCode = 0;
-    LIST_NODE_T *__cs_local_LIST_FetchNodeById_parent;
-    __cs_local_LIST_FetchNodeById_parent = 0;
-    LIST_NODE_T *__cs_local_LIST_FetchNodeById_curNode;
-    __cs_local_LIST_FetchNodeById_curNode = __cs_param_LIST_FetchNodeById_I__head;
-    while (__cs_local_LIST_FetchNodeById_curNode)
-    {
-        ;
-        _Bool __cs_local_LIST_FetchNodeById___cs_tmp_if_cond_36;
-        __cs_local_LIST_FetchNodeById___cs_tmp_if_cond_36 = (*__cs_local_LIST_FetchNodeById_curNode).payload.user_id == __cs_param_LIST_FetchNodeById_I__user_id;
-        if (__cs_local_LIST_FetchNodeById___cs_tmp_if_cond_36)
+        _Bool __cs_local_contains___cs_tmp_if_cond_21;
+        __cs_local_contains___cs_tmp_if_cond_21 = __cs_local_contains_res == 0;
+        if (__cs_local_contains___cs_tmp_if_cond_21)
         {
-            break;
+            continue;
         }
 
-        __cs_local_LIST_FetchNodeById_parent = __cs_local_LIST_FetchNodeById_curNode;
-        __cs_local_LIST_FetchNodeById_curNode = (*__cs_local_LIST_FetchNodeById_curNode).next;
+        __cs_local_contains_datas[__cs_local_contains_actual_size] = (*__cs_local_contains_se).value;
+        ;
+        _Bool __cs_local_contains___cs_tmp_if_cond_22;
+        __cs_local_contains___cs_tmp_if_cond_22 = (*__cs_local_contains_datas[__cs_local_contains_actual_size]).user_id == __cs_param_contains_id;
+        if (__cs_local_contains___cs_tmp_if_cond_22)
+        {
+            __cs_local_contains_found = 1;
+        }
+
+        __cs_local_contains_actual_size++;
     }
 
-    ;
-    _Bool __cs_local_LIST_FetchNodeById___cs_tmp_if_cond_37;
-    __cs_local_LIST_FetchNodeById___cs_tmp_if_cond_37 = 0 == __cs_local_LIST_FetchNodeById_curNode;
-    if (__cs_local_LIST_FetchNodeById___cs_tmp_if_cond_37)
+    int __cs_local_contains_i;
+    __cs_local_contains_i = 0;
+    while (__cs_local_contains_i < __cs_local_contains_actual_size)
     {
-        __cs_local_LIST_FetchNodeById_rCode = ENOENT;
-        goto CLEANUP;
+        lfds711_stack_push((struct lfds711_stack_state *) __cs_param_contains_s, __cs_local_contains_datas[__cs_local_contains_i]);
+        __cs_local_contains_i++;
     }
 
-    ;
-    _Bool __cs_local_LIST_FetchNodeById___cs_tmp_if_cond_38;
-    __cs_local_LIST_FetchNodeById___cs_tmp_if_cond_38 = __cs_param_LIST_FetchNodeById__O_node;
-    if (__cs_local_LIST_FetchNodeById___cs_tmp_if_cond_38)
-    {
-        *__cs_param_LIST_FetchNodeById__O_node = __cs_local_LIST_FetchNodeById_curNode;
-    }
-
-    ;
-    _Bool __cs_local_LIST_FetchNodeById___cs_tmp_if_cond_39;
-    __cs_local_LIST_FetchNodeById___cs_tmp_if_cond_39 = __cs_param_LIST_FetchNodeById__O_parent;
-    if (__cs_local_LIST_FetchNodeById___cs_tmp_if_cond_39)
-    {
-        *__cs_param_LIST_FetchNodeById__O_parent = __cs_local_LIST_FetchNodeById_parent;
-    }
-
-    CLEANUP:
-    return __cs_local_LIST_FetchNodeById_rCode;
-
+    free(__cs_local_contains_datas);
+    return __cs_local_contains_found;
 }
 
 
-LIST_NODE_T *__cs_param_LIST_FetchNodeById_I__head, int long long unsigned __cs_param_LIST_FetchNodeById_I__user_id, LIST_NODE_T **__cs_param_LIST_FetchNodeById__O_node, LIST_NODE_T **__cs_param_LIST_FetchNodeById__O_parent
+void *__cs_param_contains_s, int __cs_param_contains_id
 int
-function 'LIST_DeleteNodeById' ----------------------------------:
-int LIST_DeleteNodeById(LIST_NODE_T **__cs_param_LIST_DeleteNodeById_IO_head, int long long unsigned __cs_param_LIST_DeleteNodeById_I__user_id)
+function 'push' ----------------------------------:
+void *push(void *__cs_param_push___cs_unused)
 {
-    int __cs_local_LIST_DeleteNodeById_rCode;
-    __cs_local_LIST_DeleteNodeById_rCode = 0;
-    LIST_NODE_T *__cs_local_LIST_DeleteNodeById_parent;
-    LIST_NODE_T *__cs_local_LIST_DeleteNodeById_delNode;
-    __cs_local_LIST_DeleteNodeById_delNode = 0;
-    __cs_local_LIST_DeleteNodeById_rCode = LIST_FetchNodeById(*__cs_param_LIST_DeleteNodeById_IO_head, __cs_param_LIST_DeleteNodeById_I__user_id, &__cs_local_LIST_DeleteNodeById_delNode, &__cs_local_LIST_DeleteNodeById_parent);
-    ;
-    static int __cs_local_LIST_DeleteNodeById___cs_switch_cond_LIST_DeleteNodeById_1;
-    __cs_local_LIST_DeleteNodeById___cs_switch_cond_LIST_DeleteNodeById_1 = __cs_local_LIST_DeleteNodeById_rCode;
-    ;
-    _Bool __cs_local_LIST_DeleteNodeById___cs_tmp_if_cond_40;
-    __cs_local_LIST_DeleteNodeById___cs_tmp_if_cond_40 = __cs_local_LIST_DeleteNodeById___cs_switch_cond_LIST_DeleteNodeById_1 == 0;
-    if (__cs_local_LIST_DeleteNodeById___cs_tmp_if_cond_40)
+    int long long unsigned __cs_local_push_loop;
+    for (__cs_local_push_loop = 0; __cs_local_push_loop < 5; __cs_local_push_loop++)
     {
-        goto __cs_switch_LIST_DeleteNodeById_1_exit;
-    }
-
-    ;
-    _Bool __cs_local_LIST_DeleteNodeById___cs_tmp_if_cond_41;
-    __cs_local_LIST_DeleteNodeById___cs_tmp_if_cond_41 = __cs_local_LIST_DeleteNodeById___cs_switch_cond_LIST_DeleteNodeById_1 == ENOENT;
-    if (__cs_local_LIST_DeleteNodeById___cs_tmp_if_cond_41)
-    {
-        __cs_switch_LIST_DeleteNodeById_1_case_2:
         ;
+        _Bool __cs_local_push___cs_tmp_if_cond_23;
+        __cs_local_push___cs_tmp_if_cond_23 = ATOMIC_OPERATION;
+        if (__cs_local_push___cs_tmp_if_cond_23)
+        {
+            __cs_mutex_lock(&lock);
+        }
 
-        fprintf(stderr, "Matching node not found.\n");
-        goto CLEANUP;
-        goto __cs_switch_LIST_DeleteNodeById_1_case_3;
-    }
-
-    ;
-    _Bool __cs_local_LIST_DeleteNodeById___cs_tmp_if_cond_42;
-    __cs_local_LIST_DeleteNodeById___cs_tmp_if_cond_42 = !((__cs_local_LIST_DeleteNodeById___cs_switch_cond_LIST_DeleteNodeById_1 == 0) || (__cs_local_LIST_DeleteNodeById___cs_switch_cond_LIST_DeleteNodeById_1 == ENOENT));
-    if (__cs_local_LIST_DeleteNodeById___cs_tmp_if_cond_42)
-    {
-        __cs_switch_LIST_DeleteNodeById_1_case_3:
         ;
+        insert(ss, __cs_local_push_loop);
+        ;
+        _Bool __cs_local_push___cs_tmp_if_cond_24;
+        __cs_local_push___cs_tmp_if_cond_24 = ATOMIC_OPERATION;
+        if (__cs_local_push___cs_tmp_if_cond_24)
+        {
+            __cs_mutex_unlock(&lock);
+        }
 
+<<<<<<< HEAD
         fprintf(stderr, "LIST_FetchNodeByName() reports: %d\n", __cs_local_LIST_DeleteNodeById_rCode);
         goto CLEANUP;
         goto __cs_switch_LIST_DeleteNodeById_1_exit;
@@ -3709,6 +4151,9 @@ void *push(void *__cs_param_push___cs_unused)
         __cs_local_push_td[__cs_local_push_loop].se.value = (void *) ((lfds711_pal_uint_t) (&__cs_local_push_td[__cs_local_push_loop]));
         lfds711_stack_push(&ss, &__cs_local_push_td[__cs_local_push_loop].se);
 >>>>>>> origin/main
+=======
+        ;
+>>>>>>> origin/main
     }
 
 }
@@ -3719,12 +4164,11 @@ void *
 function 'pop' ----------------------------------:
 void *pop(void *__cs_param_pop___cs_unused)
 {
-    struct lfds711_stack_element *__cs_local_pop_se;
-    struct test_data *__cs_local_pop_temp_td;
     int __cs_local_pop_res;
     int __cs_local_pop_count;
     __cs_local_pop_count = 0;
     int __cs_local_pop_loop;
+<<<<<<< HEAD
 <<<<<<< HEAD
     for (__cs_local_pop_loop = 0; __cs_local_pop_loop < 10; __cs_local_pop_loop++)
     {
@@ -3735,10 +4179,12 @@ void *pop(void *__cs_param_pop___cs_unused)
         ;
 =======
     for (__cs_local_pop_loop = 0; __cs_local_pop_loop < 1; __cs_local_pop_loop++)
+=======
+    for (__cs_local_pop_loop = 0; __cs_local_pop_loop < 5; __cs_local_pop_loop++)
+>>>>>>> origin/main
     {
-        __cs_local_pop_temp_td = 0;
-        __cs_local_pop_res = lfds711_stack_pop(&ss, &__cs_local_pop_se);
         ;
+<<<<<<< HEAD
 >>>>>>> origin/main
         _Bool __cs_local_pop___cs_tmp_if_cond_44;
         __cs_local_pop___cs_tmp_if_cond_44 = __cs_local_pop_res == 0;
@@ -3829,66 +4275,60 @@ void readFile(char *__cs_param_readFile_filename, LIST_NODE_T *__cs_param_readFi
         char *__cs_local_readFile_ptr;
         __cs_local_readFile_ptr = strtok(__cs_local_readFile_line, __cs_local_readFile_delim);
         while (__cs_local_readFile_curNode)
+=======
+        _Bool __cs_local_pop___cs_tmp_if_cond_25;
+        __cs_local_pop___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
+        if (__cs_local_pop___cs_tmp_if_cond_25)
+>>>>>>> origin/main
         {
-            ;
-            _Bool __cs_local_readFile___cs_tmp_if_cond_46;
-            __cs_local_readFile___cs_tmp_if_cond_46 = (*__cs_local_readFile_curNode).payload.user_id != atoi(__cs_local_readFile_ptr);
-            if (__cs_local_readFile___cs_tmp_if_cond_46)
-            {
-                break;
-            }
-
-            __cs_local_readFile_i++;
-            __cs_local_readFile_parent = __cs_local_readFile_curNode;
-            __cs_local_readFile_curNode = (*__cs_local_readFile_curNode).next;
-            __cs_local_readFile_ptr = strtok(0, __cs_local_readFile_delim);
+            __cs_mutex_lock(&lock);
         }
 
         ;
-        _Bool __cs_local_readFile___cs_tmp_if_cond_47;
-        __cs_local_readFile___cs_tmp_if_cond_47 = __cs_local_readFile_i == __cs_local_readFile_size;
-        if (__cs_local_readFile___cs_tmp_if_cond_47)
+        delete(ss);
+        ;
+        _Bool __cs_local_pop___cs_tmp_if_cond_26;
+        __cs_local_pop___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
+        if (__cs_local_pop___cs_tmp_if_cond_26)
         {
-            fclose(__cs_local_readFile_fp);
-            return;
+            __cs_mutex_unlock(&lock);
         }
 
-        __cs_local_readFile_i = 0;
-    }
-
-    ;
-    _Bool __cs_local_readFile___cs_tmp_if_cond_48;
-    __cs_local_readFile___cs_tmp_if_cond_48 = __cs_local_readFile_i != __cs_local_readFile_size;
-    if (__cs_local_readFile___cs_tmp_if_cond_48)
-    {
-        writeIntofile(__cs_param_readFile_filename, __cs_param_readFile_listHead);
-        __CSEQ_assert(0);
-        return;
+        ;
     }
 
 }
 
 
-char *__cs_param_readFile_filename, LIST_NODE_T *__cs_param_readFile_listHead
-void
+void *__cs_param_pop___cs_unused
+void *
 function 'main' ----------------------------------:
 int main()
 {
-    LIST_NODE_T *__cs_local_main_listHead;
-    __cs_local_main_listHead = 0;
-    lfds711_stack_init_valid_on_current_logical_core(&ss, 0);
+    __cs_mutex_init(&lock, 0);
+    ss = init();
     __cs_t __cs_local_main_t1;
     __cs_t __cs_local_main_t2;
+<<<<<<< HEAD
 <<<<<<< HEAD
     __cs_mutex_init(&lock, 0);
 =======
 >>>>>>> origin/main
+=======
+    __cs_t __cs_local_main_t3;
+    __cs_t __cs_local_main_t4;
+    __cs_t __cs_local_main_t5;
+    __cs_t __cs_local_main_t6;
+    __cs_t __cs_local_main_t7;
+    __cs_t __cs_local_main_t8;
+    __cs_t __cs_local_main_t9;
+    __cs_t __cs_local_main_t10;
+>>>>>>> origin/main
     __cs_create(&__cs_local_main_t1, 0, push, 0);
-    __cs_create(&__cs_local_main_t2, 0, pop, 0);
+    __cs_create(&__cs_local_main_t6, 0, pop, 0);
     __cs_join(__cs_local_main_t1, 0);
-    __cs_join(__cs_local_main_t2, 0);
-    __cs_local_main_listHead = createList(__cs_local_main_listHead);
-    readFile("foo.txt", __cs_local_main_listHead);
+    __cs_join(__cs_local_main_t6, 0);
+    __CSEQ_assert(0);
     return 0;
 }
 
@@ -3898,6 +4338,7 @@ int
 Last statement, by function:
 function: lfds711_misc_force_store   stmt:     return;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 function: __atomic_compare_exchange_n   stmt:     return __cs_local___atomic_compare_exchange_n_res;
@@ -3909,12 +4350,15 @@ function: __CSEQ_atomic_compare_and_exchange   stmt:     if (__cs_local___CSEQ_a
         return 1;
     }
     else
+=======
+function: exponential_backoff   stmt:     for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loop < 10; __cs_local_exponential_backoff_loop++)
+>>>>>>> origin/main
     {
-        *__cs_param___CSEQ_atomic_compare_and_exchange_eptr = __cs_param___CSEQ_atomic_compare_and_exchange_newval;
-        return 0;
+        ;
     }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 function: __atomic_exchange_n   stmt:     return __cs_local___atomic_exchange_n_res;
@@ -3925,6 +4369,9 @@ function: __CSEQ_atomic_exchange   stmt:     return __cs_local___CSEQ_atomic_exc
 function: __atomic_thread_fence   stmt:     return __cs_local___CSEQ_atomic_exchange_old;
 
 function: __CSEQ_atomic_swap_stack_top   stmt:     if (__cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_1)
+=======
+function: __CSEQ_atomic_swap_stack_top   stmt:     if (__cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_0)
+>>>>>>> origin/main
     {
         *__cs_param___CSEQ_atomic_swap_stack_top_top = *__cs_param___CSEQ_atomic_swap_stack_top_newtop;
         return 1;
@@ -3936,54 +4383,43 @@ function: __CSEQ_atomic_swap_stack_top   stmt:     if (__cs_local___CSEQ_atomic_
     }
 
 
-function: exponential_backoff   stmt:     for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loop < 10; __cs_local_exponential_backoff_loop++)
-    {
-        ;
-    }
-
-
 function: lfds711_misc_internal_backoff_init   stmt:     return;
 
 function: lfds711_stack_init_valid_on_current_logical_core   stmt:     return;
 
-function: lfds711_stack_pop   stmt:     return 1;
+function: lfds711_stack_pop   stmt:     return __cs_local_lfds711_stack_pop_result;
 
 function: lfds711_stack_push   stmt:     return;
 
-function: lfds711_stack_cleanup   stmt:     return;
-
-function: LIST_InsertHeadNode   stmt:     CLEANUP:
-    return __cs_local_LIST_InsertHeadNode_rCode;
-
-
-function: PrintListPayloads   stmt:     return __cs_local_PrintListPayloads_rCode;
-
-function: GetListSize   stmt:     return __cs_local_GetListSize_nodeCnt;
-
-function: LIST_GetTailNode   stmt:     return __cs_local_LIST_GetTailNode_rCode;
-
-function: LIST_InsertTailNode   stmt:     CLEANUP:
-    return __cs_local_LIST_InsertTailNode_rCode;
+function: __CSEQ_atomic_compare_and_exchange   stmt:     if (__cs_local___CSEQ_atomic_compare_and_exchange___cs_tmp_if_cond_18)
+    {
+        *__cs_param___CSEQ_atomic_compare_and_exchange_mptr = __cs_param___CSEQ_atomic_compare_and_exchange_newval;
+        return 1;
+    }
+    else
+    {
+        *__cs_param___CSEQ_atomic_compare_and_exchange_eptr = __cs_param___CSEQ_atomic_compare_and_exchange_newval;
+        return 0;
+    }
 
 
-function: LIST_FetchParentNodeById   stmt:     CLEANUP:
-    return __cs_local_LIST_FetchParentNodeById_rCode;
+function: __atomic_compare_exchange_n   stmt:     return __cs_local___atomic_compare_exchange_n_res;
 
+function: __CSEQ_atomic_exchange   stmt:     return __cs_local___CSEQ_atomic_exchange_old;
 
-function: LIST_InsertNodeById   stmt:     CLEANUP:
-    return __cs_local_LIST_InsertNodeById_rCode;
+function: __atomic_exchange_n   stmt:     return __cs_local___atomic_exchange_n_res;
 
+function: __atomic_thread_fence   stmt:     return __cs_local___atomic_exchange_n_res;
 
-function: LIST_FetchNodeById   stmt:     CLEANUP:
-    return __cs_local_LIST_FetchNodeById_rCode;
+function: init   stmt:     return (void *) (&mystack);
 
+function: insert   stmt:     lfds711_stack_push((struct lfds711_stack_state *) __cs_param_insert_s, &(*__cs_local_insert_td).se);
 
-function: LIST_DeleteNodeById   stmt:     CLEANUP:
-    return __cs_local_LIST_DeleteNodeById_rCode;
+function: delete   stmt:     return __cs_local_delete_res;
 
+function: contains   stmt:     return __cs_local_contains_found;
 
-function: LIST_Destroy   stmt:     return __cs_local_LIST_Destroy_rCode;
-
+<<<<<<< HEAD
 <<<<<<< HEAD
 function: push   stmt:     for (__cs_local_push_loop = 0; __cs_local_push_loop < 10; __cs_local_push_loop++)
     {
@@ -4004,40 +4440,60 @@ function: pop   stmt:     for (__cs_local_pop_loop = 0; __cs_local_pop_loop < 10
         ;
 =======
 function: push   stmt:     for (__cs_local_push_loop = 0; __cs_local_push_loop < 1; __cs_local_push_loop++)
+=======
+function: push   stmt:     for (__cs_local_push_loop = 0; __cs_local_push_loop < 5; __cs_local_push_loop++)
+>>>>>>> origin/main
     {
-        __cs_local_push_td[__cs_local_push_loop].user_id = __cs_local_push_loop;
-        __cs_local_push_td[__cs_local_push_loop].se.value = (void *) ((lfds711_pal_uint_t) (&__cs_local_push_td[__cs_local_push_loop]));
-        lfds711_stack_push(&ss, &__cs_local_push_td[__cs_local_push_loop].se);
-    }
-
-
-function: pop   stmt:     for (__cs_local_pop_loop = 0; __cs_local_pop_loop < 1; __cs_local_pop_loop++)
-    {
-        __cs_local_pop_temp_td = 0;
-        __cs_local_pop_res = lfds711_stack_pop(&ss, &__cs_local_pop_se);
         ;
+        _Bool __cs_local_push___cs_tmp_if_cond_23;
+        __cs_local_push___cs_tmp_if_cond_23 = ATOMIC_OPERATION;
+        if (__cs_local_push___cs_tmp_if_cond_23)
+        {
+            __cs_mutex_lock(&lock);
+        }
+
+        ;
+<<<<<<< HEAD
 >>>>>>> origin/main
         _Bool __cs_local_pop___cs_tmp_if_cond_44;
         __cs_local_pop___cs_tmp_if_cond_44 = __cs_local_pop_res == 0;
         if (__cs_local_pop___cs_tmp_if_cond_44)
+=======
+        insert(ss, __cs_local_push_loop);
+        ;
+        _Bool __cs_local_push___cs_tmp_if_cond_24;
+        __cs_local_push___cs_tmp_if_cond_24 = ATOMIC_OPERATION;
+        if (__cs_local_push___cs_tmp_if_cond_24)
+>>>>>>> origin/main
         {
-            continue;
+            __cs_mutex_unlock(&lock);
         }
 
-        __cs_local_pop_temp_td = (*__cs_local_pop_se).value;
-        __cs_local_pop_count++;
+        ;
     }
 
 
-function: writeIntofile   stmt:     close(__cs_local_writeIntofile_saved);
-
-function: createList   stmt:     return __cs_param_createList_listHead;
-
-function: readFile   stmt:     if (__cs_local_readFile___cs_tmp_if_cond_48)
+function: pop   stmt:     for (__cs_local_pop_loop = 0; __cs_local_pop_loop < 5; __cs_local_pop_loop++)
     {
-        writeIntofile(__cs_param_readFile_filename, __cs_param_readFile_listHead);
-        __CSEQ_assert(0);
-        return;
+        ;
+        _Bool __cs_local_pop___cs_tmp_if_cond_25;
+        __cs_local_pop___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
+        if (__cs_local_pop___cs_tmp_if_cond_25)
+        {
+            __cs_mutex_lock(&lock);
+        }
+
+        ;
+        delete(ss);
+        ;
+        _Bool __cs_local_pop___cs_tmp_if_cond_26;
+        __cs_local_pop___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
+        if (__cs_local_pop___cs_tmp_if_cond_26)
+        {
+            __cs_mutex_unlock(&lock);
+        }
+
+        ;
     }
 
 
@@ -4460,6 +4916,7 @@ All symbols (new symbol table - work in progress):
    (412, '__cs_param__query_output')  
    (413, 'lfds711_misc_internal_backoff_init')  
    (414, '__cs_param__bs')  
+<<<<<<< HEAD
 <<<<<<< HEAD
    (415, '__CSEQ_atomic_compare_and_exchange')  
    (416, '__cs_param___CSEQ_atomic_compare_and_exchange_mptr')  
@@ -4903,4 +5360,145 @@ All symbols (new symbol table - work in progress):
    (639, '__cs_local_main_listHead')  
    (640, '__cs_local_main_t1')  
    (641, '__cs_local_main_t2')  
+>>>>>>> origin/main
+=======
+   (415, 'library_lock')  
+   (416, 'exponential_backoff')  
+   (417, '__cs_local_exponential_backoff_loop')  
+   (418, '__CSEQ_atomic_swap_stack_top')  
+   (419, '__cs_param___CSEQ_atomic_swap_stack_top_top')  
+   (420, '__cs_param___CSEQ_atomic_swap_stack_top_oldtop')  
+   (421, '__cs_param___CSEQ_atomic_swap_stack_top_newtop')  
+   (422, '__cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_0')  
+   (423, 'lfds711_misc_internal_backoff_init')  
+   (424, '__cs_param_lfds711_misc_internal_backoff_init_bs')  
+   (425, '__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1')  
+   (426, '__cs_local_lfds711_misc_internal_backoff_init_c')  
+   (427, '__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2')  
+   (428, '__cs_local_lfds711_misc_internal_backoff_init_c')  
+   (429, 'lfds711_stack_init_valid_on_current_logical_core')  
+   (430, '__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss')  
+   (431, '__cs_param_lfds711_stack_init_valid_on_current_logical_core_user_state')  
+   (432, '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_3')  
+   (433, '__cs_local_lfds711_stack_init_valid_on_current_logical_core_c')  
+   (434, '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4')  
+   (435, '__cs_local_lfds711_stack_init_valid_on_current_logical_core_c')  
+   (436, '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5')  
+   (437, '__cs_local_lfds711_stack_init_valid_on_current_logical_core_c')  
+   (438, 'lfds711_stack_pop')  
+   (439, '__cs_param_lfds711_stack_pop_ss')  
+   (440, '__cs_param_lfds711_stack_pop_se')  
+   (441, '__cs_local_lfds711_stack_pop_result')  
+   (442, '__cs_local_lfds711_stack_pop_backoff_iteration')  
+   (443, '__cs_local_lfds711_stack_pop_new_top')  
+   (444, '__cs_local_lfds711_stack_pop_original_top')  
+   (445, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_6')  
+   (446, '__cs_local_lfds711_stack_pop_c')  
+   (447, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7')  
+   (448, '__cs_local_lfds711_stack_pop_c')  
+   (449, '__cs_local_lfds711_stack_pop_i')  
+   (450, '__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1')  
+   (451, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8')  
+   (452, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9')  
+   (453, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10')  
+   (454, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11')  
+   (455, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12')  
+   (456, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13')  
+   (457, 'lfds711_stack_push')  
+   (458, '__cs_param_lfds711_stack_push_ss')  
+   (459, '__cs_param_lfds711_stack_push_se')  
+   (460, '__cs_local_lfds711_stack_push_result')  
+   (461, '__cs_local_lfds711_stack_push_backoff_iteration')  
+   (462, '__cs_local_lfds711_stack_push_new_top')  
+   (463, '__cs_local_lfds711_stack_push_original_top')  
+   (464, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_14')  
+   (465, '__cs_local_lfds711_stack_push_c')  
+   (466, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_15')  
+   (467, '__cs_local_lfds711_stack_push_c')  
+   (468, '__cs_local_lfds711_stack_push_i')  
+   (469, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_16')  
+   (470, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_17')  
+   (471, '__CSEQ_atomic_compare_and_exchange')  
+   (472, '__cs_param___CSEQ_atomic_compare_and_exchange_mptr')  
+   (473, '__cs_param___CSEQ_atomic_compare_and_exchange_eptr')  
+   (474, '__cs_param___CSEQ_atomic_compare_and_exchange_newval')  
+   (475, '__cs_param___CSEQ_atomic_compare_and_exchange_weak_p')  
+   (476, '__cs_param___CSEQ_atomic_compare_and_exchange_sm')  
+   (477, '__cs_param___CSEQ_atomic_compare_and_exchange_fm')  
+   (478, '__cs_local___CSEQ_atomic_compare_and_exchange___cs_tmp_if_cond_18')  
+   (479, '__atomic_compare_exchange_n')  
+   (480, '__cs_param___atomic_compare_exchange_n_mptr')  
+   (481, '__cs_param___atomic_compare_exchange_n_eptr')  
+   (482, '__cs_param___atomic_compare_exchange_n_newval')  
+   (483, '__cs_param___atomic_compare_exchange_n_weak_p')  
+   (484, '__cs_param___atomic_compare_exchange_n_sm')  
+   (485, '__cs_param___atomic_compare_exchange_n_fm')  
+   (486, '__cs_local___atomic_compare_exchange_n_res')  
+   (487, '__CSEQ_atomic_exchange')  
+   (488, '__cs_param___CSEQ_atomic_exchange_previous')  
+   (489, '__cs_param___CSEQ_atomic_exchange_new')  
+   (490, '__cs_param___CSEQ_atomic_exchange_memorder')  
+   (491, '__cs_local___CSEQ_atomic_exchange_old')  
+   (492, '__atomic_exchange_n')  
+   (493, '__cs_param___atomic_exchange_n_previous')  
+   (494, '__cs_param___atomic_exchange_n_new')  
+   (495, '__cs_param___atomic_exchange_n_memorder')  
+   (496, '__cs_local___atomic_exchange_n_res')  
+   (497, '__atomic_thread_fence')  
+   (498, '__cs_param___atomic_thread_fence_i')  
+   (499, 'mystack')  
+   (500, 'se')  
+   (501, 'user_id')  
+   (502, 'init')  
+   (503, 'insert')  
+   (504, '__cs_param_insert_s')  
+   (505, '__cs_param_insert_id')  
+   (506, '__cs_local_insert_td')  
+   (507, 'delete')  
+   (508, '__cs_param_delete_s')  
+   (509, '__cs_local_delete_se')  
+   (510, '__cs_local_delete_temp_td')  
+   (511, '__cs_local_delete_res')  
+   (512, '__cs_local_delete___cs_tmp_if_cond_19')  
+   (513, '__cs_local_delete_id_popped')  
+   (514, 'contains')  
+   (515, '__cs_param_contains_s')  
+   (516, '__cs_param_contains_id')  
+   (517, '__cs_local_contains_max_size')  
+   (518, '__cs_local_contains_actual_size')  
+   (519, '__cs_local_contains_res')  
+   (520, '__cs_local_contains_found')  
+   (521, '__cs_local_contains_dimension')  
+   (522, '__cs_local_contains_datas')  
+   (523, '__cs_local_contains_se')  
+   (524, '__cs_local_contains___cs_tmp_if_cond_20')  
+   (525, '__cs_local_contains___cs_tmp_if_cond_21')  
+   (526, '__cs_local_contains___cs_tmp_if_cond_22')  
+   (527, '__cs_local_contains_i')  
+   (528, 'ATOMIC_OPERATION')  
+   (529, 'ss')  
+   (530, 'lock')  
+   (531, 'push')  
+   (532, '__cs_param_push___cs_unused')  
+   (533, '__cs_local_push_loop')  
+   (534, '__cs_local_push___cs_tmp_if_cond_23')  
+   (535, '__cs_local_push___cs_tmp_if_cond_24')  
+   (536, 'pop')  
+   (537, '__cs_param_pop___cs_unused')  
+   (538, '__cs_local_pop_res')  
+   (539, '__cs_local_pop_count')  
+   (540, '__cs_local_pop_loop')  
+   (541, '__cs_local_pop___cs_tmp_if_cond_25')  
+   (542, '__cs_local_pop___cs_tmp_if_cond_26')  
+   (543, 'main')  
+   (544, '__cs_local_main_t1')  
+   (545, '__cs_local_main_t2')  
+   (546, '__cs_local_main_t3')  
+   (547, '__cs_local_main_t4')  
+   (548, '__cs_local_main_t5')  
+   (549, '__cs_local_main_t6')  
+   (550, '__cs_local_main_t7')  
+   (551, '__cs_local_main_t8')  
+   (552, '__cs_local_main_t9')  
+   (553, '__cs_local_main_t10')  
 >>>>>>> origin/main
