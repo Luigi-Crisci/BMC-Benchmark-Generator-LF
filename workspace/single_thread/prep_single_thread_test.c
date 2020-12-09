@@ -733,6 +733,10 @@ extern void __assert_perror_fail (int __errnum, const char *__file,
 extern void __assert (const char *__assertion, const char *__file, int __line)
      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
 
+struct coppia
+{
+ int x, y;
+};
 static _Bool __atomic_compare_exchange_n(volatile int long long unsigned *mptr, volatile int long long unsigned *eptr, volatile int long long unsigned newval, _Bool weak_p __attribute__((unused)), int sm __attribute__((unused)), int fm __attribute__((unused)))
 {
  if (*mptr == *eptr)
@@ -752,7 +756,8 @@ unsigned long __atomic_exchange_n(volatile int long long unsigned *previous, int
  *previous = new;
  return old;
 }
-void __atomic_thread_fence(int i){
+void __atomic_thread_fence(int i)
+{
 }
 #pragma warning( push )
 #pragma warning( disable : 4324 )
@@ -1375,7 +1380,7 @@ void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs)
  return;
 }
 void lfds711_stack_init_valid_on_current_logical_core(struct lfds711_stack_state *ss,
-                           void *user_state)
+               void *user_state)
 {
  if( !(ss != ((void *)0)) ) { char *c = 0; *c = 0; };;
  if( !((lfds711_pal_uint_t)ss->top % 128 == 0) ) { char *c = 0; *c = 0; };;
@@ -1390,17 +1395,17 @@ void lfds711_stack_init_valid_on_current_logical_core(struct lfds711_stack_state
  return;
 }
 int lfds711_stack_pop(struct lfds711_stack_state *ss,
-           struct lfds711_stack_element **se)
+       struct lfds711_stack_element **se)
 {
  char unsigned
-   result;
+  result;
  lfds711_pal_uint_t
-   backoff_iteration = 0;
+  backoff_iteration = 0;
  struct lfds711_stack_element __attribute__( (aligned(16)) ) * new_top[2],
-   *volatile original_top[2];
+  *volatile original_top[2];
  if( !(ss != ((void *)0)) ) { char *c = 0; *c = 0; };;
  if( !(se != ((void *)0)) ) { char *c = 0; *c = 0; };;
- __atomic_thread_fence( 2 );
+ __atomic_therad_fence( 2 );
  original_top[1] = ss->top[1];
  original_top[0] = ss->top[0];
  int i = 0;
@@ -1413,14 +1418,23 @@ int lfds711_stack_pop(struct lfds711_stack_state *ss,
   }
   new_top[1] = original_top[1] + 1;
   new_top[0] = original_top[0]->next;
-  { (result) = 0; __asm__ __volatile__ ( "lock;" "cmpxchg16b %0;" "setz       %4;" : "+m" ((ss->top)[0]), "+m" ((ss->top)[1]), "+a" ((original_top)[0]), "+d" ((original_top)[1]), "=q" (result) : "b" ((new_top)[0]), "c" ((new_top)[1]) : ); };
+  if (original_top[0] == ss->top[0])
+  {
+   ss->top[0] = new_top[0];
+   result = 1;
+  }
+  else
+  {
+   original_top[0] = ss->top[0];
+   result = 0;
+  }
   if (result == 0)
   {
-   { for( int loop = 0 ; loop < 10 ; loop++ ); };
+   { for (int loop = 0; loop < 10; loop++) ; };
    __atomic_thread_fence( 2 );
   }
   i++;
-  if(i<2)
+  if (i < 10)
    break;
  } while (result == 0);
  *se = original_top[0];
@@ -1428,42 +1442,55 @@ int lfds711_stack_pop(struct lfds711_stack_state *ss,
  return 1;
 }
 void lfds711_stack_push(struct lfds711_stack_state *ss,
-            struct lfds711_stack_element *se)
+      struct lfds711_stack_element *se)
 {
  char unsigned
-   result;
+  result;
  lfds711_pal_uint_t
-   backoff_iteration = 0;
+  backoff_iteration = 0;
  struct lfds711_stack_element __attribute__( (aligned(16)) ) * new_top[2],
-   *volatile original_top[2];
+  *volatile original_top[2];
  if( !(ss != ((void *)0)) ) { char *c = 0; *c = 0; };;
  if( !(se != ((void *)0)) ) { char *c = 0; *c = 0; };;
  new_top[0] = se;
  original_top[1] = ss->top[1];
  original_top[0] = ss->top[0];
  result = 0;
- int i = 0;
- while(result == 0)
+ int k = 0;
+ long long int indirizzo = se;
+ indirizzo = (struct lfds711_stack_element *)new_top;
+ int old_value = ((struct coppia *)((struct lfds711_stack_element *)new_top[0])->value)->x;
+ while (result == 0)
  {
   se->next = original_top[0];
   __atomic_thread_fence( 3 );
   new_top[1] = original_top[1] + 1;
-  { (result) = 0; __asm__ __volatile__ ( "lock;" "cmpxchg16b %0;" "setz       %4;" : "+m" ((ss->top)[0]), "+m" ((ss->top)[1]), "+a" ((original_top)[0]), "+d" ((original_top)[1]), "=q" (result) : "b" ((new_top)[0]), "c" ((new_top)[1]) : ); };
+  if (original_top[0] == ss->top[0])
+  {
+   ss->top[0] = new_top[0];
+   result = 1;
+  }
+  else
+  {
+   original_top[0] = ss->top[0];
+   result = 0;
+  }
   if (result == 0)
-   { for( int loop = 0 ; loop < 10 ; loop++ ); };
-  i++;
-  if(i>2)
+   { for (int loop = 0; loop < 10; loop++) ; };
+  k++;
+  old_value = ((struct coppia *)((struct lfds711_stack_element *)ss->top[0])->value)->x;
+  if (k > 10 || result == 1)
    break;
  }
  { if( (backoff_iteration) < 2 ) (ss->push_backoff).backoff_iteration_frequency_counters[(backoff_iteration)]++; if( ++(ss->push_backoff).total_operations >= 10000 && (ss->push_backoff).lock == LFDS711_MISC_FLAG_LOWERED ) { char unsigned result; lfds711_pal_uint_t __attribute__( (aligned(128)) ) compare = LFDS711_MISC_FLAG_LOWERED; { result = (char unsigned) __atomic_compare_exchange_n( &(ss->push_backoff).lock, &compare, LFDS711_MISC_FLAG_RAISED, LFDS711_MISC_CAS_STRENGTH_WEAK, 0, 0 ); }; if( result == 1 ) { if( (ss->push_backoff).backoff_iteration_frequency_counters[1] < (ss->push_backoff).backoff_iteration_frequency_counters[0] / 100 ) { if( (ss->push_backoff).metric >= 11 ) (ss->push_backoff).metric -= 10; } else (ss->push_backoff).metric += 10; (ss->push_backoff).backoff_iteration_frequency_counters[0] = 0; (ss->push_backoff).backoff_iteration_frequency_counters[1] = 0; (ss->push_backoff).total_operations = 0; __atomic_thread_fence( 3 ); { (void) __atomic_exchange_n( (&(ss->push_backoff).lock), (LFDS711_MISC_FLAG_LOWERED), 0 ); }; } } };
  return;
 }
 void lfds711_stack_cleanup(struct lfds711_stack_state *ss,
-              void (*element_cleanup_callback)(struct lfds711_stack_state *ss, struct lfds711_stack_element *se))
+         void (*element_cleanup_callback)(struct lfds711_stack_state *ss, struct lfds711_stack_element *se))
 {
  struct lfds711_stack_element
-   *se,
-   *se_temp;
+  *se,
+  *se_temp;
  if( !(ss != ((void *)0)) ) { char *c = 0; *c = 0; };;
  __atomic_thread_fence( 2 );
  if (element_cleanup_callback != ((void *)0))
@@ -1478,20 +1505,32 @@ void lfds711_stack_cleanup(struct lfds711_stack_state *ss,
  }
  return;
 }
-struct coppia{
- int x,y;
-};
 int main(){
  struct lfds711_stack_state stack;
- struct lfds711_stack_element element;
- struct coppia *c;
+ struct lfds711_stack_element element,element2,element3;
+ struct coppia *c,*c1,*c2;
  lfds711_stack_init_valid_on_current_logical_core(&stack,((void *)0));
  c = (struct coppia*)malloc(sizeof(struct coppia));
  c->y = 1;
  c->x = 2;
  ( (element).value = (void *) (lfds711_pal_uint_t) (c) );
-  int aaa = ((struct coppia*)( (element).value ))->x;
+ int aaa = ((struct coppia*)( (element).value ))->x;
  lfds711_stack_push(&stack,&element);
- ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "single_thread_test.c", 35, __extension__ __PRETTY_FUNCTION__); }));
+ c1 = (struct coppia*)malloc(sizeof(struct coppia));
+ c1->y = 4;
+ c1->x = 4;
+ ( (element2).value = (void *) (lfds711_pal_uint_t) (c1) );
+ lfds711_stack_push(&stack,&element2);
+ c2 = (struct coppia*)malloc(sizeof(struct coppia));
+ c2->y = 6;
+ c2->x = 6;
+ ( (element3).value = (void *) (lfds711_pal_uint_t) (c2) );
+ lfds711_stack_push(&stack,&element3);
+ struct lfds711_stack_element *e;
+ int res = lfds711_stack_pop(&stack,&e);
+ struct coppia *result = (struct coppia*)( (*e).value );
+ printf("Result %d : %d\n",result->x,result->y);
+ int s = result->x;
+ ((void) sizeof ((s == 6) ? 1 : 0), __extension__ ({ if (s == 6) ; else __assert_fail ("s == 6", "single_thread_test.c", 46, __extension__ __PRETTY_FUNCTION__); }));
  return 0;
 }
