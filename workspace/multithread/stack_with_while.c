@@ -60,6 +60,7 @@ void *pop()
 		if(res == 0)
 			continue;
 		temp_td = LFDS711_STACK_GET_VALUE_FROM_ELEMENT(*se);
+		int id_popped = temp_td->user_id;
 		count++;
 		//printf("%llu\n", temp_td->user_id);
 	}
