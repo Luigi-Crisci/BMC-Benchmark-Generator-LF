@@ -2272,7 +2272,7 @@ return res;
 
 
 # 833 "<previous_module>"
-int contains(void *s, int id)
+int contains(struct lfds711_stack_state *s, unsigned long long int id)
 
 # 834 "<previous_module>"
 {
@@ -2317,260 +2317,246 @@ datas = __cs_safe_malloc((sizeof(struct test_data *)) * max_size);
 struct lfds711_stack_element *se;
     
 # 848 "<previous_module>"
-while ((found == 0) && (res != 0))
+while (actual_size < 2)
 
 # 849 "<previous_module>"
     {
         
 # 850 "<previous_module>"
-if (actual_size == max_size)
-
+res = lfds711_stack_pop(s, &se);
+        
 # 851 "<previous_module>"
+if (res == 0)
+
+# 852 "<previous_module>"
         {
             
-# 852 "<previous_module>"
-datas = realloc(datas, ((sizeof(struct test_data *)) * max_size) * dimension);
-            
 # 853 "<previous_module>"
-max_size *= dimension;
+continue;
         }
 
         
 # 855 "<previous_module>"
-res = lfds711_stack_pop((struct lfds711_stack_state *) s, &se);
+datas[actual_size] = (*se).value;
         
 # 856 "<previous_module>"
-if (res == 0)
+if ((*datas[actual_size]).user_id == id)
 
 # 857 "<previous_module>"
         {
             
 # 858 "<previous_module>"
-continue;
-        }
-
-        
-# 860 "<previous_module>"
-datas[actual_size] = (*se).value;
-        
-# 861 "<previous_module>"
-if ((*datas[actual_size]).user_id == id)
-
-# 862 "<previous_module>"
-        {
-            
-# 863 "<previous_module>"
 found = 1;
         }
 
         
-# 865 "<previous_module>"
+# 860 "<previous_module>"
 actual_size++;
     }
 
     
-# 867 "<previous_module>"
+# 862 "<previous_module>"
 int i;
     
-# 868 "<previous_module>"
+# 863 "<previous_module>"
 i = 0;
     
-# 869 "<previous_module>"
+# 864 "<previous_module>"
 while (i < actual_size)
 
-# 870 "<previous_module>"
+# 865 "<previous_module>"
     {
         
-# 871 "<previous_module>"
-lfds711_stack_push((struct lfds711_stack_state *) s, datas[i]);
+# 866 "<previous_module>"
+lfds711_stack_push(s, &(*datas[i]).se);
         
-# 872 "<previous_module>"
+# 867 "<previous_module>"
 i++;
     }
 
     
-# 874 "<previous_module>"
+# 869 "<previous_module>"
 free(datas);
     
-# 875 "<previous_module>"
+# 870 "<previous_module>"
 return found;
 }
 
 
-# 877 "<previous_module>"
+# 872 "<previous_module>"
 int ATOMIC_OPERATION = 0;
 
-# 878 "<previous_module>"
+# 873 "<previous_module>"
 void *ss;
 
-# 879 "<previous_module>"
+# 874 "<previous_module>"
 __cs_mutex_t lock;
 
-# 880 "<previous_module>"
+# 875 "<previous_module>"
 void *push(void *__cs_unused)
 
-# 881 "<previous_module>"
+# 876 "<previous_module>"
 {
     
-# 882 "<previous_module>"
+# 877 "<previous_module>"
 int long long unsigned loop;
     
-# 883 "<previous_module>"
-for (loop = 0; loop < 5; loop++)
-# 884 "<previous_module>"
+# 878 "<previous_module>"
+for (loop = 0; loop < 2; loop++)
+# 879 "<previous_module>"
     {
+        
+# 880 "<previous_module>"
+if (ATOMIC_OPERATION)
+
+# 881 "<previous_module>"
+        {
+            
+# 882 "<previous_module>"
+__cs_mutex_lock(&lock);
+        }
+
+        
+# 884 "<previous_module>"
+;
         
 # 885 "<previous_module>"
-if (ATOMIC_OPERATION)
-
-# 886 "<previous_module>"
-        {
-            
-# 887 "<previous_module>"
-__cs_mutex_lock(&lock);
-        }
-
-        
-# 889 "<previous_module>"
-;
-        
-# 890 "<previous_module>"
 insert(ss, loop);
         
-# 891 "<previous_module>"
+# 886 "<previous_module>"
 if (ATOMIC_OPERATION)
 
-# 892 "<previous_module>"
+# 887 "<previous_module>"
         {
             
-# 893 "<previous_module>"
+# 888 "<previous_module>"
 __cs_mutex_unlock(&lock);
         }
 
         
-# 895 "<previous_module>"
+# 890 "<previous_module>"
 ;
     }
 
 }
 
 
-# 898 "<previous_module>"
+# 893 "<previous_module>"
 void *pop(void *__cs_unused)
 
-# 899 "<previous_module>"
+# 894 "<previous_module>"
 {
     
-# 900 "<previous_module>"
+# 895 "<previous_module>"
 int res;
     
-# 901 "<previous_module>"
+# 896 "<previous_module>"
 int count;
     
-# 902 "<previous_module>"
+# 897 "<previous_module>"
 count = 0;
     
-# 903 "<previous_module>"
+# 898 "<previous_module>"
 int loop;
     
-# 904 "<previous_module>"
-for (loop = 0; loop < 5; loop++)
-# 905 "<previous_module>"
+# 899 "<previous_module>"
+for (loop = 0; loop < 2; loop++)
+# 900 "<previous_module>"
     {
         
-# 906 "<previous_module>"
+# 901 "<previous_module>"
 if (ATOMIC_OPERATION)
 
-# 907 "<previous_module>"
+# 902 "<previous_module>"
         {
             
-# 908 "<previous_module>"
+# 903 "<previous_module>"
 __cs_mutex_lock(&lock);
         }
 
         
-# 910 "<previous_module>"
+# 905 "<previous_module>"
 ;
         
-# 911 "<previous_module>"
+# 906 "<previous_module>"
 delete(ss);
         
-# 912 "<previous_module>"
+# 907 "<previous_module>"
 if (ATOMIC_OPERATION)
 
-# 913 "<previous_module>"
+# 908 "<previous_module>"
         {
             
-# 914 "<previous_module>"
+# 909 "<previous_module>"
 __cs_mutex_unlock(&lock);
         }
 
         
-# 916 "<previous_module>"
+# 911 "<previous_module>"
 ;
     }
 
 }
 
 
-# 919 "<previous_module>"
+# 914 "<previous_module>"
 int main()
 
-# 920 "<previous_module>"
+# 915 "<previous_module>"
 {
     
-# 921 "<previous_module>"
+# 916 "<previous_module>"
 __cs_mutex_init(&lock, 0);
     
-# 922 "<previous_module>"
+# 917 "<previous_module>"
 ss = init();
     
-# 923 "<previous_module>"
+# 918 "<previous_module>"
 __cs_t t1;
     
-# 924 "<previous_module>"
+# 919 "<previous_module>"
 __cs_t t2;
     
-# 925 "<previous_module>"
+# 920 "<previous_module>"
 __cs_t t3;
     
-# 926 "<previous_module>"
+# 921 "<previous_module>"
 __cs_t t4;
     
-# 927 "<previous_module>"
+# 922 "<previous_module>"
 __cs_t t5;
     
-# 928 "<previous_module>"
+# 923 "<previous_module>"
 __cs_t t6;
     
-# 929 "<previous_module>"
+# 924 "<previous_module>"
 __cs_t t7;
     
-# 930 "<previous_module>"
+# 925 "<previous_module>"
 __cs_t t8;
     
-# 931 "<previous_module>"
+# 926 "<previous_module>"
 __cs_t t9;
     
-# 932 "<previous_module>"
+# 927 "<previous_module>"
 __cs_t t10;
     
-# 933 "<previous_module>"
+# 928 "<previous_module>"
 __cs_create(&t1, 0, push, 0);
     
-# 934 "<previous_module>"
+# 929 "<previous_module>"
 __cs_create(&t6, 0, pop, 0);
     
-# 935 "<previous_module>"
+# 930 "<previous_module>"
 __cs_join(t1, 0);
     
-# 936 "<previous_module>"
+# 931 "<previous_module>"
 __cs_join(t6, 0);
     
-# 937 "<previous_module>"
+# 932 "<previous_module>"
 __CSEQ_assert(0);
     
-# 938 "<previous_module>"
+# 933 "<previous_module>"
 return 0;
 }
 

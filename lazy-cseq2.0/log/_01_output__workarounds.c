@@ -811,7 +811,7 @@ int id_popped; id_popped = (*temp_td).user_id;
 printf("%llu\n", (*temp_td).user_id);
 return res;
 }
-int contains(void *s, int id)
+int contains(struct lfds711_stack_state *s, unsigned long long int id)
 {
 int max_size; max_size = 20;
         int actual_size; actual_size = 0;
@@ -820,14 +820,9 @@ int max_size; max_size = 20;
         int dimension; dimension = 2;
 struct test_data **datas; datas = malloc((sizeof(struct test_data *)) * max_size);
 struct lfds711_stack_element *se;
-while ((found == 0) && (res != 0))
+while (actual_size < 2)
         {
-if (actual_size == max_size)
-                {
-datas = realloc(datas, ((sizeof(struct test_data *)) * max_size) * dimension);
-max_size *= dimension;
-                }
-res = lfds711_stack_pop((struct lfds711_stack_state *) s, &se);
+res = lfds711_stack_pop(s, &se);
 if (res == 0)
                 {
 continue;
@@ -842,7 +837,7 @@ actual_size++;
 int i; i = 0;
 while (i < actual_size)
         {
-lfds711_stack_push((struct lfds711_stack_state *) s, datas[i]);
+lfds711_stack_push(s, &(*datas[i]).se);
 i++;
         }
 free(datas);
@@ -854,7 +849,7 @@ pthread_mutex_t lock;
 void *push(void *__cs_unused)
 {
 int long long unsigned loop;
-for (loop = 0; loop < 5; loop++)
+for (loop = 0; loop < 2; loop++)
         {
 if (ATOMIC_OPERATION)
                 {
@@ -874,7 +869,7 @@ void *pop(void *__cs_unused)
 int res;
 int count; count = 0;
 int loop;
-for (loop = 0; loop < 5; loop++)
+for (loop = 0; loop < 2; loop++)
         {
 if (ATOMIC_OPERATION)
                 {

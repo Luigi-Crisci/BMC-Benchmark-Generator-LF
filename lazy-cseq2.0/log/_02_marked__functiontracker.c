@@ -2171,7 +2171,7 @@ return res;
 
 
 # 814 "<previous_module>"
-int contains(void *s, int id)
+int contains(struct lfds711_stack_state *s, unsigned long long int id)
 
 # 815 "<previous_module>"
 {
@@ -2204,258 +2204,244 @@ struct test_data **datas;
 struct lfds711_stack_element *se;
     
 # 823 "<previous_module>"
-while ((found == 0) && (res != 0))
+while (actual_size < 2)
 
 # 824 "<previous_module>"
     {
         
 # 825 "<previous_module>"
-if (actual_size == max_size)
-
+res = lfds711_stack_pop(s, &se);
+        
 # 826 "<previous_module>"
+if (res == 0)
+
+# 827 "<previous_module>"
         {
             
-# 827 "<previous_module>"
-datas = realloc(datas, ((sizeof(struct test_data *)) * max_size) * dimension);
-            
 # 828 "<previous_module>"
-max_size *= dimension;
+continue;
         }
 
         
 # 830 "<previous_module>"
-res = lfds711_stack_pop((struct lfds711_stack_state *) s, &se);
+datas[actual_size] = (*se).value;
         
 # 831 "<previous_module>"
-if (res == 0)
+if ((*datas[actual_size]).user_id == id)
 
 # 832 "<previous_module>"
         {
             
 # 833 "<previous_module>"
-continue;
-        }
-
-        
-# 835 "<previous_module>"
-datas[actual_size] = (*se).value;
-        
-# 836 "<previous_module>"
-if ((*datas[actual_size]).user_id == id)
-
-# 837 "<previous_module>"
-        {
-            
-# 838 "<previous_module>"
 found = 1;
         }
 
         
-# 840 "<previous_module>"
+# 835 "<previous_module>"
 actual_size++;
     }
 
     
-# 842 "<previous_module>"
+# 837 "<previous_module>"
 int i;
     i = 0;
     
-# 843 "<previous_module>"
+# 838 "<previous_module>"
 while (i < actual_size)
 
-# 844 "<previous_module>"
+# 839 "<previous_module>"
     {
         
-# 845 "<previous_module>"
-lfds711_stack_push((struct lfds711_stack_state *) s, datas[i]);
+# 840 "<previous_module>"
+lfds711_stack_push(s, &(*datas[i]).se);
         
-# 846 "<previous_module>"
+# 841 "<previous_module>"
 i++;
     }
 
     
-# 848 "<previous_module>"
+# 843 "<previous_module>"
 free(datas);
     
-# 849 "<previous_module>"
+# 844 "<previous_module>"
 return found;
 }
 
 
-# 851 "<previous_module>"
+# 846 "<previous_module>"
 int ATOMIC_OPERATION = 0;
 
-# 852 "<previous_module>"
+# 847 "<previous_module>"
 void *ss;
 
-# 853 "<previous_module>"
+# 848 "<previous_module>"
 pthread_mutex_t lock;
 
-# 854 "<previous_module>"
+# 849 "<previous_module>"
 void *push(void *__cs_unused)
 
-# 855 "<previous_module>"
+# 850 "<previous_module>"
 {
     
-# 856 "<previous_module>"
+# 851 "<previous_module>"
 int long long unsigned loop;
     
-# 857 "<previous_module>"
-for (loop = 0; loop < 5; loop++)
+# 852 "<previous_module>"
+for (loop = 0; loop < 2; loop++)
 
-# 858 "<previous_module>"
+# 853 "<previous_module>"
     {
         
-# 859 "<previous_module>"
+# 854 "<previous_module>"
 if (ATOMIC_OPERATION)
 
-# 860 "<previous_module>"
+# 855 "<previous_module>"
         {
             
-# 861 "<previous_module>"
+# 856 "<previous_module>"
 pthread_mutex_lock(&lock);
         }
 
         
-# 863 "<previous_module>"
+# 858 "<previous_module>"
 ;
         
-# 864 "<previous_module>"
+# 859 "<previous_module>"
 insert(ss, loop);
         
-# 865 "<previous_module>"
+# 860 "<previous_module>"
 if (ATOMIC_OPERATION)
 
-# 866 "<previous_module>"
+# 861 "<previous_module>"
         {
             
-# 867 "<previous_module>"
+# 862 "<previous_module>"
 pthread_mutex_unlock(&lock);
         }
 
         
-# 869 "<previous_module>"
+# 864 "<previous_module>"
 ;
     }
 
 }
 
 
-# 872 "<previous_module>"
+# 867 "<previous_module>"
 void *pop(void *__cs_unused)
 
-# 873 "<previous_module>"
+# 868 "<previous_module>"
 {
     
-# 874 "<previous_module>"
+# 869 "<previous_module>"
 int res;
     
-# 875 "<previous_module>"
+# 870 "<previous_module>"
 int count;
     count = 0;
     
-# 876 "<previous_module>"
+# 871 "<previous_module>"
 int loop;
     
-# 877 "<previous_module>"
-for (loop = 0; loop < 5; loop++)
+# 872 "<previous_module>"
+for (loop = 0; loop < 2; loop++)
 
-# 878 "<previous_module>"
+# 873 "<previous_module>"
     {
         
-# 879 "<previous_module>"
+# 874 "<previous_module>"
 if (ATOMIC_OPERATION)
 
-# 880 "<previous_module>"
+# 875 "<previous_module>"
         {
             
-# 881 "<previous_module>"
+# 876 "<previous_module>"
 pthread_mutex_lock(&lock);
         }
 
         
-# 883 "<previous_module>"
+# 878 "<previous_module>"
 ;
         
-# 884 "<previous_module>"
+# 879 "<previous_module>"
 delete(ss);
         
-# 885 "<previous_module>"
+# 880 "<previous_module>"
 if (ATOMIC_OPERATION)
 
-# 886 "<previous_module>"
+# 881 "<previous_module>"
         {
             
-# 887 "<previous_module>"
+# 882 "<previous_module>"
 pthread_mutex_unlock(&lock);
         }
 
         
-# 889 "<previous_module>"
+# 884 "<previous_module>"
 ;
     }
 
 }
 
 
-# 892 "<previous_module>"
+# 887 "<previous_module>"
 int main()
 
-# 893 "<previous_module>"
+# 888 "<previous_module>"
 {
     
-# 894 "<previous_module>"
+# 889 "<previous_module>"
 pthread_mutex_init(&lock, 0);
     
-# 895 "<previous_module>"
+# 890 "<previous_module>"
 ss = init();
     
-# 896 "<previous_module>"
+# 891 "<previous_module>"
 pthread_t t1;
     
-# 897 "<previous_module>"
+# 892 "<previous_module>"
 pthread_t t2;
     
-# 898 "<previous_module>"
+# 893 "<previous_module>"
 pthread_t t3;
     
-# 899 "<previous_module>"
+# 894 "<previous_module>"
 pthread_t t4;
     
-# 900 "<previous_module>"
+# 895 "<previous_module>"
 pthread_t t5;
     
-# 901 "<previous_module>"
+# 896 "<previous_module>"
 pthread_t t6;
     
-# 902 "<previous_module>"
+# 897 "<previous_module>"
 pthread_t t7;
     
-# 903 "<previous_module>"
+# 898 "<previous_module>"
 pthread_t t8;
     
-# 904 "<previous_module>"
+# 899 "<previous_module>"
 pthread_t t9;
     
-# 905 "<previous_module>"
+# 900 "<previous_module>"
 pthread_t t10;
     
-# 906 "<previous_module>"
+# 901 "<previous_module>"
 pthread_create(&t1, 0, push, 0);
     
-# 907 "<previous_module>"
+# 902 "<previous_module>"
 pthread_create(&t6, 0, pop, 0);
     
-# 908 "<previous_module>"
+# 903 "<previous_module>"
 pthread_join(t1, 0);
     
-# 909 "<previous_module>"
+# 904 "<previous_module>"
 pthread_join(t6, 0);
     
-# 910 "<previous_module>"
+# 905 "<previous_module>"
 assert(0);
     
-# 911 "<previous_module>"
+# 906 "<previous_module>"
 return 0;
 }
 

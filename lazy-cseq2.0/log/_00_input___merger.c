@@ -1,20 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <assert.h>
 
 //Using the interface
 #include "../inteface/interface.c"
 
-#include <assert.h>
+#define VALUES 2
 
-#define VALUES 5
-//Set ATOMIC_OPERATION to make push and pop atomic
 int volatile ATOMIC_OPERATION = 0;
 #define LOCK if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);}
 #define UNLOCK if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); }
 
 void* ss;
 pthread_mutex_t lock;
+
 
 void *push()
 {
@@ -44,8 +44,6 @@ void *pop()
 
 int main()
 {
-
-
 	pthread_mutex_init(&lock, NULL);
 	ss = init();
 	
@@ -72,6 +70,8 @@ int main()
 	// pthread_join(t9, 0);
 	// pthread_join(t10, 0);
 
+	// assert(contains(ss,0) && contains(ss,1));
+	// assert(contains(ss,0));
 	assert(0);
 	return (EXIT_SUCCESS);
 }

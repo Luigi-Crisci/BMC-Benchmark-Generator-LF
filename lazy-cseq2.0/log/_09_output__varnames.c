@@ -915,7 +915,7 @@ __cs_local_delete_id_popped = (*__cs_local_delete_temp_td).user_id;
 printf("%llu\n", (*__cs_local_delete_temp_td).user_id);
 return __cs_local_delete_res;
 }
-int contains(void *__cs_param_contains_s, int __cs_param_contains_id)
+int contains(struct lfds711_stack_state *__cs_param_contains_s, unsigned long long int __cs_param_contains_id)
 {
 int __cs_local_contains_max_size;
 __cs_local_contains_max_size = 20;
@@ -930,29 +930,21 @@ __cs_local_contains_dimension = 2;
 struct test_data **__cs_local_contains_datas;
 __cs_local_contains_datas = __cs_safe_malloc((sizeof(struct test_data *)) * __cs_local_contains_max_size);
 struct lfds711_stack_element *__cs_local_contains_se;
-while ((__cs_local_contains_found == 0) && (__cs_local_contains_res != 0))
+while (__cs_local_contains_actual_size < 2)
         {
+__cs_local_contains_res = lfds711_stack_pop(__cs_param_contains_s, &__cs_local_contains_se);
 ;
                 _Bool __cs_local_contains___cs_tmp_if_cond_20;
-                __cs_local_contains___cs_tmp_if_cond_20 = __cs_local_contains_actual_size == __cs_local_contains_max_size;
+                __cs_local_contains___cs_tmp_if_cond_20 = __cs_local_contains_res == 0;
 if (__cs_local_contains___cs_tmp_if_cond_20)
-                {
-__cs_local_contains_datas = realloc(__cs_local_contains_datas, ((sizeof(struct test_data *)) * __cs_local_contains_max_size) * __cs_local_contains_dimension);
-__cs_local_contains_max_size *= __cs_local_contains_dimension;
-                }
-__cs_local_contains_res = lfds711_stack_pop((struct lfds711_stack_state *) __cs_param_contains_s, &__cs_local_contains_se);
-;
-                _Bool __cs_local_contains___cs_tmp_if_cond_21;
-                __cs_local_contains___cs_tmp_if_cond_21 = __cs_local_contains_res == 0;
-if (__cs_local_contains___cs_tmp_if_cond_21)
                 {
 continue;
                 }
 __cs_local_contains_datas[__cs_local_contains_actual_size] = (*__cs_local_contains_se).value;
 ;
-                _Bool __cs_local_contains___cs_tmp_if_cond_22;
-                __cs_local_contains___cs_tmp_if_cond_22 = (*__cs_local_contains_datas[__cs_local_contains_actual_size]).user_id == __cs_param_contains_id;
-if (__cs_local_contains___cs_tmp_if_cond_22)
+                _Bool __cs_local_contains___cs_tmp_if_cond_21;
+                __cs_local_contains___cs_tmp_if_cond_21 = (*__cs_local_contains_datas[__cs_local_contains_actual_size]).user_id == __cs_param_contains_id;
+if (__cs_local_contains___cs_tmp_if_cond_21)
                 {
 __cs_local_contains_found = 1;
                 }
@@ -962,7 +954,7 @@ int __cs_local_contains_i;
 __cs_local_contains_i = 0;
 while (__cs_local_contains_i < __cs_local_contains_actual_size)
         {
-lfds711_stack_push((struct lfds711_stack_state *) __cs_param_contains_s, __cs_local_contains_datas[__cs_local_contains_i]);
+lfds711_stack_push(__cs_param_contains_s, &(*__cs_local_contains_datas[__cs_local_contains_i]).se);
 __cs_local_contains_i++;
         }
 free(__cs_local_contains_datas);
@@ -974,21 +966,21 @@ __cs_mutex_t lock;
 void *push(void *__cs_param_push___cs_unused)
 {
 int long long unsigned __cs_local_push_loop;
-for (__cs_local_push_loop = 0; __cs_local_push_loop < 5; __cs_local_push_loop++)
+for (__cs_local_push_loop = 0; __cs_local_push_loop < 2; __cs_local_push_loop++)
         {
 ;
-                _Bool __cs_local_push___cs_tmp_if_cond_23;
-                __cs_local_push___cs_tmp_if_cond_23 = ATOMIC_OPERATION;
-if (__cs_local_push___cs_tmp_if_cond_23)
+                _Bool __cs_local_push___cs_tmp_if_cond_22;
+                __cs_local_push___cs_tmp_if_cond_22 = ATOMIC_OPERATION;
+if (__cs_local_push___cs_tmp_if_cond_22)
                 {
 __cs_mutex_lock(&lock);
                 }
 ;
 insert(ss, __cs_local_push_loop);
 ;
-                _Bool __cs_local_push___cs_tmp_if_cond_24;
-                __cs_local_push___cs_tmp_if_cond_24 = ATOMIC_OPERATION;
-if (__cs_local_push___cs_tmp_if_cond_24)
+                _Bool __cs_local_push___cs_tmp_if_cond_23;
+                __cs_local_push___cs_tmp_if_cond_23 = ATOMIC_OPERATION;
+if (__cs_local_push___cs_tmp_if_cond_23)
                 {
 __cs_mutex_unlock(&lock);
                 }
@@ -1001,21 +993,21 @@ int __cs_local_pop_res;
 int __cs_local_pop_count;
 __cs_local_pop_count = 0;
 int __cs_local_pop_loop;
-for (__cs_local_pop_loop = 0; __cs_local_pop_loop < 5; __cs_local_pop_loop++)
+for (__cs_local_pop_loop = 0; __cs_local_pop_loop < 2; __cs_local_pop_loop++)
         {
 ;
-                _Bool __cs_local_pop___cs_tmp_if_cond_25;
-                __cs_local_pop___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
-if (__cs_local_pop___cs_tmp_if_cond_25)
+                _Bool __cs_local_pop___cs_tmp_if_cond_24;
+                __cs_local_pop___cs_tmp_if_cond_24 = ATOMIC_OPERATION;
+if (__cs_local_pop___cs_tmp_if_cond_24)
                 {
 __cs_mutex_lock(&lock);
                 }
 ;
 delete(ss);
 ;
-                _Bool __cs_local_pop___cs_tmp_if_cond_26;
-                __cs_local_pop___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
-if (__cs_local_pop___cs_tmp_if_cond_26)
+                _Bool __cs_local_pop___cs_tmp_if_cond_25;
+                __cs_local_pop___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
+if (__cs_local_pop___cs_tmp_if_cond_25)
                 {
 __cs_mutex_unlock(&lock);
                 }

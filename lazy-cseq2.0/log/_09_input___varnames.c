@@ -875,7 +875,7 @@ id_popped = (*temp_td).user_id;
 printf("%llu\n", (*temp_td).user_id);
 return res;
 }
-int contains(void *s, int id)
+int contains(struct lfds711_stack_state *s, unsigned long long int id)
 {
 int max_size;
 max_size = 20;
@@ -890,23 +890,17 @@ dimension = 2;
 struct test_data **datas;
 datas = __cs_safe_malloc((sizeof(struct test_data *)) * max_size);
 struct lfds711_stack_element *se;
-while ((found == 0) && (res != 0))
+while (actual_size < 2)
         {
-;_Bool __cs_tmp_if_cond_20; __cs_tmp_if_cond_20 = (actual_size == max_size); 
+res = lfds711_stack_pop(s, &se);
+;_Bool __cs_tmp_if_cond_20; __cs_tmp_if_cond_20 = (res == 0); 
                 if (__cs_tmp_if_cond_20)
-                {
-datas = realloc(datas, ((sizeof(struct test_data *)) * max_size) * dimension);
-max_size *= dimension;
-                }
-res = lfds711_stack_pop((struct lfds711_stack_state *) s, &se);
-;_Bool __cs_tmp_if_cond_21; __cs_tmp_if_cond_21 = (res == 0); 
-                if (__cs_tmp_if_cond_21)
                 {
 continue;
                 }
 datas[actual_size] = (*se).value;
-;_Bool __cs_tmp_if_cond_22; __cs_tmp_if_cond_22 = ((*datas[actual_size]).user_id == id); 
-                if (__cs_tmp_if_cond_22)
+;_Bool __cs_tmp_if_cond_21; __cs_tmp_if_cond_21 = ((*datas[actual_size]).user_id == id); 
+                if (__cs_tmp_if_cond_21)
                 {
 found = 1;
                 }
@@ -916,7 +910,7 @@ int i;
 i = 0;
 while (i < actual_size)
         {
-lfds711_stack_push((struct lfds711_stack_state *) s, datas[i]);
+lfds711_stack_push(s, &(*datas[i]).se);
 i++;
         }
 free(datas);
@@ -928,17 +922,17 @@ __cs_mutex_t lock;
 void *push(void *__cs_unused)
 {
 int long long unsigned loop;
-for (loop = 0; loop < 5; loop++)
+for (loop = 0; loop < 2; loop++)
         {
-;_Bool __cs_tmp_if_cond_23; __cs_tmp_if_cond_23 = (ATOMIC_OPERATION); 
-                if (__cs_tmp_if_cond_23)
+;_Bool __cs_tmp_if_cond_22; __cs_tmp_if_cond_22 = (ATOMIC_OPERATION); 
+                if (__cs_tmp_if_cond_22)
                 {
 __cs_mutex_lock(&lock);
                 }
 ;
 insert(ss, loop);
-;_Bool __cs_tmp_if_cond_24; __cs_tmp_if_cond_24 = (ATOMIC_OPERATION); 
-                if (__cs_tmp_if_cond_24)
+;_Bool __cs_tmp_if_cond_23; __cs_tmp_if_cond_23 = (ATOMIC_OPERATION); 
+                if (__cs_tmp_if_cond_23)
                 {
 __cs_mutex_unlock(&lock);
                 }
@@ -951,17 +945,17 @@ int res;
 int count;
 count = 0;
 int loop;
-for (loop = 0; loop < 5; loop++)
+for (loop = 0; loop < 2; loop++)
         {
-;_Bool __cs_tmp_if_cond_25; __cs_tmp_if_cond_25 = (ATOMIC_OPERATION); 
-                if (__cs_tmp_if_cond_25)
+;_Bool __cs_tmp_if_cond_24; __cs_tmp_if_cond_24 = (ATOMIC_OPERATION); 
+                if (__cs_tmp_if_cond_24)
                 {
 __cs_mutex_lock(&lock);
                 }
 ;
 delete(ss);
-;_Bool __cs_tmp_if_cond_26; __cs_tmp_if_cond_26 = (ATOMIC_OPERATION); 
-                if (__cs_tmp_if_cond_26)
+;_Bool __cs_tmp_if_cond_25; __cs_tmp_if_cond_25 = (ATOMIC_OPERATION); 
+                if (__cs_tmp_if_cond_25)
                 {
 __cs_mutex_unlock(&lock);
                 }

@@ -2220,7 +2220,7 @@ return res;
 
 
 # 1280 "<previous_module>"
-int contains(void *s, int id)
+int contains(struct lfds711_stack_state *s, unsigned long long int id)
 
 # 1281 "<previous_module>"
 {
@@ -2238,74 +2238,60 @@ struct test_data **datas; datas = malloc((sizeof(struct test_data *)) * max_size
 # 1284 "<previous_module>"
 struct lfds711_stack_element *se;
         
-# 1286 "<previous_module>"
-while ((found == 0) && (res != 0))
-
 # 1287 "<previous_module>"
+while (actual_size < 2)
+
+# 1288 "<previous_module>"
         {
                 
-# 1288 "<previous_module>"
-if (actual_size == max_size)
-
-# 1289 "<previous_module>"
-                {
-                        
-# 1290 "<previous_module>"
-datas = realloc(datas, ((sizeof(struct test_data *)) * max_size) * dimension);
-                        
-# 1291 "<previous_module>"
-max_size *= dimension;
-                }
-
-                
-# 1294 "<previous_module>"
-res = lfds711_stack_pop((struct lfds711_stack_state *) s, &se);
-                
 # 1295 "<previous_module>"
+res = lfds711_stack_pop(s, &se);
+                
+# 1296 "<previous_module>"
 if (res == 0)
                 {
                         
-# 1296 "<previous_module>"
+# 1297 "<previous_module>"
 continue;
                 }
 
                 
-# 1298 "<previous_module>"
+# 1299 "<previous_module>"
 datas[actual_size] = (*se).value;
                 
-# 1299 "<previous_module>"
+# 1300 "<previous_module>"
 if ((*datas[actual_size]).user_id == id)
                 {
                         
-# 1300 "<previous_module>"
+# 1301 "<previous_module>"
 found = 1;
                 }
 
                 
-# 1301 "<previous_module>"
+# 1302 "<previous_module>"
 actual_size++;
         }
 
         
-# 1305 "<previous_module>"
+# 1306 "<previous_module>"
 int i; i = 0;
         
-# 1306 "<previous_module>"
+# 1307 "<previous_module>"
 while (i < actual_size)
         {
                 
-# 1307 "<previous_module>"
-lfds711_stack_push((struct lfds711_stack_state *) s, datas[i]);
-                
 # 1308 "<previous_module>"
+lfds711_stack_push(s, &(*datas[i]).se);
+                
+# 1309 "<previous_module>"
 i++;
         }
 
         
-# 1311 "<previous_module>"
+# 1312 "<previous_module>"
 free(datas);
         
-# 1312 "<previous_module>"
+# 1313 "<previous_module>"
 return found;
 }
 
@@ -2319,66 +2305,22 @@ void *ss;
 # 1323 "<previous_module>"
 pthread_mutex_t lock;
 
-# 1325 "<previous_module>"
+# 1326 "<previous_module>"
 void *push(void *__cs_unused)
 
-# 1326 "<previous_module>"
+# 1327 "<previous_module>"
 {
         
-# 1327 "<previous_module>"
+# 1328 "<previous_module>"
 int long long unsigned loop;
         
-# 1329 "<previous_module>"
-for (loop = 0; loop < 5; loop++)
-
 # 1330 "<previous_module>"
-        {
-                
-# 1331 "<previous_module>"
-if (ATOMIC_OPERATION)
-                {
-                        pthread_mutex_lock(&lock);
-                }
+for (loop = 0; loop < 2; loop++)
 
-                ;
+# 1331 "<previous_module>"
+        {
                 
 # 1332 "<previous_module>"
-insert(ss, loop);
-                
-# 1333 "<previous_module>"
-if (ATOMIC_OPERATION)
-                {
-                        pthread_mutex_unlock(&lock);
-                }
-
-                ;
-        }
-
-}
-
-
-# 1337 "<previous_module>"
-void *pop(void *__cs_unused)
-
-# 1338 "<previous_module>"
-{
-        
-# 1339 "<previous_module>"
-int res;
-        
-# 1340 "<previous_module>"
-int count; count = 0;
-        
-# 1341 "<previous_module>"
-int loop;
-        
-# 1342 "<previous_module>"
-for (loop = 0; loop < 5; loop++)
-
-# 1343 "<previous_module>"
-        {
-                
-# 1344 "<previous_module>"
 if (ATOMIC_OPERATION)
                 {
                         pthread_mutex_lock(&lock);
@@ -2386,10 +2328,10 @@ if (ATOMIC_OPERATION)
 
                 ;
                 
-# 1345 "<previous_module>"
-delete(ss);
+# 1333 "<previous_module>"
+insert(ss, loop);
                 
-# 1346 "<previous_module>"
+# 1334 "<previous_module>"
 if (ATOMIC_OPERATION)
                 {
                         pthread_mutex_unlock(&lock);
@@ -2401,19 +2343,63 @@ if (ATOMIC_OPERATION)
 }
 
 
-# 1351 "<previous_module>"
-int main()
+# 1338 "<previous_module>"
+void *pop(void *__cs_unused)
 
-# 1352 "<previous_module>"
+# 1339 "<previous_module>"
 {
         
-# 1355 "<previous_module>"
+# 1340 "<previous_module>"
+int res;
+        
+# 1341 "<previous_module>"
+int count; count = 0;
+        
+# 1342 "<previous_module>"
+int loop;
+        
+# 1343 "<previous_module>"
+for (loop = 0; loop < 2; loop++)
+
+# 1344 "<previous_module>"
+        {
+                
+# 1345 "<previous_module>"
+if (ATOMIC_OPERATION)
+                {
+                        pthread_mutex_lock(&lock);
+                }
+
+                ;
+                
+# 1346 "<previous_module>"
+delete(ss);
+                
+# 1347 "<previous_module>"
+if (ATOMIC_OPERATION)
+                {
+                        pthread_mutex_unlock(&lock);
+                }
+
+                ;
+        }
+
+}
+
+
+# 1352 "<previous_module>"
+int main()
+
+# 1353 "<previous_module>"
+{
+        
+# 1354 "<previous_module>"
 pthread_mutex_init(&lock, 0);
         
-# 1356 "<previous_module>"
+# 1355 "<previous_module>"
 ss = init();
         
-# 1358 "<previous_module>"
+# 1357 "<previous_module>"
 pthread_t t1;
         pthread_t t2;
         pthread_t t3;
@@ -2425,22 +2411,22 @@ pthread_t t1;
         pthread_t t9;
         pthread_t t10;
         
-# 1359 "<previous_module>"
+# 1358 "<previous_module>"
 pthread_create(&t1, 0, push, 0);
         
-# 1365 "<previous_module>"
+# 1364 "<previous_module>"
 pthread_create(&t6, 0, pop, 0);
         
-# 1370 "<previous_module>"
+# 1369 "<previous_module>"
 pthread_join(t1, 0);
         
-# 1375 "<previous_module>"
+# 1374 "<previous_module>"
 pthread_join(t6, 0);
         
-# 1381 "<previous_module>"
+# 1382 "<previous_module>"
 assert(0);
         
-# 1382 "<previous_module>"
+# 1383 "<previous_module>"
 return 0;
 }
 

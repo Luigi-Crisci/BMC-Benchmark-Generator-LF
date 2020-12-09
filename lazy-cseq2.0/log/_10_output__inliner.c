@@ -608,12 +608,12 @@ __cs_mutex_t lock;
 void *push(void *__cs_param_push___cs_unused)
 {
 static int long long unsigned __cs_local_push_loop;
-for (__cs_local_push_loop = 0; __cs_local_push_loop < 5; __cs_local_push_loop++)
+for (__cs_local_push_loop = 0; __cs_local_push_loop < 2; __cs_local_push_loop++)
     {
 ;
-static _Bool __cs_local_push___cs_tmp_if_cond_23;
-__cs_local_push___cs_tmp_if_cond_23 = ATOMIC_OPERATION;
-if (__cs_local_push___cs_tmp_if_cond_23)
+static _Bool __cs_local_push___cs_tmp_if_cond_22;
+__cs_local_push___cs_tmp_if_cond_22 = ATOMIC_OPERATION;
+if (__cs_local_push___cs_tmp_if_cond_22)
         {
 __cs_mutex_lock(&lock);
         }
@@ -697,9 +697,9 @@ goto __exit__lfds711_stack_push_1;
                      __exit__insert_1: ;  
         }
 ;
-static _Bool __cs_local_push___cs_tmp_if_cond_24;
-__cs_local_push___cs_tmp_if_cond_24 = ATOMIC_OPERATION;
-if (__cs_local_push___cs_tmp_if_cond_24)
+static _Bool __cs_local_push___cs_tmp_if_cond_23;
+__cs_local_push___cs_tmp_if_cond_23 = ATOMIC_OPERATION;
+if (__cs_local_push___cs_tmp_if_cond_23)
         {
 __cs_mutex_unlock(&lock);
         }
@@ -713,12 +713,12 @@ static int __cs_local_pop_res; __cs_local_pop_res = __CSEQ_nondet_int();
 static int __cs_local_pop_count;
 __cs_local_pop_count = 0;
 static int __cs_local_pop_loop;
-for (__cs_local_pop_loop = 0; __cs_local_pop_loop < 5; __cs_local_pop_loop++)
+for (__cs_local_pop_loop = 0; __cs_local_pop_loop < 2; __cs_local_pop_loop++)
     {
 ;
-static _Bool __cs_local_pop___cs_tmp_if_cond_25;
-__cs_local_pop___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
-if (__cs_local_pop___cs_tmp_if_cond_25)
+static _Bool __cs_local_pop___cs_tmp_if_cond_24;
+__cs_local_pop___cs_tmp_if_cond_24 = ATOMIC_OPERATION;
+if (__cs_local_pop___cs_tmp_if_cond_24)
         {
 __cs_mutex_lock(&lock);
         }
@@ -869,9 +869,9 @@ __cs_retval__delete_1 = __cs_local_delete_res; goto __exit__delete_1;
         }
 __cs_retval__delete_1;
 ;
-static _Bool __cs_local_pop___cs_tmp_if_cond_26;
-__cs_local_pop___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
-if (__cs_local_pop___cs_tmp_if_cond_26)
+static _Bool __cs_local_pop___cs_tmp_if_cond_25;
+__cs_local_pop___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
+if (__cs_local_pop___cs_tmp_if_cond_25)
         {
 __cs_mutex_unlock(&lock);
         }

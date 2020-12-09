@@ -475,7 +475,7 @@ Variables:
          ref '[]'  
          deref '[]'  
          occurs '[611, 611, 611, 622]'  
-      id196  '__cs_local_push___cs_tmp_if_cond_23'  
+      id196  '__cs_local_push___cs_tmp_if_cond_22'  
          type 'static _Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
@@ -577,7 +577,7 @@ Variables:
          ref '[]'  
          deref '[]'  
          occurs '[688, 689]'  
-      id213  '__cs_local_push___cs_tmp_if_cond_24'  
+      id213  '__cs_local_push___cs_tmp_if_cond_23'  
          type 'static _Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
@@ -608,7 +608,7 @@ Variables:
          ref '[]'  
          deref '[]'  
          occurs '[716, 716, 716]'  
-      id218  '__cs_local_pop___cs_tmp_if_cond_25'  
+      id218  '__cs_local_pop___cs_tmp_if_cond_24'  
          type 'static _Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
@@ -770,7 +770,7 @@ Variables:
          ref '[]'  
          deref '[]'  
          occurs '[865]'  
-      id245  '__cs_local_pop___cs_tmp_if_cond_26'  
+      id245  '__cs_local_pop___cs_tmp_if_cond_25'  
          type 'static _Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
@@ -1227,12 +1227,12 @@ function 'push' ----------------------------------:
 void *push(void *__cs_param_push___cs_unused)
 {
     static int long long unsigned __cs_local_push_loop;
-    for (__cs_local_push_loop = 0; __cs_local_push_loop < 5; __cs_local_push_loop++)
+    for (__cs_local_push_loop = 0; __cs_local_push_loop < 2; __cs_local_push_loop++)
     {
         ;
-        static _Bool __cs_local_push___cs_tmp_if_cond_23;
-        __cs_local_push___cs_tmp_if_cond_23 = ATOMIC_OPERATION;
-        if (__cs_local_push___cs_tmp_if_cond_23)
+        static _Bool __cs_local_push___cs_tmp_if_cond_22;
+        __cs_local_push___cs_tmp_if_cond_22 = ATOMIC_OPERATION;
+        if (__cs_local_push___cs_tmp_if_cond_22)
         {
             __cs_mutex_lock(&lock);
         }
@@ -1335,9 +1335,9 @@ void *push(void *__cs_param_push___cs_unused)
 
         }
         ;
-        static _Bool __cs_local_push___cs_tmp_if_cond_24;
-        __cs_local_push___cs_tmp_if_cond_24 = ATOMIC_OPERATION;
-        if (__cs_local_push___cs_tmp_if_cond_24)
+        static _Bool __cs_local_push___cs_tmp_if_cond_23;
+        __cs_local_push___cs_tmp_if_cond_23 = ATOMIC_OPERATION;
+        if (__cs_local_push___cs_tmp_if_cond_23)
         {
             __cs_mutex_unlock(&lock);
         }
@@ -1362,12 +1362,12 @@ void *pop(void *__cs_param_pop___cs_unused)
     static int __cs_local_pop_count;
     __cs_local_pop_count = 0;
     static int __cs_local_pop_loop;
-    for (__cs_local_pop_loop = 0; __cs_local_pop_loop < 5; __cs_local_pop_loop++)
+    for (__cs_local_pop_loop = 0; __cs_local_pop_loop < 2; __cs_local_pop_loop++)
     {
         ;
-        static _Bool __cs_local_pop___cs_tmp_if_cond_25;
-        __cs_local_pop___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
-        if (__cs_local_pop___cs_tmp_if_cond_25)
+        static _Bool __cs_local_pop___cs_tmp_if_cond_24;
+        __cs_local_pop___cs_tmp_if_cond_24 = ATOMIC_OPERATION;
+        if (__cs_local_pop___cs_tmp_if_cond_24)
         {
             __cs_mutex_lock(&lock);
         }
@@ -1548,9 +1548,9 @@ void *pop(void *__cs_param_pop___cs_unused)
         }
         __cs_retval__delete_1;
         ;
-        static _Bool __cs_local_pop___cs_tmp_if_cond_26;
-        __cs_local_pop___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
-        if (__cs_local_pop___cs_tmp_if_cond_26)
+        static _Bool __cs_local_pop___cs_tmp_if_cond_25;
+        __cs_local_pop___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
+        if (__cs_local_pop___cs_tmp_if_cond_25)
         {
             __cs_mutex_unlock(&lock);
         }
@@ -2245,7 +2245,7 @@ All symbols (new symbol table - work in progress):
    (438, 'push')  
    (439, '__cs_param_push___cs_unused')  
    (440, '__cs_local_push_loop')  
-   (441, '__cs_local_push___cs_tmp_if_cond_23')  
+   (441, '__cs_local_push___cs_tmp_if_cond_22')  
    (442, '__cs_param_insert_s')  
    (443, '__cs_param_insert_id')  
    (444, '__cs_local_insert_td')  
@@ -2263,13 +2263,13 @@ All symbols (new symbol table - work in progress):
    (456, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_16')  
    (457, '__cs_local_exponential_backoff_loop')  
    (458, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_17')  
-   (459, '__cs_local_push___cs_tmp_if_cond_24')  
+   (459, '__cs_local_push___cs_tmp_if_cond_23')  
    (460, 'pop')  
    (461, '__cs_param_pop___cs_unused')  
    (462, '__cs_local_pop_res')  
    (463, '__cs_local_pop_count')  
    (464, '__cs_local_pop_loop')  
-   (465, '__cs_local_pop___cs_tmp_if_cond_25')  
+   (465, '__cs_local_pop___cs_tmp_if_cond_24')  
    (466, '__cs_retval__delete_1')  
    (467, '__cs_param_delete_s')  
    (468, '__cs_local_delete_se')  
@@ -2298,7 +2298,7 @@ All symbols (new symbol table - work in progress):
    (491, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13')  
    (492, '__cs_local_delete___cs_tmp_if_cond_19')  
    (493, '__cs_local_delete_id_popped')  
-   (494, '__cs_local_pop___cs_tmp_if_cond_26')  
+   (494, '__cs_local_pop___cs_tmp_if_cond_25')  
    (495, 'main')  
    (496, '__cs_retval__init_1')  
    (497, '__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss')  

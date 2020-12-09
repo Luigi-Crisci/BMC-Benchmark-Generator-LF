@@ -1277,21 +1277,22 @@ int delete (struct lfds711_stack_state *s)
 
 
 
-int contains(void *s, int id)
+int contains(struct lfds711_stack_state *s, unsigned long long int id)
 {
  int max_size = 20, actual_size = 0, res = 1, found = 0, dimension = 2;
  struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
  struct lfds711_stack_element *se;
 
- while (found == 0 && res != 0)
- {
-  if (actual_size == max_size)
-  {
-   datas = realloc(datas,sizeof(struct test_data*) * max_size * dimension);
-   max_size *= dimension;
-  }
 
-  res = lfds711_stack_pop((struct lfds711_stack_state *)s, &se);
+ while (actual_size < 2)
+ {
+
+
+
+
+
+
+  res = lfds711_stack_pop(s, &se);
   if (res == 0)
    continue;
 
@@ -1304,14 +1305,13 @@ int contains(void *s, int id)
 
  int i = 0;
  while(i < actual_size){
-  lfds711_stack_push((struct lfds711_stack_state *)s, datas[i]);
+  lfds711_stack_push(s, &(datas[i]->se));
   i++;
  }
 
  free(datas);
  return found;
 }
-
 
 
 
@@ -1322,11 +1322,12 @@ int volatile ATOMIC_OPERATION = 0;
 void* ss;
 pthread_mutex_t lock;
 
+
 void *push()
 {
  int long long unsigned loop;
 
- for (loop = 0; loop < 5; loop++)
+ for (loop = 0; loop < 2; loop++)
  {
   if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
   insert(ss,loop);
@@ -1339,7 +1340,7 @@ void *pop()
  int res;
  int count = 0;
  int loop;
- for (loop = 0; loop < 5; loop++)
+ for (loop = 0; loop < 2; loop++)
  {
   if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
   delete(ss);
@@ -1350,8 +1351,6 @@ void *pop()
 
 int main()
 {
-
-
  pthread_mutex_init(&lock, 0);
  ss = init();
 
@@ -1373,6 +1372,8 @@ int main()
 
 
  pthread_join(t6, 0);
+
+
 
 
 

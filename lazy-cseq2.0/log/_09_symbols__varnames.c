@@ -339,7 +339,7 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[939, 962, 974]'  
+         occurs '[933, 956, 968]'  
       id168  'se'  
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
          size '[]'  
@@ -364,18 +364,18 @@ Variables:
          ref '[850, 851, 866]'  
          deref '[]'  
          occurs '[850, 851, 866]'  
-      id263  'ATOMIC_OPERATION'  
+      id262  'ATOMIC_OPERATION'  
          type 'int'  kind 'g'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[933, 940, 956, 963]'  
-      id264  'lock'  
+         occurs '[927, 934, 950, 957]'  
+      id263  'lock'  
          type '__cs_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[936, 943, 959, 966, 973]'  
+         ref '[930, 937, 953, 960, 967]'  
          deref '[]'  
-         occurs '[936, 943, 959, 966, 973]'  
+         occurs '[930, 937, 953, 960, 967]'  
    lfds711_misc_force_store
       id17  'destination'  
          type 'lfds711_pal_uint_t'  kind 'l'  arity '0'  
@@ -855,201 +855,195 @@ Variables:
          occurs '[874]'  
    contains
       id250  's'  
-         type 'void *'  kind 'p'  arity '0'  
+         type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[901, 919]'  
+         occurs '[895, 913]'  
       id251  'id'  
-         type 'int'  kind 'p'  arity '0'  
+         type 'unsigned long long int'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[908]'  
+         occurs '[902]'  
       id252  'max_size'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[881, 891, 895, 898, 899]'  
+         occurs '[881, 891]'  
       id253  'actual_size'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[883, 895, 907, 908, 913, 917]'  
+         occurs '[883, 893, 901, 902, 907, 911]'  
       id254  'res'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[885, 893, 901, 902]'  
+         occurs '[885, 895, 896]'  
       id255  'found'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[887, 893, 911, 923]'  
+         occurs '[887, 905, 917]'  
       id256  'dimension'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[889, 898, 899]'  
+         occurs '[889]'  
       id257  'datas'  
          type 'struct test_data **'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[908]'  
-         occurs '[891, 898, 898, 907, 908, 919, 922]'  
+         deref '[902, 913]'  
+         occurs '[891, 901, 902, 913, 916]'  
       id258  'se'  
          type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[901]'  
-         deref '[907]'  
-         occurs '[901, 907]'  
+         ref '[895]'  
+         deref '[901]'  
+         occurs '[895, 901]'  
       id259  '__cs_tmp_if_cond_20'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[895, 896]'  
+         occurs '[896, 897]'  
       id260  '__cs_tmp_if_cond_21'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[902, 903]'  
-      id261  '__cs_tmp_if_cond_22'  
-         type '_Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[908, 909]'  
-      id262  'i'  
+      id261  'i'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[916, 917, 919, 920]'  
+         occurs '[910, 911, 913, 914]'  
    push
-      id265  '__cs_unused'  
+      id264  '__cs_unused'  
          type 'void *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id266  'loop'  
+      id265  'loop'  
          type 'int long long unsigned'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[931, 931, 931, 939]'  
+         occurs '[925, 925, 925, 933]'  
+      id266  '__cs_tmp_if_cond_22'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[927, 928]'  
       id267  '__cs_tmp_if_cond_23'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[933, 934]'  
-      id268  '__cs_tmp_if_cond_24'  
-         type '_Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[940, 941]'  
+         occurs '[934, 935]'  
    pop
-      id269  '__cs_unused'  
+      id268  '__cs_unused'  
          type 'void *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id270  'res'  
+      id269  'res'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id271  'count'  
+      id270  'count'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[952]'  
-      id272  'loop'  
+         occurs '[946]'  
+      id271  'loop'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[954, 954, 954]'  
+         occurs '[948, 948, 948]'  
+      id272  '__cs_tmp_if_cond_24'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[950, 951]'  
       id273  '__cs_tmp_if_cond_25'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[956, 957]'  
-      id274  '__cs_tmp_if_cond_26'  
-         type '_Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[963, 964]'  
+         occurs '[957, 958]'  
    main
-      id275  't1'  
+      id274  't1'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[985]'  
+         ref '[979]'  
          deref '[]'  
-         occurs '[985, 987]'  
-      id276  't2'  
-         type '__cs_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
-      id277  't3'  
+         occurs '[979, 981]'  
+      id275  't2'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id278  't4'  
+      id276  't3'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id279  't5'  
+      id277  't4'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id280  't6'  
-         type '__cs_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[986]'  
-         deref '[]'  
-         occurs '[986, 988]'  
-      id281  't7'  
+      id278  't5'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id282  't8'  
+      id279  't6'  
+         type '__cs_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[980]'  
+         deref '[]'  
+         occurs '[980, 982]'  
+      id280  't7'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id283  't9'  
+      id281  't8'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id284  't10'  
+      id282  't9'  
+         type '__cs_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id283  't10'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
@@ -1286,7 +1280,7 @@ Pointer variables:
        var 'se'   type 'struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
        var 'temp_td'   type 'struct test_data *'   kind 'l'   arity '0'   size '[]'   
    contains
-       var 's'   type 'void *'   kind 'p'   arity '0'   size '[]'   
+       var 's'   type 'struct lfds711_stack_state *'   kind 'p'   arity '0'   size '[]'   
        var 'datas'   type 'struct test_data **'   kind 'l'   arity '0'   size '[]'   
        var 'se'   type 'struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
    push
@@ -1744,7 +1738,7 @@ int delete(struct lfds711_stack_state *s)
 struct lfds711_stack_state *s
 int
 function 'contains' ----------------------------------:
-int contains(void *s, int id)
+int contains(struct lfds711_stack_state *s, unsigned long long int id)
 {
     int max_size;
     max_size = 20;
@@ -1759,31 +1753,22 @@ int contains(void *s, int id)
     struct test_data **datas;
     datas = __cs_safe_malloc((sizeof(struct test_data *)) * max_size);
     struct lfds711_stack_element *se;
-    while ((found == 0) && (res != 0))
+    while (actual_size < 2)
     {
+        res = lfds711_stack_pop(s, &se);
         ;
         _Bool __cs_tmp_if_cond_20;
-        __cs_tmp_if_cond_20 = actual_size == max_size;
+        __cs_tmp_if_cond_20 = res == 0;
         if (__cs_tmp_if_cond_20)
-        {
-            datas = realloc(datas, ((sizeof(struct test_data *)) * max_size) * dimension);
-            max_size *= dimension;
-        }
-
-        res = lfds711_stack_pop((struct lfds711_stack_state *) s, &se);
-        ;
-        _Bool __cs_tmp_if_cond_21;
-        __cs_tmp_if_cond_21 = res == 0;
-        if (__cs_tmp_if_cond_21)
         {
             continue;
         }
 
         datas[actual_size] = (*se).value;
         ;
-        _Bool __cs_tmp_if_cond_22;
-        __cs_tmp_if_cond_22 = (*datas[actual_size]).user_id == id;
-        if (__cs_tmp_if_cond_22)
+        _Bool __cs_tmp_if_cond_21;
+        __cs_tmp_if_cond_21 = (*datas[actual_size]).user_id == id;
+        if (__cs_tmp_if_cond_21)
         {
             found = 1;
         }
@@ -1795,7 +1780,7 @@ int contains(void *s, int id)
     i = 0;
     while (i < actual_size)
     {
-        lfds711_stack_push((struct lfds711_stack_state *) s, datas[i]);
+        lfds711_stack_push(s, &(*datas[i]).se);
         i++;
     }
 
@@ -1804,18 +1789,18 @@ int contains(void *s, int id)
 }
 
 
-void *s, int id
+struct lfds711_stack_state *s, unsigned long long int id
 int
 function 'push' ----------------------------------:
 void *push(void *__cs_unused)
 {
     int long long unsigned loop;
-    for (loop = 0; loop < 5; loop++)
+    for (loop = 0; loop < 2; loop++)
     {
         ;
-        _Bool __cs_tmp_if_cond_23;
-        __cs_tmp_if_cond_23 = ATOMIC_OPERATION;
-        if (__cs_tmp_if_cond_23)
+        _Bool __cs_tmp_if_cond_22;
+        __cs_tmp_if_cond_22 = ATOMIC_OPERATION;
+        if (__cs_tmp_if_cond_22)
         {
             __cs_mutex_lock(&lock);
         }
@@ -1823,9 +1808,9 @@ void *push(void *__cs_unused)
         ;
         insert(ss, loop);
         ;
-        _Bool __cs_tmp_if_cond_24;
-        __cs_tmp_if_cond_24 = ATOMIC_OPERATION;
-        if (__cs_tmp_if_cond_24)
+        _Bool __cs_tmp_if_cond_23;
+        __cs_tmp_if_cond_23 = ATOMIC_OPERATION;
+        if (__cs_tmp_if_cond_23)
         {
             __cs_mutex_unlock(&lock);
         }
@@ -1845,12 +1830,12 @@ void *pop(void *__cs_unused)
     int count;
     count = 0;
     int loop;
-    for (loop = 0; loop < 5; loop++)
+    for (loop = 0; loop < 2; loop++)
     {
         ;
-        _Bool __cs_tmp_if_cond_25;
-        __cs_tmp_if_cond_25 = ATOMIC_OPERATION;
-        if (__cs_tmp_if_cond_25)
+        _Bool __cs_tmp_if_cond_24;
+        __cs_tmp_if_cond_24 = ATOMIC_OPERATION;
+        if (__cs_tmp_if_cond_24)
         {
             __cs_mutex_lock(&lock);
         }
@@ -1858,9 +1843,9 @@ void *pop(void *__cs_unused)
         ;
         delete(ss);
         ;
-        _Bool __cs_tmp_if_cond_26;
-        __cs_tmp_if_cond_26 = ATOMIC_OPERATION;
-        if (__cs_tmp_if_cond_26)
+        _Bool __cs_tmp_if_cond_25;
+        __cs_tmp_if_cond_25 = ATOMIC_OPERATION;
+        if (__cs_tmp_if_cond_25)
         {
             __cs_mutex_unlock(&lock);
         }
@@ -1956,12 +1941,12 @@ function: delete   stmt:     return res;
 
 function: contains   stmt:     return found;
 
-function: push   stmt:     for (loop = 0; loop < 5; loop++)
+function: push   stmt:     for (loop = 0; loop < 2; loop++)
     {
         ;
-        _Bool __cs_tmp_if_cond_23;
-        __cs_tmp_if_cond_23 = ATOMIC_OPERATION;
-        if (__cs_tmp_if_cond_23)
+        _Bool __cs_tmp_if_cond_22;
+        __cs_tmp_if_cond_22 = ATOMIC_OPERATION;
+        if (__cs_tmp_if_cond_22)
         {
             __cs_mutex_lock(&lock);
         }
@@ -1969,9 +1954,9 @@ function: push   stmt:     for (loop = 0; loop < 5; loop++)
         ;
         insert(ss, loop);
         ;
-        _Bool __cs_tmp_if_cond_24;
-        __cs_tmp_if_cond_24 = ATOMIC_OPERATION;
-        if (__cs_tmp_if_cond_24)
+        _Bool __cs_tmp_if_cond_23;
+        __cs_tmp_if_cond_23 = ATOMIC_OPERATION;
+        if (__cs_tmp_if_cond_23)
         {
             __cs_mutex_unlock(&lock);
         }
@@ -1980,12 +1965,12 @@ function: push   stmt:     for (loop = 0; loop < 5; loop++)
     }
 
 
-function: pop   stmt:     for (loop = 0; loop < 5; loop++)
+function: pop   stmt:     for (loop = 0; loop < 2; loop++)
     {
         ;
-        _Bool __cs_tmp_if_cond_25;
-        __cs_tmp_if_cond_25 = ATOMIC_OPERATION;
-        if (__cs_tmp_if_cond_25)
+        _Bool __cs_tmp_if_cond_24;
+        __cs_tmp_if_cond_24 = ATOMIC_OPERATION;
+        if (__cs_tmp_if_cond_24)
         {
             __cs_mutex_lock(&lock);
         }
@@ -1993,9 +1978,9 @@ function: pop   stmt:     for (loop = 0; loop < 5; loop++)
         ;
         delete(ss);
         ;
-        _Bool __cs_tmp_if_cond_26;
-        __cs_tmp_if_cond_26 = ATOMIC_OPERATION;
-        if (__cs_tmp_if_cond_26)
+        _Bool __cs_tmp_if_cond_25;
+        __cs_tmp_if_cond_25 = ATOMIC_OPERATION;
+        if (__cs_tmp_if_cond_25)
         {
             __cs_mutex_unlock(&lock);
         }
@@ -2534,31 +2519,30 @@ All symbols (new symbol table - work in progress):
    (523, 'se')  
    (524, '__cs_tmp_if_cond_20')  
    (525, '__cs_tmp_if_cond_21')  
-   (526, '__cs_tmp_if_cond_22')  
-   (527, 'i')  
-   (528, 'ATOMIC_OPERATION')  
-   (529, 'ss')  
-   (530, 'lock')  
-   (531, 'push')  
-   (532, '__cs_unused')  
-   (533, 'loop')  
+   (526, 'i')  
+   (527, 'ATOMIC_OPERATION')  
+   (528, 'ss')  
+   (529, 'lock')  
+   (530, 'push')  
+   (531, '__cs_unused')  
+   (532, 'loop')  
+   (533, '__cs_tmp_if_cond_22')  
    (534, '__cs_tmp_if_cond_23')  
-   (535, '__cs_tmp_if_cond_24')  
-   (536, 'pop')  
-   (537, '__cs_unused')  
-   (538, 'res')  
-   (539, 'count')  
-   (540, 'loop')  
+   (535, 'pop')  
+   (536, '__cs_unused')  
+   (537, 'res')  
+   (538, 'count')  
+   (539, 'loop')  
+   (540, '__cs_tmp_if_cond_24')  
    (541, '__cs_tmp_if_cond_25')  
-   (542, '__cs_tmp_if_cond_26')  
-   (543, 'main')  
-   (544, 't1')  
-   (545, 't2')  
-   (546, 't3')  
-   (547, 't4')  
-   (548, 't5')  
-   (549, 't6')  
-   (550, 't7')  
-   (551, 't8')  
-   (552, 't9')  
-   (553, 't10')  
+   (542, 'main')  
+   (543, 't1')  
+   (544, 't2')  
+   (545, 't3')  
+   (546, 't4')  
+   (547, 't5')  
+   (548, 't6')  
+   (549, 't7')  
+   (550, 't8')  
+   (551, 't9')  
+   (552, 't10')  

@@ -339,7 +339,7 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[864, 884, 895]'  
+         occurs '[859, 879, 890]'  
       id168  'se'  
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
          size '[]'  
@@ -369,13 +369,13 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[859, 865, 879, 885]'  
+         occurs '[854, 860, 874, 880]'  
       id240  'lock'  
          type 'pthread_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[861, 867, 881, 887, 894]'  
+         ref '[856, 862, 876, 882, 889]'  
          deref '[]'  
-         occurs '[861, 867, 881, 887, 894]'  
+         occurs '[856, 862, 876, 882, 889]'  
    lfds711_misc_force_store
       id17  'destination'  
          type 'lfds711_pal_uint_t'  kind 'l'  arity '0'  
@@ -729,65 +729,65 @@ Variables:
          occurs '[810]'  
    contains
       id229  's'  
-         type 'void *'  kind 'p'  arity '0'  
+         type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[830, 845]'  
+         occurs '[825, 840]'  
       id230  'id'  
-         type 'int'  kind 'p'  arity '0'  
+         type 'unsigned long long int'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[836]'  
+         occurs '[831]'  
       id231  'max_size'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[816, 821, 825, 827, 828]'  
+         occurs '[816, 821]'  
       id232  'actual_size'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[817, 825, 835, 836, 840, 843]'  
+         occurs '[817, 823, 830, 831, 835, 838]'  
       id233  'res'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[818, 823, 830, 831]'  
+         occurs '[818, 825, 826]'  
       id234  'found'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[819, 823, 838, 849]'  
+         occurs '[819, 833, 844]'  
       id235  'dimension'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[820, 827, 828]'  
+         occurs '[820]'  
       id236  'datas'  
          type 'struct test_data **'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[836]'  
-         occurs '[821, 827, 827, 835, 836, 845, 848]'  
+         deref '[831, 840]'  
+         occurs '[821, 830, 831, 840, 843]'  
       id237  'se'  
          type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[830]'  
-         deref '[835]'  
-         occurs '[830, 835]'  
+         ref '[825]'  
+         deref '[830]'  
+         occurs '[825, 830]'  
       id238  'i'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[842, 843, 845, 846]'  
+         occurs '[837, 838, 840, 841]'  
    push
       id241  '__cs_unused'  
          type 'void *'  kind 'p'  arity '0'  
@@ -800,7 +800,7 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[857, 857, 857, 864]'  
+         occurs '[852, 852, 852, 859]'  
    pop
       id243  '__cs_unused'  
          type 'void *'  kind 'p'  arity '0'  
@@ -819,20 +819,20 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[875]'  
+         occurs '[870]'  
       id246  'loop'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[877, 877, 877]'  
+         occurs '[872, 872, 872]'  
    main
       id247  't1'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[906]'  
+         ref '[901]'  
          deref '[]'  
-         occurs '[906, 908]'  
+         occurs '[901, 903]'  
       id248  't2'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
@@ -860,9 +860,9 @@ Variables:
       id252  't6'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[907]'  
+         ref '[902]'  
          deref '[]'  
-         occurs '[907, 909]'  
+         occurs '[902, 904]'  
       id253  't7'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
@@ -1118,7 +1118,7 @@ Pointer variables:
        var 'se'   type 'struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
        var 'temp_td'   type 'struct test_data *'   kind 'l'   arity '0'   size '[]'   
    contains
-       var 's'   type 'void *'   kind 'p'   arity '0'   size '[]'   
+       var 's'   type 'struct lfds711_stack_state *'   kind 'p'   arity '0'   size '[]'   
        var 'datas'   type 'struct test_data **'   kind 'l'   arity '0'   size '[]'   
        var 'se'   type 'struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
    push
@@ -1486,7 +1486,7 @@ int delete(struct lfds711_stack_state *s)
 struct lfds711_stack_state *s
 int
 function 'contains' ----------------------------------:
-int contains(void *s, int id)
+int contains(struct lfds711_stack_state *s, unsigned long long int id)
 {
     int max_size;
     max_size = 20;
@@ -1501,15 +1501,9 @@ int contains(void *s, int id)
     struct test_data **datas;
     datas = malloc((sizeof(struct test_data *)) * max_size);
     struct lfds711_stack_element *se;
-    while ((found == 0) && (res != 0))
+    while (actual_size < 2)
     {
-        if (actual_size == max_size)
-        {
-            datas = realloc(datas, ((sizeof(struct test_data *)) * max_size) * dimension);
-            max_size *= dimension;
-        }
-
-        res = lfds711_stack_pop((struct lfds711_stack_state *) s, &se);
+        res = lfds711_stack_pop(s, &se);
         if (res == 0)
         {
             continue;
@@ -1528,7 +1522,7 @@ int contains(void *s, int id)
     i = 0;
     while (i < actual_size)
     {
-        lfds711_stack_push((struct lfds711_stack_state *) s, datas[i]);
+        lfds711_stack_push(s, &(*datas[i]).se);
         i++;
     }
 
@@ -1537,13 +1531,13 @@ int contains(void *s, int id)
 }
 
 
-void *s, int id
+struct lfds711_stack_state *s, unsigned long long int id
 int
 function 'push' ----------------------------------:
 void *push(void *__cs_unused)
 {
     int long long unsigned loop;
-    for (loop = 0; loop < 5; loop++)
+    for (loop = 0; loop < 2; loop++)
     {
         if (ATOMIC_OPERATION)
         {
@@ -1572,7 +1566,7 @@ void *pop(void *__cs_unused)
     int count;
     count = 0;
     int loop;
-    for (loop = 0; loop < 5; loop++)
+    for (loop = 0; loop < 2; loop++)
     {
         if (ATOMIC_OPERATION)
         {
@@ -1677,7 +1671,7 @@ function: delete   stmt:     return res;
 
 function: contains   stmt:     return found;
 
-function: push   stmt:     for (loop = 0; loop < 5; loop++)
+function: push   stmt:     for (loop = 0; loop < 2; loop++)
     {
         if (ATOMIC_OPERATION)
         {
@@ -1695,7 +1689,7 @@ function: push   stmt:     for (loop = 0; loop < 5; loop++)
     }
 
 
-function: pop   stmt:     for (loop = 0; loop < 5; loop++)
+function: pop   stmt:     for (loop = 0; loop < 2; loop++)
     {
         if (ATOMIC_OPERATION)
         {
