@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <assert.h>
+#include "check.c"
 
 //Using the interface
 #include "../inteface/interface.c"
@@ -70,8 +71,11 @@ int main()
 	// pthread_join(t9, 0);
 	// pthread_join(t10, 0);
 
+	// check(ss);
+
 	// assert(contains(ss,0) && contains(ss,1));
-	// assert(contains(ss,0));
-	assert(0);
+	// int len = get_lenght(ss);
+	assert( contains(ss,0) );
+	// assert(0);
 	return (EXIT_SUCCESS);
 }

@@ -10,7 +10,7 @@ pthread_mutex_t library_lock;
 void exponential_backoff()
 {
 	int loop;
-	for (loop = 0; loop < 10; loop++)
+	for (loop = 0; loop < 3; loop++)
 		;
 }
 

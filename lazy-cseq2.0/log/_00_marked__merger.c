@@ -188,6 +188,11 @@ typedef int _____STOPSTRIPPINGFROMHERE_____;
 # 4 "<stdin>" 2
 # 1 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/assert.h" 1
 # 5 "<stdin>" 2
+# 1 "../workspace/multithread/check.c" 1
+void check(void* ss){
+ assert(contains(ss,0));
+}
+# 6 "<stdin>" 2
 
 
 # 1 "../workspace/multithread/../inteface/interface.c" 1
@@ -1083,7 +1088,7 @@ pthread_mutex_t library_lock;
 void exponential_backoff()
 {
  int loop;
- for (loop = 0; loop < 10; loop++)
+ for (loop = 0; loop < 3; loop++)
   ;
 }
 
@@ -1352,7 +1357,44 @@ int delete (struct lfds711_stack_state *s)
 
 int contains(struct lfds711_stack_state *s, unsigned long long int id)
 {
- int max_size = 20, actual_size = 0, res = 1, found = 0, dimension = 2;
+ int max_size = 2, actual_size = 0, res = 1, found = 0, dimension = 2;
+ struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
+ struct lfds711_stack_element *se;
+
+
+ while (actual_size < 2)
+ {
+
+
+
+
+
+
+  res = lfds711_stack_pop(s, &se);
+  if (res == 0){
+   break;
+  }
+
+  datas[actual_size] = ( (*se).value );
+  if (datas[actual_size]->user_id == id)
+   found = 1;
+
+  actual_size = actual_size + 1;
+ }
+
+
+ int i = 0;
+ while(i < actual_size){
+  lfds711_stack_push(s, &(datas[i]->se));
+  i++;
+ }
+
+
+ return found;
+}
+
+int get_size(struct lfds711_stack_state *s){
+ int max_size = 2, actual_size = 0, res = 1, dimension = 2;
  struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
  struct lfds711_stack_element *se;
 
@@ -1367,12 +1409,9 @@ int contains(struct lfds711_stack_state *s, unsigned long long int id)
 
   res = lfds711_stack_pop(s, &se);
   if (res == 0)
-   continue;
+   break;
 
-  datas[actual_size] = ( (*se).value );
-  if (datas[actual_size]->user_id == id)
-   found = 1;
-  actual_size++;
+  actual_size = actual_size + 1;
  }
 
 
@@ -1382,11 +1421,24 @@ int contains(struct lfds711_stack_state *s, unsigned long long int id)
   i++;
  }
 
- free(datas);
- return found;
+
+ return actual_size;
+}
+
+
+int is_empty(struct lfds711_stack_state *s){
+ struct lfds711_stack_element *se;
+ int res = lfds711_stack_pop(s, &se);
+
+ if (res != 0){
+  fds711_stack_push(s, se);
+  return 0;
+ }
+
+ return 1;
 }
 # 1 "../workspace/multithread/../inteface/interface.c" 2
-# 8 "<stdin>" 2
+# 9 "<stdin>" 2
 
 
 
@@ -1447,13 +1499,8 @@ int main()
 
 
  pthread_join(t6, 0);
+# 78 "<stdin>"
+ assert( contains(ss,0) );
 
-
-
-
-
-
-
- assert(0);
  return (0);
 }

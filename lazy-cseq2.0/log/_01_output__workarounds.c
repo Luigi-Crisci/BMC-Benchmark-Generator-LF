@@ -152,6 +152,10 @@ typedef void BZFILE;
 typedef int va_list;
 typedef int loff_t;
 typedef int _____STOPSTRIPPINGFROMHERE_____;
+void check(void *ss)
+{
+assert(contains(ss, 0));
+}
 #pragma warning( push )
 #pragma warning( disable : 4324 )
 #pragma prefast( disable : 28113 28182 28183, "blah" )
@@ -568,7 +572,7 @@ pthread_mutex_t library_lock;
 void exponential_backoff()
 {
 int loop;
-for (loop = 0; loop < 10; loop++)
+for (loop = 0; loop < 3; loop++)
         {
 ;
         }
@@ -813,7 +817,7 @@ return res;
 }
 int contains(struct lfds711_stack_state *s, unsigned long long int id)
 {
-int max_size; max_size = 20;
+int max_size; max_size = 2;
         int actual_size; actual_size = 0;
         int res; res = 1;
         int found; found = 0;
@@ -825,14 +829,14 @@ while (actual_size < 2)
 res = lfds711_stack_pop(s, &se);
 if (res == 0)
                 {
-continue;
+break;
                 }
 datas[actual_size] = (*se).value;
 if ((*datas[actual_size]).user_id == id)
                 {
 found = 1;
                 }
-actual_size++;
+actual_size = actual_size + 1;
         }
 int i; i = 0;
 while (i < actual_size)
@@ -840,8 +844,43 @@ while (i < actual_size)
 lfds711_stack_push(s, &(*datas[i]).se);
 i++;
         }
-free(datas);
 return found;
+}
+int get_size(struct lfds711_stack_state *s)
+{
+int max_size; max_size = 2;
+        int actual_size; actual_size = 0;
+        int res; res = 1;
+        int dimension; dimension = 2;
+struct test_data **datas; datas = malloc((sizeof(struct test_data *)) * max_size);
+struct lfds711_stack_element *se;
+while (actual_size < 2)
+        {
+res = lfds711_stack_pop(s, &se);
+if (res == 0)
+                {
+break;
+                }
+actual_size = actual_size + 1;
+        }
+int i; i = 0;
+while (i < actual_size)
+        {
+lfds711_stack_push(s, &(*datas[i]).se);
+i++;
+        }
+return actual_size;
+}
+int is_empty(struct lfds711_stack_state *s)
+{
+struct lfds711_stack_element *se;
+int res; res = lfds711_stack_pop(s, &se);
+if (res != 0)
+        {
+fds711_stack_push(s, se);
+return 0;
+        }
+return 1;
 }
 int ATOMIC_OPERATION = 0;
 void *ss;
@@ -902,6 +941,6 @@ pthread_create(&t1, 0, push, 0);
 pthread_create(&t6, 0, pop, 0);
 pthread_join(t1, 0);
 pthread_join(t6, 0);
-assert(0);
+assert(contains(ss, 0));
 return 0;
 }
