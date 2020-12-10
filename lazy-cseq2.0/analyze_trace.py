@@ -3,91 +3,123 @@ import sys
 import os
 import re
 import io
+import ctypes
 
 #Function to save error trace into a file named "trace.txt" we just have to specify the unwind for lazycseq
 def save_trace():
-   f = open("trace.txt","w")
    subprocess.call(["./cseq-feeder.py", "-i", "../workspace/multithread/stack_with_while.c","-I","../liblfds7.1.1/liblfds711/inc"
-   ,"--unwind","4","--cex"],stdout=f)
-
+   ,"--unwind","4","--cex","--debug"])
+   f = open("trace.txt","w")
+   subprocess.call(["cbmc",  "--unwind", "1", "--no-unwinding-assertions", "--32", "../workspace/multithread/_cs_stack_with_while.c", "--stop-on-fail"],stdout=f)
+   f.close()
 
 #Function to read from "trace.txt" and extract the number of pushes and pops. It also save the data structure state (at the end of the program)
 #into another data structure and return it
 def read_file(pathname):
    temp = []
-   count = -1
+   count = 0
    temp2 = []
    f = open("trace.txt","r")
    lines = [line.rstrip('\n') for line in f]
    #Iterate through the trace and find the lines in which there are pushes and pops
    for x in lines:
-      if(".user_id=" in x):
-         if (x.endswith("l")):
-            index = x.index(".user_id=")
-            temp.append("push")
-            temp.append(x[index:len(x)-3])
-      if("user_id;" in x):
+      #if(".user_id=" in x):
+      if("__cs_local_push_loop=" in x):
+         #if (x.endswith("l")):
+         temp.append("push")
+      #if("user_id;" in x):
+      if("__cs_retval__lfds711_stack_pop" in x):
          temp.append("pop")
+      
+   temp.reverse()
+   temp.remove('push')
+   temp.reverse()
    
-   #print(temp)
+   print(temp)
 
+
+#Gestire in base alla struttura dati
    for x in temp:
-      count+=1
       if x == "push":
-         temp2.insert(len(temp2),temp[count+1])
+         temp2.insert(len(temp2),count)
+         count+=1
       if x == "pop":
          del temp2[len(temp2)-1]
-
    return temp2
+
+#Function that appends a new assert to "checker.c"
+def append_assert(data_structure):
+   i = 0
+   line_help = "assert("
+   for elem in data_structure:
+      line_help += "list["+str(i)+"]=="+str(data_structure[i])+" && "
+      i+=1
+      if(i == len(data_structure)-1):
+         line_help += "list["+str(i)+"]=="+str(data_structure[i])
+         break
+   line_help += ");\n"
+   return line_help
 
 
 #Create the assert into a c file named "checker.c"
 def create_assert(data_structure):
-   #print(data_structure)
 
-   #data_structure = [".user_id=0",".user_id=1",".user_id=5"]
-   #Dropping useless part of the string
-   new_data = [x.replace(".user_id=","") for x in data_structure]
-   #print(new_data)
-
-   #Building new_data as a string of the elements in the correct order
-   new_data = ''.join(new_data)
-   #print(new_data)
-   count=0
+   #Function necessary to pass data_structure to c function
+   #lib = ctypes.cdll.LoadLibrary('../workspace/multithread/checker.so')
+   #fun = lib.assert_create
+   #arr = (ctypes.c_int * len(data_structure))(*data_structure)
+   #fun(arr)
+   #print(arr)
+   newfile_lines = ""
 
    #if file "checker.c" already exists we iterate through the lines and compare each assert with the actual data
    if os.path.exists("../workspace/multithread/checker.c"):
-      checker = open("../workspace/multithread/checker.c","r+")
+      checker = open("../workspace/multithread/checker.c","r")
       lines = [line.rstrip('\n') for line in checker]
-      for x in lines:
-         if "assert(" in x:
-            index1 = x.index("(")
-            index2 = x.index(")")
-            if new_data == x[index1+1:index2]:
-               break
-         count+=1
-      #print(count)
-      #print(len(lines))
-      if(count == len(lines)):
-         checker.seek(0,io.SEEK_END)
-         checker.write("\nassert(")
-         checker.write(new_data)
-         checker.write(");")
-      checker.close()
+      # Caso base
+      if "assert(0);" in lines:
+         for x in lines:
+            #If we find "assert(0)"" this is the first time we iterate through "checker.c" so we overwrite "assert(0)" with a new assert
+            if "assert(0);" in x:
+               if(not data_structure):
+                  newfile_lines += "assert(list[0] != NULL);\n"
+               else:
+                  line_help = append_assert(data_structure)
+                  newfile_lines += line_help
+            else:
+               newfile_lines += x+"\n"
+         checker.close()
+         checker = open("../workspace/multithread/checker.c","w")
+         checker.write(newfile_lines)
+         newfile_lines = ""
+         checker.close()
+      else:
+         for x in lines:
+            #if we are at the end of the file we append the new assert overwriting "}" and then rewrite "}" to the next line
+            if "}" in x:
+               line_help = append_assert(data_structure)
+               newfile_lines += line_help
+            else:
+               newfile_lines += x+"\n"
+         checker.close()
+         checker = open("../workspace/multithread/checker.c","w")
+         checker.write(newfile_lines)
+         checker.write("}")
+         checker.close()
+
    #if "checker.c" doesn't exist then there's no assert and we create first assert with the actual data
    else:
-      checker = open("../workspace/multithread/checker.c","w+")
+      checker = open("../workspace/multithread/checker.c","r")
       checker.write("#include <assert.h>\n")
-      checker.write("assert(")
-      checker.write(new_data)
-      checker.write(");") 
+      checker.write("include <stdio.h>\n")
+      checker.write("include <stdlib.h>\n")
+      checker.write("void create_assert(){\n")
+      checker.write("assert(0);\n") 
+      checker.write("}")
       checker.close()
-       
-  
 
 
-
-
+   
 
 if __name__ == "__main__":
     save_trace()

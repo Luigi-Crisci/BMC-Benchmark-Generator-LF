@@ -4,7 +4,7 @@
 #include "../library_barrier.c"
 #include <assert.h>
 #include <fcntl.h>
-
+#include "checker.c"
 
 #define VALUES 4
 //Set ATOMIC_OPERATION to make push and pop atomic
@@ -13,6 +13,8 @@
 // #define LOCK if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);}
 // #define UNLOCK if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); }
 
+
+int* list;
 struct lfds711_stack_state ss;
 // pthread_mutex_t lock;
 
@@ -83,6 +85,7 @@ int main()
 
 	//Commented because cseq is unable to parse it
 	// lfds711_stack_cleanup(&ss, NULL);
-	assert(0);
+	//assert(0);
+	assert_create(list);
 	return (EXIT_SUCCESS);
 }
