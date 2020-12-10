@@ -152,6 +152,10 @@ typedef void BZFILE;
 typedef int va_list;
 typedef int loff_t;
 typedef int _____STOPSTRIPPINGFROMHERE_____;
+void check(void *ss)
+{
+__CSEQ_assert(contains(ss, 0));
+}
 #pragma warning( push )
 #pragma warning( disable : 4324 )
 #pragma prefast( disable : 28113 28182 28183, "blah" )
@@ -564,48 +568,20 @@ void *query_input,
 void *query_output);
 #pragma warning( pop )
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs);
-__cs_mutex_t lock;
-_Bool __atomic_compare_exchange_n(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
+__cs_mutex_t library_lock;
+void exponential_backoff()
 {
-int res;
-res = __CSEQ_atomic_compare_and_exchange(mptr, eptr, newval, weak_p, sm, fm);
-return res;
-}
-_Bool __CSEQ_atomic_compare_and_exchange(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
-{
-;_Bool __cs_tmp_if_cond_0; __cs_tmp_if_cond_0 = ((*mptr) == (*eptr)); 
-        if (__cs_tmp_if_cond_0)
+int loop;
+for (loop = 0; loop < 3; loop++)
         {
-*mptr = newval;
-return 1;
+;
         }
-        else
-        {
-*eptr = newval;
-return 0;
-        }
-}
-unsigned long __atomic_exchange_n(int long long unsigned *previous, int long long unsigned new, int memorder)
-{
-int res;
-res = __CSEQ_atomic_exchange(previous, new, memorder);
-return res;
-}
-unsigned long __CSEQ_atomic_exchange(int long long unsigned *previous, int long long unsigned new, int memorder)
-{
-unsigned long int old;
-old = *previous;
-*previous = new;
-return old;
-}
-void __atomic_thread_fence(int i)
-{
 }
 int __CSEQ_atomic_swap_stack_top(struct lfds711_stack_element * volatile *top, struct lfds711_stack_element * volatile *oldtop, 
 struct lfds711_stack_element **newtop)
 {
-;_Bool __cs_tmp_if_cond_1; __cs_tmp_if_cond_1 = ((*oldtop) == (*top)); 
-        if (__cs_tmp_if_cond_1)
+;_Bool __cs_tmp_if_cond_0; __cs_tmp_if_cond_0 = ((*oldtop) == (*top)); 
+        if (__cs_tmp_if_cond_0)
         {
 *top = *newtop;
 return 1;
@@ -616,18 +592,10 @@ return 1;
 return 0;
         }
 }
-void exponential_backoff()
-{
-int loop;
-for (loop = 0; loop < 10; loop++)
-        {
-;
-        }
-}
 void lfds711_misc_internal_backoff_init(struct lfds711_misc_backoff_state *bs)
 {
-;_Bool __cs_tmp_if_cond_2; __cs_tmp_if_cond_2 = (!(bs != 0)); 
-        if (__cs_tmp_if_cond_2)
+;_Bool __cs_tmp_if_cond_1; __cs_tmp_if_cond_1 = (!(bs != 0)); 
+        if (__cs_tmp_if_cond_1)
         {
 char *c;
 c = 0;
@@ -635,8 +603,8 @@ c = 0;
         }
 ;
 ;
-;_Bool __cs_tmp_if_cond_3; __cs_tmp_if_cond_3 = (!((((lfds711_pal_uint_t) (&(*bs).lock)) % 128) == 0)); 
-        if (__cs_tmp_if_cond_3)
+;_Bool __cs_tmp_if_cond_2; __cs_tmp_if_cond_2 = (!((((lfds711_pal_uint_t) (&(*bs).lock)) % 128) == 0)); 
+        if (__cs_tmp_if_cond_2)
         {
 char *c;
 c = 0;
@@ -654,8 +622,17 @@ return;
 void lfds711_stack_init_valid_on_current_logical_core(struct lfds711_stack_state *ss, 
 void *user_state)
 {
-__cs_mutex_init(&lock, 0);
-;_Bool __cs_tmp_if_cond_4; __cs_tmp_if_cond_4 = (!(ss != 0)); 
+__cs_mutex_init(&library_lock, 0);
+;_Bool __cs_tmp_if_cond_3; __cs_tmp_if_cond_3 = (!(ss != 0)); 
+        if (__cs_tmp_if_cond_3)
+        {
+char *c;
+c = 0;
+*c = 0;
+        }
+;
+;
+;_Bool __cs_tmp_if_cond_4; __cs_tmp_if_cond_4 = (!((((lfds711_pal_uint_t) (*ss).top) % 128) == 0)); 
         if (__cs_tmp_if_cond_4)
         {
 char *c;
@@ -664,7 +641,7 @@ c = 0;
         }
 ;
 ;
-;_Bool __cs_tmp_if_cond_5; __cs_tmp_if_cond_5 = (!((((lfds711_pal_uint_t) (*ss).top) % 128) == 0)); 
+;_Bool __cs_tmp_if_cond_5; __cs_tmp_if_cond_5 = (!((((lfds711_pal_uint_t) (&(*ss).user_state)) % 128) == 0)); 
         if (__cs_tmp_if_cond_5)
         {
 char *c;
@@ -673,23 +650,14 @@ c = 0;
         }
 ;
 ;
-;_Bool __cs_tmp_if_cond_6; __cs_tmp_if_cond_6 = (!((((lfds711_pal_uint_t) (&(*ss).user_state)) % 128) == 0)); 
-        if (__cs_tmp_if_cond_6)
-        {
-char *c;
-c = 0;
-*c = 0;
-        }
-;
-;
-__cs_mutex_lock(&lock);
+__cs_mutex_lock(&library_lock);
 (*ss).top[0] = 0;
 (*ss).top[1] = 0;
 (*ss).user_state = user_state;
 lfds711_misc_internal_backoff_init(&(*ss).pop_backoff);
 lfds711_misc_internal_backoff_init(&(*ss).push_backoff);
 lfds711_misc_force_store();
-__cs_mutex_unlock(&lock);
+__cs_mutex_unlock(&library_lock);
 return;
 }
 int lfds711_stack_pop(struct lfds711_stack_state *ss, 
@@ -700,7 +668,16 @@ lfds711_pal_uint_t backoff_iteration;
 backoff_iteration = 0;
 struct lfds711_stack_element *new_top[2];
 struct lfds711_stack_element * volatile original_top[2];
-;_Bool __cs_tmp_if_cond_7; __cs_tmp_if_cond_7 = (!(ss != 0)); 
+;_Bool __cs_tmp_if_cond_6; __cs_tmp_if_cond_6 = (!(ss != 0)); 
+        if (__cs_tmp_if_cond_6)
+        {
+char *c;
+c = 0;
+*c = 0;
+        }
+;
+;
+;_Bool __cs_tmp_if_cond_7; __cs_tmp_if_cond_7 = (!(se != 0)); 
         if (__cs_tmp_if_cond_7)
         {
 char *c;
@@ -709,17 +686,8 @@ c = 0;
         }
 ;
 ;
-;_Bool __cs_tmp_if_cond_8; __cs_tmp_if_cond_8 = (!(se != 0)); 
-        if (__cs_tmp_if_cond_8)
-        {
-char *c;
-c = 0;
-*c = 0;
-        }
-;
-;
-__cs_mutex_lock(&lock);
-__cs_mutex_unlock(&lock);
+__cs_mutex_lock(&library_lock);
+__cs_mutex_unlock(&library_lock);
 original_top[1] = (*ss).top[1];
 original_top[0] = (*ss).top[0];
 int i;
@@ -728,27 +696,27 @@ i = 0;
         int __cs_dowhile_onetime_1;
         for (__cs_dowhile_onetime_1 = 0; __cs_dowhile_onetime_1 < 1; __cs_dowhile_onetime_1++)
         {
-;_Bool __cs_tmp_if_cond_9; __cs_tmp_if_cond_9 = (original_top[0] == 0); 
-                if (__cs_tmp_if_cond_9)
+;_Bool __cs_tmp_if_cond_8; __cs_tmp_if_cond_8 = (original_top[0] == 0); 
+                if (__cs_tmp_if_cond_8)
                 {
 *se = 0;
 return 0;
                 }
 new_top[1] = original_top[1] + 1;
 new_top[0] = (*original_top[0]).next;
-__cs_mutex_lock(&lock);
+__cs_mutex_lock(&library_lock);
 result = __CSEQ_atomic_swap_stack_top(&(*ss).top[0], &original_top[0], &new_top[0]);
-__cs_mutex_unlock(&lock);
-;_Bool __cs_tmp_if_cond_10; __cs_tmp_if_cond_10 = (result == 0); 
-                if (__cs_tmp_if_cond_10)
+__cs_mutex_unlock(&library_lock);
+;_Bool __cs_tmp_if_cond_9; __cs_tmp_if_cond_9 = (result == 0); 
+                if (__cs_tmp_if_cond_9)
                 {
 exponential_backoff();
-__cs_mutex_lock(&lock);
-__cs_mutex_unlock(&lock);
+__cs_mutex_lock(&library_lock);
+__cs_mutex_unlock(&library_lock);
                 }
 i++;
-;_Bool __cs_tmp_if_cond_11; __cs_tmp_if_cond_11 = (i > 1000); 
-                if (__cs_tmp_if_cond_11)
+;_Bool __cs_tmp_if_cond_10; __cs_tmp_if_cond_10 = (i > 1000); 
+                if (__cs_tmp_if_cond_10)
                 {
 break;
                 }
@@ -756,33 +724,33 @@ break;
 while (
 result == 0)
         {
-;_Bool __cs_tmp_if_cond_12; __cs_tmp_if_cond_12 = (original_top[0] == 0); 
-                if (__cs_tmp_if_cond_12)
+;_Bool __cs_tmp_if_cond_11; __cs_tmp_if_cond_11 = (original_top[0] == 0); 
+                if (__cs_tmp_if_cond_11)
                 {
 *se = 0;
 return 0;
                 }
 new_top[1] = original_top[1] + 1;
 new_top[0] = (*original_top[0]).next;
-__cs_mutex_lock(&lock);
+__cs_mutex_lock(&library_lock);
 result = __CSEQ_atomic_swap_stack_top(&(*ss).top[0], &original_top[0], &new_top[0]);
-__cs_mutex_unlock(&lock);
-;_Bool __cs_tmp_if_cond_13; __cs_tmp_if_cond_13 = (result == 0); 
-                if (__cs_tmp_if_cond_13)
+__cs_mutex_unlock(&library_lock);
+;_Bool __cs_tmp_if_cond_12; __cs_tmp_if_cond_12 = (result == 0); 
+                if (__cs_tmp_if_cond_12)
                 {
 exponential_backoff();
-__cs_mutex_lock(&lock);
-__cs_mutex_unlock(&lock);
+__cs_mutex_lock(&library_lock);
+__cs_mutex_unlock(&library_lock);
                 }
 i++;
-;_Bool __cs_tmp_if_cond_14; __cs_tmp_if_cond_14 = (i > 1000); 
-                if (__cs_tmp_if_cond_14)
+;_Bool __cs_tmp_if_cond_13; __cs_tmp_if_cond_13 = (i > 1000); 
+                if (__cs_tmp_if_cond_13)
                 {
 break;
                 }
         }
 *se = original_top[0];
-return 1;
+return result;
 }
 void lfds711_stack_push(struct lfds711_stack_state *ss, 
 struct lfds711_stack_element *se)
@@ -792,8 +760,8 @@ lfds711_pal_uint_t backoff_iteration;
 backoff_iteration = 0;
 struct lfds711_stack_element *new_top[2];
 struct lfds711_stack_element * volatile original_top[2];
-;_Bool __cs_tmp_if_cond_15; __cs_tmp_if_cond_15 = (!(ss != 0)); 
-        if (__cs_tmp_if_cond_15)
+;_Bool __cs_tmp_if_cond_14; __cs_tmp_if_cond_14 = (!(ss != 0)); 
+        if (__cs_tmp_if_cond_14)
         {
 char *c;
 c = 0;
@@ -801,8 +769,8 @@ c = 0;
         }
 ;
 ;
-;_Bool __cs_tmp_if_cond_16; __cs_tmp_if_cond_16 = (!(se != 0)); 
-        if (__cs_tmp_if_cond_16)
+;_Bool __cs_tmp_if_cond_15; __cs_tmp_if_cond_15 = (!(se != 0)); 
+        if (__cs_tmp_if_cond_15)
         {
 char *c;
 c = 0;
@@ -818,503 +786,248 @@ int i;
 i = 0;
 while (result == 0)
         {
-__cs_mutex_lock(&lock);
+__cs_mutex_lock(&library_lock);
 (*se).next = original_top[0];
-__cs_mutex_unlock(&lock);
+__cs_mutex_unlock(&library_lock);
 new_top[1] = original_top[1] + 1;
-__cs_mutex_lock(&lock);
+__cs_mutex_lock(&library_lock);
 result = __CSEQ_atomic_swap_stack_top(&(*ss).top[0], &original_top[0], &new_top[0]);
-__cs_mutex_unlock(&lock);
-;_Bool __cs_tmp_if_cond_17; __cs_tmp_if_cond_17 = (result == 0); 
-                if (__cs_tmp_if_cond_17)
+__cs_mutex_unlock(&library_lock);
+;_Bool __cs_tmp_if_cond_16; __cs_tmp_if_cond_16 = (result == 0); 
+                if (__cs_tmp_if_cond_16)
                 {
 exponential_backoff();
                 }
 i++;
-;_Bool __cs_tmp_if_cond_18; __cs_tmp_if_cond_18 = (i > 1000); 
-                if (__cs_tmp_if_cond_18)
+;_Bool __cs_tmp_if_cond_17; __cs_tmp_if_cond_17 = (i > 1000); 
+                if (__cs_tmp_if_cond_17)
                 {
 break;
                 }
         }
 return;
 }
-void lfds711_stack_cleanup(struct lfds711_stack_state *ss, 
-void (*element_cleanup_callback)(struct lfds711_stack_state *ss, struct lfds711_stack_element *se))
+_Bool __CSEQ_atomic_compare_and_exchange(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
 {
-struct lfds711_stack_element *se;
-struct lfds711_stack_element *se_temp;
-;_Bool __cs_tmp_if_cond_19; __cs_tmp_if_cond_19 = (!(ss != 0)); 
-        if (__cs_tmp_if_cond_19)
+;_Bool __cs_tmp_if_cond_18; __cs_tmp_if_cond_18 = ((*mptr) == (*eptr)); 
+        if (__cs_tmp_if_cond_18)
         {
-char *c;
-c = 0;
-*c = 0;
-        }
-;
-;
-__atomic_thread_fence(2);
-;_Bool __cs_tmp_if_cond_20; __cs_tmp_if_cond_20 = (element_cleanup_callback != 0); 
-        if (__cs_tmp_if_cond_20)
-        {
-se = (*ss).top[0];
-while (se != 0)
-                {
-se_temp = se;
-se = (*se).next;
-element_cleanup_callback(ss, se_temp);
-                }
-        }
-return;
-}
-typedef struct NODE_PAYLOAD_S
-{
-struct lfds711_stack_element se;
-int long long unsigned user_id;
-} NODE_PAYLOAD_T;
-typedef struct LIST_NODE_S
-{
-struct LIST_NODE_S *next;
-NODE_PAYLOAD_T payload;
-} LIST_NODE_T;
-int LIST_InsertHeadNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__se, int long long unsigned I__user_id)
-{
-int rCode;
-rCode = 0;
-LIST_NODE_T *newNode;
-newNode = 0;
-newNode = __cs_safe_malloc(sizeof(*newNode));
-;_Bool __cs_tmp_if_cond_21; __cs_tmp_if_cond_21 = (0 == newNode); 
-        if (__cs_tmp_if_cond_21)
-        {
-rCode = 12;
-fprintf(stderr, "malloc() failed.\n");
-goto CLEANUP;
-        }
-(*newNode).payload.se = I__se;
-(*newNode).payload.user_id = I__user_id;
-(*newNode).next = *IO_head;
-*IO_head = newNode;
-CLEANUP:
-return rCode;
-}
-int PrintListPayloads(LIST_NODE_T *head)
-{
-int rCode;
-rCode = 0;
-LIST_NODE_T *cur;
-cur = head;
-while (cur)
-        {
-printf("%lld", (*cur).payload.user_id);
-cur = (*cur).next;
-;_Bool __cs_tmp_if_cond_22; __cs_tmp_if_cond_22 = (cur != 0); 
-                if (__cs_tmp_if_cond_22)
-                {
-printf(",");
-                }
-        }
-printf("\n");
-return rCode;
-}
-int GetListSize(LIST_NODE_T *head)
-{
-LIST_NODE_T *cur;
-cur = head;
-int nodeCnt;
-nodeCnt = 0;
-while (cur)
-        {
-++nodeCnt;
-cur = (*cur).next;
-        }
-return nodeCnt;
-}
-int LIST_GetTailNode(LIST_NODE_T *I__listHead, LIST_NODE_T **_O_listTail)
-{
-int rCode;
-rCode = 0;
-LIST_NODE_T *curNode;
-curNode = I__listHead;
-;_Bool __cs_tmp_if_cond_23; __cs_tmp_if_cond_23 = (curNode); 
-        if (__cs_tmp_if_cond_23)
-        {
-while ((*curNode).next)
-                {
-curNode = (*curNode).next;
-                }
-        }
-;_Bool __cs_tmp_if_cond_24; __cs_tmp_if_cond_24 = (_O_listTail); 
-        if (__cs_tmp_if_cond_24)
-        {
-*_O_listTail = curNode;
-        }
-return rCode;
-}
-int LIST_InsertTailNode(LIST_NODE_T **IO_head, struct lfds711_stack_element I__se, int long long unsigned I__user_id)
-{
-int rCode;
-rCode = 0;
-LIST_NODE_T *tailNode;
-LIST_NODE_T *newNode;
-newNode = 0;
-rCode = LIST_GetTailNode(*IO_head, &tailNode);
-;_Bool __cs_tmp_if_cond_25; __cs_tmp_if_cond_25 = (rCode); 
-        if (__cs_tmp_if_cond_25)
-        {
-fprintf(stderr, "LIST_GetTailNode() reports: %d\n", rCode);
-goto CLEANUP;
-        }
-newNode = __cs_safe_malloc(sizeof(*newNode));
-;_Bool __cs_tmp_if_cond_26; __cs_tmp_if_cond_26 = (0 == newNode); 
-        if (__cs_tmp_if_cond_26)
-        {
-rCode = 12;
-fprintf(stderr, "malloc() failed.\n");
-goto CLEANUP;
-        }
-(*newNode).payload.user_id = I__user_id;
-(*newNode).payload.se = I__se;
-(*newNode).next = 0;
-;_Bool __cs_tmp_if_cond_27; __cs_tmp_if_cond_27 = (tailNode); 
-        if (__cs_tmp_if_cond_27)
-        {
-(*tailNode).next = newNode;
+*mptr = newval;
+return 1;
         }
         else
         {
-*IO_head = newNode;
+*eptr = newval;
+return 0;
         }
-CLEANUP:
-return rCode;
 }
-int LIST_FetchParentNodeById(LIST_NODE_T *I__head, int long long unsigned I__user_id, LIST_NODE_T **_O_parent)
+_Bool __atomic_compare_exchange_n(int long long unsigned *mptr, int long long unsigned *eptr, int long long unsigned newval, _Bool weak_p, int sm, int fm)
 {
-int rCode;
-rCode = 0;
-LIST_NODE_T *parent;
-parent = 0;
-LIST_NODE_T *curNode;
-curNode = I__head;
-;_Bool __cs_tmp_if_cond_28; __cs_tmp_if_cond_28 = (0 == I__head); 
-        if (__cs_tmp_if_cond_28)
-        {
-rCode = ENOENT;
-goto CLEANUP;
-        }
-while (curNode)
-        {
-;_Bool __cs_tmp_if_cond_29; __cs_tmp_if_cond_29 = ((*curNode).payload.user_id > I__user_id); 
-                if (__cs_tmp_if_cond_29)
-                {
-break;
-                }
-parent = curNode;
-curNode = (*curNode).next;
-        }
-;_Bool __cs_tmp_if_cond_30; __cs_tmp_if_cond_30 = (_O_parent); 
-        if (__cs_tmp_if_cond_30)
-        {
-*_O_parent = parent;
-        }
-CLEANUP:
-return rCode;
+int res;
+res = __CSEQ_atomic_compare_and_exchange(mptr, eptr, newval, weak_p, sm, fm);
+return res;
 }
-int LIST_InsertNodeById(LIST_NODE_T **IO_head, int long long unsigned I__user_id, struct lfds711_stack_element I__se)
+unsigned long __CSEQ_atomic_exchange(int long long unsigned *previous, int long long unsigned new, int memorder)
 {
-int rCode;
-rCode = 0;
-LIST_NODE_T *parent;
-LIST_NODE_T *newNode;
-newNode = 0;
-newNode = __cs_safe_malloc(sizeof(*newNode));
-;_Bool __cs_tmp_if_cond_31; __cs_tmp_if_cond_31 = (0 == newNode); 
-        if (__cs_tmp_if_cond_31)
-        {
-rCode = 12;
-fprintf(stderr, "malloc() failed.\n");
-goto CLEANUP;
-        }
-(*newNode).payload.user_id = I__user_id;
-(*newNode).payload.se = I__se;
-rCode = LIST_FetchParentNodeById(*IO_head, I__user_id, &parent);
-;
-static int __cs_switch_cond_LIST_InsertNodeById_1;
-__cs_switch_cond_LIST_InsertNodeById_1 = rCode;
-;_Bool __cs_tmp_if_cond_32; __cs_tmp_if_cond_32 = (__cs_switch_cond_LIST_InsertNodeById_1 == 0); 
-        if (__cs_tmp_if_cond_32)
-        {
-goto __cs_switch_LIST_InsertNodeById_1_exit;
-        }
-;_Bool __cs_tmp_if_cond_33; __cs_tmp_if_cond_33 = (__cs_switch_cond_LIST_InsertNodeById_1 == ENOENT); 
-        if (__cs_tmp_if_cond_33)
-        {
-__cs_switch_LIST_InsertNodeById_1_case_2:
-;
-(*newNode).next = 0;
-*IO_head = newNode;
-rCode = 0;
-goto CLEANUP;
-goto __cs_switch_LIST_InsertNodeById_1_case_3;
-        }
-;_Bool __cs_tmp_if_cond_34; __cs_tmp_if_cond_34 = (!((__cs_switch_cond_LIST_InsertNodeById_1 == 0) || (__cs_switch_cond_LIST_InsertNodeById_1 == ENOENT))); 
-        if (__cs_tmp_if_cond_34)
-        {
-__cs_switch_LIST_InsertNodeById_1_case_3:
-;
-fprintf(stderr, "LIST_FetchParentNodeByName() reports: %d\n", rCode);
-goto CLEANUP;
-goto __cs_switch_LIST_InsertNodeById_1_exit;
-        }
-__cs_switch_LIST_InsertNodeById_1_exit:
-;
-;_Bool __cs_tmp_if_cond_35; __cs_tmp_if_cond_35 = (0 == parent); 
-        if (__cs_tmp_if_cond_35)
-        {
-(*newNode).next = *IO_head;
-*IO_head = newNode;
-goto CLEANUP;
-        }
-(*newNode).next = (*parent).next;
-(*parent).next = newNode;
-CLEANUP:
-return rCode;
+unsigned long int old;
+old = *previous;
+*previous = new;
+return old;
 }
-int LIST_FetchNodeById(LIST_NODE_T *I__head, int long long unsigned I__user_id, LIST_NODE_T **_O_node, LIST_NODE_T **_O_parent)
+unsigned long __atomic_exchange_n(int long long unsigned *previous, int long long unsigned new, int memorder)
 {
-int rCode;
-rCode = 0;
-LIST_NODE_T *parent;
-parent = 0;
-LIST_NODE_T *curNode;
-curNode = I__head;
-while (curNode)
-        {
-;_Bool __cs_tmp_if_cond_36; __cs_tmp_if_cond_36 = ((*curNode).payload.user_id == I__user_id); 
-                if (__cs_tmp_if_cond_36)
-                {
-break;
-                }
-parent = curNode;
-curNode = (*curNode).next;
-        }
-;_Bool __cs_tmp_if_cond_37; __cs_tmp_if_cond_37 = (0 == curNode); 
-        if (__cs_tmp_if_cond_37)
-        {
-rCode = ENOENT;
-goto CLEANUP;
-        }
-;_Bool __cs_tmp_if_cond_38; __cs_tmp_if_cond_38 = (_O_node); 
-        if (__cs_tmp_if_cond_38)
-        {
-*_O_node = curNode;
-        }
-;_Bool __cs_tmp_if_cond_39; __cs_tmp_if_cond_39 = (_O_parent); 
-        if (__cs_tmp_if_cond_39)
-        {
-*_O_parent = parent;
-        }
-CLEANUP:
-return rCode;
+int res;
+res = __CSEQ_atomic_exchange(previous, new, memorder);
+return res;
 }
-int LIST_DeleteNodeById(LIST_NODE_T **IO_head, int long long unsigned I__user_id)
+void __atomic_thread_fence(int i)
 {
-int rCode;
-rCode = 0;
-LIST_NODE_T *parent;
-LIST_NODE_T *delNode;
-delNode = 0;
-rCode = LIST_FetchNodeById(*IO_head, I__user_id, &delNode, &parent);
-;
-static int __cs_switch_cond_LIST_DeleteNodeById_1;
-__cs_switch_cond_LIST_DeleteNodeById_1 = rCode;
-;_Bool __cs_tmp_if_cond_40; __cs_tmp_if_cond_40 = (__cs_switch_cond_LIST_DeleteNodeById_1 == 0); 
-        if (__cs_tmp_if_cond_40)
-        {
-goto __cs_switch_LIST_DeleteNodeById_1_exit;
-        }
-;_Bool __cs_tmp_if_cond_41; __cs_tmp_if_cond_41 = (__cs_switch_cond_LIST_DeleteNodeById_1 == ENOENT); 
-        if (__cs_tmp_if_cond_41)
-        {
-__cs_switch_LIST_DeleteNodeById_1_case_2:
-;
-fprintf(stderr, "Matching node not found.\n");
-goto CLEANUP;
-goto __cs_switch_LIST_DeleteNodeById_1_case_3;
-        }
-;_Bool __cs_tmp_if_cond_42; __cs_tmp_if_cond_42 = (!((__cs_switch_cond_LIST_DeleteNodeById_1 == 0) || (__cs_switch_cond_LIST_DeleteNodeById_1 == ENOENT))); 
-        if (__cs_tmp_if_cond_42)
-        {
-__cs_switch_LIST_DeleteNodeById_1_case_3:
-;
-fprintf(stderr, "LIST_FetchNodeByName() reports: %d\n", rCode);
-goto CLEANUP;
-goto __cs_switch_LIST_DeleteNodeById_1_exit;
-        }
-__cs_switch_LIST_DeleteNodeById_1_exit:
-;
-;_Bool __cs_tmp_if_cond_43; __cs_tmp_if_cond_43 = (0 == parent); 
-        if (__cs_tmp_if_cond_43)
-        {
-*IO_head = (*delNode).next;
-        }
-        else
-        {
-(*parent).next = (*delNode).next;
-        }
-free(delNode);
-CLEANUP:
-return rCode;
 }
-int LIST_Destroy(LIST_NODE_T **IO_head)
-{
-int rCode;
-rCode = 0;
-while (*IO_head)
-        {
-LIST_NODE_T *delNode;
-delNode = *IO_head;
-*IO_head = (*(*IO_head)).next;
-free(delNode);
-        }
-return rCode;
-}
-struct lfds711_stack_state ss;
+struct lfds711_stack_state mystack;
 struct test_data
 {
 struct lfds711_stack_element se;
 int long long unsigned user_id;
 };
-void *push(void *__cs_unused)
+void *init()
+{
+lfds711_stack_init_valid_on_current_logical_core(&mystack, 0);
+return (void *) (&mystack);
+}
+void insert(struct lfds711_stack_state *s, int long long unsigned id)
 {
 struct test_data *td;
-int long long unsigned loop;
-td = __cs_safe_malloc((sizeof(struct test_data)) * 1);
-for (loop = 0; loop < 1; loop++)
+td = __cs_safe_malloc(sizeof(struct test_data));
+(*td).user_id = id;
+(*td).se.value = (void *) ((lfds711_pal_uint_t) td);
+lfds711_stack_push((struct lfds711_stack_state *) s, &(*td).se);
+}
+int delete(struct lfds711_stack_state *s)
+{
+struct lfds711_stack_element *se;
+struct test_data *temp_td;
+int res;
+res = lfds711_stack_pop(&mystack, &se);
+;_Bool __cs_tmp_if_cond_19; __cs_tmp_if_cond_19 = (res == 0); 
+        if (__cs_tmp_if_cond_19)
         {
-td[loop].user_id = loop;
-td[loop].se.value = (void *) ((lfds711_pal_uint_t) (&td[loop]));
-lfds711_stack_push(&ss, &td[loop].se);
+return res;
+        }
+temp_td = (*se).value;
+int id_popped;
+id_popped = (*temp_td).user_id;
+printf("%llu\n", (*temp_td).user_id);
+return res;
+}
+int contains(struct lfds711_stack_state *s, unsigned long long int id)
+{
+int max_size;
+max_size = 2;
+int actual_size;
+actual_size = 0;
+int res;
+res = 1;
+int found;
+found = 0;
+int dimension;
+dimension = 2;
+struct test_data **datas;
+datas = __cs_safe_malloc((sizeof(struct test_data *)) * max_size);
+struct lfds711_stack_element *se;
+while (actual_size < 2)
+        {
+res = lfds711_stack_pop(s, &se);
+;_Bool __cs_tmp_if_cond_20; __cs_tmp_if_cond_20 = (res == 0); 
+                if (__cs_tmp_if_cond_20)
+                {
+break;
+                }
+datas[actual_size] = (*se).value;
+;_Bool __cs_tmp_if_cond_21; __cs_tmp_if_cond_21 = ((*datas[actual_size]).user_id == id); 
+                if (__cs_tmp_if_cond_21)
+                {
+found = 1;
+                }
+actual_size = actual_size + 1;
+        }
+int i;
+i = 0;
+while (i < actual_size)
+        {
+lfds711_stack_push(s, &(*datas[i]).se);
+i++;
+        }
+return found;
+}
+int get_size(struct lfds711_stack_state *s)
+{
+int max_size;
+max_size = 2;
+int actual_size;
+actual_size = 0;
+int res;
+res = 1;
+int dimension;
+dimension = 2;
+struct test_data **datas;
+datas = __cs_safe_malloc((sizeof(struct test_data *)) * max_size);
+struct lfds711_stack_element *se;
+while (actual_size < 2)
+        {
+res = lfds711_stack_pop(s, &se);
+;_Bool __cs_tmp_if_cond_22; __cs_tmp_if_cond_22 = (res == 0); 
+                if (__cs_tmp_if_cond_22)
+                {
+break;
+                }
+actual_size = actual_size + 1;
+        }
+int i;
+i = 0;
+while (i < actual_size)
+        {
+lfds711_stack_push(s, &(*datas[i]).se);
+i++;
+        }
+return actual_size;
+}
+int is_empty(struct lfds711_stack_state *s)
+{
+struct lfds711_stack_element *se;
+int res;
+res = lfds711_stack_pop(s, &se);
+;_Bool __cs_tmp_if_cond_23; __cs_tmp_if_cond_23 = (res != 0); 
+        if (__cs_tmp_if_cond_23)
+        {
+fds711_stack_push(s, se);
+return 0;
+        }
+return 1;
+}
+int ATOMIC_OPERATION = 0;
+void *ss;
+__cs_mutex_t lock;
+void *push(void *__cs_unused)
+{
+int long long unsigned loop;
+for (loop = 0; loop < 2; loop++)
+        {
+;_Bool __cs_tmp_if_cond_24; __cs_tmp_if_cond_24 = (ATOMIC_OPERATION); 
+                if (__cs_tmp_if_cond_24)
+                {
+__cs_mutex_lock(&lock);
+                }
+;
+insert(ss, loop);
+;_Bool __cs_tmp_if_cond_25; __cs_tmp_if_cond_25 = (ATOMIC_OPERATION); 
+                if (__cs_tmp_if_cond_25)
+                {
+__cs_mutex_unlock(&lock);
+                }
+;
         }
 }
 void *pop(void *__cs_unused)
 {
-struct lfds711_stack_element *se;
-struct test_data *temp_td;
 int res;
 int count;
 count = 0;
 int loop;
-for (loop = 0; loop < 1; loop++)
+for (loop = 0; loop < 2; loop++)
         {
-temp_td = 0;
-res = lfds711_stack_pop(&ss, &se);
-;_Bool __cs_tmp_if_cond_44; __cs_tmp_if_cond_44 = (res == 0); 
-                if (__cs_tmp_if_cond_44)
+;_Bool __cs_tmp_if_cond_26; __cs_tmp_if_cond_26 = (ATOMIC_OPERATION); 
+                if (__cs_tmp_if_cond_26)
                 {
-continue;
+__cs_mutex_lock(&lock);
                 }
-temp_td = (*se).value;
-count++;
-        }
-}
-void writeIntofile(char *filename, LIST_NODE_T *listHead)
-{
-int filefd;
-filefd = open(filename, (O_WRONLY | O_CREAT) | O_APPEND, 0666);
-int saved;
-saved = dup(1);
-close(1);
-dup(filefd);
-PrintListPayloads(listHead);
-close(filefd);
-fflush(stdout);
-dup2(saved, 1);
-close(saved);
-}
-LIST_NODE_T *createList(LIST_NODE_T *listHead)
-{
-struct lfds711_stack_element *se;
-struct test_data *temp_td;
-int res;
-res = lfds711_stack_pop(&ss, &se);
-while (res != 0)
-        {
-temp_td = (*se).value;
-LIST_InsertHeadNode(&listHead, (*temp_td).se, (*temp_td).user_id);
-res = lfds711_stack_pop(&ss, &se);
-        }
-return listHead;
-}
-void readFile(char *filename, LIST_NODE_T *listHead)
-{
-char *line;
-line = 0;
-size_t len;
-len = 0;
-ssize_t read;
-LIST_NODE_T *parent;
-parent = 0;
-LIST_NODE_T *curNode;
-curNode = listHead;
-char delim[] = ",";
-int i;
-i = 0;
-int size;
-size = GetListSize(curNode);
-FILE *fp;
-fp = fopen(filename, "r");
-;_Bool __cs_tmp_if_cond_45; __cs_tmp_if_cond_45 = (!fp); 
-        if (__cs_tmp_if_cond_45)
-        {
-writeIntofile(filename, listHead);
-__CSEQ_assert(0);
-return;
-        }
-while ((read = getline(&line, &len, fp)) != (-1))
-        {
-char *ptr;
-ptr = strtok(line, delim);
-while (curNode)
+;
+delete(ss);
+;_Bool __cs_tmp_if_cond_27; __cs_tmp_if_cond_27 = (ATOMIC_OPERATION); 
+                if (__cs_tmp_if_cond_27)
                 {
-;_Bool __cs_tmp_if_cond_46; __cs_tmp_if_cond_46 = ((*curNode).payload.user_id != atoi(ptr)); 
-                        if (__cs_tmp_if_cond_46)
-                        {
-break;
-                        }
-i++;
-parent = curNode;
-curNode = (*curNode).next;
-ptr = strtok(0, delim);
+__cs_mutex_unlock(&lock);
                 }
-;_Bool __cs_tmp_if_cond_47; __cs_tmp_if_cond_47 = (i == size); 
-                if (__cs_tmp_if_cond_47)
-                {
-fclose(fp);
-return;
-                }
-i = 0;
-        }
-;_Bool __cs_tmp_if_cond_48; __cs_tmp_if_cond_48 = (i != size); 
-        if (__cs_tmp_if_cond_48)
-        {
-writeIntofile(filename, listHead);
-__CSEQ_assert(0);
-return;
+;
         }
 }
 int main()
 {
-LIST_NODE_T *listHead;
-listHead = 0;
-lfds711_stack_init_valid_on_current_logical_core(&ss, 0);
+__cs_mutex_init(&lock, 0);
+ss = init();
 __cs_t t1;
 __cs_t t2;
+__cs_t t3;
+__cs_t t4;
+__cs_t t5;
+__cs_t t6;
+__cs_t t7;
+__cs_t t8;
+__cs_t t9;
+__cs_t t10;
 __cs_create(&t1, 0, push, 0);
-__cs_create(&t2, 0, pop, 0);
+__cs_create(&t6, 0, pop, 0);
 __cs_join(t1, 0);
-__cs_join(t2, 0);
-listHead = createList(listHead);
-readFile("foo.txt", listHead);
+__cs_join(t6, 0);
+__CSEQ_assert(contains(ss, 0));
 return 0;
 }

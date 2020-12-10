@@ -8,7 +8,6 @@
 
 #define VALUES 4
 //Set ATOMIC_OPERATION to make push and pop atomic
-//FIXME: Currently not working because of the presence of locks in push and pop method
 #define ATOMIC_OPERATION 0
 // #define LOCK if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);}
 // #define UNLOCK if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); }
@@ -65,6 +64,7 @@ void *pop()
 		if(res == 0)
 			continue;
 		temp_td = LFDS711_STACK_GET_VALUE_FROM_ELEMENT(*se);
+		int id_popped = temp_td->user_id;
 		count++;
 		//printf("%llu\n", temp_td->user_id);
 	}
