@@ -8,10 +8,7 @@ import ctypes
 #Function to save error trace into a file named "trace.txt" we just have to specify the unwind for lazycseq
 def save_trace():
    subprocess.call(["./cseq-feeder.py", "-i", "../workspace/multithread/generalized.c","-I","../liblfds7.1.1/liblfds711/inc"
-   ,"--unwind","4","--cex","--debug"])
-   f = open("trace.txt","w")
-   subprocess.call(["cbmc",  "--unwind", "1", "--no-unwinding-assertions", "--32", "../workspace/multithread/_cs_generalized.c", "--stop-on-fail"],stdout=f)
-   f.close()
+   ,"--unwind","4","--cex","--debug", "--rounds", "2"])
 
 #Function to read from "trace.txt" and extract the number of pushes and pops. It also save the data structure state (at the end of the program)
 #into another data structure and return it
@@ -19,7 +16,7 @@ def read_file(pathname):
    temp = []
    count = 0
    temp2 = []
-   f = open("trace.txt","r")
+   f = open(pathname)
    lines = [line.rstrip('\n') for line in f]
    #Iterate through the trace and find the lines in which there are pushes and pops
    for x in lines:
@@ -46,14 +43,14 @@ def read_file(pathname):
 #Function that appends a new assert to "checker.c"
 def append_assert(data_structure):
    i = 0
-   line_help = ") || (get_size(ss) == "+str(len(data_structure))+")"
+   line_help = ") || ((get_size(ss) == "+str(len(data_structure))+")"
    for elem in data_structure:
       line_help += " && contains(ss,"+str(data_structure[i])+")"
       i+=1
       if(i == len(data_structure)-1):
-         line_help += " && contains(ss,"+str(data_structure[i])+"))"
+         line_help += " && (contains(ss,"+str(data_structure[i])+")))"
          break
-   line_help += ");\n"
+   line_help += "));\n"
    return line_help
 
 
@@ -120,5 +117,5 @@ def create_assert(data_structure):
 
 if __name__ == "__main__":
     save_trace()
-    data = read_file("trace.txt")
+    data = read_file("../workspace/multithread/_cs_generalized.c.cbmc.log")
     create_assert(data)
