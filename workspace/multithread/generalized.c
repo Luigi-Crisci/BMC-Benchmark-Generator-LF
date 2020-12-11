@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <assert.h>
-#include "check.c"
+#include "checker.c"
 
 //Using the interface
 #include "../inteface/interface.c"
@@ -47,6 +47,7 @@ int main()
 {
 	pthread_mutex_init(&lock, NULL);
 	ss = init();
+	int size_ss = get_size(ss);
 	
 	pthread_t t1, t2,t3,t4,t5,t6,t7,t8,t9,t10;
 	pthread_create(&t1, NULL, push, NULL);
@@ -75,7 +76,7 @@ int main()
 
 	// assert(contains(ss,0) && contains(ss,1));
 	// int len = get_lenght(ss);
-	assert( contains(ss,0) );
+	assert_create(ss,size_ss);
 	// assert(0);
 	return (EXIT_SUCCESS);
 }

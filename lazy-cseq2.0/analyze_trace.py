@@ -7,10 +7,10 @@ import ctypes
 
 #Function to save error trace into a file named "trace.txt" we just have to specify the unwind for lazycseq
 def save_trace():
-   subprocess.call(["./cseq-feeder.py", "-i", "../workspace/multithread/stack_with_while.c","-I","../liblfds7.1.1/liblfds711/inc"
+   subprocess.call(["./cseq-feeder.py", "-i", "../workspace/multithread/generalized.c","-I","../liblfds7.1.1/liblfds711/inc"
    ,"--unwind","4","--cex","--debug"])
    f = open("trace.txt","w")
-   subprocess.call(["cbmc",  "--unwind", "1", "--no-unwinding-assertions", "--32", "../workspace/multithread/_cs_stack_with_while.c", "--stop-on-fail"],stdout=f)
+   subprocess.call(["cbmc",  "--unwind", "1", "--no-unwinding-assertions", "--32", "../workspace/multithread/_cs_generalized.c", "--stop-on-fail"],stdout=f)
    f.close()
 
 #Function to read from "trace.txt" and extract the number of pushes and pops. It also save the data structure state (at the end of the program)
@@ -24,16 +24,12 @@ def read_file(pathname):
    #Iterate through the trace and find the lines in which there are pushes and pops
    for x in lines:
       #if(".user_id=" in x):
-      if("__cs_local_push_loop=" in x):
+      if("insert_id" in x):
          #if (x.endswith("l")):
          temp.append("push")
       #if("user_id;" in x):
-      if("__cs_retval__lfds711_stack_pop" in x):
+      if("delete_id_popped" in x):
          temp.append("pop")
-      
-   temp.reverse()
-   temp.remove('push')
-   temp.reverse()
    
    print(temp)
 
@@ -50,12 +46,12 @@ def read_file(pathname):
 #Function that appends a new assert to "checker.c"
 def append_assert(data_structure):
    i = 0
-   line_help = "assert("
+   line_help = ") || (get_size(ss) == "+str(len(data_structure))+")"
    for elem in data_structure:
-      line_help += "list["+str(i)+"]=="+str(data_structure[i])+" && "
+      line_help += " && contains(ss,"+str(data_structure[i])+")"
       i+=1
       if(i == len(data_structure)-1):
-         line_help += "list["+str(i)+"]=="+str(data_structure[i])
+         line_help += " && contains(ss,"+str(data_structure[i])+"))"
          break
    line_help += ");\n"
    return line_help
@@ -82,7 +78,7 @@ def create_assert(data_structure):
             #If we find "assert(0)"" this is the first time we iterate through "checker.c" so we overwrite "assert(0)" with a new assert
             if "assert(0);" in x:
                if(not data_structure):
-                  newfile_lines += "assert(list[0] != NULL);\n"
+                  newfile_lines += "assert((is_empty(ss)));\n"
                else:
                   line_help = append_assert(data_structure)
                   newfile_lines += line_help
@@ -96,15 +92,16 @@ def create_assert(data_structure):
       else:
          for x in lines:
             #if we are at the end of the file we append the new assert overwriting "}" and then rewrite "}" to the next line
-            if "}" in x:
-               line_help = append_assert(data_structure)
+            if "assert(" in x:
+               index1 = x.index(")")
+               line_help = x[:index1+1] 
+               line_help += append_assert(data_structure)
                newfile_lines += line_help
             else:
                newfile_lines += x+"\n"
          checker.close()
          checker = open("../workspace/multithread/checker.c","w")
          checker.write(newfile_lines)
-         checker.write("}")
          checker.close()
 
    #if "checker.c" doesn't exist then there's no assert and we create first assert with the actual data
@@ -113,7 +110,7 @@ def create_assert(data_structure):
       checker.write("#include <assert.h>\n")
       checker.write("include <stdio.h>\n")
       checker.write("include <stdlib.h>\n")
-      checker.write("void create_assert(){\n")
+      checker.write("void create_assert(void* ss, int size){\n")
       checker.write("assert(0);\n") 
       checker.write("}")
       checker.close()
