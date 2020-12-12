@@ -48,39 +48,87 @@ int delete (struct lfds711_stack_state *s)
  * This is highly inefficient because the struct is not iterable, so it needs to
  * pop the element from the stack and then push them again
  */
-int contains(void *s, int id)
+int contains(struct lfds711_stack_state *s, unsigned long long int id)
 {
-	int max_size = 20, actual_size = 0, res = 1, found = 0, dimension = 2;
+	int max_size = 2, actual_size = 0, res = 1, found = 0, dimension = 2;
 	struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
 	struct lfds711_stack_element *se;
 
-	while (found == 0 && res != 0)
+	// while (found == 0 && res != 0)
+	while (actual_size < 2)
 	{
-		if (actual_size == max_size)
-		{
-			datas = realloc(datas,sizeof(struct test_data*) * max_size * dimension);
-			max_size *= dimension;
-		}
+		// if (actual_size == max_size)
+		// {
+		// 	datas = realloc(datas,sizeof(struct test_data*) * max_size * dimension);
+		// 	max_size *= dimension;
+		// }
 		
-		res = lfds711_stack_pop((struct lfds711_stack_state *)s, &se);
-		if (res == 0)
-			continue;
+		res = lfds711_stack_pop(s, &se);
+		if (res == 0){
+			break;
+		}
 
 		datas[actual_size] = LFDS711_STACK_GET_VALUE_FROM_ELEMENT(*se);
 		if (datas[actual_size]->user_id == id)
 			found = 1;
-		actual_size++;
+
+		actual_size = actual_size + 1;
 	}
 
 	//Push the elements bash into the stack
 	int i = 0;
 	while(i < actual_size){
-		lfds711_stack_push((struct lfds711_stack_state *)s, datas[i]);
+		lfds711_stack_push(s, &(datas[i]->se));
 		i++;
 	}
 
-	free(datas);
+	// free(datas);
 	return found;
+}
+
+int get_size(struct lfds711_stack_state *s){
+	int max_size = 2, actual_size = 0, res = 1, dimension = 2;
+	struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
+	struct lfds711_stack_element *se;
+
+	// while (found == 0 && res != 0)
+	while (actual_size < 2)
+	{
+		// if (actual_size == max_size)
+		// {
+		// 	datas = realloc(datas,sizeof(struct test_data*) * max_size * dimension);
+		// 	max_size *= dimension;
+		// }
+		
+		res = lfds711_stack_pop(s, &se);
+		if (res == 0)
+			break;
+
+		actual_size = actual_size + 1;
+	}
+
+	//Push the elements bash into the stack
+	int i = 0;
+	while(i < actual_size){
+		lfds711_stack_push(s, &(datas[i]->se));
+		i++;
+	}
+
+	// free(datas);
+	return actual_size;
+}
+
+
+int is_empty(struct lfds711_stack_state *s){
+	struct lfds711_stack_element *se;
+	int res = lfds711_stack_pop(s, &se);
+	
+	if (res != 0){
+		fds711_stack_push(s, se);
+		return 0;
+	}
+
+	return 1;
 }
 
 

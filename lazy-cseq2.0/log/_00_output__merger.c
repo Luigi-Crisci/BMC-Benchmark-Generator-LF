@@ -172,6 +172,9 @@ typedef int va_list;
 typedef int loff_t;
 
 typedef int _____STOPSTRIPPINGFROMHERE_____;
+void check(void* ss){
+ assert(contains(ss,0));
+}
 
 
 
@@ -1066,7 +1069,7 @@ void exponential_backoff()
 >>>>>>> origin/main
 {
  int loop;
- for (loop = 0; loop < 10; loop++)
+ for (loop = 0; loop < 3; loop++)
   ;
 }
 
@@ -1488,41 +1491,88 @@ int delete (struct lfds711_stack_state *s)
 
 
 
-int contains(void *s, int id)
+int contains(struct lfds711_stack_state *s, unsigned long long int id)
 {
- int max_size = 20, actual_size = 0, res = 1, found = 0, dimension = 2;
+ int max_size = 2, actual_size = 0, res = 1, found = 0, dimension = 2;
  struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
  struct lfds711_stack_element *se;
 
- while (found == 0 && res != 0)
- {
-  if (actual_size == max_size)
-  {
-   datas = realloc(datas,sizeof(struct test_data*) * max_size * dimension);
-   max_size *= dimension;
-  }
 
-  res = lfds711_stack_pop((struct lfds711_stack_state *)s, &se);
-  if (res == 0)
-   continue;
+ while (actual_size < 2)
+ {
+
+
+
+
+
+
+  res = lfds711_stack_pop(s, &se);
+  if (res == 0){
+   break;
+  }
 
   datas[actual_size] = ( (*se).value );
   if (datas[actual_size]->user_id == id)
    found = 1;
-  actual_size++;
+
+  actual_size = actual_size + 1;
  }
 
 
  int i = 0;
  while(i < actual_size){
-  lfds711_stack_push((struct lfds711_stack_state *)s, datas[i]);
+  lfds711_stack_push(s, &(datas[i]->se));
   i++;
  }
 
- free(datas);
+
  return found;
 }
 
+int get_size(struct lfds711_stack_state *s){
+ int max_size = 2, actual_size = 0, res = 1, dimension = 2;
+ struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
+ struct lfds711_stack_element *se;
+
+
+ while (actual_size < 2)
+ {
+
+
+
+
+
+
+  res = lfds711_stack_pop(s, &se);
+  if (res == 0)
+   break;
+
+  actual_size = actual_size + 1;
+ }
+
+
+ int i = 0;
+ while(i < actual_size){
+  lfds711_stack_push(s, &(datas[i]->se));
+  i++;
+ }
+
+
+ return actual_size;
+}
+
+
+int is_empty(struct lfds711_stack_state *s){
+ struct lfds711_stack_element *se;
+ int res = lfds711_stack_pop(s, &se);
+
+ if (res != 0){
+  fds711_stack_push(s, se);
+  return 0;
+ }
+
+ return 1;
+}
 
 
 
@@ -1532,6 +1582,7 @@ int volatile ATOMIC_OPERATION = 0;
 
 void* ss;
 pthread_mutex_t lock;
+
 
 void *push()
 {
@@ -1596,7 +1647,7 @@ LIST_NODE_T* createList(LIST_NODE_T *listHead)
 {
 =======
 
- for (loop = 0; loop < 5; loop++)
+ for (loop = 0; loop < 2; loop++)
  {
   if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
   insert(ss,loop);
@@ -1620,6 +1671,7 @@ void *pop()
 =======
  int count = 0;
  int loop;
+<<<<<<< HEAD
 <<<<<<< HEAD
  for (loop = 0; loop < 1; loop++)
 >>>>>>> origin/main
@@ -1646,6 +1698,9 @@ void *pop()
 
 =======
  for (loop = 0; loop < 5; loop++)
+=======
+ for (loop = 0; loop < 2; loop++)
+>>>>>>> origin/main
  {
   if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
   delete(ss);
@@ -1683,6 +1738,7 @@ void readFile(char* filename, LIST_NODE_T *listHead)
 int main()
 >>>>>>> origin/main
 {
+<<<<<<< HEAD
 
 
 <<<<<<< HEAD
@@ -1712,6 +1768,8 @@ int main()
 
 =======
 =======
+=======
+>>>>>>> origin/main
  pthread_mutex_init(&lock, 0);
  ss = init();
 >>>>>>> origin/main
@@ -1751,6 +1809,7 @@ int main()
 =======
 
  pthread_join(t6, 0);
+<<<<<<< HEAD
 >>>>>>> origin/main
 
 
@@ -1761,5 +1820,9 @@ int main()
 >>>>>>> origin/main
 
  assert(0);
+=======
+ assert( contains(ss,0) );
+
+>>>>>>> origin/main
  return (0);
 }

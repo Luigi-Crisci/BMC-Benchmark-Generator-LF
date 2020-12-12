@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CBMC version 5.19.0 (cbmc-5.19.0) 64-bit x86_64 linux
 Parsing ../workspace/multithread/_cs_generalized.c
 Converting
@@ -3446,4 +3447,6 @@ Violated property:
 
 
 VERIFICATION FAILED
+>>>>>>> origin/main
+=======
 >>>>>>> origin/main

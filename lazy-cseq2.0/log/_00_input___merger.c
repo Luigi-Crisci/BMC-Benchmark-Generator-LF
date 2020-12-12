@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "../library_barrier.c"
 #include <assert.h>
 #include "../list.c"
@@ -25,20 +26,23 @@
 >>>>>>> origin/main
 =======
 >>>>>>> origin/main
+=======
+#include <assert.h>
+#include "check.c"
+>>>>>>> origin/main
 
 //Using the interface
 #include "../inteface/interface.c"
 
-#include <assert.h>
+#define VALUES 2
 
-#define VALUES 5
-//Set ATOMIC_OPERATION to make push and pop atomic
 int volatile ATOMIC_OPERATION = 0;
 #define LOCK if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);}
 #define UNLOCK if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); }
 
 void* ss;
 pthread_mutex_t lock;
+
 
 void *push()
 {
@@ -136,6 +140,7 @@ LIST_NODE_T* createList(LIST_NODE_T *listHead)
 
 int main()
 {
+<<<<<<< HEAD
 
 
 <<<<<<< HEAD
@@ -146,6 +151,8 @@ int main()
 	// pthread_mutex_init(&lock, NULL);
 >>>>>>> origin/main
 =======
+=======
+>>>>>>> origin/main
 	pthread_mutex_init(&lock, NULL);
 	ss = init();
 	
@@ -186,7 +193,16 @@ int main()
 	// pthread_join(t9, 0);
 	// pthread_join(t10, 0);
 
+<<<<<<< HEAD
 	assert(0);
+>>>>>>> origin/main
+=======
+	// check(ss);
+
+	// assert(contains(ss,0) && contains(ss,1));
+	// int len = get_lenght(ss);
+	assert( contains(ss,0) );
+	// assert(0);
 >>>>>>> origin/main
 	return (EXIT_SUCCESS);
 }
