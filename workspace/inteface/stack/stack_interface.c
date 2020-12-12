@@ -124,7 +124,7 @@ int is_empty(struct lfds711_stack_state *s){
 	int res = lfds711_stack_pop(s, &se);
 	
 	if (res != 0){
-		fds711_stack_push(s, se);
+		lfds711_stack_push(s, se);
 		return 0;
 	}
 

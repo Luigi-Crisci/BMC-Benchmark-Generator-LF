@@ -6,7 +6,7 @@ list of functions:
    lfds711_misc_internal_backoff_init(param: bs)  call count 2
    lfds711_stack_init_valid_on_current_logical_core(param: ss, user_state)  call count 1
    lfds711_stack_pop(param: ss, se)  call count 4
-   lfds711_stack_push(param: ss, se)  call count 3
+   lfds711_stack_push(param: ss, se)  call count 4
    __VERIFIER_atomic_compare_and_exchange(param: mptr, eptr, newval, weak_p, sm, fm)  call count 1
    __atomic_compare_exchange_n(param: mptr, eptr, newval, weak_p, sm, fm)  call count 0
    __VERIFIER_atomic_exchange(param: previous, new, memorder)  call count 1
@@ -15,9 +15,9 @@ list of functions:
    init(param: )  call count 1
    insert(param: s, id)  call count 1
    delete(param: s)  call count 1
-   contains(param: s, id)  call count 1
+   contains(param: s, id)  call count 0
    get_size(param: s)  call count 0
-   is_empty(param: s)  call count 0
+   is_empty(param: s)  call count 1
    push(param: __cs_unused)  call count 0
    pop(param: __cs_unused)  call count 0
    main(param: )  call count 0
@@ -342,7 +342,7 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[898, 918, 929, 944]'  
+         occurs '[896, 913, 923, 938]'  
       id169  'se'  
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
          size '[]'  
@@ -372,13 +372,13 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[893, 899, 913, 919]'  
+         occurs '[891, 897, 908, 914]'  
       id252  'lock'  
          type 'pthread_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[895, 901, 915, 921, 928]'  
+         ref '[893, 899, 910, 916, 922]'  
          deref '[]'  
-         occurs '[895, 901, 915, 921, 928]'  
+         occurs '[893, 899, 910, 916, 922]'  
    check
       id0  'ss'  
          type 'void *'  kind 'p'  arity '0'  
@@ -878,7 +878,7 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[891, 891, 891, 898]'  
+         occurs '[896]'  
    pop
       id255  '__cs_unused'  
          type 'void *'  kind 'p'  arity '0'  
@@ -897,20 +897,20 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[909]'  
+         occurs '[906]'  
       id258  'loop'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[911, 911, 911]'  
+         occurs '[]'  
    main
       id259  't1'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[940]'  
+         ref '[934]'  
          deref '[]'  
-         occurs '[940, 942]'  
+         occurs '[934, 936]'  
       id260  't2'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
@@ -938,9 +938,9 @@ Variables:
       id264  't6'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[941]'  
+         ref '[935]'  
          deref '[]'  
-         occurs '[941, 943]'  
+         occurs '[935, 937]'  
       id265  't7'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
@@ -1675,7 +1675,7 @@ int is_empty(struct lfds711_stack_state *s)
     res = lfds711_stack_pop(s, &se);
     if (res != 0)
     {
-        fds711_stack_push(s, se);
+        lfds711_stack_push(s, se);
         return 0;
     }
 
@@ -1689,23 +1689,19 @@ function 'push' ----------------------------------:
 void *push(void *__cs_unused)
 {
     int long long unsigned loop;
-    for (loop = 0; loop < 2; loop++)
+    if (ATOMIC_OPERATION)
     {
-        if (ATOMIC_OPERATION)
-        {
-            pthread_mutex_lock(&lock);
-        }
-
-        ;
-        insert(ss, loop);
-        if (ATOMIC_OPERATION)
-        {
-            pthread_mutex_unlock(&lock);
-        }
-
-        ;
+        pthread_mutex_lock(&lock);
     }
 
+    ;
+    insert(ss, loop);
+    if (ATOMIC_OPERATION)
+    {
+        pthread_mutex_unlock(&lock);
+    }
+
+    ;
 }
 
 
@@ -1718,23 +1714,19 @@ void *pop(void *__cs_unused)
     int count;
     count = 0;
     int loop;
-    for (loop = 0; loop < 2; loop++)
+    if (ATOMIC_OPERATION)
     {
-        if (ATOMIC_OPERATION)
-        {
-            pthread_mutex_lock(&lock);
-        }
-
-        ;
-        delete(ss);
-        if (ATOMIC_OPERATION)
-        {
-            pthread_mutex_unlock(&lock);
-        }
-
-        ;
+        pthread_mutex_lock(&lock);
     }
 
+    ;
+    delete(ss);
+    if (ATOMIC_OPERATION)
+    {
+        pthread_mutex_unlock(&lock);
+    }
+
+    ;
 }
 
 
@@ -1759,7 +1751,7 @@ int main()
     pthread_create(&t6, 0, pop, 0);
     pthread_join(t1, 0);
     pthread_join(t6, 0);
-    assert(contains(ss, 0));
+    assert(is_empty(ss));
     return 0;
 }
 
@@ -1829,41 +1821,9 @@ function: get_size   stmt:     return actual_size;
 
 function: is_empty   stmt:     return 1;
 
-function: push   stmt:     for (loop = 0; loop < 2; loop++)
-    {
-        if (ATOMIC_OPERATION)
-        {
-            pthread_mutex_lock(&lock);
-        }
+function: push   stmt:     ;
 
-        ;
-        insert(ss, loop);
-        if (ATOMIC_OPERATION)
-        {
-            pthread_mutex_unlock(&lock);
-        }
-
-        ;
-    }
-
-
-function: pop   stmt:     for (loop = 0; loop < 2; loop++)
-    {
-        if (ATOMIC_OPERATION)
-        {
-            pthread_mutex_lock(&lock);
-        }
-
-        ;
-        delete(ss);
-        if (ATOMIC_OPERATION)
-        {
-            pthread_mutex_unlock(&lock);
-        }
-
-        ;
-    }
-
+function: pop   stmt:     ;
 
 function: main   stmt:     return 0;
 

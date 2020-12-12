@@ -2373,7 +2373,7 @@ if (res != 0)
     {
         
 # 880 "<previous_module>"
-fds711_stack_push(s, se);
+lfds711_stack_push(s, se);
         
 # 881 "<previous_module>"
 return 0;
@@ -2404,161 +2404,145 @@ void *push(void *__cs_unused)
 int long long unsigned loop;
     
 # 891 "<previous_module>"
-for (loop = 0; loop < 2; loop++)
+if (ATOMIC_OPERATION)
 
 # 892 "<previous_module>"
     {
         
 # 893 "<previous_module>"
-if (ATOMIC_OPERATION)
-
-# 894 "<previous_module>"
-        {
-            
-# 895 "<previous_module>"
 pthread_mutex_lock(&lock);
-        }
-
-        
-# 897 "<previous_module>"
-;
-        
-# 898 "<previous_module>"
-insert(ss, loop);
-        
-# 899 "<previous_module>"
-if (ATOMIC_OPERATION)
-
-# 900 "<previous_module>"
-        {
-            
-# 901 "<previous_module>"
-pthread_mutex_unlock(&lock);
-        }
-
-        
-# 903 "<previous_module>"
-;
     }
 
+    
+# 895 "<previous_module>"
+;
+    
+# 896 "<previous_module>"
+insert(ss, loop);
+    
+# 897 "<previous_module>"
+if (ATOMIC_OPERATION)
+
+# 898 "<previous_module>"
+    {
+        
+# 899 "<previous_module>"
+pthread_mutex_unlock(&lock);
+    }
+
+    
+# 901 "<previous_module>"
+;
 }
 
 
-# 906 "<previous_module>"
+# 903 "<previous_module>"
 void *pop(void *__cs_unused)
 
-# 907 "<previous_module>"
+# 904 "<previous_module>"
 {
     
-# 908 "<previous_module>"
+# 905 "<previous_module>"
 int res;
     
-# 909 "<previous_module>"
+# 906 "<previous_module>"
 int count;
     count = 0;
     
-# 910 "<previous_module>"
+# 907 "<previous_module>"
 int loop;
     
-# 911 "<previous_module>"
-for (loop = 0; loop < 2; loop++)
+# 908 "<previous_module>"
+if (ATOMIC_OPERATION)
 
-# 912 "<previous_module>"
+# 909 "<previous_module>"
     {
         
-# 913 "<previous_module>"
-if (ATOMIC_OPERATION)
-
-# 914 "<previous_module>"
-        {
-            
-# 915 "<previous_module>"
+# 910 "<previous_module>"
 pthread_mutex_lock(&lock);
-        }
-
-        
-# 917 "<previous_module>"
-;
-        
-# 918 "<previous_module>"
-delete(ss);
-        
-# 919 "<previous_module>"
-if (ATOMIC_OPERATION)
-
-# 920 "<previous_module>"
-        {
-            
-# 921 "<previous_module>"
-pthread_mutex_unlock(&lock);
-        }
-
-        
-# 923 "<previous_module>"
-;
     }
 
+    
+# 912 "<previous_module>"
+;
+    
+# 913 "<previous_module>"
+delete(ss);
+    
+# 914 "<previous_module>"
+if (ATOMIC_OPERATION)
+
+# 915 "<previous_module>"
+    {
+        
+# 916 "<previous_module>"
+pthread_mutex_unlock(&lock);
+    }
+
+    
+# 918 "<previous_module>"
+;
 }
 
 
-# 926 "<previous_module>"
+# 920 "<previous_module>"
 int main()
 
-# 927 "<previous_module>"
+# 921 "<previous_module>"
 {
     
-# 928 "<previous_module>"
+# 922 "<previous_module>"
 pthread_mutex_init(&lock, 0);
     
-# 929 "<previous_module>"
+# 923 "<previous_module>"
 ss = init();
     
-# 930 "<previous_module>"
+# 924 "<previous_module>"
 pthread_t t1;
     
-# 931 "<previous_module>"
+# 925 "<previous_module>"
 pthread_t t2;
     
-# 932 "<previous_module>"
+# 926 "<previous_module>"
 pthread_t t3;
     
-# 933 "<previous_module>"
+# 927 "<previous_module>"
 pthread_t t4;
     
-# 934 "<previous_module>"
+# 928 "<previous_module>"
 pthread_t t5;
     
-# 935 "<previous_module>"
+# 929 "<previous_module>"
 pthread_t t6;
     
-# 936 "<previous_module>"
+# 930 "<previous_module>"
 pthread_t t7;
     
-# 937 "<previous_module>"
+# 931 "<previous_module>"
 pthread_t t8;
     
-# 938 "<previous_module>"
+# 932 "<previous_module>"
 pthread_t t9;
     
-# 939 "<previous_module>"
+# 933 "<previous_module>"
 pthread_t t10;
     
-# 940 "<previous_module>"
+# 934 "<previous_module>"
 pthread_create(&t1, 0, push, 0);
     
-# 941 "<previous_module>"
+# 935 "<previous_module>"
 pthread_create(&t6, 0, pop, 0);
     
-# 942 "<previous_module>"
+# 936 "<previous_module>"
 pthread_join(t1, 0);
     
-# 943 "<previous_module>"
+# 937 "<previous_module>"
 pthread_join(t6, 0);
     
-# 944 "<previous_module>"
-assert(contains(ss, 0));
+# 938 "<previous_module>"
+assert(is_empty(ss));
     
-# 945 "<previous_module>"
+# 939 "<previous_module>"
 return 0;
 }
 

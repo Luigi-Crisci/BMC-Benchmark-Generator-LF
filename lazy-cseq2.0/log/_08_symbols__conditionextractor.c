@@ -6,7 +6,7 @@ list of functions:
    lfds711_misc_internal_backoff_init(param: bs)  call count 2
    lfds711_stack_init_valid_on_current_logical_core(param: ss, user_state)  call count 1
    lfds711_stack_pop(param: ss, se)  call count 4
-   lfds711_stack_push(param: ss, se)  call count 3
+   lfds711_stack_push(param: ss, se)  call count 4
    __CSEQ_atomic_compare_and_exchange(param: mptr, eptr, newval, weak_p, sm, fm)  call count 1
    __atomic_compare_exchange_n(param: mptr, eptr, newval, weak_p, sm, fm)  call count 0
    __CSEQ_atomic_exchange(param: previous, new, memorder)  call count 1
@@ -15,9 +15,9 @@ list of functions:
    init(param: )  call count 1
    insert(param: s, id)  call count 1
    delete(param: s)  call count 1
-   contains(param: s, id)  call count 1
+   contains(param: s, id)  call count 0
    get_size(param: s)  call count 0
-   is_empty(param: s)  call count 0
+   is_empty(param: s)  call count 1
    push(param: __cs_unused)  call count 0
    pop(param: __cs_unused)  call count 0
    main(param: )  call count 0
@@ -342,7 +342,7 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[954, 975, 986, 1001]'  
+         occurs '[952, 970, 980, 995]'  
       id169  'se'  
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
          size '[]'  
@@ -372,13 +372,13 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[949, 955, 970, 976]'  
+         occurs '[947, 953, 965, 971]'  
       id253  'lock'  
          type '__cs_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[951, 957, 972, 978, 985]'  
+         ref '[949, 955, 967, 973, 979]'  
          deref '[]'  
-         occurs '[951, 957, 972, 978, 985]'  
+         occurs '[949, 955, 967, 973, 979]'  
    check
       id0  'ss'  
          type 'void *'  kind 'p'  arity '0'  
@@ -884,7 +884,7 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[947, 947, 947, 954]'  
+         occurs '[952]'  
    pop
       id256  '__cs_unused'  
          type 'void *'  kind 'p'  arity '0'  
@@ -903,20 +903,20 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[966]'  
+         occurs '[963]'  
       id259  'loop'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[968, 968, 968]'  
+         occurs '[]'  
    main
       id260  't1'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[997]'  
+         ref '[991]'  
          deref '[]'  
-         occurs '[997, 999]'  
+         occurs '[991, 993]'  
       id261  't2'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
@@ -944,9 +944,9 @@ Variables:
       id265  't6'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[998]'  
+         ref '[992]'  
          deref '[]'  
-         occurs '[998, 1000]'  
+         occurs '[992, 994]'  
       id266  't7'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
@@ -1711,7 +1711,7 @@ int is_empty(struct lfds711_stack_state *s)
     res = lfds711_stack_pop(s, &se);
     if (res != 0)
     {
-        fds711_stack_push(s, se);
+        lfds711_stack_push(s, se);
         return 0;
     }
 
@@ -1725,23 +1725,19 @@ function 'push' ----------------------------------:
 void *push(void *__cs_unused)
 {
     int long long unsigned loop;
-    for (loop = 0; loop < 2; loop++)
+    if (ATOMIC_OPERATION)
     {
-        if (ATOMIC_OPERATION)
-        {
-            __cs_mutex_lock(&lock);
-        }
-
-        ;
-        insert(ss, loop);
-        if (ATOMIC_OPERATION)
-        {
-            __cs_mutex_unlock(&lock);
-        }
-
-        ;
+        __cs_mutex_lock(&lock);
     }
 
+    ;
+    insert(ss, loop);
+    if (ATOMIC_OPERATION)
+    {
+        __cs_mutex_unlock(&lock);
+    }
+
+    ;
 }
 
 
@@ -1754,23 +1750,19 @@ void *pop(void *__cs_unused)
     int count;
     count = 0;
     int loop;
-    for (loop = 0; loop < 2; loop++)
+    if (ATOMIC_OPERATION)
     {
-        if (ATOMIC_OPERATION)
-        {
-            __cs_mutex_lock(&lock);
-        }
-
-        ;
-        delete(ss);
-        if (ATOMIC_OPERATION)
-        {
-            __cs_mutex_unlock(&lock);
-        }
-
-        ;
+        __cs_mutex_lock(&lock);
     }
 
+    ;
+    delete(ss);
+    if (ATOMIC_OPERATION)
+    {
+        __cs_mutex_unlock(&lock);
+    }
+
+    ;
 }
 
 
@@ -1795,7 +1787,7 @@ int main()
     __cs_create(&t6, 0, pop, 0);
     __cs_join(t1, 0);
     __cs_join(t6, 0);
-    __CSEQ_assert(contains(ss, 0));
+    __CSEQ_assert(is_empty(ss));
     return 0;
 }
 
@@ -1865,41 +1857,9 @@ function: get_size   stmt:     return actual_size;
 
 function: is_empty   stmt:     return 1;
 
-function: push   stmt:     for (loop = 0; loop < 2; loop++)
-    {
-        if (ATOMIC_OPERATION)
-        {
-            __cs_mutex_lock(&lock);
-        }
+function: push   stmt:     ;
 
-        ;
-        insert(ss, loop);
-        if (ATOMIC_OPERATION)
-        {
-            __cs_mutex_unlock(&lock);
-        }
-
-        ;
-    }
-
-
-function: pop   stmt:     for (loop = 0; loop < 2; loop++)
-    {
-        if (ATOMIC_OPERATION)
-        {
-            __cs_mutex_lock(&lock);
-        }
-
-        ;
-        delete(ss);
-        if (ATOMIC_OPERATION)
-        {
-            __cs_mutex_unlock(&lock);
-        }
-
-        ;
-    }
-
+function: pop   stmt:     ;
 
 function: main   stmt:     return 0;
 
