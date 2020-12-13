@@ -1,5 +1,7 @@
 
 
+
+
 typedef int _____STARTSTRIPPINGFROMHERE_____;
 typedef int __cs_barrier_t;
 typedef int __cs_barrierattr_t;
@@ -172,11 +174,12 @@ typedef int va_list;
 typedef int loff_t;
 
 typedef int _____STOPSTRIPPINGFROMHERE_____;
-void assert_create(void* ss, int size){
-assert(0);
+void check(void* ss){
+unsigned long int size = 14;
+long unsigned int c0 = contains(ss,0);
+long unsigned int c2 = contains(ss,2);
+assert((size == 2 && c0 && c2));
 }
-
-
 
 
 
@@ -1264,13 +1267,8 @@ int delete (struct lfds711_stack_state *s)
  struct test_data *temp_td;
  int res = lfds711_stack_pop(&mystack, &se);
 
-
- if (res == 0)
-  return res;
- temp_td = ( (*se).value );
- int id_popped = temp_td->user_id;
- printf("%llu\n", temp_td->user_id);
-
+ if (res != 0)
+  free(( (*se).value ));
  return res;
 }
 
@@ -1287,13 +1285,7 @@ int contains(struct lfds711_stack_state *s, unsigned long long int id)
  struct lfds711_stack_element *se;
 
  while (found == 0 && res != 0)
-
  {
-
-
-
-
-
 
   res = lfds711_stack_pop(s, &se);
   if (res == 0){
@@ -1301,6 +1293,7 @@ int contains(struct lfds711_stack_state *s, unsigned long long int id)
   }
 
   datas[actual_size] = ( (*se).value );
+  printf("%d -- %d\n",datas[actual_size]->user_id,actual_size);
   if (datas[actual_size]->user_id == id)
    found = 1;
 
@@ -1323,10 +1316,10 @@ int get_size(struct lfds711_stack_state *s){
  struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
  struct lfds711_stack_element *se;
 
-
- while (actual_size < 2)
+ while (res != 0)
  {
   res = lfds711_stack_pop(s, &se);
+  datas[actual_size] = ( (*se).value );
   if (res == 0)
    break;
 
@@ -1350,14 +1343,12 @@ int is_empty(struct lfds711_stack_state *s){
  int res = lfds711_stack_pop(s, &se);
 
  if (res != 0){
-  fds711_stack_push(s, se);
+  lfds711_stack_push(s, se);
   return 0;
  }
 
  return 1;
 }
-
-
 
 int volatile ATOMIC_OPERATION = 0;
 
@@ -1366,56 +1357,34 @@ int volatile ATOMIC_OPERATION = 0;
 void* ss;
 pthread_mutex_t lock;
 
-
-void *push()
-{
- int long long unsigned loop;
-
-
-
-  if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
-  insert(ss,1500);
-  if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
-}
-
-void *pop()
-{
- int res;
- int count = 0;
- int loop;
-
-
-  if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
-  delete(ss);
-  if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
-}
-
+void *thread1(){
+ if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
+ insert(ss,0);
+ if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
+ if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
+ insert(ss,1);
+ if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
+ }
+ void *thread2(){
+ if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
+ delete(ss);
+ if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
+ if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
+ insert(ss,2);
+ if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
+ }
 
 int main()
 {
  pthread_mutex_init(&lock, 0);
  ss = init();
 
- pthread_t t1, t2,t3,t4,t5,t6,t7,t8,t9,t10;
- pthread_create(&t1, 0, push, 0);
+pthread_t t1,t2;
+pthread_create(&t1, 0, thread1, 0);
+pthread_create(&t2, 0, thread2, 0);
+pthread_join(t1, 0);
+pthread_join(t2, 0);
 
-
-
-
-
- pthread_create(&t6, 0, pop, 0);
-
-
-
-
- pthread_join(t1, 0);
-
-
-
-
- pthread_join(t6, 0);
- int size_ss = get_size(ss);
-
- assert(0);
+ check(ss);
  return (0);
 }

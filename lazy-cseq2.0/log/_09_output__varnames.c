@@ -152,9 +152,15 @@ typedef void BZFILE;
 typedef int va_list;
 typedef int loff_t;
 typedef int _____STOPSTRIPPINGFROMHERE_____;
-void assert_create(void *__cs_param_assert_create_ss, int __cs_param_assert_create_size)
+void check(void *__cs_param_check_ss)
 {
-__CSEQ_assert(0);
+unsigned long int __cs_local_check_size;
+__cs_local_check_size = 14;
+long unsigned int __cs_local_check_c0;
+__cs_local_check_c0 = contains(__cs_param_check_ss, 0);
+long unsigned int __cs_local_check_c2;
+__cs_local_check_c2 = contains(__cs_param_check_ss, 2);
+__CSEQ_assert(((__cs_local_check_size == 2) && __cs_local_check_c0) && __cs_local_check_c2);
 }
 #pragma warning( push )
 #pragma warning( disable : 4324 )
@@ -908,15 +914,11 @@ int __cs_local_delete_res;
 __cs_local_delete_res = lfds711_stack_pop(&mystack, &__cs_local_delete_se);
 ;
         _Bool __cs_local_delete___cs_tmp_if_cond_19;
-        __cs_local_delete___cs_tmp_if_cond_19 = __cs_local_delete_res == 0;
+        __cs_local_delete___cs_tmp_if_cond_19 = __cs_local_delete_res != 0;
 if (__cs_local_delete___cs_tmp_if_cond_19)
         {
-return __cs_local_delete_res;
+free((*__cs_local_delete_se).value);
         }
-__cs_local_delete_temp_td = (*__cs_local_delete_se).value;
-int __cs_local_delete_id_popped;
-__cs_local_delete_id_popped = (*__cs_local_delete_temp_td).user_id;
-printf("%llu\n", (*__cs_local_delete_temp_td).user_id);
 return __cs_local_delete_res;
 }
 int contains(struct lfds711_stack_state *__cs_param_contains_s, unsigned long long int __cs_param_contains_id)
@@ -945,6 +947,7 @@ if (__cs_local_contains___cs_tmp_if_cond_20)
 break;
                 }
 __cs_local_contains_datas[__cs_local_contains_actual_size] = (*__cs_local_contains_se).value;
+printf("%d -- %d\n", (*__cs_local_contains_datas[__cs_local_contains_actual_size]).user_id, __cs_local_contains_actual_size);
 ;
                 _Bool __cs_local_contains___cs_tmp_if_cond_21;
                 __cs_local_contains___cs_tmp_if_cond_21 = (*__cs_local_contains_datas[__cs_local_contains_actual_size]).user_id == __cs_param_contains_id;
@@ -976,9 +979,10 @@ __cs_local_get_size_dimension = 2;
 struct test_data **__cs_local_get_size_datas;
 __cs_local_get_size_datas = __cs_safe_malloc((sizeof(struct test_data *)) * __cs_local_get_size_max_size);
 struct lfds711_stack_element *__cs_local_get_size_se;
-while (__cs_local_get_size_actual_size < 2)
+while (__cs_local_get_size_res != 0)
         {
 __cs_local_get_size_res = lfds711_stack_pop(__cs_param_get_size_s, &__cs_local_get_size_se);
+__cs_local_get_size_datas[__cs_local_get_size_actual_size] = (*__cs_local_get_size_se).value;
 ;
                 _Bool __cs_local_get_size___cs_tmp_if_cond_22;
                 __cs_local_get_size___cs_tmp_if_cond_22 = __cs_local_get_size_res == 0;
@@ -1007,7 +1011,7 @@ __cs_local_is_empty_res = lfds711_stack_pop(__cs_param_is_empty_s, &__cs_local_i
         __cs_local_is_empty___cs_tmp_if_cond_23 = __cs_local_is_empty_res != 0;
 if (__cs_local_is_empty___cs_tmp_if_cond_23)
         {
-fds711_stack_push(__cs_param_is_empty_s, __cs_local_is_empty_se);
+lfds711_stack_push(__cs_param_is_empty_s, __cs_local_is_empty_se);
 return 0;
         }
 return 1;
@@ -1015,46 +1019,75 @@ return 1;
 int ATOMIC_OPERATION = 0;
 void *ss;
 __cs_mutex_t lock;
-void *push(void *__cs_param_push___cs_unused)
+void *thread1(void *__cs_param_thread1___cs_unused)
 {
-int long long unsigned __cs_local_push_loop;
 ;
-        _Bool __cs_local_push___cs_tmp_if_cond_24;
-        __cs_local_push___cs_tmp_if_cond_24 = ATOMIC_OPERATION;
-if (__cs_local_push___cs_tmp_if_cond_24)
+        _Bool __cs_local_thread1___cs_tmp_if_cond_24;
+        __cs_local_thread1___cs_tmp_if_cond_24 = ATOMIC_OPERATION;
+if (__cs_local_thread1___cs_tmp_if_cond_24)
         {
 __cs_mutex_lock(&lock);
         }
 ;
-insert(ss, 1500);
+insert(ss, 0);
 ;
-        _Bool __cs_local_push___cs_tmp_if_cond_25;
-        __cs_local_push___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
-if (__cs_local_push___cs_tmp_if_cond_25)
+        _Bool __cs_local_thread1___cs_tmp_if_cond_25;
+        __cs_local_thread1___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
+if (__cs_local_thread1___cs_tmp_if_cond_25)
+        {
+__cs_mutex_unlock(&lock);
+        }
+;
+;
+        _Bool __cs_local_thread1___cs_tmp_if_cond_26;
+        __cs_local_thread1___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
+if (__cs_local_thread1___cs_tmp_if_cond_26)
+        {
+__cs_mutex_lock(&lock);
+        }
+;
+insert(ss, 1);
+;
+        _Bool __cs_local_thread1___cs_tmp_if_cond_27;
+        __cs_local_thread1___cs_tmp_if_cond_27 = ATOMIC_OPERATION;
+if (__cs_local_thread1___cs_tmp_if_cond_27)
         {
 __cs_mutex_unlock(&lock);
         }
 ;
 }
-void *pop(void *__cs_param_pop___cs_unused)
+void *thread2(void *__cs_param_thread2___cs_unused)
 {
-int __cs_local_pop_res;
-int __cs_local_pop_count;
-__cs_local_pop_count = 0;
-int __cs_local_pop_loop;
 ;
-        _Bool __cs_local_pop___cs_tmp_if_cond_26;
-        __cs_local_pop___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
-if (__cs_local_pop___cs_tmp_if_cond_26)
+        _Bool __cs_local_thread2___cs_tmp_if_cond_28;
+        __cs_local_thread2___cs_tmp_if_cond_28 = ATOMIC_OPERATION;
+if (__cs_local_thread2___cs_tmp_if_cond_28)
         {
 __cs_mutex_lock(&lock);
         }
 ;
 delete(ss);
 ;
-        _Bool __cs_local_pop___cs_tmp_if_cond_27;
-        __cs_local_pop___cs_tmp_if_cond_27 = ATOMIC_OPERATION;
-if (__cs_local_pop___cs_tmp_if_cond_27)
+        _Bool __cs_local_thread2___cs_tmp_if_cond_29;
+        __cs_local_thread2___cs_tmp_if_cond_29 = ATOMIC_OPERATION;
+if (__cs_local_thread2___cs_tmp_if_cond_29)
+        {
+__cs_mutex_unlock(&lock);
+        }
+;
+;
+        _Bool __cs_local_thread2___cs_tmp_if_cond_30;
+        __cs_local_thread2___cs_tmp_if_cond_30 = ATOMIC_OPERATION;
+if (__cs_local_thread2___cs_tmp_if_cond_30)
+        {
+__cs_mutex_lock(&lock);
+        }
+;
+insert(ss, 2);
+;
+        _Bool __cs_local_thread2___cs_tmp_if_cond_31;
+        __cs_local_thread2___cs_tmp_if_cond_31 = ATOMIC_OPERATION;
+if (__cs_local_thread2___cs_tmp_if_cond_31)
         {
 __cs_mutex_unlock(&lock);
         }
@@ -1066,20 +1099,10 @@ __cs_mutex_init(&lock, 0);
 ss = init();
 __cs_t __cs_local_main_t1;
 __cs_t __cs_local_main_t2;
-__cs_t __cs_local_main_t3;
-__cs_t __cs_local_main_t4;
-__cs_t __cs_local_main_t5;
-__cs_t __cs_local_main_t6;
-__cs_t __cs_local_main_t7;
-__cs_t __cs_local_main_t8;
-__cs_t __cs_local_main_t9;
-__cs_t __cs_local_main_t10;
-__cs_create(&__cs_local_main_t1, 0, push, 0);
-__cs_create(&__cs_local_main_t6, 0, pop, 0);
+__cs_create(&__cs_local_main_t1, 0, thread1, 0);
+__cs_create(&__cs_local_main_t2, 0, thread2, 0);
 __cs_join(__cs_local_main_t1, 0);
-__cs_join(__cs_local_main_t6, 0);
-int __cs_local_main_size_ss;
-__cs_local_main_size_ss = get_size(ss);
-__CSEQ_assert(0);
+__cs_join(__cs_local_main_t2, 0);
+check(ss);
 return 0;
 }

@@ -1,11 +1,12 @@
+// DO NOT MODIFY THIS FILE
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <assert.h>
 #include "checker.c"
-#include "/home/luigi/LFDS-LazyCseq-Project/workspace/inteface/interface.c"
+#include "/home/luigi/LFDS-LazyCseq-Project/workspace/inteface/stack/stack_interface.c"
 
-int volatile ATOMIC_OPERATION = 0;
+int volatile ATOMIC_OPERATION = 1;
 #define LOCK if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);}
 #define UNLOCK if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); }
 
@@ -13,15 +14,20 @@ void* ss;
 pthread_mutex_t lock;
 
 void *thread1(){
-	LOCK;
-	delete(ss);
-	UNLOCK;
-}
-
-void *thread2(){
-	LOCK;
-	insert(ss,2);
-	UNLOCK;
+ LOCK;
+ insert(ss,0);
+ UNLOCK;
+ LOCK;
+ insert(ss,1);
+ UNLOCK;
+ }
+ void *thread2(){
+ LOCK;
+ insert(ss,2);
+ UNLOCK;
+ LOCK;
+ insert(ss,3);
+ UNLOCK;
  }
 
 int main()

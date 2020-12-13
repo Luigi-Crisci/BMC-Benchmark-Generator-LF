@@ -2,10 +2,13 @@ from io import SEEK_SET
 import sys
 import subprocess
 from itertools import product
+import analyze_trace
 
 num_thread = 0
 num_op = 0
 data_structure_type = ""
+interface_path = ""
+include_params = ""
 
 # Function to convert   
 def listToString(s):
@@ -28,12 +31,10 @@ def create_permutation(num_t,num_op):
        array_perm.append(product(array_ops,repeat=int(num_op)))
     for i in range(0, len(array_perm)):
         list_perm.append(list(array_perm[i]))
-    #print(list_perm)
 
     #Thread's operations cartesian product 
     for x in list_perm:
         thread_comb = product(x,repeat=int(num_t))
-    #print(help)
 
 
     return thread_comb
@@ -64,14 +65,16 @@ def create_benchmarks(perm):
         temp_string = []
         index+=1
 
-    # print(string_thread_comb[0])
-    for x in string_thread_comb:
-        print(x)
-
+    #TODO: Add correct template path 
     generalized = open("../workspace/multithread/template.c","r")
     for i in range(len(string_thread_comb)):
-        file_result = open(f"benchmarks/benchmark_{i}.c","w+")
+        filename = f"benchmark_{i}.c"
+        file_result = open(f"benchmarks/{filename}","w+")
+        
         for line in generalized.readlines():
+            if line.__contains__("// INTERFACE GOES THERE\n"):
+                file_result.write(f"#include \"{interface_path}\"\n")
+                continue
             if line.__contains__("// THREAD GOES THERE\n"):
                 file_result.write(string_thread_comb[i])
                 continue
@@ -94,8 +97,10 @@ def create_benchmarks(perm):
                 continue
             file_result.write(line)
         
-        # Launch benchmark on current benchmark_file.c
-        
+        #Launch benchmark on current benchmark_file.c
+        # if not run_benchmark(filename,data_structure_type,include_params):
+        #     print(f"Error found with {filename} benchmark. Please see checker.c and the related log to find out more")
+        #     sys.exit(1)
         
         generalized.seek(0,SEEK_SET)
     generalized.close()
@@ -104,7 +109,10 @@ def create_benchmarks(perm):
 if __name__ == "__main__":
     num_thread = int(sys.argv[1])
     num_op = int(sys.argv[2])
+    interface_path = sys.argv[3]
     data_structure_type = "stack"
+    include_params = sys.argv[5]
+    
     perm = create_permutation(num_thread,num_op)
     subprocess.call(["rm","-fr","benchmarks"])
     subprocess.call(["mkdir","benchmarks"])

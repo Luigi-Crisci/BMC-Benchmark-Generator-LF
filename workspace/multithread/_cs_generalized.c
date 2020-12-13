@@ -3,7 +3,7 @@
  * 
  *  instance version    {}
  *
- *  2020-12-13 17:23:11
+ *  2020-12-13 18:04:33
  *
  *  params:
  *    -I ../liblfds7.1.1/liblfds711/inc/, -i ../workspace/multithread/generalized.c, --cex , --stop-on-fail , --unwind 5, --debug , 
@@ -59,7 +59,7 @@ unsigned char nondet_uchar();
                                         unsigned __CPROVER_bitvector[10] __cs_pc[3];
                                         unsigned __CPROVER_bitvector[11] __cs_pc_cs[3];
                                         unsigned __CPROVER_bitvector[2] __cs_last_thread;
-                                        unsigned __CPROVER_bitvector[10] __cs_thread_lines[3] = {613, 61, 78};
+                                        unsigned __CPROVER_bitvector[10] __cs_thread_lines[3] = {614, 61, 76};
                                         void *__cs_safe_malloc(unsigned int __cs_size)
                                         {
                                         void *__cs_ptr = (malloc(__cs_size));
@@ -1921,26 +1921,19 @@ tpop_0_72: IF(2,72,tpop_0_73)
                                         ;
                                                         ;
                                         static _Bool __cs_local_delete___cs_tmp_if_cond_19;
-                                        __cs_local_delete___cs_tmp_if_cond_19 = __cs_local_delete_res == 0;
+                                        __cs_local_delete___cs_tmp_if_cond_19 = __cs_local_delete_res != 0;
                                         if (__cs_local_delete___cs_tmp_if_cond_19)
                                                         {
-                                        __cs_retval__delete_1 = __cs_local_delete_res;
-                                        goto __exit__delete_1;
-                                                                ;
-                                                        }
-                                        ;
 tpop_0_73: IF(2,73,tpop_0_74)
-                                        __cs_local_delete_temp_td = (*__cs_local_delete_se).value;
-                                        static int __cs_local_delete_id_popped;
-tpop_0_74: IF(2,74,tpop_0_75)
-                                        __cs_local_delete_id_popped = (*__cs_local_delete_temp_td).user_id;
-tpop_0_75: IF(2,75,tpop_0_76)
-                                        printf("%llu\n", (*__cs_local_delete_temp_td).user_id);
+                                        free((*__cs_local_delete_se).value);
+                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 74);
+                                                        ;
                                         __cs_retval__delete_1 = __cs_local_delete_res;
                                         goto __exit__delete_1;
                                                         ;
                                         __exit__delete_1:
-                                                        __CPROVER_assume(__cs_pc_cs[2] >= 76);
+                                                        __CPROVER_assume(__cs_pc_cs[2] >= 74);
                                         ;
                                                         ;
                                                 }
@@ -1949,22 +1942,22 @@ tpop_0_75: IF(2,75,tpop_0_76)
                                         ;
                                                 ;
                                         static _Bool __cs_local_pop___cs_tmp_if_cond_27;
-tpop_0_76: IF(2,76,tpop_0_77)
+tpop_0_74: IF(2,74,tpop_0_75)
                                         __cs_local_pop___cs_tmp_if_cond_27 = ATOMIC_OPERATION;
                                         if (__cs_local_pop___cs_tmp_if_cond_27)
                                                 {
-tpop_0_77: IF(2,77,tpop_0_78)
+tpop_0_75: IF(2,75,tpop_0_76)
                                         __cs_mutex_unlock(&lock, 2);
                                                 }
-                                        __CPROVER_assume(__cs_pc_cs[2] >= 78);
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 76);
                                                 ;
                                         ;
                                                 ;
                                         __exit_pop:
-                                                __CPROVER_assume(__cs_pc_cs[2] >= 78);
+                                                __CPROVER_assume(__cs_pc_cs[2] >= 76);
                                         ;
                                                 ;
-tpop_0_78: 
+tpop_0_76: 
                                         __cs_exit(0, 2);
                                         }
                                         int main_thread(void)
@@ -2230,7 +2223,7 @@ tmain_4: IF(0,4,tmain_5)
 tmain_5: IF(0,5,tmain_6)
                                         __cs_local_get_size_datas = __cs_safe_malloc((sizeof(struct test_data *)) * __cs_local_get_size_max_size);
                                         static struct lfds711_stack_element *__cs_local_get_size_se;
-                                        if (!(__cs_local_get_size_actual_size < 2))
+                                        if (!(__cs_local_get_size_res != 0))
                                                         {
                                         goto __exit_loop_15;
                                                                 ;
@@ -2880,7 +2873,7 @@ tmain_74: IF(0,74,tmain_75)
                                         __cs_local_get_size_actual_size = __cs_local_get_size_actual_size + 1;
                                                         }
                                         ;
-                                        if (!(__cs_local_get_size_actual_size < 2))
+                                        if (!(__cs_local_get_size_res != 0))
                                                         {
                                         goto __exit_loop_15;
                                                                 ;
@@ -3530,7 +3523,7 @@ tmain_143: IF(0,143,tmain_144)
                                         __cs_local_get_size_actual_size = __cs_local_get_size_actual_size + 1;
                                                         }
                                         ;
-                                        if (!(__cs_local_get_size_actual_size < 2))
+                                        if (!(__cs_local_get_size_res != 0))
                                                         {
                                         goto __exit_loop_15;
                                                                 ;
@@ -4180,7 +4173,7 @@ tmain_212: IF(0,212,tmain_213)
                                         __cs_local_get_size_actual_size = __cs_local_get_size_actual_size + 1;
                                                         }
                                         ;
-                                        if (!(__cs_local_get_size_actual_size < 2))
+                                        if (!(__cs_local_get_size_res != 0))
                                                         {
                                         goto __exit_loop_15;
                                                                 ;
@@ -4830,7 +4823,7 @@ tmain_281: IF(0,281,tmain_282)
                                         __cs_local_get_size_actual_size = __cs_local_get_size_actual_size + 1;
                                                         }
                                         ;
-                                        if (!(__cs_local_get_size_actual_size < 2))
+                                        if (!(__cs_local_get_size_res != 0))
                                                         {
                                         goto __exit_loop_15;
                                                                 ;
@@ -5481,7 +5474,7 @@ tmain_350: IF(0,350,tmain_351)
                                                         }
                                         ;
 tmain_351: IF(0,351,tmain_352)
-                                        __CPROVER_assume(!(__cs_local_get_size_actual_size < 2));
+                                        __CPROVER_assume(!(__cs_local_get_size_res != 0));
                                         __exit_loop_15:
                                                         __CPROVER_assume(__cs_pc_cs[0] >= 352);
                                         ;
@@ -7809,11 +7802,13 @@ tmain_612: IF(0,612,tmain_613)
                                                         __CPROVER_assume(__cs_pc_cs[0] >= 613);
                                         ;
                                                         ;
+tmain_613: IF(0,613,tmain_614)
+                                        free(__cs_local_get_size_datas);
                                         __cs_retval__get_size_1 = __cs_local_get_size_actual_size;
                                         goto __exit__get_size_1;
                                                         ;
                                         __exit__get_size_1:
-                                                        __CPROVER_assume(__cs_pc_cs[0] >= 613);
+                                                        __CPROVER_assume(__cs_pc_cs[0] >= 614);
                                         ;
                                                         ;
                                                 }
@@ -7823,10 +7818,10 @@ tmain_612: IF(0,612,tmain_613)
                                         goto __exit_main;
                                                 ;
                                         __exit_main:
-                                                __CPROVER_assume(__cs_pc_cs[0] >= 613);
+                                                __CPROVER_assume(__cs_pc_cs[0] >= 614);
                                         ;
                                                 ;
-tmain_613: 
+tmain_614: 
                                         __cs_exit(0, 0);
                                         }
                                         int main(void)
@@ -7836,7 +7831,7 @@ tmain_613:
                                         unsigned __CPROVER_bitvector[10] __cs_tmp_t0_r0;
                                         __cs_pc_cs[0] = __cs_tmp_t0_r0;
                                         __CPROVER_assume(__cs_pc_cs[0] > 0);
-                                        __CPROVER_assume(__cs_pc_cs[0] <= 613);
+                                        __CPROVER_assume(__cs_pc_cs[0] <= 614);
                                         main_thread();
                                         __cs_pc[0] = __cs_pc_cs[0];
 /* push_0 */
@@ -7853,7 +7848,7 @@ tmain_613:
                                         if (__cs_active_thread[2])
                                                 {
                                         __cs_pc_cs[2] = __cs_tmp_t2_r0;
-                                        __CPROVER_assume(__cs_pc_cs[2] <= 78);
+                                        __CPROVER_assume(__cs_pc_cs[2] <= 76);
                                         pop_0(__cs_threadargs[2]);
                                         __cs_pc[2] = __cs_pc_cs[2];
                                                 }
@@ -7862,7 +7857,7 @@ tmain_613:
                                                 {
                                         __cs_pc_cs[0] = __cs_pc[0] + __cs_tmp_t0_r1;
                                         __CPROVER_assume(__cs_pc_cs[0] >= __cs_pc[0]);
-                                        __CPROVER_assume(__cs_pc_cs[0] <= 613);
+                                        __CPROVER_assume(__cs_pc_cs[0] <= 614);
                                         main_thread();
                                                 }
                                         return 0;

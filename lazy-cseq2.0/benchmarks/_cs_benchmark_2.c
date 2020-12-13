@@ -3,10 +3,10 @@
  * 
  *  instance version    {}
  *
- *  2020-12-13 17:18:21
+ *  2020-12-13 21:08:19
  *
  *  params:
- *    -i benchmarks/benchmark_0.c, -I ../liblfds7.1.1/liblfds711/inc, --unwind 5, --cex , --debug , --rounds 1, 
+ *    -i benchmarks/benchmark_2.c, -I ../liblfds7.1.1/liblfds711/inc, --unwind 5, --cex , --debug , --rounds 1, 
  *
  */
 #define __cs_MUTEX_INITIALIZER -1
@@ -39,7 +39,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <assert.h>
 int __VERIFIER_nondet_int();
 int nondet_int();
 unsigned int __VERIFIER_nondet_uint();
@@ -56,10 +55,10 @@ unsigned char nondet_uchar();
 #define STOP_NONVOID(A) return 0;
 #define IF(T,A,B) if ((__cs_pc[T] > A) | (A >= __cs_pc_cs[T])) goto B;
                                         unsigned __CPROVER_bitvector[1] __cs_active_thread[3] = {1};
-                                        unsigned __CPROVER_bitvector[7] __cs_pc[3];
-                                        unsigned __CPROVER_bitvector[8] __cs_pc_cs[3];
+                                        unsigned __CPROVER_bitvector[8] __cs_pc[3];
+                                        unsigned __CPROVER_bitvector[9] __cs_pc_cs[3];
                                         unsigned __CPROVER_bitvector[2] __cs_last_thread;
-                                        unsigned __CPROVER_bitvector[7] __cs_thread_lines[3] = {5, 78, 61};
+                                        unsigned __CPROVER_bitvector[8] __cs_thread_lines[3] = {5, 121, 136};
                                         void *__cs_safe_malloc(unsigned int __cs_size)
                                         {
                                         void *__cs_ptr = (malloc(__cs_size));
@@ -762,10 +761,1020 @@ tthread1_0_2: IF(1,2,tthread1_0_3)
                                                 ;
                                         ;
                                                 ;
+                                                {
+                                        static struct lfds711_stack_state *__cs_param_insert_s;
+tthread1_0_3: IF(1,3,tthread1_0_4)
+                                        __cs_param_insert_s = ss;
+                                        static int long long unsigned __cs_param_insert_id;
+                                        __cs_param_insert_id = 0;
+                                        static struct test_data *__cs_local_insert_td;
+tthread1_0_4: IF(1,4,tthread1_0_5)
+                                        __cs_local_insert_td = __cs_safe_malloc(sizeof(struct test_data));
+tthread1_0_5: IF(1,5,tthread1_0_6)
+                                        (*__cs_local_insert_td).user_id = __cs_param_insert_id;
+tthread1_0_6: IF(1,6,tthread1_0_7)
+                                        (*__cs_local_insert_td).se.value = (void *) ((lfds711_pal_uint_t) __cs_local_insert_td);
+                                                        {
+                                        static struct lfds711_stack_state *__cs_param_lfds711_stack_push_ss;
+tthread1_0_7: IF(1,7,tthread1_0_8)
+                                        __cs_param_lfds711_stack_push_ss = (struct lfds711_stack_state *) __cs_param_insert_s;
+                                        static struct lfds711_stack_element *__cs_param_lfds711_stack_push_se;
+tthread1_0_8: IF(1,8,tthread1_0_9)
+                                        __cs_param_lfds711_stack_push_se = &(*__cs_local_insert_td).se;
+                                        static char unsigned __cs_local_lfds711_stack_push_result;
+                                        static lfds711_pal_uint_t __cs_local_lfds711_stack_push_backoff_iteration;
+                                        __cs_local_lfds711_stack_push_backoff_iteration = 0;
+                                        static struct lfds711_stack_element *__cs_local_lfds711_stack_push_new_top[2];
+                                        static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_push_original_top[2];
+                                        ;
+                                                                ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_14;
+tthread1_0_9: IF(1,9,tthread1_0_10)
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_14 = !(__cs_param_lfds711_stack_push_ss != 0);
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_14)
+                                                                {
+                                        static char *__cs_local_lfds711_stack_push_c;
+tthread1_0_10: IF(1,10,tthread1_0_11)
+                                        __cs_local_lfds711_stack_push_c = 0;
+tthread1_0_11: IF(1,11,tthread1_0_12)
+                                        *__cs_local_lfds711_stack_push_c = 0;
+                                                                }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 12);
+                                                                ;
+                                        ;
+                                                                ;
+                                        ;
+                                                                ;
+                                        ;
+                                                                ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_15;
+tthread1_0_12: IF(1,12,tthread1_0_13)
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_15 = !(__cs_param_lfds711_stack_push_se != 0);
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
+                                                                {
+                                        static char *__cs_local_lfds711_stack_push_c;
+tthread1_0_13: IF(1,13,tthread1_0_14)
+                                        __cs_local_lfds711_stack_push_c = 0;
+tthread1_0_14: IF(1,14,tthread1_0_15)
+                                        *__cs_local_lfds711_stack_push_c = 0;
+                                                                }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 15);
+                                                                ;
+                                        ;
+                                                                ;
+                                        ;
+                                                                ;
+tthread1_0_15: IF(1,15,tthread1_0_16)
+                                        __cs_local_lfds711_stack_push_new_top[0] = __cs_param_lfds711_stack_push_se;
+tthread1_0_16: IF(1,16,tthread1_0_17)
+                                        __cs_local_lfds711_stack_push_original_top[1] = (*__cs_param_lfds711_stack_push_ss).top[1];
+tthread1_0_17: IF(1,17,tthread1_0_18)
+                                        __cs_local_lfds711_stack_push_original_top[0] = (*__cs_param_lfds711_stack_push_ss).top[0];
+                                        __cs_local_lfds711_stack_push_result = 0;
+                                        static int __cs_local_lfds711_stack_push_i;
+                                        __cs_local_lfds711_stack_push_i = 0;
+                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                {
+                                        goto __exit_loop_1;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+tthread1_0_18: IF(1,18,tthread1_0_19)
+                                        __cs_mutex_lock(&library_lock, 1);
+tthread1_0_19: IF(1,19,tthread1_0_20)
+                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+tthread1_0_20: IF(1,20,tthread1_0_21)
+                                        __cs_mutex_unlock(&library_lock, 1);
+tthread1_0_21: IF(1,21,tthread1_0_22)
+                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
+tthread1_0_22: IF(1,22,tthread1_0_23)
+                                        __cs_mutex_lock(&library_lock, 1);
+tthread1_0_23: IF(1,23,tthread1_0_24)
+                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
+tthread1_0_24: IF(1,24,tthread1_0_25)
+                                        __cs_mutex_unlock(&library_lock, 1);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tthread1_0_25: IF(1,25,tthread1_0_26)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_2:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 26);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_1_0:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 26);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 26);
+                                                                        ;
+                                        __cs_local_lfds711_stack_push_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                                                                        {
+                                        goto __exit_loop_1;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                {
+                                        goto __exit_loop_1;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+tthread1_0_26: IF(1,26,tthread1_0_27)
+                                        __cs_mutex_lock(&library_lock, 1);
+tthread1_0_27: IF(1,27,tthread1_0_28)
+                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+tthread1_0_28: IF(1,28,tthread1_0_29)
+                                        __cs_mutex_unlock(&library_lock, 1);
+tthread1_0_29: IF(1,29,tthread1_0_30)
+                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
+tthread1_0_30: IF(1,30,tthread1_0_31)
+                                        __cs_mutex_lock(&library_lock, 1);
+tthread1_0_31: IF(1,31,tthread1_0_32)
+                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
+tthread1_0_32: IF(1,32,tthread1_0_33)
+                                        __cs_mutex_unlock(&library_lock, 1);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tthread1_0_33: IF(1,33,tthread1_0_34)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_3:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 34);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_1_1:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 34);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 34);
+                                                                        ;
+                                        __cs_local_lfds711_stack_push_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                                                                        {
+                                        goto __exit_loop_1;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                {
+                                        goto __exit_loop_1;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+tthread1_0_34: IF(1,34,tthread1_0_35)
+                                        __cs_mutex_lock(&library_lock, 1);
+tthread1_0_35: IF(1,35,tthread1_0_36)
+                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+tthread1_0_36: IF(1,36,tthread1_0_37)
+                                        __cs_mutex_unlock(&library_lock, 1);
+tthread1_0_37: IF(1,37,tthread1_0_38)
+                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
+tthread1_0_38: IF(1,38,tthread1_0_39)
+                                        __cs_mutex_lock(&library_lock, 1);
+tthread1_0_39: IF(1,39,tthread1_0_40)
+                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
+tthread1_0_40: IF(1,40,tthread1_0_41)
+                                        __cs_mutex_unlock(&library_lock, 1);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tthread1_0_41: IF(1,41,tthread1_0_42)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_4:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 42);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_1_2:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 42);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 42);
+                                                                        ;
+                                        __cs_local_lfds711_stack_push_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                                                                        {
+                                        goto __exit_loop_1;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                {
+                                        goto __exit_loop_1;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+tthread1_0_42: IF(1,42,tthread1_0_43)
+                                        __cs_mutex_lock(&library_lock, 1);
+tthread1_0_43: IF(1,43,tthread1_0_44)
+                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+tthread1_0_44: IF(1,44,tthread1_0_45)
+                                        __cs_mutex_unlock(&library_lock, 1);
+tthread1_0_45: IF(1,45,tthread1_0_46)
+                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
+tthread1_0_46: IF(1,46,tthread1_0_47)
+                                        __cs_mutex_lock(&library_lock, 1);
+tthread1_0_47: IF(1,47,tthread1_0_48)
+                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
+tthread1_0_48: IF(1,48,tthread1_0_49)
+                                        __cs_mutex_unlock(&library_lock, 1);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tthread1_0_49: IF(1,49,tthread1_0_50)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_5:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 50);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_1_3:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 50);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 50);
+                                                                        ;
+                                        __cs_local_lfds711_stack_push_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                                                                        {
+                                        goto __exit_loop_1;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                {
+                                        goto __exit_loop_1;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+tthread1_0_50: IF(1,50,tthread1_0_51)
+                                        __cs_mutex_lock(&library_lock, 1);
+tthread1_0_51: IF(1,51,tthread1_0_52)
+                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+tthread1_0_52: IF(1,52,tthread1_0_53)
+                                        __cs_mutex_unlock(&library_lock, 1);
+tthread1_0_53: IF(1,53,tthread1_0_54)
+                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
+tthread1_0_54: IF(1,54,tthread1_0_55)
+                                        __cs_mutex_lock(&library_lock, 1);
+tthread1_0_55: IF(1,55,tthread1_0_56)
+                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
+tthread1_0_56: IF(1,56,tthread1_0_57)
+                                        __cs_mutex_unlock(&library_lock, 1);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tthread1_0_57: IF(1,57,tthread1_0_58)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_6:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 58);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_1_4:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 58);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 58);
+                                                                        ;
+                                        __cs_local_lfds711_stack_push_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                                                                        {
+                                        goto __exit_loop_1;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+tthread1_0_58: IF(1,58,tthread1_0_59)
+                                        __CPROVER_assume(!(__cs_local_lfds711_stack_push_result == 0));
+                                        __exit_loop_1:
+                                                                __CPROVER_assume(__cs_pc_cs[1] >= 59);
+                                        ;
+                                                                ;
+                                        goto __exit__lfds711_stack_push_1;
+                                                                ;
+                                        __exit__lfds711_stack_push_1:
+                                                                __CPROVER_assume(__cs_pc_cs[1] >= 59);
+                                        ;
+                                                                ;
+                                                        }
+                                        ;
+                                        __exit__insert_1:
+                                                        __CPROVER_assume(__cs_pc_cs[1] >= 59);
+                                        ;
+                                                        ;
+                                                }
+                                        ;
+                                        ;
+                                                ;
+                                        static _Bool __cs_local_thread1___cs_tmp_if_cond_25;
+tthread1_0_59: IF(1,59,tthread1_0_60)
+                                        __cs_local_thread1___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
+                                        if (__cs_local_thread1___cs_tmp_if_cond_25)
+                                                {
+tthread1_0_60: IF(1,60,tthread1_0_61)
+                                        __cs_mutex_unlock(&lock, 1);
+                                                }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 61);
+                                                ;
+                                        ;
+                                                ;
+                                        ;
+                                                ;
+                                        static _Bool __cs_local_thread1___cs_tmp_if_cond_26;
+tthread1_0_61: IF(1,61,tthread1_0_62)
+                                        __cs_local_thread1___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
+                                        if (__cs_local_thread1___cs_tmp_if_cond_26)
+                                                {
+tthread1_0_62: IF(1,62,tthread1_0_63)
+                                        __cs_mutex_lock(&lock, 1);
+                                                }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 63);
+                                                ;
+                                        ;
+                                                ;
+                                                {
+                                        static struct lfds711_stack_state *__cs_param_insert_s;
+tthread1_0_63: IF(1,63,tthread1_0_64)
+                                        __cs_param_insert_s = ss;
+                                        static int long long unsigned __cs_param_insert_id;
+                                        __cs_param_insert_id = 1;
+                                        static struct test_data *__cs_local_insert_td;
+tthread1_0_64: IF(1,64,tthread1_0_65)
+                                        __cs_local_insert_td = __cs_safe_malloc(sizeof(struct test_data));
+tthread1_0_65: IF(1,65,tthread1_0_66)
+                                        (*__cs_local_insert_td).user_id = __cs_param_insert_id;
+tthread1_0_66: IF(1,66,tthread1_0_67)
+                                        (*__cs_local_insert_td).se.value = (void *) ((lfds711_pal_uint_t) __cs_local_insert_td);
+                                                        {
+                                        static struct lfds711_stack_state *__cs_param_lfds711_stack_push_ss;
+tthread1_0_67: IF(1,67,tthread1_0_68)
+                                        __cs_param_lfds711_stack_push_ss = (struct lfds711_stack_state *) __cs_param_insert_s;
+                                        static struct lfds711_stack_element *__cs_param_lfds711_stack_push_se;
+tthread1_0_68: IF(1,68,tthread1_0_69)
+                                        __cs_param_lfds711_stack_push_se = &(*__cs_local_insert_td).se;
+                                        static char unsigned __cs_local_lfds711_stack_push_result;
+                                        static lfds711_pal_uint_t __cs_local_lfds711_stack_push_backoff_iteration;
+                                        __cs_local_lfds711_stack_push_backoff_iteration = 0;
+                                        static struct lfds711_stack_element *__cs_local_lfds711_stack_push_new_top[2];
+                                        static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_push_original_top[2];
+                                        ;
+                                                                ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_14;
+tthread1_0_69: IF(1,69,tthread1_0_70)
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_14 = !(__cs_param_lfds711_stack_push_ss != 0);
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_14)
+                                                                {
+                                        static char *__cs_local_lfds711_stack_push_c;
+tthread1_0_70: IF(1,70,tthread1_0_71)
+                                        __cs_local_lfds711_stack_push_c = 0;
+tthread1_0_71: IF(1,71,tthread1_0_72)
+                                        *__cs_local_lfds711_stack_push_c = 0;
+                                                                }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 72);
+                                                                ;
+                                        ;
+                                                                ;
+                                        ;
+                                                                ;
+                                        ;
+                                                                ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_15;
+tthread1_0_72: IF(1,72,tthread1_0_73)
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_15 = !(__cs_param_lfds711_stack_push_se != 0);
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
+                                                                {
+                                        static char *__cs_local_lfds711_stack_push_c;
+tthread1_0_73: IF(1,73,tthread1_0_74)
+                                        __cs_local_lfds711_stack_push_c = 0;
+tthread1_0_74: IF(1,74,tthread1_0_75)
+                                        *__cs_local_lfds711_stack_push_c = 0;
+                                                                }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 75);
+                                                                ;
+                                        ;
+                                                                ;
+                                        ;
+                                                                ;
+tthread1_0_75: IF(1,75,tthread1_0_76)
+                                        __cs_local_lfds711_stack_push_new_top[0] = __cs_param_lfds711_stack_push_se;
+tthread1_0_76: IF(1,76,tthread1_0_77)
+                                        __cs_local_lfds711_stack_push_original_top[1] = (*__cs_param_lfds711_stack_push_ss).top[1];
+tthread1_0_77: IF(1,77,tthread1_0_78)
+                                        __cs_local_lfds711_stack_push_original_top[0] = (*__cs_param_lfds711_stack_push_ss).top[0];
+                                        __cs_local_lfds711_stack_push_result = 0;
+                                        static int __cs_local_lfds711_stack_push_i;
+                                        __cs_local_lfds711_stack_push_i = 0;
+                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                {
+                                        goto __exit_loop_7;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+tthread1_0_78: IF(1,78,tthread1_0_79)
+                                        __cs_mutex_lock(&library_lock, 1);
+tthread1_0_79: IF(1,79,tthread1_0_80)
+                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+tthread1_0_80: IF(1,80,tthread1_0_81)
+                                        __cs_mutex_unlock(&library_lock, 1);
+tthread1_0_81: IF(1,81,tthread1_0_82)
+                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
+tthread1_0_82: IF(1,82,tthread1_0_83)
+                                        __cs_mutex_lock(&library_lock, 1);
+tthread1_0_83: IF(1,83,tthread1_0_84)
+                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
+tthread1_0_84: IF(1,84,tthread1_0_85)
+                                        __cs_mutex_unlock(&library_lock, 1);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tthread1_0_85: IF(1,85,tthread1_0_86)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_8:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 86);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_2_0:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 86);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 86);
+                                                                        ;
+                                        __cs_local_lfds711_stack_push_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                                                                        {
+                                        goto __exit_loop_7;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                {
+                                        goto __exit_loop_7;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+tthread1_0_86: IF(1,86,tthread1_0_87)
+                                        __cs_mutex_lock(&library_lock, 1);
+tthread1_0_87: IF(1,87,tthread1_0_88)
+                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+tthread1_0_88: IF(1,88,tthread1_0_89)
+                                        __cs_mutex_unlock(&library_lock, 1);
+tthread1_0_89: IF(1,89,tthread1_0_90)
+                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
+tthread1_0_90: IF(1,90,tthread1_0_91)
+                                        __cs_mutex_lock(&library_lock, 1);
+tthread1_0_91: IF(1,91,tthread1_0_92)
+                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
+tthread1_0_92: IF(1,92,tthread1_0_93)
+                                        __cs_mutex_unlock(&library_lock, 1);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tthread1_0_93: IF(1,93,tthread1_0_94)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_9:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 94);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_2_1:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 94);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 94);
+                                                                        ;
+                                        __cs_local_lfds711_stack_push_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                                                                        {
+                                        goto __exit_loop_7;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                {
+                                        goto __exit_loop_7;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+tthread1_0_94: IF(1,94,tthread1_0_95)
+                                        __cs_mutex_lock(&library_lock, 1);
+tthread1_0_95: IF(1,95,tthread1_0_96)
+                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+tthread1_0_96: IF(1,96,tthread1_0_97)
+                                        __cs_mutex_unlock(&library_lock, 1);
+tthread1_0_97: IF(1,97,tthread1_0_98)
+                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
+tthread1_0_98: IF(1,98,tthread1_0_99)
+                                        __cs_mutex_lock(&library_lock, 1);
+tthread1_0_99: IF(1,99,tthread1_0_100)
+                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
+tthread1_0_100: IF(1,100,tthread1_0_101)
+                                        __cs_mutex_unlock(&library_lock, 1);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tthread1_0_101: IF(1,101,tthread1_0_102)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_10:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 102);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_2_2:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 102);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 102);
+                                                                        ;
+                                        __cs_local_lfds711_stack_push_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                                                                        {
+                                        goto __exit_loop_7;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                {
+                                        goto __exit_loop_7;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+tthread1_0_102: IF(1,102,tthread1_0_103)
+                                        __cs_mutex_lock(&library_lock, 1);
+tthread1_0_103: IF(1,103,tthread1_0_104)
+                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+tthread1_0_104: IF(1,104,tthread1_0_105)
+                                        __cs_mutex_unlock(&library_lock, 1);
+tthread1_0_105: IF(1,105,tthread1_0_106)
+                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
+tthread1_0_106: IF(1,106,tthread1_0_107)
+                                        __cs_mutex_lock(&library_lock, 1);
+tthread1_0_107: IF(1,107,tthread1_0_108)
+                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
+tthread1_0_108: IF(1,108,tthread1_0_109)
+                                        __cs_mutex_unlock(&library_lock, 1);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tthread1_0_109: IF(1,109,tthread1_0_110)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_11:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 110);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_2_3:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 110);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 110);
+                                                                        ;
+                                        __cs_local_lfds711_stack_push_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                                                                        {
+                                        goto __exit_loop_7;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                {
+                                        goto __exit_loop_7;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+tthread1_0_110: IF(1,110,tthread1_0_111)
+                                        __cs_mutex_lock(&library_lock, 1);
+tthread1_0_111: IF(1,111,tthread1_0_112)
+                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+tthread1_0_112: IF(1,112,tthread1_0_113)
+                                        __cs_mutex_unlock(&library_lock, 1);
+tthread1_0_113: IF(1,113,tthread1_0_114)
+                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
+tthread1_0_114: IF(1,114,tthread1_0_115)
+                                        __cs_mutex_lock(&library_lock, 1);
+tthread1_0_115: IF(1,115,tthread1_0_116)
+                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
+tthread1_0_116: IF(1,116,tthread1_0_117)
+                                        __cs_mutex_unlock(&library_lock, 1);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tthread1_0_117: IF(1,117,tthread1_0_118)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_12:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 118);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_2_4:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 118);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 118);
+                                                                        ;
+                                        __cs_local_lfds711_stack_push_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                                                                        {
+                                        goto __exit_loop_7;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+tthread1_0_118: IF(1,118,tthread1_0_119)
+                                        __CPROVER_assume(!(__cs_local_lfds711_stack_push_result == 0));
+                                        __exit_loop_7:
+                                                                __CPROVER_assume(__cs_pc_cs[1] >= 119);
+                                        ;
+                                                                ;
+                                        goto __exit__lfds711_stack_push_2;
+                                                                ;
+                                        __exit__lfds711_stack_push_2:
+                                                                __CPROVER_assume(__cs_pc_cs[1] >= 119);
+                                        ;
+                                                                ;
+                                                        }
+                                        ;
+                                        __exit__insert_2:
+                                                        __CPROVER_assume(__cs_pc_cs[1] >= 119);
+                                        ;
+                                                        ;
+                                                }
+                                        ;
+                                        ;
+                                                ;
+                                        static _Bool __cs_local_thread1___cs_tmp_if_cond_27;
+tthread1_0_119: IF(1,119,tthread1_0_120)
+                                        __cs_local_thread1___cs_tmp_if_cond_27 = ATOMIC_OPERATION;
+                                        if (__cs_local_thread1___cs_tmp_if_cond_27)
+                                                {
+tthread1_0_120: IF(1,120,tthread1_0_121)
+                                        __cs_mutex_unlock(&lock, 1);
+                                                }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 121);
+                                                ;
+                                        ;
+                                                ;
+                                        __exit_thread1:
+                                                __CPROVER_assume(__cs_pc_cs[1] >= 121);
+                                        ;
+                                                ;
+tthread1_0_121: 
+                                        __cs_exit(0, 1);
+                                        }
+                                        void *thread2_0(void *__cs_param_thread2___cs_unused)
+                                        {
+IF(2,0,tthread2_0_1)
+                                        ;
+                                                ;
+                                        static _Bool __cs_local_thread2___cs_tmp_if_cond_28;
+tthread2_0_1: IF(2,1,tthread2_0_2)
+                                        __cs_local_thread2___cs_tmp_if_cond_28 = ATOMIC_OPERATION;
+                                        if (__cs_local_thread2___cs_tmp_if_cond_28)
+                                                {
+tthread2_0_2: IF(2,2,tthread2_0_3)
+                                        __cs_mutex_lock(&lock, 2);
+                                                }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 3);
+                                                ;
+                                        ;
+                                                ;
                                         static int __cs_retval__delete_1;
                                                 {
                                         static struct lfds711_stack_state *__cs_param_delete_s;
-tthread1_0_3: IF(1,3,tthread1_0_4)
+tthread2_0_3: IF(2,3,tthread2_0_4)
                                         __cs_param_delete_s = ss;
                                         static struct lfds711_stack_element *__cs_local_delete_se;
                                         static struct test_data *__cs_local_delete_temp_td;
@@ -773,10 +1782,10 @@ tthread1_0_3: IF(1,3,tthread1_0_4)
                                         static int __cs_retval__lfds711_stack_pop_1;
                                                         {
                                         static struct lfds711_stack_state *__cs_param_lfds711_stack_pop_ss;
-tthread1_0_4: IF(1,4,tthread1_0_5)
+tthread2_0_4: IF(2,4,tthread2_0_5)
                                         __cs_param_lfds711_stack_pop_ss = &mystack;
                                         static struct lfds711_stack_element **__cs_param_lfds711_stack_pop_se;
-tthread1_0_5: IF(1,5,tthread1_0_6)
+tthread2_0_5: IF(2,5,tthread2_0_6)
                                         __cs_param_lfds711_stack_pop_se = &__cs_local_delete_se;
                                         static char unsigned __cs_local_lfds711_stack_pop_result;
                                         static lfds711_pal_uint_t __cs_local_lfds711_stack_pop_backoff_iteration;
@@ -786,17 +1795,17 @@ tthread1_0_5: IF(1,5,tthread1_0_6)
                                         ;
                                                                 ;
                                         static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_6;
-tthread1_0_6: IF(1,6,tthread1_0_7)
+tthread2_0_6: IF(2,6,tthread2_0_7)
                                         __cs_local_lfds711_stack_pop___cs_tmp_if_cond_6 = !(__cs_param_lfds711_stack_pop_ss != 0);
                                         if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_6)
                                                                 {
                                         static char *__cs_local_lfds711_stack_pop_c;
-tthread1_0_7: IF(1,7,tthread1_0_8)
+tthread2_0_7: IF(2,7,tthread2_0_8)
                                         __cs_local_lfds711_stack_pop_c = 0;
-tthread1_0_8: IF(1,8,tthread1_0_9)
+tthread2_0_8: IF(2,8,tthread2_0_9)
                                         *__cs_local_lfds711_stack_pop_c = 0;
                                                                 }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 9);
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 9);
                                                                 ;
                                         ;
                                                                 ;
@@ -805,29 +1814,29 @@ tthread1_0_8: IF(1,8,tthread1_0_9)
                                         ;
                                                                 ;
                                         static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_7;
-tthread1_0_9: IF(1,9,tthread1_0_10)
+tthread2_0_9: IF(2,9,tthread2_0_10)
                                         __cs_local_lfds711_stack_pop___cs_tmp_if_cond_7 = !(__cs_param_lfds711_stack_pop_se != 0);
                                         if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7)
                                                                 {
                                         static char *__cs_local_lfds711_stack_pop_c;
-tthread1_0_10: IF(1,10,tthread1_0_11)
+tthread2_0_10: IF(2,10,tthread2_0_11)
                                         __cs_local_lfds711_stack_pop_c = 0;
-tthread1_0_11: IF(1,11,tthread1_0_12)
+tthread2_0_11: IF(2,11,tthread2_0_12)
                                         *__cs_local_lfds711_stack_pop_c = 0;
                                                                 }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 12);
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 12);
                                                                 ;
                                         ;
                                                                 ;
                                         ;
                                                                 ;
-tthread1_0_12: IF(1,12,tthread1_0_13)
-                                        __cs_mutex_lock(&library_lock, 1);
-tthread1_0_13: IF(1,13,tthread1_0_14)
-                                        __cs_mutex_unlock(&library_lock, 1);
-tthread1_0_14: IF(1,14,tthread1_0_15)
+tthread2_0_12: IF(2,12,tthread2_0_13)
+                                        __cs_mutex_lock(&library_lock, 2);
+tthread2_0_13: IF(2,13,tthread2_0_14)
+                                        __cs_mutex_unlock(&library_lock, 2);
+tthread2_0_14: IF(2,14,tthread2_0_15)
                                         __cs_local_lfds711_stack_pop_original_top[1] = (*__cs_param_lfds711_stack_pop_ss).top[1];
-tthread1_0_15: IF(1,15,tthread1_0_16)
+tthread2_0_15: IF(2,15,tthread2_0_16)
                                         __cs_local_lfds711_stack_pop_original_top[0] = (*__cs_param_lfds711_stack_pop_ss).top[0];
                                         static int __cs_local_lfds711_stack_pop_i;
                                         __cs_local_lfds711_stack_pop_i = 0;
@@ -842,24 +1851,24 @@ tthread1_0_15: IF(1,15,tthread1_0_16)
                                         __cs_local_lfds711_stack_pop___cs_tmp_if_cond_8 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
                                         if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8)
                                                                         {
-tthread1_0_16: IF(1,16,tthread1_0_17)
+tthread2_0_16: IF(2,16,tthread2_0_17)
                                         *__cs_param_lfds711_stack_pop_se = 0;
                                         __cs_retval__lfds711_stack_pop_1 = 0;
                                         goto __exit__lfds711_stack_pop_1;
                                                                                 ;
                                                                         }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 17);
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 17);
                                                                         ;
-tthread1_0_17: IF(1,17,tthread1_0_18)
+tthread2_0_17: IF(2,17,tthread2_0_18)
                                         __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
-tthread1_0_18: IF(1,18,tthread1_0_19)
+tthread2_0_18: IF(2,18,tthread2_0_19)
                                         __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
-tthread1_0_19: IF(1,19,tthread1_0_20)
-                                        __cs_mutex_lock(&library_lock, 1);
-tthread1_0_20: IF(1,20,tthread1_0_21)
+tthread2_0_19: IF(2,19,tthread2_0_20)
+                                        __cs_mutex_lock(&library_lock, 2);
+tthread2_0_20: IF(2,20,tthread2_0_21)
                                         __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
-tthread1_0_21: IF(1,21,tthread1_0_22)
-                                        __cs_mutex_unlock(&library_lock, 1);
+tthread2_0_21: IF(2,21,tthread2_0_22)
+                                        __cs_mutex_unlock(&library_lock, 2);
                                         ;
                                                                         ;
                                         static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_9;
@@ -887,24 +1896,24 @@ tthread1_0_21: IF(1,21,tthread1_0_22)
                                                                                         }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
-tthread1_0_22: IF(1,22,tthread1_0_23)
+tthread2_0_22: IF(2,22,tthread2_0_23)
                                         __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_2:
-                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 23);
+                                        __exit_loop_14:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 23);
                                         ;
                                                                                         ;
-                                        __exit__exponential_backoff_1_0:
-                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 23);
+                                        __exit__exponential_backoff_3_0:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 23);
                                         ;
                                                                                         ;
                                                                                 }
                                         ;
-tthread1_0_23: IF(1,23,tthread1_0_24)
-                                        __cs_mutex_lock(&library_lock, 1);
-tthread1_0_24: IF(1,24,tthread1_0_25)
-                                        __cs_mutex_unlock(&library_lock, 1);
+tthread2_0_23: IF(2,23,tthread2_0_24)
+                                        __cs_mutex_lock(&library_lock, 2);
+tthread2_0_24: IF(2,24,tthread2_0_25)
+                                        __cs_mutex_unlock(&library_lock, 2);
                                                                         }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 25);
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 25);
                                                                         ;
                                         __cs_local_lfds711_stack_pop_i++;
                                         ;
@@ -913,733 +1922,56 @@ tthread1_0_24: IF(1,24,tthread1_0_25)
                                         __cs_local_lfds711_stack_pop___cs_tmp_if_cond_10 = __cs_local_lfds711_stack_pop_i > 1000;
                                         if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10)
                                                                         {
-                                        goto __exit_loop_1;
+                                        goto __exit_loop_13;
                                                                                 ;
                                                                         }
                                         ;
                                                                 }
                                         ;
                                         __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1++;
-tthread1_0_25: IF(1,25,tthread1_0_26)
-                                        __CPROVER_assume(!(__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1 < 1));
-                                        __exit_loop_1:
-                                                                __CPROVER_assume(__cs_pc_cs[1] >= 26);
-                                        ;
-                                                                ;
-                                        if (
-                                        !(__cs_local_lfds711_stack_pop_result == 0))
-                                                                {
-                                        goto __exit_loop_3;
-                                                                        ;
-                                                                }
-                                        ;
-                                                                {
-                                        ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
-                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
-                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
-                                                                        {
-tthread1_0_26: IF(1,26,tthread1_0_27)
-                                        *__cs_param_lfds711_stack_pop_se = 0;
-                                        __cs_retval__lfds711_stack_pop_1 = 0;
-                                        goto __exit__lfds711_stack_pop_1;
-                                                                                ;
-                                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 27);
-                                                                        ;
-tthread1_0_27: IF(1,27,tthread1_0_28)
-                                        __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
-tthread1_0_28: IF(1,28,tthread1_0_29)
-                                        __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
-tthread1_0_29: IF(1,29,tthread1_0_30)
-                                        __cs_mutex_lock(&library_lock, 1);
-tthread1_0_30: IF(1,30,tthread1_0_31)
-                                        __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
-tthread1_0_31: IF(1,31,tthread1_0_32)
-                                        __cs_mutex_unlock(&library_lock, 1);
-                                        ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
-                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
-                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
-                                                                        {
-                                                                                {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                        {
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                        {
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                        {
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-tthread1_0_32: IF(1,32,tthread1_0_33)
-                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_4:
-                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 33);
-                                        ;
-                                                                                        ;
-                                        __exit__exponential_backoff_2_0:
-                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 33);
-                                        ;
-                                                                                        ;
-                                                                                }
-                                        ;
-tthread1_0_33: IF(1,33,tthread1_0_34)
-                                        __cs_mutex_lock(&library_lock, 1);
-tthread1_0_34: IF(1,34,tthread1_0_35)
-                                        __cs_mutex_unlock(&library_lock, 1);
-                                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 35);
-                                                                        ;
-                                        __cs_local_lfds711_stack_pop_i++;
-                                        ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
-                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
-                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
-                                                                        {
-                                        goto __exit_loop_3;
-                                                                                ;
-                                                                        }
-                                        ;
-                                                                }
-                                        ;
-                                        if (
-                                        !(__cs_local_lfds711_stack_pop_result == 0))
-                                                                {
-                                        goto __exit_loop_3;
-                                                                        ;
-                                                                }
-                                        ;
-                                                                {
-                                        ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
-                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
-                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
-                                                                        {
-tthread1_0_35: IF(1,35,tthread1_0_36)
-                                        *__cs_param_lfds711_stack_pop_se = 0;
-                                        __cs_retval__lfds711_stack_pop_1 = 0;
-                                        goto __exit__lfds711_stack_pop_1;
-                                                                                ;
-                                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 36);
-                                                                        ;
-tthread1_0_36: IF(1,36,tthread1_0_37)
-                                        __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
-tthread1_0_37: IF(1,37,tthread1_0_38)
-                                        __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
-tthread1_0_38: IF(1,38,tthread1_0_39)
-                                        __cs_mutex_lock(&library_lock, 1);
-tthread1_0_39: IF(1,39,tthread1_0_40)
-                                        __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
-tthread1_0_40: IF(1,40,tthread1_0_41)
-                                        __cs_mutex_unlock(&library_lock, 1);
-                                        ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
-                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
-                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
-                                                                        {
-                                                                                {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                        {
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                        {
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                        {
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-tthread1_0_41: IF(1,41,tthread1_0_42)
-                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_5:
-                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 42);
-                                        ;
-                                                                                        ;
-                                        __exit__exponential_backoff_2_1:
-                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 42);
-                                        ;
-                                                                                        ;
-                                                                                }
-                                        ;
-tthread1_0_42: IF(1,42,tthread1_0_43)
-                                        __cs_mutex_lock(&library_lock, 1);
-tthread1_0_43: IF(1,43,tthread1_0_44)
-                                        __cs_mutex_unlock(&library_lock, 1);
-                                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 44);
-                                                                        ;
-                                        __cs_local_lfds711_stack_pop_i++;
-                                        ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
-                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
-                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
-                                                                        {
-                                        goto __exit_loop_3;
-                                                                                ;
-                                                                        }
-                                        ;
-                                                                }
-                                        ;
-                                        if (
-                                        !(__cs_local_lfds711_stack_pop_result == 0))
-                                                                {
-                                        goto __exit_loop_3;
-                                                                        ;
-                                                                }
-                                        ;
-                                                                {
-                                        ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
-                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
-                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
-                                                                        {
-tthread1_0_44: IF(1,44,tthread1_0_45)
-                                        *__cs_param_lfds711_stack_pop_se = 0;
-                                        __cs_retval__lfds711_stack_pop_1 = 0;
-                                        goto __exit__lfds711_stack_pop_1;
-                                                                                ;
-                                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 45);
-                                                                        ;
-tthread1_0_45: IF(1,45,tthread1_0_46)
-                                        __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
-tthread1_0_46: IF(1,46,tthread1_0_47)
-                                        __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
-tthread1_0_47: IF(1,47,tthread1_0_48)
-                                        __cs_mutex_lock(&library_lock, 1);
-tthread1_0_48: IF(1,48,tthread1_0_49)
-                                        __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
-tthread1_0_49: IF(1,49,tthread1_0_50)
-                                        __cs_mutex_unlock(&library_lock, 1);
-                                        ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
-                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
-                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
-                                                                        {
-                                                                                {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                        {
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                        {
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                        {
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-tthread1_0_50: IF(1,50,tthread1_0_51)
-                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_6:
-                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 51);
-                                        ;
-                                                                                        ;
-                                        __exit__exponential_backoff_2_2:
-                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 51);
-                                        ;
-                                                                                        ;
-                                                                                }
-                                        ;
-tthread1_0_51: IF(1,51,tthread1_0_52)
-                                        __cs_mutex_lock(&library_lock, 1);
-tthread1_0_52: IF(1,52,tthread1_0_53)
-                                        __cs_mutex_unlock(&library_lock, 1);
-                                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 53);
-                                                                        ;
-                                        __cs_local_lfds711_stack_pop_i++;
-                                        ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
-                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
-                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
-                                                                        {
-                                        goto __exit_loop_3;
-                                                                                ;
-                                                                        }
-                                        ;
-                                                                }
-                                        ;
-                                        if (
-                                        !(__cs_local_lfds711_stack_pop_result == 0))
-                                                                {
-                                        goto __exit_loop_3;
-                                                                        ;
-                                                                }
-                                        ;
-                                                                {
-                                        ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
-                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
-                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
-                                                                        {
-tthread1_0_53: IF(1,53,tthread1_0_54)
-                                        *__cs_param_lfds711_stack_pop_se = 0;
-                                        __cs_retval__lfds711_stack_pop_1 = 0;
-                                        goto __exit__lfds711_stack_pop_1;
-                                                                                ;
-                                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 54);
-                                                                        ;
-tthread1_0_54: IF(1,54,tthread1_0_55)
-                                        __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
-tthread1_0_55: IF(1,55,tthread1_0_56)
-                                        __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
-tthread1_0_56: IF(1,56,tthread1_0_57)
-                                        __cs_mutex_lock(&library_lock, 1);
-tthread1_0_57: IF(1,57,tthread1_0_58)
-                                        __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
-tthread1_0_58: IF(1,58,tthread1_0_59)
-                                        __cs_mutex_unlock(&library_lock, 1);
-                                        ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
-                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
-                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
-                                                                        {
-                                                                                {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                        {
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                        {
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                        {
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-tthread1_0_59: IF(1,59,tthread1_0_60)
-                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_7:
-                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 60);
-                                        ;
-                                                                                        ;
-                                        __exit__exponential_backoff_2_3:
-                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 60);
-                                        ;
-                                                                                        ;
-                                                                                }
-                                        ;
-tthread1_0_60: IF(1,60,tthread1_0_61)
-                                        __cs_mutex_lock(&library_lock, 1);
-tthread1_0_61: IF(1,61,tthread1_0_62)
-                                        __cs_mutex_unlock(&library_lock, 1);
-                                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 62);
-                                                                        ;
-                                        __cs_local_lfds711_stack_pop_i++;
-                                        ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
-                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
-                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
-                                                                        {
-                                        goto __exit_loop_3;
-                                                                                ;
-                                                                        }
-                                        ;
-                                                                }
-                                        ;
-                                        if (
-                                        !(__cs_local_lfds711_stack_pop_result == 0))
-                                                                {
-                                        goto __exit_loop_3;
-                                                                        ;
-                                                                }
-                                        ;
-                                                                {
-                                        ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
-                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
-                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
-                                                                        {
-tthread1_0_62: IF(1,62,tthread1_0_63)
-                                        *__cs_param_lfds711_stack_pop_se = 0;
-                                        __cs_retval__lfds711_stack_pop_1 = 0;
-                                        goto __exit__lfds711_stack_pop_1;
-                                                                                ;
-                                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 63);
-                                                                        ;
-tthread1_0_63: IF(1,63,tthread1_0_64)
-                                        __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
-tthread1_0_64: IF(1,64,tthread1_0_65)
-                                        __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
-tthread1_0_65: IF(1,65,tthread1_0_66)
-                                        __cs_mutex_lock(&library_lock, 1);
-tthread1_0_66: IF(1,66,tthread1_0_67)
-                                        __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
-tthread1_0_67: IF(1,67,tthread1_0_68)
-                                        __cs_mutex_unlock(&library_lock, 1);
-                                        ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
-                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
-                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
-                                                                        {
-                                                                                {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                        {
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                        {
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                        {
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-tthread1_0_68: IF(1,68,tthread1_0_69)
-                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_8:
-                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 69);
-                                        ;
-                                                                                        ;
-                                        __exit__exponential_backoff_2_4:
-                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 69);
-                                        ;
-                                                                                        ;
-                                                                                }
-                                        ;
-tthread1_0_69: IF(1,69,tthread1_0_70)
-                                        __cs_mutex_lock(&library_lock, 1);
-tthread1_0_70: IF(1,70,tthread1_0_71)
-                                        __cs_mutex_unlock(&library_lock, 1);
-                                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 71);
-                                                                        ;
-                                        __cs_local_lfds711_stack_pop_i++;
-                                        ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
-                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
-                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
-                                                                        {
-                                        goto __exit_loop_3;
-                                                                                ;
-                                                                        }
-                                        ;
-                                                                }
-                                        ;
-tthread1_0_71: IF(1,71,tthread1_0_72)
-                                        __CPROVER_assume(
-                                        !(__cs_local_lfds711_stack_pop_result == 0));
-                                        __exit_loop_3:
-                                                                __CPROVER_assume(__cs_pc_cs[1] >= 72);
-                                        ;
-                                                                ;
-tthread1_0_72: IF(1,72,tthread1_0_73)
-                                        *__cs_param_lfds711_stack_pop_se = __cs_local_lfds711_stack_pop_original_top[0];
-                                        __cs_retval__lfds711_stack_pop_1 = __cs_local_lfds711_stack_pop_result;
-                                        goto __exit__lfds711_stack_pop_1;
-                                                                ;
-                                        __exit__lfds711_stack_pop_1:
-                                                                __CPROVER_assume(__cs_pc_cs[1] >= 73);
-                                        ;
-                                                                ;
-                                                        }
-                                        ;
-                                        __cs_local_delete_res = __cs_retval__lfds711_stack_pop_1;
-                                        ;
-                                                        ;
-                                        static _Bool __cs_local_delete___cs_tmp_if_cond_19;
-                                        __cs_local_delete___cs_tmp_if_cond_19 = __cs_local_delete_res == 0;
-                                        if (__cs_local_delete___cs_tmp_if_cond_19)
-                                                        {
-                                        __cs_retval__delete_1 = __cs_local_delete_res;
-                                        goto __exit__delete_1;
-                                                                ;
-                                                        }
-                                        ;
-tthread1_0_73: IF(1,73,tthread1_0_74)
-                                        __cs_local_delete_temp_td = (*__cs_local_delete_se).value;
-                                        static int __cs_local_delete_id_popped;
-tthread1_0_74: IF(1,74,tthread1_0_75)
-                                        __cs_local_delete_id_popped = (*__cs_local_delete_temp_td).user_id;
-tthread1_0_75: IF(1,75,tthread1_0_76)
-                                        printf("%llu\n", (*__cs_local_delete_temp_td).user_id);
-                                        __cs_retval__delete_1 = __cs_local_delete_res;
-                                        goto __exit__delete_1;
-                                                        ;
-                                        __exit__delete_1:
-                                                        __CPROVER_assume(__cs_pc_cs[1] >= 76);
-                                        ;
-                                                        ;
-                                                }
-                                        ;
-                                        __cs_retval__delete_1;
-                                        ;
-                                                ;
-                                        static _Bool __cs_local_thread1___cs_tmp_if_cond_25;
-tthread1_0_76: IF(1,76,tthread1_0_77)
-                                        __cs_local_thread1___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
-                                        if (__cs_local_thread1___cs_tmp_if_cond_25)
-                                                {
-tthread1_0_77: IF(1,77,tthread1_0_78)
-                                        __cs_mutex_unlock(&lock, 1);
-                                                }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 78);
-                                                ;
-                                        ;
-                                                ;
-                                        __exit_thread1:
-                                                __CPROVER_assume(__cs_pc_cs[1] >= 78);
-                                        ;
-                                                ;
-tthread1_0_78: 
-                                        __cs_exit(0, 1);
-                                        }
-                                        void *thread2_0(void *__cs_param_thread2___cs_unused)
-                                        {
-IF(2,0,tthread2_0_1)
-                                        ;
-                                                ;
-                                        static _Bool __cs_local_thread2___cs_tmp_if_cond_26;
-tthread2_0_1: IF(2,1,tthread2_0_2)
-                                        __cs_local_thread2___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
-                                        if (__cs_local_thread2___cs_tmp_if_cond_26)
-                                                {
-tthread2_0_2: IF(2,2,tthread2_0_3)
-                                        __cs_mutex_lock(&lock, 2);
-                                                }
-                                        __CPROVER_assume(__cs_pc_cs[2] >= 3);
-                                                ;
-                                        ;
-                                                ;
-                                                {
-                                        static struct lfds711_stack_state *__cs_param_insert_s;
-tthread2_0_3: IF(2,3,tthread2_0_4)
-                                        __cs_param_insert_s = ss;
-                                        static int long long unsigned __cs_param_insert_id;
-                                        __cs_param_insert_id = 2;
-                                        static struct test_data *__cs_local_insert_td;
-tthread2_0_4: IF(2,4,tthread2_0_5)
-                                        __cs_local_insert_td = __cs_safe_malloc(sizeof(struct test_data));
-tthread2_0_5: IF(2,5,tthread2_0_6)
-                                        (*__cs_local_insert_td).user_id = __cs_param_insert_id;
-tthread2_0_6: IF(2,6,tthread2_0_7)
-                                        (*__cs_local_insert_td).se.value = (void *) ((lfds711_pal_uint_t) __cs_local_insert_td);
-                                                        {
-                                        static struct lfds711_stack_state *__cs_param_lfds711_stack_push_ss;
-tthread2_0_7: IF(2,7,tthread2_0_8)
-                                        __cs_param_lfds711_stack_push_ss = (struct lfds711_stack_state *) __cs_param_insert_s;
-                                        static struct lfds711_stack_element *__cs_param_lfds711_stack_push_se;
-tthread2_0_8: IF(2,8,tthread2_0_9)
-                                        __cs_param_lfds711_stack_push_se = &(*__cs_local_insert_td).se;
-                                        static char unsigned __cs_local_lfds711_stack_push_result;
-                                        static lfds711_pal_uint_t __cs_local_lfds711_stack_push_backoff_iteration;
-                                        __cs_local_lfds711_stack_push_backoff_iteration = 0;
-                                        static struct lfds711_stack_element *__cs_local_lfds711_stack_push_new_top[2];
-                                        static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_push_original_top[2];
-                                        ;
-                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_14;
-tthread2_0_9: IF(2,9,tthread2_0_10)
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_14 = !(__cs_param_lfds711_stack_push_ss != 0);
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_14)
-                                                                {
-                                        static char *__cs_local_lfds711_stack_push_c;
-tthread2_0_10: IF(2,10,tthread2_0_11)
-                                        __cs_local_lfds711_stack_push_c = 0;
-tthread2_0_11: IF(2,11,tthread2_0_12)
-                                        *__cs_local_lfds711_stack_push_c = 0;
-                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[2] >= 12);
-                                                                ;
-                                        ;
-                                                                ;
-                                        ;
-                                                                ;
-                                        ;
-                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_15;
-tthread2_0_12: IF(2,12,tthread2_0_13)
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_15 = !(__cs_param_lfds711_stack_push_se != 0);
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
-                                                                {
-                                        static char *__cs_local_lfds711_stack_push_c;
-tthread2_0_13: IF(2,13,tthread2_0_14)
-                                        __cs_local_lfds711_stack_push_c = 0;
-tthread2_0_14: IF(2,14,tthread2_0_15)
-                                        *__cs_local_lfds711_stack_push_c = 0;
-                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[2] >= 15);
-                                                                ;
-                                        ;
-                                                                ;
-                                        ;
-                                                                ;
-tthread2_0_15: IF(2,15,tthread2_0_16)
-                                        __cs_local_lfds711_stack_push_new_top[0] = __cs_param_lfds711_stack_push_se;
-tthread2_0_16: IF(2,16,tthread2_0_17)
-                                        __cs_local_lfds711_stack_push_original_top[1] = (*__cs_param_lfds711_stack_push_ss).top[1];
-tthread2_0_17: IF(2,17,tthread2_0_18)
-                                        __cs_local_lfds711_stack_push_original_top[0] = (*__cs_param_lfds711_stack_push_ss).top[0];
-                                        __cs_local_lfds711_stack_push_result = 0;
-                                        static int __cs_local_lfds711_stack_push_i;
-                                        __cs_local_lfds711_stack_push_i = 0;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
-                                                                {
-                                        goto __exit_loop_9;
-                                                                        ;
-                                                                }
-                                        ;
-                                                                {
-tthread2_0_18: IF(2,18,tthread2_0_19)
-                                        __cs_mutex_lock(&library_lock, 2);
-tthread2_0_19: IF(2,19,tthread2_0_20)
-                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tthread2_0_20: IF(2,20,tthread2_0_21)
-                                        __cs_mutex_unlock(&library_lock, 2);
-tthread2_0_21: IF(2,21,tthread2_0_22)
-                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tthread2_0_22: IF(2,22,tthread2_0_23)
-                                        __cs_mutex_lock(&library_lock, 2);
-tthread2_0_23: IF(2,23,tthread2_0_24)
-                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tthread2_0_24: IF(2,24,tthread2_0_25)
-                                        __cs_mutex_unlock(&library_lock, 2);
-                                        ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                                                                        {
-                                                                                {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                        {
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                        {
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                        {
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
 tthread2_0_25: IF(2,25,tthread2_0_26)
-                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_10:
-                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 26);
+                                        __CPROVER_assume(!(__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1 < 1));
+                                        __exit_loop_13:
+                                                                __CPROVER_assume(__cs_pc_cs[2] >= 26);
                                         ;
-                                                                                        ;
-                                        __exit__exponential_backoff_3_0:
-                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 26);
-                                        ;
-                                                                                        ;
-                                                                                }
-                                        ;
-                                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[2] >= 26);
+                                                                ;
+                                        if (
+                                        !(__cs_local_lfds711_stack_pop_result == 0))
+                                                                {
+                                        goto __exit_loop_15;
                                                                         ;
-                                        __cs_local_lfds711_stack_push_i++;
+                                                                }
+                                        ;
+                                                                {
                                         ;
                                                                         ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
                                                                         {
-                                        goto __exit_loop_9;
+tthread2_0_26: IF(2,26,tthread2_0_27)
+                                        *__cs_param_lfds711_stack_pop_se = 0;
+                                        __cs_retval__lfds711_stack_pop_1 = 0;
+                                        goto __exit__lfds711_stack_pop_1;
                                                                                 ;
                                                                         }
-                                        ;
-                                                                }
-                                        ;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
-                                                                {
-                                        goto __exit_loop_9;
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 27);
                                                                         ;
-                                                                }
-                                        ;
-                                                                {
-tthread2_0_26: IF(2,26,tthread2_0_27)
-                                        __cs_mutex_lock(&library_lock, 2);
 tthread2_0_27: IF(2,27,tthread2_0_28)
-                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+                                        __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
 tthread2_0_28: IF(2,28,tthread2_0_29)
-                                        __cs_mutex_unlock(&library_lock, 2);
+                                        __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
 tthread2_0_29: IF(2,29,tthread2_0_30)
-                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tthread2_0_30: IF(2,30,tthread2_0_31)
                                         __cs_mutex_lock(&library_lock, 2);
+tthread2_0_30: IF(2,30,tthread2_0_31)
+                                        __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
 tthread2_0_31: IF(2,31,tthread2_0_32)
-                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tthread2_0_32: IF(2,32,tthread2_0_33)
                                         __cs_mutex_unlock(&library_lock, 2);
                                         ;
                                                                         ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
                                                                         {
                                                                                 {
                                         static int __cs_local_exponential_backoff_loop;
@@ -1662,60 +1994,75 @@ tthread2_0_32: IF(2,32,tthread2_0_33)
                                                                                         }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
-tthread2_0_33: IF(2,33,tthread2_0_34)
+tthread2_0_32: IF(2,32,tthread2_0_33)
                                         __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_11:
-                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 34);
+                                        __exit_loop_16:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 33);
                                         ;
                                                                                         ;
-                                        __exit__exponential_backoff_3_1:
-                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 34);
+                                        __exit__exponential_backoff_4_0:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 33);
                                         ;
                                                                                         ;
                                                                                 }
                                         ;
+tthread2_0_33: IF(2,33,tthread2_0_34)
+                                        __cs_mutex_lock(&library_lock, 2);
+tthread2_0_34: IF(2,34,tthread2_0_35)
+                                        __cs_mutex_unlock(&library_lock, 2);
                                                                         }
-                                        __CPROVER_assume(__cs_pc_cs[2] >= 34);
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 35);
                                                                         ;
-                                        __cs_local_lfds711_stack_push_i++;
+                                        __cs_local_lfds711_stack_pop_i++;
                                         ;
                                                                         ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
                                                                         {
-                                        goto __exit_loop_9;
+                                        goto __exit_loop_15;
                                                                                 ;
                                                                         }
                                         ;
                                                                 }
                                         ;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                        if (
+                                        !(__cs_local_lfds711_stack_pop_result == 0))
                                                                 {
-                                        goto __exit_loop_9;
+                                        goto __exit_loop_15;
                                                                         ;
                                                                 }
                                         ;
                                                                 {
-tthread2_0_34: IF(2,34,tthread2_0_35)
-                                        __cs_mutex_lock(&library_lock, 2);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
+                                                                        {
 tthread2_0_35: IF(2,35,tthread2_0_36)
-                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+                                        *__cs_param_lfds711_stack_pop_se = 0;
+                                        __cs_retval__lfds711_stack_pop_1 = 0;
+                                        goto __exit__lfds711_stack_pop_1;
+                                                                                ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 36);
+                                                                        ;
 tthread2_0_36: IF(2,36,tthread2_0_37)
-                                        __cs_mutex_unlock(&library_lock, 2);
+                                        __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
 tthread2_0_37: IF(2,37,tthread2_0_38)
-                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
+                                        __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
 tthread2_0_38: IF(2,38,tthread2_0_39)
                                         __cs_mutex_lock(&library_lock, 2);
 tthread2_0_39: IF(2,39,tthread2_0_40)
-                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
+                                        __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
 tthread2_0_40: IF(2,40,tthread2_0_41)
                                         __cs_mutex_unlock(&library_lock, 2);
                                         ;
                                                                         ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
                                                                         {
                                                                                 {
                                         static int __cs_local_exponential_backoff_loop;
@@ -1740,58 +2087,73 @@ tthread2_0_40: IF(2,40,tthread2_0_41)
                                         __cs_local_exponential_backoff_loop++;
 tthread2_0_41: IF(2,41,tthread2_0_42)
                                         __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_12:
+                                        __exit_loop_17:
                                                                                         __CPROVER_assume(__cs_pc_cs[2] >= 42);
                                         ;
                                                                                         ;
-                                        __exit__exponential_backoff_3_2:
+                                        __exit__exponential_backoff_4_1:
                                                                                         __CPROVER_assume(__cs_pc_cs[2] >= 42);
                                         ;
                                                                                         ;
                                                                                 }
                                         ;
-                                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[2] >= 42);
-                                                                        ;
-                                        __cs_local_lfds711_stack_push_i++;
-                                        ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                                                                        {
-                                        goto __exit_loop_9;
-                                                                                ;
-                                                                        }
-                                        ;
-                                                                }
-                                        ;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
-                                                                {
-                                        goto __exit_loop_9;
-                                                                        ;
-                                                                }
-                                        ;
-                                                                {
 tthread2_0_42: IF(2,42,tthread2_0_43)
                                         __cs_mutex_lock(&library_lock, 2);
 tthread2_0_43: IF(2,43,tthread2_0_44)
-                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tthread2_0_44: IF(2,44,tthread2_0_45)
                                         __cs_mutex_unlock(&library_lock, 2);
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 44);
+                                                                        ;
+                                        __cs_local_lfds711_stack_pop_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
+                                                                        {
+                                        goto __exit_loop_15;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (
+                                        !(__cs_local_lfds711_stack_pop_result == 0))
+                                                                {
+                                        goto __exit_loop_15;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
+                                                                        {
+tthread2_0_44: IF(2,44,tthread2_0_45)
+                                        *__cs_param_lfds711_stack_pop_se = 0;
+                                        __cs_retval__lfds711_stack_pop_1 = 0;
+                                        goto __exit__lfds711_stack_pop_1;
+                                                                                ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 45);
+                                                                        ;
 tthread2_0_45: IF(2,45,tthread2_0_46)
-                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
+                                        __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
 tthread2_0_46: IF(2,46,tthread2_0_47)
-                                        __cs_mutex_lock(&library_lock, 2);
+                                        __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
 tthread2_0_47: IF(2,47,tthread2_0_48)
-                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
+                                        __cs_mutex_lock(&library_lock, 2);
 tthread2_0_48: IF(2,48,tthread2_0_49)
+                                        __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
+tthread2_0_49: IF(2,49,tthread2_0_50)
                                         __cs_mutex_unlock(&library_lock, 2);
                                         ;
                                                                         ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
                                                                         {
                                                                                 {
                                         static int __cs_local_exponential_backoff_loop;
@@ -1814,60 +2176,75 @@ tthread2_0_48: IF(2,48,tthread2_0_49)
                                                                                         }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
-tthread2_0_49: IF(2,49,tthread2_0_50)
+tthread2_0_50: IF(2,50,tthread2_0_51)
                                         __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_13:
-                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 50);
+                                        __exit_loop_18:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 51);
                                         ;
                                                                                         ;
-                                        __exit__exponential_backoff_3_3:
-                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 50);
+                                        __exit__exponential_backoff_4_2:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 51);
                                         ;
                                                                                         ;
                                                                                 }
                                         ;
-                                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[2] >= 50);
-                                                                        ;
-                                        __cs_local_lfds711_stack_push_i++;
-                                        ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                                                                        {
-                                        goto __exit_loop_9;
-                                                                                ;
-                                                                        }
-                                        ;
-                                                                }
-                                        ;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
-                                                                {
-                                        goto __exit_loop_9;
-                                                                        ;
-                                                                }
-                                        ;
-                                                                {
-tthread2_0_50: IF(2,50,tthread2_0_51)
-                                        __cs_mutex_lock(&library_lock, 2);
 tthread2_0_51: IF(2,51,tthread2_0_52)
-                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+                                        __cs_mutex_lock(&library_lock, 2);
 tthread2_0_52: IF(2,52,tthread2_0_53)
                                         __cs_mutex_unlock(&library_lock, 2);
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 53);
+                                                                        ;
+                                        __cs_local_lfds711_stack_pop_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
+                                                                        {
+                                        goto __exit_loop_15;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (
+                                        !(__cs_local_lfds711_stack_pop_result == 0))
+                                                                {
+                                        goto __exit_loop_15;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
+                                                                        {
 tthread2_0_53: IF(2,53,tthread2_0_54)
-                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
+                                        *__cs_param_lfds711_stack_pop_se = 0;
+                                        __cs_retval__lfds711_stack_pop_1 = 0;
+                                        goto __exit__lfds711_stack_pop_1;
+                                                                                ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 54);
+                                                                        ;
 tthread2_0_54: IF(2,54,tthread2_0_55)
-                                        __cs_mutex_lock(&library_lock, 2);
+                                        __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
 tthread2_0_55: IF(2,55,tthread2_0_56)
-                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
+                                        __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
 tthread2_0_56: IF(2,56,tthread2_0_57)
+                                        __cs_mutex_lock(&library_lock, 2);
+tthread2_0_57: IF(2,57,tthread2_0_58)
+                                        __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
+tthread2_0_58: IF(2,58,tthread2_0_59)
                                         __cs_mutex_unlock(&library_lock, 2);
                                         ;
                                                                         ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
                                                                         {
                                                                                 {
                                         static int __cs_local_exponential_backoff_loop;
@@ -1890,73 +2267,688 @@ tthread2_0_56: IF(2,56,tthread2_0_57)
                                                                                         }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
-tthread2_0_57: IF(2,57,tthread2_0_58)
+tthread2_0_59: IF(2,59,tthread2_0_60)
                                         __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_14:
-                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 58);
+                                        __exit_loop_19:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 60);
                                         ;
                                                                                         ;
-                                        __exit__exponential_backoff_3_4:
-                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 58);
+                                        __exit__exponential_backoff_4_3:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 60);
                                         ;
                                                                                         ;
                                                                                 }
                                         ;
+tthread2_0_60: IF(2,60,tthread2_0_61)
+                                        __cs_mutex_lock(&library_lock, 2);
+tthread2_0_61: IF(2,61,tthread2_0_62)
+                                        __cs_mutex_unlock(&library_lock, 2);
                                                                         }
-                                        __CPROVER_assume(__cs_pc_cs[2] >= 58);
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 62);
                                                                         ;
-                                        __cs_local_lfds711_stack_push_i++;
+                                        __cs_local_lfds711_stack_pop_i++;
                                         ;
                                                                         ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
                                                                         {
-                                        goto __exit_loop_9;
+                                        goto __exit_loop_15;
                                                                                 ;
                                                                         }
                                         ;
                                                                 }
                                         ;
-tthread2_0_58: IF(2,58,tthread2_0_59)
-                                        __CPROVER_assume(!(__cs_local_lfds711_stack_push_result == 0));
-                                        __exit_loop_9:
-                                                                __CPROVER_assume(__cs_pc_cs[2] >= 59);
+                                        if (
+                                        !(__cs_local_lfds711_stack_pop_result == 0))
+                                                                {
+                                        goto __exit_loop_15;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
+                                                                        {
+tthread2_0_62: IF(2,62,tthread2_0_63)
+                                        *__cs_param_lfds711_stack_pop_se = 0;
+                                        __cs_retval__lfds711_stack_pop_1 = 0;
+                                        goto __exit__lfds711_stack_pop_1;
+                                                                                ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 63);
+                                                                        ;
+tthread2_0_63: IF(2,63,tthread2_0_64)
+                                        __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
+tthread2_0_64: IF(2,64,tthread2_0_65)
+                                        __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
+tthread2_0_65: IF(2,65,tthread2_0_66)
+                                        __cs_mutex_lock(&library_lock, 2);
+tthread2_0_66: IF(2,66,tthread2_0_67)
+                                        __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
+tthread2_0_67: IF(2,67,tthread2_0_68)
+                                        __cs_mutex_unlock(&library_lock, 2);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tthread2_0_68: IF(2,68,tthread2_0_69)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_20:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 69);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_4_4:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 69);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+tthread2_0_69: IF(2,69,tthread2_0_70)
+                                        __cs_mutex_lock(&library_lock, 2);
+tthread2_0_70: IF(2,70,tthread2_0_71)
+                                        __cs_mutex_unlock(&library_lock, 2);
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 71);
+                                                                        ;
+                                        __cs_local_lfds711_stack_pop_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
+                                                                        {
+                                        goto __exit_loop_15;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+tthread2_0_71: IF(2,71,tthread2_0_72)
+                                        __CPROVER_assume(
+                                        !(__cs_local_lfds711_stack_pop_result == 0));
+                                        __exit_loop_15:
+                                                                __CPROVER_assume(__cs_pc_cs[2] >= 72);
                                         ;
                                                                 ;
-                                        goto __exit__lfds711_stack_push_1;
+tthread2_0_72: IF(2,72,tthread2_0_73)
+                                        *__cs_param_lfds711_stack_pop_se = __cs_local_lfds711_stack_pop_original_top[0];
+                                        __cs_retval__lfds711_stack_pop_1 = __cs_local_lfds711_stack_pop_result;
+                                        goto __exit__lfds711_stack_pop_1;
                                                                 ;
-                                        __exit__lfds711_stack_push_1:
-                                                                __CPROVER_assume(__cs_pc_cs[2] >= 59);
+                                        __exit__lfds711_stack_pop_1:
+                                                                __CPROVER_assume(__cs_pc_cs[2] >= 73);
                                         ;
                                                                 ;
                                                         }
                                         ;
-                                        __exit__insert_1:
-                                                        __CPROVER_assume(__cs_pc_cs[2] >= 59);
+                                        __cs_local_delete_res = __cs_retval__lfds711_stack_pop_1;
+                                        ;
+                                                        ;
+                                        static _Bool __cs_local_delete___cs_tmp_if_cond_19;
+                                        __cs_local_delete___cs_tmp_if_cond_19 = __cs_local_delete_res != 0;
+                                        if (__cs_local_delete___cs_tmp_if_cond_19)
+                                                        {
+tthread2_0_73: IF(2,73,tthread2_0_74)
+                                        free((*__cs_local_delete_se).value);
+                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 74);
+                                                        ;
+                                        __cs_retval__delete_1 = __cs_local_delete_res;
+                                        goto __exit__delete_1;
+                                                        ;
+                                        __exit__delete_1:
+                                                        __CPROVER_assume(__cs_pc_cs[2] >= 74);
+                                        ;
+                                                        ;
+                                                }
+                                        ;
+                                        __cs_retval__delete_1;
+                                        ;
+                                                ;
+                                        static _Bool __cs_local_thread2___cs_tmp_if_cond_29;
+tthread2_0_74: IF(2,74,tthread2_0_75)
+                                        __cs_local_thread2___cs_tmp_if_cond_29 = ATOMIC_OPERATION;
+                                        if (__cs_local_thread2___cs_tmp_if_cond_29)
+                                                {
+tthread2_0_75: IF(2,75,tthread2_0_76)
+                                        __cs_mutex_unlock(&lock, 2);
+                                                }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 76);
+                                                ;
+                                        ;
+                                                ;
+                                        ;
+                                                ;
+                                        static _Bool __cs_local_thread2___cs_tmp_if_cond_30;
+tthread2_0_76: IF(2,76,tthread2_0_77)
+                                        __cs_local_thread2___cs_tmp_if_cond_30 = ATOMIC_OPERATION;
+                                        if (__cs_local_thread2___cs_tmp_if_cond_30)
+                                                {
+tthread2_0_77: IF(2,77,tthread2_0_78)
+                                        __cs_mutex_lock(&lock, 2);
+                                                }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 78);
+                                                ;
+                                        ;
+                                                ;
+                                                {
+                                        static struct lfds711_stack_state *__cs_param_insert_s;
+tthread2_0_78: IF(2,78,tthread2_0_79)
+                                        __cs_param_insert_s = ss;
+                                        static int long long unsigned __cs_param_insert_id;
+                                        __cs_param_insert_id = 2;
+                                        static struct test_data *__cs_local_insert_td;
+tthread2_0_79: IF(2,79,tthread2_0_80)
+                                        __cs_local_insert_td = __cs_safe_malloc(sizeof(struct test_data));
+tthread2_0_80: IF(2,80,tthread2_0_81)
+                                        (*__cs_local_insert_td).user_id = __cs_param_insert_id;
+tthread2_0_81: IF(2,81,tthread2_0_82)
+                                        (*__cs_local_insert_td).se.value = (void *) ((lfds711_pal_uint_t) __cs_local_insert_td);
+                                                        {
+                                        static struct lfds711_stack_state *__cs_param_lfds711_stack_push_ss;
+tthread2_0_82: IF(2,82,tthread2_0_83)
+                                        __cs_param_lfds711_stack_push_ss = (struct lfds711_stack_state *) __cs_param_insert_s;
+                                        static struct lfds711_stack_element *__cs_param_lfds711_stack_push_se;
+tthread2_0_83: IF(2,83,tthread2_0_84)
+                                        __cs_param_lfds711_stack_push_se = &(*__cs_local_insert_td).se;
+                                        static char unsigned __cs_local_lfds711_stack_push_result;
+                                        static lfds711_pal_uint_t __cs_local_lfds711_stack_push_backoff_iteration;
+                                        __cs_local_lfds711_stack_push_backoff_iteration = 0;
+                                        static struct lfds711_stack_element *__cs_local_lfds711_stack_push_new_top[2];
+                                        static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_push_original_top[2];
+                                        ;
+                                                                ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_14;
+tthread2_0_84: IF(2,84,tthread2_0_85)
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_14 = !(__cs_param_lfds711_stack_push_ss != 0);
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_14)
+                                                                {
+                                        static char *__cs_local_lfds711_stack_push_c;
+tthread2_0_85: IF(2,85,tthread2_0_86)
+                                        __cs_local_lfds711_stack_push_c = 0;
+tthread2_0_86: IF(2,86,tthread2_0_87)
+                                        *__cs_local_lfds711_stack_push_c = 0;
+                                                                }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 87);
+                                                                ;
+                                        ;
+                                                                ;
+                                        ;
+                                                                ;
+                                        ;
+                                                                ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_15;
+tthread2_0_87: IF(2,87,tthread2_0_88)
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_15 = !(__cs_param_lfds711_stack_push_se != 0);
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
+                                                                {
+                                        static char *__cs_local_lfds711_stack_push_c;
+tthread2_0_88: IF(2,88,tthread2_0_89)
+                                        __cs_local_lfds711_stack_push_c = 0;
+tthread2_0_89: IF(2,89,tthread2_0_90)
+                                        *__cs_local_lfds711_stack_push_c = 0;
+                                                                }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 90);
+                                                                ;
+                                        ;
+                                                                ;
+                                        ;
+                                                                ;
+tthread2_0_90: IF(2,90,tthread2_0_91)
+                                        __cs_local_lfds711_stack_push_new_top[0] = __cs_param_lfds711_stack_push_se;
+tthread2_0_91: IF(2,91,tthread2_0_92)
+                                        __cs_local_lfds711_stack_push_original_top[1] = (*__cs_param_lfds711_stack_push_ss).top[1];
+tthread2_0_92: IF(2,92,tthread2_0_93)
+                                        __cs_local_lfds711_stack_push_original_top[0] = (*__cs_param_lfds711_stack_push_ss).top[0];
+                                        __cs_local_lfds711_stack_push_result = 0;
+                                        static int __cs_local_lfds711_stack_push_i;
+                                        __cs_local_lfds711_stack_push_i = 0;
+                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                {
+                                        goto __exit_loop_21;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+tthread2_0_93: IF(2,93,tthread2_0_94)
+                                        __cs_mutex_lock(&library_lock, 2);
+tthread2_0_94: IF(2,94,tthread2_0_95)
+                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+tthread2_0_95: IF(2,95,tthread2_0_96)
+                                        __cs_mutex_unlock(&library_lock, 2);
+tthread2_0_96: IF(2,96,tthread2_0_97)
+                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
+tthread2_0_97: IF(2,97,tthread2_0_98)
+                                        __cs_mutex_lock(&library_lock, 2);
+tthread2_0_98: IF(2,98,tthread2_0_99)
+                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
+tthread2_0_99: IF(2,99,tthread2_0_100)
+                                        __cs_mutex_unlock(&library_lock, 2);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tthread2_0_100: IF(2,100,tthread2_0_101)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_22:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 101);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_5_0:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 101);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 101);
+                                                                        ;
+                                        __cs_local_lfds711_stack_push_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                                                                        {
+                                        goto __exit_loop_21;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                {
+                                        goto __exit_loop_21;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+tthread2_0_101: IF(2,101,tthread2_0_102)
+                                        __cs_mutex_lock(&library_lock, 2);
+tthread2_0_102: IF(2,102,tthread2_0_103)
+                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+tthread2_0_103: IF(2,103,tthread2_0_104)
+                                        __cs_mutex_unlock(&library_lock, 2);
+tthread2_0_104: IF(2,104,tthread2_0_105)
+                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
+tthread2_0_105: IF(2,105,tthread2_0_106)
+                                        __cs_mutex_lock(&library_lock, 2);
+tthread2_0_106: IF(2,106,tthread2_0_107)
+                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
+tthread2_0_107: IF(2,107,tthread2_0_108)
+                                        __cs_mutex_unlock(&library_lock, 2);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tthread2_0_108: IF(2,108,tthread2_0_109)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_23:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 109);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_5_1:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 109);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 109);
+                                                                        ;
+                                        __cs_local_lfds711_stack_push_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                                                                        {
+                                        goto __exit_loop_21;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                {
+                                        goto __exit_loop_21;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+tthread2_0_109: IF(2,109,tthread2_0_110)
+                                        __cs_mutex_lock(&library_lock, 2);
+tthread2_0_110: IF(2,110,tthread2_0_111)
+                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+tthread2_0_111: IF(2,111,tthread2_0_112)
+                                        __cs_mutex_unlock(&library_lock, 2);
+tthread2_0_112: IF(2,112,tthread2_0_113)
+                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
+tthread2_0_113: IF(2,113,tthread2_0_114)
+                                        __cs_mutex_lock(&library_lock, 2);
+tthread2_0_114: IF(2,114,tthread2_0_115)
+                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
+tthread2_0_115: IF(2,115,tthread2_0_116)
+                                        __cs_mutex_unlock(&library_lock, 2);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tthread2_0_116: IF(2,116,tthread2_0_117)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_24:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 117);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_5_2:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 117);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 117);
+                                                                        ;
+                                        __cs_local_lfds711_stack_push_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                                                                        {
+                                        goto __exit_loop_21;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                {
+                                        goto __exit_loop_21;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+tthread2_0_117: IF(2,117,tthread2_0_118)
+                                        __cs_mutex_lock(&library_lock, 2);
+tthread2_0_118: IF(2,118,tthread2_0_119)
+                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+tthread2_0_119: IF(2,119,tthread2_0_120)
+                                        __cs_mutex_unlock(&library_lock, 2);
+tthread2_0_120: IF(2,120,tthread2_0_121)
+                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
+tthread2_0_121: IF(2,121,tthread2_0_122)
+                                        __cs_mutex_lock(&library_lock, 2);
+tthread2_0_122: IF(2,122,tthread2_0_123)
+                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
+tthread2_0_123: IF(2,123,tthread2_0_124)
+                                        __cs_mutex_unlock(&library_lock, 2);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tthread2_0_124: IF(2,124,tthread2_0_125)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_25:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 125);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_5_3:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 125);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 125);
+                                                                        ;
+                                        __cs_local_lfds711_stack_push_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                                                                        {
+                                        goto __exit_loop_21;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                {
+                                        goto __exit_loop_21;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+tthread2_0_125: IF(2,125,tthread2_0_126)
+                                        __cs_mutex_lock(&library_lock, 2);
+tthread2_0_126: IF(2,126,tthread2_0_127)
+                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+tthread2_0_127: IF(2,127,tthread2_0_128)
+                                        __cs_mutex_unlock(&library_lock, 2);
+tthread2_0_128: IF(2,128,tthread2_0_129)
+                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
+tthread2_0_129: IF(2,129,tthread2_0_130)
+                                        __cs_mutex_lock(&library_lock, 2);
+tthread2_0_130: IF(2,130,tthread2_0_131)
+                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
+tthread2_0_131: IF(2,131,tthread2_0_132)
+                                        __cs_mutex_unlock(&library_lock, 2);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tthread2_0_132: IF(2,132,tthread2_0_133)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_26:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 133);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_5_4:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 133);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 133);
+                                                                        ;
+                                        __cs_local_lfds711_stack_push_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                                                                        {
+                                        goto __exit_loop_21;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+tthread2_0_133: IF(2,133,tthread2_0_134)
+                                        __CPROVER_assume(!(__cs_local_lfds711_stack_push_result == 0));
+                                        __exit_loop_21:
+                                                                __CPROVER_assume(__cs_pc_cs[2] >= 134);
+                                        ;
+                                                                ;
+                                        goto __exit__lfds711_stack_push_3;
+                                                                ;
+                                        __exit__lfds711_stack_push_3:
+                                                                __CPROVER_assume(__cs_pc_cs[2] >= 134);
+                                        ;
+                                                                ;
+                                                        }
+                                        ;
+                                        __exit__insert_3:
+                                                        __CPROVER_assume(__cs_pc_cs[2] >= 134);
                                         ;
                                                         ;
                                                 }
                                         ;
                                         ;
                                                 ;
-                                        static _Bool __cs_local_thread2___cs_tmp_if_cond_27;
-tthread2_0_59: IF(2,59,tthread2_0_60)
-                                        __cs_local_thread2___cs_tmp_if_cond_27 = ATOMIC_OPERATION;
-                                        if (__cs_local_thread2___cs_tmp_if_cond_27)
+                                        static _Bool __cs_local_thread2___cs_tmp_if_cond_31;
+tthread2_0_134: IF(2,134,tthread2_0_135)
+                                        __cs_local_thread2___cs_tmp_if_cond_31 = ATOMIC_OPERATION;
+                                        if (__cs_local_thread2___cs_tmp_if_cond_31)
                                                 {
-tthread2_0_60: IF(2,60,tthread2_0_61)
+tthread2_0_135: IF(2,135,tthread2_0_136)
                                         __cs_mutex_unlock(&lock, 2);
                                                 }
-                                        __CPROVER_assume(__cs_pc_cs[2] >= 61);
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 136);
                                                 ;
                                         ;
                                                 ;
                                         __exit_thread2:
-                                                __CPROVER_assume(__cs_pc_cs[2] >= 61);
+                                                __CPROVER_assume(__cs_pc_cs[2] >= 136);
                                         ;
                                                 ;
-tthread2_0_61: 
+tthread2_0_136: 
                                         __cs_exit(0, 2);
                                         }
                                         int main_thread(void)
@@ -2184,8 +3176,8 @@ tmain_3: IF(0,3,tmain_4)
                                         static void *__cs_param_check_ss;
 tmain_4: IF(0,4,tmain_5)
                                         __cs_param_check_ss = ss;
-                                        static int __cs_local_check_size;
-                                        __cs_local_check_size = 0;
+                                        static unsigned long int __cs_local_check_size;
+                                        __cs_local_check_size = 14;
                                         assert(0);
                                         __exit__check_1:
                                                         __CPROVER_assume(__cs_pc_cs[0] >= 5);
@@ -2217,16 +3209,16 @@ tmain_5:
                                         if (__cs_active_thread[1])
                                                 {
                                         __cs_pc_cs[1] = __cs_tmp_t1_r0;
-                                        __CPROVER_assume(__cs_pc_cs[1] <= 78);
+                                        __CPROVER_assume(__cs_pc_cs[1] <= 121);
                                         thread1_0(__cs_threadargs[1]);
                                         __cs_pc[1] = __cs_pc_cs[1];
                                                 }
 /* thread2_0 */
-                                        unsigned __CPROVER_bitvector[6] __cs_tmp_t2_r0;
+                                        unsigned __CPROVER_bitvector[8] __cs_tmp_t2_r0;
                                         if (__cs_active_thread[2])
                                                 {
                                         __cs_pc_cs[2] = __cs_tmp_t2_r0;
-                                        __CPROVER_assume(__cs_pc_cs[2] <= 61);
+                                        __CPROVER_assume(__cs_pc_cs[2] <= 136);
                                         thread2_0(__cs_threadargs[2]);
                                         __cs_pc[2] = __cs_pc_cs[2];
                                                 }

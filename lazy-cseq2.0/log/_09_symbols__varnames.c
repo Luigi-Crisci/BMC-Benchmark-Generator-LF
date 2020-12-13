@@ -1,812 +1,824 @@
 list of functions:
-   assert_create(param: ss, size)  call count 0
+   check(param: ss)  call count 1
    lfds711_misc_force_store(param: )  call count 1
    exponential_backoff(param: )  call count 3
    __CSEQ_atomic_swap_stack_top(param: top, oldtop, newtop)  call count 3
    lfds711_misc_internal_backoff_init(param: bs)  call count 2
    lfds711_stack_init_valid_on_current_logical_core(param: ss, user_state)  call count 1
    lfds711_stack_pop(param: ss, se)  call count 4
-   lfds711_stack_push(param: ss, se)  call count 3
+   lfds711_stack_push(param: ss, se)  call count 4
    __CSEQ_atomic_compare_and_exchange(param: mptr, eptr, newval, weak_p, sm, fm)  call count 1
    __atomic_compare_exchange_n(param: mptr, eptr, newval, weak_p, sm, fm)  call count 0
    __CSEQ_atomic_exchange(param: previous, new, memorder)  call count 1
    __atomic_exchange_n(param: previous, new, memorder)  call count 0
    __atomic_thread_fence(param: i)  call count 0
    init(param: )  call count 1
-   insert(param: s, id)  call count 1
+   insert(param: s, id)  call count 3
    delete(param: s)  call count 1
-   contains(param: s, id)  call count 0
-   get_size(param: s)  call count 1
+   contains(param: s, id)  call count 1
+   get_size(param: s)  call count 0
    is_empty(param: s)  call count 0
-   push(param: __cs_unused)  call count 0
-   pop(param: __cs_unused)  call count 0
+   thread1(param: __cs_unused)  call count 0
+   thread2(param: __cs_unused)  call count 0
    main(param: )  call count 0
 
 list of thread functions:
-   push  call count 1
-   pop  call count 1
+   thread1  call count 1
+   thread2  call count 1
 
 parameters for main():
    (no params)
 
 Variables:
    (global)
-      id4  'ps'  
+      id6  'ps'  
          type 'struct lfds711_prng_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id5  'seed'  
+      id7  'seed'  
          type 'lfds711_pal_uint_t'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id6  'psts'  
+      id8  'psts'  
          type 'struct lfds711_prng_st_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id7  'None'  
+      id9  'None'  
          type 'enum lfds711_stack_query {LFDS711_STACK_QUERY_SINGLETHREADED_GET_COUNT, LFDS711_STACK_QUERY_SINGLETHREADED_VALIDATE}'  kind 'g'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id15  'lfds711_misc_globals'  
+      id17  'lfds711_misc_globals'  
          type 'struct lfds711_misc_globals'  kind 'g'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id16  'query_type'  
+      id18  'query_type'  
          type 'enum lfds711_stack_query'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id17  'query_input'  
+      id19  'query_input'  
          type 'void *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id18  'query_output'  
+      id20  'query_output'  
          type 'void *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id31  'baus'  
+      id33  'baus'  
          type 'struct lfds711_btree_au_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id32  'key_compare_function'  
+      id34  'key_compare_function'  
          type 'int (*)(const void, const void)'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  ptr-to-f 'True'
-      id33  'existing_key'  
+      id35  'existing_key'  
          type 'const void'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id34  'user_state'  
+      id36  'user_state'  
          type 'void *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id35  'element_cleanup_callback'  
+      id37  'element_cleanup_callback'  
          type 'void (*)(struct lfds711_stack_state, struct lfds711_stack_element)'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  ptr-to-f 'True'
-      id36  'baue'  
+      id38  'baue'  
          type 'struct lfds711_btree_au_element **'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id37  'existing_baue'  
+      id39  'existing_baue'  
          type 'struct lfds711_btree_au_element **'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id38  'key'  
+      id40  'key'  
          type 'void *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id39  'absolute_position'  
+      id41  'absolute_position'  
          type 'enum lfds711_btree_au_absolute_position'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id40  'relative_position'  
+      id42  'relative_position'  
          type 'enum lfds711_btree_au_relative_position'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id50  'fs'  
+      id52  'fs'  
          type 'struct lfds711_freelist_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id51  'elimination_array'  
+      id53  'elimination_array'  
          type 'struct lfds711_freelist_element * volatile (*)'  kind 'p'  arity '1'  
          size '['128 / (sizeof(struct lfds711_freelist_element *))']'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id52  'elimination_array_size_in_elements'  
+      id54  'elimination_array_size_in_elements'  
          type 'lfds711_pal_uint_t'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id53  'fe'  
+      id55  'fe'  
          type 'struct lfds711_freelist_element **'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id72  'has'  
+      id74  'has'  
          type 'struct lfds711_hash_a_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id73  'baus_array'  
+      id75  'baus_array'  
          type 'struct lfds711_btree_au_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id74  'array_size'  
+      id76  'array_size'  
          type 'lfds711_pal_uint_t'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id75  'key_hash_function'  
+      id77  'key_hash_function'  
          type 'void (*)(const void, lfds711_pal_uint_t)'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  ptr-to-f 'True'
-      id76  'element_cleanup_function'  
+      id78  'element_cleanup_function'  
          type 'void (*)(struct lfds711_hash_a_state, struct lfds711_hash_a_element)'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  ptr-to-f 'True'
-      id77  'hae'  
+      id79  'hae'  
          type 'struct lfds711_hash_a_element **'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id78  'existing_hae'  
+      id80  'existing_hae'  
          type 'struct lfds711_hash_a_element **'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id79  'hai'  
+      id81  'hai'  
          type 'struct lfds711_hash_a_iterate *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id90  'lasos'  
+      id92  'lasos'  
          type 'struct lfds711_list_aso_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id91  'lasoe'  
+      id93  'lasoe'  
          type 'struct lfds711_list_aso_element **'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id92  'existing_lasoe'  
+      id94  'existing_lasoe'  
          type 'struct lfds711_list_aso_element **'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id103  'lasus'  
+      id105  'lasus'  
          type 'struct lfds711_list_asu_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id104  'lasue'  
+      id106  'lasue'  
          type 'struct lfds711_list_asu_element **'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id105  'lasue_predecessor'  
+      id107  'lasue_predecessor'  
          type 'struct lfds711_list_asu_element *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id106  'position'  
+      id108  'position'  
          type 'enum lfds711_list_asu_position'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id118  'qbmms'  
+      id120  'qbmms'  
          type 'struct lfds711_queue_bmm_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id119  'element_array'  
+      id121  'element_array'  
          type 'struct lfds711_queue_bss_element *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id120  'number_elements'  
+      id122  'number_elements'  
          type 'lfds711_pal_uint_t'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id121  'value'  
+      id123  'value'  
          type 'void *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id130  'qbsss'  
+      id132  'qbsss'  
          type 'struct lfds711_queue_bss_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id140  'qumms'  
+      id142  'qumms'  
          type 'struct lfds711_queue_umm_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id141  'qumme_dummy'  
+      id143  'qumme_dummy'  
          type 'struct lfds711_queue_umm_element *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id142  'qumme'  
+      id144  'qumme'  
          type 'struct lfds711_queue_umm_element **'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id156  'rs'  
+      id158  'rs'  
          type 'struct lfds711_ringbuffer_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id157  're_array_inc_dummy'  
+      id159  're_array_inc_dummy'  
          type 'struct lfds711_ringbuffer_element *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id158  'number_elements_inc_dummy'  
+      id160  'number_elements_inc_dummy'  
          type 'lfds711_pal_uint_t'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id159  'overwrite_occurred_flag'  
+      id161  'overwrite_occurred_flag'  
          type 'enum lfds711_misc_flag *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id160  'overwritten_key'  
+      id162  'overwritten_key'  
          type 'void **'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id161  'overwritten_value'  
+      id163  'overwritten_value'  
          type 'void **'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id169  'ss'  
+      id171  'ss'  
          type 'void *'  kind 'g'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[979, 999, 1010, 1026]'  
-      id170  'se'  
+         occurs '[982, 995, 1011, 1024, 1035, 1042]'  
+      id172  'se'  
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id171  'bs'  
+      id173  'bs'  
          type 'struct lfds711_misc_backoff_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id172  'library_lock'  
+      id174  'library_lock'  
          type '__cs_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[625, 653, 660, 689, 690, 707, 709, 714, 715, 735, 737, 742, 743, 789, 791, 793, 795]'  
+         ref '[631, 659, 666, 695, 696, 713, 715, 720, 721, 741, 743, 748, 749, 795, 797, 799, 801]'  
          deref '[]'  
-         occurs '[625, 653, 660, 689, 690, 707, 709, 714, 715, 735, 737, 742, 743, 789, 791, 793, 795]'  
-      id240  'mystack'  
+         occurs '[631, 659, 666, 695, 696, 713, 715, 720, 721, 741, 743, 748, 749, 795, 797, 799, 801]'  
+      id242  'mystack'  
          type 'struct lfds711_stack_state'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[854, 855, 870]'  
+         ref '[860, 861, 876]'  
          deref '[]'  
-         occurs '[854, 855, 870]'  
-      id277  'ATOMIC_OPERATION'  
+         occurs '[860, 861, 876]'  
+      id278  'ATOMIC_OPERATION'  
          type 'int'  kind 'g'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[973, 980, 993, 1000]'  
-      id278  'lock'  
+         occurs '[976, 983, 989, 996, 1005, 1012, 1018, 1025]'  
+      id279  'lock'  
          type '__cs_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[976, 983, 996, 1003, 1009]'  
+         ref '[979, 986, 992, 999, 1008, 1015, 1021, 1028, 1034]'  
          deref '[]'  
-         occurs '[976, 983, 996, 1003, 1009]'  
-   assert_create
+         occurs '[979, 986, 992, 999, 1008, 1015, 1021, 1028, 1034]'  
+   check
       id0  'ss'  
          type 'void *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[]'  
+         occurs '[160, 162]'  
       id1  'size'  
-         type 'int'  kind 'p'  arity '0'  
+         type 'unsigned long int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[]'  
+         occurs '[158, 163]'  
+      id2  'c0'  
+         type 'long unsigned int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[160, 163]'  
+      id3  'c2'  
+         type 'long unsigned int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[162, 163]'  
    lfds711_misc_force_store
-      id19  'destination'  
+      id21  'destination'  
          type 'lfds711_pal_uint_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[205]'  
+         ref '[211]'  
          deref '[]'  
-         occurs '[205]'  
+         occurs '[211]'  
    exponential_backoff
-      id173  'loop'  
+      id175  'loop'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[575, 575, 575]'  
+         occurs '[581, 581, 581]'  
    __CSEQ_atomic_swap_stack_top
-      id174  'top'  
+      id176  'top'  
          type 'struct lfds711_stack_element * volatile *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[583, 586, 591]'  
-         occurs '[583, 586, 591]'  
-      id175  'oldtop'  
+         deref '[589, 592, 597]'  
+         occurs '[589, 592, 597]'  
+      id177  'oldtop'  
          type 'struct lfds711_stack_element * volatile *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[583, 591]'  
-         occurs '[583, 591]'  
-      id176  'newtop'  
+         deref '[589, 597]'  
+         occurs '[589, 597]'  
+      id178  'newtop'  
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[586]'  
-         occurs '[586]'  
-      id177  '__cs_tmp_if_cond_0'  
+         deref '[592]'  
+         occurs '[592]'  
+      id179  '__cs_tmp_if_cond_0'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[583, 584]'  
+         occurs '[589, 590]'  
    lfds711_misc_internal_backoff_init
-      id178  'bs'  
+      id180  'bs'  
          type 'struct lfds711_misc_backoff_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[606, 615, 616, 617, 618, 619]'  
-         occurs '[597, 606, 615, 616, 617, 618, 619]'  
-      id179  '__cs_tmp_if_cond_1'  
+         deref '[612, 621, 622, 623, 624, 625]'  
+         occurs '[603, 612, 621, 622, 623, 624, 625]'  
+      id181  '__cs_tmp_if_cond_1'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[597, 598]'  
-      id180  'c'  
+         occurs '[603, 604]'  
+      id182  'c'  
          type 'char *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[602, 611]'  
-         occurs '[601, 602, 610, 611]'  
-      id181  '__cs_tmp_if_cond_2'  
+         deref '[608, 617]'  
+         occurs '[607, 608, 616, 617]'  
+      id183  '__cs_tmp_if_cond_2'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[606, 607]'  
+         occurs '[612, 613]'  
    lfds711_stack_init_valid_on_current_logical_core
-      id182  'ss'  
+      id184  'ss'  
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[635, 644, 654, 655, 656, 657, 658]'  
-         occurs '[626, 635, 644, 654, 655, 656, 657, 658]'  
-      id183  'user_state'  
+         deref '[641, 650, 660, 661, 662, 663, 664]'  
+         occurs '[632, 641, 650, 660, 661, 662, 663, 664]'  
+      id185  'user_state'  
          type 'void *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[656]'  
-      id184  '__cs_tmp_if_cond_3'  
+         occurs '[662]'  
+      id186  '__cs_tmp_if_cond_3'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[626, 627]'  
-      id185  'c'  
+         occurs '[632, 633]'  
+      id187  'c'  
          type 'char *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[631, 640, 649]'  
-         occurs '[630, 631, 639, 640, 648, 649]'  
-      id186  '__cs_tmp_if_cond_4'  
+         deref '[637, 646, 655]'  
+         occurs '[636, 637, 645, 646, 654, 655]'  
+      id188  '__cs_tmp_if_cond_4'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[635, 636]'  
-      id187  '__cs_tmp_if_cond_5'  
+         occurs '[641, 642]'  
+      id189  '__cs_tmp_if_cond_5'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[644, 645]'  
+         occurs '[650, 651]'  
    lfds711_stack_pop
-      id188  'ss'  
+      id190  'ss'  
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[691, 692, 708, 736]'  
-         occurs '[671, 691, 692, 708, 736]'  
-      id189  'se'  
+         deref '[697, 698, 714, 742]'  
+         occurs '[677, 697, 698, 714, 742]'  
+      id191  'se'  
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[702, 730, 752]'  
-         occurs '[680, 702, 730, 752]'  
-      id190  'result'  
+         deref '[708, 736, 758]'  
+         occurs '[686, 708, 736, 758]'  
+      id192  'result'  
          type 'char unsigned'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[708, 710, 725, 736, 738, 753]'  
-      id191  'backoff_iteration'  
+         occurs '[714, 716, 731, 742, 744, 759]'  
+      id193  'backoff_iteration'  
          type 'lfds711_pal_uint_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[668]'  
-      id192  'new_top'  
+         occurs '[674]'  
+      id194  'new_top'  
          type 'struct lfds711_stack_element *'  kind 'l'  arity '1'  
          size '[2]'  
-         ref '[708, 736]'  
+         ref '[714, 742]'  
          deref '[]'  
-         occurs '[705, 706, 708, 733, 734, 736]'  
-      id193  'original_top'  
+         occurs '[711, 712, 714, 739, 740, 742]'  
+      id195  'original_top'  
          type 'struct lfds711_stack_element * volatile'  kind 'l'  arity '1'  
          size '[2]'  
-         ref '[708, 736]'  
-         deref '[706, 734]'  
-         occurs '[691, 692, 699, 705, 706, 708, 727, 733, 734, 736, 752]'  
-      id194  '__cs_tmp_if_cond_6'  
+         ref '[714, 742]'  
+         deref '[712, 740]'  
+         occurs '[697, 698, 705, 711, 712, 714, 733, 739, 740, 742, 758]'  
+      id196  '__cs_tmp_if_cond_6'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[671, 672]'  
-      id195  'c'  
+         occurs '[677, 678]'  
+      id197  'c'  
          type 'char *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[676, 685]'  
-         occurs '[675, 676, 684, 685]'  
-      id196  '__cs_tmp_if_cond_7'  
+         deref '[682, 691]'  
+         occurs '[681, 682, 690, 691]'  
+      id198  '__cs_tmp_if_cond_7'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[680, 681]'  
-      id197  'i'  
+         occurs '[686, 687]'  
+      id199  'i'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[694, 717, 718, 745, 746]'  
-      id198  '__cs_dowhile_onetime_1'  
+         occurs '[700, 723, 724, 751, 752]'  
+      id200  '__cs_dowhile_onetime_1'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[697, 697, 697]'  
-      id199  '__cs_tmp_if_cond_8'  
+         occurs '[703, 703, 703]'  
+      id201  '__cs_tmp_if_cond_8'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[699, 700]'  
-      id200  '__cs_tmp_if_cond_9'  
+         occurs '[705, 706]'  
+      id202  '__cs_tmp_if_cond_9'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[710, 711]'  
-      id201  '__cs_tmp_if_cond_10'  
+         occurs '[716, 717]'  
+      id203  '__cs_tmp_if_cond_10'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[718, 719]'  
-      id202  '__cs_tmp_if_cond_11'  
+         occurs '[724, 725]'  
+      id204  '__cs_tmp_if_cond_11'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[727, 728]'  
-      id203  '__cs_tmp_if_cond_12'  
+         occurs '[733, 734]'  
+      id205  '__cs_tmp_if_cond_12'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[738, 739]'  
-      id204  '__cs_tmp_if_cond_13'  
+         occurs '[744, 745]'  
+      id206  '__cs_tmp_if_cond_13'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[746, 747]'  
+         occurs '[752, 753]'  
    lfds711_stack_push
-      id205  'ss'  
+      id207  'ss'  
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[782, 783, 794]'  
-         occurs '[763, 782, 783, 794]'  
-      id206  'se'  
+         deref '[788, 789, 800]'  
+         occurs '[769, 788, 789, 800]'  
+      id208  'se'  
          type 'struct lfds711_stack_element *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[790]'  
-         occurs '[772, 781, 790]'  
-      id207  'result'  
+         deref '[796]'  
+         occurs '[778, 787, 796]'  
+      id209  'result'  
          type 'char unsigned'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[784, 787, 794, 796]'  
-      id208  'backoff_iteration'  
+         occurs '[790, 793, 800, 802]'  
+      id210  'backoff_iteration'  
          type 'lfds711_pal_uint_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[760]'  
-      id209  'new_top'  
+         occurs '[766]'  
+      id211  'new_top'  
          type 'struct lfds711_stack_element *'  kind 'l'  arity '1'  
          size '[2]'  
-         ref '[794]'  
+         ref '[800]'  
          deref '[]'  
-         occurs '[781, 792, 794]'  
-      id210  'original_top'  
+         occurs '[787, 798, 800]'  
+      id212  'original_top'  
          type 'struct lfds711_stack_element * volatile'  kind 'l'  arity '1'  
          size '[2]'  
-         ref '[794]'  
+         ref '[800]'  
          deref '[]'  
-         occurs '[782, 783, 790, 792, 794]'  
-      id211  '__cs_tmp_if_cond_14'  
+         occurs '[788, 789, 796, 798, 800]'  
+      id213  '__cs_tmp_if_cond_14'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[763, 764]'  
-      id212  'c'  
+         occurs '[769, 770]'  
+      id214  'c'  
          type 'char *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[768, 777]'  
-         occurs '[767, 768, 776, 777]'  
-      id213  '__cs_tmp_if_cond_15'  
+         deref '[774, 783]'  
+         occurs '[773, 774, 782, 783]'  
+      id215  '__cs_tmp_if_cond_15'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[772, 773]'  
-      id214  'i'  
+         occurs '[778, 779]'  
+      id216  'i'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[786, 801, 802]'  
-      id215  '__cs_tmp_if_cond_16'  
-         type '_Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[796, 797]'  
-      id216  '__cs_tmp_if_cond_17'  
+         occurs '[792, 807, 808]'  
+      id217  '__cs_tmp_if_cond_16'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[802, 803]'  
-   __CSEQ_atomic_compare_and_exchange
-      id217  'mptr'  
-         type 'int long long unsigned *'  kind 'p'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[812, 815]'  
-         occurs '[812, 815]'  
-      id218  'eptr'  
-         type 'int long long unsigned *'  kind 'p'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[812, 820]'  
-         occurs '[812, 820]'  
-      id219  'newval'  
-         type 'int long long unsigned'  kind 'p'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[815, 820]'  
-      id220  'weak_p'  
-         type '_Bool'  kind 'p'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
-      id221  'sm'  
-         type 'int'  kind 'p'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
-      id222  'fm'  
-         type 'int'  kind 'p'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
-      id223  '__cs_tmp_if_cond_18'  
+      id218  '__cs_tmp_if_cond_17'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[812, 813]'  
-   __atomic_compare_exchange_n
-      id224  'mptr'  
+         occurs '[808, 809]'  
+   __CSEQ_atomic_compare_and_exchange
+      id219  'mptr'  
          type 'int long long unsigned *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[]'  
-         occurs '[827]'  
-      id225  'eptr'  
+         deref '[818, 821]'  
+         occurs '[818, 821]'  
+      id220  'eptr'  
          type 'int long long unsigned *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[]'  
-         occurs '[827]'  
-      id226  'newval'  
+         deref '[818, 826]'  
+         occurs '[818, 826]'  
+      id221  'newval'  
          type 'int long long unsigned'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[827]'  
-      id227  'weak_p'  
+         occurs '[821, 826]'  
+      id222  'weak_p'  
          type '_Bool'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[827]'  
-      id228  'sm'  
-         type 'int'  kind 'p'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[827]'  
-      id229  'fm'  
-         type 'int'  kind 'p'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[827]'  
-      id230  'res'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[827, 828]'  
-   __CSEQ_atomic_exchange
-      id231  'previous'  
-         type 'int long long unsigned *'  kind 'p'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[833, 834]'  
-         occurs '[833, 834]'  
-      id232  'new'  
-         type 'int long long unsigned'  kind 'p'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[834]'  
-      id233  'memorder'  
+         occurs '[]'  
+      id223  'sm'  
          type 'int'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id234  'old'  
-         type 'unsigned long int'  kind 'l'  arity '0'  
+      id224  'fm'  
+         type 'int'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[833, 835]'  
-   __atomic_exchange_n
-      id235  'previous'  
+         occurs '[]'  
+      id225  '__cs_tmp_if_cond_18'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[818, 819]'  
+   __atomic_compare_exchange_n
+      id226  'mptr'  
          type 'int long long unsigned *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[840]'  
-      id236  'new'  
+         occurs '[833]'  
+      id227  'eptr'  
+         type 'int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[833]'  
+      id228  'newval'  
+         type 'int long long unsigned'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[833]'  
+      id229  'weak_p'  
+         type '_Bool'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[833]'  
+      id230  'sm'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[833]'  
+      id231  'fm'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[833]'  
+      id232  'res'  
+         type 'int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[833, 834]'  
+   __CSEQ_atomic_exchange
+      id233  'previous'  
+         type 'int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[839, 840]'  
+         occurs '[839, 840]'  
+      id234  'new'  
          type 'int long long unsigned'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[840]'  
-      id237  'memorder'  
+      id235  'memorder'  
          type 'int'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[840]'  
-      id238  'res'  
+         occurs '[]'  
+      id236  'old'  
+         type 'unsigned long int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[839, 841]'  
+   __atomic_exchange_n
+      id237  'previous'  
+         type 'int long long unsigned *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[846]'  
+      id238  'new'  
+         type 'int long long unsigned'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[846]'  
+      id239  'memorder'  
+         type 'int'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[846]'  
+      id240  'res'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[840, 841]'  
+         occurs '[846, 847]'  
    __atomic_thread_fence
-      id239  'i'  
+      id241  'i'  
          type 'int'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
@@ -814,223 +826,211 @@ Variables:
          occurs '[]'  
    init
    insert
-      id243  's'  
+      id245  's'  
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[863]'  
-      id244  'id'  
+         occurs '[869]'  
+      id246  'id'  
          type 'int long long unsigned'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[861]'  
-      id245  'td'  
+         occurs '[867]'  
+      id247  'td'  
          type 'struct test_data *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[861, 862, 863]'  
-         occurs '[860, 861, 862, 862, 863]'  
+         deref '[867, 868, 869]'  
+         occurs '[866, 867, 868, 868, 869]'  
    delete
-      id246  's'  
+      id248  's'  
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id247  'se'  
+      id249  'se'  
          type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[870]'  
-         deref '[876]'  
-         occurs '[870, 876]'  
-      id248  'temp_td'  
+         ref '[876]'  
+         deref '[880]'  
+         occurs '[876, 880]'  
+      id250  'temp_td'  
          type 'struct test_data *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[878, 879]'  
-         occurs '[876, 878, 879]'  
-      id249  'res'  
+         deref '[]'  
+         occurs '[]'  
+      id251  'res'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[870, 871, 874, 880]'  
-      id250  '__cs_tmp_if_cond_19'  
+         occurs '[876, 877, 882]'  
+      id252  '__cs_tmp_if_cond_19'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[871, 872]'  
-      id251  'id_popped'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[878]'  
+         occurs '[877, 878]'  
    contains
-      id252  's'  
+      id253  's'  
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[899, 917]'  
-      id253  'id'  
+         occurs '[901, 920]'  
+      id254  'id'  
          type 'unsigned long long int'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[906]'  
-      id254  'max_size'  
+         occurs '[909]'  
+      id255  'max_size'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[885, 895]'  
-      id255  'actual_size'  
+         occurs '[887, 897]'  
+      id256  'actual_size'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[887, 905, 906, 911, 911, 915]'  
-      id256  'res'  
+         occurs '[889, 907, 908, 908, 909, 914, 914, 918]'  
+      id257  'res'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[889, 897, 899, 900]'  
-      id257  'found'  
+         occurs '[891, 899, 901, 902]'  
+      id258  'found'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[891, 897, 909, 920]'  
-      id258  'dimension'  
+         occurs '[893, 899, 912, 923]'  
+      id259  'dimension'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[893]'  
-      id259  'datas'  
+         occurs '[895]'  
+      id260  'datas'  
          type 'struct test_data **'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[906, 917]'  
-         occurs '[895, 905, 906, 917]'  
-      id260  'se'  
+         deref '[908, 909, 920]'  
+         occurs '[897, 907, 908, 909, 920]'  
+      id261  'se'  
          type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[899]'  
-         deref '[905]'  
-         occurs '[899, 905]'  
-      id261  '__cs_tmp_if_cond_20'  
+         ref '[901]'  
+         deref '[907]'  
+         occurs '[901, 907]'  
+      id262  '__cs_tmp_if_cond_20'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[900, 901]'  
-      id262  '__cs_tmp_if_cond_21'  
+         occurs '[902, 903]'  
+      id263  '__cs_tmp_if_cond_21'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[906, 907]'  
-      id263  'i'  
+         occurs '[909, 910]'  
+      id264  'i'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[914, 915, 917, 918]'  
+         occurs '[917, 918, 920, 921]'  
    get_size
-      id264  's'  
+      id265  's'  
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[937, 949]'  
-      id265  'max_size'  
+         occurs '[940, 953]'  
+      id266  'max_size'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[925, 933]'  
-      id266  'actual_size'  
+         occurs '[928, 936]'  
+      id267  'actual_size'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[927, 935, 943, 943, 947, 952]'  
-      id267  'res'  
+         occurs '[930, 941, 947, 947, 951, 956]'  
+      id268  'res'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[929, 937, 938]'  
-      id268  'dimension'  
+         occurs '[932, 938, 940, 942]'  
+      id269  'dimension'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[931]'  
-      id269  'datas'  
+         occurs '[934]'  
+      id270  'datas'  
          type 'struct test_data **'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[949]'  
-         occurs '[933, 949]'  
-      id270  'se'  
+         deref '[953]'  
+         occurs '[936, 941, 953]'  
+      id271  'se'  
          type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[937]'  
-         deref '[]'  
-         occurs '[937]'  
-      id271  '__cs_tmp_if_cond_22'  
+         ref '[940]'  
+         deref '[941]'  
+         occurs '[940, 941]'  
+      id272  '__cs_tmp_if_cond_22'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[938, 939]'  
-      id272  'i'  
+         occurs '[942, 943]'  
+      id273  'i'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[946, 947, 949, 950]'  
+         occurs '[950, 951, 953, 954]'  
    is_empty
-      id273  's'  
+      id274  's'  
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[958, 962]'  
-      id274  'se'  
+         occurs '[962, 966]'  
+      id275  'se'  
          type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[958]'  
+         ref '[962]'  
          deref '[]'  
-         occurs '[958, 962]'  
-      id275  'res'  
+         occurs '[962, 966]'  
+      id276  'res'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[958, 959]'  
-      id276  '__cs_tmp_if_cond_23'  
+         occurs '[962, 963]'  
+      id277  '__cs_tmp_if_cond_23'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[959, 960]'  
-   push
-      id279  '__cs_unused'  
+         occurs '[963, 964]'  
+   thread1
+      id280  '__cs_unused'  
          type 'void *'  kind 'p'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
-      id280  'loop'  
-         type 'int long long unsigned'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
@@ -1040,263 +1040,215 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[973, 974]'  
+         occurs '[976, 977]'  
       id282  '__cs_tmp_if_cond_25'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[980, 981]'  
-   pop
-      id283  '__cs_unused'  
+         occurs '[983, 984]'  
+      id283  '__cs_tmp_if_cond_26'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[989, 990]'  
+      id284  '__cs_tmp_if_cond_27'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[996, 997]'  
+   thread2
+      id285  '__cs_unused'  
          type 'void *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id284  'res'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
-      id285  'count'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[991]'  
-      id286  'loop'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
-      id287  '__cs_tmp_if_cond_26'  
+      id286  '__cs_tmp_if_cond_28'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[993, 994]'  
-      id288  '__cs_tmp_if_cond_27'  
+         occurs '[1005, 1006]'  
+      id287  '__cs_tmp_if_cond_29'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1000, 1001]'  
+         occurs '[1012, 1013]'  
+      id288  '__cs_tmp_if_cond_30'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1018, 1019]'  
+      id289  '__cs_tmp_if_cond_31'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1025, 1026]'  
    main
-      id289  't1'  
+      id290  't1'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[1021]'  
+         ref '[1038]'  
          deref '[]'  
-         occurs '[1021, 1023]'  
-      id290  't2'  
+         occurs '[1038, 1040]'  
+      id291  't2'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[]'  
+         ref '[1039]'  
          deref '[]'  
-         occurs '[]'  
-      id291  't3'  
-         type '__cs_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
-      id292  't4'  
-         type '__cs_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
-      id293  't5'  
-         type '__cs_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
-      id294  't6'  
-         type '__cs_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[1022]'  
-         deref '[]'  
-         occurs '[1022, 1024]'  
-      id295  't7'  
-         type '__cs_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
-      id296  't8'  
-         type '__cs_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
-      id297  't9'  
-         type '__cs_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
-      id298  't10'  
-         type '__cs_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
-      id299  'size_ss'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1026]'  
+         occurs '[1039, 1041]'  
 
 Fields:
    lfds711_prng_state
-      id2  'entropy'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
+      id4  'entropy'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
    lfds711_prng_st_state
-      id3  'entropy'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
+      id5  'entropy'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
    lfds711_misc_backoff_state
-      id8  'lock'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
-      id9  'backoff_iteration_frequency_counters'  type 'lfds711_pal_uint_t'  kind 'f'  arity '1'  size '[2]'  
-      id10  'metric'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
-      id11  'total_operations'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
+      id10  'lock'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
+      id11  'backoff_iteration_frequency_counters'  type 'lfds711_pal_uint_t'  kind 'f'  arity '1'  size '[2]'  
+      id12  'metric'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
+      id13  'total_operations'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
    lfds711_misc_globals
-      id12  'ps'  type 'struct lfds711_prng_state'  kind 'f'  arity '0'  size '[]'  
+      id14  'ps'  type 'struct lfds711_prng_state'  kind 'f'  arity '0'  size '[]'  
    lfds711_misc_validation_info
-      id13  'min_elements'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
-      id14  'max_elements'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
+      id15  'min_elements'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
+      id16  'max_elements'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
    lfds711_btree_au_element
-      id20  'left'  type 'struct lfds711_btree_au_element * volatile'  kind 'f'  arity '0'  size '[]'  
-      id21  'right'  type 'struct lfds711_btree_au_element * volatile'  kind 'f'  arity '0'  size '[]'  
-      id22  'up'  type 'struct lfds711_btree_au_element * volatile'  kind 'f'  arity '0'  size '[]'  
-      id23  'value'  type 'void * volatile'  kind 'f'  arity '0'  size '[]'  
-      id24  'key'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id22  'left'  type 'struct lfds711_btree_au_element * volatile'  kind 'f'  arity '0'  size '[]'  
+      id23  'right'  type 'struct lfds711_btree_au_element * volatile'  kind 'f'  arity '0'  size '[]'  
+      id24  'up'  type 'struct lfds711_btree_au_element * volatile'  kind 'f'  arity '0'  size '[]'  
+      id25  'value'  type 'void * volatile'  kind 'f'  arity '0'  size '[]'  
+      id26  'key'  type 'void *'  kind 'f'  arity '0'  size '[]'  
    lfds711_btree_au_state
-      id25  'root'  type 'struct lfds711_btree_au_element * volatile'  kind 'f'  arity '0'  size '[]'  
-      id26  'new_key'  type 'const void *'  kind 'f'  arity '0'  size '[]'  
-      id27  'existing_key'  type 'enum lfds711_btree_au_existing_key'  kind 'f'  arity '0'  size '[]'  
-      id28  'key_compare_function'  type 'int (*)(const void *new_key, const void *existing_key)'  kind 'f'  arity '0'  size '[]'  
-      id29  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
-      id30  'insert_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
+      id27  'root'  type 'struct lfds711_btree_au_element * volatile'  kind 'f'  arity '0'  size '[]'  
+      id28  'new_key'  type 'const void *'  kind 'f'  arity '0'  size '[]'  
+      id29  'existing_key'  type 'enum lfds711_btree_au_existing_key'  kind 'f'  arity '0'  size '[]'  
+      id30  'key_compare_function'  type 'int (*)(const void *new_key, const void *existing_key)'  kind 'f'  arity '0'  size '[]'  
+      id31  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id32  'insert_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
    lfds711_freelist_element
-      id41  'next'  type 'struct lfds711_freelist_element *'  kind 'f'  arity '0'  size '[]'  
-      id42  'key'  type 'void *'  kind 'f'  arity '0'  size '[]'  
-      id43  'value'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id43  'next'  type 'struct lfds711_freelist_element *'  kind 'f'  arity '0'  size '[]'  
+      id44  'key'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id45  'value'  type 'void *'  kind 'f'  arity '0'  size '[]'  
    lfds711_freelist_state
-      id44  'top'  type 'struct lfds711_freelist_element * volatile'  kind 'f'  arity '1'  size '[2]'  
-      id45  'elimination_array_size_in_elements'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
-      id46  'elimination_array'  type 'struct lfds711_freelist_element * volatile (*)'  kind 'f'  arity '1'  size '['128 / (sizeof(struct lfds711_freelist_element *))']'  
-      id47  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
-      id48  'pop_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
-      id49  'push_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
+      id46  'top'  type 'struct lfds711_freelist_element * volatile'  kind 'f'  arity '1'  size '[2]'  
+      id47  'elimination_array_size_in_elements'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
+      id48  'elimination_array'  type 'struct lfds711_freelist_element * volatile (*)'  kind 'f'  arity '1'  size '['128 / (sizeof(struct lfds711_freelist_element *))']'  
+      id49  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id50  'pop_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
+      id51  'push_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
    lfds711_hash_a_element
-      id54  'baue'  type 'struct lfds711_btree_au_element'  kind 'f'  arity '0'  size '[]'  
-      id55  'key'  type 'void *'  kind 'f'  arity '0'  size '[]'  
-      id56  'value'  type 'void * volatile'  kind 'f'  arity '0'  size '[]'  
+      id56  'baue'  type 'struct lfds711_btree_au_element'  kind 'f'  arity '0'  size '[]'  
+      id57  'key'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id58  'value'  type 'void * volatile'  kind 'f'  arity '0'  size '[]'  
    lfds711_hash_a_iterate
-      id57  'baue'  type 'struct lfds711_btree_au_element *'  kind 'f'  arity '0'  size '[]'  
-      id58  'baus'  type 'struct lfds711_btree_au_state *'  kind 'f'  arity '0'  size '[]'  
-      id59  'baus_end'  type 'struct lfds711_btree_au_state *'  kind 'f'  arity '0'  size '[]'  
+      id59  'baue'  type 'struct lfds711_btree_au_element *'  kind 'f'  arity '0'  size '[]'  
+      id60  'baus'  type 'struct lfds711_btree_au_state *'  kind 'f'  arity '0'  size '[]'  
+      id61  'baus_end'  type 'struct lfds711_btree_au_state *'  kind 'f'  arity '0'  size '[]'  
    lfds711_hash_a_state
-      id60  'existing_key'  type 'const void *'  kind 'f'  arity '0'  size '[]'  
-      id61  'new_key'  type 'const void *'  kind 'f'  arity '0'  size '[]'  
-      id62  'key_compare_function'  type 'int (*)(const void *new_key, const void *existing_key)'  kind 'f'  arity '0'  size '[]'  
-      id63  'array_size'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
-      id64  'baus_array'  type 'struct lfds711_btree_au_state *'  kind 'f'  arity '0'  size '[]'  
-      id65  'has'  type 'struct lfds711_hash_a_state *'  kind 'f'  arity '0'  size '[]'  
-      id66  'hae'  type 'struct lfds711_hash_a_element *'  kind 'f'  arity '0'  size '[]'  
-      id67  'element_cleanup_callback'  type 'void (*)(struct lfds711_hash_a_state *has, struct lfds711_hash_a_element *hae)'  kind 'f'  arity '0'  size '[]'  
-      id68  'key'  type 'const void *'  kind 'f'  arity '0'  size '[]'  
-      id69  'hash'  type 'lfds711_pal_uint_t *'  kind 'f'  arity '0'  size '[]'  
-      id70  'key_hash_function'  type 'void (*)(const void *key, lfds711_pal_uint_t *hash)'  kind 'f'  arity '0'  size '[]'  
-      id71  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id62  'existing_key'  type 'const void *'  kind 'f'  arity '0'  size '[]'  
+      id63  'new_key'  type 'const void *'  kind 'f'  arity '0'  size '[]'  
+      id64  'key_compare_function'  type 'int (*)(const void *new_key, const void *existing_key)'  kind 'f'  arity '0'  size '[]'  
+      id65  'array_size'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
+      id66  'baus_array'  type 'struct lfds711_btree_au_state *'  kind 'f'  arity '0'  size '[]'  
+      id67  'has'  type 'struct lfds711_hash_a_state *'  kind 'f'  arity '0'  size '[]'  
+      id68  'hae'  type 'struct lfds711_hash_a_element *'  kind 'f'  arity '0'  size '[]'  
+      id69  'element_cleanup_callback'  type 'void (*)(struct lfds711_hash_a_state *has, struct lfds711_hash_a_element *hae)'  kind 'f'  arity '0'  size '[]'  
+      id70  'key'  type 'const void *'  kind 'f'  arity '0'  size '[]'  
+      id71  'hash'  type 'lfds711_pal_uint_t *'  kind 'f'  arity '0'  size '[]'  
+      id72  'key_hash_function'  type 'void (*)(const void *key, lfds711_pal_uint_t *hash)'  kind 'f'  arity '0'  size '[]'  
+      id73  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
    lfds711_list_aso_element
-      id80  'next'  type 'struct lfds711_list_aso_element * volatile'  kind 'f'  arity '0'  size '[]'  
-      id81  'value'  type 'void * volatile'  kind 'f'  arity '0'  size '[]'  
-      id82  'key'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id82  'next'  type 'struct lfds711_list_aso_element * volatile'  kind 'f'  arity '0'  size '[]'  
+      id83  'value'  type 'void * volatile'  kind 'f'  arity '0'  size '[]'  
+      id84  'key'  type 'void *'  kind 'f'  arity '0'  size '[]'  
    lfds711_list_aso_state
-      id83  'dummy_element'  type 'struct lfds711_list_aso_element'  kind 'f'  arity '0'  size '[]'  
-      id84  'start'  type 'struct lfds711_list_aso_element *'  kind 'f'  arity '0'  size '[]'  
-      id85  'new_key'  type 'const void *'  kind 'f'  arity '0'  size '[]'  
-      id86  'existing_key'  type 'enum lfds711_list_aso_existing_key'  kind 'f'  arity '0'  size '[]'  
-      id87  'key_compare_function'  type 'int (*)(const void *new_key, const void *existing_key)'  kind 'f'  arity '0'  size '[]'  
-      id88  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
-      id89  'insert_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
+      id85  'dummy_element'  type 'struct lfds711_list_aso_element'  kind 'f'  arity '0'  size '[]'  
+      id86  'start'  type 'struct lfds711_list_aso_element *'  kind 'f'  arity '0'  size '[]'  
+      id87  'new_key'  type 'const void *'  kind 'f'  arity '0'  size '[]'  
+      id88  'existing_key'  type 'enum lfds711_list_aso_existing_key'  kind 'f'  arity '0'  size '[]'  
+      id89  'key_compare_function'  type 'int (*)(const void *new_key, const void *existing_key)'  kind 'f'  arity '0'  size '[]'  
+      id90  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id91  'insert_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
    lfds711_list_asu_element
-      id93  'next'  type 'struct lfds711_list_asu_element * volatile'  kind 'f'  arity '0'  size '[]'  
-      id94  'value'  type 'void * volatile'  kind 'f'  arity '0'  size '[]'  
-      id95  'key'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id95  'next'  type 'struct lfds711_list_asu_element * volatile'  kind 'f'  arity '0'  size '[]'  
+      id96  'value'  type 'void * volatile'  kind 'f'  arity '0'  size '[]'  
+      id97  'key'  type 'void *'  kind 'f'  arity '0'  size '[]'  
    lfds711_list_asu_state
-      id96  'dummy_element'  type 'struct lfds711_list_asu_element'  kind 'f'  arity '0'  size '[]'  
-      id97  'end'  type 'struct lfds711_list_asu_element * volatile'  kind 'f'  arity '0'  size '[]'  
-      id98  'start'  type 'struct lfds711_list_asu_element *'  kind 'f'  arity '0'  size '[]'  
-      id99  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
-      id100  'after_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
-      id101  'end_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
-      id102  'start_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
+      id98  'dummy_element'  type 'struct lfds711_list_asu_element'  kind 'f'  arity '0'  size '[]'  
+      id99  'end'  type 'struct lfds711_list_asu_element * volatile'  kind 'f'  arity '0'  size '[]'  
+      id100  'start'  type 'struct lfds711_list_asu_element *'  kind 'f'  arity '0'  size '[]'  
+      id101  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id102  'after_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
+      id103  'end_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
+      id104  'start_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
    lfds711_queue_bmm_element
-      id107  'sequence_number'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
-      id108  'key'  type 'void * volatile'  kind 'f'  arity '0'  size '[]'  
-      id109  'value'  type 'void * volatile'  kind 'f'  arity '0'  size '[]'  
+      id109  'sequence_number'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
+      id110  'key'  type 'void * volatile'  kind 'f'  arity '0'  size '[]'  
+      id111  'value'  type 'void * volatile'  kind 'f'  arity '0'  size '[]'  
    lfds711_queue_bmm_state
-      id110  'number_elements'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
-      id111  'mask'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
-      id112  'read_index'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
-      id113  'write_index'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
-      id114  'element_array'  type 'struct lfds711_queue_bmm_element *'  kind 'f'  arity '0'  size '[]'  
-      id115  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
-      id116  'dequeue_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
-      id117  'enqueue_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
+      id112  'number_elements'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
+      id113  'mask'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
+      id114  'read_index'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
+      id115  'write_index'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
+      id116  'element_array'  type 'struct lfds711_queue_bmm_element *'  kind 'f'  arity '0'  size '[]'  
+      id117  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id118  'dequeue_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
+      id119  'enqueue_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
    lfds711_queue_bss_element
-      id122  'key'  type 'void * volatile'  kind 'f'  arity '0'  size '[]'  
-      id123  'value'  type 'void * volatile'  kind 'f'  arity '0'  size '[]'  
+      id124  'key'  type 'void * volatile'  kind 'f'  arity '0'  size '[]'  
+      id125  'value'  type 'void * volatile'  kind 'f'  arity '0'  size '[]'  
    lfds711_queue_bss_state
-      id124  'number_elements'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
-      id125  'mask'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
-      id126  'read_index'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
-      id127  'write_index'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
-      id128  'element_array'  type 'struct lfds711_queue_bss_element *'  kind 'f'  arity '0'  size '[]'  
-      id129  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id126  'number_elements'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
+      id127  'mask'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
+      id128  'read_index'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
+      id129  'write_index'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
+      id130  'element_array'  type 'struct lfds711_queue_bss_element *'  kind 'f'  arity '0'  size '[]'  
+      id131  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
    lfds711_queue_umm_element
-      id131  'next'  type 'struct lfds711_queue_umm_element * volatile'  kind 'f'  arity '1'  size '[2]'  
-      id132  'key'  type 'void *'  kind 'f'  arity '0'  size '[]'  
-      id133  'value'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id133  'next'  type 'struct lfds711_queue_umm_element * volatile'  kind 'f'  arity '1'  size '[2]'  
+      id134  'key'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id135  'value'  type 'void *'  kind 'f'  arity '0'  size '[]'  
    lfds711_queue_umm_state
-      id134  'enqueue'  type 'struct lfds711_queue_umm_element * volatile'  kind 'f'  arity '1'  size '[2]'  
-      id135  'dequeue'  type 'struct lfds711_queue_umm_element * volatile'  kind 'f'  arity '1'  size '[2]'  
-      id136  'aba_counter'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
-      id137  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
-      id138  'dequeue_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
-      id139  'enqueue_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
+      id136  'enqueue'  type 'struct lfds711_queue_umm_element * volatile'  kind 'f'  arity '1'  size '[2]'  
+      id137  'dequeue'  type 'struct lfds711_queue_umm_element * volatile'  kind 'f'  arity '1'  size '[2]'  
+      id138  'aba_counter'  type 'lfds711_pal_uint_t'  kind 'f'  arity '0'  size '[]'  
+      id139  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id140  'dequeue_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
+      id141  'enqueue_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
    lfds711_ringbuffer_element
-      id143  'fe'  type 'struct lfds711_freelist_element'  kind 'f'  arity '0'  size '[]'  
-      id144  'qumme'  type 'struct lfds711_queue_umm_element'  kind 'f'  arity '0'  size '[]'  
-      id145  'qumme_use'  type 'struct lfds711_queue_umm_element *'  kind 'f'  arity '0'  size '[]'  
-      id146  'key'  type 'void *'  kind 'f'  arity '0'  size '[]'  
-      id147  'value'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id145  'fe'  type 'struct lfds711_freelist_element'  kind 'f'  arity '0'  size '[]'  
+      id146  'qumme'  type 'struct lfds711_queue_umm_element'  kind 'f'  arity '0'  size '[]'  
+      id147  'qumme_use'  type 'struct lfds711_queue_umm_element *'  kind 'f'  arity '0'  size '[]'  
+      id148  'key'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id149  'value'  type 'void *'  kind 'f'  arity '0'  size '[]'  
    lfds711_ringbuffer_state
-      id148  'fs'  type 'struct lfds711_freelist_state'  kind 'f'  arity '0'  size '[]'  
-      id149  'qumms'  type 'struct lfds711_queue_umm_state'  kind 'f'  arity '0'  size '[]'  
-      id150  'rs'  type 'struct lfds711_ringbuffer_state *'  kind 'f'  arity '0'  size '[]'  
-      id151  'key'  type 'void *'  kind 'f'  arity '0'  size '[]'  
-      id152  'value'  type 'void *'  kind 'f'  arity '0'  size '[]'  
-      id153  'unread_flag'  type 'enum lfds711_misc_flag'  kind 'f'  arity '0'  size '[]'  
-      id154  'element_cleanup_callback'  type 'void (*)(struct lfds711_ringbuffer_state *rs, void *key, void *value, enum lfds711_misc_flag unread_flag)'  kind 'f'  arity '0'  size '[]'  
-      id155  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id150  'fs'  type 'struct lfds711_freelist_state'  kind 'f'  arity '0'  size '[]'  
+      id151  'qumms'  type 'struct lfds711_queue_umm_state'  kind 'f'  arity '0'  size '[]'  
+      id152  'rs'  type 'struct lfds711_ringbuffer_state *'  kind 'f'  arity '0'  size '[]'  
+      id153  'key'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id154  'value'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id155  'unread_flag'  type 'enum lfds711_misc_flag'  kind 'f'  arity '0'  size '[]'  
+      id156  'element_cleanup_callback'  type 'void (*)(struct lfds711_ringbuffer_state *rs, void *key, void *value, enum lfds711_misc_flag unread_flag)'  kind 'f'  arity '0'  size '[]'  
+      id157  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
    lfds711_stack_element
-      id162  'next'  type 'struct lfds711_stack_element *'  kind 'f'  arity '0'  size '[]'  
-      id163  'key'  type 'void *'  kind 'f'  arity '0'  size '[]'  
-      id164  'value'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id164  'next'  type 'struct lfds711_stack_element *'  kind 'f'  arity '0'  size '[]'  
+      id165  'key'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id166  'value'  type 'void *'  kind 'f'  arity '0'  size '[]'  
    lfds711_stack_state
-      id165  'top'  type 'struct lfds711_stack_element * volatile'  kind 'f'  arity '1'  size '[2]'  
-      id166  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
-      id167  'pop_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
-      id168  'push_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
+      id167  'top'  type 'struct lfds711_stack_element * volatile'  kind 'f'  arity '1'  size '[2]'  
+      id168  'user_state'  type 'void *'  kind 'f'  arity '0'  size '[]'  
+      id169  'pop_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
+      id170  'push_backoff'  type 'struct lfds711_misc_backoff_state'  kind 'f'  arity '0'  size '[]'  
    test_data
-      id241  'se'  type 'struct lfds711_stack_element'  kind 'f'  arity '0'  size '[]'  
-      id242  'user_id'  type 'int long long unsigned'  kind 'f'  arity '0'  size '[]'  
+      id243  'se'  type 'struct lfds711_stack_element'  kind 'f'  arity '0'  size '[]'  
+      id244  'user_id'  type 'int long long unsigned'  kind 'f'  arity '0'  size '[]'  
 
 Typedefs:
 
@@ -1339,7 +1291,7 @@ Pointer variables:
        var 'ss'   type 'void *'   kind 'g'   arity '0'   size '[]'   
        var 'se'   type 'struct lfds711_stack_element **'   kind 'p'   arity '0'   size '[]'   
        var 'bs'   type 'struct lfds711_misc_backoff_state *'   kind 'p'   arity '0'   size '[]'   
-   assert_create
+   check
        var 'ss'   type 'void *'   kind 'p'   arity '0'   size '[]'   
    lfds711_misc_force_store
    exponential_backoff
@@ -1394,21 +1346,27 @@ Pointer variables:
    is_empty
        var 's'   type 'struct lfds711_stack_state *'   kind 'p'   arity '0'   size '[]'   
        var 'se'   type 'struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
-   push
+   thread1
        var '__cs_unused'   type 'void *'   kind 'p'   arity '0'   size '[]'   
-   pop
+   thread2
        var '__cs_unused'   type 'void *'   kind 'p'   arity '0'   size '[]'   
    main
 
 Function blocks:
-function 'assert_create' ----------------------------------:
-void assert_create(void *ss, int size)
+function 'check' ----------------------------------:
+void check(void *ss)
 {
-    __CSEQ_assert(0);
+    unsigned long int size;
+    size = 14;
+    long unsigned int c0;
+    c0 = contains(ss, 0);
+    long unsigned int c2;
+    c2 = contains(ss, 2);
+    __CSEQ_assert(((size == 2) && c0) && c2);
 }
 
 
-void *ss, int size
+void *ss
 void
 function 'lfds711_misc_force_store' ----------------------------------:
 void lfds711_misc_force_store()
@@ -1841,16 +1799,12 @@ int delete(struct lfds711_stack_state *s)
     res = lfds711_stack_pop(&mystack, &se);
     ;
     _Bool __cs_tmp_if_cond_19;
-    __cs_tmp_if_cond_19 = res == 0;
+    __cs_tmp_if_cond_19 = res != 0;
     if (__cs_tmp_if_cond_19)
     {
-        return res;
+        free((*se).value);
     }
 
-    temp_td = (*se).value;
-    int id_popped;
-    id_popped = (*temp_td).user_id;
-    printf("%llu\n", (*temp_td).user_id);
     return res;
 }
 
@@ -1885,6 +1839,7 @@ int contains(struct lfds711_stack_state *s, unsigned long long int id)
         }
 
         datas[actual_size] = (*se).value;
+        printf("%d -- %d\n", (*datas[actual_size]).user_id, actual_size);
         ;
         _Bool __cs_tmp_if_cond_21;
         __cs_tmp_if_cond_21 = (*datas[actual_size]).user_id == id;
@@ -1924,9 +1879,10 @@ int get_size(struct lfds711_stack_state *s)
     struct test_data **datas;
     datas = __cs_safe_malloc((sizeof(struct test_data *)) * max_size);
     struct lfds711_stack_element *se;
-    while (actual_size < 2)
+    while (res != 0)
     {
         res = lfds711_stack_pop(s, &se);
+        datas[actual_size] = (*se).value;
         ;
         _Bool __cs_tmp_if_cond_22;
         __cs_tmp_if_cond_22 = res == 0;
@@ -1963,7 +1919,7 @@ int is_empty(struct lfds711_stack_state *s)
     __cs_tmp_if_cond_23 = res != 0;
     if (__cs_tmp_if_cond_23)
     {
-        fds711_stack_push(s, se);
+        lfds711_stack_push(s, se);
         return 0;
     }
 
@@ -1973,10 +1929,9 @@ int is_empty(struct lfds711_stack_state *s)
 
 struct lfds711_stack_state *s
 int
-function 'push' ----------------------------------:
-void *push(void *__cs_unused)
+function 'thread1' ----------------------------------:
+void *thread1(void *__cs_unused)
 {
-    int long long unsigned loop;
     ;
     _Bool __cs_tmp_if_cond_24;
     __cs_tmp_if_cond_24 = ATOMIC_OPERATION;
@@ -1986,11 +1941,30 @@ void *push(void *__cs_unused)
     }
 
     ;
-    insert(ss, 1500);
+    insert(ss, 0);
     ;
     _Bool __cs_tmp_if_cond_25;
     __cs_tmp_if_cond_25 = ATOMIC_OPERATION;
     if (__cs_tmp_if_cond_25)
+    {
+        __cs_mutex_unlock(&lock);
+    }
+
+    ;
+    ;
+    _Bool __cs_tmp_if_cond_26;
+    __cs_tmp_if_cond_26 = ATOMIC_OPERATION;
+    if (__cs_tmp_if_cond_26)
+    {
+        __cs_mutex_lock(&lock);
+    }
+
+    ;
+    insert(ss, 1);
+    ;
+    _Bool __cs_tmp_if_cond_27;
+    __cs_tmp_if_cond_27 = ATOMIC_OPERATION;
+    if (__cs_tmp_if_cond_27)
     {
         __cs_mutex_unlock(&lock);
     }
@@ -2001,17 +1975,13 @@ void *push(void *__cs_unused)
 
 void *__cs_unused
 void *
-function 'pop' ----------------------------------:
-void *pop(void *__cs_unused)
+function 'thread2' ----------------------------------:
+void *thread2(void *__cs_unused)
 {
-    int res;
-    int count;
-    count = 0;
-    int loop;
     ;
-    _Bool __cs_tmp_if_cond_26;
-    __cs_tmp_if_cond_26 = ATOMIC_OPERATION;
-    if (__cs_tmp_if_cond_26)
+    _Bool __cs_tmp_if_cond_28;
+    __cs_tmp_if_cond_28 = ATOMIC_OPERATION;
+    if (__cs_tmp_if_cond_28)
     {
         __cs_mutex_lock(&lock);
     }
@@ -2019,9 +1989,28 @@ void *pop(void *__cs_unused)
     ;
     delete(ss);
     ;
-    _Bool __cs_tmp_if_cond_27;
-    __cs_tmp_if_cond_27 = ATOMIC_OPERATION;
-    if (__cs_tmp_if_cond_27)
+    _Bool __cs_tmp_if_cond_29;
+    __cs_tmp_if_cond_29 = ATOMIC_OPERATION;
+    if (__cs_tmp_if_cond_29)
+    {
+        __cs_mutex_unlock(&lock);
+    }
+
+    ;
+    ;
+    _Bool __cs_tmp_if_cond_30;
+    __cs_tmp_if_cond_30 = ATOMIC_OPERATION;
+    if (__cs_tmp_if_cond_30)
+    {
+        __cs_mutex_lock(&lock);
+    }
+
+    ;
+    insert(ss, 2);
+    ;
+    _Bool __cs_tmp_if_cond_31;
+    __cs_tmp_if_cond_31 = ATOMIC_OPERATION;
+    if (__cs_tmp_if_cond_31)
     {
         __cs_mutex_unlock(&lock);
     }
@@ -2039,21 +2028,11 @@ int main()
     ss = init();
     __cs_t t1;
     __cs_t t2;
-    __cs_t t3;
-    __cs_t t4;
-    __cs_t t5;
-    __cs_t t6;
-    __cs_t t7;
-    __cs_t t8;
-    __cs_t t9;
-    __cs_t t10;
-    __cs_create(&t1, 0, push, 0);
-    __cs_create(&t6, 0, pop, 0);
+    __cs_create(&t1, 0, thread1, 0);
+    __cs_create(&t2, 0, thread2, 0);
     __cs_join(t1, 0);
-    __cs_join(t6, 0);
-    int size_ss;
-    size_ss = get_size(ss);
-    __CSEQ_assert(0);
+    __cs_join(t2, 0);
+    check(ss);
     return 0;
 }
 
@@ -2061,7 +2040,7 @@ int main()
 
 int
 Last statement, by function:
-function: assert_create   stmt:     __CSEQ_assert(0);
+function: check   stmt:     __CSEQ_assert(((size == 2) && c0) && c2);
 
 function: lfds711_misc_force_store   stmt:     return;
 
@@ -2123,583 +2102,575 @@ function: get_size   stmt:     return actual_size;
 
 function: is_empty   stmt:     return 1;
 
-function: push   stmt:     ;
+function: thread1   stmt:     ;
 
-function: pop   stmt:     ;
+function: thread2   stmt:     ;
 
 function: main   stmt:     return 0;
 
 
 All symbols (new symbol table - work in progress):
-   (0, 'assert_create')  
+   (0, 'check')  
    (1, 'ss')  
    (2, 'size')  
-   (3, 'entropy')  
-   (4, 'entropy')  
-   (5, 'lfds711_prng_init_valid_on_current_logical_core')  
-   (6, 'ps')  
-   (7, 'seed')  
-   (8, 'lfds711_prng_st_init')  
-   (9, 'psts')  
-   (10, 'seed')  
-   (11, 'lock')  
-   (12, 'backoff_iteration_frequency_counters')  
-   (13, 'metric')  
-   (14, 'total_operations')  
-   (15, 'ps')  
-   (16, 'min_elements')  
-   (17, 'max_elements')  
-   (18, 'lfds711_misc_globals')  
-   (19, 'lfds711_misc_force_store')  
-   (20, 'lfds711_misc_query')  
-   (21, 'query_type')  
-   (22, 'query_input')  
-   (23, 'query_output')  
-   (24, 'lfds711_misc_force_store')  
-   (25, 'destination')  
-   (26, 'left')  
-   (27, 'right')  
-   (28, 'up')  
-   (29, 'value')  
-   (30, 'key')  
-   (31, 'root')  
-   (32, 'key_compare_function')  
-   (33, 'new_key')  
-   (34, 'existing_key')  
-   (35, 'existing_key')  
-   (36, 'user_state')  
-   (37, 'insert_backoff')  
-   (38, 'lfds711_btree_au_init_valid_on_current_logical_core')  
-   (39, 'baus')  
-   (40, 'key_compare_function')  
-   (41, 'new_key')  
-   (42, 'existing_key')  
-   (43, 'existing_key')  
-   (44, 'user_state')  
-   (45, 'lfds711_btree_au_cleanup')  
-   (46, 'baus')  
-   (47, 'element_cleanup_callback')  
+   (3, 'c0')  
+   (4, 'c2')  
+   (5, 'entropy')  
+   (6, 'entropy')  
+   (7, 'lfds711_prng_init_valid_on_current_logical_core')  
+   (8, 'ps')  
+   (9, 'seed')  
+   (10, 'lfds711_prng_st_init')  
+   (11, 'psts')  
+   (12, 'seed')  
+   (13, 'lock')  
+   (14, 'backoff_iteration_frequency_counters')  
+   (15, 'metric')  
+   (16, 'total_operations')  
+   (17, 'ps')  
+   (18, 'min_elements')  
+   (19, 'max_elements')  
+   (20, 'lfds711_misc_globals')  
+   (21, 'lfds711_misc_force_store')  
+   (22, 'lfds711_misc_query')  
+   (23, 'query_type')  
+   (24, 'query_input')  
+   (25, 'query_output')  
+   (26, 'lfds711_misc_force_store')  
+   (27, 'destination')  
+   (28, 'left')  
+   (29, 'right')  
+   (30, 'up')  
+   (31, 'value')  
+   (32, 'key')  
+   (33, 'root')  
+   (34, 'key_compare_function')  
+   (35, 'new_key')  
+   (36, 'existing_key')  
+   (37, 'existing_key')  
+   (38, 'user_state')  
+   (39, 'insert_backoff')  
+   (40, 'lfds711_btree_au_init_valid_on_current_logical_core')  
+   (41, 'baus')  
+   (42, 'key_compare_function')  
+   (43, 'new_key')  
+   (44, 'existing_key')  
+   (45, 'existing_key')  
+   (46, 'user_state')  
+   (47, 'lfds711_btree_au_cleanup')  
    (48, 'baus')  
-   (49, 'baue')  
-   (50, 'lfds711_btree_au_insert')  
-   (51, 'baus')  
-   (52, 'baue')  
-   (53, 'existing_baue')  
-   (54, 'lfds711_btree_au_get_by_key')  
-   (55, 'baus')  
-   (56, 'key_compare_function')  
-   (57, 'new_key')  
-   (58, 'existing_key')  
-   (59, 'key')  
-   (60, 'baue')  
-   (61, 'lfds711_btree_au_get_by_absolute_position_and_then_by_relative_position')  
-   (62, 'baus')  
-   (63, 'baue')  
-   (64, 'absolute_position')  
-   (65, 'relative_position')  
-   (66, 'lfds711_btree_au_get_by_absolute_position')  
-   (67, 'baus')  
-   (68, 'baue')  
-   (69, 'absolute_position')  
-   (70, 'lfds711_btree_au_get_by_relative_position')  
-   (71, 'baue')  
-   (72, 'relative_position')  
-   (73, 'lfds711_btree_au_query')  
-   (74, 'baus')  
-   (75, 'query_type')  
-   (76, 'query_input')  
-   (77, 'query_output')  
-   (78, 'next')  
-   (79, 'key')  
-   (80, 'value')  
-   (81, 'top')  
-   (82, 'elimination_array_size_in_elements')  
-   (83, 'elimination_array')  
-   (84, 'user_state')  
-   (85, 'pop_backoff')  
-   (86, 'push_backoff')  
-   (87, 'lfds711_freelist_init_valid_on_current_logical_core')  
-   (88, 'fs')  
-   (89, 'elimination_array')  
-   (90, 'elimination_array_size_in_elements')  
-   (91, 'user_state')  
-   (92, 'lfds711_freelist_cleanup')  
-   (93, 'fs')  
-   (94, 'element_cleanup_callback')  
+   (49, 'element_cleanup_callback')  
+   (50, 'baus')  
+   (51, 'baue')  
+   (52, 'lfds711_btree_au_insert')  
+   (53, 'baus')  
+   (54, 'baue')  
+   (55, 'existing_baue')  
+   (56, 'lfds711_btree_au_get_by_key')  
+   (57, 'baus')  
+   (58, 'key_compare_function')  
+   (59, 'new_key')  
+   (60, 'existing_key')  
+   (61, 'key')  
+   (62, 'baue')  
+   (63, 'lfds711_btree_au_get_by_absolute_position_and_then_by_relative_position')  
+   (64, 'baus')  
+   (65, 'baue')  
+   (66, 'absolute_position')  
+   (67, 'relative_position')  
+   (68, 'lfds711_btree_au_get_by_absolute_position')  
+   (69, 'baus')  
+   (70, 'baue')  
+   (71, 'absolute_position')  
+   (72, 'lfds711_btree_au_get_by_relative_position')  
+   (73, 'baue')  
+   (74, 'relative_position')  
+   (75, 'lfds711_btree_au_query')  
+   (76, 'baus')  
+   (77, 'query_type')  
+   (78, 'query_input')  
+   (79, 'query_output')  
+   (80, 'next')  
+   (81, 'key')  
+   (82, 'value')  
+   (83, 'top')  
+   (84, 'elimination_array_size_in_elements')  
+   (85, 'elimination_array')  
+   (86, 'user_state')  
+   (87, 'pop_backoff')  
+   (88, 'push_backoff')  
+   (89, 'lfds711_freelist_init_valid_on_current_logical_core')  
+   (90, 'fs')  
+   (91, 'elimination_array')  
+   (92, 'elimination_array_size_in_elements')  
+   (93, 'user_state')  
+   (94, 'lfds711_freelist_cleanup')  
    (95, 'fs')  
-   (96, 'fe')  
-   (97, 'lfds711_freelist_push')  
-   (98, 'fs')  
-   (99, 'fe')  
-   (100, 'psts')  
-   (101, 'lfds711_freelist_pop')  
-   (102, 'fs')  
-   (103, 'fe')  
-   (104, 'psts')  
-   (105, 'lfds711_freelist_query')  
-   (106, 'fs')  
-   (107, 'query_type')  
-   (108, 'query_input')  
-   (109, 'query_output')  
-   (110, 'baue')  
-   (111, 'key')  
-   (112, 'value')  
-   (113, 'baue')  
-   (114, 'baus')  
-   (115, 'baus_end')  
-   (116, 'existing_key')  
-   (117, 'key_compare_function')  
-   (118, 'new_key')  
-   (119, 'existing_key')  
-   (120, 'array_size')  
-   (121, 'baus_array')  
-   (122, 'element_cleanup_callback')  
-   (123, 'has')  
-   (124, 'hae')  
-   (125, 'key_hash_function')  
-   (126, 'key')  
-   (127, 'hash')  
-   (128, 'user_state')  
-   (129, 'lfds711_hash_a_init_valid_on_current_logical_core')  
-   (130, 'has')  
-   (131, 'baus_array')  
-   (132, 'array_size')  
-   (133, 'key_compare_function')  
-   (134, 'new_key')  
-   (135, 'existing_key')  
-   (136, 'key_hash_function')  
-   (137, 'key')  
-   (138, 'hash')  
-   (139, 'existing_key')  
-   (140, 'user_state')  
-   (141, 'lfds711_hash_a_cleanup')  
-   (142, 'has')  
-   (143, 'element_cleanup_function')  
+   (96, 'element_cleanup_callback')  
+   (97, 'fs')  
+   (98, 'fe')  
+   (99, 'lfds711_freelist_push')  
+   (100, 'fs')  
+   (101, 'fe')  
+   (102, 'psts')  
+   (103, 'lfds711_freelist_pop')  
+   (104, 'fs')  
+   (105, 'fe')  
+   (106, 'psts')  
+   (107, 'lfds711_freelist_query')  
+   (108, 'fs')  
+   (109, 'query_type')  
+   (110, 'query_input')  
+   (111, 'query_output')  
+   (112, 'baue')  
+   (113, 'key')  
+   (114, 'value')  
+   (115, 'baue')  
+   (116, 'baus')  
+   (117, 'baus_end')  
+   (118, 'existing_key')  
+   (119, 'key_compare_function')  
+   (120, 'new_key')  
+   (121, 'existing_key')  
+   (122, 'array_size')  
+   (123, 'baus_array')  
+   (124, 'element_cleanup_callback')  
+   (125, 'has')  
+   (126, 'hae')  
+   (127, 'key_hash_function')  
+   (128, 'key')  
+   (129, 'hash')  
+   (130, 'user_state')  
+   (131, 'lfds711_hash_a_init_valid_on_current_logical_core')  
+   (132, 'has')  
+   (133, 'baus_array')  
+   (134, 'array_size')  
+   (135, 'key_compare_function')  
+   (136, 'new_key')  
+   (137, 'existing_key')  
+   (138, 'key_hash_function')  
+   (139, 'key')  
+   (140, 'hash')  
+   (141, 'existing_key')  
+   (142, 'user_state')  
+   (143, 'lfds711_hash_a_cleanup')  
    (144, 'has')  
-   (145, 'hae')  
-   (146, 'lfds711_hash_a_insert')  
-   (147, 'has')  
-   (148, 'hae')  
-   (149, 'existing_hae')  
-   (150, 'lfds711_hash_a_get_by_key')  
-   (151, 'has')  
-   (152, 'key_compare_function')  
-   (153, 'new_key')  
-   (154, 'existing_key')  
-   (155, 'key_hash_function')  
-   (156, 'key')  
-   (157, 'hash')  
+   (145, 'element_cleanup_function')  
+   (146, 'has')  
+   (147, 'hae')  
+   (148, 'lfds711_hash_a_insert')  
+   (149, 'has')  
+   (150, 'hae')  
+   (151, 'existing_hae')  
+   (152, 'lfds711_hash_a_get_by_key')  
+   (153, 'has')  
+   (154, 'key_compare_function')  
+   (155, 'new_key')  
+   (156, 'existing_key')  
+   (157, 'key_hash_function')  
    (158, 'key')  
-   (159, 'hae')  
-   (160, 'lfds711_hash_a_iterate_init')  
-   (161, 'has')  
-   (162, 'hai')  
-   (163, 'lfds711_hash_a_iterate')  
+   (159, 'hash')  
+   (160, 'key')  
+   (161, 'hae')  
+   (162, 'lfds711_hash_a_iterate_init')  
+   (163, 'has')  
    (164, 'hai')  
-   (165, 'hae')  
-   (166, 'lfds711_hash_a_query')  
-   (167, 'has')  
-   (168, 'query_type')  
-   (169, 'query_input')  
-   (170, 'query_output')  
-   (171, 'next')  
-   (172, 'value')  
-   (173, 'key')  
-   (174, 'dummy_element')  
-   (175, 'start')  
-   (176, 'key_compare_function')  
-   (177, 'new_key')  
-   (178, 'existing_key')  
-   (179, 'existing_key')  
-   (180, 'user_state')  
-   (181, 'insert_backoff')  
-   (182, 'lfds711_list_aso_init_valid_on_current_logical_core')  
-   (183, 'lasos')  
-   (184, 'key_compare_function')  
-   (185, 'new_key')  
-   (186, 'existing_key')  
-   (187, 'existing_key')  
-   (188, 'user_state')  
-   (189, 'lfds711_list_aso_cleanup')  
-   (190, 'lasos')  
-   (191, 'element_cleanup_callback')  
+   (165, 'lfds711_hash_a_iterate')  
+   (166, 'hai')  
+   (167, 'hae')  
+   (168, 'lfds711_hash_a_query')  
+   (169, 'has')  
+   (170, 'query_type')  
+   (171, 'query_input')  
+   (172, 'query_output')  
+   (173, 'next')  
+   (174, 'value')  
+   (175, 'key')  
+   (176, 'dummy_element')  
+   (177, 'start')  
+   (178, 'key_compare_function')  
+   (179, 'new_key')  
+   (180, 'existing_key')  
+   (181, 'existing_key')  
+   (182, 'user_state')  
+   (183, 'insert_backoff')  
+   (184, 'lfds711_list_aso_init_valid_on_current_logical_core')  
+   (185, 'lasos')  
+   (186, 'key_compare_function')  
+   (187, 'new_key')  
+   (188, 'existing_key')  
+   (189, 'existing_key')  
+   (190, 'user_state')  
+   (191, 'lfds711_list_aso_cleanup')  
    (192, 'lasos')  
-   (193, 'lasoe')  
-   (194, 'lfds711_list_aso_insert')  
-   (195, 'lasos')  
-   (196, 'lasoe')  
-   (197, 'existing_lasoe')  
-   (198, 'lfds711_list_aso_get_by_key')  
-   (199, 'lasos')  
-   (200, 'key')  
-   (201, 'lasoe')  
-   (202, 'lfds711_list_aso_query')  
-   (203, 'lasos')  
-   (204, 'query_type')  
-   (205, 'query_input')  
-   (206, 'query_output')  
-   (207, 'next')  
-   (208, 'value')  
-   (209, 'key')  
-   (210, 'dummy_element')  
-   (211, 'end')  
-   (212, 'start')  
-   (213, 'user_state')  
-   (214, 'after_backoff')  
-   (215, 'end_backoff')  
-   (216, 'start_backoff')  
-   (217, 'lfds711_list_asu_init_valid_on_current_logical_core')  
-   (218, 'lasus')  
-   (219, 'user_state')  
-   (220, 'lfds711_list_asu_cleanup')  
-   (221, 'lasus')  
-   (222, 'element_cleanup_callback')  
+   (193, 'element_cleanup_callback')  
+   (194, 'lasos')  
+   (195, 'lasoe')  
+   (196, 'lfds711_list_aso_insert')  
+   (197, 'lasos')  
+   (198, 'lasoe')  
+   (199, 'existing_lasoe')  
+   (200, 'lfds711_list_aso_get_by_key')  
+   (201, 'lasos')  
+   (202, 'key')  
+   (203, 'lasoe')  
+   (204, 'lfds711_list_aso_query')  
+   (205, 'lasos')  
+   (206, 'query_type')  
+   (207, 'query_input')  
+   (208, 'query_output')  
+   (209, 'next')  
+   (210, 'value')  
+   (211, 'key')  
+   (212, 'dummy_element')  
+   (213, 'end')  
+   (214, 'start')  
+   (215, 'user_state')  
+   (216, 'after_backoff')  
+   (217, 'end_backoff')  
+   (218, 'start_backoff')  
+   (219, 'lfds711_list_asu_init_valid_on_current_logical_core')  
+   (220, 'lasus')  
+   (221, 'user_state')  
+   (222, 'lfds711_list_asu_cleanup')  
    (223, 'lasus')  
-   (224, 'lasue')  
-   (225, 'lfds711_list_asu_insert_at_position')  
-   (226, 'lasus')  
-   (227, 'lasue')  
-   (228, 'lasue_predecessor')  
-   (229, 'position')  
-   (230, 'lfds711_list_asu_insert_at_start')  
-   (231, 'lasus')  
-   (232, 'lasue')  
-   (233, 'lfds711_list_asu_insert_at_end')  
-   (234, 'lasus')  
-   (235, 'lasue')  
-   (236, 'lfds711_list_asu_insert_after_element')  
-   (237, 'lasus')  
-   (238, 'lasue')  
-   (239, 'lasue_predecessor')  
-   (240, 'lfds711_list_asu_get_by_key')  
-   (241, 'lasus')  
-   (242, 'key_compare_function')  
-   (243, 'new_key')  
-   (244, 'existing_key')  
-   (245, 'key')  
-   (246, 'lasue')  
-   (247, 'lfds711_list_asu_query')  
-   (248, 'lasus')  
-   (249, 'query_type')  
-   (250, 'query_input')  
-   (251, 'query_output')  
-   (252, 'sequence_number')  
-   (253, 'key')  
-   (254, 'value')  
-   (255, 'number_elements')  
-   (256, 'mask')  
-   (257, 'read_index')  
-   (258, 'write_index')  
-   (259, 'element_array')  
-   (260, 'user_state')  
-   (261, 'dequeue_backoff')  
-   (262, 'enqueue_backoff')  
-   (263, 'lfds711_queue_bmm_init_valid_on_current_logical_core')  
-   (264, 'qbmms')  
-   (265, 'element_array')  
-   (266, 'number_elements')  
-   (267, 'user_state')  
-   (268, 'lfds711_queue_bmm_cleanup')  
-   (269, 'qbmms')  
-   (270, 'element_cleanup_callback')  
+   (224, 'element_cleanup_callback')  
+   (225, 'lasus')  
+   (226, 'lasue')  
+   (227, 'lfds711_list_asu_insert_at_position')  
+   (228, 'lasus')  
+   (229, 'lasue')  
+   (230, 'lasue_predecessor')  
+   (231, 'position')  
+   (232, 'lfds711_list_asu_insert_at_start')  
+   (233, 'lasus')  
+   (234, 'lasue')  
+   (235, 'lfds711_list_asu_insert_at_end')  
+   (236, 'lasus')  
+   (237, 'lasue')  
+   (238, 'lfds711_list_asu_insert_after_element')  
+   (239, 'lasus')  
+   (240, 'lasue')  
+   (241, 'lasue_predecessor')  
+   (242, 'lfds711_list_asu_get_by_key')  
+   (243, 'lasus')  
+   (244, 'key_compare_function')  
+   (245, 'new_key')  
+   (246, 'existing_key')  
+   (247, 'key')  
+   (248, 'lasue')  
+   (249, 'lfds711_list_asu_query')  
+   (250, 'lasus')  
+   (251, 'query_type')  
+   (252, 'query_input')  
+   (253, 'query_output')  
+   (254, 'sequence_number')  
+   (255, 'key')  
+   (256, 'value')  
+   (257, 'number_elements')  
+   (258, 'mask')  
+   (259, 'read_index')  
+   (260, 'write_index')  
+   (261, 'element_array')  
+   (262, 'user_state')  
+   (263, 'dequeue_backoff')  
+   (264, 'enqueue_backoff')  
+   (265, 'lfds711_queue_bmm_init_valid_on_current_logical_core')  
+   (266, 'qbmms')  
+   (267, 'element_array')  
+   (268, 'number_elements')  
+   (269, 'user_state')  
+   (270, 'lfds711_queue_bmm_cleanup')  
    (271, 'qbmms')  
-   (272, 'key')  
-   (273, 'value')  
-   (274, 'lfds711_queue_bmm_enqueue')  
-   (275, 'qbmms')  
-   (276, 'key')  
-   (277, 'value')  
-   (278, 'lfds711_queue_bmm_dequeue')  
-   (279, 'qbmms')  
-   (280, 'key')  
-   (281, 'value')  
-   (282, 'lfds711_queue_bmm_query')  
-   (283, 'qbmms')  
-   (284, 'query_type')  
-   (285, 'query_input')  
-   (286, 'query_output')  
-   (287, 'key')  
-   (288, 'value')  
-   (289, 'number_elements')  
-   (290, 'mask')  
-   (291, 'read_index')  
-   (292, 'write_index')  
-   (293, 'element_array')  
-   (294, 'user_state')  
-   (295, 'lfds711_queue_bss_init_valid_on_current_logical_core')  
-   (296, 'qbsss')  
-   (297, 'element_array')  
-   (298, 'number_elements')  
-   (299, 'user_state')  
-   (300, 'lfds711_queue_bss_cleanup')  
-   (301, 'qbsss')  
-   (302, 'element_cleanup_callback')  
+   (272, 'element_cleanup_callback')  
+   (273, 'qbmms')  
+   (274, 'key')  
+   (275, 'value')  
+   (276, 'lfds711_queue_bmm_enqueue')  
+   (277, 'qbmms')  
+   (278, 'key')  
+   (279, 'value')  
+   (280, 'lfds711_queue_bmm_dequeue')  
+   (281, 'qbmms')  
+   (282, 'key')  
+   (283, 'value')  
+   (284, 'lfds711_queue_bmm_query')  
+   (285, 'qbmms')  
+   (286, 'query_type')  
+   (287, 'query_input')  
+   (288, 'query_output')  
+   (289, 'key')  
+   (290, 'value')  
+   (291, 'number_elements')  
+   (292, 'mask')  
+   (293, 'read_index')  
+   (294, 'write_index')  
+   (295, 'element_array')  
+   (296, 'user_state')  
+   (297, 'lfds711_queue_bss_init_valid_on_current_logical_core')  
+   (298, 'qbsss')  
+   (299, 'element_array')  
+   (300, 'number_elements')  
+   (301, 'user_state')  
+   (302, 'lfds711_queue_bss_cleanup')  
    (303, 'qbsss')  
-   (304, 'key')  
-   (305, 'value')  
-   (306, 'lfds711_queue_bss_enqueue')  
-   (307, 'qbsss')  
-   (308, 'key')  
-   (309, 'value')  
-   (310, 'lfds711_queue_bss_dequeue')  
-   (311, 'qbsss')  
-   (312, 'key')  
-   (313, 'value')  
-   (314, 'lfds711_queue_bss_query')  
-   (315, 'qbsss')  
-   (316, 'query_type')  
-   (317, 'query_input')  
-   (318, 'query_output')  
-   (319, 'next')  
-   (320, 'key')  
-   (321, 'value')  
-   (322, 'enqueue')  
-   (323, 'dequeue')  
-   (324, 'aba_counter')  
-   (325, 'user_state')  
-   (326, 'dequeue_backoff')  
-   (327, 'enqueue_backoff')  
-   (328, 'lfds711_queue_umm_init_valid_on_current_logical_core')  
-   (329, 'qumms')  
-   (330, 'qumme_dummy')  
-   (331, 'user_state')  
-   (332, 'lfds711_queue_umm_cleanup')  
-   (333, 'qumms')  
-   (334, 'element_cleanup_callback')  
+   (304, 'element_cleanup_callback')  
+   (305, 'qbsss')  
+   (306, 'key')  
+   (307, 'value')  
+   (308, 'lfds711_queue_bss_enqueue')  
+   (309, 'qbsss')  
+   (310, 'key')  
+   (311, 'value')  
+   (312, 'lfds711_queue_bss_dequeue')  
+   (313, 'qbsss')  
+   (314, 'key')  
+   (315, 'value')  
+   (316, 'lfds711_queue_bss_query')  
+   (317, 'qbsss')  
+   (318, 'query_type')  
+   (319, 'query_input')  
+   (320, 'query_output')  
+   (321, 'next')  
+   (322, 'key')  
+   (323, 'value')  
+   (324, 'enqueue')  
+   (325, 'dequeue')  
+   (326, 'aba_counter')  
+   (327, 'user_state')  
+   (328, 'dequeue_backoff')  
+   (329, 'enqueue_backoff')  
+   (330, 'lfds711_queue_umm_init_valid_on_current_logical_core')  
+   (331, 'qumms')  
+   (332, 'qumme_dummy')  
+   (333, 'user_state')  
+   (334, 'lfds711_queue_umm_cleanup')  
    (335, 'qumms')  
-   (336, 'qumme')  
-   (337, 'dummy_element_flag')  
-   (338, 'lfds711_queue_umm_enqueue')  
-   (339, 'qumms')  
-   (340, 'qumme')  
-   (341, 'lfds711_queue_umm_dequeue')  
-   (342, 'qumms')  
-   (343, 'qumme')  
-   (344, 'lfds711_queue_umm_query')  
-   (345, 'qumms')  
-   (346, 'query_type')  
-   (347, 'query_input')  
-   (348, 'query_output')  
-   (349, 'fe')  
-   (350, 'qumme')  
-   (351, 'qumme_use')  
-   (352, 'key')  
-   (353, 'value')  
-   (354, 'fs')  
-   (355, 'qumms')  
-   (356, 'element_cleanup_callback')  
-   (357, 'rs')  
-   (358, 'key')  
-   (359, 'value')  
-   (360, 'unread_flag')  
-   (361, 'user_state')  
-   (362, 'lfds711_ringbuffer_init_valid_on_current_logical_core')  
-   (363, 'rs')  
-   (364, 're_array_inc_dummy')  
-   (365, 'number_elements_inc_dummy')  
-   (366, 'user_state')  
-   (367, 'lfds711_ringbuffer_cleanup')  
-   (368, 'rs')  
-   (369, 'element_cleanup_callback')  
+   (336, 'element_cleanup_callback')  
+   (337, 'qumms')  
+   (338, 'qumme')  
+   (339, 'dummy_element_flag')  
+   (340, 'lfds711_queue_umm_enqueue')  
+   (341, 'qumms')  
+   (342, 'qumme')  
+   (343, 'lfds711_queue_umm_dequeue')  
+   (344, 'qumms')  
+   (345, 'qumme')  
+   (346, 'lfds711_queue_umm_query')  
+   (347, 'qumms')  
+   (348, 'query_type')  
+   (349, 'query_input')  
+   (350, 'query_output')  
+   (351, 'fe')  
+   (352, 'qumme')  
+   (353, 'qumme_use')  
+   (354, 'key')  
+   (355, 'value')  
+   (356, 'fs')  
+   (357, 'qumms')  
+   (358, 'element_cleanup_callback')  
+   (359, 'rs')  
+   (360, 'key')  
+   (361, 'value')  
+   (362, 'unread_flag')  
+   (363, 'user_state')  
+   (364, 'lfds711_ringbuffer_init_valid_on_current_logical_core')  
+   (365, 'rs')  
+   (366, 're_array_inc_dummy')  
+   (367, 'number_elements_inc_dummy')  
+   (368, 'user_state')  
+   (369, 'lfds711_ringbuffer_cleanup')  
    (370, 'rs')  
-   (371, 'key')  
-   (372, 'value')  
-   (373, 'unread_flag')  
-   (374, 'lfds711_ringbuffer_read')  
-   (375, 'rs')  
-   (376, 'key')  
-   (377, 'value')  
-   (378, 'lfds711_ringbuffer_write')  
-   (379, 'rs')  
-   (380, 'key')  
-   (381, 'value')  
-   (382, 'overwrite_occurred_flag')  
-   (383, 'overwritten_key')  
-   (384, 'overwritten_value')  
-   (385, 'lfds711_ringbuffer_query')  
-   (386, 'rs')  
-   (387, 'query_type')  
-   (388, 'query_input')  
-   (389, 'query_output')  
-   (390, 'next')  
-   (391, 'key')  
-   (392, 'value')  
-   (393, 'top')  
-   (394, 'user_state')  
-   (395, 'pop_backoff')  
-   (396, 'push_backoff')  
-   (397, 'lfds711_stack_init_valid_on_current_logical_core')  
-   (398, 'ss')  
-   (399, 'user_state')  
-   (400, 'lfds711_stack_cleanup')  
-   (401, 'ss')  
-   (402, 'element_cleanup_callback')  
+   (371, 'element_cleanup_callback')  
+   (372, 'rs')  
+   (373, 'key')  
+   (374, 'value')  
+   (375, 'unread_flag')  
+   (376, 'lfds711_ringbuffer_read')  
+   (377, 'rs')  
+   (378, 'key')  
+   (379, 'value')  
+   (380, 'lfds711_ringbuffer_write')  
+   (381, 'rs')  
+   (382, 'key')  
+   (383, 'value')  
+   (384, 'overwrite_occurred_flag')  
+   (385, 'overwritten_key')  
+   (386, 'overwritten_value')  
+   (387, 'lfds711_ringbuffer_query')  
+   (388, 'rs')  
+   (389, 'query_type')  
+   (390, 'query_input')  
+   (391, 'query_output')  
+   (392, 'next')  
+   (393, 'key')  
+   (394, 'value')  
+   (395, 'top')  
+   (396, 'user_state')  
+   (397, 'pop_backoff')  
+   (398, 'push_backoff')  
+   (399, 'lfds711_stack_init_valid_on_current_logical_core')  
+   (400, 'ss')  
+   (401, 'user_state')  
+   (402, 'lfds711_stack_cleanup')  
    (403, 'ss')  
-   (404, 'se')  
-   (405, 'lfds711_stack_push')  
-   (406, 'ss')  
-   (407, 'se')  
-   (408, 'lfds711_stack_pop')  
-   (409, 'ss')  
-   (410, 'se')  
-   (411, 'lfds711_stack_query')  
-   (412, 'ss')  
-   (413, 'query_type')  
-   (414, 'query_input')  
-   (415, 'query_output')  
-   (416, 'lfds711_misc_internal_backoff_init')  
-   (417, 'bs')  
-   (418, 'library_lock')  
-   (419, 'exponential_backoff')  
-   (420, 'loop')  
-   (421, '__CSEQ_atomic_swap_stack_top')  
-   (422, 'top')  
-   (423, 'oldtop')  
-   (424, 'newtop')  
-   (425, '__cs_tmp_if_cond_0')  
-   (426, 'lfds711_misc_internal_backoff_init')  
-   (427, 'bs')  
-   (428, '__cs_tmp_if_cond_1')  
-   (429, 'c')  
-   (430, '__cs_tmp_if_cond_2')  
+   (404, 'element_cleanup_callback')  
+   (405, 'ss')  
+   (406, 'se')  
+   (407, 'lfds711_stack_push')  
+   (408, 'ss')  
+   (409, 'se')  
+   (410, 'lfds711_stack_pop')  
+   (411, 'ss')  
+   (412, 'se')  
+   (413, 'lfds711_stack_query')  
+   (414, 'ss')  
+   (415, 'query_type')  
+   (416, 'query_input')  
+   (417, 'query_output')  
+   (418, 'lfds711_misc_internal_backoff_init')  
+   (419, 'bs')  
+   (420, 'library_lock')  
+   (421, 'exponential_backoff')  
+   (422, 'loop')  
+   (423, '__CSEQ_atomic_swap_stack_top')  
+   (424, 'top')  
+   (425, 'oldtop')  
+   (426, 'newtop')  
+   (427, '__cs_tmp_if_cond_0')  
+   (428, 'lfds711_misc_internal_backoff_init')  
+   (429, 'bs')  
+   (430, '__cs_tmp_if_cond_1')  
    (431, 'c')  
-   (432, 'lfds711_stack_init_valid_on_current_logical_core')  
-   (433, 'ss')  
-   (434, 'user_state')  
-   (435, '__cs_tmp_if_cond_3')  
-   (436, 'c')  
-   (437, '__cs_tmp_if_cond_4')  
+   (432, '__cs_tmp_if_cond_2')  
+   (433, 'c')  
+   (434, 'lfds711_stack_init_valid_on_current_logical_core')  
+   (435, 'ss')  
+   (436, 'user_state')  
+   (437, '__cs_tmp_if_cond_3')  
    (438, 'c')  
-   (439, '__cs_tmp_if_cond_5')  
+   (439, '__cs_tmp_if_cond_4')  
    (440, 'c')  
-   (441, 'lfds711_stack_pop')  
-   (442, 'ss')  
-   (443, 'se')  
-   (444, 'result')  
-   (445, 'backoff_iteration')  
-   (446, 'new_top')  
-   (447, 'original_top')  
-   (448, '__cs_tmp_if_cond_6')  
-   (449, 'c')  
-   (450, '__cs_tmp_if_cond_7')  
+   (441, '__cs_tmp_if_cond_5')  
+   (442, 'c')  
+   (443, 'lfds711_stack_pop')  
+   (444, 'ss')  
+   (445, 'se')  
+   (446, 'result')  
+   (447, 'backoff_iteration')  
+   (448, 'new_top')  
+   (449, 'original_top')  
+   (450, '__cs_tmp_if_cond_6')  
    (451, 'c')  
-   (452, 'i')  
-   (453, '__cs_dowhile_onetime_1')  
-   (454, '__cs_tmp_if_cond_8')  
-   (455, '__cs_tmp_if_cond_9')  
-   (456, '__cs_tmp_if_cond_10')  
-   (457, '__cs_tmp_if_cond_11')  
-   (458, '__cs_tmp_if_cond_12')  
-   (459, '__cs_tmp_if_cond_13')  
-   (460, 'lfds711_stack_push')  
-   (461, 'ss')  
-   (462, 'se')  
-   (463, 'result')  
-   (464, 'backoff_iteration')  
-   (465, 'new_top')  
-   (466, 'original_top')  
-   (467, '__cs_tmp_if_cond_14')  
-   (468, 'c')  
-   (469, '__cs_tmp_if_cond_15')  
+   (452, '__cs_tmp_if_cond_7')  
+   (453, 'c')  
+   (454, 'i')  
+   (455, '__cs_dowhile_onetime_1')  
+   (456, '__cs_tmp_if_cond_8')  
+   (457, '__cs_tmp_if_cond_9')  
+   (458, '__cs_tmp_if_cond_10')  
+   (459, '__cs_tmp_if_cond_11')  
+   (460, '__cs_tmp_if_cond_12')  
+   (461, '__cs_tmp_if_cond_13')  
+   (462, 'lfds711_stack_push')  
+   (463, 'ss')  
+   (464, 'se')  
+   (465, 'result')  
+   (466, 'backoff_iteration')  
+   (467, 'new_top')  
+   (468, 'original_top')  
+   (469, '__cs_tmp_if_cond_14')  
    (470, 'c')  
-   (471, 'i')  
-   (472, '__cs_tmp_if_cond_16')  
-   (473, '__cs_tmp_if_cond_17')  
-   (474, '__CSEQ_atomic_compare_and_exchange')  
-   (475, 'mptr')  
-   (476, 'eptr')  
-   (477, 'newval')  
-   (478, 'weak_p')  
-   (479, 'sm')  
-   (480, 'fm')  
-   (481, '__cs_tmp_if_cond_18')  
-   (482, '__atomic_compare_exchange_n')  
-   (483, 'mptr')  
-   (484, 'eptr')  
-   (485, 'newval')  
-   (486, 'weak_p')  
-   (487, 'sm')  
-   (488, 'fm')  
-   (489, 'res')  
-   (490, '__CSEQ_atomic_exchange')  
-   (491, 'previous')  
-   (492, 'new')  
-   (493, 'memorder')  
-   (494, 'old')  
-   (495, '__atomic_exchange_n')  
-   (496, 'previous')  
-   (497, 'new')  
-   (498, 'memorder')  
-   (499, 'res')  
-   (500, '__atomic_thread_fence')  
-   (501, 'i')  
-   (502, 'mystack')  
-   (503, 'se')  
-   (504, 'user_id')  
-   (505, 'init')  
-   (506, 'insert')  
-   (507, 's')  
-   (508, 'id')  
-   (509, 'td')  
-   (510, 'delete')  
-   (511, 's')  
-   (512, 'se')  
-   (513, 'temp_td')  
-   (514, 'res')  
-   (515, '__cs_tmp_if_cond_19')  
-   (516, 'id_popped')  
-   (517, 'contains')  
-   (518, 's')  
-   (519, 'id')  
-   (520, 'max_size')  
-   (521, 'actual_size')  
-   (522, 'res')  
-   (523, 'found')  
-   (524, 'dimension')  
-   (525, 'datas')  
-   (526, 'se')  
-   (527, '__cs_tmp_if_cond_20')  
-   (528, '__cs_tmp_if_cond_21')  
-   (529, 'i')  
-   (530, 'get_size')  
-   (531, 's')  
-   (532, 'max_size')  
-   (533, 'actual_size')  
-   (534, 'res')  
-   (535, 'dimension')  
-   (536, 'datas')  
-   (537, 'se')  
-   (538, '__cs_tmp_if_cond_22')  
-   (539, 'i')  
-   (540, 'is_empty')  
-   (541, 's')  
-   (542, 'se')  
-   (543, 'res')  
-   (544, '__cs_tmp_if_cond_23')  
-   (545, 'ATOMIC_OPERATION')  
-   (546, 'ss')  
-   (547, 'lock')  
-   (548, 'push')  
-   (549, '__cs_unused')  
-   (550, 'loop')  
+   (471, '__cs_tmp_if_cond_15')  
+   (472, 'c')  
+   (473, 'i')  
+   (474, '__cs_tmp_if_cond_16')  
+   (475, '__cs_tmp_if_cond_17')  
+   (476, '__CSEQ_atomic_compare_and_exchange')  
+   (477, 'mptr')  
+   (478, 'eptr')  
+   (479, 'newval')  
+   (480, 'weak_p')  
+   (481, 'sm')  
+   (482, 'fm')  
+   (483, '__cs_tmp_if_cond_18')  
+   (484, '__atomic_compare_exchange_n')  
+   (485, 'mptr')  
+   (486, 'eptr')  
+   (487, 'newval')  
+   (488, 'weak_p')  
+   (489, 'sm')  
+   (490, 'fm')  
+   (491, 'res')  
+   (492, '__CSEQ_atomic_exchange')  
+   (493, 'previous')  
+   (494, 'new')  
+   (495, 'memorder')  
+   (496, 'old')  
+   (497, '__atomic_exchange_n')  
+   (498, 'previous')  
+   (499, 'new')  
+   (500, 'memorder')  
+   (501, 'res')  
+   (502, '__atomic_thread_fence')  
+   (503, 'i')  
+   (504, 'mystack')  
+   (505, 'se')  
+   (506, 'user_id')  
+   (507, 'init')  
+   (508, 'insert')  
+   (509, 's')  
+   (510, 'id')  
+   (511, 'td')  
+   (512, 'delete')  
+   (513, 's')  
+   (514, 'se')  
+   (515, 'temp_td')  
+   (516, 'res')  
+   (517, '__cs_tmp_if_cond_19')  
+   (518, 'contains')  
+   (519, 's')  
+   (520, 'id')  
+   (521, 'max_size')  
+   (522, 'actual_size')  
+   (523, 'res')  
+   (524, 'found')  
+   (525, 'dimension')  
+   (526, 'datas')  
+   (527, 'se')  
+   (528, '__cs_tmp_if_cond_20')  
+   (529, '__cs_tmp_if_cond_21')  
+   (530, 'i')  
+   (531, 'get_size')  
+   (532, 's')  
+   (533, 'max_size')  
+   (534, 'actual_size')  
+   (535, 'res')  
+   (536, 'dimension')  
+   (537, 'datas')  
+   (538, 'se')  
+   (539, '__cs_tmp_if_cond_22')  
+   (540, 'i')  
+   (541, 'is_empty')  
+   (542, 's')  
+   (543, 'se')  
+   (544, 'res')  
+   (545, '__cs_tmp_if_cond_23')  
+   (546, 'ATOMIC_OPERATION')  
+   (547, 'ss')  
+   (548, 'lock')  
+   (549, 'thread1')  
+   (550, '__cs_unused')  
    (551, '__cs_tmp_if_cond_24')  
    (552, '__cs_tmp_if_cond_25')  
-   (553, 'pop')  
-   (554, '__cs_unused')  
-   (555, 'res')  
-   (556, 'count')  
-   (557, 'loop')  
-   (558, '__cs_tmp_if_cond_26')  
-   (559, '__cs_tmp_if_cond_27')  
-   (560, 'main')  
-   (561, 't1')  
-   (562, 't2')  
-   (563, 't3')  
-   (564, 't4')  
-   (565, 't5')  
-   (566, 't6')  
-   (567, 't7')  
-   (568, 't8')  
-   (569, 't9')  
-   (570, 't10')  
-   (571, 'size_ss')  
+   (553, '__cs_tmp_if_cond_26')  
+   (554, '__cs_tmp_if_cond_27')  
+   (555, 'thread2')  
+   (556, '__cs_unused')  
+   (557, '__cs_tmp_if_cond_28')  
+   (558, '__cs_tmp_if_cond_29')  
+   (559, '__cs_tmp_if_cond_30')  
+   (560, '__cs_tmp_if_cond_31')  
+   (561, 'main')  
+   (562, 't1')  
+   (563, 't2')  

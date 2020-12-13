@@ -2,5 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 void assert_create(void* ss, int size){
-assert(0);
+	long int size = 2;
+	assert(contains);
 }

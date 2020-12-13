@@ -152,9 +152,15 @@ typedef void BZFILE;
 typedef int va_list;
 typedef int loff_t;
 typedef int _____STOPSTRIPPINGFROMHERE_____;
-void assert_create(void *ss, int size)
+void check(void *ss)
 {
-__CSEQ_assert(0);
+unsigned long int size;
+size = 14;
+long unsigned int c0;
+c0 = contains(ss, 0);
+long unsigned int c2;
+c2 = contains(ss, 2);
+__CSEQ_assert(((size == 2) && c0) && c2);
 }
 #pragma warning( push )
 #pragma warning( disable : 4324 )
@@ -868,15 +874,11 @@ struct lfds711_stack_element *se;
 struct test_data *temp_td;
 int res;
 res = lfds711_stack_pop(&mystack, &se);
-;_Bool __cs_tmp_if_cond_19; __cs_tmp_if_cond_19 = (res == 0); 
+;_Bool __cs_tmp_if_cond_19; __cs_tmp_if_cond_19 = (res != 0); 
         if (__cs_tmp_if_cond_19)
         {
-return res;
+free((*se).value);
         }
-temp_td = (*se).value;
-int id_popped;
-id_popped = (*temp_td).user_id;
-printf("%llu\n", (*temp_td).user_id);
 return res;
 }
 int contains(struct lfds711_stack_state *s, unsigned long long int id)
@@ -903,6 +905,7 @@ res = lfds711_stack_pop(s, &se);
 break;
                 }
 datas[actual_size] = (*se).value;
+printf("%d -- %d\n", (*datas[actual_size]).user_id, actual_size);
 ;_Bool __cs_tmp_if_cond_21; __cs_tmp_if_cond_21 = ((*datas[actual_size]).user_id == id); 
                 if (__cs_tmp_if_cond_21)
                 {
@@ -932,9 +935,10 @@ dimension = 2;
 struct test_data **datas;
 datas = __cs_safe_malloc((sizeof(struct test_data *)) * max_size);
 struct lfds711_stack_element *se;
-while (actual_size < 2)
+while (res != 0)
         {
 res = lfds711_stack_pop(s, &se);
+datas[actual_size] = (*se).value;
 ;_Bool __cs_tmp_if_cond_22; __cs_tmp_if_cond_22 = (res == 0); 
                 if (__cs_tmp_if_cond_22)
                 {
@@ -959,7 +963,7 @@ res = lfds711_stack_pop(s, &se);
 ;_Bool __cs_tmp_if_cond_23; __cs_tmp_if_cond_23 = (res != 0); 
         if (__cs_tmp_if_cond_23)
         {
-fds711_stack_push(s, se);
+lfds711_stack_push(s, se);
 return 0;
         }
 return 1;
@@ -967,38 +971,59 @@ return 1;
 int ATOMIC_OPERATION = 0;
 void *ss;
 __cs_mutex_t lock;
-void *push(void *__cs_unused)
+void *thread1(void *__cs_unused)
 {
-int long long unsigned loop;
 ;_Bool __cs_tmp_if_cond_24; __cs_tmp_if_cond_24 = (ATOMIC_OPERATION); 
         if (__cs_tmp_if_cond_24)
         {
 __cs_mutex_lock(&lock);
         }
 ;
-insert(ss, 1500);
+insert(ss, 0);
 ;_Bool __cs_tmp_if_cond_25; __cs_tmp_if_cond_25 = (ATOMIC_OPERATION); 
         if (__cs_tmp_if_cond_25)
         {
 __cs_mutex_unlock(&lock);
         }
 ;
-}
-void *pop(void *__cs_unused)
-{
-int res;
-int count;
-count = 0;
-int loop;
 ;_Bool __cs_tmp_if_cond_26; __cs_tmp_if_cond_26 = (ATOMIC_OPERATION); 
         if (__cs_tmp_if_cond_26)
         {
 __cs_mutex_lock(&lock);
         }
 ;
-delete(ss);
+insert(ss, 1);
 ;_Bool __cs_tmp_if_cond_27; __cs_tmp_if_cond_27 = (ATOMIC_OPERATION); 
         if (__cs_tmp_if_cond_27)
+        {
+__cs_mutex_unlock(&lock);
+        }
+;
+}
+void *thread2(void *__cs_unused)
+{
+;_Bool __cs_tmp_if_cond_28; __cs_tmp_if_cond_28 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_28)
+        {
+__cs_mutex_lock(&lock);
+        }
+;
+delete(ss);
+;_Bool __cs_tmp_if_cond_29; __cs_tmp_if_cond_29 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_29)
+        {
+__cs_mutex_unlock(&lock);
+        }
+;
+;_Bool __cs_tmp_if_cond_30; __cs_tmp_if_cond_30 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_30)
+        {
+__cs_mutex_lock(&lock);
+        }
+;
+insert(ss, 2);
+;_Bool __cs_tmp_if_cond_31; __cs_tmp_if_cond_31 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_31)
         {
 __cs_mutex_unlock(&lock);
         }
@@ -1010,20 +1035,10 @@ __cs_mutex_init(&lock, 0);
 ss = init();
 __cs_t t1;
 __cs_t t2;
-__cs_t t3;
-__cs_t t4;
-__cs_t t5;
-__cs_t t6;
-__cs_t t7;
-__cs_t t8;
-__cs_t t9;
-__cs_t t10;
-__cs_create(&t1, 0, push, 0);
-__cs_create(&t6, 0, pop, 0);
+__cs_create(&t1, 0, thread1, 0);
+__cs_create(&t2, 0, thread2, 0);
 __cs_join(t1, 0);
-__cs_join(t6, 0);
-int size_ss;
-size_ss = get_size(ss);
-__CSEQ_assert(0);
+__cs_join(t2, 0);
+check(ss);
 return 0;
 }

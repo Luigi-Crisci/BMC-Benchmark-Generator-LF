@@ -1,5 +1,7 @@
 #include <assert.h>
 void check(void* ss){
-	int size = 0;
-	assert((size == 1) && (contains(ss,2)) || (size == 1) && (contains(ss,2)));
+unsigned long int size = 14;
+long unsigned int c0 = contains(ss,0);
+long unsigned int c2 = contains(ss,2);
+assert((size == 2 && c0 && c2));
 }

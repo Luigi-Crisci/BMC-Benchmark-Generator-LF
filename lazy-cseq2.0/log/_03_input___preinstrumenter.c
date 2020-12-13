@@ -152,9 +152,15 @@ typedef void BZFILE;
 typedef int va_list;
 typedef int loff_t;
 typedef int _____STOPSTRIPPINGFROMHERE_____;
-void assert_create(void *ss, int size)
+void check(void *ss)
 {
-assert(0);
+unsigned long int size;
+    size = 14;
+long unsigned int c0;
+    c0 = contains(ss, 0);
+long unsigned int c2;
+    c2 = contains(ss, 2);
+assert(((size == 2) && c0) && c2);
 }
 #pragma warning( push )
 #pragma warning( disable : 4324 )
@@ -824,14 +830,10 @@ struct lfds711_stack_element *se;
 struct test_data *temp_td;
 int res;
     res = lfds711_stack_pop(&mystack, &se);
-if (res == 0)
+if (res != 0)
     {
-return res;
+free((*se).value);
     }
-temp_td = (*se).value;
-int id_popped;
-    id_popped = (*temp_td).user_id;
-printf("%llu\n", (*temp_td).user_id);
 return res;
 }
 int contains(struct lfds711_stack_state *s, unsigned long long int id)
@@ -857,6 +859,7 @@ if (res == 0)
 break;
         }
 datas[actual_size] = (*se).value;
+printf("%d -- %d\n", (*datas[actual_size]).user_id, actual_size);
 if ((*datas[actual_size]).user_id == id)
         {
 found = 1;
@@ -885,9 +888,10 @@ int dimension;
 struct test_data **datas;
     datas = malloc((sizeof(struct test_data *)) * max_size);
 struct lfds711_stack_element *se;
-while (actual_size < 2)
+while (res != 0)
     {
 res = lfds711_stack_pop(s, &se);
+datas[actual_size] = (*se).value;
 if (res == 0)
         {
 break;
@@ -910,7 +914,7 @@ int res;
     res = lfds711_stack_pop(s, &se);
 if (res != 0)
     {
-fds711_stack_push(s, se);
+lfds711_stack_push(s, se);
 return 0;
     }
 return 1;
@@ -918,33 +922,50 @@ return 1;
 int ATOMIC_OPERATION = 0;
 void *ss;
 pthread_mutex_t lock;
-void *push(void *__cs_unused)
+void *thread1(void *__cs_unused)
 {
-int long long unsigned loop;
 if (ATOMIC_OPERATION)
     {
 pthread_mutex_lock(&lock);
     }
 ;
-insert(ss, 1500);
+insert(ss, 0);
+if (ATOMIC_OPERATION)
+    {
+pthread_mutex_unlock(&lock);
+    }
+;
+if (ATOMIC_OPERATION)
+    {
+pthread_mutex_lock(&lock);
+    }
+;
+insert(ss, 1);
 if (ATOMIC_OPERATION)
     {
 pthread_mutex_unlock(&lock);
     }
 ;
 }
-void *pop(void *__cs_unused)
+void *thread2(void *__cs_unused)
 {
-int res;
-int count;
-    count = 0;
-int loop;
 if (ATOMIC_OPERATION)
     {
 pthread_mutex_lock(&lock);
     }
 ;
 delete(ss);
+if (ATOMIC_OPERATION)
+    {
+pthread_mutex_unlock(&lock);
+    }
+;
+if (ATOMIC_OPERATION)
+    {
+pthread_mutex_lock(&lock);
+    }
+;
+insert(ss, 2);
 if (ATOMIC_OPERATION)
     {
 pthread_mutex_unlock(&lock);
@@ -957,20 +978,10 @@ pthread_mutex_init(&lock, 0);
 ss = init();
 pthread_t t1;
 pthread_t t2;
-pthread_t t3;
-pthread_t t4;
-pthread_t t5;
-pthread_t t6;
-pthread_t t7;
-pthread_t t8;
-pthread_t t9;
-pthread_t t10;
-pthread_create(&t1, 0, push, 0);
-pthread_create(&t6, 0, pop, 0);
+pthread_create(&t1, 0, thread1, 0);
+pthread_create(&t2, 0, thread2, 0);
 pthread_join(t1, 0);
-pthread_join(t6, 0);
-int size_ss;
-    size_ss = get_size(ss);
-assert(0);
+pthread_join(t2, 0);
+check(ss);
 return 0;
 }

@@ -1,11 +1,12 @@
+// DO NOT MODIFY THIS FILE
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <assert.h>
 #include "checker.c"
-#include "../inteface/interface.c"
+// INTERFACE GOES THERE
 
-int volatile ATOMIC_OPERATION = 0;
+int volatile ATOMIC_OPERATION = 1;
 #define LOCK if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);}
 #define UNLOCK if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); }
 

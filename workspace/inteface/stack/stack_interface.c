@@ -32,13 +32,8 @@ int delete (struct lfds711_stack_state *s)
 	struct test_data *temp_td;
 	int res = lfds711_stack_pop(&mystack, &se);
 
-	//This code exists only for testing, it can be replaced with a single statement "return res;"
-	if (res == 0)
-		return res;
-	temp_td = LFDS711_STACK_GET_VALUE_FROM_ELEMENT(*se);
-	int id_popped = temp_td->user_id;
-	printf("%llu\n", temp_td->user_id);
-
+	if (res != 0)
+		free(LFDS711_STACK_GET_VALUE_FROM_ELEMENT(*se));
 	return res;
 }
 
@@ -55,13 +50,7 @@ int contains(struct lfds711_stack_state *s, unsigned long long int id)
 	struct lfds711_stack_element *se;
 
 	while (found == 0 && res != 0)
-	// while (actual_size < 2)
 	{
-		// if (actual_size == max_size)
-		// {
-		// 	datas = realloc(datas,sizeof(struct test_data*) * max_size * dimension);
-		// 	max_size *= dimension;
-		// }
 		
 		res = lfds711_stack_pop(s, &se);
 		if (res == 0){
@@ -69,6 +58,7 @@ int contains(struct lfds711_stack_state *s, unsigned long long int id)
 		}
 
 		datas[actual_size] = LFDS711_STACK_GET_VALUE_FROM_ELEMENT(*se);
+		printf("%d -- %d\n",datas[actual_size]->user_id,actual_size);
 		if (datas[actual_size]->user_id == id)
 			found = 1;
 
@@ -91,10 +81,10 @@ int get_size(struct lfds711_stack_state *s){
 	struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
 	struct lfds711_stack_element *se;
 
-	// while (res != 0)
-	while (actual_size < 2)
+	while (res != 0)
 	{
 		res = lfds711_stack_pop(s, &se);
+		datas[actual_size] = LFDS711_STACK_GET_VALUE_FROM_ELEMENT(*se);
 		if (res == 0)
 			break;
 
@@ -118,12 +108,9 @@ int is_empty(struct lfds711_stack_state *s){
 	int res = lfds711_stack_pop(s, &se);
 	
 	if (res != 0){
-		fds711_stack_push(s, se);
+		lfds711_stack_push(s, se);
 		return 0;
 	}
 
 	return 1;
 }
-
-
-
