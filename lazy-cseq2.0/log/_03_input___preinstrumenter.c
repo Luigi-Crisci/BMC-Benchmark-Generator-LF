@@ -152,9 +152,9 @@ typedef void BZFILE;
 typedef int va_list;
 typedef int loff_t;
 typedef int _____STOPSTRIPPINGFROMHERE_____;
-void check(void *ss)
+void assert_create(void *ss, int size)
 {
-assert(contains(ss, 0));
+assert(0);
 }
 #pragma warning( push )
 #pragma warning( disable : 4324 )
@@ -849,7 +849,7 @@ int dimension;
 struct test_data **datas;
     datas = malloc((sizeof(struct test_data *)) * max_size);
 struct lfds711_stack_element *se;
-while (actual_size < 2)
+while ((found == 0) && (res != 0))
     {
 res = lfds711_stack_pop(s, &se);
 if (res == 0)
@@ -885,7 +885,7 @@ int dimension;
 struct test_data **datas;
     datas = malloc((sizeof(struct test_data *)) * max_size);
 struct lfds711_stack_element *se;
-while (actual_size < 2)
+while (res != 0)
     {
 res = lfds711_stack_pop(s, &se);
 if (res == 0)
@@ -921,20 +921,30 @@ pthread_mutex_t lock;
 void *push(void *__cs_unused)
 {
 int long long unsigned loop;
-for (loop = 0; loop < 2; loop++)
+if (ATOMIC_OPERATION)
     {
-if (ATOMIC_OPERATION)
-        {
 pthread_mutex_lock(&lock);
-        }
-;
-insert(ss, loop);
-if (ATOMIC_OPERATION)
-        {
-pthread_mutex_unlock(&lock);
-        }
-;
     }
+;
+int qwerty;
+    qwerty = 1050;
+insert(ss, 1500);
+if (ATOMIC_OPERATION)
+    {
+pthread_mutex_unlock(&lock);
+    }
+;
+if (ATOMIC_OPERATION)
+    {
+pthread_mutex_lock(&lock);
+    }
+;
+insert(ss, 1600);
+if (ATOMIC_OPERATION)
+    {
+pthread_mutex_unlock(&lock);
+    }
+;
 }
 void *pop(void *__cs_unused)
 {
@@ -942,20 +952,30 @@ int res;
 int count;
     count = 0;
 int loop;
-for (loop = 0; loop < 2; loop++)
-    {
 if (ATOMIC_OPERATION)
-        {
+    {
 pthread_mutex_lock(&lock);
-        }
+    }
+;
+int ytrewq;
+    ytrewq = 1050;
+delete(ss);
+if (ATOMIC_OPERATION)
+    {
+pthread_mutex_unlock(&lock);
+    }
+;
+if (ATOMIC_OPERATION)
+    {
+pthread_mutex_lock(&lock);
+    }
 ;
 delete(ss);
 if (ATOMIC_OPERATION)
-        {
+    {
 pthread_mutex_unlock(&lock);
-        }
-;
     }
+;
 }
 int main()
 {
@@ -975,6 +995,6 @@ pthread_create(&t1, 0, push, 0);
 pthread_create(&t6, 0, pop, 0);
 pthread_join(t1, 0);
 pthread_join(t6, 0);
-assert(contains(ss, 0));
+assert(0);
 return 0;
 }

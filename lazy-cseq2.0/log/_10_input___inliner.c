@@ -152,9 +152,9 @@ typedef void BZFILE;
 typedef int va_list;
 typedef int loff_t;
 typedef int _____STOPSTRIPPINGFROMHERE_____;
-void check(void *__cs_param_check_ss)
+void assert_create(void *__cs_param_assert_create_ss, int __cs_param_assert_create_size)
 {
-__CSEQ_assert(contains(__cs_param_check_ss, 0));
+__CSEQ_assert(0);
 }
 #pragma warning( push )
 #pragma warning( disable : 4324 )
@@ -934,7 +934,7 @@ __cs_local_contains_dimension = 2;
 struct test_data **__cs_local_contains_datas;
 __cs_local_contains_datas = __cs_safe_malloc((sizeof(struct test_data *)) * __cs_local_contains_max_size);
 struct lfds711_stack_element *__cs_local_contains_se;
-while (__cs_local_contains_actual_size < 2)
+while ((__cs_local_contains_found == 0) && (__cs_local_contains_res != 0))
         {
 __cs_local_contains_res = lfds711_stack_pop(__cs_param_contains_s, &__cs_local_contains_se);
 ;
@@ -976,7 +976,7 @@ __cs_local_get_size_dimension = 2;
 struct test_data **__cs_local_get_size_datas;
 __cs_local_get_size_datas = __cs_safe_malloc((sizeof(struct test_data *)) * __cs_local_get_size_max_size);
 struct lfds711_stack_element *__cs_local_get_size_se;
-while (__cs_local_get_size_actual_size < 2)
+while (__cs_local_get_size_res != 0)
         {
 __cs_local_get_size_res = lfds711_stack_pop(__cs_param_get_size_s, &__cs_local_get_size_se);
 ;
@@ -1018,26 +1018,42 @@ __cs_mutex_t lock;
 void *push(void *__cs_param_push___cs_unused)
 {
 int long long unsigned __cs_local_push_loop;
-for (__cs_local_push_loop = 0; __cs_local_push_loop < 2; __cs_local_push_loop++)
-        {
 ;
-                _Bool __cs_local_push___cs_tmp_if_cond_24;
-                __cs_local_push___cs_tmp_if_cond_24 = ATOMIC_OPERATION;
+        _Bool __cs_local_push___cs_tmp_if_cond_24;
+        __cs_local_push___cs_tmp_if_cond_24 = ATOMIC_OPERATION;
 if (__cs_local_push___cs_tmp_if_cond_24)
-                {
+        {
 __cs_mutex_lock(&lock);
-                }
-;
-insert(ss, __cs_local_push_loop);
-;
-                _Bool __cs_local_push___cs_tmp_if_cond_25;
-                __cs_local_push___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
-if (__cs_local_push___cs_tmp_if_cond_25)
-                {
-__cs_mutex_unlock(&lock);
-                }
-;
         }
+;
+int __cs_local_push_qwerty;
+__cs_local_push_qwerty = 1050;
+insert(ss, 1500);
+;
+        _Bool __cs_local_push___cs_tmp_if_cond_25;
+        __cs_local_push___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
+if (__cs_local_push___cs_tmp_if_cond_25)
+        {
+__cs_mutex_unlock(&lock);
+        }
+;
+;
+        _Bool __cs_local_push___cs_tmp_if_cond_26;
+        __cs_local_push___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
+if (__cs_local_push___cs_tmp_if_cond_26)
+        {
+__cs_mutex_lock(&lock);
+        }
+;
+insert(ss, 1600);
+;
+        _Bool __cs_local_push___cs_tmp_if_cond_27;
+        __cs_local_push___cs_tmp_if_cond_27 = ATOMIC_OPERATION;
+if (__cs_local_push___cs_tmp_if_cond_27)
+        {
+__cs_mutex_unlock(&lock);
+        }
+;
 }
 void *pop(void *__cs_param_pop___cs_unused)
 {
@@ -1045,26 +1061,42 @@ int __cs_local_pop_res;
 int __cs_local_pop_count;
 __cs_local_pop_count = 0;
 int __cs_local_pop_loop;
-for (__cs_local_pop_loop = 0; __cs_local_pop_loop < 2; __cs_local_pop_loop++)
-        {
 ;
-                _Bool __cs_local_pop___cs_tmp_if_cond_26;
-                __cs_local_pop___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
-if (__cs_local_pop___cs_tmp_if_cond_26)
-                {
+        _Bool __cs_local_pop___cs_tmp_if_cond_28;
+        __cs_local_pop___cs_tmp_if_cond_28 = ATOMIC_OPERATION;
+if (__cs_local_pop___cs_tmp_if_cond_28)
+        {
 __cs_mutex_lock(&lock);
-                }
+        }
+;
+int __cs_local_pop_ytrewq;
+__cs_local_pop_ytrewq = 1050;
+delete(ss);
+;
+        _Bool __cs_local_pop___cs_tmp_if_cond_29;
+        __cs_local_pop___cs_tmp_if_cond_29 = ATOMIC_OPERATION;
+if (__cs_local_pop___cs_tmp_if_cond_29)
+        {
+__cs_mutex_unlock(&lock);
+        }
+;
+;
+        _Bool __cs_local_pop___cs_tmp_if_cond_30;
+        __cs_local_pop___cs_tmp_if_cond_30 = ATOMIC_OPERATION;
+if (__cs_local_pop___cs_tmp_if_cond_30)
+        {
+__cs_mutex_lock(&lock);
+        }
 ;
 delete(ss);
 ;
-                _Bool __cs_local_pop___cs_tmp_if_cond_27;
-                __cs_local_pop___cs_tmp_if_cond_27 = ATOMIC_OPERATION;
-if (__cs_local_pop___cs_tmp_if_cond_27)
-                {
+        _Bool __cs_local_pop___cs_tmp_if_cond_31;
+        __cs_local_pop___cs_tmp_if_cond_31 = ATOMIC_OPERATION;
+if (__cs_local_pop___cs_tmp_if_cond_31)
+        {
 __cs_mutex_unlock(&lock);
-                }
-;
         }
+;
 }
 int main()
 {
@@ -1084,6 +1116,6 @@ __cs_create(&__cs_local_main_t1, 0, push, 0);
 __cs_create(&__cs_local_main_t6, 0, pop, 0);
 __cs_join(__cs_local_main_t1, 0);
 __cs_join(__cs_local_main_t6, 0);
-__CSEQ_assert(contains(ss, 0));
+__CSEQ_assert(0);
 return 0;
 }

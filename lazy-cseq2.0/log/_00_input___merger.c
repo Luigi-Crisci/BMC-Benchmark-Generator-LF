@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <assert.h>
-#include "check.c"
+#include "checker.c"
 
 //Using the interface
 #include "../inteface/interface.c"
@@ -21,12 +21,17 @@ void *push()
 {
 	int long long unsigned loop;
 
-	for (loop = 0; loop < VALUES; loop++)
-	{
+	// for (loop = 0; loop < VALUES; loop++)
+	// {
 		LOCK;
-		insert(ss,loop);
+		int qwerty = 1050;
+		insert(ss,1500);
 		UNLOCK;
-	}
+
+		LOCK;
+		insert(ss,1600);
+		UNLOCK;
+	// }
 }
 
 void *pop()
@@ -34,12 +39,17 @@ void *pop()
 	int res;
 	int count = 0;
 	int loop;
-	for (loop = 0; loop < VALUES; loop++)
-	{
+	// for (loop = 0; loop < VALUES; loop++)
+	// {
+		LOCK;
+		int ytrewq = 1050;
+		delete(ss);
+		UNLOCK;
+
 		LOCK;
 		delete(ss);
 		UNLOCK;
-	}
+	// }
 }
 
 
@@ -75,7 +85,10 @@ int main()
 
 	// assert(contains(ss,0) && contains(ss,1));
 	// int len = get_lenght(ss);
-	assert( contains(ss,0) );
-	// assert(0);
+	// assert_create(ss,size_ss);
+
+	// int size_ss = get_size(ss);
+	// assert(is_empty(ss) || (size_ss == 1 && contains(ss,1)) || size_ss == 2);
+	assert(0);
 	return (EXIT_SUCCESS);
 }

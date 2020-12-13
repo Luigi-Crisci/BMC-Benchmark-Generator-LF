@@ -172,8 +172,8 @@ typedef int va_list;
 typedef int loff_t;
 
 typedef int _____STOPSTRIPPINGFROMHERE_____;
-void check(void* ss){
- assert(contains(ss,0));
+void assert_create(void* ss, int size){
+assert(0);
 }
 
 
@@ -1286,8 +1286,8 @@ int contains(struct lfds711_stack_state *s, unsigned long long int id)
  struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
  struct lfds711_stack_element *se;
 
+ while (found == 0 && res != 0)
 
- while (actual_size < 2)
  {
 
 
@@ -1323,8 +1323,8 @@ int get_size(struct lfds711_stack_state *s){
  struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
  struct lfds711_stack_element *se;
 
+ while (res != 0)
 
- while (actual_size < 2)
  {
 
 
@@ -1377,12 +1377,17 @@ void *push()
 {
  int long long unsigned loop;
 
- for (loop = 0; loop < 2; loop++)
- {
+
+
   if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
-  insert(ss,loop);
+  int qwerty = 1050;
+  insert(ss,1500);
   if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
- }
+
+  if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
+  insert(ss,1600);
+  if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
+
 }
 
 void *pop()
@@ -1390,12 +1395,17 @@ void *pop()
  int res;
  int count = 0;
  int loop;
- for (loop = 0; loop < 2; loop++)
- {
+
+
+  if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
+  int ytrewq = 1050;
+  delete(ss);
+  if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
+
   if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
   delete(ss);
   if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
- }
+
 }
 
 
@@ -1422,7 +1432,6 @@ int main()
 
 
  pthread_join(t6, 0);
- assert( contains(ss,0) );
-
+ assert(0);
  return (0);
 }

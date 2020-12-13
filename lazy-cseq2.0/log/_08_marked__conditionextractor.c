@@ -462,13 +462,13 @@ typedef int loff_t;
 typedef int _____STOPSTRIPPINGFROMHERE_____;
 
 # 155 "<previous_module>"
-void check(void *ss)
+void assert_create(void *ss, int size)
 
 # 156 "<previous_module>"
 {
         
 # 157 "<previous_module>"
-__CSEQ_assert(contains(ss, 0));
+__CSEQ_assert(0);
 }
 
 
@@ -2353,7 +2353,7 @@ datas = __cs_safe_malloc((sizeof(struct test_data *)) * max_size);
 struct lfds711_stack_element *se;
         
 # 875 "<previous_module>"
-while (actual_size < 2)
+while ((found == 0) && (res != 0))
 
 # 876 "<previous_module>"
         {
@@ -2458,7 +2458,7 @@ datas = __cs_safe_malloc((sizeof(struct test_data *)) * max_size);
 struct lfds711_stack_element *se;
         
 # 911 "<previous_module>"
-while (actual_size < 2)
+while (res != 0)
 
 # 912 "<previous_module>"
         {
@@ -2562,165 +2562,229 @@ void *push(void *__cs_unused)
 int long long unsigned loop;
         
 # 947 "<previous_module>"
-for (loop = 0; loop < 2; loop++)
+;_Bool __cs_tmp_if_cond_24; __cs_tmp_if_cond_24 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_24)
+
 # 948 "<previous_module>"
         {
                 
 # 949 "<previous_module>"
-;_Bool __cs_tmp_if_cond_24; __cs_tmp_if_cond_24 = (ATOMIC_OPERATION); 
-                if (__cs_tmp_if_cond_24)
-
-# 950 "<previous_module>"
-                {
-                        
-# 951 "<previous_module>"
 __cs_mutex_lock(&lock);
-                }
+        }
 
-                
-# 953 "<previous_module>"
+        
+# 951 "<previous_module>"
 ;
-                
+        
+# 952 "<previous_module>"
+int qwerty;
+        
+# 953 "<previous_module>"
+qwerty = 1050;
+        
 # 954 "<previous_module>"
-insert(ss, loop);
-                
+insert(ss, 1500);
+        
 # 955 "<previous_module>"
 ;_Bool __cs_tmp_if_cond_25; __cs_tmp_if_cond_25 = (ATOMIC_OPERATION); 
-                if (__cs_tmp_if_cond_25)
+        if (__cs_tmp_if_cond_25)
 
 # 956 "<previous_module>"
-                {
-                        
-# 957 "<previous_module>"
-__cs_mutex_unlock(&lock);
-                }
-
-                
-# 959 "<previous_module>"
-;
-        }
-
-}
-
-
-# 962 "<previous_module>"
-void *pop(void *__cs_unused)
-
-# 963 "<previous_module>"
-{
-        
-# 964 "<previous_module>"
-int res;
-        
-# 965 "<previous_module>"
-int count;
-        
-# 966 "<previous_module>"
-count = 0;
-        
-# 967 "<previous_module>"
-int loop;
-        
-# 968 "<previous_module>"
-for (loop = 0; loop < 2; loop++)
-# 969 "<previous_module>"
         {
                 
-# 970 "<previous_module>"
-;_Bool __cs_tmp_if_cond_26; __cs_tmp_if_cond_26 = (ATOMIC_OPERATION); 
-                if (__cs_tmp_if_cond_26)
-
-# 971 "<previous_module>"
-                {
-                        
-# 972 "<previous_module>"
-__cs_mutex_lock(&lock);
-                }
-
-                
-# 974 "<previous_module>"
-;
-                
-# 975 "<previous_module>"
-delete(ss);
-                
-# 976 "<previous_module>"
-;_Bool __cs_tmp_if_cond_27; __cs_tmp_if_cond_27 = (ATOMIC_OPERATION); 
-                if (__cs_tmp_if_cond_27)
-
-# 977 "<previous_module>"
-                {
-                        
-# 978 "<previous_module>"
+# 957 "<previous_module>"
 __cs_mutex_unlock(&lock);
-                }
-
-                
-# 980 "<previous_module>"
-;
         }
 
+        
+# 959 "<previous_module>"
+;
+        
+# 960 "<previous_module>"
+;_Bool __cs_tmp_if_cond_26; __cs_tmp_if_cond_26 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_26)
+
+# 961 "<previous_module>"
+        {
+                
+# 962 "<previous_module>"
+__cs_mutex_lock(&lock);
+        }
+
+        
+# 964 "<previous_module>"
+;
+        
+# 965 "<previous_module>"
+insert(ss, 1600);
+        
+# 966 "<previous_module>"
+;_Bool __cs_tmp_if_cond_27; __cs_tmp_if_cond_27 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_27)
+
+# 967 "<previous_module>"
+        {
+                
+# 968 "<previous_module>"
+__cs_mutex_unlock(&lock);
+        }
+
+        
+# 970 "<previous_module>"
+;
 }
 
 
-# 983 "<previous_module>"
-int main()
+# 972 "<previous_module>"
+void *pop(void *__cs_unused)
 
-# 984 "<previous_module>"
+# 973 "<previous_module>"
 {
         
+# 974 "<previous_module>"
+int res;
+        
+# 975 "<previous_module>"
+int count;
+        
+# 976 "<previous_module>"
+count = 0;
+        
+# 977 "<previous_module>"
+int loop;
+        
+# 978 "<previous_module>"
+;_Bool __cs_tmp_if_cond_28; __cs_tmp_if_cond_28 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_28)
+
+# 979 "<previous_module>"
+        {
+                
+# 980 "<previous_module>"
+__cs_mutex_lock(&lock);
+        }
+
+        
+# 982 "<previous_module>"
+;
+        
+# 983 "<previous_module>"
+int ytrewq;
+        
+# 984 "<previous_module>"
+ytrewq = 1050;
+        
 # 985 "<previous_module>"
-__cs_mutex_init(&lock, 0);
+delete(ss);
         
 # 986 "<previous_module>"
-ss = init();
-        
+;_Bool __cs_tmp_if_cond_29; __cs_tmp_if_cond_29 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_29)
+
 # 987 "<previous_module>"
-__cs_t t1;
-        
+        {
+                
 # 988 "<previous_module>"
-__cs_t t2;
-        
-# 989 "<previous_module>"
-__cs_t t3;
+__cs_mutex_unlock(&lock);
+        }
+
         
 # 990 "<previous_module>"
-__cs_t t4;
+;
         
 # 991 "<previous_module>"
-__cs_t t5;
-        
+;_Bool __cs_tmp_if_cond_30; __cs_tmp_if_cond_30 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_30)
+
 # 992 "<previous_module>"
-__cs_t t6;
-        
+        {
+                
 # 993 "<previous_module>"
-__cs_t t7;
-        
-# 994 "<previous_module>"
-__cs_t t8;
+__cs_mutex_lock(&lock);
+        }
+
         
 # 995 "<previous_module>"
-__cs_t t9;
+;
         
 # 996 "<previous_module>"
-__cs_t t10;
+delete(ss);
         
 # 997 "<previous_module>"
-__cs_create(&t1, 0, push, 0);
-        
+;_Bool __cs_tmp_if_cond_31; __cs_tmp_if_cond_31 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_31)
+
 # 998 "<previous_module>"
-__cs_create(&t6, 0, pop, 0);
-        
+        {
+                
 # 999 "<previous_module>"
-__cs_join(t1, 0);
-        
-# 1000 "<previous_module>"
-__cs_join(t6, 0);
+__cs_mutex_unlock(&lock);
+        }
+
         
 # 1001 "<previous_module>"
-__CSEQ_assert(contains(ss, 0));
+;
+}
+
+
+# 1003 "<previous_module>"
+int main()
+
+# 1004 "<previous_module>"
+{
         
-# 1002 "<previous_module>"
+# 1005 "<previous_module>"
+__cs_mutex_init(&lock, 0);
+        
+# 1006 "<previous_module>"
+ss = init();
+        
+# 1007 "<previous_module>"
+__cs_t t1;
+        
+# 1008 "<previous_module>"
+__cs_t t2;
+        
+# 1009 "<previous_module>"
+__cs_t t3;
+        
+# 1010 "<previous_module>"
+__cs_t t4;
+        
+# 1011 "<previous_module>"
+__cs_t t5;
+        
+# 1012 "<previous_module>"
+__cs_t t6;
+        
+# 1013 "<previous_module>"
+__cs_t t7;
+        
+# 1014 "<previous_module>"
+__cs_t t8;
+        
+# 1015 "<previous_module>"
+__cs_t t9;
+        
+# 1016 "<previous_module>"
+__cs_t t10;
+        
+# 1017 "<previous_module>"
+__cs_create(&t1, 0, push, 0);
+        
+# 1018 "<previous_module>"
+__cs_create(&t6, 0, pop, 0);
+        
+# 1019 "<previous_module>"
+__cs_join(t1, 0);
+        
+# 1020 "<previous_module>"
+__cs_join(t6, 0);
+        
+# 1021 "<previous_module>"
+__CSEQ_assert(0);
+        
+# 1022 "<previous_module>"
 return 0;
 }
 

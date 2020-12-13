@@ -188,9 +188,15 @@ typedef int _____STOPSTRIPPINGFROMHERE_____;
 # 4 "<stdin>" 2
 # 1 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/assert.h" 1
 # 5 "<stdin>" 2
-# 1 "../workspace/multithread/check.c" 1
-void check(void* ss){
- assert(contains(ss,0));
+# 1 "../workspace/multithread/checker.c" 1
+# 1 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/assert.h" 1
+# 2 "../workspace/multithread/checker.c" 2
+# 1 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/stdio.h" 1
+# 3 "../workspace/multithread/checker.c" 2
+# 1 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/stdlib.h" 1
+# 4 "../workspace/multithread/checker.c" 2
+void assert_create(void* ss, int size){
+assert(0);
 }
 # 6 "<stdin>" 2
 
@@ -1361,8 +1367,8 @@ int contains(struct lfds711_stack_state *s, unsigned long long int id)
  struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
  struct lfds711_stack_element *se;
 
+ while (found == 0 && res != 0)
 
- while (actual_size < 2)
  {
 
 
@@ -1398,8 +1404,8 @@ int get_size(struct lfds711_stack_state *s){
  struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
  struct lfds711_stack_element *se;
 
+ while (res != 0)
 
- while (actual_size < 2)
  {
 
 
@@ -1454,12 +1460,17 @@ void *push()
 {
  int long long unsigned loop;
 
- for (loop = 0; loop < 2; loop++)
- {
+
+
   if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
-  insert(ss,loop);
+  int qwerty = 1050;
+  insert(ss,1500);
   if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
- }
+
+  if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
+  insert(ss,1600);
+  if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
+
 }
 
 void *pop()
@@ -1467,12 +1478,17 @@ void *pop()
  int res;
  int count = 0;
  int loop;
- for (loop = 0; loop < 2; loop++)
- {
+
+
+  if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
+  int ytrewq = 1050;
+  delete(ss);
+  if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
+
   if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
   delete(ss);
   if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
- }
+
 }
 
 
@@ -1499,8 +1515,7 @@ int main()
 
 
  pthread_join(t6, 0);
-# 78 "<stdin>"
- assert( contains(ss,0) );
-
+# 92 "<stdin>"
+ assert(0);
  return (0);
 }

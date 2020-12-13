@@ -54,8 +54,8 @@ int contains(struct lfds711_stack_state *s, unsigned long long int id)
 	struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
 	struct lfds711_stack_element *se;
 
-	// while (found == 0 && res != 0)
-	while (actual_size < 2)
+	while (found == 0 && res != 0)
+	// while (actual_size < 2)
 	{
 		// if (actual_size == max_size)
 		// {
@@ -91,8 +91,8 @@ int get_size(struct lfds711_stack_state *s){
 	struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
 	struct lfds711_stack_element *se;
 
-	// while (found == 0 && res != 0)
-	while (actual_size < 2)
+	while (res != 0)
+	// while (actual_size < 2)
 	{
 		// if (actual_size == max_size)
 		// {

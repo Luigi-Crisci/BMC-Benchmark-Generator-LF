@@ -21,12 +21,17 @@ void *push()
 {
 	int long long unsigned loop;
 
-	for (loop = 0; loop < VALUES; loop++)
-	{
+	// for (loop = 0; loop < VALUES; loop++)
+	// {
 		LOCK;
-		insert(ss,loop);
+		int qwerty = 1050;
+		insert(ss,1500);
 		UNLOCK;
-	}
+
+		LOCK;
+		insert(ss,1600);
+		UNLOCK;
+	// }
 }
 
 void *pop()
@@ -34,12 +39,17 @@ void *pop()
 	int res;
 	int count = 0;
 	int loop;
-	for (loop = 0; loop < VALUES; loop++)
-	{
+	// for (loop = 0; loop < VALUES; loop++)
+	// {
+		LOCK;
+		int ytrewq = 1050;
+		delete(ss);
+		UNLOCK;
+
 		LOCK;
 		delete(ss);
 		UNLOCK;
-	}
+	// }
 }
 
 
@@ -47,7 +57,6 @@ int main()
 {
 	pthread_mutex_init(&lock, NULL);
 	ss = init();
-	int size_ss = get_size(ss);
 	
 	pthread_t t1, t2,t3,t4,t5,t6,t7,t8,t9,t10;
 	pthread_create(&t1, NULL, push, NULL);
@@ -76,7 +85,10 @@ int main()
 
 	// assert(contains(ss,0) && contains(ss,1));
 	// int len = get_lenght(ss);
-	assert_create(ss,size_ss);
-	// assert(0);
+	// assert_create(ss,size_ss);
+
+	// int size_ss = get_size(ss);
+	// assert(is_empty(ss) || (size_ss == 1 && contains(ss,1)) || size_ss == 2);
+	assert(0);
 	return (EXIT_SUCCESS);
 }

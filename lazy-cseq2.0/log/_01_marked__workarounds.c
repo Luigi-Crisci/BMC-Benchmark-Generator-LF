@@ -462,11 +462,11 @@ typedef int loff_t;
 typedef int _____STOPSTRIPPINGFROMHERE_____;
 
 # 175 "<previous_module>"
-void check(void *ss)
+void assert_create(void *ss, int size)
 {
         
 # 176 "<previous_module>"
-assert(contains(ss, 0));
+assert(0);
 }
 
 
@@ -2247,8 +2247,8 @@ struct test_data **datas; datas = malloc((sizeof(struct test_data *)) * max_size
 # 1287 "<previous_module>"
 struct lfds711_stack_element *se;
         
-# 1290 "<previous_module>"
-while (actual_size < 2)
+# 1289 "<previous_module>"
+while ((found == 0) && (res != 0))
 
 # 1291 "<previous_module>"
         {
@@ -2318,8 +2318,8 @@ struct test_data **datas; datas = malloc((sizeof(struct test_data *)) * max_size
 # 1324 "<previous_module>"
 struct lfds711_stack_element *se;
         
-# 1327 "<previous_module>"
-while (actual_size < 2)
+# 1326 "<previous_module>"
+while (res != 0)
 
 # 1328 "<previous_module>"
         {
@@ -2406,92 +2406,120 @@ void *push(void *__cs_unused)
 # 1378 "<previous_module>"
 int long long unsigned loop;
         
-# 1380 "<previous_module>"
-for (loop = 0; loop < 2; loop++)
-
-# 1381 "<previous_module>"
-        {
-                
 # 1382 "<previous_module>"
 if (ATOMIC_OPERATION)
-                {
-                        pthread_mutex_lock(&lock);
-                }
-
-                ;
-                
-# 1383 "<previous_module>"
-insert(ss, loop);
-                
-# 1384 "<previous_module>"
-if (ATOMIC_OPERATION)
-                {
-                        pthread_mutex_unlock(&lock);
-                }
-
-                ;
+        {
+                pthread_mutex_lock(&lock);
         }
 
+        ;
+        
+# 1383 "<previous_module>"
+int qwerty; qwerty = 1050;
+        
+# 1384 "<previous_module>"
+insert(ss, 1500);
+        
+# 1385 "<previous_module>"
+if (ATOMIC_OPERATION)
+        {
+                pthread_mutex_unlock(&lock);
+        }
+
+        ;
+        
+# 1387 "<previous_module>"
+if (ATOMIC_OPERATION)
+        {
+                pthread_mutex_lock(&lock);
+        }
+
+        ;
+        
+# 1388 "<previous_module>"
+insert(ss, 1600);
+        
+# 1389 "<previous_module>"
+if (ATOMIC_OPERATION)
+        {
+                pthread_mutex_unlock(&lock);
+        }
+
+        ;
 }
 
 
-# 1388 "<previous_module>"
+# 1393 "<previous_module>"
 void *pop(void *__cs_unused)
 
-# 1389 "<previous_module>"
+# 1394 "<previous_module>"
 {
         
-# 1390 "<previous_module>"
+# 1395 "<previous_module>"
 int res;
         
-# 1391 "<previous_module>"
+# 1396 "<previous_module>"
 int count; count = 0;
         
-# 1392 "<previous_module>"
+# 1397 "<previous_module>"
 int loop;
         
-# 1393 "<previous_module>"
-for (loop = 0; loop < 2; loop++)
-
-# 1394 "<previous_module>"
+# 1400 "<previous_module>"
+if (ATOMIC_OPERATION)
         {
-                
-# 1395 "<previous_module>"
-if (ATOMIC_OPERATION)
-                {
-                        pthread_mutex_lock(&lock);
-                }
-
-                ;
-                
-# 1396 "<previous_module>"
-delete(ss);
-                
-# 1397 "<previous_module>"
-if (ATOMIC_OPERATION)
-                {
-                        pthread_mutex_unlock(&lock);
-                }
-
-                ;
+                pthread_mutex_lock(&lock);
         }
 
+        ;
+        
+# 1401 "<previous_module>"
+int ytrewq; ytrewq = 1050;
+        
+# 1402 "<previous_module>"
+delete(ss);
+        
+# 1403 "<previous_module>"
+if (ATOMIC_OPERATION)
+        {
+                pthread_mutex_unlock(&lock);
+        }
+
+        ;
+        
+# 1405 "<previous_module>"
+if (ATOMIC_OPERATION)
+        {
+                pthread_mutex_lock(&lock);
+        }
+
+        ;
+        
+# 1406 "<previous_module>"
+delete(ss);
+        
+# 1407 "<previous_module>"
+if (ATOMIC_OPERATION)
+        {
+                pthread_mutex_unlock(&lock);
+        }
+
+        ;
 }
 
 
-# 1402 "<previous_module>"
+# 1412 "<previous_module>"
 int main()
 
-# 1403 "<previous_module>"
+# 1413 "<previous_module>"
 {
         
-# 1404 "<previous_module>"
+# 1414 "<previous_module>"
 pthread_mutex_init(&lock, 0);
         
-# 1405 "<previous_module>"
+# 1415 "<previous_module>"
 ss = init();
         
-# 1407 "<previous_module>"
+# 1417 "<previous_module>"
 pthread_t t1;
         pthread_t t2;
         pthread_t t3;
@@ -2503,22 +2531,22 @@ pthread_t t1;
         pthread_t t9;
         pthread_t t10;
         
-# 1408 "<previous_module>"
+# 1418 "<previous_module>"
 pthread_create(&t1, 0, push, 0);
         
-# 1414 "<previous_module>"
+# 1424 "<previous_module>"
 pthread_create(&t6, 0, pop, 0);
         
-# 1419 "<previous_module>"
+# 1429 "<previous_module>"
 pthread_join(t1, 0);
         
-# 1424 "<previous_module>"
+# 1434 "<previous_module>"
 pthread_join(t6, 0);
         
-# 1425 "<previous_module>"
-assert(contains(ss, 0));
+# 1435 "<previous_module>"
+assert(0);
         
-# 1427 "<previous_module>"
+# 1436 "<previous_module>"
 return 0;
 }
 
