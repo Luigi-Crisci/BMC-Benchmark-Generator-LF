@@ -24,14 +24,8 @@ void *push()
 	// for (loop = 0; loop < VALUES; loop++)
 	// {
 		LOCK;
-		int qwerty = 1050;
 		insert(ss,1500);
 		UNLOCK;
-
-		LOCK;
-		insert(ss,1600);
-		UNLOCK;
-	// }
 }
 
 void *pop()
@@ -42,14 +36,8 @@ void *pop()
 	// for (loop = 0; loop < VALUES; loop++)
 	// {
 		LOCK;
-		int ytrewq = 1050;
 		delete(ss);
 		UNLOCK;
-
-		LOCK;
-		delete(ss);
-		UNLOCK;
-	// }
 }
 
 
@@ -87,7 +75,7 @@ int main()
 	// int len = get_lenght(ss);
 	// assert_create(ss,size_ss);
 
-	// int size_ss = get_size(ss);
+	int size_ss = get_size(ss);
 	// assert(is_empty(ss) || (size_ss == 1 && contains(ss,1)) || size_ss == 2);
 	assert(0);
 	return (EXIT_SUCCESS);

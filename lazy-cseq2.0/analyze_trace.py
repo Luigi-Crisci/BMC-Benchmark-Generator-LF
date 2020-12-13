@@ -4,22 +4,25 @@ from os import SEEK_SET
 import re
 import io
 
-NUM_ROUNDS = 3
-INSERT_TRACE_NAME = "insert_s="
+NUM_ROUNDS = 1
+INSERT_TRACE_NAME = "insert_id="
 DELETE_TRACE_NAME = "delete_s="
 BENCHMARK_DIR = "benchmarks"
 
 #Function to save error trace into a file named "trace.txt" we just have to specify the unwind for lazycseq
+#TODO: Add gcc -I param
 def launch_lazy_cseq(input_file):
-   subprocess.call(["./cseq-feeder.py", "-i", input_file,"-I","../liblfds7.1.1/liblfds711/inc"
+   subprocess.call(["./cseq-feeder.py", "-i", f"{BENCHMARK_DIR}/{input_file}","-I","../liblfds7.1.1/liblfds711/inc"
    ,"--unwind","5","--cex","--debug", "--rounds", f"{NUM_ROUNDS}"])
    
    
 def generate_stack_state(state_list):
    data_structure = []
    for state in state_list:
-     if state == "delete" and len(data_structure) > 0:
-        del data_structure[len(data_structure)-1]
+     if state == "delete":
+         if len(data_structure) == 0:
+            continue
+         del data_structure[len(data_structure)-1]
      else:
         data_structure.insert(len(data_structure),state)
    return data_structure
@@ -27,16 +30,18 @@ def generate_stack_state(state_list):
 def generate_queue_state(state_list):
    data_structure = []
    for state in state_list:
-     if state == "delete" and len(data_structure) > 0:
-        del data_structure[len(data_structure)-1]
-     else:
-        data_structure.insert(0,state)
+     if state == "delete":
+         if len(data_structure) == 0:
+            continue
+         del data_structure[len(data_structure)-1]
+   else:
+      data_structure.insert(0,state)
    return data_structure
 
 
 #Function to read from "trace.txt" and extract the number of pushes and pops. It also save the data structure state (at the end of the program)
 #into another data structure and return it
-def read_file(pathname,data_structure_type):
+def get_data_structure_state(pathname,data_structure_type):
    data_structure_states = []
    f = open(pathname)
    lines = [line.rstrip('\n') for line in f]
@@ -55,37 +60,38 @@ def read_file(pathname,data_structure_type):
 #Function that appends a new assert to "checker.c"
 
 def generate_assert_condition(data_structure):
+   if(len(data_structure) == 0):
+      return "(is_empty(ss))"
+   
    i = 0
-   condition = f"(get_size(ss) == {len(data_structure)})"
+   print(data_structure)
+   condition = f"(size == {len(data_structure)})"
    for elem in data_structure:
-      condition += f" && contains(ss,{elem})"
       if(i == len(data_structure)-1):
          condition += f" && (contains(ss,{elem}))"
+      else:
+         condition += f" && contains(ss,{elem})"
       i+=1
    return condition
 
 
-#Create the assert into a c file named "checker.c"
+#Create or expand the assert in checker.c
 def create_assert(data_structure):
-   newfile_lines = ""
-
-   with open(f"{BENCHMARK_DIR}/checker.c","w") as checker:
+   with open(f"{BENCHMARK_DIR}/checker.c","r+") as checker:
+      newfile_lines = ""
       lines = [line.rstrip('\n') for line in checker.readlines()]
       for line in lines:
-         if "assert" in line:
+         if "assert(" in line:
             # Caso base
             if "assert(0)" in line:
-               if(len(data_structure) == 0):
-                  newfile_lines += "assert(is_empty(ss));\n"
-               else:
                   condition = generate_assert_condition(data_structure)
                   newfile_lines += f"assert({condition});\n"
             else:
-               #if we are at the end of the file we append the new assert overwriting "}" and then rewrite "}" to the next line
                assert_closure_index = line.rindex(")") #penultimo character
-               condition = line[:assert_closure_index]
-               condition += generate_assert_condition(data_structure)
-               newfile_lines += f" || {condition});\n"
+               assert_condtions = line[:assert_closure_index]
+               generated_condition = generate_assert_condition(data_structure)
+               assert_condtions += f" || {generated_condition});\n"
+               newfile_lines += assert_condtions
          else:
             newfile_lines += f"{line}\n"
          
@@ -95,10 +101,8 @@ def create_assert(data_structure):
 
 
 def create_checker():
-   with open("../workspace/multithread/checker.c","r") as checker:
+   with open(f"{BENCHMARK_DIR}/checker.c","w+") as checker:
       checker.write("#include <assert.h>\n")
-      checker.write("include <stdio.h>\n")
-      checker.write("include <stdlib.h>\n")
       checker.write("void check(void* ss){\n")
       checker.write("unsigned long int size = get_size(ss);\n")
       checker.write("assert(0);\n") 
@@ -107,16 +111,19 @@ def create_checker():
 def is_safe(data_structure_state):
    return len(data_structure_state) == 0
 
-def run_benchmark(filename,data_structure_type):   
-   
+def run_benchmark(filename,data_structure_type): 
    create_checker()
-   
    while True:
       launch_lazy_cseq(filename)
-      data_structure_state = read_file(f"../workspace/multithread/_cs_{filename}.cbmc.log",data_structure_type)
+      data_structure_state = get_data_structure_state(f"{BENCHMARK_DIR}/_cs_{filename}.cbmc.log",data_structure_type)
       if is_safe(data_structure_state):
          break
       else:
          create_assert(data_structure_state)
       
    #TODO: Launch last test
+
+
+
+if __name__ == "__main__":
+    run_benchmark("benchmark_0.c","stack")

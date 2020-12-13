@@ -13,10 +13,10 @@ list of functions:
    __atomic_exchange_n(param: previous, new, memorder)  call count 0
    __atomic_thread_fence(param: i)  call count 0
    init(param: )  call count 1
-   insert(param: s, id)  call count 2
-   delete(param: s)  call count 2
+   insert(param: s, id)  call count 1
+   delete(param: s)  call count 1
    contains(param: s, id)  call count 0
-   get_size(param: s)  call count 0
+   get_size(param: s)  call count 1
    is_empty(param: s)  call count 0
    push(param: )  call count 0
    pop(param: )  call count 0
@@ -342,7 +342,7 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1384, 1388, 1402, 1406, 1415]'  
+         occurs '[1377, 1389, 1397, 1417]'  
       id170  'se'  
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
          size '[]'  
@@ -372,13 +372,13 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1382, 1385, 1387, 1389, 1400, 1403, 1405, 1407]'  
+         occurs '[1376, 1378, 1388, 1390]'  
       id253  'lock'  
          type 'pthread_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[1382, 1385, 1387, 1389, 1400, 1403, 1405, 1407, 1414]'  
+         ref '[1376, 1378, 1388, 1390, 1396]'  
          deref '[]'  
-         occurs '[1382, 1385, 1387, 1389, 1400, 1403, 1405, 1407, 1414]'  
+         occurs '[1376, 1378, 1388, 1390, 1396]'  
    assert_create
       id0  'ss'  
          type 'void *'  kind 'p'  arity '0'  
@@ -810,7 +810,7 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1335, 1345]'  
+         occurs '[1329, 1339]'  
       id242  'max_size'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
@@ -822,13 +822,13 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1339, 1339, 1344, 1350]'  
+         occurs '[1327, 1333, 1333, 1338, 1344]'  
       id244  'res'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1326, 1335, 1336]'  
+         occurs '[1329, 1330]'  
       id245  'dimension'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
@@ -838,40 +838,40 @@ Variables:
       id246  'datas'  
          type 'struct test_data **'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[1345]'  
+         ref '[1339]'  
          deref '[]'  
-         occurs '[1345]'  
+         occurs '[1339]'  
       id247  'se'  
          type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[1335]'  
+         ref '[1329]'  
          deref '[]'  
-         occurs '[1335]'  
+         occurs '[1329]'  
       id248  'i'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1344, 1345, 1346]'  
+         occurs '[1338, 1339, 1340]'  
    is_empty
       id249  's'  
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1356, 1359]'  
+         occurs '[1350, 1353]'  
       id250  'se'  
          type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[1356]'  
+         ref '[1350]'  
          deref '[]'  
-         occurs '[1356, 1359]'  
+         occurs '[1350, 1353]'  
       id251  'res'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1358]'  
+         occurs '[1352]'  
    push
       id254  'loop'  
          type 'int long long unsigned'  kind 'l'  arity '0'  
@@ -879,94 +879,88 @@ Variables:
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id255  'qwerty'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
    pop
-      id256  'res'  
+      id255  'res'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id257  'count'  
+      id256  'count'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id258  'loop'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
-      id259  'ytrewq'  
+      id257  'loop'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
    main
-      id260  't1'  
+      id258  't1'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[1418]'  
+         ref '[1400]'  
          deref '[]'  
-         occurs '[1418, 1429]'  
-      id261  't2'  
-         type 'pthread_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
-      id262  't3'  
+         occurs '[1400, 1411]'  
+      id259  't2'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id263  't4'  
+      id260  't3'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id264  't5'  
+      id261  't4'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id265  't6'  
-         type 'pthread_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[1424]'  
-         deref '[]'  
-         occurs '[1424, 1434]'  
-      id266  't7'  
+      id262  't5'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id267  't8'  
+      id263  't6'  
+         type 'pthread_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[1406]'  
+         deref '[]'  
+         occurs '[1406, 1416]'  
+      id264  't7'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id268  't9'  
+      id265  't8'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id269  't10'  
+      id266  't9'  
          type 'pthread_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id267  't10'  
+         type 'pthread_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id268  'size_ss'  
+         type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
@@ -1603,7 +1597,7 @@ int get_size(struct lfds711_stack_state *s)
     int dimension = 2;
     struct test_data **datas = malloc((sizeof(struct test_data *)) * max_size);
     struct lfds711_stack_element *se;
-    while (res != 0)
+    while (actual_size < 2)
     {
         res = lfds711_stack_pop(s, &se);
         if (res == 0)
@@ -1652,21 +1646,7 @@ void *push()
     }
 
     ;
-    int qwerty = 1050;
     insert(ss, 1500);
-    if (ATOMIC_OPERATION)
-    {
-        pthread_mutex_unlock(&lock);
-    }
-
-    ;
-    if (ATOMIC_OPERATION)
-    {
-        pthread_mutex_lock(&lock);
-    }
-
-    ;
-    insert(ss, 1600);
     if (ATOMIC_OPERATION)
     {
         pthread_mutex_unlock(&lock);
@@ -1684,20 +1664,6 @@ void *pop()
     int res;
     int count = 0;
     int loop;
-    if (ATOMIC_OPERATION)
-    {
-        pthread_mutex_lock(&lock);
-    }
-
-    ;
-    int ytrewq = 1050;
-    delete(ss);
-    if (ATOMIC_OPERATION)
-    {
-        pthread_mutex_unlock(&lock);
-    }
-
-    ;
     if (ATOMIC_OPERATION)
     {
         pthread_mutex_lock(&lock);
@@ -1735,6 +1701,7 @@ int main()
     pthread_create(&t6, 0, pop, 0);
     pthread_join(t1, 0);
     pthread_join(t6, 0);
+    int size_ss = get_size(ss);
     assert(0);
     return 0;
 }
@@ -2336,20 +2303,19 @@ All symbols (new symbol table - work in progress):
    (522, 'lock')  
    (523, 'push')  
    (524, 'loop')  
-   (525, 'qwerty')  
-   (526, 'pop')  
-   (527, 'res')  
-   (528, 'count')  
-   (529, 'loop')  
-   (530, 'ytrewq')  
-   (531, 'main')  
-   (532, 't1')  
-   (533, 't2')  
-   (534, 't3')  
-   (535, 't4')  
-   (536, 't5')  
-   (537, 't6')  
-   (538, 't7')  
-   (539, 't8')  
-   (540, 't9')  
-   (541, 't10')  
+   (525, 'pop')  
+   (526, 'res')  
+   (527, 'count')  
+   (528, 'loop')  
+   (529, 'main')  
+   (530, 't1')  
+   (531, 't2')  
+   (532, 't3')  
+   (533, 't4')  
+   (534, 't5')  
+   (535, 't6')  
+   (536, 't7')  
+   (537, 't8')  
+   (538, 't9')  
+   (539, 't10')  
+   (540, 'size_ss')  

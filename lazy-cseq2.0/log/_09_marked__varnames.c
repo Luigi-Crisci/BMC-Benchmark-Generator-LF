@@ -2552,7 +2552,7 @@ __cs_local_get_size_datas = __cs_safe_malloc((sizeof(struct test_data *)) * __cs
 struct lfds711_stack_element *__cs_local_get_size_se;
         
 # 935 "<previous_module>"
-while (__cs_local_get_size_res != 0)
+while (__cs_local_get_size_actual_size < 2)
 
 # 936 "<previous_module>"
         {
@@ -2683,242 +2683,154 @@ __cs_mutex_lock(&lock);
 ;
         
 # 979 "<previous_module>"
-int __cs_local_push_qwerty;
-        
-# 980 "<previous_module>"
-__cs_local_push_qwerty = 1050;
-        
-# 981 "<previous_module>"
 insert(ss, 1500);
         
-# 982 "<previous_module>"
+# 980 "<previous_module>"
 ;
         _Bool __cs_local_push___cs_tmp_if_cond_25;
         __cs_local_push___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
         
-# 983 "<previous_module>"
+# 981 "<previous_module>"
 if (__cs_local_push___cs_tmp_if_cond_25)
 
-# 984 "<previous_module>"
+# 982 "<previous_module>"
         {
                 
-# 985 "<previous_module>"
+# 983 "<previous_module>"
 __cs_mutex_unlock(&lock);
         }
 
         
+# 985 "<previous_module>"
+;
+}
+
+
 # 987 "<previous_module>"
-;
-        
+void *pop(void *__cs_param_pop___cs_unused)
+
 # 988 "<previous_module>"
-;
-        _Bool __cs_local_push___cs_tmp_if_cond_26;
-        __cs_local_push___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
+{
         
 # 989 "<previous_module>"
-if (__cs_local_push___cs_tmp_if_cond_26)
-
+int __cs_local_pop_res;
+        
 # 990 "<previous_module>"
-        {
-                
+int __cs_local_pop_count;
+        
 # 991 "<previous_module>"
-__cs_mutex_lock(&lock);
-        }
-
+__cs_local_pop_count = 0;
+        
+# 992 "<previous_module>"
+int __cs_local_pop_loop;
         
 # 993 "<previous_module>"
 ;
+        _Bool __cs_local_pop___cs_tmp_if_cond_26;
+        __cs_local_pop___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
         
 # 994 "<previous_module>"
-insert(ss, 1600);
-        
-# 995 "<previous_module>"
-;
-        _Bool __cs_local_push___cs_tmp_if_cond_27;
-        __cs_local_push___cs_tmp_if_cond_27 = ATOMIC_OPERATION;
-        
-# 996 "<previous_module>"
-if (__cs_local_push___cs_tmp_if_cond_27)
+if (__cs_local_pop___cs_tmp_if_cond_26)
 
-# 997 "<previous_module>"
+# 995 "<previous_module>"
         {
                 
-# 998 "<previous_module>"
-__cs_mutex_unlock(&lock);
+# 996 "<previous_module>"
+__cs_mutex_lock(&lock);
         }
 
+        
+# 998 "<previous_module>"
+;
+        
+# 999 "<previous_module>"
+delete(ss);
         
 # 1000 "<previous_module>"
 ;
-}
-
+        _Bool __cs_local_pop___cs_tmp_if_cond_27;
+        __cs_local_pop___cs_tmp_if_cond_27 = ATOMIC_OPERATION;
+        
+# 1001 "<previous_module>"
+if (__cs_local_pop___cs_tmp_if_cond_27)
 
 # 1002 "<previous_module>"
-void *pop(void *__cs_param_pop___cs_unused)
-
+        {
+                
 # 1003 "<previous_module>"
-{
-        
-# 1004 "<previous_module>"
-int __cs_local_pop_res;
+__cs_mutex_unlock(&lock);
+        }
+
         
 # 1005 "<previous_module>"
-int __cs_local_pop_count;
-        
-# 1006 "<previous_module>"
-__cs_local_pop_count = 0;
-        
-# 1007 "<previous_module>"
-int __cs_local_pop_loop;
-        
-# 1008 "<previous_module>"
-;
-        _Bool __cs_local_pop___cs_tmp_if_cond_28;
-        __cs_local_pop___cs_tmp_if_cond_28 = ATOMIC_OPERATION;
-        
-# 1009 "<previous_module>"
-if (__cs_local_pop___cs_tmp_if_cond_28)
-
-# 1010 "<previous_module>"
-        {
-                
-# 1011 "<previous_module>"
-__cs_mutex_lock(&lock);
-        }
-
-        
-# 1013 "<previous_module>"
-;
-        
-# 1014 "<previous_module>"
-int __cs_local_pop_ytrewq;
-        
-# 1015 "<previous_module>"
-__cs_local_pop_ytrewq = 1050;
-        
-# 1016 "<previous_module>"
-delete(ss);
-        
-# 1017 "<previous_module>"
-;
-        _Bool __cs_local_pop___cs_tmp_if_cond_29;
-        __cs_local_pop___cs_tmp_if_cond_29 = ATOMIC_OPERATION;
-        
-# 1018 "<previous_module>"
-if (__cs_local_pop___cs_tmp_if_cond_29)
-
-# 1019 "<previous_module>"
-        {
-                
-# 1020 "<previous_module>"
-__cs_mutex_unlock(&lock);
-        }
-
-        
-# 1022 "<previous_module>"
-;
-        
-# 1023 "<previous_module>"
-;
-        _Bool __cs_local_pop___cs_tmp_if_cond_30;
-        __cs_local_pop___cs_tmp_if_cond_30 = ATOMIC_OPERATION;
-        
-# 1024 "<previous_module>"
-if (__cs_local_pop___cs_tmp_if_cond_30)
-
-# 1025 "<previous_module>"
-        {
-                
-# 1026 "<previous_module>"
-__cs_mutex_lock(&lock);
-        }
-
-        
-# 1028 "<previous_module>"
-;
-        
-# 1029 "<previous_module>"
-delete(ss);
-        
-# 1030 "<previous_module>"
-;
-        _Bool __cs_local_pop___cs_tmp_if_cond_31;
-        __cs_local_pop___cs_tmp_if_cond_31 = ATOMIC_OPERATION;
-        
-# 1031 "<previous_module>"
-if (__cs_local_pop___cs_tmp_if_cond_31)
-
-# 1032 "<previous_module>"
-        {
-                
-# 1033 "<previous_module>"
-__cs_mutex_unlock(&lock);
-        }
-
-        
-# 1035 "<previous_module>"
 ;
 }
 
 
-# 1037 "<previous_module>"
+# 1007 "<previous_module>"
 int main()
 
-# 1038 "<previous_module>"
+# 1008 "<previous_module>"
 {
         
-# 1039 "<previous_module>"
+# 1009 "<previous_module>"
 __cs_mutex_init(&lock, 0);
         
-# 1040 "<previous_module>"
+# 1010 "<previous_module>"
 ss = init();
         
-# 1041 "<previous_module>"
+# 1011 "<previous_module>"
 __cs_t __cs_local_main_t1;
         
-# 1042 "<previous_module>"
+# 1012 "<previous_module>"
 __cs_t __cs_local_main_t2;
         
-# 1043 "<previous_module>"
+# 1013 "<previous_module>"
 __cs_t __cs_local_main_t3;
         
-# 1044 "<previous_module>"
+# 1014 "<previous_module>"
 __cs_t __cs_local_main_t4;
         
-# 1045 "<previous_module>"
+# 1015 "<previous_module>"
 __cs_t __cs_local_main_t5;
         
-# 1046 "<previous_module>"
+# 1016 "<previous_module>"
 __cs_t __cs_local_main_t6;
         
-# 1047 "<previous_module>"
+# 1017 "<previous_module>"
 __cs_t __cs_local_main_t7;
         
-# 1048 "<previous_module>"
+# 1018 "<previous_module>"
 __cs_t __cs_local_main_t8;
         
-# 1049 "<previous_module>"
+# 1019 "<previous_module>"
 __cs_t __cs_local_main_t9;
         
-# 1050 "<previous_module>"
+# 1020 "<previous_module>"
 __cs_t __cs_local_main_t10;
         
-# 1051 "<previous_module>"
+# 1021 "<previous_module>"
 __cs_create(&__cs_local_main_t1, 0, push, 0);
         
-# 1052 "<previous_module>"
+# 1022 "<previous_module>"
 __cs_create(&__cs_local_main_t6, 0, pop, 0);
         
-# 1053 "<previous_module>"
+# 1023 "<previous_module>"
 __cs_join(__cs_local_main_t1, 0);
         
-# 1054 "<previous_module>"
+# 1024 "<previous_module>"
 __cs_join(__cs_local_main_t6, 0);
         
-# 1055 "<previous_module>"
+# 1025 "<previous_module>"
+int __cs_local_main_size_ss;
+        
+# 1026 "<previous_module>"
+__cs_local_main_size_ss = get_size(ss);
+        
+# 1027 "<previous_module>"
 __CSEQ_assert(0);
         
-# 1056 "<previous_module>"
+# 1028 "<previous_module>"
 return 0;
 }
 

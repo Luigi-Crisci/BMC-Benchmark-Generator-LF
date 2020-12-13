@@ -885,7 +885,7 @@ int dimension;
 struct test_data **datas;
     datas = malloc((sizeof(struct test_data *)) * max_size);
 struct lfds711_stack_element *se;
-while (res != 0)
+while (actual_size < 2)
     {
 res = lfds711_stack_pop(s, &se);
 if (res == 0)
@@ -926,20 +926,7 @@ if (ATOMIC_OPERATION)
 pthread_mutex_lock(&lock);
     }
 ;
-int qwerty;
-    qwerty = 1050;
 insert(ss, 1500);
-if (ATOMIC_OPERATION)
-    {
-pthread_mutex_unlock(&lock);
-    }
-;
-if (ATOMIC_OPERATION)
-    {
-pthread_mutex_lock(&lock);
-    }
-;
-insert(ss, 1600);
 if (ATOMIC_OPERATION)
     {
 pthread_mutex_unlock(&lock);
@@ -952,19 +939,6 @@ int res;
 int count;
     count = 0;
 int loop;
-if (ATOMIC_OPERATION)
-    {
-pthread_mutex_lock(&lock);
-    }
-;
-int ytrewq;
-    ytrewq = 1050;
-delete(ss);
-if (ATOMIC_OPERATION)
-    {
-pthread_mutex_unlock(&lock);
-    }
-;
 if (ATOMIC_OPERATION)
     {
 pthread_mutex_lock(&lock);
@@ -995,6 +969,8 @@ pthread_create(&t1, 0, push, 0);
 pthread_create(&t6, 0, pop, 0);
 pthread_join(t1, 0);
 pthread_join(t6, 0);
+int size_ss;
+    size_ss = get_size(ss);
 assert(0);
 return 0;
 }

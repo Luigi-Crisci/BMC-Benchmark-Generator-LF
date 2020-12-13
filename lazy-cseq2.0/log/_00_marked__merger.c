@@ -1404,15 +1404,9 @@ int get_size(struct lfds711_stack_state *s){
  struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
  struct lfds711_stack_element *se;
 
- while (res != 0)
 
+ while (actual_size < 2)
  {
-
-
-
-
-
-
   res = lfds711_stack_pop(s, &se);
   if (res == 0)
    break;
@@ -1463,14 +1457,8 @@ void *push()
 
 
   if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
-  int qwerty = 1050;
   insert(ss,1500);
   if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
-
-  if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
-  insert(ss,1600);
-  if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
-
 }
 
 void *pop()
@@ -1481,14 +1469,8 @@ void *pop()
 
 
   if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
-  int ytrewq = 1050;
   delete(ss);
   if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
-
-  if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
-  delete(ss);
-  if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
-
 }
 
 
@@ -1515,7 +1497,9 @@ int main()
 
 
  pthread_join(t6, 0);
-# 92 "<stdin>"
+# 78 "<stdin>"
+ int size_ss = get_size(ss);
+
  assert(0);
  return (0);
 }

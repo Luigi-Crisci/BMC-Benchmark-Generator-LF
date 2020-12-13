@@ -13,10 +13,10 @@ list of functions:
    __atomic_exchange_n(param: __cs_param___atomic_exchange_n_previous, __cs_param___atomic_exchange_n_new, __cs_param___atomic_exchange_n_memorder)  call count 0
    __atomic_thread_fence(param: __cs_param___atomic_thread_fence_i)  call count 0
    init(param: )  call count 1
-   insert(param: __cs_param_insert_s, __cs_param_insert_id)  call count 2
-   delete(param: __cs_param_delete_s)  call count 2
+   insert(param: __cs_param_insert_s, __cs_param_insert_id)  call count 1
+   delete(param: __cs_param_delete_s)  call count 1
    contains(param: __cs_param_contains_s, __cs_param_contains_id)  call count 0
-   get_size(param: __cs_param_get_size_s)  call count 0
+   get_size(param: __cs_param_get_size_s)  call count 1
    is_empty(param: __cs_param_is_empty_s)  call count 0
    push(param: __cs_param_push___cs_unused)  call count 0
    pop(param: __cs_param_pop___cs_unused)  call count 0
@@ -372,19 +372,19 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1023, 1034, 1042, 1051, 1066, 1077, 1085, 1094]'  
+         occurs '[1023, 1032, 1047, 1056]'  
       id281  'ss'  
          type 'void *'  kind 'g'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1031, 1048, 1074, 1091, 1104]'  
+         occurs '[1029, 1053, 1066, 1082]'  
       id282  'lock'  
          type '__cs_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[1026, 1037, 1045, 1054, 1069, 1080, 1088, 1097, 1103]'  
+         ref '[1026, 1035, 1050, 1059, 1065]'  
          deref '[]'  
-         occurs '[1026, 1037, 1045, 1054, 1069, 1080, 1088, 1097, 1103]'  
+         occurs '[1026, 1035, 1050, 1059, 1065]'  
    assert_create
       id0  '__cs_param_assert_create_ss'  
          type 'void *'  kind 'p'  arity '0'  
@@ -966,13 +966,13 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[971, 989, 989, 993, 998]'  
+         occurs '[971, 979, 989, 989, 993, 998]'  
       id270  '__cs_local_get_size_res'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[973, 979, 981, 984]'  
+         occurs '[973, 981, 984]'  
       id271  '__cs_local_get_size_dimension'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
@@ -1047,146 +1047,116 @@ Variables:
          ref '[]'  
          deref '[]'  
          occurs '[1023, 1024]'  
-      id286  '__cs_local_push_qwerty'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1030]'  
-      id287  '__cs_local_push___cs_tmp_if_cond_25'  
+      id286  '__cs_local_push___cs_tmp_if_cond_25'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1034, 1035]'  
-      id288  '__cs_local_push___cs_tmp_if_cond_26'  
-         type '_Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1042, 1043]'  
-      id289  '__cs_local_push___cs_tmp_if_cond_27'  
-         type '_Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1051, 1052]'  
+         occurs '[1032, 1033]'  
    pop
-      id290  '__cs_param_pop___cs_unused'  
+      id287  '__cs_param_pop___cs_unused'  
          type 'void *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id291  '__cs_local_pop_res'  
+      id288  '__cs_local_pop_res'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id292  '__cs_local_pop_count'  
+      id289  '__cs_local_pop_count'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1062]'  
-      id293  '__cs_local_pop_loop'  
+         occurs '[1043]'  
+      id290  '__cs_local_pop_loop'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id294  '__cs_local_pop___cs_tmp_if_cond_28'  
+      id291  '__cs_local_pop___cs_tmp_if_cond_26'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1066, 1067]'  
-      id295  '__cs_local_pop_ytrewq'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1073]'  
-      id296  '__cs_local_pop___cs_tmp_if_cond_29'  
+         occurs '[1047, 1048]'  
+      id292  '__cs_local_pop___cs_tmp_if_cond_27'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1077, 1078]'  
-      id297  '__cs_local_pop___cs_tmp_if_cond_30'  
-         type '_Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1085, 1086]'  
-      id298  '__cs_local_pop___cs_tmp_if_cond_31'  
-         type '_Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1094, 1095]'  
+         occurs '[1056, 1057]'  
    main
-      id299  '__cs_local_main_t1'  
+      id293  '__cs_local_main_t1'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[1115]'  
+         ref '[1077]'  
          deref '[]'  
-         occurs '[1115, 1117]'  
-      id300  '__cs_local_main_t2'  
-         type '__cs_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
-      id301  '__cs_local_main_t3'  
+         occurs '[1077, 1079]'  
+      id294  '__cs_local_main_t2'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id302  '__cs_local_main_t4'  
+      id295  '__cs_local_main_t3'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id303  '__cs_local_main_t5'  
+      id296  '__cs_local_main_t4'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id304  '__cs_local_main_t6'  
-         type '__cs_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[1116]'  
-         deref '[]'  
-         occurs '[1116, 1118]'  
-      id305  '__cs_local_main_t7'  
+      id297  '__cs_local_main_t5'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id306  '__cs_local_main_t8'  
+      id298  '__cs_local_main_t6'  
+         type '__cs_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[1078]'  
+         deref '[]'  
+         occurs '[1078, 1080]'  
+      id299  '__cs_local_main_t7'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id307  '__cs_local_main_t9'  
+      id300  '__cs_local_main_t8'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id308  '__cs_local_main_t10'  
+      id301  '__cs_local_main_t9'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
+      id302  '__cs_local_main_t10'  
+         type '__cs_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id303  '__cs_local_main_size_ss'  
+         type 'int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1082]'  
 
 Fields:
    lfds711_prng_state
@@ -1964,7 +1934,7 @@ int get_size(struct lfds711_stack_state *__cs_param_get_size_s)
     struct test_data **__cs_local_get_size_datas;
     __cs_local_get_size_datas = __cs_safe_malloc((sizeof(struct test_data *)) * __cs_local_get_size_max_size);
     struct lfds711_stack_element *__cs_local_get_size_se;
-    while (__cs_local_get_size_res != 0)
+    while (__cs_local_get_size_actual_size < 2)
     {
         __cs_local_get_size_res = lfds711_stack_pop(__cs_param_get_size_s, &__cs_local_get_size_se);
         ;
@@ -2026,32 +1996,11 @@ void *push(void *__cs_param_push___cs_unused)
     }
 
     ;
-    int __cs_local_push_qwerty;
-    __cs_local_push_qwerty = 1050;
     insert(ss, 1500);
     ;
     _Bool __cs_local_push___cs_tmp_if_cond_25;
     __cs_local_push___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
     if (__cs_local_push___cs_tmp_if_cond_25)
-    {
-        __cs_mutex_unlock(&lock);
-    }
-
-    ;
-    ;
-    _Bool __cs_local_push___cs_tmp_if_cond_26;
-    __cs_local_push___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
-    if (__cs_local_push___cs_tmp_if_cond_26)
-    {
-        __cs_mutex_lock(&lock);
-    }
-
-    ;
-    insert(ss, 1600);
-    ;
-    _Bool __cs_local_push___cs_tmp_if_cond_27;
-    __cs_local_push___cs_tmp_if_cond_27 = ATOMIC_OPERATION;
-    if (__cs_local_push___cs_tmp_if_cond_27)
     {
         __cs_mutex_unlock(&lock);
     }
@@ -2070,30 +2019,9 @@ void *pop(void *__cs_param_pop___cs_unused)
     __cs_local_pop_count = 0;
     int __cs_local_pop_loop;
     ;
-    _Bool __cs_local_pop___cs_tmp_if_cond_28;
-    __cs_local_pop___cs_tmp_if_cond_28 = ATOMIC_OPERATION;
-    if (__cs_local_pop___cs_tmp_if_cond_28)
-    {
-        __cs_mutex_lock(&lock);
-    }
-
-    ;
-    int __cs_local_pop_ytrewq;
-    __cs_local_pop_ytrewq = 1050;
-    delete(ss);
-    ;
-    _Bool __cs_local_pop___cs_tmp_if_cond_29;
-    __cs_local_pop___cs_tmp_if_cond_29 = ATOMIC_OPERATION;
-    if (__cs_local_pop___cs_tmp_if_cond_29)
-    {
-        __cs_mutex_unlock(&lock);
-    }
-
-    ;
-    ;
-    _Bool __cs_local_pop___cs_tmp_if_cond_30;
-    __cs_local_pop___cs_tmp_if_cond_30 = ATOMIC_OPERATION;
-    if (__cs_local_pop___cs_tmp_if_cond_30)
+    _Bool __cs_local_pop___cs_tmp_if_cond_26;
+    __cs_local_pop___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
+    if (__cs_local_pop___cs_tmp_if_cond_26)
     {
         __cs_mutex_lock(&lock);
     }
@@ -2101,9 +2029,9 @@ void *pop(void *__cs_param_pop___cs_unused)
     ;
     delete(ss);
     ;
-    _Bool __cs_local_pop___cs_tmp_if_cond_31;
-    __cs_local_pop___cs_tmp_if_cond_31 = ATOMIC_OPERATION;
-    if (__cs_local_pop___cs_tmp_if_cond_31)
+    _Bool __cs_local_pop___cs_tmp_if_cond_27;
+    __cs_local_pop___cs_tmp_if_cond_27 = ATOMIC_OPERATION;
+    if (__cs_local_pop___cs_tmp_if_cond_27)
     {
         __cs_mutex_unlock(&lock);
     }
@@ -2133,6 +2061,8 @@ int main()
     __cs_create(&__cs_local_main_t6, 0, pop, 0);
     __cs_join(__cs_local_main_t1, 0);
     __cs_join(__cs_local_main_t6, 0);
+    int __cs_local_main_size_ss;
+    __cs_local_main_size_ss = get_size(ss);
     __CSEQ_assert(0);
     return 0;
 }
@@ -2763,28 +2693,23 @@ All symbols (new symbol table - work in progress):
    (549, '__cs_param_push___cs_unused')  
    (550, '__cs_local_push_loop')  
    (551, '__cs_local_push___cs_tmp_if_cond_24')  
-   (552, '__cs_local_push_qwerty')  
-   (553, '__cs_local_push___cs_tmp_if_cond_25')  
-   (554, '__cs_local_push___cs_tmp_if_cond_26')  
-   (555, '__cs_local_push___cs_tmp_if_cond_27')  
-   (556, 'pop')  
-   (557, '__cs_param_pop___cs_unused')  
-   (558, '__cs_local_pop_res')  
-   (559, '__cs_local_pop_count')  
-   (560, '__cs_local_pop_loop')  
-   (561, '__cs_local_pop___cs_tmp_if_cond_28')  
-   (562, '__cs_local_pop_ytrewq')  
-   (563, '__cs_local_pop___cs_tmp_if_cond_29')  
-   (564, '__cs_local_pop___cs_tmp_if_cond_30')  
-   (565, '__cs_local_pop___cs_tmp_if_cond_31')  
-   (566, 'main')  
-   (567, '__cs_local_main_t1')  
-   (568, '__cs_local_main_t2')  
-   (569, '__cs_local_main_t3')  
-   (570, '__cs_local_main_t4')  
-   (571, '__cs_local_main_t5')  
-   (572, '__cs_local_main_t6')  
-   (573, '__cs_local_main_t7')  
-   (574, '__cs_local_main_t8')  
-   (575, '__cs_local_main_t9')  
-   (576, '__cs_local_main_t10')  
+   (552, '__cs_local_push___cs_tmp_if_cond_25')  
+   (553, 'pop')  
+   (554, '__cs_param_pop___cs_unused')  
+   (555, '__cs_local_pop_res')  
+   (556, '__cs_local_pop_count')  
+   (557, '__cs_local_pop_loop')  
+   (558, '__cs_local_pop___cs_tmp_if_cond_26')  
+   (559, '__cs_local_pop___cs_tmp_if_cond_27')  
+   (560, 'main')  
+   (561, '__cs_local_main_t1')  
+   (562, '__cs_local_main_t2')  
+   (563, '__cs_local_main_t3')  
+   (564, '__cs_local_main_t4')  
+   (565, '__cs_local_main_t5')  
+   (566, '__cs_local_main_t6')  
+   (567, '__cs_local_main_t7')  
+   (568, '__cs_local_main_t8')  
+   (569, '__cs_local_main_t9')  
+   (570, '__cs_local_main_t10')  
+   (571, '__cs_local_main_size_ss')  

@@ -13,10 +13,10 @@ list of functions:
    __atomic_exchange_n(param: previous, new, memorder)  call count 0
    __atomic_thread_fence(param: i)  call count 0
    init(param: )  call count 1
-   insert(param: s, id)  call count 2
-   delete(param: s)  call count 2
+   insert(param: s, id)  call count 1
+   delete(param: s)  call count 1
    contains(param: s, id)  call count 0
-   get_size(param: s)  call count 0
+   get_size(param: s)  call count 1
    is_empty(param: s)  call count 0
    push(param: __cs_unused)  call count 0
    pop(param: __cs_unused)  call count 0
@@ -342,7 +342,7 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[931, 942, 962, 973, 983]'  
+         occurs '[929, 947, 957, 973]'  
       id170  'se'  
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
          size '[]'  
@@ -372,13 +372,13 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[924, 932, 937, 943, 955, 963, 968, 974]'  
+         occurs '[924, 930, 942, 948]'  
       id253  'lock'  
          type 'pthread_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[926, 934, 939, 945, 957, 965, 970, 976, 982]'  
+         ref '[926, 932, 944, 950, 956]'  
          deref '[]'  
-         occurs '[926, 934, 939, 945, 957, 965, 970, 976, 982]'  
+         occurs '[926, 932, 944, 950, 956]'  
    assert_create
       id0  'ss'  
          type 'void *'  kind 'p'  arity '0'  
@@ -822,13 +822,13 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[880, 895, 895, 899, 904]'  
+         occurs '[880, 888, 895, 895, 899, 904]'  
       id244  'res'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[882, 888, 890, 891]'  
+         occurs '[882, 890, 891]'  
       id245  'dimension'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
@@ -885,104 +885,98 @@ Variables:
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id256  'qwerty'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[930]'  
    pop
-      id257  '__cs_unused'  
+      id256  '__cs_unused'  
          type 'void *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id258  'res'  
+      id257  'res'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id259  'count'  
+      id258  'count'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[953]'  
-      id260  'loop'  
+         occurs '[940]'  
+      id259  'loop'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id261  'ytrewq'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[961]'  
    main
-      id262  't1'  
+      id260  't1'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[994]'  
+         ref '[968]'  
          deref '[]'  
-         occurs '[994, 996]'  
-      id263  't2'  
-         type 'pthread_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
-      id264  't3'  
+         occurs '[968, 970]'  
+      id261  't2'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id265  't4'  
+      id262  't3'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id266  't5'  
+      id263  't4'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id267  't6'  
-         type 'pthread_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[995]'  
-         deref '[]'  
-         occurs '[995, 997]'  
-      id268  't7'  
+      id264  't5'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id269  't8'  
+      id265  't6'  
+         type 'pthread_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[969]'  
+         deref '[]'  
+         occurs '[969, 971]'  
+      id266  't7'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id270  't9'  
+      id267  't8'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id271  't10'  
+      id268  't9'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
+      id269  't10'  
+         type 'pthread_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id270  'size_ss'  
+         type 'int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[973]'  
 
 Fields:
    lfds711_prng_state
@@ -1660,7 +1654,7 @@ int get_size(struct lfds711_stack_state *s)
     struct test_data **datas;
     datas = malloc((sizeof(struct test_data *)) * max_size);
     struct lfds711_stack_element *se;
-    while (res != 0)
+    while (actual_size < 2)
     {
         res = lfds711_stack_pop(s, &se);
         if (res == 0)
@@ -1713,22 +1707,7 @@ void *push(void *__cs_unused)
     }
 
     ;
-    int qwerty;
-    qwerty = 1050;
     insert(ss, 1500);
-    if (ATOMIC_OPERATION)
-    {
-        pthread_mutex_unlock(&lock);
-    }
-
-    ;
-    if (ATOMIC_OPERATION)
-    {
-        pthread_mutex_lock(&lock);
-    }
-
-    ;
-    insert(ss, 1600);
     if (ATOMIC_OPERATION)
     {
         pthread_mutex_unlock(&lock);
@@ -1747,21 +1726,6 @@ void *pop(void *__cs_unused)
     int count;
     count = 0;
     int loop;
-    if (ATOMIC_OPERATION)
-    {
-        pthread_mutex_lock(&lock);
-    }
-
-    ;
-    int ytrewq;
-    ytrewq = 1050;
-    delete(ss);
-    if (ATOMIC_OPERATION)
-    {
-        pthread_mutex_unlock(&lock);
-    }
-
-    ;
     if (ATOMIC_OPERATION)
     {
         pthread_mutex_lock(&lock);
@@ -1799,6 +1763,8 @@ int main()
     pthread_create(&t6, 0, pop, 0);
     pthread_join(t1, 0);
     pthread_join(t6, 0);
+    int size_ss;
+    size_ss = get_size(ss);
     assert(0);
     return 0;
 }
@@ -2403,21 +2369,20 @@ All symbols (new symbol table - work in progress):
    (523, 'push')  
    (524, '__cs_unused')  
    (525, 'loop')  
-   (526, 'qwerty')  
-   (527, 'pop')  
-   (528, '__cs_unused')  
-   (529, 'res')  
-   (530, 'count')  
-   (531, 'loop')  
-   (532, 'ytrewq')  
-   (533, 'main')  
-   (534, 't1')  
-   (535, 't2')  
-   (536, 't3')  
-   (537, 't4')  
-   (538, 't5')  
-   (539, 't6')  
-   (540, 't7')  
-   (541, 't8')  
-   (542, 't9')  
-   (543, 't10')  
+   (526, 'pop')  
+   (527, '__cs_unused')  
+   (528, 'res')  
+   (529, 'count')  
+   (530, 'loop')  
+   (531, 'main')  
+   (532, 't1')  
+   (533, 't2')  
+   (534, 't3')  
+   (535, 't4')  
+   (536, 't5')  
+   (537, 't6')  
+   (538, 't7')  
+   (539, 't8')  
+   (540, 't9')  
+   (541, 't10')  
+   (542, 'size_ss')  

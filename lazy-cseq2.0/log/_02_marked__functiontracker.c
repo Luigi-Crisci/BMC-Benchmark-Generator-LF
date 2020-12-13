@@ -2306,7 +2306,7 @@ struct test_data **datas;
 struct lfds711_stack_element *se;
     
 # 857 "<previous_module>"
-while (res != 0)
+while (actual_size < 2)
 
 # 858 "<previous_module>"
     {
@@ -2418,201 +2418,135 @@ pthread_mutex_lock(&lock);
 ;
     
 # 896 "<previous_module>"
-int qwerty;
-    qwerty = 1050;
-    
-# 897 "<previous_module>"
 insert(ss, 1500);
     
+# 897 "<previous_module>"
+if (ATOMIC_OPERATION)
+
 # 898 "<previous_module>"
-if (ATOMIC_OPERATION)
-
+    {
+        
 # 899 "<previous_module>"
-    {
-        
-# 900 "<previous_module>"
 pthread_mutex_unlock(&lock);
     }
 
     
-# 902 "<previous_module>"
-;
-    
-# 903 "<previous_module>"
-if (ATOMIC_OPERATION)
-
-# 904 "<previous_module>"
-    {
-        
-# 905 "<previous_module>"
-pthread_mutex_lock(&lock);
-    }
-
-    
-# 907 "<previous_module>"
-;
-    
-# 908 "<previous_module>"
-insert(ss, 1600);
-    
-# 909 "<previous_module>"
-if (ATOMIC_OPERATION)
-
-# 910 "<previous_module>"
-    {
-        
-# 911 "<previous_module>"
-pthread_mutex_unlock(&lock);
-    }
-
-    
-# 913 "<previous_module>"
+# 901 "<previous_module>"
 ;
 }
 
 
-# 915 "<previous_module>"
+# 903 "<previous_module>"
 void *pop(void *__cs_unused)
 
-# 916 "<previous_module>"
+# 904 "<previous_module>"
 {
     
-# 917 "<previous_module>"
+# 905 "<previous_module>"
 int res;
     
-# 918 "<previous_module>"
+# 906 "<previous_module>"
 int count;
     count = 0;
     
-# 919 "<previous_module>"
+# 907 "<previous_module>"
 int loop;
     
-# 920 "<previous_module>"
+# 908 "<previous_module>"
 if (ATOMIC_OPERATION)
 
-# 921 "<previous_module>"
+# 909 "<previous_module>"
     {
         
-# 922 "<previous_module>"
+# 910 "<previous_module>"
 pthread_mutex_lock(&lock);
     }
 
     
-# 924 "<previous_module>"
+# 912 "<previous_module>"
 ;
     
-# 925 "<previous_module>"
-int ytrewq;
-    ytrewq = 1050;
-    
-# 926 "<previous_module>"
+# 913 "<previous_module>"
 delete(ss);
     
-# 927 "<previous_module>"
+# 914 "<previous_module>"
 if (ATOMIC_OPERATION)
 
-# 928 "<previous_module>"
+# 915 "<previous_module>"
     {
         
-# 929 "<previous_module>"
+# 916 "<previous_module>"
 pthread_mutex_unlock(&lock);
     }
 
     
-# 931 "<previous_module>"
-;
-    
-# 932 "<previous_module>"
-if (ATOMIC_OPERATION)
-
-# 933 "<previous_module>"
-    {
-        
-# 934 "<previous_module>"
-pthread_mutex_lock(&lock);
-    }
-
-    
-# 936 "<previous_module>"
-;
-    
-# 937 "<previous_module>"
-delete(ss);
-    
-# 938 "<previous_module>"
-if (ATOMIC_OPERATION)
-
-# 939 "<previous_module>"
-    {
-        
-# 940 "<previous_module>"
-pthread_mutex_unlock(&lock);
-    }
-
-    
-# 942 "<previous_module>"
+# 918 "<previous_module>"
 ;
 }
 
 
-# 944 "<previous_module>"
+# 920 "<previous_module>"
 int main()
 
-# 945 "<previous_module>"
+# 921 "<previous_module>"
 {
     
-# 946 "<previous_module>"
+# 922 "<previous_module>"
 pthread_mutex_init(&lock, 0);
     
-# 947 "<previous_module>"
+# 923 "<previous_module>"
 ss = init();
     
-# 948 "<previous_module>"
+# 924 "<previous_module>"
 pthread_t t1;
     
-# 949 "<previous_module>"
+# 925 "<previous_module>"
 pthread_t t2;
     
-# 950 "<previous_module>"
+# 926 "<previous_module>"
 pthread_t t3;
     
-# 951 "<previous_module>"
+# 927 "<previous_module>"
 pthread_t t4;
     
-# 952 "<previous_module>"
+# 928 "<previous_module>"
 pthread_t t5;
     
-# 953 "<previous_module>"
+# 929 "<previous_module>"
 pthread_t t6;
     
-# 954 "<previous_module>"
+# 930 "<previous_module>"
 pthread_t t7;
     
-# 955 "<previous_module>"
+# 931 "<previous_module>"
 pthread_t t8;
     
-# 956 "<previous_module>"
+# 932 "<previous_module>"
 pthread_t t9;
     
-# 957 "<previous_module>"
+# 933 "<previous_module>"
 pthread_t t10;
     
-# 958 "<previous_module>"
+# 934 "<previous_module>"
 pthread_create(&t1, 0, push, 0);
     
-# 959 "<previous_module>"
+# 935 "<previous_module>"
 pthread_create(&t6, 0, pop, 0);
     
-# 960 "<previous_module>"
+# 936 "<previous_module>"
 pthread_join(t1, 0);
     
-# 961 "<previous_module>"
+# 937 "<previous_module>"
 pthread_join(t6, 0);
     
-# 962 "<previous_module>"
+# 938 "<previous_module>"
+int size_ss;
+    size_ss = get_size(ss);
+    
+# 939 "<previous_module>"
 assert(0);
     
-# 963 "<previous_module>"
+# 940 "<previous_module>"
 return 0;
 }
 

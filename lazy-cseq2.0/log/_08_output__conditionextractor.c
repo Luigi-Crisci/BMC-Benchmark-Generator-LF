@@ -932,7 +932,7 @@ dimension = 2;
 struct test_data **datas;
 datas = __cs_safe_malloc((sizeof(struct test_data *)) * max_size);
 struct lfds711_stack_element *se;
-while (res != 0)
+while (actual_size < 2)
         {
 res = lfds711_stack_pop(s, &se);
 ;_Bool __cs_tmp_if_cond_22; __cs_tmp_if_cond_22 = (res == 0); 
@@ -976,24 +976,9 @@ int long long unsigned loop;
 __cs_mutex_lock(&lock);
         }
 ;
-int qwerty;
-qwerty = 1050;
 insert(ss, 1500);
 ;_Bool __cs_tmp_if_cond_25; __cs_tmp_if_cond_25 = (ATOMIC_OPERATION); 
         if (__cs_tmp_if_cond_25)
-        {
-__cs_mutex_unlock(&lock);
-        }
-;
-;_Bool __cs_tmp_if_cond_26; __cs_tmp_if_cond_26 = (ATOMIC_OPERATION); 
-        if (__cs_tmp_if_cond_26)
-        {
-__cs_mutex_lock(&lock);
-        }
-;
-insert(ss, 1600);
-;_Bool __cs_tmp_if_cond_27; __cs_tmp_if_cond_27 = (ATOMIC_OPERATION); 
-        if (__cs_tmp_if_cond_27)
         {
 __cs_mutex_unlock(&lock);
         }
@@ -1005,30 +990,15 @@ int res;
 int count;
 count = 0;
 int loop;
-;_Bool __cs_tmp_if_cond_28; __cs_tmp_if_cond_28 = (ATOMIC_OPERATION); 
-        if (__cs_tmp_if_cond_28)
-        {
-__cs_mutex_lock(&lock);
-        }
-;
-int ytrewq;
-ytrewq = 1050;
-delete(ss);
-;_Bool __cs_tmp_if_cond_29; __cs_tmp_if_cond_29 = (ATOMIC_OPERATION); 
-        if (__cs_tmp_if_cond_29)
-        {
-__cs_mutex_unlock(&lock);
-        }
-;
-;_Bool __cs_tmp_if_cond_30; __cs_tmp_if_cond_30 = (ATOMIC_OPERATION); 
-        if (__cs_tmp_if_cond_30)
+;_Bool __cs_tmp_if_cond_26; __cs_tmp_if_cond_26 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_26)
         {
 __cs_mutex_lock(&lock);
         }
 ;
 delete(ss);
-;_Bool __cs_tmp_if_cond_31; __cs_tmp_if_cond_31 = (ATOMIC_OPERATION); 
-        if (__cs_tmp_if_cond_31)
+;_Bool __cs_tmp_if_cond_27; __cs_tmp_if_cond_27 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_27)
         {
 __cs_mutex_unlock(&lock);
         }
@@ -1052,6 +1022,8 @@ __cs_create(&t1, 0, push, 0);
 __cs_create(&t6, 0, pop, 0);
 __cs_join(t1, 0);
 __cs_join(t6, 0);
+int size_ss;
+size_ss = get_size(ss);
 __CSEQ_assert(0);
 return 0;
 }
