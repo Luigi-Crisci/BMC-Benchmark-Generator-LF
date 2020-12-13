@@ -91,15 +91,9 @@ int get_size(struct lfds711_stack_state *s){
 	struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
 	struct lfds711_stack_element *se;
 
-	while (res != 0)
-	// while (actual_size < 2)
+	// while (res != 0)
+	while (actual_size < 2)
 	{
-		// if (actual_size == max_size)
-		// {
-		// 	datas = realloc(datas,sizeof(struct test_data*) * max_size * dimension);
-		// 	max_size *= dimension;
-		// }
-		
 		res = lfds711_stack_pop(s, &se);
 		if (res == 0)
 			break;
