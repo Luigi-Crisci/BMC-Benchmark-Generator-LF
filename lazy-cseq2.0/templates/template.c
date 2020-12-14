@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "checker.c"
-#include "/home/luigi/LFDS-LazyCseq-Project/workspace/inteface/stack/stack_interface.c"
+// INTERFACE GOES THERE
 
 int volatile ATOMIC_OPERATION = 1;
 #define LOCK if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);}
@@ -13,33 +13,14 @@ int volatile ATOMIC_OPERATION = 1;
 void* ss;
 pthread_mutex_t lock;
 
-void *thread1(){
- LOCK;
- delete(ss);
- UNLOCK;
- LOCK;
- delete(ss);
- UNLOCK;
- }
- void *thread2(){
- LOCK;
- delete(ss);
- UNLOCK;
- LOCK;
- delete(ss);
- UNLOCK;
- }
+// THREAD GOES THERE
 
 int main()
 {
 	pthread_mutex_init(&lock, NULL);
 	ss = init();
 	
-pthread_t t1,t2;
-pthread_create(&t1, NULL, thread1, NULL);
-pthread_create(&t2, NULL, thread2, NULL);
-pthread_join(t1, 0);
-pthread_join(t2, 0);
+	//THREAD CREATION GOES THERE
 
 	check(ss);
 	return (EXIT_SUCCESS);
