@@ -2,7 +2,8 @@ from io import SEEK_SET
 import sys
 import subprocess
 from itertools import product
-import analyze_trace
+from optparse import OptionParser
+from analyze_trace import run_benchmark
 
 num_thread = 0
 num_op = 0
@@ -66,7 +67,7 @@ def create_benchmarks(perm):
         index+=1
 
     #TODO: Add correct template path 
-    generalized = open("../workspace/multithread/template.c","r")
+    generalized = open("../workspace/templates/template.c","r")
     for i in range(len(string_thread_comb)):
         filename = f"benchmark_{i}.c"
         file_result = open(f"benchmarks/{filename}","w+")
@@ -98,21 +99,46 @@ def create_benchmarks(perm):
             file_result.write(line)
         
         #Launch benchmark on current benchmark_file.c
-        # if not run_benchmark(filename,data_structure_type,include_params):
-        #     print(f"Error found with {filename} benchmark. Please see checker.c and the related log to find out more")
-        #     sys.exit(1)
+        if not run_benchmark(filename,data_structure_type,include_params):
+            print(f"Error found with {filename} benchmark. Please see checker.c and the related log to find out more")
+            sys.exit(1)
         
         generalized.seek(0,SEEK_SET)
     generalized.close()
         
+def cli_params_parser():
+    parser = OptionParser("usage: %prog -t 2 -o 2 -p -s -I")
+
+    parser.add_option("-t", "--num-thread", dest="num_thread",
+                  help="set number of thread", metavar="number")
+
+    parser.add_option("-o", "--num-op", dest="num_op",
+                  help="set number of operations", metavar="number")
+
+    parser.add_option("-p", "--path-interface", dest="interface_path",
+                  help="set path for interface", metavar="string")
+
+    parser.add_option("-s", "--data-structure", dest="data_structure_type", default="stack",
+                  help="set data structure type<stack|queue>", metavar="string")
+
+    parser.add_option("-I", "--include-params", dest="include_params",
+                  help="params to include", metavar="string")
+
+    (options, args) = parser.parse_args()
+
+    if len(args) != 2:
+        parser.error("Incorrect type of arguments.")
         
 if __name__ == "__main__":
-    num_thread = int(sys.argv[1])
-    num_op = int(sys.argv[2])
-    interface_path = sys.argv[3]
-    data_structure_type = "stack"
-    include_params = sys.argv[5]
-    
+
+    cli_params_parser()
+
+    num_thread = int(options.num_thread)
+    num_op = int(options.num_op)
+    interface_path = options.interface_path
+    data_structure_type = options.data_structure_type
+    include_params = options.include_params
+
     perm = create_permutation(num_thread,num_op)
     subprocess.call(["rm","-fr","benchmarks"])
     subprocess.call(["mkdir","benchmarks"])
