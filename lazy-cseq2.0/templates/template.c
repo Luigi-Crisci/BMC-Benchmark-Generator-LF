@@ -3,14 +3,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "checker.c"
 // INTERFACE GOES THERE
+#include <assert.h>
+#include "checker.c"
 
 int volatile ATOMIC_OPERATION = 1;
 #define LOCK if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);}
 #define UNLOCK if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); }
 
-void* ss;
+//TYPE DEC
 pthread_mutex_t lock;
 
 // THREAD GOES THERE

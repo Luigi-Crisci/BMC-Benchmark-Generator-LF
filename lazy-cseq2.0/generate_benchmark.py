@@ -3,13 +3,15 @@ import sys
 import subprocess
 from itertools import product
 from optparse import OptionParser
-import analyze_trace as at
+import analyze_trace
 
 num_thread = 0
 num_op = 0
 data_structure_type = ""
 interface_path = ""
 include_params = ""
+name = ""
+rounds = 1
 
 # Function to convert   
 def listToString(s):
@@ -62,7 +64,7 @@ def create_benchmarks(perm):
                     temp_string.append("delete(ss);\n")
                 temp_string.append("UNLOCK;\n")
             temp_string.append("}\n")
-        string_thread_comb.insert(index,listToString(temp_string))
+        string_thread_comb.insert(index,(listToString(temp_string),id))
         temp_string = []
         index+=1
 
@@ -76,8 +78,11 @@ def create_benchmarks(perm):
             if line.__contains__("// INTERFACE GOES THERE\n"):
                 file_result.write(f"#include \"{interface_path}\"\n")
                 continue
+            if line.__contains__("//TYPE DEC\n"):
+                file_result.write(f"{name}* ss;\n")
+                continue
             if line.__contains__("// THREAD GOES THERE\n"):
-                file_result.write(string_thread_comb[i])
+                file_result.write(string_thread_comb[i][0])
                 continue
             if line.__contains__("//THREAD CREATION GOES THERE\n"):
                 # Write declaration
@@ -97,14 +102,22 @@ def create_benchmarks(perm):
                     file_result.write(f"pthread_join(t{j}, 0);\n")
                 continue
             file_result.write(line)
+        file_result.close()
+        # generalized.close()
         
-        #Launch benchmark on current benchmark_file.c
-        if not at.run_benchmark(filename,data_structure_type,include_params):
+        if not analyze_trace.run_benchmark(filename,data_structure_type,include_params,string_thread_comb[i][1],name,rounds):
             print(f"Error found with {filename} benchmark. Please see checker.c and the related log to find out more")
             sys.exit(1)
-        
+
         generalized.seek(0,SEEK_SET)
     generalized.close()
+
+
+    # for i in range(len(string_thread_comb)):
+    #     filename = f"benchmark_{i}.c"
+    #     if not analyze_trace.run_benchmark(filename,data_structure_type,include_params):
+    #         print(f"Error found with {filename} benchmark. Please see checker.c and the related log to find out more")
+    #         sys.exit(1)
     
         
 if __name__ == "__main__":
@@ -116,6 +129,9 @@ if __name__ == "__main__":
 
     parser.add_option("-o", "--num-op", dest="num_op",
                   help="set number of operations", metavar="number")
+    
+    parser.add_option("-r", "--num-rounds", dest="rounds",
+                  help="set number of rounds", metavar="number")
 
     parser.add_option("-p", "--path-interface", dest="interface_path",
                   help="set path for interface", metavar="string")
@@ -126,6 +142,9 @@ if __name__ == "__main__":
     parser.add_option("-I", "--include-params", dest="include_params",
                   help="params to include", metavar="string")
 
+    parser.add_option("-N", "--name-structure", dest="name_structure",
+        help="structure name", metavar="string")
+
     (options, args) = parser.parse_args()
 
     num_thread = int(options.num_thread)
@@ -133,8 +152,10 @@ if __name__ == "__main__":
     interface_path = options.interface_path
     data_structure_type = options.data_structure_type
     include_params = options.include_params
+    name = options.name_structure
+    rounds = options.rounds
 
     perm = create_permutation(num_thread,num_op)
-    # subprocess.call(["rm","-fr","benchmarks"])
-    # subprocess.call(["mkdir","-p","benchmarks/logDir"])
+    subprocess.call(["rm","-fr","benchmarks"])
+    subprocess.call(["mkdir","-p","benchmarks/logDir"])
     create_benchmarks(perm)
