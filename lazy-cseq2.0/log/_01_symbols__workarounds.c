@@ -19,7 +19,7 @@ list of functions:
    lfds711_misc_internal_backoff_init(param: bs)  call count 2
    lfds711_stack_init_valid_on_current_logical_core(param: ss, user_state)  call count 1
    lfds711_stack_pop(param: ss, se)  call count 4
-   lfds711_stack_push(param: ss, se)  call count 3
+   lfds711_stack_push(param: ss, se)  call count 4
    __VERIFIER_atomic_compare_and_exchange(param: mptr, eptr, newval, weak_p, sm, fm)  call count 1
    __atomic_compare_exchange_n(param: mptr, eptr, newval, weak_p, sm, fm)  call count 0
    __VERIFIER_atomic_exchange(param: previous, new, memorder)  call count 1
@@ -28,9 +28,9 @@ list of functions:
    init(param: )  call count 1
    insert(param: s, id)  call count 1
    delete(param: s)  call count 1
-   contains(param: s, id)  call count 1
+   contains(param: s, id)  call count 0
    get_size(param: s)  call count 0
-   is_empty(param: s)  call count 0
+   is_empty(param: s)  call count 1
    push(param: )  call count 0
    pop(param: )  call count 0
    main(param: )  call count 0
@@ -2490,7 +2490,7 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1380, 1380, 1380, 1383]'  
+         occurs '[1383]'  
    pop
       id254  'res'  
 >>>>>>> origin/main
@@ -2560,14 +2560,14 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1393, 1393, 1393]'  
+         occurs '[]'  
    main
       id257  't1'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[1408]'  
+         ref '[1413]'  
          deref '[]'  
-         occurs '[1408, 1419]'  
+         occurs '[1413, 1419]'  
       id258  't2'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
@@ -3525,7 +3525,7 @@ int is_empty(struct lfds711_stack_state *s)
     int res = lfds711_stack_pop(s, &se);
     if (res != 0)
     {
-        fds711_stack_push(s, se);
+        lfds711_stack_push(s, se);
         return 0;
     }
 
@@ -3539,6 +3539,7 @@ function 'push' ----------------------------------:
 void *push()
 {
     int long long unsigned loop;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3573,23 +3574,26 @@ void *push()
 =======
     for (loop = 0; loop < 2; loop++)
 >>>>>>> origin/main
+=======
+    if (ATOMIC_OPERATION)
+>>>>>>> origin/main
     {
-        if (ATOMIC_OPERATION)
-        {
-            pthread_mutex_lock(&lock);
-        }
+        pthread_mutex_lock(&lock);
+    }
 
+<<<<<<< HEAD
         ;
-        insert(ss, loop);
-        if (ATOMIC_OPERATION)
-        {
-            pthread_mutex_unlock(&lock);
-        }
-
-        ;
+>>>>>>> origin/main
+=======
+    ;
+    insert(ss, loop);
+    if (ATOMIC_OPERATION)
+    {
+        pthread_mutex_unlock(&lock);
 >>>>>>> origin/main
     }
 
+    ;
 }
 
 
@@ -3601,6 +3605,7 @@ void *pop()
     int res;
     int count = 0;
     int loop;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3716,10 +3721,21 @@ void readFile(char *filename, LIST_NODE_T *listHead)
         {
             pthread_mutex_unlock(&lock);
         }
+=======
+    if (ATOMIC_OPERATION)
+    {
+        pthread_mutex_lock(&lock);
+    }
+>>>>>>> origin/main
 
-        ;
+    ;
+    delete(ss);
+    if (ATOMIC_OPERATION)
+    {
+        pthread_mutex_unlock(&lock);
     }
 
+    ;
 }
 
 
@@ -3751,7 +3767,7 @@ int main()
     pthread_create(&t6, 0, pop, 0);
     pthread_join(t1, 0);
     pthread_join(t6, 0);
-    assert(contains(ss, 0));
+    assert(is_empty(ss));
     return 0;
 }
 
@@ -3894,6 +3910,7 @@ function: get_size   stmt:     return actual_size;
 
 function: is_empty   stmt:     return 1;
 
+<<<<<<< HEAD
 function: push   stmt:     for (loop = 0; loop < 2; loop++)
 >>>>>>> origin/main
     {
@@ -3939,7 +3956,11 @@ function: pop   stmt:     for (loop = 0; loop < 2; loop++)
 
         ;
     }
+=======
+function: push   stmt:     ;
+>>>>>>> origin/main
 
+function: pop   stmt:     ;
 
 function: main   stmt:     return 0;
 

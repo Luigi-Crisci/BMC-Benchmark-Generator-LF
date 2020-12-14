@@ -5936,7 +5936,7 @@ res = lfds711_stack_pop(s, &se);
         {
                 
 # 936 "<previous_module>"
-fds711_stack_push(s, se);
+lfds711_stack_push(s, se);
                 
 # 937 "<previous_module>"
 return 0;
@@ -5967,11 +5967,14 @@ void *push(void *__cs_unused)
 int long long unsigned loop;
         
 # 947 "<previous_module>"
-for (loop = 0; loop < 2; loop++)
+;_Bool __cs_tmp_if_cond_24; __cs_tmp_if_cond_24 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_24)
+
 # 948 "<previous_module>"
         {
                 
 # 949 "<previous_module>"
+<<<<<<< HEAD
 ;_Bool __cs_tmp_if_cond_24; __cs_tmp_if_cond_24 = (ATOMIC_OPERATION); 
                 if (__cs_tmp_if_cond_24)
 
@@ -6041,15 +6044,18 @@ fclose(fp);
 =======
 # 951 "<previous_module>"
 >>>>>>> origin/main
+=======
+>>>>>>> origin/main
 __cs_mutex_lock(&lock);
-                }
+        }
 
-                
-# 953 "<previous_module>"
+        
+# 951 "<previous_module>"
 ;
-                
-# 954 "<previous_module>"
+        
+# 952 "<previous_module>"
 insert(ss, loop);
+<<<<<<< HEAD
                 
 <<<<<<< HEAD
 # 914 "<previous_module>"
@@ -6111,56 +6117,63 @@ __CSEQ_assert(0);
 >>>>>>> origin/main
 __cs_mutex_unlock(&lock);
                 }
+=======
+        
+# 953 "<previous_module>"
+;_Bool __cs_tmp_if_cond_25; __cs_tmp_if_cond_25 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_25)
+>>>>>>> origin/main
 
+# 954 "<previous_module>"
+        {
                 
-# 959 "<previous_module>"
-;
+# 955 "<previous_module>"
+__cs_mutex_unlock(&lock);
         }
 
+        
+# 957 "<previous_module>"
+;
 }
 >>>>>>> origin/main
 
 
-# 962 "<previous_module>"
+# 959 "<previous_module>"
 void *pop(void *__cs_unused)
 
-# 963 "<previous_module>"
+# 960 "<previous_module>"
 {
         
-# 964 "<previous_module>"
+# 961 "<previous_module>"
 int res;
         
-# 965 "<previous_module>"
+# 962 "<previous_module>"
 int count;
         
-# 966 "<previous_module>"
+# 963 "<previous_module>"
 count = 0;
         
-# 967 "<previous_module>"
+# 964 "<previous_module>"
 int loop;
         
-# 968 "<previous_module>"
-for (loop = 0; loop < 2; loop++)
-# 969 "<previous_module>"
+# 965 "<previous_module>"
+;_Bool __cs_tmp_if_cond_26; __cs_tmp_if_cond_26 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_26)
+
+# 966 "<previous_module>"
         {
                 
-# 970 "<previous_module>"
-;_Bool __cs_tmp_if_cond_26; __cs_tmp_if_cond_26 = (ATOMIC_OPERATION); 
-                if (__cs_tmp_if_cond_26)
-
-# 971 "<previous_module>"
-                {
-                        
-# 972 "<previous_module>"
+# 967 "<previous_module>"
 __cs_mutex_lock(&lock);
-                }
+        }
 
-                
-# 974 "<previous_module>"
+        
+# 969 "<previous_module>"
 ;
-                
-# 975 "<previous_module>"
+        
+# 970 "<previous_module>"
 delete(ss);
+<<<<<<< HEAD
                 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6183,16 +6196,33 @@ return;
 # 978 "<previous_module>"
 __cs_mutex_unlock(&lock);
                 }
+=======
+        
+# 971 "<previous_module>"
+;_Bool __cs_tmp_if_cond_27; __cs_tmp_if_cond_27 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_27)
+>>>>>>> origin/main
 
+# 972 "<previous_module>"
+        {
                 
+<<<<<<< HEAD
 # 980 "<previous_module>"
 ;
 >>>>>>> origin/main
+=======
+# 973 "<previous_module>"
+__cs_mutex_unlock(&lock);
+>>>>>>> origin/main
         }
 
+        
+# 975 "<previous_module>"
+;
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6247,62 +6277,66 @@ readFile("foo.txt", listHead);
 =======
 # 983 "<previous_module>"
 >>>>>>> origin/main
+=======
+# 977 "<previous_module>"
+>>>>>>> origin/main
 int main()
 
-# 984 "<previous_module>"
+# 978 "<previous_module>"
 {
         
-# 985 "<previous_module>"
+# 979 "<previous_module>"
 __cs_mutex_init(&lock, 0);
         
-# 986 "<previous_module>"
+# 980 "<previous_module>"
 ss = init();
         
-# 987 "<previous_module>"
+# 981 "<previous_module>"
 __cs_t t1;
         
-# 988 "<previous_module>"
+# 982 "<previous_module>"
 __cs_t t2;
         
-# 989 "<previous_module>"
+# 983 "<previous_module>"
 __cs_t t3;
         
-# 990 "<previous_module>"
+# 984 "<previous_module>"
 __cs_t t4;
         
-# 991 "<previous_module>"
+# 985 "<previous_module>"
 __cs_t t5;
         
-# 992 "<previous_module>"
+# 986 "<previous_module>"
 __cs_t t6;
         
-# 993 "<previous_module>"
+# 987 "<previous_module>"
 __cs_t t7;
         
-# 994 "<previous_module>"
+# 988 "<previous_module>"
 __cs_t t8;
         
-# 995 "<previous_module>"
+# 989 "<previous_module>"
 __cs_t t9;
         
-# 996 "<previous_module>"
+# 990 "<previous_module>"
 __cs_t t10;
         
-# 997 "<previous_module>"
+# 991 "<previous_module>"
 __cs_create(&t1, 0, push, 0);
         
-# 998 "<previous_module>"
+# 992 "<previous_module>"
 __cs_create(&t6, 0, pop, 0);
         
-# 999 "<previous_module>"
+# 993 "<previous_module>"
 __cs_join(t1, 0);
         
-# 1000 "<previous_module>"
+# 994 "<previous_module>"
 __cs_join(t6, 0);
         
-# 1001 "<previous_module>"
-__CSEQ_assert(contains(ss, 0));
+# 995 "<previous_module>"
+__CSEQ_assert(is_empty(ss));
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 # 1268 "<previous_module>"
@@ -6312,6 +6346,9 @@ __CSEQ_assert(contains(ss, 0));
 >>>>>>> origin/main
 =======
 # 1002 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 996 "<previous_module>"
 >>>>>>> origin/main
 return 0;
 }

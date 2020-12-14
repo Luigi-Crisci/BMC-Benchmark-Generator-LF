@@ -19,7 +19,7 @@ list of functions:
    lfds711_misc_internal_backoff_init(param: __cs_param_lfds711_misc_internal_backoff_init_bs)  call count 2
    lfds711_stack_init_valid_on_current_logical_core(param: __cs_param_lfds711_stack_init_valid_on_current_logical_core_ss, __cs_param_lfds711_stack_init_valid_on_current_logical_core_user_state)  call count 1
    lfds711_stack_pop(param: __cs_param_lfds711_stack_pop_ss, __cs_param_lfds711_stack_pop_se)  call count 4
-   lfds711_stack_push(param: __cs_param_lfds711_stack_push_ss, __cs_param_lfds711_stack_push_se)  call count 3
+   lfds711_stack_push(param: __cs_param_lfds711_stack_push_ss, __cs_param_lfds711_stack_push_se)  call count 4
    __CSEQ_atomic_compare_and_exchange(param: __cs_param___CSEQ_atomic_compare_and_exchange_mptr, __cs_param___CSEQ_atomic_compare_and_exchange_eptr, __cs_param___CSEQ_atomic_compare_and_exchange_newval, __cs_param___CSEQ_atomic_compare_and_exchange_weak_p, __cs_param___CSEQ_atomic_compare_and_exchange_sm, __cs_param___CSEQ_atomic_compare_and_exchange_fm)  call count 1
    __atomic_compare_exchange_n(param: __cs_param___atomic_compare_exchange_n_mptr, __cs_param___atomic_compare_exchange_n_eptr, __cs_param___atomic_compare_exchange_n_newval, __cs_param___atomic_compare_exchange_n_weak_p, __cs_param___atomic_compare_exchange_n_sm, __cs_param___atomic_compare_exchange_n_fm)  call count 0
    __CSEQ_atomic_exchange(param: __cs_param___CSEQ_atomic_exchange_previous, __cs_param___CSEQ_atomic_exchange_new, __cs_param___CSEQ_atomic_exchange_memorder)  call count 1
@@ -28,9 +28,9 @@ list of functions:
    init(param: )  call count 1
    insert(param: __cs_param_insert_s, __cs_param_insert_id)  call count 1
    delete(param: __cs_param_delete_s)  call count 1
-   contains(param: __cs_param_contains_s, __cs_param_contains_id)  call count 1
+   contains(param: __cs_param_contains_s, __cs_param_contains_id)  call count 0
    get_size(param: __cs_param_get_size_s)  call count 0
-   is_empty(param: __cs_param_is_empty_s)  call count 0
+   is_empty(param: __cs_param_is_empty_s)  call count 1
    push(param: __cs_param_push___cs_unused)  call count 0
    pop(param: __cs_param_pop___cs_unused)  call count 0
    main(param: )  call count 0
@@ -558,20 +558,20 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1025, 1034, 1052, 1061]'  
+         occurs '[1023, 1032, 1047, 1056]'  
       id280  'ss'  
          type 'void *'  kind 'g'  arity '0'  
 >>>>>>> origin/main
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1031, 1058, 1072, 1087]'  
+         occurs '[1029, 1053, 1066, 1081]'  
       id281  'lock'  
          type '__cs_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[1028, 1037, 1055, 1064, 1071]'  
+         ref '[1026, 1035, 1050, 1059, 1065]'  
          deref '[]'  
-         occurs '[1028, 1037, 1055, 1064, 1071]'  
+         occurs '[1026, 1035, 1050, 1059, 1065]'  
    check
       id0  '__cs_param_check_ss'  
          type 'void *'  kind 'p'  arity '0'  
@@ -3313,6 +3313,7 @@ Variables:
          ref '[]'  
          deref '[]'  
 <<<<<<< HEAD
+<<<<<<< HEAD
          occurs '[1339, 1372]'  
       id341  '__cs_local_readFile_curNode'  
          type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
@@ -3327,18 +3328,21 @@ Variables:
          type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
 =======
          occurs '[1021, 1021, 1021, 1031]'  
+=======
+         occurs '[1029]'  
+>>>>>>> origin/main
       id284  '__cs_local_push___cs_tmp_if_cond_24'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1025, 1026]'  
+         occurs '[1023, 1024]'  
       id285  '__cs_local_push___cs_tmp_if_cond_25'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1034, 1035]'  
+         occurs '[1032, 1033]'  
    pop
       id286  '__cs_param_pop___cs_unused'  
          type 'void *'  kind 'p'  arity '0'  
@@ -3377,6 +3381,7 @@ Variables:
          deref '[]'  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          occurs '[1344, 1371, 1378, 1384, 1388]'  
       id344  '__cs_local_readFile_size'  
 =======
@@ -3385,12 +3390,16 @@ Variables:
 >>>>>>> origin/main
 =======
          occurs '[1046]'  
+=======
+         occurs '[1043]'  
+>>>>>>> origin/main
       id289  '__cs_local_pop_loop'  
 >>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[1346, 1378, 1388]'  
@@ -3412,12 +3421,15 @@ Variables:
 >>>>>>> origin/main
 =======
          occurs '[1048, 1048, 1048]'  
+=======
+         occurs '[]'  
+>>>>>>> origin/main
       id290  '__cs_local_pop___cs_tmp_if_cond_26'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1052, 1053]'  
+         occurs '[1047, 1048]'  
       id291  '__cs_local_pop___cs_tmp_if_cond_27'  
 >>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
@@ -3470,6 +3482,7 @@ Variables:
          ref '[]'  
          deref '[]'  
 <<<<<<< HEAD
+<<<<<<< HEAD
          occurs '[1388, 1389]'  
    main
       id351  '__cs_local_main_listHead'  
@@ -3487,13 +3500,16 @@ Variables:
       id352  '__cs_local_main_t1'  
 =======
          occurs '[1061, 1062]'  
+=======
+         occurs '[1056, 1057]'  
+>>>>>>> origin/main
    main
       id292  '__cs_local_main_t1'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[1083]'  
+         ref '[1077]'  
          deref '[]'  
-         occurs '[1083, 1085]'  
+         occurs '[1077, 1079]'  
       id293  '__cs_local_main_t2'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
@@ -3521,9 +3537,9 @@ Variables:
       id297  '__cs_local_main_t6'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[1084]'  
+         ref '[1078]'  
          deref '[]'  
-         occurs '[1084, 1086]'  
+         occurs '[1078, 1080]'  
       id298  '__cs_local_main_t7'  
 >>>>>>> origin/main
          type '__cs_t'  kind 'l'  arity '0'  
@@ -4628,7 +4644,7 @@ int is_empty(struct lfds711_stack_state *__cs_param_is_empty_s)
     __cs_local_is_empty___cs_tmp_if_cond_23 = __cs_local_is_empty_res != 0;
     if (__cs_local_is_empty___cs_tmp_if_cond_23)
     {
-        fds711_stack_push(__cs_param_is_empty_s, __cs_local_is_empty_se);
+        lfds711_stack_push(__cs_param_is_empty_s, __cs_local_is_empty_se);
         return 0;
     }
 
@@ -4642,26 +4658,15 @@ function 'push' ----------------------------------:
 void *push(void *__cs_param_push___cs_unused)
 {
     int long long unsigned __cs_local_push_loop;
-    for (__cs_local_push_loop = 0; __cs_local_push_loop < 2; __cs_local_push_loop++)
+    ;
+    _Bool __cs_local_push___cs_tmp_if_cond_24;
+    __cs_local_push___cs_tmp_if_cond_24 = ATOMIC_OPERATION;
+    if (__cs_local_push___cs_tmp_if_cond_24)
     {
-        ;
-        _Bool __cs_local_push___cs_tmp_if_cond_24;
-        __cs_local_push___cs_tmp_if_cond_24 = ATOMIC_OPERATION;
-        if (__cs_local_push___cs_tmp_if_cond_24)
-        {
-            __cs_mutex_lock(&lock);
-        }
+        __cs_mutex_lock(&lock);
+    }
 
-        ;
-        insert(ss, __cs_local_push_loop);
-        ;
-        _Bool __cs_local_push___cs_tmp_if_cond_25;
-        __cs_local_push___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
-        if (__cs_local_push___cs_tmp_if_cond_25)
-        {
-            __cs_mutex_unlock(&lock);
-        }
-
+<<<<<<< HEAD
 <<<<<<< HEAD
         fprintf(stderr, "LIST_FetchNodeByName() reports: %d\n", __cs_local_LIST_DeleteNodeById_rCode);
         goto CLEANUP;
@@ -4736,8 +4741,19 @@ void *push(void *__cs_param_push___cs_unused)
 =======
         ;
 >>>>>>> origin/main
+=======
+    ;
+    insert(ss, __cs_local_push_loop);
+    ;
+    _Bool __cs_local_push___cs_tmp_if_cond_25;
+    __cs_local_push___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
+    if (__cs_local_push___cs_tmp_if_cond_25)
+    {
+        __cs_mutex_unlock(&lock);
+>>>>>>> origin/main
     }
 
+    ;
 }
 
 
@@ -4750,6 +4766,7 @@ void *pop(void *__cs_param_pop___cs_unused)
     int __cs_local_pop_count;
     __cs_local_pop_count = 0;
     int __cs_local_pop_loop;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4884,10 +4901,27 @@ void readFile(char *__cs_param_readFile_filename, LIST_NODE_T *__cs_param_readFi
         {
             __cs_mutex_unlock(&lock);
         }
+=======
+    ;
+    _Bool __cs_local_pop___cs_tmp_if_cond_26;
+    __cs_local_pop___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
+    if (__cs_local_pop___cs_tmp_if_cond_26)
+    {
+        __cs_mutex_lock(&lock);
+    }
+>>>>>>> origin/main
 
-        ;
+    ;
+    delete(ss);
+    ;
+    _Bool __cs_local_pop___cs_tmp_if_cond_27;
+    __cs_local_pop___cs_tmp_if_cond_27 = ATOMIC_OPERATION;
+    if (__cs_local_pop___cs_tmp_if_cond_27)
+    {
+        __cs_mutex_unlock(&lock);
     }
 
+    ;
 }
 
 
@@ -4919,7 +4953,7 @@ int main()
     __cs_create(&__cs_local_main_t6, 0, pop, 0);
     __cs_join(__cs_local_main_t1, 0);
     __cs_join(__cs_local_main_t6, 0);
-    __CSEQ_assert(contains(ss, 0));
+    __CSEQ_assert(is_empty(ss));
     return 0;
 }
 
@@ -5046,6 +5080,7 @@ function: get_size   stmt:     return __cs_local_get_size_actual_size;
 
 function: is_empty   stmt:     return 1;
 
+<<<<<<< HEAD
 function: push   stmt:     for (__cs_local_push_loop = 0; __cs_local_push_loop < 2; __cs_local_push_loop++)
 >>>>>>> origin/main
     {
@@ -5106,7 +5141,11 @@ function: pop   stmt:     for (__cs_local_pop_loop = 0; __cs_local_pop_loop < 2;
 
         ;
     }
+=======
+function: push   stmt:     ;
+>>>>>>> origin/main
 
+function: pop   stmt:     ;
 
 function: main   stmt:     return 0;
 

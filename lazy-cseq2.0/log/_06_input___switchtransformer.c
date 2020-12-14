@@ -1059,7 +1059,7 @@ int res;
 res = lfds711_stack_pop(s, &se);
 if (res != 0)
         {
-fds711_stack_push(s, se);
+lfds711_stack_push(s, se);
 return 0;
         }
 return 1;
@@ -1070,6 +1070,7 @@ __cs_mutex_t lock;
 void *push(void *__cs_unused)
 {
 int long long unsigned loop;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1095,19 +1096,25 @@ for (loop = 0; loop < 5; loop++)
 for (loop = 0; loop < 2; loop++)
 >>>>>>> origin/main
         {
+=======
+>>>>>>> origin/main
 if (ATOMIC_OPERATION)
-                {
+        {
 __cs_mutex_lock(&lock);
-                }
+        }
 ;
 insert(ss, loop);
 if (ATOMIC_OPERATION)
-                {
+        {
 __cs_mutex_unlock(&lock);
+<<<<<<< HEAD
                 }
 ;
 >>>>>>> origin/main
+=======
+>>>>>>> origin/main
         }
+;
 }
 void *pop(void *__cs_unused)
 {
@@ -1115,6 +1122,7 @@ int res;
 int count;
 count = 0;
 int loop;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1140,16 +1148,19 @@ for (loop = 0; loop < 2; loop++)
 if (ATOMIC_OPERATION)
 >>>>>>> origin/main
                 {
+=======
+if (ATOMIC_OPERATION)
+        {
+>>>>>>> origin/main
 __cs_mutex_lock(&lock);
-                }
+        }
 ;
 delete(ss);
 if (ATOMIC_OPERATION)
-                {
+        {
 __cs_mutex_unlock(&lock);
-                }
-;
         }
+;
 }
 int main()
 {
@@ -1176,6 +1187,6 @@ __cs_create(&t1, 0, push, 0);
 __cs_create(&t6, 0, pop, 0);
 __cs_join(t1, 0);
 __cs_join(t6, 0);
-__CSEQ_assert(contains(ss, 0));
+__CSEQ_assert(is_empty(ss));
 return 0;
 }

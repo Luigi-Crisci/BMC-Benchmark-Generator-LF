@@ -1131,7 +1131,7 @@ res = lfds711_stack_pop(s, &se);
 ;_Bool __cs_tmp_if_cond_23; __cs_tmp_if_cond_23 = (res != 0); 
         if (__cs_tmp_if_cond_23)
         {
-fds711_stack_push(s, se);
+lfds711_stack_push(s, se);
 return 0;
         }
 return 1;
@@ -1142,6 +1142,7 @@ __cs_mutex_t lock;
 void *push(void *__cs_unused)
 {
 int long long unsigned loop;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1167,21 +1168,27 @@ for (loop = 0; loop < 5; loop++)
 for (loop = 0; loop < 2; loop++)
 >>>>>>> origin/main
         {
+=======
+>>>>>>> origin/main
 ;_Bool __cs_tmp_if_cond_24; __cs_tmp_if_cond_24 = (ATOMIC_OPERATION); 
-                if (__cs_tmp_if_cond_24)
-                {
+        if (__cs_tmp_if_cond_24)
+        {
 __cs_mutex_lock(&lock);
-                }
+        }
 ;
 insert(ss, loop);
 ;_Bool __cs_tmp_if_cond_25; __cs_tmp_if_cond_25 = (ATOMIC_OPERATION); 
-                if (__cs_tmp_if_cond_25)
-                {
+        if (__cs_tmp_if_cond_25)
+        {
 __cs_mutex_unlock(&lock);
+<<<<<<< HEAD
                 }
 ;
 >>>>>>> origin/main
+=======
+>>>>>>> origin/main
         }
+;
 }
 void *pop(void *__cs_unused)
 {
@@ -1189,6 +1196,7 @@ int res;
 int count;
 count = 0;
 int loop;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1219,17 +1227,21 @@ for (loop = 0; loop < 2; loop++)
                 if (__cs_tmp_if_cond_26)
 >>>>>>> origin/main
                 {
+=======
+;_Bool __cs_tmp_if_cond_26; __cs_tmp_if_cond_26 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_26)
+        {
+>>>>>>> origin/main
 __cs_mutex_lock(&lock);
-                }
+        }
 ;
 delete(ss);
 ;_Bool __cs_tmp_if_cond_27; __cs_tmp_if_cond_27 = (ATOMIC_OPERATION); 
-                if (__cs_tmp_if_cond_27)
-                {
+        if (__cs_tmp_if_cond_27)
+        {
 __cs_mutex_unlock(&lock);
-                }
-;
         }
+;
 }
 int main()
 {
@@ -1256,6 +1268,6 @@ __cs_create(&t1, 0, push, 0);
 __cs_create(&t6, 0, pop, 0);
 __cs_join(t1, 0);
 __cs_join(t6, 0);
-__CSEQ_assert(contains(ss, 0));
+__CSEQ_assert(is_empty(ss));
 return 0;
 }

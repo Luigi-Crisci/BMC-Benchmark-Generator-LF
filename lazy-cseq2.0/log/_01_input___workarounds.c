@@ -1567,7 +1567,7 @@ int is_empty(struct lfds711_stack_state *s){
  int res = lfds711_stack_pop(s, &se);
 
  if (res != 0){
-  fds711_stack_push(s, se);
+  lfds711_stack_push(s, se);
   return 0;
  }
 
@@ -1588,6 +1588,7 @@ void *push()
 {
  int long long unsigned loop;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1622,6 +1623,14 @@ void *push()
   if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
 >>>>>>> origin/main
  }
+=======
+
+
+  if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
+  insert(ss,loop);
+  if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
+
+>>>>>>> origin/main
 }
 
 void *pop()
@@ -1629,6 +1638,7 @@ void *pop()
  int res;
  int count = 0;
  int loop;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1663,6 +1673,14 @@ void *pop()
   if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
 >>>>>>> origin/main
  }
+=======
+
+
+  if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
+  delete(ss);
+  if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
+
+>>>>>>> origin/main
 }
 
 
@@ -1672,12 +1690,12 @@ int main()
  ss = init();
 
  pthread_t t1, t2,t3,t4,t5,t6,t7,t8,t9,t10;
+
+
+
+
+
  pthread_create(&t1, 0, push, 0);
-
-
-
-
-
  pthread_create(&t6, 0, pop, 0);
 
 
@@ -1702,6 +1720,7 @@ int main()
 
  pthread_join(t6, 0);
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/main
 
 
@@ -1717,6 +1736,9 @@ int main()
 >>>>>>> origin/main
 =======
  assert( contains(ss,0) );
+=======
+ assert( is_empty(ss) );
+>>>>>>> origin/main
 
 >>>>>>> origin/main
  return (0);

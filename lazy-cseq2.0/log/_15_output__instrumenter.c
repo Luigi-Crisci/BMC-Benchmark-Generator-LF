@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  2020-12-02 08:58:14
  *
  *  params:
@@ -24,6 +25,12 @@
  *
  *  params:
  *    -I ../liblfds7.1.1/liblfds711/inc/, -i ../workspace/multithread/generalized.c, --cex , --stop-on-fail , --unwind 5, --debug , 
+>>>>>>> origin/main
+=======
+ *  2020-12-11 14:22:50
+ *
+ *  params:
+ *    -I ../liblfds7.1.1/liblfds711/inc/, -i ../workspace/multithread/generalized.c, --cex , --stop-on-fail , --unwind 5, --debug , --rounds 2, 
 >>>>>>> origin/main
  *
  */
@@ -69,11 +76,12 @@ char nondet_char();
 unsigned char __VERIFIER_nondet_uchar();
 unsigned char nondet_uchar();
 #define THREADS 2
-#define ROUNDS 1
+#define ROUNDS 2
 #define STOP_VOID(A) return;
 #define STOP_NONVOID(A) return 0;
 #define IF(T,A,B) if ((__cs_pc[T] > A) | (A >= __cs_pc_cs[T])) goto B;
                                         unsigned __CPROVER_bitvector[1] __cs_active_thread[3] = {1};
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -98,6 +106,12 @@ unsigned char nondet_uchar();
                                         unsigned __CPROVER_bitvector[11] __cs_pc_cs[3];
                                         unsigned __CPROVER_bitvector[2] __cs_last_thread;
                                         unsigned __CPROVER_bitvector[10] __cs_thread_lines[3] = {623, 122, 156};
+>>>>>>> origin/main
+=======
+                                        unsigned __CPROVER_bitvector[7] __cs_pc[3];
+                                        unsigned __CPROVER_bitvector[8] __cs_pc_cs[3];
+                                        unsigned __CPROVER_bitvector[2] __cs_last_thread;
+                                        unsigned __CPROVER_bitvector[7] __cs_thread_lines[3] = {126, 61, 78};
 >>>>>>> origin/main
                                         void *__cs_safe_malloc(unsigned int __cs_size)
                                         {
@@ -811,6 +825,7 @@ unsigned char nondet_uchar();
 IF(1,0,tpush_0_1)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         __cs_local_push_td = __cs_safe_malloc((sizeof(struct test_data)) * 10);
                                         __cs_local_push_loop = 0;
                                                 {
@@ -830,20 +845,25 @@ IF(1,0,tpush_0_1)
                                         static _Bool __cs_local_push___cs_tmp_if_cond_23;
 >>>>>>> origin/main
 =======
+=======
+                                        __cs_init_scalar(&__cs_local_push_loop, sizeof(int long long unsigned));
+                                        ;
+                                                ;
+>>>>>>> origin/main
                                         static _Bool __cs_local_push___cs_tmp_if_cond_24;
 >>>>>>> origin/main
 tpush_0_1: IF(1,1,tpush_0_2)
                                         __cs_local_push___cs_tmp_if_cond_24 = ATOMIC_OPERATION;
                                         if (__cs_local_push___cs_tmp_if_cond_24)
-                                                        {
+                                                {
 tpush_0_2: IF(1,2,tpush_0_3)
                                         __cs_mutex_lock(&lock, 1);
-                                                        }
+                                                }
                                         __CPROVER_assume(__cs_pc_cs[1] >= 3);
-                                                        ;
+                                                ;
                                         ;
-                                                        ;
-                                                        {
+                                                ;
+                                                {
                                         static struct lfds711_stack_state *__cs_param_insert_s;
 tpush_0_3: IF(1,3,tpush_0_4)
                                         __cs_param_insert_s = ss;
@@ -856,7 +876,7 @@ tpush_0_5: IF(1,5,tpush_0_6)
                                         (*__cs_local_insert_td).user_id = __cs_param_insert_id;
 tpush_0_6: IF(1,6,tpush_0_7)
                                         (*__cs_local_insert_td).se.value = (void *) ((lfds711_pal_uint_t) __cs_local_insert_td);
-                                                                {
+                                                        {
                                         static struct lfds711_stack_state *__cs_param_lfds711_stack_push_ss;
 tpush_0_7: IF(1,7,tpush_0_8)
                                         __cs_param_lfds711_stack_push_ss = (struct lfds711_stack_state *) __cs_param_insert_s;
@@ -869,43 +889,43 @@ tpush_0_8: IF(1,8,tpush_0_9)
                                         static struct lfds711_stack_element *__cs_local_lfds711_stack_push_new_top[2];
                                         static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_push_original_top[2];
                                         ;
-                                                                        ;
+                                                                ;
                                         static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_14;
 tpush_0_9: IF(1,9,tpush_0_10)
                                         __cs_local_lfds711_stack_push___cs_tmp_if_cond_14 = !(__cs_param_lfds711_stack_push_ss != 0);
                                         if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_14)
-                                                                        {
+                                                                {
                                         static char *__cs_local_lfds711_stack_push_c;
 tpush_0_10: IF(1,10,tpush_0_11)
                                         __cs_local_lfds711_stack_push_c = 0;
 tpush_0_11: IF(1,11,tpush_0_12)
                                         *__cs_local_lfds711_stack_push_c = 0;
-                                                                        }
+                                                                }
                                         __CPROVER_assume(__cs_pc_cs[1] >= 12);
-                                                                        ;
+                                                                ;
                                         ;
-                                                                        ;
+                                                                ;
                                         ;
-                                                                        ;
+                                                                ;
                                         ;
-                                                                        ;
+                                                                ;
                                         static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_15;
 tpush_0_12: IF(1,12,tpush_0_13)
                                         __cs_local_lfds711_stack_push___cs_tmp_if_cond_15 = !(__cs_param_lfds711_stack_push_se != 0);
                                         if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
-                                                                        {
+                                                                {
                                         static char *__cs_local_lfds711_stack_push_c;
 tpush_0_13: IF(1,13,tpush_0_14)
                                         __cs_local_lfds711_stack_push_c = 0;
 tpush_0_14: IF(1,14,tpush_0_15)
                                         *__cs_local_lfds711_stack_push_c = 0;
-                                                                        }
+                                                                }
                                         __CPROVER_assume(__cs_pc_cs[1] >= 15);
-                                                                        ;
+                                                                ;
                                         ;
-                                                                        ;
+                                                                ;
                                         ;
-                                                                        ;
+                                                                ;
 tpush_0_15: IF(1,15,tpush_0_16)
                                         __cs_local_lfds711_stack_push_new_top[0] = __cs_param_lfds711_stack_push_se;
 tpush_0_16: IF(1,16,tpush_0_17)
@@ -916,12 +936,12 @@ tpush_0_17: IF(1,17,tpush_0_18)
                                         static int __cs_local_lfds711_stack_push_i;
                                         __cs_local_lfds711_stack_push_i = 0;
                                         if (!(__cs_local_lfds711_stack_push_result == 0))
-                                                                        {
-                                        goto __exit_loop_2;
-                                                                                ;
-                                                                        }
+                                                                {
+                                        goto __exit_loop_1;
+                                                                        ;
+                                                                }
                                         ;
-                                                                        {
+                                                                {
 tpush_0_18: IF(1,18,tpush_0_19)
                                         __cs_mutex_lock(&library_lock, 1);
 tpush_0_19: IF(1,19,tpush_0_20)
@@ -937,20 +957,21 @@ tpush_0_23: IF(1,23,tpush_0_24)
 tpush_0_24: IF(1,24,tpush_0_25)
                                         __cs_mutex_unlock(&library_lock, 1);
                                         ;
-                                                                                ;
+                                                                        ;
                                         static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
                                         __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
                                         if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        {
                                                                                 {
-                                                                                        {
                                         static int __cs_local_exponential_backoff_loop;
                                         __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
+                                                                                        {
                                         ;
-                                                                                                        ;
-                                                                                                }
+                                                                                                ;
+                                                                                        }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -958,19 +979,26 @@ tpush_0_24: IF(1,24,tpush_0_25)
 =======
                                                                                                 {
 >>>>>>> origin/main
+=======
+                                                                                        {
+>>>>>>> origin/main
                                         ;
-                                                                                                        ;
-                                                                                                }
+                                                                                                ;
+                                                                                        }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> origin/main
 tpush_0_21: IF(1,21,tpush_0_22)
 =======
                                                                                                 {
+=======
+                                                                                        {
+>>>>>>> origin/main
                                         ;
-                                                                                                        ;
-                                                                                                }
+                                                                                                ;
+                                                                                        }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
 tpush_0_25: IF(1,25,tpush_0_26)
@@ -979,39 +1007,37 @@ tpush_0_25: IF(1,25,tpush_0_26)
                                         __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 10));
 =======
                                         __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+<<<<<<< HEAD
 >>>>>>> origin/main
                                         __exit_loop_3:
                                                                                                 __CPROVER_assume(__cs_pc_cs[1] >= 26);
+=======
+                                        __exit_loop_2:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 26);
+>>>>>>> origin/main
                                         ;
-                                                                                                ;
+                                                                                        ;
                                         __exit__exponential_backoff_1_0:
-                                                                                                __CPROVER_assume(__cs_pc_cs[1] >= 26);
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 26);
                                         ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 26);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                                                                                {
-                                        goto __exit_loop_2;
                                                                                         ;
                                                                                 }
                                         ;
                                                                         }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 26);
+                                                                        ;
+                                        __cs_local_lfds711_stack_push_i++;
                                         ;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
                                                                         {
-                                        goto __exit_loop_2;
+                                        goto __exit_loop_1;
                                                                                 ;
                                                                         }
                                         ;
+<<<<<<< HEAD
 <<<<<<< HEAD
                                                                 }
                                         ;
@@ -1024,10 +1050,18 @@ tpush_0_22: IF(1,22,tpush_0_23)
                                         if (!(__cs_local_lfds711_stack_push_result == 0))
                                                                 {
                                         goto __exit_loop_2;
+=======
+                                                                }
+                                        ;
+                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                {
+                                        goto __exit_loop_1;
+>>>>>>> origin/main
                                                                         ;
                                                                 }
                                         ;
                                                                 {
+<<<<<<< HEAD
 tpush_0_22: IF(1,22,tpush_0_23)
                                         __cs_mutex_lock(&lock, 1);
 tpush_0_23: IF(1,23,tpush_0_24)
@@ -1038,6 +1072,8 @@ tpush_0_25: IF(1,25,tpush_0_26)
                                         __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
 =======
                                                                         {
+>>>>>>> origin/main
+=======
 >>>>>>> origin/main
 tpush_0_26: IF(1,26,tpush_0_27)
                                         __cs_mutex_lock(&library_lock, 1);
@@ -1054,67 +1090,67 @@ tpush_0_31: IF(1,31,tpush_0_32)
 tpush_0_32: IF(1,32,tpush_0_33)
                                         __cs_mutex_unlock(&library_lock, 1);
                                         ;
-                                                                                ;
+                                                                        ;
                                         static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
                                         __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
                                         if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        {
                                                                                 {
-                                                                                        {
                                         static int __cs_local_exponential_backoff_loop;
                                         __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-tpush_0_33: IF(1,33,tpush_0_34)
-                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_4:
-                                                                                                __CPROVER_assume(__cs_pc_cs[1] >= 34);
-                                        ;
-                                                                                                ;
-                                        __exit__exponential_backoff_1_1:
-                                                                                                __CPROVER_assume(__cs_pc_cs[1] >= 34);
+                                                                                        {
                                         ;
                                                                                                 ;
                                                                                         }
                                         ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 34);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
                                         ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                                                                                {
-                                        goto __exit_loop_2;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tpush_0_33: IF(1,33,tpush_0_34)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_3:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 34);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_1_1:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 34);
+                                        ;
                                                                                         ;
                                                                                 }
                                         ;
                                                                         }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 34);
+                                                                        ;
+                                        __cs_local_lfds711_stack_push_i++;
                                         ;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
                                                                         {
-                                        goto __exit_loop_2;
+                                        goto __exit_loop_1;
                                                                                 ;
                                                                         }
                                         ;
-                                                                        {
+                                                                }
+                                        ;
+                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                {
+                                        goto __exit_loop_1;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
 tpush_0_34: IF(1,34,tpush_0_35)
                                         __cs_mutex_lock(&library_lock, 1);
 tpush_0_35: IF(1,35,tpush_0_36)
@@ -1130,6 +1166,7 @@ tpush_0_39: IF(1,39,tpush_0_40)
 tpush_0_40: IF(1,40,tpush_0_41)
                                         __cs_mutex_unlock(&library_lock, 1);
                                         ;
+<<<<<<< HEAD
 <<<<<<< HEAD
 tpush_0_30: IF(1,30,tpush_0_31)
                                         __CPROVER_assume(!(__cs_local_lfds711_stack_push_result == 0));
@@ -1148,15 +1185,19 @@ tpush_0_30: IF(1,30,tpush_0_31)
 >>>>>>> origin/main
 =======
                                                                                 ;
+=======
+                                                                        ;
+>>>>>>> origin/main
                                         static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
                                         __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
                                         if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        {
                                                                                 {
-                                                                                        {
                                         static int __cs_local_exponential_backoff_loop;
                                         __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
+                                                                                        {
                                         ;
+<<<<<<< HEAD
                                                                                                         ;
                                                                                                 }
 >>>>>>> origin/main
@@ -1215,6 +1256,10 @@ IF(2,0,tpop_0_1)
 tpop_0_1: IF(2,1,tpop_0_2)
                                         __cs_local_pop_temp_td = 0;
 <<<<<<< HEAD
+=======
+                                                                                                ;
+                                                                                        }
+>>>>>>> origin/main
                                         ;
                                                         ;
 =======
@@ -1235,56 +1280,60 @@ tpop_0_3: IF(2,3,tpop_0_4)
 =======
                                         __cs_local_exponential_backoff_loop++;
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                                                                 {
 >>>>>>> origin/main
+=======
+                                                                                        {
+>>>>>>> origin/main
                                         ;
-                                                                                                        ;
-                                                                                                }
+                                                                                                ;
+                                                                                        }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
-                                                                                                {
+                                                                                        {
                                         ;
-                                                                                                        ;
-                                                                                                }
+                                                                                                ;
+                                                                                        }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
 =======
 >>>>>>> origin/main
 tpush_0_41: IF(1,41,tpush_0_42)
                                         __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_5:
-                                                                                                __CPROVER_assume(__cs_pc_cs[1] >= 42);
+                                        __exit_loop_4:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 42);
                                         ;
-                                                                                                ;
+                                                                                        ;
                                         __exit__exponential_backoff_1_2:
-                                                                                                __CPROVER_assume(__cs_pc_cs[1] >= 42);
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 42);
                                         ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 42);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                                                                                {
-                                        goto __exit_loop_2;
                                                                                         ;
                                                                                 }
                                         ;
                                                                         }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 42);
+                                                                        ;
+                                        __cs_local_lfds711_stack_push_i++;
                                         ;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
                                                                         {
-                                        goto __exit_loop_2;
+                                        goto __exit_loop_1;
                                                                                 ;
                                                                         }
                                         ;
-                                                                        {
+                                                                }
+                                        ;
+                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                {
+                                        goto __exit_loop_1;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
 tpush_0_42: IF(1,42,tpush_0_43)
                                         __cs_mutex_lock(&library_lock, 1);
 tpush_0_43: IF(1,43,tpush_0_44)
@@ -1300,20 +1349,21 @@ tpush_0_47: IF(1,47,tpush_0_48)
 tpush_0_48: IF(1,48,tpush_0_49)
                                         __cs_mutex_unlock(&library_lock, 1);
                                         ;
-                                                                                ;
+                                                                        ;
                                         static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
                                         __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
                                         if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        {
                                                                                 {
-                                                                                        {
                                         static int __cs_local_exponential_backoff_loop;
                                         __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
+                                                                                        {
                                         ;
-                                                                                                        ;
-                                                                                                }
+                                                                                                ;
+                                                                                        }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 tpop_0_20: IF(2,20,tpop_0_21)
@@ -1324,15 +1374,18 @@ tpop_0_20: IF(2,20,tpop_0_21)
 =======
                                                                                                 {
 >>>>>>> origin/main
+=======
+                                                                                        {
+>>>>>>> origin/main
                                         ;
-                                                                                                        ;
-                                                                                                }
+                                                                                                ;
+                                                                                        }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
-                                                                                                {
+                                                                                        {
                                         ;
-                                                                                                        ;
-                                                                                                }
+                                                                                                ;
+                                                                                        }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
 tpush_0_49: IF(1,49,tpush_0_50)
@@ -1345,36 +1398,34 @@ tpush_0_49: IF(1,49,tpush_0_50)
 =======
 =======
                                         __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+<<<<<<< HEAD
 >>>>>>> origin/main
                                         __exit_loop_6:
                                                                                                 __CPROVER_assume(__cs_pc_cs[1] >= 50);
 >>>>>>> origin/main
+=======
+                                        __exit_loop_5:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 50);
+>>>>>>> origin/main
                                         ;
-                                                                                                ;
+                                                                                        ;
                                         __exit__exponential_backoff_1_3:
-                                                                                                __CPROVER_assume(__cs_pc_cs[1] >= 50);
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 50);
                                         ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 50);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                                                                                {
-                                        goto __exit_loop_2;
                                                                                         ;
                                                                                 }
                                         ;
                                                                         }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 50);
+                                                                        ;
+                                        __cs_local_lfds711_stack_push_i++;
                                         ;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
                                                                         {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                                         goto __exit_loop_5;
@@ -1384,10 +1435,21 @@ tpush_0_49: IF(1,49,tpush_0_50)
 =======
                                         goto __exit_loop_2;
 >>>>>>> origin/main
+=======
+                                        goto __exit_loop_1;
+>>>>>>> origin/main
                                                                                 ;
                                                                         }
                                         ;
-                                                                        {
+                                                                }
+                                        ;
+                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                {
+                                        goto __exit_loop_1;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
 tpush_0_50: IF(1,50,tpush_0_51)
                                         __cs_mutex_lock(&library_lock, 1);
 tpush_0_51: IF(1,51,tpush_0_52)
@@ -1403,6 +1465,7 @@ tpush_0_55: IF(1,55,tpush_0_56)
 tpush_0_56: IF(1,56,tpush_0_57)
                                         __cs_mutex_unlock(&library_lock, 1);
                                         ;
+<<<<<<< HEAD
 <<<<<<< HEAD
                                         __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1++;
 tpop_0_23: IF(2,23,tpop_0_24)
@@ -1427,15 +1490,19 @@ tpop_0_23: IF(2,23,tpop_0_24)
                                                                 }
 =======
                                                                                 ;
+=======
+                                                                        ;
+>>>>>>> origin/main
                                         static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
                                         __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
                                         if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        {
                                                                                 {
-                                                                                        {
                                         static int __cs_local_exponential_backoff_loop;
                                         __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
+                                                                                        {
                                         ;
+<<<<<<< HEAD
                                                                                                         ;
                                                                                                 }
 >>>>>>> origin/main
@@ -1464,15 +1531,22 @@ tpop_0_30: IF(2,30,tpop_0_31)
 =======
                                                                                                 {
 >>>>>>> origin/main
-                                        ;
-                                                                                                        ;
-                                                                                                }
+=======
+                                                                                                ;
+                                                                                        }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
-                                                                                                {
+                                                                                        {
+>>>>>>> origin/main
                                         ;
-                                                                                                        ;
-                                                                                                }
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
 tpush_0_57: IF(1,57,tpush_0_58)
@@ -1485,36 +1559,42 @@ tpush_0_57: IF(1,57,tpush_0_58)
 =======
 tpush_0_57: IF(1,57,tpush_0_58)
                                         __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+<<<<<<< HEAD
 >>>>>>> origin/main
                                         __exit_loop_7:
                                                                                                 __CPROVER_assume(__cs_pc_cs[1] >= 58);
 >>>>>>> origin/main
+=======
+                                        __exit_loop_6:
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 58);
+>>>>>>> origin/main
                                         ;
-                                                                                                ;
+                                                                                        ;
                                         __exit__exponential_backoff_1_4:
-                                                                                                __CPROVER_assume(__cs_pc_cs[1] >= 58);
+                                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 58);
                                         ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 58);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                                                                                {
-                                        goto __exit_loop_2;
                                                                                         ;
                                                                                 }
                                         ;
                                                                         }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 58);
+                                                                        ;
+                                        __cs_local_lfds711_stack_push_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                                                                        {
+                                        goto __exit_loop_1;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
                                         ;
 tpush_0_58: IF(1,58,tpush_0_59)
                                         __CPROVER_assume(!(__cs_local_lfds711_stack_push_result == 0));
+<<<<<<< HEAD
                                         __exit_loop_2:
                                                                         __CPROVER_assume(__cs_pc_cs[1] >= 59);
                                         ;
@@ -1556,42 +1636,93 @@ tpop_0_34: IF(2,34,tpop_0_35)
                                         !(__cs_local_lfds711_stack_pop_result == 0))
 =======
                                         __exit__insert_1_0:
+=======
+                                        __exit_loop_1:
+                                                                __CPROVER_assume(__cs_pc_cs[1] >= 59);
+                                        ;
+                                                                ;
+                                        goto __exit__lfds711_stack_push_1;
+                                                                ;
+                                        __exit__lfds711_stack_push_1:
+>>>>>>> origin/main
                                                                 __CPROVER_assume(__cs_pc_cs[1] >= 59);
                                         ;
                                                                 ;
                                                         }
                                         ;
-                                        ;
-                                                        ;
-                                        static _Bool __cs_local_push___cs_tmp_if_cond_25;
-tpush_0_59: IF(1,59,tpush_0_60)
-                                        __cs_local_push___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
-                                        if (__cs_local_push___cs_tmp_if_cond_25)
-                                                        {
-tpush_0_60: IF(1,60,tpush_0_61)
-                                        __cs_mutex_unlock(&lock, 1);
-                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 61);
-                                                        ;
+                                        __exit__insert_1:
+                                                        __CPROVER_assume(__cs_pc_cs[1] >= 59);
                                         ;
                                                         ;
                                                 }
                                         ;
-                                        __cs_local_push_loop++;
+                                        ;
+                                                ;
+                                        static _Bool __cs_local_push___cs_tmp_if_cond_25;
+tpush_0_59: IF(1,59,tpush_0_60)
+                                        __cs_local_push___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
+                                        if (__cs_local_push___cs_tmp_if_cond_25)
                                                 {
+tpush_0_60: IF(1,60,tpush_0_61)
+                                        __cs_mutex_unlock(&lock, 1);
+                                                }
+                                        __CPROVER_assume(__cs_pc_cs[1] >= 61);
+                                                ;
                                         ;
-                                                        ;
-                                        static _Bool __cs_local_push___cs_tmp_if_cond_24;
-tpush_0_61: IF(1,61,tpush_0_62)
-                                        __cs_local_push___cs_tmp_if_cond_24 = ATOMIC_OPERATION;
-                                        if (__cs_local_push___cs_tmp_if_cond_24)
+                                                ;
+                                        __exit_push:
+                                                __CPROVER_assume(__cs_pc_cs[1] >= 61);
+                                        ;
+                                                ;
+tpush_0_61: 
+                                        __cs_exit(0, 1);
+                                        }
+                                        void *pop_0(void *__cs_param_pop___cs_unused)
+                                        {
+                                        static int __cs_local_pop_res;
+IF(2,0,tpop_0_1)
+                                        __cs_local_pop_res = nondet_int();
+                                        static int __cs_local_pop_count;
+                                        __cs_local_pop_count = 0;
+                                        static int __cs_local_pop_loop;
+                                        __cs_local_pop_loop = nondet_int();
+                                        ;
+                                                ;
+                                        static _Bool __cs_local_pop___cs_tmp_if_cond_26;
+tpop_0_1: IF(2,1,tpop_0_2)
+                                        __cs_local_pop___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
+                                        if (__cs_local_pop___cs_tmp_if_cond_26)
+                                                {
+tpop_0_2: IF(2,2,tpop_0_3)
+                                        __cs_mutex_lock(&lock, 2);
+                                                }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 3);
+                                                ;
+                                        ;
+                                                ;
+                                        static int __cs_retval__delete_1;
+                                                {
+                                        static struct lfds711_stack_state *__cs_param_delete_s;
+tpop_0_3: IF(2,3,tpop_0_4)
+                                        __cs_param_delete_s = ss;
+                                        static struct lfds711_stack_element *__cs_local_delete_se;
+                                        static struct test_data *__cs_local_delete_temp_td;
+                                        static int __cs_local_delete_res;
+                                        static int __cs_retval__lfds711_stack_pop_1;
                                                         {
-tpush_0_62: IF(1,62,tpush_0_63)
-                                        __cs_mutex_lock(&lock, 1);
-                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 63);
-                                                        ;
+                                        static struct lfds711_stack_state *__cs_param_lfds711_stack_pop_ss;
+tpop_0_4: IF(2,4,tpop_0_5)
+                                        __cs_param_lfds711_stack_pop_ss = &mystack;
+                                        static struct lfds711_stack_element **__cs_param_lfds711_stack_pop_se;
+tpop_0_5: IF(2,5,tpop_0_6)
+                                        __cs_param_lfds711_stack_pop_se = &__cs_local_delete_se;
+                                        static char unsigned __cs_local_lfds711_stack_pop_result;
+                                        static lfds711_pal_uint_t __cs_local_lfds711_stack_pop_backoff_iteration;
+                                        __cs_local_lfds711_stack_pop_backoff_iteration = 0;
+                                        static struct lfds711_stack_element *__cs_local_lfds711_stack_pop_new_top[2];
+                                        static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_pop_original_top[2];
                                         ;
+<<<<<<< HEAD
                                                         ;
                                                         {
                                         static struct lfds711_stack_state *__cs_param_insert_s;
@@ -1607,585 +1738,45 @@ tpush_0_65: IF(1,65,tpush_0_66)
 tpush_0_66: IF(1,66,tpush_0_67)
                                         (*__cs_local_insert_td).se.value = (void *) ((lfds711_pal_uint_t) __cs_local_insert_td);
 >>>>>>> origin/main
-                                                                {
-                                        static struct lfds711_stack_state *__cs_param_lfds711_stack_push_ss;
-tpush_0_67: IF(1,67,tpush_0_68)
-                                        __cs_param_lfds711_stack_push_ss = (struct lfds711_stack_state *) __cs_param_insert_s;
-                                        static struct lfds711_stack_element *__cs_param_lfds711_stack_push_se;
-tpush_0_68: IF(1,68,tpush_0_69)
-                                        __cs_param_lfds711_stack_push_se = &(*__cs_local_insert_td).se;
-                                        static char unsigned __cs_local_lfds711_stack_push_result;
-                                        static lfds711_pal_uint_t __cs_local_lfds711_stack_push_backoff_iteration;
-                                        __cs_local_lfds711_stack_push_backoff_iteration = 0;
-                                        static struct lfds711_stack_element *__cs_local_lfds711_stack_push_new_top[2];
-                                        static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_push_original_top[2];
-                                        ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_14;
-tpush_0_69: IF(1,69,tpush_0_70)
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_14 = !(__cs_param_lfds711_stack_push_ss != 0);
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_14)
-                                                                        {
-                                        static char *__cs_local_lfds711_stack_push_c;
-tpush_0_70: IF(1,70,tpush_0_71)
-                                        __cs_local_lfds711_stack_push_c = 0;
-tpush_0_71: IF(1,71,tpush_0_72)
-                                        *__cs_local_lfds711_stack_push_c = 0;
-                                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 72);
-                                                                        ;
-                                        ;
-                                                                        ;
-                                        ;
-                                                                        ;
-                                        ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_15;
-tpush_0_72: IF(1,72,tpush_0_73)
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_15 = !(__cs_param_lfds711_stack_push_se != 0);
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
-                                                                        {
-                                        static char *__cs_local_lfds711_stack_push_c;
-tpush_0_73: IF(1,73,tpush_0_74)
-                                        __cs_local_lfds711_stack_push_c = 0;
-tpush_0_74: IF(1,74,tpush_0_75)
-                                        *__cs_local_lfds711_stack_push_c = 0;
-                                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 75);
-                                                                        ;
-                                        ;
-                                                                        ;
-                                        ;
-                                                                        ;
-tpush_0_75: IF(1,75,tpush_0_76)
-                                        __cs_local_lfds711_stack_push_new_top[0] = __cs_param_lfds711_stack_push_se;
-tpush_0_76: IF(1,76,tpush_0_77)
-                                        __cs_local_lfds711_stack_push_original_top[1] = (*__cs_param_lfds711_stack_push_ss).top[1];
-tpush_0_77: IF(1,77,tpush_0_78)
-                                        __cs_local_lfds711_stack_push_original_top[0] = (*__cs_param_lfds711_stack_push_ss).top[0];
-                                        __cs_local_lfds711_stack_push_result = 0;
-                                        static int __cs_local_lfds711_stack_push_i;
-                                        __cs_local_lfds711_stack_push_i = 0;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
-                                                                        {
-                                        goto __exit_loop_8;
-                                                                                ;
-                                                                        }
-                                        ;
-                                                                        {
-tpush_0_78: IF(1,78,tpush_0_79)
-                                        __cs_mutex_lock(&library_lock, 1);
-tpush_0_79: IF(1,79,tpush_0_80)
-                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tpush_0_80: IF(1,80,tpush_0_81)
-                                        __cs_mutex_unlock(&library_lock, 1);
-tpush_0_81: IF(1,81,tpush_0_82)
-                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tpush_0_82: IF(1,82,tpush_0_83)
-                                        __cs_mutex_lock(&library_lock, 1);
-tpush_0_83: IF(1,83,tpush_0_84)
-                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tpush_0_84: IF(1,84,tpush_0_85)
-                                        __cs_mutex_unlock(&library_lock, 1);
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                                                                                {
-                                                                                        {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-tpush_0_85: IF(1,85,tpush_0_86)
-                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_9:
-                                                                                                __CPROVER_assume(__cs_pc_cs[1] >= 86);
-                                        ;
-                                                                                                ;
-                                        __exit__exponential_backoff_1_5:
-                                                                                                __CPROVER_assume(__cs_pc_cs[1] >= 86);
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 86);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                                                                                {
-                                        goto __exit_loop_8;
-                                                                                        ;
-                                                                                }
-                                        ;
-                                                                        }
-                                        ;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
-                                                                        {
-                                        goto __exit_loop_8;
-                                                                                ;
-                                                                        }
-                                        ;
-                                                                        {
-tpush_0_86: IF(1,86,tpush_0_87)
-                                        __cs_mutex_lock(&library_lock, 1);
-tpush_0_87: IF(1,87,tpush_0_88)
-                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tpush_0_88: IF(1,88,tpush_0_89)
-                                        __cs_mutex_unlock(&library_lock, 1);
-tpush_0_89: IF(1,89,tpush_0_90)
-                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tpush_0_90: IF(1,90,tpush_0_91)
-                                        __cs_mutex_lock(&library_lock, 1);
-tpush_0_91: IF(1,91,tpush_0_92)
-                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tpush_0_92: IF(1,92,tpush_0_93)
-                                        __cs_mutex_unlock(&library_lock, 1);
-                                        ;
-<<<<<<< HEAD
-                                                                ;
-tpop_0_43: IF(2,43,tpop_0_44)
->>>>>>> origin/main
-                                        *__cs_param_lfds711_stack_pop_se = __cs_local_lfds711_stack_pop_original_top[0];
-                                        __cs_retval__lfds711_stack_pop_1 = 1;
 =======
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                                                                                {
-                                                                                        {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-tpush_0_93: IF(1,93,tpush_0_94)
-                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_10:
-                                                                                                __CPROVER_assume(__cs_pc_cs[1] >= 94);
-                                        ;
-                                                                                                ;
-                                        __exit__exponential_backoff_1_6:
-                                                                                                __CPROVER_assume(__cs_pc_cs[1] >= 94);
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 94);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                                                                                {
-                                        goto __exit_loop_8;
-                                                                                        ;
-                                                                                }
-                                        ;
-                                                                        }
-                                        ;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
-                                                                        {
-                                        goto __exit_loop_8;
-                                                                                ;
-                                                                        }
-                                        ;
-                                                                        {
-tpush_0_94: IF(1,94,tpush_0_95)
-                                        __cs_mutex_lock(&library_lock, 1);
-tpush_0_95: IF(1,95,tpush_0_96)
-                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tpush_0_96: IF(1,96,tpush_0_97)
-                                        __cs_mutex_unlock(&library_lock, 1);
-tpush_0_97: IF(1,97,tpush_0_98)
-                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tpush_0_98: IF(1,98,tpush_0_99)
-                                        __cs_mutex_lock(&library_lock, 1);
-tpush_0_99: IF(1,99,tpush_0_100)
-                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tpush_0_100: IF(1,100,tpush_0_101)
-                                        __cs_mutex_unlock(&library_lock, 1);
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                                                                                {
-                                                                                        {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-tpush_0_101: IF(1,101,tpush_0_102)
-                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_11:
-                                                                                                __CPROVER_assume(__cs_pc_cs[1] >= 102);
-                                        ;
-                                                                                                ;
-                                        __exit__exponential_backoff_1_7:
-                                                                                                __CPROVER_assume(__cs_pc_cs[1] >= 102);
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 102);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                                                                                {
-                                        goto __exit_loop_8;
-                                                                                        ;
-                                                                                }
-                                        ;
-                                                                        }
-                                        ;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
-                                                                        {
-                                        goto __exit_loop_8;
-                                                                                ;
-                                                                        }
-                                        ;
-                                                                        {
-tpush_0_102: IF(1,102,tpush_0_103)
-                                        __cs_mutex_lock(&library_lock, 1);
-tpush_0_103: IF(1,103,tpush_0_104)
-                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tpush_0_104: IF(1,104,tpush_0_105)
-                                        __cs_mutex_unlock(&library_lock, 1);
-tpush_0_105: IF(1,105,tpush_0_106)
-                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tpush_0_106: IF(1,106,tpush_0_107)
-                                        __cs_mutex_lock(&library_lock, 1);
-tpush_0_107: IF(1,107,tpush_0_108)
-                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tpush_0_108: IF(1,108,tpush_0_109)
-                                        __cs_mutex_unlock(&library_lock, 1);
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                                                                                {
-                                                                                        {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-tpush_0_109: IF(1,109,tpush_0_110)
-                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_12:
-                                                                                                __CPROVER_assume(__cs_pc_cs[1] >= 110);
-                                        ;
-                                                                                                ;
-                                        __exit__exponential_backoff_1_8:
-                                                                                                __CPROVER_assume(__cs_pc_cs[1] >= 110);
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 110);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                                                                                {
-                                        goto __exit_loop_8;
-                                                                                        ;
-                                                                                }
-                                        ;
-                                                                        }
-                                        ;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
-                                                                        {
-                                        goto __exit_loop_8;
-                                                                                ;
-                                                                        }
-                                        ;
-                                                                        {
-tpush_0_110: IF(1,110,tpush_0_111)
-                                        __cs_mutex_lock(&library_lock, 1);
-tpush_0_111: IF(1,111,tpush_0_112)
-                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tpush_0_112: IF(1,112,tpush_0_113)
-                                        __cs_mutex_unlock(&library_lock, 1);
-tpush_0_113: IF(1,113,tpush_0_114)
-                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tpush_0_114: IF(1,114,tpush_0_115)
-                                        __cs_mutex_lock(&library_lock, 1);
-tpush_0_115: IF(1,115,tpush_0_116)
-                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tpush_0_116: IF(1,116,tpush_0_117)
-                                        __cs_mutex_unlock(&library_lock, 1);
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                                                                                {
-                                                                                        {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-tpush_0_117: IF(1,117,tpush_0_118)
-                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_13:
-                                                                                                __CPROVER_assume(__cs_pc_cs[1] >= 118);
-                                        ;
-                                                                                                ;
-                                        __exit__exponential_backoff_1_9:
-                                                                                                __CPROVER_assume(__cs_pc_cs[1] >= 118);
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 118);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                                                                                {
-                                        goto __exit_loop_8;
-                                                                                        ;
-                                                                                }
-                                        ;
-                                                                        }
-                                        ;
-tpush_0_118: IF(1,118,tpush_0_119)
-                                        __CPROVER_assume(!(__cs_local_lfds711_stack_push_result == 0));
-                                        __exit_loop_8:
-                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 119);
-                                        ;
-                                                                        ;
-                                        goto __exit__lfds711_stack_push_1_1;
-                                                                        ;
-                                        __exit__lfds711_stack_push_1_1:
-                                                                        __CPROVER_assume(__cs_pc_cs[1] >= 119);
-                                        ;
-                                                                        ;
-                                                                }
-                                        ;
-                                        __exit__insert_1_1:
-                                                                __CPROVER_assume(__cs_pc_cs[1] >= 119);
-                                        ;
                                                                 ;
-                                                        }
-                                        ;
-                                        ;
-                                                        ;
-                                        static _Bool __cs_local_push___cs_tmp_if_cond_25;
-tpush_0_119: IF(1,119,tpush_0_120)
-                                        __cs_local_push___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
-                                        if (__cs_local_push___cs_tmp_if_cond_25)
-                                                        {
-tpush_0_120: IF(1,120,tpush_0_121)
-                                        __cs_mutex_unlock(&lock, 1);
-                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[1] >= 121);
-                                                        ;
-                                        ;
-                                                        ;
-                                                }
-                                        ;
-                                        __cs_local_push_loop++;
-tpush_0_121: IF(1,121,tpush_0_122)
-                                        __CPROVER_assume(!(__cs_local_push_loop < 2));
-                                        __exit_loop_1:
-                                                __CPROVER_assume(__cs_pc_cs[1] >= 122);
-                                        ;
-                                                ;
-                                        __exit_push:
-                                                __CPROVER_assume(__cs_pc_cs[1] >= 122);
-                                        ;
-                                                ;
-tpush_0_122: 
-                                        __cs_exit(0, 1);
-                                        }
-                                        void *pop_0(void *__cs_param_pop___cs_unused)
-                                        {
-                                        static int __cs_local_pop_res;
-IF(2,0,tpop_0_1)
-                                        __cs_local_pop_res = nondet_int();
-                                        static int __cs_local_pop_count;
-                                        __cs_local_pop_count = 0;
-                                        static int __cs_local_pop_loop;
-                                        __cs_local_pop_loop = 0;
-                                                {
-                                        ;
-                                                        ;
-                                        static _Bool __cs_local_pop___cs_tmp_if_cond_26;
-tpop_0_1: IF(2,1,tpop_0_2)
-                                        __cs_local_pop___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
-                                        if (__cs_local_pop___cs_tmp_if_cond_26)
-                                                        {
-tpop_0_2: IF(2,2,tpop_0_3)
-                                        __cs_mutex_lock(&lock, 2);
-                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[2] >= 3);
-                                                        ;
-                                        ;
-                                                        ;
-                                        static int __cs_retval__delete_1;
-                                                        {
-                                        static struct lfds711_stack_state *__cs_param_delete_s;
-tpop_0_3: IF(2,3,tpop_0_4)
-                                        __cs_param_delete_s = ss;
-                                        static struct lfds711_stack_element *__cs_local_delete_se;
-                                        static struct test_data *__cs_local_delete_temp_td;
-                                        static int __cs_local_delete_res;
-                                        static int __cs_retval__lfds711_stack_pop_1;
-                                                                {
-                                        static struct lfds711_stack_state *__cs_param_lfds711_stack_pop_ss;
-tpop_0_4: IF(2,4,tpop_0_5)
-                                        __cs_param_lfds711_stack_pop_ss = &mystack;
-                                        static struct lfds711_stack_element **__cs_param_lfds711_stack_pop_se;
-tpop_0_5: IF(2,5,tpop_0_6)
-                                        __cs_param_lfds711_stack_pop_se = &__cs_local_delete_se;
-                                        static char unsigned __cs_local_lfds711_stack_pop_result;
-                                        static lfds711_pal_uint_t __cs_local_lfds711_stack_pop_backoff_iteration;
-                                        __cs_local_lfds711_stack_pop_backoff_iteration = 0;
-                                        static struct lfds711_stack_element *__cs_local_lfds711_stack_pop_new_top[2];
-                                        static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_pop_original_top[2];
-                                        ;
-                                                                        ;
                                         static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_6;
 tpop_0_6: IF(2,6,tpop_0_7)
                                         __cs_local_lfds711_stack_pop___cs_tmp_if_cond_6 = !(__cs_param_lfds711_stack_pop_ss != 0);
                                         if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_6)
-                                                                        {
+>>>>>>> origin/main
+                                                                {
                                         static char *__cs_local_lfds711_stack_pop_c;
 tpop_0_7: IF(2,7,tpop_0_8)
                                         __cs_local_lfds711_stack_pop_c = 0;
 tpop_0_8: IF(2,8,tpop_0_9)
                                         *__cs_local_lfds711_stack_pop_c = 0;
-                                                                        }
+                                                                }
                                         __CPROVER_assume(__cs_pc_cs[2] >= 9);
-                                                                        ;
+                                                                ;
                                         ;
-                                                                        ;
+                                                                ;
                                         ;
-                                                                        ;
+                                                                ;
                                         ;
-                                                                        ;
+                                                                ;
                                         static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_7;
 tpop_0_9: IF(2,9,tpop_0_10)
                                         __cs_local_lfds711_stack_pop___cs_tmp_if_cond_7 = !(__cs_param_lfds711_stack_pop_se != 0);
                                         if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7)
-                                                                        {
+                                                                {
                                         static char *__cs_local_lfds711_stack_pop_c;
 tpop_0_10: IF(2,10,tpop_0_11)
                                         __cs_local_lfds711_stack_pop_c = 0;
 tpop_0_11: IF(2,11,tpop_0_12)
                                         *__cs_local_lfds711_stack_pop_c = 0;
-                                                                        }
+                                                                }
                                         __CPROVER_assume(__cs_pc_cs[2] >= 12);
-                                                                        ;
+                                                                ;
                                         ;
-                                                                        ;
+                                                                ;
                                         ;
-                                                                        ;
+                                                                ;
 tpop_0_12: IF(2,12,tpop_0_13)
                                         __cs_mutex_lock(&library_lock, 2);
 tpop_0_13: IF(2,13,tpop_0_14)
@@ -2197,24 +1788,24 @@ tpop_0_15: IF(2,15,tpop_0_16)
                                         static int __cs_local_lfds711_stack_pop_i;
                                         __cs_local_lfds711_stack_pop_i = 0;
                                         ;
-                                                                        ;
+                                                                ;
                                         static int __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1;
                                         __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1 = 0;
-                                                                        {
+                                                                {
                                         ;
-                                                                                ;
+                                                                        ;
                                         static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_8;
                                         __cs_local_lfds711_stack_pop___cs_tmp_if_cond_8 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
                                         if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8)
-                                                                                {
+                                                                        {
 tpop_0_16: IF(2,16,tpop_0_17)
                                         *__cs_param_lfds711_stack_pop_se = 0;
                                         __cs_retval__lfds711_stack_pop_1 = 0;
-                                        goto __exit__lfds711_stack_pop_1_0;
-                                                                                        ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[2] >= 17);
+                                        goto __exit__lfds711_stack_pop_1;
                                                                                 ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 17);
+                                                                        ;
 tpop_0_17: IF(2,17,tpop_0_18)
                                         __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
 tpop_0_18: IF(2,18,tpop_0_19)
@@ -2226,93 +1817,103 @@ tpop_0_20: IF(2,20,tpop_0_21)
 tpop_0_21: IF(2,21,tpop_0_22)
                                         __cs_mutex_unlock(&library_lock, 2);
                                         ;
-                                                                                ;
+                                                                        ;
                                         static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_9;
                                         __cs_local_lfds711_stack_pop___cs_tmp_if_cond_9 = __cs_local_lfds711_stack_pop_result == 0;
                                         if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9)
+                                                                        {
                                                                                 {
-                                                                                        {
                                         static int __cs_local_exponential_backoff_loop;
                                         __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
+                                                                                        {
                                         ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
+                                                                                                ;
+                                                                                        }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
-                                                                                                {
+                                                                                        {
                                         ;
-                                                                                                        ;
-                                                                                                }
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
 tpop_0_22: IF(2,22,tpop_0_23)
                                         __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_16:
-                                                                                                __CPROVER_assume(__cs_pc_cs[2] >= 23);
+                                        __exit_loop_8:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 23);
                                         ;
-                                                                                                ;
+                                                                                        ;
                                         __exit__exponential_backoff_2_0:
-                                                                                                __CPROVER_assume(__cs_pc_cs[2] >= 23);
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 23);
                                         ;
-                                                                                                ;
-                                                                                        }
+                                                                                        ;
+                                                                                }
                                         ;
 tpop_0_23: IF(2,23,tpop_0_24)
                                         __cs_mutex_lock(&library_lock, 2);
 tpop_0_24: IF(2,24,tpop_0_25)
                                         __cs_mutex_unlock(&library_lock, 2);
-                                                                                }
+                                                                        }
                                         __CPROVER_assume(__cs_pc_cs[2] >= 25);
-                                                                                ;
+                                                                        ;
                                         __cs_local_lfds711_stack_pop_i++;
                                         ;
-                                                                                ;
+                                                                        ;
                                         static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_10;
                                         __cs_local_lfds711_stack_pop___cs_tmp_if_cond_10 = __cs_local_lfds711_stack_pop_i > 1000;
                                         if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10)
-                                                                                {
-                                        goto __exit_loop_15;
-                                                                                        ;
-                                                                                }
-                                        ;
+                                                                        {
+                                        goto __exit_loop_7;
+                                                                                ;
                                                                         }
+                                        ;
+                                                                }
                                         ;
                                         __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1++;
 tpop_0_25: IF(2,25,tpop_0_26)
                                         __CPROVER_assume(!(__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1 < 1));
-                                        __exit_loop_15:
-                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 26);
+                                        __exit_loop_7:
+                                                                __CPROVER_assume(__cs_pc_cs[2] >= 26);
                                         ;
-                                                                        ;
+                                                                ;
                                         if (
                                         !(__cs_local_lfds711_stack_pop_result == 0))
-                                                                        {
-                                        goto __exit_loop_17;
-                                                                                ;
-                                                                        }
+                                                                {
+                                        goto __exit_loop_9;
+                                                                        ;
+                                                                }
                                         ;
-                                                                        {
+                                                                {
                                         ;
-                                                                                ;
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                                                ;
+tpop_0_43: IF(2,43,tpop_0_44)
+>>>>>>> origin/main
+                                        *__cs_param_lfds711_stack_pop_se = __cs_local_lfds711_stack_pop_original_top[0];
+                                        __cs_retval__lfds711_stack_pop_1 = 1;
+=======
+=======
+                                                                        ;
                                         static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
                                         __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
                                         if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
-                                                                                {
+                                                                        {
 tpop_0_26: IF(2,26,tpop_0_27)
                                         *__cs_param_lfds711_stack_pop_se = 0;
                                         __cs_retval__lfds711_stack_pop_1 = 0;
-                                        goto __exit__lfds711_stack_pop_1_0;
-                                                                                        ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[2] >= 27);
+                                        goto __exit__lfds711_stack_pop_1;
+>>>>>>> origin/main
                                                                                 ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 27);
+                                                                        ;
 tpop_0_27: IF(2,27,tpop_0_28)
                                         __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
 tpop_0_28: IF(2,28,tpop_0_29)
@@ -2324,63 +1925,414 @@ tpop_0_30: IF(2,30,tpop_0_31)
 tpop_0_31: IF(2,31,tpop_0_32)
                                         __cs_mutex_unlock(&library_lock, 2);
                                         ;
-                                                                                ;
+                                                                        ;
                                         static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
                                         __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
                                         if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
+                                                                        {
                                                                                 {
-                                                                                        {
                                         static int __cs_local_exponential_backoff_loop;
                                         __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
+                                                                                        {
                                         ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
+                                                                                                ;
+                                                                                        }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
-                                                                                                {
+                                                                                        {
                                         ;
-                                                                                                        ;
-                                                                                                }
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
 tpop_0_32: IF(2,32,tpop_0_33)
                                         __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_18:
-                                                                                                __CPROVER_assume(__cs_pc_cs[2] >= 33);
+                                        __exit_loop_10:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 33);
                                         ;
-                                                                                                ;
+                                                                                        ;
                                         __exit__exponential_backoff_3_0:
-                                                                                                __CPROVER_assume(__cs_pc_cs[2] >= 33);
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 33);
                                         ;
-                                                                                                ;
-                                                                                        }
+                                                                                        ;
+                                                                                }
                                         ;
 tpop_0_33: IF(2,33,tpop_0_34)
                                         __cs_mutex_lock(&library_lock, 2);
 tpop_0_34: IF(2,34,tpop_0_35)
                                         __cs_mutex_unlock(&library_lock, 2);
-                                                                                }
+                                                                        }
                                         __CPROVER_assume(__cs_pc_cs[2] >= 35);
-                                                                                ;
+                                                                        ;
                                         __cs_local_lfds711_stack_pop_i++;
                                         ;
-                                                                                ;
+                                                                        ;
                                         static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
                                         __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
                                         if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
+                                                                        {
+                                        goto __exit_loop_9;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (
+                                        !(__cs_local_lfds711_stack_pop_result == 0))
+                                                                {
+                                        goto __exit_loop_9;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
+                                                                        {
+tpop_0_35: IF(2,35,tpop_0_36)
+                                        *__cs_param_lfds711_stack_pop_se = 0;
+                                        __cs_retval__lfds711_stack_pop_1 = 0;
+                                        goto __exit__lfds711_stack_pop_1;
+                                                                                ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 36);
+                                                                        ;
+tpop_0_36: IF(2,36,tpop_0_37)
+                                        __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
+tpop_0_37: IF(2,37,tpop_0_38)
+                                        __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
+tpop_0_38: IF(2,38,tpop_0_39)
+                                        __cs_mutex_lock(&library_lock, 2);
+tpop_0_39: IF(2,39,tpop_0_40)
+                                        __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
+tpop_0_40: IF(2,40,tpop_0_41)
+                                        __cs_mutex_unlock(&library_lock, 2);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
+                                                                        {
                                                                                 {
-                                        goto __exit_loop_17;
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tpop_0_41: IF(2,41,tpop_0_42)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_11:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 42);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_3_1:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 42);
+                                        ;
                                                                                         ;
                                                                                 }
                                         ;
+tpop_0_42: IF(2,42,tpop_0_43)
+                                        __cs_mutex_lock(&library_lock, 2);
+tpop_0_43: IF(2,43,tpop_0_44)
+                                        __cs_mutex_unlock(&library_lock, 2);
                                                                         }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 44);
+                                                                        ;
+                                        __cs_local_lfds711_stack_pop_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
+                                                                        {
+                                        goto __exit_loop_9;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (
+                                        !(__cs_local_lfds711_stack_pop_result == 0))
+                                                                {
+                                        goto __exit_loop_9;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
+                                                                        {
+tpop_0_44: IF(2,44,tpop_0_45)
+                                        *__cs_param_lfds711_stack_pop_se = 0;
+                                        __cs_retval__lfds711_stack_pop_1 = 0;
+                                        goto __exit__lfds711_stack_pop_1;
+                                                                                ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 45);
+                                                                        ;
+tpop_0_45: IF(2,45,tpop_0_46)
+                                        __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
+tpop_0_46: IF(2,46,tpop_0_47)
+                                        __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
+tpop_0_47: IF(2,47,tpop_0_48)
+                                        __cs_mutex_lock(&library_lock, 2);
+tpop_0_48: IF(2,48,tpop_0_49)
+                                        __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
+tpop_0_49: IF(2,49,tpop_0_50)
+                                        __cs_mutex_unlock(&library_lock, 2);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tpop_0_50: IF(2,50,tpop_0_51)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_12:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 51);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_3_2:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 51);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+tpop_0_51: IF(2,51,tpop_0_52)
+                                        __cs_mutex_lock(&library_lock, 2);
+tpop_0_52: IF(2,52,tpop_0_53)
+                                        __cs_mutex_unlock(&library_lock, 2);
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 53);
+                                                                        ;
+                                        __cs_local_lfds711_stack_pop_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
+                                                                        {
+                                        goto __exit_loop_9;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (
+                                        !(__cs_local_lfds711_stack_pop_result == 0))
+                                                                {
+                                        goto __exit_loop_9;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
+                                                                        {
+tpop_0_53: IF(2,53,tpop_0_54)
+                                        *__cs_param_lfds711_stack_pop_se = 0;
+                                        __cs_retval__lfds711_stack_pop_1 = 0;
+                                        goto __exit__lfds711_stack_pop_1;
+                                                                                ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 54);
+                                                                        ;
+tpop_0_54: IF(2,54,tpop_0_55)
+                                        __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
+tpop_0_55: IF(2,55,tpop_0_56)
+                                        __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
+tpop_0_56: IF(2,56,tpop_0_57)
+                                        __cs_mutex_lock(&library_lock, 2);
+tpop_0_57: IF(2,57,tpop_0_58)
+                                        __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
+tpop_0_58: IF(2,58,tpop_0_59)
+                                        __cs_mutex_unlock(&library_lock, 2);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tpop_0_59: IF(2,59,tpop_0_60)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_13:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 60);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_3_3:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 60);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+tpop_0_60: IF(2,60,tpop_0_61)
+                                        __cs_mutex_lock(&library_lock, 2);
+tpop_0_61: IF(2,61,tpop_0_62)
+                                        __cs_mutex_unlock(&library_lock, 2);
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 62);
+                                                                        ;
+                                        __cs_local_lfds711_stack_pop_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
+                                                                        {
+                                        goto __exit_loop_9;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (
+                                        !(__cs_local_lfds711_stack_pop_result == 0))
+                                                                {
+                                        goto __exit_loop_9;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
+                                                                        {
+tpop_0_62: IF(2,62,tpop_0_63)
+                                        *__cs_param_lfds711_stack_pop_se = 0;
+                                        __cs_retval__lfds711_stack_pop_1 = 0;
+                                        goto __exit__lfds711_stack_pop_1;
+                                                                                ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 63);
+                                                                        ;
+tpop_0_63: IF(2,63,tpop_0_64)
+                                        __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
+tpop_0_64: IF(2,64,tpop_0_65)
+                                        __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
+tpop_0_65: IF(2,65,tpop_0_66)
+                                        __cs_mutex_lock(&library_lock, 2);
+tpop_0_66: IF(2,66,tpop_0_67)
+                                        __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
+tpop_0_67: IF(2,67,tpop_0_68)
+                                        __cs_mutex_unlock(&library_lock, 2);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tpop_0_68: IF(2,68,tpop_0_69)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_14:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 69);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_3_4:
+                                                                                        __CPROVER_assume(__cs_pc_cs[2] >= 69);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+tpop_0_69: IF(2,69,tpop_0_70)
+                                        __cs_mutex_lock(&library_lock, 2);
+tpop_0_70: IF(2,70,tpop_0_71)
+                                        __cs_mutex_unlock(&library_lock, 2);
+                                                                        }
+<<<<<<< HEAD
                                         ;
                                         if (
                                         !(__cs_local_lfds711_stack_pop_result == 0))
@@ -8151,248 +8103,196 @@ tmain_456: IF(0,456,tmain_457)
                                                                                 }
                                         ;
                                                                         }
+=======
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 71);
+                                                                        ;
+                                        __cs_local_lfds711_stack_pop_i++;
+>>>>>>> origin/main
                                         ;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
                                                                         {
-                                        goto __exit_loop_79;
+                                        goto __exit_loop_9;
                                                                                 ;
                                                                         }
                                         ;
-                                                                        {
-tmain_457: IF(0,457,tmain_458)
-                                        __cs_mutex_lock(&library_lock, 0);
-tmain_458: IF(0,458,tmain_459)
-                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tmain_459: IF(0,459,tmain_460)
-                                        __cs_mutex_unlock(&library_lock, 0);
-tmain_460: IF(0,460,tmain_461)
-                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tmain_461: IF(0,461,tmain_462)
-                                        __cs_mutex_lock(&library_lock, 0);
-tmain_462: IF(0,462,tmain_463)
-                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tmain_463: IF(0,463,tmain_464)
-                                        __cs_mutex_unlock(&library_lock, 0);
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                                                                                {
-                                                                                        {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-tmain_464: IF(0,464,tmain_465)
-                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_84:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 465);
-                                        ;
-                                                                                                ;
-                                        __exit__exponential_backoff_6_9:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 465);
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[0] >= 465);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                                                                                {
-                                        goto __exit_loop_79;
-                                                                                        ;
-                                                                                }
-                                        ;
-                                                                        }
-                                        ;
-tmain_465: IF(0,465,tmain_466)
-                                        __CPROVER_assume(!(__cs_local_lfds711_stack_push_result == 0));
-                                        __exit_loop_79:
-                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 466);
-                                        ;
-                                                                        ;
-                                        goto __exit__lfds711_stack_push_2_1;
-                                                                        ;
-                                        __exit__lfds711_stack_push_2_1:
-                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 466);
-                                        ;
-                                                                        ;
                                                                 }
                                         ;
-                                        __cs_local_contains_i++;
-                                                        }
+tpop_0_71: IF(2,71,tpop_0_72)
+                                        __CPROVER_assume(
+                                        !(__cs_local_lfds711_stack_pop_result == 0));
+                                        __exit_loop_9:
+                                                                __CPROVER_assume(__cs_pc_cs[2] >= 72);
                                         ;
-                                        if (!(__cs_local_contains_i < __cs_local_contains_actual_size))
-                                                        {
-                                        goto __exit_loop_72;
+                                                                ;
+tpop_0_72: IF(2,72,tpop_0_73)
+                                        *__cs_param_lfds711_stack_pop_se = __cs_local_lfds711_stack_pop_original_top[0];
+                                        __cs_retval__lfds711_stack_pop_1 = __cs_local_lfds711_stack_pop_result;
+                                        goto __exit__lfds711_stack_pop_1;
+                                                                ;
+                                        __exit__lfds711_stack_pop_1:
+                                                                __CPROVER_assume(__cs_pc_cs[2] >= 73);
+                                        ;
                                                                 ;
                                                         }
                                         ;
+                                        __cs_local_delete_res = __cs_retval__lfds711_stack_pop_1;
+                                        ;
+                                                        ;
+                                        static _Bool __cs_local_delete___cs_tmp_if_cond_19;
+                                        __cs_local_delete___cs_tmp_if_cond_19 = __cs_local_delete_res == 0;
+                                        if (__cs_local_delete___cs_tmp_if_cond_19)
                                                         {
+                                        __cs_retval__delete_1 = __cs_local_delete_res;
+                                        goto __exit__delete_1;
+                                                                ;
+                                                        }
+                                        ;
+tpop_0_73: IF(2,73,tpop_0_74)
+                                        __cs_local_delete_temp_td = (*__cs_local_delete_se).value;
+                                        static int __cs_local_delete_id_popped;
+tpop_0_74: IF(2,74,tpop_0_75)
+                                        __cs_local_delete_id_popped = (*__cs_local_delete_temp_td).user_id;
+tpop_0_75: IF(2,75,tpop_0_76)
+                                        printf("%llu\n", (*__cs_local_delete_temp_td).user_id);
+                                        __cs_retval__delete_1 = __cs_local_delete_res;
+                                        goto __exit__delete_1;
+                                                        ;
+                                        __exit__delete_1:
+                                                        __CPROVER_assume(__cs_pc_cs[2] >= 76);
+                                        ;
+                                                        ;
+                                                }
+                                        ;
+                                        __cs_retval__delete_1;
+                                        ;
+                                                ;
+                                        static _Bool __cs_local_pop___cs_tmp_if_cond_27;
+tpop_0_76: IF(2,76,tpop_0_77)
+                                        __cs_local_pop___cs_tmp_if_cond_27 = ATOMIC_OPERATION;
+                                        if (__cs_local_pop___cs_tmp_if_cond_27)
+                                                {
+tpop_0_77: IF(2,77,tpop_0_78)
+                                        __cs_mutex_unlock(&lock, 2);
+                                                }
+                                        __CPROVER_assume(__cs_pc_cs[2] >= 78);
+                                                ;
+                                        ;
+                                                ;
+                                        __exit_pop:
+                                                __CPROVER_assume(__cs_pc_cs[2] >= 78);
+                                        ;
+                                                ;
+tpop_0_78: 
+                                        __cs_exit(0, 2);
+                                        }
+                                        int main_thread(void)
+                                        {
+IF(0,0,tmain_1)
+                                        __cs_mutex_init(&lock, 0);
+                                        static void *__cs_retval__init_1;
+                                                {
+                                                        {
+                                        static struct lfds711_stack_state *__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss;
+                                        __cs_param_lfds711_stack_init_valid_on_current_logical_core_ss = &mystack;
+                                        static void *__cs_param_lfds711_stack_init_valid_on_current_logical_core_user_state;
+                                        __cs_param_lfds711_stack_init_valid_on_current_logical_core_user_state = 0;
+                                        __cs_mutex_init(&library_lock, 0);
+                                        ;
+                                                                ;
+                                        static _Bool __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_3;
+                                        __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_3 = !(__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss != 0);
+                                        if (__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_3)
                                                                 {
-                                        static struct lfds711_stack_state *__cs_param_lfds711_stack_push_ss;
-tmain_466: IF(0,466,tmain_467)
-                                        __cs_param_lfds711_stack_push_ss = __cs_param_contains_s;
-                                        static struct lfds711_stack_element *__cs_param_lfds711_stack_push_se;
-tmain_467: IF(0,467,tmain_468)
-                                        __cs_param_lfds711_stack_push_se = &(*__cs_local_contains_datas[__cs_local_contains_i]).se;
-                                        static char unsigned __cs_local_lfds711_stack_push_result;
-                                        static lfds711_pal_uint_t __cs_local_lfds711_stack_push_backoff_iteration;
-                                        __cs_local_lfds711_stack_push_backoff_iteration = 0;
-                                        static struct lfds711_stack_element *__cs_local_lfds711_stack_push_new_top[2];
-                                        static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_push_original_top[2];
+                                        static char *__cs_local_lfds711_stack_init_valid_on_current_logical_core_c;
+                                        __cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
+                                        *__cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
+                                                                }
                                         ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_14;
-tmain_468: IF(0,468,tmain_469)
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_14 = !(__cs_param_lfds711_stack_push_ss != 0);
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_14)
-                                                                        {
-                                        static char *__cs_local_lfds711_stack_push_c;
-tmain_469: IF(0,469,tmain_470)
-                                        __cs_local_lfds711_stack_push_c = 0;
-tmain_470: IF(0,470,tmain_471)
-                                        *__cs_local_lfds711_stack_push_c = 0;
-                                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[0] >= 471);
-                                                                        ;
                                         ;
-                                                                        ;
+                                                                ;
                                         ;
-                                                                        ;
+                                                                ;
                                         ;
-                                                                        ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_15;
-tmain_471: IF(0,471,tmain_472)
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_15 = !(__cs_param_lfds711_stack_push_se != 0);
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
-                                                                        {
-                                        static char *__cs_local_lfds711_stack_push_c;
-tmain_472: IF(0,472,tmain_473)
-                                        __cs_local_lfds711_stack_push_c = 0;
-tmain_473: IF(0,473,tmain_474)
-                                        *__cs_local_lfds711_stack_push_c = 0;
-                                                                        }
-                                        __CPROVER_assume(__cs_pc_cs[0] >= 474);
-                                                                        ;
+                                                                ;
+                                        static _Bool __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4;
+                                        __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4 = !((((lfds711_pal_uint_t) (*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).top) % 128) == 0);
+                                        if (__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4)
+                                                                {
+                                        static char *__cs_local_lfds711_stack_init_valid_on_current_logical_core_c;
+                                        __cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
+                                        *__cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
+                                                                }
                                         ;
-                                                                        ;
                                         ;
-                                                                        ;
-tmain_474: IF(0,474,tmain_475)
-                                        __cs_local_lfds711_stack_push_new_top[0] = __cs_param_lfds711_stack_push_se;
-tmain_475: IF(0,475,tmain_476)
-                                        __cs_local_lfds711_stack_push_original_top[1] = (*__cs_param_lfds711_stack_push_ss).top[1];
-tmain_476: IF(0,476,tmain_477)
-                                        __cs_local_lfds711_stack_push_original_top[0] = (*__cs_param_lfds711_stack_push_ss).top[0];
-                                        __cs_local_lfds711_stack_push_result = 0;
-                                        static int __cs_local_lfds711_stack_push_i;
-                                        __cs_local_lfds711_stack_push_i = 0;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
-                                                                        {
-                                        goto __exit_loop_85;
-                                                                                ;
-                                                                        }
+                                                                ;
                                         ;
-                                                                        {
-tmain_477: IF(0,477,tmain_478)
+                                                                ;
+                                        ;
+                                                                ;
+                                        static _Bool __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5;
+                                        __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5 = !((((lfds711_pal_uint_t) (&(*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).user_state)) % 128) == 0);
+                                        if (__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5)
+                                                                {
+                                        static char *__cs_local_lfds711_stack_init_valid_on_current_logical_core_c;
+                                        __cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
+                                        *__cs_local_lfds711_stack_init_valid_on_current_logical_core_c = 0;
+                                                                }
+                                        ;
+                                        ;
+                                                                ;
+                                        ;
+                                                                ;
                                         __cs_mutex_lock(&library_lock, 0);
-tmain_478: IF(0,478,tmain_479)
-                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tmain_479: IF(0,479,tmain_480)
-                                        __cs_mutex_unlock(&library_lock, 0);
-tmain_480: IF(0,480,tmain_481)
-                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tmain_481: IF(0,481,tmain_482)
-                                        __cs_mutex_lock(&library_lock, 0);
-tmain_482: IF(0,482,tmain_483)
-                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tmain_483: IF(0,483,tmain_484)
-                                        __cs_mutex_unlock(&library_lock, 0);
+                                        (*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).top[0] = 0;
+                                        (*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).top[1] = 0;
+                                        (*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).user_state = __cs_param_lfds711_stack_init_valid_on_current_logical_core_user_state;
+                                                                {
+                                        static struct lfds711_misc_backoff_state *__cs_param_lfds711_misc_internal_backoff_init_bs;
+                                        __cs_param_lfds711_misc_internal_backoff_init_bs = &(*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).pop_backoff;
                                         ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                                                                                {
-                                                                                        {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-tmain_484: IF(0,484,tmain_485)
-                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_86:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 485);
-                                        ;
-                                                                                                ;
-                                        __exit__exponential_backoff_6_10:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 485);
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[0] >= 485);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                                                                                {
-                                        goto __exit_loop_85;
-                                                                                        ;
-                                                                                }
-                                        ;
-                                                                        }
-                                        ;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1;
+                                        __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1 = !(__cs_param_lfds711_misc_internal_backoff_init_bs != 0);
+                                        if (__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1)
                                                                         {
-                                        goto __exit_loop_85;
-                                                                                ;
+                                        static char *__cs_local_lfds711_misc_internal_backoff_init_c;
+                                        __cs_local_lfds711_misc_internal_backoff_init_c = 0;
+                                        *__cs_local_lfds711_misc_internal_backoff_init_c = 0;
                                                                         }
                                         ;
+                                        ;
+                                                                        ;
+                                        ;
+                                                                        ;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2;
+                                        __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2 = !((((lfds711_pal_uint_t) (&(*__cs_param_lfds711_misc_internal_backoff_init_bs).lock)) % 128) == 0);
+                                        if (__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2)
+                                                                        {
+                                        static char *__cs_local_lfds711_misc_internal_backoff_init_c;
+                                        __cs_local_lfds711_misc_internal_backoff_init_c = 0;
+                                        *__cs_local_lfds711_misc_internal_backoff_init_c = 0;
+                                                                        }
+                                        ;
+                                        ;
+                                                                        ;
+                                        ;
+                                                                        ;
+                                        (*__cs_param_lfds711_misc_internal_backoff_init_bs).lock = LFDS711_MISC_FLAG_LOWERED;
+                                        (*__cs_param_lfds711_misc_internal_backoff_init_bs).backoff_iteration_frequency_counters[0] = 0;
+                                        (*__cs_param_lfds711_misc_internal_backoff_init_bs).backoff_iteration_frequency_counters[1] = 0;
+                                        (*__cs_param_lfds711_misc_internal_backoff_init_bs).metric = 1;
+                                        (*__cs_param_lfds711_misc_internal_backoff_init_bs).total_operations = 0;
+                                        goto __exit__lfds711_misc_internal_backoff_init_1;
+                                                                        ;
+                                        __exit__lfds711_misc_internal_backoff_init_1:
+                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 1);
+                                        ;
+<<<<<<< HEAD
 <<<<<<< HEAD
                                                         {
                                         static lfds711_pal_uint_t __cs_local_lfds711_misc_force_store_destination;
@@ -8419,17 +8319,16 @@ tmain_490: IF(0,490,tmain_491)
                                         __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
 tmain_491: IF(0,491,tmain_492)
                                         __cs_mutex_unlock(&library_lock, 0);
+=======
+                                                                        ;
+                                                                }
+>>>>>>> origin/main
                                         ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                                                                                {
-                                                                                        {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
+                                                                {
+                                        static struct lfds711_misc_backoff_state *__cs_param_lfds711_misc_internal_backoff_init_bs;
+                                        __cs_param_lfds711_misc_internal_backoff_init_bs = &(*__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss).push_backoff;
                                         ;
+<<<<<<< HEAD
 <<<<<<< HEAD
                                         (void) __cs_retval____atomic_exchange_n_1;
 >>>>>>> origin/main
@@ -8444,20 +8343,40 @@ tmain_491: IF(0,491,tmain_492)
                                         ;
                                                                                                         ;
                                                                                                 }
+=======
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1;
+                                        __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1 = !(__cs_param_lfds711_misc_internal_backoff_init_bs != 0);
+                                        if (__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1)
+                                                                        {
+                                        static char *__cs_local_lfds711_misc_internal_backoff_init_c;
+                                        __cs_local_lfds711_misc_internal_backoff_init_c = 0;
+                                        *__cs_local_lfds711_misc_internal_backoff_init_c = 0;
+                                                                        }
+>>>>>>> origin/main
                                         ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
                                         ;
-                                                                                                        ;
-                                                                                                }
+                                                                        ;
                                         ;
+<<<<<<< HEAD
                                         __cs_local_exponential_backoff_loop++;
 <<<<<<< HEAD
                                                                                                 {
+=======
+                                                                        ;
+>>>>>>> origin/main
                                         ;
-                                                                                                        ;
-                                                                                                }
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2;
+                                        __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2 = !((((lfds711_pal_uint_t) (&(*__cs_param_lfds711_misc_internal_backoff_init_bs).lock)) % 128) == 0);
+                                        if (__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2)
+                                                                        {
+                                        static char *__cs_local_lfds711_misc_internal_backoff_init_c;
+                                        __cs_local_lfds711_misc_internal_backoff_init_c = 0;
+                                        *__cs_local_lfds711_misc_internal_backoff_init_c = 0;
+                                                                        }
                                         ;
+<<<<<<< HEAD
                                         __cs_local_exponential_backoff_loop++;
                                                                                                 {
                                         ;
@@ -8511,77 +8430,71 @@ tmain_492: IF(0,492,tmain_493)
                                         __exit_loop_87:
                                                                                                 __CPROVER_assume(__cs_pc_cs[0] >= 493);
 >>>>>>> origin/main
+=======
+>>>>>>> origin/main
                                         ;
-                                                                                                ;
-                                        __exit__exponential_backoff_6_11:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 493);
+                                                                        ;
                                         ;
-                                                                                                ;
-                                                                                        }
+                                                                        ;
+                                        (*__cs_param_lfds711_misc_internal_backoff_init_bs).lock = LFDS711_MISC_FLAG_LOWERED;
+                                        (*__cs_param_lfds711_misc_internal_backoff_init_bs).backoff_iteration_frequency_counters[0] = 0;
+                                        (*__cs_param_lfds711_misc_internal_backoff_init_bs).backoff_iteration_frequency_counters[1] = 0;
+                                        (*__cs_param_lfds711_misc_internal_backoff_init_bs).metric = 1;
+                                        (*__cs_param_lfds711_misc_internal_backoff_init_bs).total_operations = 0;
+                                        goto __exit__lfds711_misc_internal_backoff_init_2;
+                                                                        ;
+                                        __exit__lfds711_misc_internal_backoff_init_2:
+                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 1);
                                         ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[0] >= 493);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
+                                                                        ;
+                                                                }
                                         ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                                                                {
+                                        static lfds711_pal_uint_t __cs_local_lfds711_misc_force_store_destination;
+                                        __cs_init_scalar(&__cs_local_lfds711_misc_force_store_destination, sizeof(lfds711_pal_uint_t));
+                                                                        {
+                                        static unsigned long __cs_retval____atomic_exchange_n_1;
                                                                                 {
-                                        goto __exit_loop_85;
+                                        static int long long unsigned *__cs_param___atomic_exchange_n_previous;
+                                        __cs_param___atomic_exchange_n_previous = &__cs_local_lfds711_misc_force_store_destination;
+                                        static int long long unsigned __cs_param___atomic_exchange_n_new;
+                                        __cs_param___atomic_exchange_n_new = 0;
+                                        static int __cs_param___atomic_exchange_n_memorder;
+                                        __cs_param___atomic_exchange_n_memorder = 0;
+                                        static int __cs_local___atomic_exchange_n_res;
+                                        __cs_local___atomic_exchange_n_res = __CSEQ_atomic_exchange(__cs_param___atomic_exchange_n_previous, __cs_param___atomic_exchange_n_new, __cs_param___atomic_exchange_n_memorder);
+                                        __cs_retval____atomic_exchange_n_1 = __cs_local___atomic_exchange_n_res;
+                                        goto __exit____atomic_exchange_n_1;
+                                                                                        ;
+                                        __exit____atomic_exchange_n_1:
+                                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 1);
+                                        ;
                                                                                         ;
                                                                                 }
                                         ;
+                                        (void) __cs_retval____atomic_exchange_n_1;
                                                                         }
                                         ;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
-                                                                        {
-                                        goto __exit_loop_85;
-                                                                                ;
-                                                                        }
                                         ;
-                                                                        {
-tmain_493: IF(0,493,tmain_494)
-                                        __cs_mutex_lock(&library_lock, 0);
-tmain_494: IF(0,494,tmain_495)
-                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tmain_495: IF(0,495,tmain_496)
+                                                                        ;
+                                        goto __exit__lfds711_misc_force_store_1;
+                                                                        ;
+                                        __exit__lfds711_misc_force_store_1:
+                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 1);
+                                        ;
+                                                                        ;
+                                                                }
+                                        ;
                                         __cs_mutex_unlock(&library_lock, 0);
-tmain_496: IF(0,496,tmain_497)
-                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tmain_497: IF(0,497,tmain_498)
-                                        __cs_mutex_lock(&library_lock, 0);
-tmain_498: IF(0,498,tmain_499)
-                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tmain_499: IF(0,499,tmain_500)
-                                        __cs_mutex_unlock(&library_lock, 0);
+                                        goto __exit__lfds711_stack_init_valid_on_current_logical_core_1;
+                                                                ;
+                                        __exit__lfds711_stack_init_valid_on_current_logical_core_1:
+                                                                __CPROVER_assume(__cs_pc_cs[0] >= 1);
                                         ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                                                                                {
-                                                                                        {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
+                                                                ;
+                                                        }
                                         ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
+<<<<<<< HEAD
                                         __cs_local_exponential_backoff_loop++;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -8621,19 +8534,24 @@ tmain_500: IF(0,500,tmain_501)
                                         __exit_loop_88:
                                                                                                 __CPROVER_assume(__cs_pc_cs[0] >= 501);
 >>>>>>> origin/main
+=======
+                                        __cs_retval__init_1 = (void *) (&mystack);
+                                        goto __exit__init_1;
+                                                        ;
+                                        __exit__init_1:
+                                                        __CPROVER_assume(__cs_pc_cs[0] >= 1);
+>>>>>>> origin/main
                                         ;
-                                                                                                ;
-                                        __exit__exponential_backoff_6_12:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 501);
+                                                        ;
+                                                }
                                         ;
-                                                                                                ;
-                                                                                        }
+                                        ss = __cs_retval__init_1;
+                                        static __cs_t __cs_local_main_t1;
                                         ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[0] >= 501);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
+                                                ;
+                                        static __cs_t __cs_local_main_t2;
                                         ;
+<<<<<<< HEAD
 <<<<<<< HEAD
                                                                         ;
                                         static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
@@ -8698,36 +8616,27 @@ tmain_26: IF(0,26,tmain_27)
                                         goto __exit_loop_85;
                                                                                 ;
                                                                         }
+=======
+                                                ;
+                                        static __cs_t __cs_local_main_t3;
                                         ;
-                                                                        {
-tmain_501: IF(0,501,tmain_502)
-                                        __cs_mutex_lock(&library_lock, 0);
-tmain_502: IF(0,502,tmain_503)
-                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tmain_503: IF(0,503,tmain_504)
-                                        __cs_mutex_unlock(&library_lock, 0);
-tmain_504: IF(0,504,tmain_505)
-                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tmain_505: IF(0,505,tmain_506)
-                                        __cs_mutex_lock(&library_lock, 0);
-tmain_506: IF(0,506,tmain_507)
-                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tmain_507: IF(0,507,tmain_508)
-                                        __cs_mutex_unlock(&library_lock, 0);
+                                                ;
+                                        static __cs_t __cs_local_main_t4;
                                         ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                                                                                {
-                                                                                        {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
+                                                ;
+                                        static __cs_t __cs_local_main_t5;
+>>>>>>> origin/main
                                         ;
-                                                                                                        ;
-                                                                                                }
+                                                ;
+                                        static __cs_t __cs_local_main_t6;
                                         ;
+                                                ;
+                                        static __cs_t __cs_local_main_t7;
+                                        ;
+                                                ;
+                                        static __cs_t __cs_local_main_t8;
+                                        ;
+<<<<<<< HEAD
                                         __cs_local_exponential_backoff_loop++;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -8752,16 +8661,59 @@ tmain_33: IF(0,33,tmain_34)
                                         __cs_local_exponential_backoff_loop++;
 <<<<<<< HEAD
                                                                                                 {
+=======
+                                                ;
+                                        static __cs_t __cs_local_main_t9;
+>>>>>>> origin/main
                                         ;
-                                                                                                        ;
-                                                                                                }
+                                                ;
+                                        static __cs_t __cs_local_main_t10;
                                         ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
+                                                ;
+                                        __cs_create(&__cs_local_main_t1, 0, push_0, 0, 1);
+tmain_1: IF(0,1,tmain_2)
+                                        __cs_create(&__cs_local_main_t6, 0, pop_0, 0, 2);
+tmain_2: IF(0,2,tmain_3)
+                                        __cs_join(__cs_local_main_t1, 0);
+tmain_3: IF(0,3,tmain_4)
+                                        __cs_join(__cs_local_main_t6, 0);
+                                        static int __cs_retval__is_empty_1;
+                                                {
+                                        static struct lfds711_stack_state *__cs_param_is_empty_s;
+tmain_4: IF(0,4,tmain_5)
+                                        __cs_param_is_empty_s = ss;
+                                        static struct lfds711_stack_element *__cs_local_is_empty_se;
+                                        static int __cs_local_is_empty_res;
+                                        static int __cs_retval__lfds711_stack_pop_2;
+                                                        {
+                                        static struct lfds711_stack_state *__cs_param_lfds711_stack_pop_ss;
+tmain_5: IF(0,5,tmain_6)
+                                        __cs_param_lfds711_stack_pop_ss = __cs_param_is_empty_s;
+                                        static struct lfds711_stack_element **__cs_param_lfds711_stack_pop_se;
+tmain_6: IF(0,6,tmain_7)
+                                        __cs_param_lfds711_stack_pop_se = &__cs_local_is_empty_se;
+                                        static char unsigned __cs_local_lfds711_stack_pop_result;
+                                        static lfds711_pal_uint_t __cs_local_lfds711_stack_pop_backoff_iteration;
+                                        __cs_local_lfds711_stack_pop_backoff_iteration = 0;
+                                        static struct lfds711_stack_element *__cs_local_lfds711_stack_pop_new_top[2];
+                                        static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_pop_original_top[2];
                                         ;
-                                                                                                        ;
-                                                                                                }
+                                                                ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_6;
+tmain_7: IF(0,7,tmain_8)
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_6 = !(__cs_param_lfds711_stack_pop_ss != 0);
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_6)
+                                                                {
+                                        static char *__cs_local_lfds711_stack_pop_c;
+tmain_8: IF(0,8,tmain_9)
+                                        __cs_local_lfds711_stack_pop_c = 0;
+tmain_9: IF(0,9,tmain_10)
+                                        *__cs_local_lfds711_stack_pop_c = 0;
+                                                                }
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 10);
+                                                                ;
                                         ;
+<<<<<<< HEAD
                                         __cs_local_exponential_backoff_loop++;
 tpop_0_290: IF(2,290,tpop_0_291)
                                         __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 10));
@@ -8779,19 +8731,30 @@ tmain_508: IF(0,508,tmain_509)
                                         __exit_loop_89:
                                                                                                 __CPROVER_assume(__cs_pc_cs[0] >= 509);
 >>>>>>> origin/main
+=======
+                                                                ;
+>>>>>>> origin/main
                                         ;
-                                                                                                ;
-                                        __exit__exponential_backoff_6_13:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 509);
+                                                                ;
                                         ;
-                                                                                                ;
-                                                                                        }
+                                                                ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_7;
+tmain_10: IF(0,10,tmain_11)
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_7 = !(__cs_param_lfds711_stack_pop_se != 0);
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7)
+                                                                {
+                                        static char *__cs_local_lfds711_stack_pop_c;
+tmain_11: IF(0,11,tmain_12)
+                                        __cs_local_lfds711_stack_pop_c = 0;
+tmain_12: IF(0,12,tmain_13)
+                                        *__cs_local_lfds711_stack_pop_c = 0;
+                                                                }
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 13);
+                                                                ;
                                         ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[0] >= 509);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
+                                                                ;
                                         ;
+<<<<<<< HEAD
 <<<<<<< HEAD
                                                                         ;
                                         static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_14;
@@ -8813,9 +8776,26 @@ tmain_508: IF(0,508,tmain_509)
                                         goto __exit_loop_85;
                                                                                         ;
                                                                                 }
+=======
+                                                                ;
+tmain_13: IF(0,13,tmain_14)
+                                        __cs_mutex_lock(&library_lock, 0);
+tmain_14: IF(0,14,tmain_15)
+                                        __cs_mutex_unlock(&library_lock, 0);
+tmain_15: IF(0,15,tmain_16)
+                                        __cs_local_lfds711_stack_pop_original_top[1] = (*__cs_param_lfds711_stack_pop_ss).top[1];
+tmain_16: IF(0,16,tmain_17)
+                                        __cs_local_lfds711_stack_pop_original_top[0] = (*__cs_param_lfds711_stack_pop_ss).top[0];
+                                        static int __cs_local_lfds711_stack_pop_i;
+                                        __cs_local_lfds711_stack_pop_i = 0;
+>>>>>>> origin/main
                                         ;
-                                                                        }
+                                                                ;
+                                        static int __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1;
+                                        __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1 = 0;
+                                                                {
                                         ;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 tmain_36: IF(0,36,tmain_37)
@@ -8893,72 +8873,78 @@ tmain_511: IF(0,511,tmain_512)
 tmain_512: IF(0,512,tmain_513)
                                         __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
 tmain_513: IF(0,513,tmain_514)
+=======
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_8;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_8 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8)
+                                                                        {
+tmain_17: IF(0,17,tmain_18)
+                                        *__cs_param_lfds711_stack_pop_se = 0;
+                                        __cs_retval__lfds711_stack_pop_2 = 0;
+                                        goto __exit__lfds711_stack_pop_2;
+                                                                                ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 18);
+                                                                        ;
+tmain_18: IF(0,18,tmain_19)
+                                        __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
+tmain_19: IF(0,19,tmain_20)
+                                        __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
+tmain_20: IF(0,20,tmain_21)
+>>>>>>> origin/main
                                         __cs_mutex_lock(&library_lock, 0);
-tmain_514: IF(0,514,tmain_515)
-                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tmain_515: IF(0,515,tmain_516)
+tmain_21: IF(0,21,tmain_22)
+                                        __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
+tmain_22: IF(0,22,tmain_23)
                                         __cs_mutex_unlock(&library_lock, 0);
                                         ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_9;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_9 = __cs_local_lfds711_stack_pop_result == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9)
+                                                                        {
                                                                                 {
-                                                                                        {
                                         static int __cs_local_exponential_backoff_loop;
                                         __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-tmain_516: IF(0,516,tmain_517)
-                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_90:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 517);
-                                        ;
-                                                                                                ;
-                                        __exit__exponential_backoff_6_14:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 517);
+                                                                                        {
                                         ;
                                                                                                 ;
                                                                                         }
                                         ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[0] >= 517);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
                                         ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                                                                                {
-                                        goto __exit_loop_85;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tmain_23: IF(0,23,tmain_24)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_16:
+                                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 24);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_4_0:
+                                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 24);
+                                        ;
                                                                                         ;
                                                                                 }
                                         ;
+tmain_24: IF(0,24,tmain_25)
+                                        __cs_mutex_lock(&library_lock, 0);
+tmain_25: IF(0,25,tmain_26)
+                                        __cs_mutex_unlock(&library_lock, 0);
                                                                         }
-                                        ;
-tmain_517: IF(0,517,tmain_518)
-                                        __CPROVER_assume(!(__cs_local_lfds711_stack_push_result == 0));
-                                        __exit_loop_85:
-                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 518);
-                                        ;
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 26);
                                                                         ;
+<<<<<<< HEAD
                                         goto __exit__lfds711_stack_push_2_2;
                                                                         ;
                                         __exit__lfds711_stack_push_2_2:
@@ -9139,19 +9125,19 @@ tmain_519: IF(0,519,tmain_520)
                                         __cs_local_lfds711_stack_push_backoff_iteration = 0;
                                         static struct lfds711_stack_element *__cs_local_lfds711_stack_push_new_top[2];
                                         static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_push_original_top[2];
+=======
+                                        __cs_local_lfds711_stack_pop_i++;
+>>>>>>> origin/main
                                         ;
                                                                         ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_14;
-tmain_520: IF(0,520,tmain_521)
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_14 = !(__cs_param_lfds711_stack_push_ss != 0);
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_14)
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_10;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_10 = __cs_local_lfds711_stack_pop_i > 1000;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10)
                                                                         {
-                                        static char *__cs_local_lfds711_stack_push_c;
-tmain_521: IF(0,521,tmain_522)
-                                        __cs_local_lfds711_stack_push_c = 0;
-tmain_522: IF(0,522,tmain_523)
-                                        *__cs_local_lfds711_stack_push_c = 0;
+                                        goto __exit_loop_15;
+                                                                                ;
                                                                         }
+<<<<<<< HEAD
                                         __CPROVER_assume(__cs_pc_cs[0] >= 523);
 >>>>>>> origin/main
                                                                         ;
@@ -9202,10 +9188,24 @@ tpop_0_319: IF(2,319,tpop_0_320)
                                         __CPROVER_assume(__cs_pc_cs[2] >= 320);
 >>>>>>> origin/main
                                                                         ;
+=======
                                         ;
-                                                                        ;
+                                                                }
+>>>>>>> origin/main
                                         ;
+                                        __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1++;
+tmain_26: IF(0,26,tmain_27)
+                                        __CPROVER_assume(!(__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1 < 1));
+                                        __exit_loop_15:
+                                                                __CPROVER_assume(__cs_pc_cs[0] >= 27);
+                                        ;
+                                                                ;
+                                        if (
+                                        !(__cs_local_lfds711_stack_pop_result == 0))
+                                                                {
+                                        goto __exit_loop_17;
                                                                         ;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 tmain_57: IF(0,57,tmain_58)
@@ -9253,19 +9253,18 @@ tmain_525: IF(0,525,tmain_526)
                                         ;
                                                                         ;
 >>>>>>> origin/main
+=======
+                                                                }
+                                        ;
+                                                                {
+>>>>>>> origin/main
                                         ;
                                                                         ;
-tmain_526: IF(0,526,tmain_527)
-                                        __cs_local_lfds711_stack_push_new_top[0] = __cs_param_lfds711_stack_push_se;
-tmain_527: IF(0,527,tmain_528)
-                                        __cs_local_lfds711_stack_push_original_top[1] = (*__cs_param_lfds711_stack_push_ss).top[1];
-tmain_528: IF(0,528,tmain_529)
-                                        __cs_local_lfds711_stack_push_original_top[0] = (*__cs_param_lfds711_stack_push_ss).top[0];
-                                        __cs_local_lfds711_stack_push_result = 0;
-                                        static int __cs_local_lfds711_stack_push_i;
-                                        __cs_local_lfds711_stack_push_i = 0;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
                                                                         {
+<<<<<<< HEAD
 <<<<<<< HEAD
                                         ;
                                                                                 ;
@@ -9324,414 +9323,481 @@ tpop_0_329: IF(2,329,tpop_0_330)
 =======
                                         goto __exit_loop_91;
 >>>>>>> origin/main
+=======
+tmain_27: IF(0,27,tmain_28)
+                                        *__cs_param_lfds711_stack_pop_se = 0;
+                                        __cs_retval__lfds711_stack_pop_2 = 0;
+                                        goto __exit__lfds711_stack_pop_2;
+>>>>>>> origin/main
                                                                                 ;
                                                                         }
-                                        ;
-                                                                        {
-tmain_529: IF(0,529,tmain_530)
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 28);
+                                                                        ;
+tmain_28: IF(0,28,tmain_29)
+                                        __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
+tmain_29: IF(0,29,tmain_30)
+                                        __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
+tmain_30: IF(0,30,tmain_31)
                                         __cs_mutex_lock(&library_lock, 0);
-tmain_530: IF(0,530,tmain_531)
-                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tmain_531: IF(0,531,tmain_532)
+tmain_31: IF(0,31,tmain_32)
+                                        __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
+tmain_32: IF(0,32,tmain_33)
                                         __cs_mutex_unlock(&library_lock, 0);
-tmain_532: IF(0,532,tmain_533)
-                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tmain_533: IF(0,533,tmain_534)
-                                        __cs_mutex_lock(&library_lock, 0);
-tmain_534: IF(0,534,tmain_535)
-                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tmain_535: IF(0,535,tmain_536)
-                                        __cs_mutex_unlock(&library_lock, 0);
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                                                                                {
-                                                                                        {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-tmain_536: IF(0,536,tmain_537)
-                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_92:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 537);
-                                        ;
-                                                                                                ;
-                                        __exit__exponential_backoff_6_15:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 537);
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[0] >= 537);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                                                                                {
-                                        goto __exit_loop_91;
-                                                                                        ;
-                                                                                }
-                                        ;
-                                                                        }
-                                        ;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
-                                                                        {
-                                        goto __exit_loop_91;
-                                                                                ;
-                                                                        }
-                                        ;
-                                                                        {
-tmain_537: IF(0,537,tmain_538)
-                                        __cs_mutex_lock(&library_lock, 0);
-tmain_538: IF(0,538,tmain_539)
-                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tmain_539: IF(0,539,tmain_540)
-                                        __cs_mutex_unlock(&library_lock, 0);
-tmain_540: IF(0,540,tmain_541)
-                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tmain_541: IF(0,541,tmain_542)
-                                        __cs_mutex_lock(&library_lock, 0);
-tmain_542: IF(0,542,tmain_543)
-                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tmain_543: IF(0,543,tmain_544)
-                                        __cs_mutex_unlock(&library_lock, 0);
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                                                                                {
-                                                                                        {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-tmain_544: IF(0,544,tmain_545)
-                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_93:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 545);
-                                        ;
-                                                                                                ;
-                                        __exit__exponential_backoff_6_16:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 545);
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[0] >= 545);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                                                                                {
-                                        goto __exit_loop_91;
-                                                                                        ;
-                                                                                }
-                                        ;
-                                                                        }
-                                        ;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
-                                                                        {
-                                        goto __exit_loop_91;
-                                                                                ;
-                                                                        }
-                                        ;
-                                                                        {
-tmain_545: IF(0,545,tmain_546)
-                                        __cs_mutex_lock(&library_lock, 0);
-tmain_546: IF(0,546,tmain_547)
-                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tmain_547: IF(0,547,tmain_548)
-                                        __cs_mutex_unlock(&library_lock, 0);
-tmain_548: IF(0,548,tmain_549)
-                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tmain_549: IF(0,549,tmain_550)
-                                        __cs_mutex_lock(&library_lock, 0);
-tmain_550: IF(0,550,tmain_551)
-                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tmain_551: IF(0,551,tmain_552)
-                                        __cs_mutex_unlock(&library_lock, 0);
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                                                                                {
-                                                                                        {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-tmain_552: IF(0,552,tmain_553)
-                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_94:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 553);
-                                        ;
-                                                                                                ;
-                                        __exit__exponential_backoff_6_17:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 553);
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[0] >= 553);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                                                                                {
-                                        goto __exit_loop_91;
-                                                                                        ;
-                                                                                }
-                                        ;
-                                                                        }
-                                        ;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
-                                                                        {
-                                        goto __exit_loop_91;
-                                                                                ;
-                                                                        }
-                                        ;
-                                                                        {
-tmain_553: IF(0,553,tmain_554)
-                                        __cs_mutex_lock(&library_lock, 0);
-tmain_554: IF(0,554,tmain_555)
-                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tmain_555: IF(0,555,tmain_556)
-                                        __cs_mutex_unlock(&library_lock, 0);
-tmain_556: IF(0,556,tmain_557)
-                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tmain_557: IF(0,557,tmain_558)
-                                        __cs_mutex_lock(&library_lock, 0);
-tmain_558: IF(0,558,tmain_559)
-                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tmain_559: IF(0,559,tmain_560)
-                                        __cs_mutex_unlock(&library_lock, 0);
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                                                                                {
-                                                                                        {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-tmain_560: IF(0,560,tmain_561)
-                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_95:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 561);
-                                        ;
-                                                                                                ;
-                                        __exit__exponential_backoff_6_18:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 561);
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[0] >= 561);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                                                                                {
-                                        goto __exit_loop_91;
-                                                                                        ;
-                                                                                }
-                                        ;
-                                                                        }
-                                        ;
-                                        if (!(__cs_local_lfds711_stack_push_result == 0))
-                                                                        {
-                                        goto __exit_loop_91;
-                                                                                ;
-                                                                        }
-                                        ;
-                                                                        {
-tmain_561: IF(0,561,tmain_562)
-                                        __cs_mutex_lock(&library_lock, 0);
-tmain_562: IF(0,562,tmain_563)
-                                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tmain_563: IF(0,563,tmain_564)
-                                        __cs_mutex_unlock(&library_lock, 0);
-tmain_564: IF(0,564,tmain_565)
-                                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tmain_565: IF(0,565,tmain_566)
-                                        __cs_mutex_lock(&library_lock, 0);
-tmain_566: IF(0,566,tmain_567)
-                                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tmain_567: IF(0,567,tmain_568)
-                                        __cs_mutex_unlock(&library_lock, 0);
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                                                                                {
-                                                                                        {
-                                        static int __cs_local_exponential_backoff_loop;
-                                        __cs_local_exponential_backoff_loop = 0;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-                                                                                                {
-                                        ;
-                                                                                                        ;
-                                                                                                }
-                                        ;
-                                        __cs_local_exponential_backoff_loop++;
-tmain_568: IF(0,568,tmain_569)
-                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_96:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 569);
-                                        ;
-                                                                                                ;
-                                        __exit__exponential_backoff_6_19:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 569);
-                                        ;
-                                                                                                ;
-                                                                                        }
-                                        ;
-                                                                                }
-                                        __CPROVER_assume(__cs_pc_cs[0] >= 569);
-                                                                                ;
-                                        __cs_local_lfds711_stack_push_i++;
-                                        ;
-                                                                                ;
-                                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                                                                                {
-                                        goto __exit_loop_91;
-                                                                                        ;
-                                                                                }
-                                        ;
-                                                                        }
-                                        ;
-tmain_569: IF(0,569,tmain_570)
-                                        __CPROVER_assume(!(__cs_local_lfds711_stack_push_result == 0));
-                                        __exit_loop_91:
-                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 570);
                                         ;
                                                                         ;
-                                        goto __exit__lfds711_stack_push_2_3;
-                                                                        ;
-                                        __exit__lfds711_stack_push_2_3:
-                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 570);
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
                                         ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tmain_33: IF(0,33,tmain_34)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_18:
+                                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 34);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_5_0:
+                                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 34);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+tmain_34: IF(0,34,tmain_35)
+                                        __cs_mutex_lock(&library_lock, 0);
+tmain_35: IF(0,35,tmain_36)
+                                        __cs_mutex_unlock(&library_lock, 0);
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 36);
+                                                                        ;
+                                        __cs_local_lfds711_stack_pop_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
+                                                                        {
+                                        goto __exit_loop_17;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (
+                                        !(__cs_local_lfds711_stack_pop_result == 0))
+                                                                {
+                                        goto __exit_loop_17;
                                                                         ;
                                                                 }
                                         ;
-                                        __cs_local_contains_i++;
-                                                        }
+                                                                {
                                         ;
-                                        if (!(__cs_local_contains_i < __cs_local_contains_actual_size))
-                                                        {
-                                        goto __exit_loop_72;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
+                                                                        {
+tmain_36: IF(0,36,tmain_37)
+                                        *__cs_param_lfds711_stack_pop_se = 0;
+                                        __cs_retval__lfds711_stack_pop_2 = 0;
+                                        goto __exit__lfds711_stack_pop_2;
+                                                                                ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 37);
+                                                                        ;
+tmain_37: IF(0,37,tmain_38)
+                                        __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
+tmain_38: IF(0,38,tmain_39)
+                                        __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
+tmain_39: IF(0,39,tmain_40)
+                                        __cs_mutex_lock(&library_lock, 0);
+tmain_40: IF(0,40,tmain_41)
+                                        __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
+tmain_41: IF(0,41,tmain_42)
+                                        __cs_mutex_unlock(&library_lock, 0);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tmain_42: IF(0,42,tmain_43)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_19:
+                                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 43);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_5_1:
+                                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 43);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+tmain_43: IF(0,43,tmain_44)
+                                        __cs_mutex_lock(&library_lock, 0);
+tmain_44: IF(0,44,tmain_45)
+                                        __cs_mutex_unlock(&library_lock, 0);
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 45);
+                                                                        ;
+                                        __cs_local_lfds711_stack_pop_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
+                                                                        {
+                                        goto __exit_loop_17;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (
+                                        !(__cs_local_lfds711_stack_pop_result == 0))
+                                                                {
+                                        goto __exit_loop_17;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
+                                                                        {
+tmain_45: IF(0,45,tmain_46)
+                                        *__cs_param_lfds711_stack_pop_se = 0;
+                                        __cs_retval__lfds711_stack_pop_2 = 0;
+                                        goto __exit__lfds711_stack_pop_2;
+                                                                                ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 46);
+                                                                        ;
+tmain_46: IF(0,46,tmain_47)
+                                        __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
+tmain_47: IF(0,47,tmain_48)
+                                        __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
+tmain_48: IF(0,48,tmain_49)
+                                        __cs_mutex_lock(&library_lock, 0);
+tmain_49: IF(0,49,tmain_50)
+                                        __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
+tmain_50: IF(0,50,tmain_51)
+                                        __cs_mutex_unlock(&library_lock, 0);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tmain_51: IF(0,51,tmain_52)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_20:
+                                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 52);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_5_2:
+                                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 52);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+tmain_52: IF(0,52,tmain_53)
+                                        __cs_mutex_lock(&library_lock, 0);
+tmain_53: IF(0,53,tmain_54)
+                                        __cs_mutex_unlock(&library_lock, 0);
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 54);
+                                                                        ;
+                                        __cs_local_lfds711_stack_pop_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
+                                                                        {
+                                        goto __exit_loop_17;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (
+                                        !(__cs_local_lfds711_stack_pop_result == 0))
+                                                                {
+                                        goto __exit_loop_17;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
+                                                                        {
+tmain_54: IF(0,54,tmain_55)
+                                        *__cs_param_lfds711_stack_pop_se = 0;
+                                        __cs_retval__lfds711_stack_pop_2 = 0;
+                                        goto __exit__lfds711_stack_pop_2;
+                                                                                ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 55);
+                                                                        ;
+tmain_55: IF(0,55,tmain_56)
+                                        __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
+tmain_56: IF(0,56,tmain_57)
+                                        __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
+tmain_57: IF(0,57,tmain_58)
+                                        __cs_mutex_lock(&library_lock, 0);
+tmain_58: IF(0,58,tmain_59)
+                                        __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
+tmain_59: IF(0,59,tmain_60)
+                                        __cs_mutex_unlock(&library_lock, 0);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tmain_60: IF(0,60,tmain_61)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_21:
+                                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 61);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_5_3:
+                                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 61);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+tmain_61: IF(0,61,tmain_62)
+                                        __cs_mutex_lock(&library_lock, 0);
+tmain_62: IF(0,62,tmain_63)
+                                        __cs_mutex_unlock(&library_lock, 0);
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 63);
+                                                                        ;
+                                        __cs_local_lfds711_stack_pop_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
+                                                                        {
+                                        goto __exit_loop_17;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+                                        if (
+                                        !(__cs_local_lfds711_stack_pop_result == 0))
+                                                                {
+                                        goto __exit_loop_17;
+                                                                        ;
+                                                                }
+                                        ;
+                                                                {
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
+                                                                        {
+tmain_63: IF(0,63,tmain_64)
+                                        *__cs_param_lfds711_stack_pop_se = 0;
+                                        __cs_retval__lfds711_stack_pop_2 = 0;
+                                        goto __exit__lfds711_stack_pop_2;
+                                                                                ;
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 64);
+                                                                        ;
+tmain_64: IF(0,64,tmain_65)
+                                        __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
+tmain_65: IF(0,65,tmain_66)
+                                        __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
+tmain_66: IF(0,66,tmain_67)
+                                        __cs_mutex_lock(&library_lock, 0);
+tmain_67: IF(0,67,tmain_68)
+                                        __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
+tmain_68: IF(0,68,tmain_69)
+                                        __cs_mutex_unlock(&library_lock, 0);
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
+                                                                        {
+                                                                                {
+                                        static int __cs_local_exponential_backoff_loop;
+                                        __cs_local_exponential_backoff_loop = 0;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+                                                                                        {
+                                        ;
+                                                                                                ;
+                                                                                        }
+                                        ;
+                                        __cs_local_exponential_backoff_loop++;
+tmain_69: IF(0,69,tmain_70)
+                                        __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+                                        __exit_loop_22:
+                                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 70);
+                                        ;
+                                                                                        ;
+                                        __exit__exponential_backoff_5_4:
+                                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 70);
+                                        ;
+                                                                                        ;
+                                                                                }
+                                        ;
+tmain_70: IF(0,70,tmain_71)
+                                        __cs_mutex_lock(&library_lock, 0);
+tmain_71: IF(0,71,tmain_72)
+                                        __cs_mutex_unlock(&library_lock, 0);
+                                                                        }
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 72);
+                                                                        ;
+                                        __cs_local_lfds711_stack_pop_i++;
+                                        ;
+                                                                        ;
+                                        static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
+                                        __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
+                                        if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
+                                                                        {
+                                        goto __exit_loop_17;
+                                                                                ;
+                                                                        }
+                                        ;
+                                                                }
+                                        ;
+tmain_72: IF(0,72,tmain_73)
+                                        __CPROVER_assume(
+                                        !(__cs_local_lfds711_stack_pop_result == 0));
+                                        __exit_loop_17:
+                                                                __CPROVER_assume(__cs_pc_cs[0] >= 73);
+                                        ;
+                                                                ;
+tmain_73: IF(0,73,tmain_74)
+                                        *__cs_param_lfds711_stack_pop_se = __cs_local_lfds711_stack_pop_original_top[0];
+                                        __cs_retval__lfds711_stack_pop_2 = __cs_local_lfds711_stack_pop_result;
+                                        goto __exit__lfds711_stack_pop_2;
+                                                                ;
+                                        __exit__lfds711_stack_pop_2:
+                                                                __CPROVER_assume(__cs_pc_cs[0] >= 74);
+                                        ;
                                                                 ;
                                                         }
                                         ;
+                                        __cs_local_is_empty_res = __cs_retval__lfds711_stack_pop_2;
+                                        ;
+                                                        ;
+                                        static _Bool __cs_local_is_empty___cs_tmp_if_cond_23;
+                                        __cs_local_is_empty___cs_tmp_if_cond_23 = __cs_local_is_empty_res != 0;
+                                        if (__cs_local_is_empty___cs_tmp_if_cond_23)
                                                         {
                                                                 {
                                         static struct lfds711_stack_state *__cs_param_lfds711_stack_push_ss;
-tmain_570: IF(0,570,tmain_571)
-                                        __cs_param_lfds711_stack_push_ss = __cs_param_contains_s;
+tmain_74: IF(0,74,tmain_75)
+                                        __cs_param_lfds711_stack_push_ss = __cs_param_is_empty_s;
                                         static struct lfds711_stack_element *__cs_param_lfds711_stack_push_se;
-tmain_571: IF(0,571,tmain_572)
-                                        __cs_param_lfds711_stack_push_se = &(*__cs_local_contains_datas[__cs_local_contains_i]).se;
+tmain_75: IF(0,75,tmain_76)
+                                        __cs_param_lfds711_stack_push_se = __cs_local_is_empty_se;
                                         static char unsigned __cs_local_lfds711_stack_push_result;
                                         static lfds711_pal_uint_t __cs_local_lfds711_stack_push_backoff_iteration;
                                         __cs_local_lfds711_stack_push_backoff_iteration = 0;
@@ -9740,17 +9806,17 @@ tmain_571: IF(0,571,tmain_572)
                                         ;
                                                                         ;
                                         static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_14;
-tmain_572: IF(0,572,tmain_573)
+tmain_76: IF(0,76,tmain_77)
                                         __cs_local_lfds711_stack_push___cs_tmp_if_cond_14 = !(__cs_param_lfds711_stack_push_ss != 0);
                                         if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_14)
                                                                         {
                                         static char *__cs_local_lfds711_stack_push_c;
-tmain_573: IF(0,573,tmain_574)
+tmain_77: IF(0,77,tmain_78)
                                         __cs_local_lfds711_stack_push_c = 0;
-tmain_574: IF(0,574,tmain_575)
+tmain_78: IF(0,78,tmain_79)
                                         *__cs_local_lfds711_stack_push_c = 0;
                                                                         }
-                                        __CPROVER_assume(__cs_pc_cs[0] >= 575);
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 79);
                                                                         ;
                                         ;
                                                                         ;
@@ -9759,51 +9825,51 @@ tmain_574: IF(0,574,tmain_575)
                                         ;
                                                                         ;
                                         static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_15;
-tmain_575: IF(0,575,tmain_576)
+tmain_79: IF(0,79,tmain_80)
                                         __cs_local_lfds711_stack_push___cs_tmp_if_cond_15 = !(__cs_param_lfds711_stack_push_se != 0);
                                         if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
                                                                         {
                                         static char *__cs_local_lfds711_stack_push_c;
-tmain_576: IF(0,576,tmain_577)
+tmain_80: IF(0,80,tmain_81)
                                         __cs_local_lfds711_stack_push_c = 0;
-tmain_577: IF(0,577,tmain_578)
+tmain_81: IF(0,81,tmain_82)
                                         *__cs_local_lfds711_stack_push_c = 0;
                                                                         }
-                                        __CPROVER_assume(__cs_pc_cs[0] >= 578);
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 82);
                                                                         ;
                                         ;
                                                                         ;
                                         ;
                                                                         ;
-tmain_578: IF(0,578,tmain_579)
+tmain_82: IF(0,82,tmain_83)
                                         __cs_local_lfds711_stack_push_new_top[0] = __cs_param_lfds711_stack_push_se;
-tmain_579: IF(0,579,tmain_580)
+tmain_83: IF(0,83,tmain_84)
                                         __cs_local_lfds711_stack_push_original_top[1] = (*__cs_param_lfds711_stack_push_ss).top[1];
-tmain_580: IF(0,580,tmain_581)
+tmain_84: IF(0,84,tmain_85)
                                         __cs_local_lfds711_stack_push_original_top[0] = (*__cs_param_lfds711_stack_push_ss).top[0];
                                         __cs_local_lfds711_stack_push_result = 0;
                                         static int __cs_local_lfds711_stack_push_i;
                                         __cs_local_lfds711_stack_push_i = 0;
                                         if (!(__cs_local_lfds711_stack_push_result == 0))
                                                                         {
-                                        goto __exit_loop_97;
+                                        goto __exit_loop_23;
                                                                                 ;
                                                                         }
                                         ;
                                                                         {
-tmain_581: IF(0,581,tmain_582)
+tmain_85: IF(0,85,tmain_86)
                                         __cs_mutex_lock(&library_lock, 0);
-tmain_582: IF(0,582,tmain_583)
+tmain_86: IF(0,86,tmain_87)
                                         (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tmain_583: IF(0,583,tmain_584)
+tmain_87: IF(0,87,tmain_88)
                                         __cs_mutex_unlock(&library_lock, 0);
-tmain_584: IF(0,584,tmain_585)
+tmain_88: IF(0,88,tmain_89)
                                         __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tmain_585: IF(0,585,tmain_586)
+tmain_89: IF(0,89,tmain_90)
                                         __cs_mutex_lock(&library_lock, 0);
-tmain_586: IF(0,586,tmain_587)
+tmain_90: IF(0,90,tmain_91)
                                         __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tmain_587: IF(0,587,tmain_588)
+tmain_91: IF(0,91,tmain_92)
                                         __cs_mutex_unlock(&library_lock, 0);
                                         ;
                                                                                 ;
@@ -9832,20 +9898,20 @@ tmain_587: IF(0,587,tmain_588)
                                                                                                 }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
-tmain_588: IF(0,588,tmain_589)
+tmain_92: IF(0,92,tmain_93)
                                         __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_98:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 589);
+                                        __exit_loop_24:
+                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 93);
                                         ;
                                                                                                 ;
-                                        __exit__exponential_backoff_6_20:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 589);
+                                        __exit__exponential_backoff_6_0:
+                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 93);
                                         ;
                                                                                                 ;
                                                                                         }
                                         ;
                                                                                 }
-                                        __CPROVER_assume(__cs_pc_cs[0] >= 589);
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 93);
                                                                                 ;
                                         __cs_local_lfds711_stack_push_i++;
                                         ;
@@ -9854,7 +9920,7 @@ tmain_588: IF(0,588,tmain_589)
                                         __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
                                         if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
                                                                                 {
-                                        goto __exit_loop_97;
+                                        goto __exit_loop_23;
                                                                                         ;
                                                                                 }
                                         ;
@@ -9862,24 +9928,24 @@ tmain_588: IF(0,588,tmain_589)
                                         ;
                                         if (!(__cs_local_lfds711_stack_push_result == 0))
                                                                         {
-                                        goto __exit_loop_97;
+                                        goto __exit_loop_23;
                                                                                 ;
                                                                         }
                                         ;
                                                                         {
-tmain_589: IF(0,589,tmain_590)
+tmain_93: IF(0,93,tmain_94)
                                         __cs_mutex_lock(&library_lock, 0);
-tmain_590: IF(0,590,tmain_591)
+tmain_94: IF(0,94,tmain_95)
                                         (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tmain_591: IF(0,591,tmain_592)
+tmain_95: IF(0,95,tmain_96)
                                         __cs_mutex_unlock(&library_lock, 0);
-tmain_592: IF(0,592,tmain_593)
+tmain_96: IF(0,96,tmain_97)
                                         __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tmain_593: IF(0,593,tmain_594)
+tmain_97: IF(0,97,tmain_98)
                                         __cs_mutex_lock(&library_lock, 0);
-tmain_594: IF(0,594,tmain_595)
+tmain_98: IF(0,98,tmain_99)
                                         __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tmain_595: IF(0,595,tmain_596)
+tmain_99: IF(0,99,tmain_100)
                                         __cs_mutex_unlock(&library_lock, 0);
                                         ;
                                                                                 ;
@@ -9955,12 +10021,13 @@ tmain_67: IF(0,67,tmain_68)
                                                                                                 }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
-tmain_596: IF(0,596,tmain_597)
+tmain_100: IF(0,100,tmain_101)
                                         __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_99:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 597);
+                                        __exit_loop_25:
+                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 101);
                                         ;
                                                                                                 ;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                                         __exit__exponential_backoff_7_2:
@@ -9973,6 +10040,10 @@ tmain_596: IF(0,596,tmain_597)
 =======
                                         __exit__exponential_backoff_6_21:
                                                                                                 __CPROVER_assume(__cs_pc_cs[0] >= 597);
+>>>>>>> origin/main
+=======
+                                        __exit__exponential_backoff_6_1:
+                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 101);
 >>>>>>> origin/main
                                         ;
                                                                                                 ;
@@ -10005,7 +10076,11 @@ tpop_0_369: IF(2,369,tpop_0_370)
 >>>>>>> origin/main
 =======
                                                                                 }
+<<<<<<< HEAD
                                         __CPROVER_assume(__cs_pc_cs[0] >= 597);
+>>>>>>> origin/main
+=======
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 101);
 >>>>>>> origin/main
                                                                                 ;
                                         __cs_local_lfds711_stack_push_i++;
@@ -10038,7 +10113,11 @@ tpop_0_369: IF(2,369,tpop_0_370)
                                         __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
                                         if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
                                                                                 {
+<<<<<<< HEAD
                                         goto __exit_loop_97;
+>>>>>>> origin/main
+=======
+                                        goto __exit_loop_23;
 >>>>>>> origin/main
                                                                                         ;
                                                                                 }
@@ -10071,25 +10150,29 @@ tmain_70: IF(0,70,tmain_71)
 =======
                                         if (!(__cs_local_lfds711_stack_push_result == 0))
                                                                         {
+<<<<<<< HEAD
                                         goto __exit_loop_97;
+>>>>>>> origin/main
+=======
+                                        goto __exit_loop_23;
 >>>>>>> origin/main
                                                                                 ;
                                                                         }
                                         ;
                                                                         {
-tmain_597: IF(0,597,tmain_598)
+tmain_101: IF(0,101,tmain_102)
                                         __cs_mutex_lock(&library_lock, 0);
-tmain_598: IF(0,598,tmain_599)
+tmain_102: IF(0,102,tmain_103)
                                         (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tmain_599: IF(0,599,tmain_600)
+tmain_103: IF(0,103,tmain_104)
                                         __cs_mutex_unlock(&library_lock, 0);
-tmain_600: IF(0,600,tmain_601)
+tmain_104: IF(0,104,tmain_105)
                                         __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tmain_601: IF(0,601,tmain_602)
+tmain_105: IF(0,105,tmain_106)
                                         __cs_mutex_lock(&library_lock, 0);
-tmain_602: IF(0,602,tmain_603)
+tmain_106: IF(0,106,tmain_107)
                                         __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tmain_603: IF(0,603,tmain_604)
+tmain_107: IF(0,107,tmain_108)
                                         __cs_mutex_unlock(&library_lock, 0);
                                         ;
                                                                                 ;
@@ -10187,12 +10270,13 @@ tmain_77: IF(0,77,tmain_78)
                                                                                                 }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
-tmain_604: IF(0,604,tmain_605)
+tmain_108: IF(0,108,tmain_109)
                                         __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_100:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 605);
+                                        __exit_loop_26:
+                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 109);
                                         ;
                                                                                                 ;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                                         __exit__exponential_backoff_7_3:
@@ -10205,6 +10289,10 @@ tmain_604: IF(0,604,tmain_605)
 =======
                                         __exit__exponential_backoff_6_22:
                                                                                                 __CPROVER_assume(__cs_pc_cs[0] >= 605);
+>>>>>>> origin/main
+=======
+                                        __exit__exponential_backoff_6_2:
+                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 109);
 >>>>>>> origin/main
                                         ;
                                                                                                 ;
@@ -10237,7 +10325,11 @@ tpop_0_378: IF(2,378,tpop_0_379)
 >>>>>>> origin/main
 =======
                                                                                 }
+<<<<<<< HEAD
                                         __CPROVER_assume(__cs_pc_cs[0] >= 605);
+>>>>>>> origin/main
+=======
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 109);
 >>>>>>> origin/main
                                                                                 ;
                                         __cs_local_lfds711_stack_push_i++;
@@ -10250,6 +10342,7 @@ tpop_0_378: IF(2,378,tpop_0_379)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         goto __exit_loop_16;
 =======
                                         goto __exit_loop_24;
@@ -10259,6 +10352,9 @@ tpop_0_378: IF(2,378,tpop_0_379)
 >>>>>>> origin/main
 =======
                                         goto __exit_loop_97;
+>>>>>>> origin/main
+=======
+                                        goto __exit_loop_23;
 >>>>>>> origin/main
                                                                                         ;
                                                                                 }
@@ -10518,24 +10614,24 @@ tmain_164: IF(0,164,tmain_165)
 =======
                                         if (!(__cs_local_lfds711_stack_push_result == 0))
                                                                         {
-                                        goto __exit_loop_97;
+                                        goto __exit_loop_23;
                                                                                 ;
                                                                         }
                                         ;
                                                                         {
-tmain_605: IF(0,605,tmain_606)
+tmain_109: IF(0,109,tmain_110)
                                         __cs_mutex_lock(&library_lock, 0);
-tmain_606: IF(0,606,tmain_607)
+tmain_110: IF(0,110,tmain_111)
                                         (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tmain_607: IF(0,607,tmain_608)
+tmain_111: IF(0,111,tmain_112)
                                         __cs_mutex_unlock(&library_lock, 0);
-tmain_608: IF(0,608,tmain_609)
+tmain_112: IF(0,112,tmain_113)
                                         __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tmain_609: IF(0,609,tmain_610)
+tmain_113: IF(0,113,tmain_114)
                                         __cs_mutex_lock(&library_lock, 0);
-tmain_610: IF(0,610,tmain_611)
+tmain_114: IF(0,114,tmain_115)
                                         __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tmain_611: IF(0,611,tmain_612)
+tmain_115: IF(0,115,tmain_116)
                                         __cs_mutex_unlock(&library_lock, 0);
 >>>>>>> origin/main
                                         ;
@@ -10687,10 +10783,10 @@ tmain_178: IF(0,178,tmain_179)
                                                                                                 }
                                         ;
                                         __cs_local_exponential_backoff_loop++;
-tmain_612: IF(0,612,tmain_613)
+tmain_116: IF(0,116,tmain_117)
                                         __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
-                                        __exit_loop_101:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 613);
+                                        __exit_loop_27:
+                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 117);
                                         ;
 <<<<<<< HEAD
                                                                 ;
@@ -10705,8 +10801,13 @@ tmain_612: IF(0,612,tmain_613)
 >>>>>>> origin/main
 =======
                                                                                                 ;
+<<<<<<< HEAD
                                         __exit__exponential_backoff_6_23:
                                                                                                 __CPROVER_assume(__cs_pc_cs[0] >= 613);
+>>>>>>> origin/main
+=======
+                                        __exit__exponential_backoff_6_3:
+                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 117);
 >>>>>>> origin/main
                                         ;
                                                                                                 ;
@@ -10731,7 +10832,7 @@ tmain_179: IF(0,179,tmain_180)
 >>>>>>> origin/main
 =======
                                                                                 }
-                                        __CPROVER_assume(__cs_pc_cs[0] >= 613);
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 117);
                                                                                 ;
                                         __cs_local_lfds711_stack_push_i++;
 >>>>>>> origin/main
@@ -10741,7 +10842,7 @@ tmain_179: IF(0,179,tmain_180)
                                         __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
                                         if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
                                                                                 {
-                                        goto __exit_loop_97;
+                                        goto __exit_loop_23;
                                                                                         ;
                                                                                 }
                                         ;
@@ -10781,7 +10882,7 @@ tmain_183: IF(0,183,tmain_184)
                                         if (!(__cs_local_lfds711_stack_push_result == 0))
 >>>>>>> origin/main
                                                                         {
-                                        goto __exit_loop_97;
+                                        goto __exit_loop_23;
                                                                                 ;
                                                                         }
                                         ;
@@ -10917,19 +11018,19 @@ tmain_190: IF(0,190,tmain_191)
 >>>>>>> origin/main
 =======
                                                                         {
-tmain_613: IF(0,613,tmain_614)
+tmain_117: IF(0,117,tmain_118)
                                         __cs_mutex_lock(&library_lock, 0);
-tmain_614: IF(0,614,tmain_615)
+tmain_118: IF(0,118,tmain_119)
                                         (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-tmain_615: IF(0,615,tmain_616)
+tmain_119: IF(0,119,tmain_120)
                                         __cs_mutex_unlock(&library_lock, 0);
-tmain_616: IF(0,616,tmain_617)
+tmain_120: IF(0,120,tmain_121)
                                         __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-tmain_617: IF(0,617,tmain_618)
+tmain_121: IF(0,121,tmain_122)
                                         __cs_mutex_lock(&library_lock, 0);
-tmain_618: IF(0,618,tmain_619)
+tmain_122: IF(0,122,tmain_123)
                                         __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-tmain_619: IF(0,619,tmain_620)
+tmain_123: IF(0,123,tmain_124)
                                         __cs_mutex_unlock(&library_lock, 0);
                                         ;
                                                                                 ;
@@ -11015,15 +11116,20 @@ tmain_198: IF(0,198,tmain_199)
 =======
 =======
                                         __cs_local_exponential_backoff_loop++;
-tmain_620: IF(0,620,tmain_621)
+tmain_124: IF(0,124,tmain_125)
                                         __CPROVER_assume(!(__cs_local_exponential_backoff_loop < 3));
+<<<<<<< HEAD
                                         __exit_loop_102:
                                                                                                 __CPROVER_assume(__cs_pc_cs[0] >= 621);
 >>>>>>> origin/main
+=======
+                                        __exit_loop_28:
+                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 125);
+>>>>>>> origin/main
                                         ;
                                                                                                 ;
-                                        __exit__exponential_backoff_6_24:
-                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 621);
+                                        __exit__exponential_backoff_6_4:
+                                                                                                __CPROVER_assume(__cs_pc_cs[0] >= 125);
                                         ;
 <<<<<<< HEAD
                                                                         ;
@@ -11043,7 +11149,7 @@ tmain_620: IF(0,620,tmain_621)
 >>>>>>> origin/main
                                         ;
                                                                                 }
-                                        __CPROVER_assume(__cs_pc_cs[0] >= 621);
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 125);
                                                                                 ;
                                         __cs_local_lfds711_stack_push_i++;
                                         ;
@@ -11052,28 +11158,31 @@ tmain_620: IF(0,620,tmain_621)
                                         __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
                                         if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
                                                                                 {
-                                        goto __exit_loop_97;
+                                        goto __exit_loop_23;
                                                                                         ;
                                                                                 }
                                         ;
                                                                         }
                                         ;
-tmain_621: IF(0,621,tmain_622)
+tmain_125: IF(0,125,tmain_126)
                                         __CPROVER_assume(!(__cs_local_lfds711_stack_push_result == 0));
-                                        __exit_loop_97:
-                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 622);
+                                        __exit_loop_23:
+                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 126);
                                         ;
                                                                         ;
-                                        goto __exit__lfds711_stack_push_2_4;
+                                        goto __exit__lfds711_stack_push_2;
                                                                         ;
-                                        __exit__lfds711_stack_push_2_4:
-                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 622);
+                                        __exit__lfds711_stack_push_2:
+                                                                        __CPROVER_assume(__cs_pc_cs[0] >= 126);
                                         ;
                                                                         ;
                                                                 }
                                         ;
-                                        __cs_local_contains_i++;
+                                        __cs_retval__is_empty_1 = 0;
+                                        goto __exit__is_empty_1;
+                                                                ;
                                                         }
+<<<<<<< HEAD
                                         ;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -11094,12 +11203,15 @@ tmain_622: IF(0,622,tmain_623)
                                                         __CPROVER_assume(__cs_pc_cs[0] >= 623);
                                         ;
 >>>>>>> origin/main
+=======
+                                        __CPROVER_assume(__cs_pc_cs[0] >= 126);
+>>>>>>> origin/main
                                                         ;
-                                        __cs_retval__contains_1 = __cs_local_contains_found;
-                                        goto __exit__contains_1;
+                                        __cs_retval__is_empty_1 = 1;
+                                        goto __exit__is_empty_1;
                                                         ;
-                                        __exit__contains_1:
-                                                        __CPROVER_assume(__cs_pc_cs[0] >= 623);
+                                        __exit__is_empty_1:
+                                                        __CPROVER_assume(__cs_pc_cs[0] >= 126);
                                         ;
                                                         ;
 <<<<<<< HEAD
@@ -11297,6 +11409,7 @@ tmain_3: IF(0,3,tmain_4)
                                                         ;
                                                 }
                                         ;
+<<<<<<< HEAD
                                         goto __exit_main;
                                                 ;
                                         __exit_main:
@@ -11315,17 +11428,24 @@ tmain_227:
 =======
                                         assert(__cs_retval__contains_1);
 >>>>>>> origin/main
+=======
+                                        assert(__cs_retval__is_empty_1);
+>>>>>>> origin/main
                                         goto __exit_main;
                                                 ;
                                         __exit_main:
-                                                __CPROVER_assume(__cs_pc_cs[0] >= 623);
+                                                __CPROVER_assume(__cs_pc_cs[0] >= 126);
                                         ;
                                                 ;
+<<<<<<< HEAD
 <<<<<<< HEAD
 tmain_4: 
 >>>>>>> origin/main
 =======
 tmain_623: 
+>>>>>>> origin/main
+=======
+tmain_126: 
 >>>>>>> origin/main
                                         __cs_exit(0, 0);
                                         }
@@ -11333,6 +11453,7 @@ tmain_623:
                                         {
 /* round  0 */
 /* main */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -11356,16 +11477,20 @@ tmain_623:
 =======
                                         unsigned __CPROVER_bitvector[10] __cs_tmp_t0_r0;
 >>>>>>> origin/main
+=======
+                                        unsigned __CPROVER_bitvector[7] __cs_tmp_t0_r0;
+>>>>>>> origin/main
                                         __cs_pc_cs[0] = __cs_tmp_t0_r0;
                                         __CPROVER_assume(__cs_pc_cs[0] > 0);
-                                        __CPROVER_assume(__cs_pc_cs[0] <= 623);
+                                        __CPROVER_assume(__cs_pc_cs[0] <= 126);
                                         main_thread();
                                         __cs_pc[0] = __cs_pc_cs[0];
 /* push_0 */
-                                        unsigned __CPROVER_bitvector[7] __cs_tmp_t1_r0;
+                                        unsigned __CPROVER_bitvector[6] __cs_tmp_t1_r0;
                                         if (__cs_active_thread[1])
                                                 {
                                         __cs_pc_cs[1] = __cs_tmp_t1_r0;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                                         __CPROVER_assume(__cs_pc_cs[1] <= 32);
@@ -11376,14 +11501,18 @@ tmain_623:
 =======
                                         __CPROVER_assume(__cs_pc_cs[1] <= 122);
 >>>>>>> origin/main
+=======
+                                        __CPROVER_assume(__cs_pc_cs[1] <= 61);
+>>>>>>> origin/main
                                         push_0(__cs_threadargs[1]);
                                         __cs_pc[1] = __cs_pc_cs[1];
                                                 }
 /* pop_0 */
-                                        unsigned __CPROVER_bitvector[8] __cs_tmp_t2_r0;
+                                        unsigned __CPROVER_bitvector[7] __cs_tmp_t2_r0;
                                         if (__cs_active_thread[2])
                                                 {
                                         __cs_pc_cs[2] = __cs_tmp_t2_r0;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -11429,6 +11558,49 @@ tmain_623:
 >>>>>>> origin/main
 =======
                                         __CPROVER_assume(__cs_pc_cs[0] <= 623);
+>>>>>>> origin/main
+=======
+                                        __CPROVER_assume(__cs_pc_cs[2] <= 78);
+                                        pop_0(__cs_threadargs[2]);
+                                        __cs_pc[2] = __cs_pc_cs[2];
+                                                }
+/* round  1 */
+/* main */
+                                        unsigned __CPROVER_bitvector[7] __cs_tmp_t0_r1;
+                                        if (__cs_active_thread[0])
+                                                {
+                                        __cs_pc_cs[0] = __cs_pc[0] + __cs_tmp_t0_r1;
+                                        __CPROVER_assume(__cs_pc_cs[0] >= __cs_pc[0]);
+                                        __CPROVER_assume(__cs_pc_cs[0] <= 126);
+                                        main_thread();
+                                        __cs_pc[0] = __cs_pc_cs[0];
+                                                }
+/* push_0 */
+                                        unsigned __CPROVER_bitvector[6] __cs_tmp_t1_r1;
+                                        if (__cs_active_thread[1])
+                                                {
+                                        __cs_pc_cs[1] = __cs_pc[1] + __cs_tmp_t1_r1;
+                                        __CPROVER_assume(__cs_pc_cs[1] >= __cs_pc[1]);
+                                        __CPROVER_assume(__cs_pc_cs[1] <= 61);
+                                        push_0(__cs_threadargs[1]);
+                                        __cs_pc[1] = __cs_pc_cs[1];
+                                                }
+/* pop_0 */
+                                        unsigned __CPROVER_bitvector[7] __cs_tmp_t2_r1;
+                                        if (__cs_active_thread[2])
+                                                {
+                                        __cs_pc_cs[2] = __cs_pc[2] + __cs_tmp_t2_r1;
+                                        __CPROVER_assume(__cs_pc_cs[2] >= __cs_pc[2]);
+                                        __CPROVER_assume(__cs_pc_cs[2] <= 78);
+                                        pop_0(__cs_threadargs[2]);
+                                        __cs_pc[2] = __cs_pc_cs[2];
+                                                }
+                                        unsigned __CPROVER_bitvector[7] __cs_tmp_t0_r2;
+                                        if (__cs_active_thread[0] == 1)
+                                                {
+                                        __cs_pc_cs[0] = __cs_pc[0] + __cs_tmp_t0_r2;
+                                        __CPROVER_assume(__cs_pc_cs[0] >= __cs_pc[0]);
+                                        __CPROVER_assume(__cs_pc_cs[0] <= 126);
 >>>>>>> origin/main
                                         main_thread();
                                                 }

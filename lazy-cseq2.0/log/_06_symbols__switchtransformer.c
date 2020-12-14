@@ -19,7 +19,7 @@ list of functions:
    lfds711_misc_internal_backoff_init(param: bs)  call count 2
    lfds711_stack_init_valid_on_current_logical_core(param: ss, user_state)  call count 1
    lfds711_stack_pop(param: ss, se)  call count 4
-   lfds711_stack_push(param: ss, se)  call count 3
+   lfds711_stack_push(param: ss, se)  call count 4
    __CSEQ_atomic_compare_and_exchange(param: mptr, eptr, newval, weak_p, sm, fm)  call count 1
    __atomic_compare_exchange_n(param: mptr, eptr, newval, weak_p, sm, fm)  call count 0
    __CSEQ_atomic_exchange(param: previous, new, memorder)  call count 1
@@ -28,9 +28,9 @@ list of functions:
    init(param: )  call count 1
    insert(param: s, id)  call count 1
    delete(param: s)  call count 1
-   contains(param: s, id)  call count 1
+   contains(param: s, id)  call count 0
    get_size(param: s)  call count 0
-   is_empty(param: s)  call count 0
+   is_empty(param: s)  call count 1
    push(param: __cs_unused)  call count 0
    pop(param: __cs_unused)  call count 0
    main(param: )  call count 0
@@ -367,11 +367,15 @@ Variables:
          ref '[]'  
          deref '[]'  
 <<<<<<< HEAD
+<<<<<<< HEAD
          occurs '[890, 911, 922]'  
 >>>>>>> origin/main
       id168  'se'  
 =======
          occurs '[931, 952, 963, 978]'  
+=======
+         occurs '[929, 947, 957, 972]'  
+>>>>>>> origin/main
       id169  'se'  
 >>>>>>> origin/main
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
@@ -559,13 +563,13 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[926, 932, 947, 953]'  
+         occurs '[924, 930, 942, 948]'  
       id252  'lock'  
          type '__cs_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[928, 934, 949, 955, 962]'  
+         ref '[926, 932, 944, 950, 956]'  
          deref '[]'  
-         occurs '[928, 934, 949, 955, 962]'  
+         occurs '[926, 932, 944, 950, 956]'  
    check
       id0  'ss'  
          type 'void *'  kind 'p'  arity '0'  
@@ -2146,6 +2150,7 @@ Variables:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          occurs '[1084, 1084, 1084, 1087, 1087, 1088, 1088, 1089]'  
    pop
       id269  '__cs_unused'  
@@ -2161,6 +2166,9 @@ Variables:
 >>>>>>> origin/main
 =======
          occurs '[924, 924, 924, 931]'  
+=======
+         occurs '[929]'  
+>>>>>>> origin/main
    pop
       id255  '__cs_unused'  
 >>>>>>> origin/main
@@ -2232,6 +2240,7 @@ Variables:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          occurs '[1099, 1112]'  
       id274  'loop'  
 =======
@@ -2244,12 +2253,16 @@ Variables:
 >>>>>>> origin/main
 =======
          occurs '[943]'  
+=======
+         occurs '[940]'  
+>>>>>>> origin/main
       id258  'loop'  
 >>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2289,13 +2302,17 @@ Variables:
 =======
          occurs '[945, 945, 945]'  
 >>>>>>> origin/main
+=======
+         occurs '[]'  
+>>>>>>> origin/main
    main
       id259  't1'  
          type '__cs_t'  kind 'l'  arity '0'  
 >>>>>>> origin/main
          size '[]'  
-         ref '[974]'  
+         ref '[968]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2412,6 +2429,9 @@ Variables:
       id248  't2'  
 =======
          occurs '[974, 976]'  
+=======
+         occurs '[968, 970]'  
+>>>>>>> origin/main
       id260  't2'  
 >>>>>>> origin/main
          type '__cs_t'  kind 'l'  arity '0'  
@@ -2441,8 +2461,9 @@ Variables:
          type '__cs_t'  kind 'l'  arity '0'  
 >>>>>>> origin/main
          size '[]'  
-         ref '[975]'  
+         ref '[969]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[1156, 1175]'  
@@ -2577,6 +2598,9 @@ Variables:
       id253  't7'  
 =======
          occurs '[975, 977]'  
+=======
+         occurs '[969, 971]'  
+>>>>>>> origin/main
       id265  't7'  
 >>>>>>> origin/main
          type '__cs_t'  kind 'l'  arity '0'  
@@ -3522,7 +3546,7 @@ int is_empty(struct lfds711_stack_state *s)
     res = lfds711_stack_pop(s, &se);
     if (res != 0)
     {
-        fds711_stack_push(s, se);
+        lfds711_stack_push(s, se);
         return 0;
     }
 
@@ -3536,6 +3560,7 @@ function 'push' ----------------------------------:
 void *push(void *__cs_unused)
 {
     int long long unsigned loop;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3560,23 +3585,26 @@ void *push(void *__cs_unused)
 =======
     for (loop = 0; loop < 2; loop++)
 >>>>>>> origin/main
+=======
+    if (ATOMIC_OPERATION)
+>>>>>>> origin/main
     {
-        if (ATOMIC_OPERATION)
-        {
-            __cs_mutex_lock(&lock);
-        }
+        __cs_mutex_lock(&lock);
+    }
 
+<<<<<<< HEAD
         ;
-        insert(ss, loop);
-        if (ATOMIC_OPERATION)
-        {
-            __cs_mutex_unlock(&lock);
-        }
-
-        ;
+>>>>>>> origin/main
+=======
+    ;
+    insert(ss, loop);
+    if (ATOMIC_OPERATION)
+    {
+        __cs_mutex_unlock(&lock);
 >>>>>>> origin/main
     }
 
+    ;
 }
 
 
@@ -3589,6 +3617,7 @@ void *pop(void *__cs_unused)
     int count;
     count = 0;
     int loop;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3690,22 +3719,21 @@ void readFile(char *filename, LIST_NODE_T *listHead)
 =======
     for (loop = 0; loop < 2; loop++)
 >>>>>>> origin/main
+=======
+    if (ATOMIC_OPERATION)
+>>>>>>> origin/main
     {
-        if (ATOMIC_OPERATION)
-        {
-            __cs_mutex_lock(&lock);
-        }
-
-        ;
-        delete(ss);
-        if (ATOMIC_OPERATION)
-        {
-            __cs_mutex_unlock(&lock);
-        }
-
-        ;
+        __cs_mutex_lock(&lock);
     }
 
+    ;
+    delete(ss);
+    if (ATOMIC_OPERATION)
+    {
+        __cs_mutex_unlock(&lock);
+    }
+
+    ;
 }
 
 
@@ -3737,7 +3765,7 @@ int main()
     __cs_create(&t6, 0, pop, 0);
     __cs_join(t1, 0);
     __cs_join(t6, 0);
-    __CSEQ_assert(contains(ss, 0));
+    __CSEQ_assert(is_empty(ss));
     return 0;
 }
 
@@ -3862,6 +3890,7 @@ function: get_size   stmt:     return actual_size;
 
 function: is_empty   stmt:     return 1;
 
+<<<<<<< HEAD
 function: push   stmt:     for (loop = 0; loop < 2; loop++)
 >>>>>>> origin/main
     {
@@ -3906,7 +3935,11 @@ function: pop   stmt:     for (loop = 0; loop < 2; loop++)
 
         ;
     }
+=======
+function: push   stmt:     ;
+>>>>>>> origin/main
 
+function: pop   stmt:     ;
 
 function: main   stmt:     return 0;
 

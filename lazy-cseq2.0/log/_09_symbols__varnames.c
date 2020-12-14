@@ -19,7 +19,7 @@ list of functions:
    lfds711_misc_internal_backoff_init(param: bs)  call count 2
    lfds711_stack_init_valid_on_current_logical_core(param: ss, user_state)  call count 1
    lfds711_stack_pop(param: ss, se)  call count 4
-   lfds711_stack_push(param: ss, se)  call count 3
+   lfds711_stack_push(param: ss, se)  call count 4
    __CSEQ_atomic_compare_and_exchange(param: mptr, eptr, newval, weak_p, sm, fm)  call count 1
    __atomic_compare_exchange_n(param: mptr, eptr, newval, weak_p, sm, fm)  call count 0
    __CSEQ_atomic_exchange(param: previous, new, memorder)  call count 1
@@ -28,9 +28,9 @@ list of functions:
    init(param: )  call count 1
    insert(param: s, id)  call count 1
    delete(param: s)  call count 1
-   contains(param: s, id)  call count 1
+   contains(param: s, id)  call count 0
    get_size(param: s)  call count 0
-   is_empty(param: s)  call count 0
+   is_empty(param: s)  call count 1
    push(param: __cs_unused)  call count 0
    pop(param: __cs_unused)  call count 0
    main(param: )  call count 0
@@ -367,11 +367,15 @@ Variables:
          ref '[]'  
          deref '[]'  
 <<<<<<< HEAD
+<<<<<<< HEAD
          occurs '[939, 962, 974]'  
 >>>>>>> origin/main
       id168  'se'  
 =======
          occurs '[981, 1004, 1016, 1031]'  
+=======
+         occurs '[979, 999, 1010, 1025]'  
+>>>>>>> origin/main
       id169  'se'  
 >>>>>>> origin/main
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
@@ -570,13 +574,13 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[975, 982, 998, 1005]'  
+         occurs '[973, 980, 993, 1000]'  
       id277  'lock'  
          type '__cs_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[978, 985, 1001, 1008, 1015]'  
+         ref '[976, 983, 996, 1003, 1009]'  
          deref '[]'  
-         occurs '[978, 985, 1001, 1008, 1015]'  
+         occurs '[976, 983, 996, 1003, 1009]'  
    check
       id0  'ss'  
          type 'void *'  kind 'p'  arity '0'  
@@ -3315,6 +3319,7 @@ Variables:
          size '[]'  
          ref '[1274]'  
          deref '[]'  
+<<<<<<< HEAD
          occurs '[1254, 1274]'  
       id346  'read'  
 >>>>>>> origin/main
@@ -3337,6 +3342,24 @@ Variables:
          occurs '[1249, 1278]'  
       id337  'curNode'  
          type 'struct LIST_NODE_S *'  kind 'l'  arity '0'  
+=======
+         occurs '[979]'  
+      id280  '__cs_tmp_if_cond_24'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[973, 974]'  
+      id281  '__cs_tmp_if_cond_25'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[980, 981]'  
+   pop
+      id282  '__cs_unused'  
+         type 'void *'  kind 'p'  arity '0'  
+>>>>>>> origin/main
          size '[]'  
          ref '[]'  
          deref '[1272, 1279]'  
@@ -3372,6 +3395,7 @@ Variables:
          deref '[]'  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          occurs '[1254, 1277, 1282, 1288, 1290]'  
       id340  'size'  
 =======
@@ -3380,12 +3404,16 @@ Variables:
 >>>>>>> origin/main
 =======
          occurs '[994]'  
+=======
+         occurs '[991]'  
+>>>>>>> origin/main
       id285  'loop'  
 >>>>>>> origin/main
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          occurs '[1256, 1282, 1290]'  
@@ -3407,12 +3435,15 @@ Variables:
 >>>>>>> origin/main
 =======
          occurs '[996, 996, 996]'  
+=======
+         occurs '[]'  
+>>>>>>> origin/main
       id286  '__cs_tmp_if_cond_26'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[998, 999]'  
+         occurs '[993, 994]'  
       id287  '__cs_tmp_if_cond_27'  
 >>>>>>> origin/main
          type '_Bool'  kind 'l'  arity '0'  
@@ -3465,6 +3496,7 @@ Variables:
          ref '[]'  
          deref '[]'  
 <<<<<<< HEAD
+<<<<<<< HEAD
          occurs '[1290, 1291]'  
    main
       id347  'listHead'  
@@ -3482,13 +3514,16 @@ Variables:
       id348  't1'  
 =======
          occurs '[1005, 1006]'  
+=======
+         occurs '[1000, 1001]'  
+>>>>>>> origin/main
    main
       id288  't1'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[1027]'  
+         ref '[1021]'  
          deref '[]'  
-         occurs '[1027, 1029]'  
+         occurs '[1021, 1023]'  
       id289  't2'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
@@ -3516,9 +3551,9 @@ Variables:
       id293  't6'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[1028]'  
+         ref '[1022]'  
          deref '[]'  
-         occurs '[1028, 1030]'  
+         occurs '[1022, 1024]'  
       id294  't7'  
 >>>>>>> origin/main
          type '__cs_t'  kind 'l'  arity '0'  
@@ -4672,7 +4707,7 @@ int is_empty(struct lfds711_stack_state *s)
     __cs_tmp_if_cond_23 = res != 0;
     if (__cs_tmp_if_cond_23)
     {
-        fds711_stack_push(s, se);
+        lfds711_stack_push(s, se);
         return 0;
     }
 
@@ -4686,26 +4721,15 @@ function 'push' ----------------------------------:
 void *push(void *__cs_unused)
 {
     int long long unsigned loop;
-    for (loop = 0; loop < 2; loop++)
+    ;
+    _Bool __cs_tmp_if_cond_24;
+    __cs_tmp_if_cond_24 = ATOMIC_OPERATION;
+    if (__cs_tmp_if_cond_24)
     {
-        ;
-        _Bool __cs_tmp_if_cond_24;
-        __cs_tmp_if_cond_24 = ATOMIC_OPERATION;
-        if (__cs_tmp_if_cond_24)
-        {
-            __cs_mutex_lock(&lock);
-        }
+        __cs_mutex_lock(&lock);
+    }
 
-        ;
-        insert(ss, loop);
-        ;
-        _Bool __cs_tmp_if_cond_25;
-        __cs_tmp_if_cond_25 = ATOMIC_OPERATION;
-        if (__cs_tmp_if_cond_25)
-        {
-            __cs_mutex_unlock(&lock);
-        }
-
+<<<<<<< HEAD
 <<<<<<< HEAD
         fprintf(stderr, "LIST_FetchNodeByName() reports: %d\n", rCode);
         goto CLEANUP;
@@ -4780,8 +4804,19 @@ void *push(void *__cs_unused)
 =======
         ;
 >>>>>>> origin/main
+=======
+    ;
+    insert(ss, loop);
+    ;
+    _Bool __cs_tmp_if_cond_25;
+    __cs_tmp_if_cond_25 = ATOMIC_OPERATION;
+    if (__cs_tmp_if_cond_25)
+    {
+        __cs_mutex_unlock(&lock);
+>>>>>>> origin/main
     }
 
+    ;
 }
 
 
@@ -4794,6 +4829,7 @@ void *pop(void *__cs_unused)
     int count;
     count = 0;
     int loop;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4842,10 +4878,27 @@ void *pop(void *__cs_unused)
         {
             __cs_mutex_unlock(&lock);
         }
+=======
+    ;
+    _Bool __cs_tmp_if_cond_26;
+    __cs_tmp_if_cond_26 = ATOMIC_OPERATION;
+    if (__cs_tmp_if_cond_26)
+    {
+        __cs_mutex_lock(&lock);
+    }
+>>>>>>> origin/main
 
-        ;
+    ;
+    delete(ss);
+    ;
+    _Bool __cs_tmp_if_cond_27;
+    __cs_tmp_if_cond_27 = ATOMIC_OPERATION;
+    if (__cs_tmp_if_cond_27)
+    {
+        __cs_mutex_unlock(&lock);
     }
 
+    ;
 }
 
 
@@ -4877,7 +4930,7 @@ int main()
     __cs_create(&t6, 0, pop, 0);
     __cs_join(t1, 0);
     __cs_join(t6, 0);
-    __CSEQ_assert(contains(ss, 0));
+    __CSEQ_assert(is_empty(ss));
     return 0;
 }
 
@@ -5004,6 +5057,7 @@ function: get_size   stmt:     return actual_size;
 
 function: is_empty   stmt:     return 1;
 
+<<<<<<< HEAD
 function: push   stmt:     for (loop = 0; loop < 2; loop++)
 >>>>>>> origin/main
     {
@@ -5064,7 +5118,11 @@ function: pop   stmt:     for (loop = 0; loop < 2; loop++)
 
         ;
     }
+=======
+function: push   stmt:     ;
+>>>>>>> origin/main
 
+function: pop   stmt:     ;
 
 function: main   stmt:     return 0;
 

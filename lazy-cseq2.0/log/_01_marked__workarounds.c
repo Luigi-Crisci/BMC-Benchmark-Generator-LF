@@ -4689,7 +4689,7 @@ if (res != 0)
         {
                 
 # 1359 "<previous_module>"
-fds711_stack_push(s, se);
+lfds711_stack_push(s, se);
                 
 # 1360 "<previous_module>"
 return 0;
@@ -4720,6 +4720,7 @@ void *push(void *__cs_unused)
 # 1378 "<previous_module>"
 int long long unsigned loop;
         
+<<<<<<< HEAD
 # 1380 "<previous_module>"
 for (loop = 0; loop < 2; loop++)
 
@@ -4816,21 +4817,30 @@ for (loop = 0; loop < 1; loop++)
 =======
 # 1331 "<previous_module>"
 =======
+=======
+>>>>>>> origin/main
 # 1382 "<previous_module>"
 >>>>>>> origin/main
 if (ATOMIC_OPERATION)
+<<<<<<< HEAD
                 {
                         pthread_mutex_lock(&lock);
                 }
 >>>>>>> origin/main
+=======
+        {
+                pthread_mutex_lock(&lock);
+        }
+>>>>>>> origin/main
 
-                ;
-                
+        ;
+        
 # 1383 "<previous_module>"
 insert(ss, loop);
-                
+        
 # 1384 "<previous_module>"
 if (ATOMIC_OPERATION)
+<<<<<<< HEAD
                 {
 <<<<<<< HEAD
                         
@@ -4858,8 +4868,13 @@ count++;
 
                 ;
 >>>>>>> origin/main
+=======
+        {
+                pthread_mutex_unlock(&lock);
+>>>>>>> origin/main
         }
 
+        ;
 }
 
 
@@ -5149,6 +5164,7 @@ int count; count = 0;
 int loop;
         
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 1342 "<previous_module>"
 for (loop = 0; loop < 5; loop++)
 >>>>>>> origin/main
@@ -5277,20 +5293,36 @@ return;
 =======
 # 1345 "<previous_module>"
 =======
+=======
+# 1395 "<previous_module>"
+if (ATOMIC_OPERATION)
+        {
+                pthread_mutex_lock(&lock);
+        }
+
+        ;
+        
+>>>>>>> origin/main
 # 1396 "<previous_module>"
 >>>>>>> origin/main
 delete(ss);
-                
+        
 # 1397 "<previous_module>"
 if (ATOMIC_OPERATION)
+<<<<<<< HEAD
                 {
                         pthread_mutex_unlock(&lock);
                 }
 
                 ;
 >>>>>>> origin/main
+=======
+        {
+                pthread_mutex_unlock(&lock);
+>>>>>>> origin/main
         }
 
+        ;
 }
 
 
@@ -5366,7 +5398,7 @@ pthread_t t1;
         pthread_t t9;
         pthread_t t10;
         
-# 1408 "<previous_module>"
+# 1413 "<previous_module>"
 pthread_create(&t1, 0, push, 0);
         
 # 1414 "<previous_module>"
@@ -5379,7 +5411,7 @@ pthread_join(t1, 0);
 pthread_join(t6, 0);
         
 # 1425 "<previous_module>"
-assert(contains(ss, 0));
+assert(is_empty(ss));
         
 <<<<<<< HEAD
 <<<<<<< HEAD

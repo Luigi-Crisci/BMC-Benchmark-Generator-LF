@@ -5330,8 +5330,15 @@
 65,../workspace/multithread/generalized.c <- 1421
 66,../workspace/multithread/generalized.c <- 1422
 67,../workspace/multithread/generalized.c <- 1423
+<<<<<<< HEAD
 77,../workspace/multithread/generalized.c <- 1424
 78,../workspace/multithread/generalized.c <- 1425
 79,../workspace/multithread/generalized.c <- 1426
 80,../workspace/multithread/generalized.c <- 1427
+>>>>>>> origin/main
+=======
+78,../workspace/multithread/generalized.c <- 1424
+79,../workspace/multithread/generalized.c <- 1425
+80,../workspace/multithread/generalized.c <- 1426
+81,../workspace/multithread/generalized.c <- 1427
 >>>>>>> origin/main

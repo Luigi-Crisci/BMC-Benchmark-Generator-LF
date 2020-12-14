@@ -4894,7 +4894,7 @@ if (res != 0)
     {
         
 # 880 "<previous_module>"
-fds711_stack_push(s, se);
+lfds711_stack_push(s, se);
         
 # 881 "<previous_module>"
 return 0;
@@ -4926,7 +4926,7 @@ void *push(void *__cs_unused)
 int long long unsigned loop;
     
 # 891 "<previous_module>"
-for (loop = 0; loop < 2; loop++)
+if (ATOMIC_OPERATION)
 
 # 892 "<previous_module>"
     {
@@ -5024,6 +5024,7 @@ for (loop = 0; loop < 1; loop++)
 # 859 "<previous_module>"
 =======
 # 893 "<previous_module>"
+<<<<<<< HEAD
 >>>>>>> origin/main
 if (ATOMIC_OPERATION)
 
@@ -5034,17 +5035,22 @@ if (ATOMIC_OPERATION)
 pthread_mutex_lock(&lock);
         }
 >>>>>>> origin/main
+=======
+pthread_mutex_lock(&lock);
+    }
+>>>>>>> origin/main
 
-        
-# 897 "<previous_module>"
+    
+# 895 "<previous_module>"
 ;
-        
-# 898 "<previous_module>"
+    
+# 896 "<previous_module>"
 insert(ss, loop);
-        
-# 899 "<previous_module>"
+    
+# 897 "<previous_module>"
 if (ATOMIC_OPERATION)
 
+<<<<<<< HEAD
 # 900 "<previous_module>"
         {
             
@@ -5080,11 +5086,22 @@ pthread_mutex_unlock(&lock);
 # 903 "<previous_module>"
 ;
 >>>>>>> origin/main
+=======
+# 898 "<previous_module>"
+    {
+        
+# 899 "<previous_module>"
+pthread_mutex_unlock(&lock);
+>>>>>>> origin/main
     }
 
+    
+# 901 "<previous_module>"
+;
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5200,15 +5217,19 @@ LIST_NODE_T *createList(LIST_NODE_T *listHead)
 =======
 # 906 "<previous_module>"
 >>>>>>> origin/main
+=======
+# 903 "<previous_module>"
+>>>>>>> origin/main
 void *pop(void *__cs_unused)
 >>>>>>> origin/main
 
-# 907 "<previous_module>"
+# 904 "<previous_module>"
 {
     
-# 908 "<previous_module>"
+# 905 "<previous_module>"
 int res;
     
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 # 1100 "<previous_module>"
@@ -5386,12 +5407,16 @@ while ((read = getline(&line, &len, fp)) != (-1))
 =======
 # 909 "<previous_module>"
 >>>>>>> origin/main
+=======
+# 906 "<previous_module>"
+>>>>>>> origin/main
 int count;
     count = 0;
     
-# 910 "<previous_module>"
+# 907 "<previous_module>"
 int loop;
     
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 877 "<previous_module>"
 for (loop = 0; loop < 5; loop++)
@@ -5400,10 +5425,15 @@ for (loop = 0; loop < 5; loop++)
 # 911 "<previous_module>"
 for (loop = 0; loop < 2; loop++)
 >>>>>>> origin/main
+=======
+# 908 "<previous_module>"
+if (ATOMIC_OPERATION)
+>>>>>>> origin/main
 
-# 912 "<previous_module>"
+# 909 "<previous_module>"
     {
         
+<<<<<<< HEAD
 # 913 "<previous_module>"
 if (ATOMIC_OPERATION)
 
@@ -5470,20 +5500,24 @@ if (i == size)
 =======
 # 915 "<previous_module>"
 >>>>>>> origin/main
+=======
+# 910 "<previous_module>"
+>>>>>>> origin/main
 pthread_mutex_lock(&lock);
-        }
+    }
 
-        
-# 917 "<previous_module>"
+    
+# 912 "<previous_module>"
 ;
-        
-# 918 "<previous_module>"
+    
+# 913 "<previous_module>"
 delete(ss);
-        
-# 919 "<previous_module>"
+    
+# 914 "<previous_module>"
 if (ATOMIC_OPERATION)
 >>>>>>> origin/main
 
+<<<<<<< HEAD
 # 920 "<previous_module>"
         {
             
@@ -5549,11 +5583,22 @@ pthread_mutex_unlock(&lock);
 # 923 "<previous_module>"
 ;
 >>>>>>> origin/main
+=======
+# 915 "<previous_module>"
+    {
+        
+# 916 "<previous_module>"
+pthread_mutex_unlock(&lock);
+>>>>>>> origin/main
     }
 
+    
+# 918 "<previous_module>"
+;
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5606,62 +5651,66 @@ readFile("foo.txt", listHead);
 =======
 # 926 "<previous_module>"
 >>>>>>> origin/main
+=======
+# 920 "<previous_module>"
+>>>>>>> origin/main
 int main()
 
-# 927 "<previous_module>"
+# 921 "<previous_module>"
 {
     
-# 928 "<previous_module>"
+# 922 "<previous_module>"
 pthread_mutex_init(&lock, 0);
     
-# 929 "<previous_module>"
+# 923 "<previous_module>"
 ss = init();
     
-# 930 "<previous_module>"
+# 924 "<previous_module>"
 pthread_t t1;
     
-# 931 "<previous_module>"
+# 925 "<previous_module>"
 pthread_t t2;
     
-# 932 "<previous_module>"
+# 926 "<previous_module>"
 pthread_t t3;
     
-# 933 "<previous_module>"
+# 927 "<previous_module>"
 pthread_t t4;
     
-# 934 "<previous_module>"
+# 928 "<previous_module>"
 pthread_t t5;
     
-# 935 "<previous_module>"
+# 929 "<previous_module>"
 pthread_t t6;
     
-# 936 "<previous_module>"
+# 930 "<previous_module>"
 pthread_t t7;
     
-# 937 "<previous_module>"
+# 931 "<previous_module>"
 pthread_t t8;
     
-# 938 "<previous_module>"
+# 932 "<previous_module>"
 pthread_t t9;
     
-# 939 "<previous_module>"
+# 933 "<previous_module>"
 pthread_t t10;
     
-# 940 "<previous_module>"
+# 934 "<previous_module>"
 pthread_create(&t1, 0, push, 0);
     
-# 941 "<previous_module>"
+# 935 "<previous_module>"
 pthread_create(&t6, 0, pop, 0);
     
-# 942 "<previous_module>"
+# 936 "<previous_module>"
 pthread_join(t1, 0);
     
-# 943 "<previous_module>"
+# 937 "<previous_module>"
 pthread_join(t6, 0);
     
-# 944 "<previous_module>"
-assert(contains(ss, 0));
+# 938 "<previous_module>"
+assert(is_empty(ss));
     
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 # 1166 "<previous_module>"
@@ -5671,6 +5720,9 @@ assert(contains(ss, 0));
 >>>>>>> origin/main
 =======
 # 945 "<previous_module>"
+>>>>>>> origin/main
+=======
+# 939 "<previous_module>"
 >>>>>>> origin/main
 return 0;
 }

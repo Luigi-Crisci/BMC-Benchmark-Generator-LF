@@ -1,5 +1,7 @@
 {
 	"files.associations": {
 		"atomic": "cpp"
-	}
+	},
+	"python.linting.pylintEnabled": true,
+	"python.linting.enabled": true
 }
