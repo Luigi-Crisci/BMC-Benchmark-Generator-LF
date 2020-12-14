@@ -26,6 +26,7 @@ Python 3 is suggested to execute some scripts.
 Running and tests are executed both in a single command line.
 You just have move across the directories and go to "/lazy-cseq2.0" through the command "cd" and then type:
 > python3 generate_benchmark.py -t 2 -o 2 -p LFDS-LazyCseq-Project/workspace/interface/stack/stack_interface.c -s stack -I ../liblfds.1.1/liblfds711/inc 
+
 Here is the explanation of the parameters:
 - t: is the number of threads
 - o: is the number of operations (insert/delete) for each thread
