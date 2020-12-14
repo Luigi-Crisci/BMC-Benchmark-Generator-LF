@@ -1,16 +1,27 @@
 import subprocess
-from os import  SEEK_SET, getenvb
+from os import SEEK_SET, getenvb
+import logging
+logging.basicConfig(
+   filename='benchmarks/logDir/benchmark.log',
+   level=logging.INFO,
+   format='%(asctime)s.%(msecs)03d %(levelname)s %(module)s - %(funcName)s: %(message)s',
+   datefmt='%H:%M:%S'
+)
+
+
+# TODO: add this dove vuoi venga loggato
+# logging.info()
 
 NUM_ROUNDS = 1
 INSERT_TRACE_NAME = "insert_id="
 DELETE_TRACE_NAME = "delete_s="
 BENCHMARK_DIR = "benchmarks"
 SAFE_TRACE_NAME = "VERIFICATION SUCCESSFUL"
-
+   
 def launch_lazy_cseq(input_file,include_param):
    subprocess.call(["./cseq-feeder.py", "-i", f"{BENCHMARK_DIR}/{input_file}","-I",include_param
    ,"--unwind","5","--cex","--debug", "--rounds", f"{NUM_ROUNDS}"])
-   
+   logging.info()
    
 def generate_stack_state(state_list):
    data_structure = []
@@ -25,6 +36,7 @@ def generate_stack_state(state_list):
 
 
 def generate_queue_state(state_list):
+   logging.info()
    data_structure = []
    for state in state_list:
       if state == "delete":
@@ -59,6 +71,7 @@ def get_data_structure_state(pathname,data_structure_type):
 
 #Function that appends a new assert to "checker.c"
 def generate_assert_condition(data_structure):
+   logging.info()
    if(len(data_structure) == 0):
       return "(is_empty(ss))"
    
@@ -74,6 +87,7 @@ def generate_assert_condition(data_structure):
 
 
 def generate_contains(new_items):
+   logging.info()
    if(len(new_items) == 0):
       return ""
    lines = ""
@@ -115,7 +129,9 @@ def create_assert(data_structure):
 
 
 def create_checker():
-   with open(f"{BENCHMARK_DIR}/checker.c","w+") as checker:
+   logging.info()
+   with open(f"{BENCHMARK_DIR}/checker.c", "w+") as checker:
+      logging.info()
       checker.write("#include <assert.h>\n")
       checker.write("void check(void* ss){\n")
       checker.write("unsigned long int size = get_size(ss);\n")
