@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <assert.h>
-#include "check.c"
+#include "checker.c"
 
 //Using the interface
 #include "../inteface/interface.c"
@@ -24,9 +24,13 @@ void *push()
 	// for (loop = 0; loop < VALUES; loop++)
 	// {
 		LOCK;
-		insert(ss,loop);
+		insert(ss,0);
+		insert(ss,2);
 		UNLOCK;
+<<<<<<< HEAD
 	// }
+=======
+>>>>>>> origin/scorso
 }
 
 void *pop()
@@ -39,7 +43,10 @@ void *pop()
 		LOCK;
 		delete(ss);
 		UNLOCK;
+<<<<<<< HEAD
 	// }
+=======
+>>>>>>> origin/scorso
 }
 
 
@@ -54,8 +61,12 @@ int main()
 	// pthread_create(&t4, NULL, push, NULL);
 	// pthread_create(&t5, NULL, push, NULL);
 	// sleep(1);
+<<<<<<< HEAD
 	pthread_create(&t1, NULL, push, NULL);
 	pthread_create(&t6, NULL, pop, NULL);
+=======
+	// pthread_create(&t6, NULL, pop, NULL);
+>>>>>>> origin/scorso
 	// pthread_create(&t7, NULL, pop, NULL);
 	// pthread_create(&t8, NULL, pop, NULL);
 	// pthread_create(&t9, NULL, pop, NULL);
@@ -65,7 +76,7 @@ int main()
 	// pthread_join(t3, 0);
 	// pthread_join(t4, 0);
 	// pthread_join(t5, 0);
-	pthread_join(t6, 0);
+	// pthread_join(t6, 0);
 	// pthread_join(t7, 0);
 	// pthread_join(t8, 0);
 	// pthread_join(t9, 0);
@@ -75,8 +86,16 @@ int main()
 
 	// assert(contains(ss,0) && contains(ss,1));
 	// int len = get_lenght(ss);
+<<<<<<< HEAD
 	// assert( contains(ss,0) );
 	assert( is_empty(ss) );
 	// assert(0);
+=======
+	// assert_create(ss,size_ss);
+
+	assert(contains(ss,0));
+	// int size_ss = get_size(ss);
+	// assert(is_empty(ss) || (size_ss == 1 && contains(ss,1)) || size_ss == 2);
+>>>>>>> origin/scorso
 	return (EXIT_SUCCESS);
 }

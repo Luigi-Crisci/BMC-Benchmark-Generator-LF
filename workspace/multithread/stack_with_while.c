@@ -3,7 +3,10 @@
 #include <unistd.h>
 #include "../library_barrier.c"
 #include <assert.h>
+#include <fcntl.h>
+#include "checker.c"
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <<<<<<< HEAD
@@ -14,11 +17,16 @@
 =======
 #define VALUES 2
 >>>>>>> origin/main
+=======
+#define VALUES 4
+>>>>>>> origin/scorso
 //Set ATOMIC_OPERATION to make push and pop atomic
 #define ATOMIC_OPERATION 0
 // #define LOCK if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);}
 // #define UNLOCK if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); }
 
+
+int* list;
 struct lfds711_stack_state ss;
 // pthread_mutex_t lock;
 
@@ -73,7 +81,6 @@ void *pop()
 		count++;
 		//printf("%llu\n", temp_td->user_id);
 	}
-
 	// assert(count==VALUES);
 }
 
@@ -82,7 +89,6 @@ int main()
 {
 
 	lfds711_stack_init_valid_on_current_logical_core(&ss, NULL);
-
 	pthread_t t1, t2;
 	// pthread_mutex_init(&lock, NULL);
 	pthread_create(&t1, NULL, push, NULL);
@@ -90,6 +96,9 @@ int main()
 	pthread_join(t1, 0);
 	pthread_join(t2, 0);
 
-	assert(0);
+	//Commented because cseq is unable to parse it
+	// lfds711_stack_cleanup(&ss, NULL);
+	//assert(0);
+	assert_create(list);
 	return (EXIT_SUCCESS);
 }

@@ -2,6 +2,10 @@
 	"files.associations": {
 		"atomic": "cpp"
 	},
+<<<<<<< HEAD
 	"python.linting.pylintEnabled": true,
 	"python.linting.enabled": true
+=======
+	"python.pythonPath": "/usr/bin/python2"
+>>>>>>> origin/scorso
 }

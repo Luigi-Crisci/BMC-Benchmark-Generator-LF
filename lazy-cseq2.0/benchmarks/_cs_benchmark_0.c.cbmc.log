@@ -1,0 +1,610 @@
+CBMC version 5.10 (cbmc-5.10) 64-bit x86_64 linux
+Parsing benchmarks/_cs_benchmark_0.c
+Converting
+Type-checking _cs_benchmark_0
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Running with 8 object bits, 24 offset bits (default)
+Starting Bounded Model Checking
+size of program expression: 2255 steps
+simple slicing removed 75 assignments
+Generated 54 VCC(s), 46 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+19063 variables, 58063 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0709285s
+Building error trace
+Counterexample:
+
+State 91 file benchmarks/_cs_benchmark_0.c line 1496 function main thread 0
+----------------------------------------------------
+  __cs_tmp_t0_r0=1 (01)
+
+State 92 file benchmarks/_cs_benchmark_0.c line 1497 function main thread 0
+----------------------------------------------------
+  __cs_pc_cs[0]=1 (0000001)
+
+State 100 file benchmarks/_cs_benchmark_0.c line 1261 function main_thread thread 0
+----------------------------------------------------
+  __cs_m=&lock (00000100 00000000 00000000 00000000)
+
+State 101 file benchmarks/_cs_benchmark_0.c line 1261 function main_thread thread 0
+----------------------------------------------------
+  __cs_val=0 (00000000 00000000 00000000 00000000)
+
+State 102 file benchmarks/_cs_benchmark_0.c line 112 function __cs_mutex_init thread 0
+----------------------------------------------------
+  lock=-1 (11111111 11111111 11111111 11111111)
+
+State 105 file benchmarks/_cs_benchmark_0.c line 1266 function main_thread thread 0
+----------------------------------------------------
+  __cs_param_lfds711_stack_init_valid_on_current_logical_core_ss=mystack.top (00000011 00000000 00000000 00000000)
+
+State 106 file benchmarks/_cs_benchmark_0.c line 1268 function main_thread thread 0
+----------------------------------------------------
+  __cs_param_lfds711_stack_init_valid_on_current_logical_core_user_state=NULL (00000000 00000000 00000000 00000000)
+
+State 109 file benchmarks/_cs_benchmark_0.c line 1269 function main_thread thread 0
+----------------------------------------------------
+  __cs_m=&library_lock (00000101 00000000 00000000 00000000)
+
+State 110 file benchmarks/_cs_benchmark_0.c line 1269 function main_thread thread 0
+----------------------------------------------------
+  __cs_val=0 (00000000 00000000 00000000 00000000)
+
+State 111 file benchmarks/_cs_benchmark_0.c line 112 function __cs_mutex_init thread 0
+----------------------------------------------------
+  library_lock=-1 (11111111 11111111 11111111 11111111)
+
+State 114 file benchmarks/_cs_benchmark_0.c line 1273 function main_thread thread 0
+----------------------------------------------------
+  __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_3=FALSE (00000000)
+
+State 116 file benchmarks/_cs_benchmark_0.c line 1288 function main_thread thread 0
+----------------------------------------------------
+  __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4=FALSE (00000000)
+
+State 118 file benchmarks/_cs_benchmark_0.c line 1303 function main_thread thread 0
+----------------------------------------------------
+  __cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5=TRUE (00000001)
+
+State 120 file benchmarks/_cs_benchmark_0.c line 1307 function main_thread thread 0
+----------------------------------------------------
+  __cs_local_lfds711_stack_init_valid_on_current_logical_core_c=((char *)NULL) (00000000 00000000 00000000 00000000)
+
+State 121 file benchmarks/_cs_benchmark_0.c line 1308 function main_thread thread 0
+----------------------------------------------------
+  __cs_local_lfds711_stack_init_valid_on_current_logical_core_c$object=0 (00000000)
+
+State 124 file benchmarks/_cs_benchmark_0.c line 1315 function main_thread thread 0
+----------------------------------------------------
+  __cs_mutex_to_lock=&library_lock (00000101 00000000 00000000 00000000)
+
+State 125 file benchmarks/_cs_benchmark_0.c line 1315 function main_thread thread 0
+----------------------------------------------------
+  __cs_thread_index=0 (0)
+
+State 126 file benchmarks/_cs_benchmark_0.c line 129 function __cs_mutex_lock thread 0
+----------------------------------------------------
+  library_lock=1 (00000000 00000000 00000000 00000001)
+
+State 129 file benchmarks/_cs_benchmark_0.c line 130 function __cs_mutex_lock thread 0
+----------------------------------------------------
+  __cs_message="lock acquired" (00000110 00000000 00000000 00000000)
+
+State 133 file benchmarks/_cs_benchmark_0.c line 1316 function main_thread thread 0
+----------------------------------------------------
+  mystack.top[0]=((struct lfds711_stack_element *)NULL) (00000000 00000000 00000000 00000000)
+
+State 134 file benchmarks/_cs_benchmark_0.c line 1317 function main_thread thread 0
+----------------------------------------------------
+  mystack.top[1]=((struct lfds711_stack_element *)NULL) (00000000 00000000 00000000 00000000)
+
+State 135 file benchmarks/_cs_benchmark_0.c line 1318 function main_thread thread 0
+----------------------------------------------------
+  mystack.user_state=NULL (00000000 00000000 00000000 00000000)
+
+State 136 file benchmarks/_cs_benchmark_0.c line 1321 function main_thread thread 0
+----------------------------------------------------
+  __cs_param_lfds711_misc_internal_backoff_init_bs=&mystack.pop_backoff.lock (00000011 00000000 00000000 00010000)
+
+State 137 file benchmarks/_cs_benchmark_0.c line 1325 function main_thread thread 0
+----------------------------------------------------
+  __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1=FALSE (00000000)
+
+State 139 file benchmarks/_cs_benchmark_0.c line 1340 function main_thread thread 0
+----------------------------------------------------
+  __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2=TRUE (00000001)
+
+State 141 file benchmarks/_cs_benchmark_0.c line 1344 function main_thread thread 0
+----------------------------------------------------
+  __cs_local_lfds711_misc_internal_backoff_init_c=((char *)NULL) (00000000 00000000 00000000 00000000)
+
+State 142 file benchmarks/_cs_benchmark_0.c line 1345 function main_thread thread 0
+----------------------------------------------------
+  __cs_local_lfds711_misc_internal_backoff_init_c$object=0 (00000000)
+
+State 143 file benchmarks/_cs_benchmark_0.c line 1352 function main_thread thread 0
+----------------------------------------------------
+  mystack.pop_backoff.lock=0ull (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 144 file benchmarks/_cs_benchmark_0.c line 1353 function main_thread thread 0
+----------------------------------------------------
+  mystack.pop_backoff.backoff_iteration_frequency_counters[0]=0ull (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 145 file benchmarks/_cs_benchmark_0.c line 1354 function main_thread thread 0
+----------------------------------------------------
+  mystack.pop_backoff.backoff_iteration_frequency_counters[1]=0ull (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 146 file benchmarks/_cs_benchmark_0.c line 1355 function main_thread thread 0
+----------------------------------------------------
+  mystack.pop_backoff.metric=1ull (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001)
+
+State 147 file benchmarks/_cs_benchmark_0.c line 1356 function main_thread thread 0
+----------------------------------------------------
+  mystack.pop_backoff.total_operations=0ull (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 149 file benchmarks/_cs_benchmark_0.c line 1367 function main_thread thread 0
+----------------------------------------------------
+  __cs_param_lfds711_misc_internal_backoff_init_bs=&mystack.push_backoff.lock (00000011 00000000 00000000 00111000)
+
+State 150 file benchmarks/_cs_benchmark_0.c line 1371 function main_thread thread 0
+----------------------------------------------------
+  __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1=FALSE (00000000)
+
+State 152 file benchmarks/_cs_benchmark_0.c line 1386 function main_thread thread 0
+----------------------------------------------------
+  __cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2=TRUE (00000001)
+
+State 154 file benchmarks/_cs_benchmark_0.c line 1390 function main_thread thread 0
+----------------------------------------------------
+  __cs_local_lfds711_misc_internal_backoff_init_c=((char *)NULL) (00000000 00000000 00000000 00000000)
+
+State 155 file benchmarks/_cs_benchmark_0.c line 1391 function main_thread thread 0
+----------------------------------------------------
+  __cs_local_lfds711_misc_internal_backoff_init_c$object=0 (00000000)
+
+State 156 file benchmarks/_cs_benchmark_0.c line 1398 function main_thread thread 0
+----------------------------------------------------
+  mystack.push_backoff.lock=0ull (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 157 file benchmarks/_cs_benchmark_0.c line 1399 function main_thread thread 0
+----------------------------------------------------
+  mystack.push_backoff.backoff_iteration_frequency_counters[0]=0ull (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 158 file benchmarks/_cs_benchmark_0.c line 1400 function main_thread thread 0
+----------------------------------------------------
+  mystack.push_backoff.backoff_iteration_frequency_counters[1]=0ull (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 159 file benchmarks/_cs_benchmark_0.c line 1401 function main_thread thread 0
+----------------------------------------------------
+  mystack.push_backoff.metric=1ull (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001)
+
+State 160 file benchmarks/_cs_benchmark_0.c line 1402 function main_thread thread 0
+----------------------------------------------------
+  mystack.push_backoff.total_operations=0ull (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 164 file benchmarks/_cs_benchmark_0.c line 1413 function main_thread thread 0
+----------------------------------------------------
+  __cs_var=&__cs_local_lfds711_misc_force_store_destination (00000111 00000000 00000000 00000000)
+
+State 165 file benchmarks/_cs_benchmark_0.c line 1413 function main_thread thread 0
+----------------------------------------------------
+  __cs_size=8u (00000000 00000000 00000000 00001000)
+
+State 169 file benchmarks/_cs_benchmark_0.c line 74 function __cs_init_scalar thread 0
+----------------------------------------------------
+  malloc_size=8u (00000000 00000000 00000000 00001000)
+
+State 186 file benchmarks/_cs_benchmark_0.c line 74 function __cs_init_scalar thread 0
+----------------------------------------------------
+  __cs_var=&dynamic_object1 (00001000 00000000 00000000 00000000)
+
+State 188 file benchmarks/_cs_benchmark_0.c line 1418 function main_thread thread 0
+----------------------------------------------------
+  __cs_param___atomic_exchange_n_previous=&__cs_local_lfds711_misc_force_store_destination (00000111 00000000 00000000 00000000)
+
+State 189 file benchmarks/_cs_benchmark_0.c line 1420 function main_thread thread 0
+----------------------------------------------------
+  __cs_param___atomic_exchange_n_new=0ull (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 190 file benchmarks/_cs_benchmark_0.c line 1422 function main_thread thread 0
+----------------------------------------------------
+  __cs_param___atomic_exchange_n_memorder=0 (00000000 00000000 00000000 00000000)
+
+State 194 file benchmarks/_cs_benchmark_0.c line 1424 function main_thread thread 0
+----------------------------------------------------
+  __cs_param___CSEQ_atomic_exchange_previous=&__cs_local_lfds711_misc_force_store_destination (00000111 00000000 00000000 00000000)
+
+State 195 file benchmarks/_cs_benchmark_0.c line 1424 function main_thread thread 0
+----------------------------------------------------
+  __cs_param___CSEQ_atomic_exchange_new=0ull (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 196 file benchmarks/_cs_benchmark_0.c line 1424 function main_thread thread 0
+----------------------------------------------------
+  __cs_param___CSEQ_atomic_exchange_memorder=0 (00000000 00000000 00000000 00000000)
+
+State 197 file benchmarks/_cs_benchmark_0.c line 734 function __CSEQ_atomic_exchange thread 0
+----------------------------------------------------
+  __cs_local___CSEQ_atomic_exchange_old=0u (00000000 00000000 00000000 00000000)
+
+State 198 file benchmarks/_cs_benchmark_0.c line 735 function __CSEQ_atomic_exchange thread 0
+----------------------------------------------------
+  __cs_local_lfds711_misc_force_store_destination=0ull (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 203 file benchmarks/_cs_benchmark_0.c line 1424 function main_thread thread 0
+----------------------------------------------------
+  __cs_local___atomic_exchange_n_res=0 (00000000 00000000 00000000 00000000)
+
+State 204 file benchmarks/_cs_benchmark_0.c line 1425 function main_thread thread 0
+----------------------------------------------------
+  __cs_retval____atomic_exchange_n_1=0u (00000000 00000000 00000000 00000000)
+
+State 209 file benchmarks/_cs_benchmark_0.c line 1447 function main_thread thread 0
+----------------------------------------------------
+  __cs_mutex_to_unlock=&library_lock (00000101 00000000 00000000 00000000)
+
+State 210 file benchmarks/_cs_benchmark_0.c line 1447 function main_thread thread 0
+----------------------------------------------------
+  __cs_thread_index=0 (0)
+
+State 211 file benchmarks/_cs_benchmark_0.c line 138 function __cs_mutex_unlock thread 0
+----------------------------------------------------
+  library_lock=-1 (11111111 11111111 11111111 11111111)
+
+State 214 file benchmarks/_cs_benchmark_0.c line 139 function __cs_mutex_unlock thread 0
+----------------------------------------------------
+  __cs_message="lock released" (00001001 00000000 00000000 00000000)
+
+State 219 file benchmarks/_cs_benchmark_0.c line 1456 function main_thread thread 0
+----------------------------------------------------
+  __cs_retval__init_1=mystack.top (00000011 00000000 00000000 00000000)
+
+State 221 file benchmarks/_cs_benchmark_0.c line 1465 function main_thread thread 0
+----------------------------------------------------
+  ss=mystack.top (00000011 00000000 00000000 00000000)
+
+State 224 file benchmarks/_cs_benchmark_0.c line 1469 function main_thread thread 0
+----------------------------------------------------
+  __cs_new_thread_id=&__cs_local_main_t1 (00001010 00000000 00000000 00000000)
+
+State 225 file benchmarks/_cs_benchmark_0.c line 1469 function main_thread thread 0
+----------------------------------------------------
+  __cs_attr=NULL (00000000 00000000 00000000 00000000)
+
+State 226 file benchmarks/_cs_benchmark_0.c line 1469 function main_thread thread 0
+----------------------------------------------------
+  __cs_thread_function=thread1_0 (00001011 00000000 00000000 00000000)
+
+State 227 file benchmarks/_cs_benchmark_0.c line 1469 function main_thread thread 0
+----------------------------------------------------
+  __cs_arg=NULL (00000000 00000000 00000000 00000000)
+
+State 228 file benchmarks/_cs_benchmark_0.c line 1469 function main_thread thread 0
+----------------------------------------------------
+  __cs_threadID=1 (00000000 00000000 00000000 00000001)
+
+State 230 file benchmarks/_cs_benchmark_0.c line 88 function __cs_create thread 0
+----------------------------------------------------
+  __cs_local_main_t1=1 (00000000 00000000 00000000 00000001)
+
+State 231 file benchmarks/_cs_benchmark_0.c line 89 function __cs_create thread 0
+----------------------------------------------------
+  __cs_active_thread[1]=1 (1)
+
+State 232 file benchmarks/_cs_benchmark_0.c line 90 function __cs_create thread 0
+----------------------------------------------------
+  __cs_threadargs[1]=NULL (00000000 00000000 00000000 00000000)
+
+State 235 file benchmarks/_cs_benchmark_0.c line 91 function __cs_create thread 0
+----------------------------------------------------
+  __cs_message="thread spawned" (00001100 00000000 00000000 00000000)
+
+State 243 file benchmarks/_cs_benchmark_0.c line 1490 function main_thread thread 0
+----------------------------------------------------
+  __cs_value_ptr=NULL (00000000 00000000 00000000 00000000)
+
+State 244 file benchmarks/_cs_benchmark_0.c line 1490 function main_thread thread 0
+----------------------------------------------------
+  __cs_thread_index=0u (00000000 00000000 00000000 00000000)
+
+State 245 file benchmarks/_cs_benchmark_0.c line 102 function __cs_exit thread 0
+----------------------------------------------------
+  __cs_thread_joinargs[0]=NULL (00000000 00000000 00000000 00000000)
+
+State 250 file benchmarks/_cs_benchmark_0.c line 1501 function main thread 0
+----------------------------------------------------
+  __cs_pc[0]=1 (000001)
+
+State 251 file benchmarks/_cs_benchmark_0.c line 1503 function main thread 0
+----------------------------------------------------
+  __cs_tmp_t1_r0=61 (111101)
+
+State 253 file benchmarks/_cs_benchmark_0.c line 1506 function main thread 0
+----------------------------------------------------
+  __cs_pc_cs[1]=61 (0111101)
+
+State 257 file benchmarks/_cs_benchmark_0.c line 1508 function main thread 0
+----------------------------------------------------
+  __cs_param_thread1___cs_unused=NULL (00000000 00000000 00000000 00000000)
+
+State 260 file benchmarks/_cs_benchmark_0.c line 755 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_local_thread1___cs_tmp_if_cond_25=TRUE (00000001)
+
+State 265 file benchmarks/_cs_benchmark_0.c line 759 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_mutex_to_lock=&lock (00000100 00000000 00000000 00000000)
+
+State 266 file benchmarks/_cs_benchmark_0.c line 759 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_thread_index=1 (1)
+
+State 270 file benchmarks/_cs_benchmark_0.c line 129 function __cs_mutex_lock thread 0
+----------------------------------------------------
+  lock=2 (00000000 00000000 00000000 00000010)
+
+State 273 file benchmarks/_cs_benchmark_0.c line 130 function __cs_mutex_lock thread 0
+----------------------------------------------------
+  __cs_message="lock acquired" (00000110 00000000 00000000 00000000)
+
+State 279 file benchmarks/_cs_benchmark_0.c line 768 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_param_insert_s=mystack.top (00000011 00000000 00000000 00000000)
+
+State 280 file benchmarks/_cs_benchmark_0.c line 770 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_param_insert_id=0ull (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 285 file benchmarks/_cs_benchmark_0.c line 773 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_size=24u (00000000 00000000 00000000 00011000)
+
+State 286 file benchmarks/_cs_benchmark_0.c line 65 function __cs_safe_malloc thread 0
+----------------------------------------------------
+  __cs_ptr=NULL (00000000 00000000 00000000 00000000)
+
+State 289 file benchmarks/_cs_benchmark_0.c line 65 function __cs_safe_malloc thread 0
+----------------------------------------------------
+  malloc_size=24u (00000000 00000000 00000000 00011000)
+
+State 306 file benchmarks/_cs_benchmark_0.c line 65 function __cs_safe_malloc thread 0
+----------------------------------------------------
+  __cs_ptr=&dynamic_object2.se.next (00000010 00000000 00000000 00000000)
+
+State 310 file benchmarks/_cs_benchmark_0.c line 773 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_local_insert_td=&dynamic_object2.se.next (00000010 00000000 00000000 00000000)
+
+State 312 file benchmarks/_cs_benchmark_0.c line 775 function thread1_0 thread 0
+----------------------------------------------------
+  dynamic_object2.user_id=0ull (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 314 file benchmarks/_cs_benchmark_0.c line 777 function thread1_0 thread 0
+----------------------------------------------------
+  dynamic_object2.se.value=&dynamic_object2.se.next (00000010 00000000 00000000 00000000)
+
+State 316 file benchmarks/_cs_benchmark_0.c line 781 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_param_lfds711_stack_push_ss=mystack.top (00000011 00000000 00000000 00000000)
+
+State 318 file benchmarks/_cs_benchmark_0.c line 784 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_param_lfds711_stack_push_se=&dynamic_object2.se.next (00000010 00000000 00000000 00000000)
+
+State 319 file benchmarks/_cs_benchmark_0.c line 787 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_local_lfds711_stack_push_backoff_iteration=0ull (00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000)
+
+State 321 file benchmarks/_cs_benchmark_0.c line 794 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_local_lfds711_stack_push___cs_tmp_if_cond_14=FALSE (00000000)
+
+State 325 file benchmarks/_cs_benchmark_0.c line 813 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_local_lfds711_stack_push___cs_tmp_if_cond_15=FALSE (00000000)
+
+State 329 file benchmarks/_cs_benchmark_0.c line 829 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_local_lfds711_stack_push_new_top[0]=&dynamic_object2.se.next (00000010 00000000 00000000 00000000)
+
+State 331 file benchmarks/_cs_benchmark_0.c line 831 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_local_lfds711_stack_push_original_top[1]=((struct lfds711_stack_element { struct lfds711_stack_element * volatile next; const void *key; const void *value; } *)NULL) (00000000 00000000 00000000 00000000)
+
+State 333 file benchmarks/_cs_benchmark_0.c line 833 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_local_lfds711_stack_push_original_top[0]=((struct lfds711_stack_element { struct lfds711_stack_element * volatile next; const void *key; const void *value; } *)NULL) (00000000 00000000 00000000 00000000)
+
+State 334 file benchmarks/_cs_benchmark_0.c line 834 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_local_lfds711_stack_push_result=0 (00000000)
+
+State 335 file benchmarks/_cs_benchmark_0.c line 836 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_local_lfds711_stack_push_i=0 (00000000 00000000 00000000 00000000)
+
+State 340 file benchmarks/_cs_benchmark_0.c line 845 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_mutex_to_lock=&library_lock (00000101 00000000 00000000 00000000)
+
+State 341 file benchmarks/_cs_benchmark_0.c line 845 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_thread_index=1 (1)
+
+State 345 file benchmarks/_cs_benchmark_0.c line 129 function __cs_mutex_lock thread 0
+----------------------------------------------------
+  library_lock=2 (00000000 00000000 00000000 00000010)
+
+State 348 file benchmarks/_cs_benchmark_0.c line 130 function __cs_mutex_lock thread 0
+----------------------------------------------------
+  __cs_message="lock acquired" (00000110 00000000 00000000 00000000)
+
+State 353 file benchmarks/_cs_benchmark_0.c line 847 function thread1_0 thread 0
+----------------------------------------------------
+  dynamic_object2.se.next=((struct lfds711_stack_element *)NULL) (00000000 00000000 00000000 00000000)
+
+State 357 file benchmarks/_cs_benchmark_0.c line 849 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_mutex_to_unlock=&library_lock (00000101 00000000 00000000 00000000)
+
+State 358 file benchmarks/_cs_benchmark_0.c line 849 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_thread_index=1 (1)
+
+State 362 file benchmarks/_cs_benchmark_0.c line 138 function __cs_mutex_unlock thread 0
+----------------------------------------------------
+  library_lock=-1 (11111111 11111111 11111111 11111111)
+
+State 365 file benchmarks/_cs_benchmark_0.c line 139 function __cs_mutex_unlock thread 0
+----------------------------------------------------
+  __cs_message="lock released" (00001001 00000000 00000000 00000000)
+
+State 370 file benchmarks/_cs_benchmark_0.c line 851 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_local_lfds711_stack_push_new_top[1]=((struct lfds711_stack_element { struct lfds711_stack_element * volatile next; const void *key; const void *value; } *)NULL) + 12 (00000000 00000000 00000000 00001100)
+
+State 374 file benchmarks/_cs_benchmark_0.c line 853 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_mutex_to_lock=&library_lock (00000101 00000000 00000000 00000000)
+
+State 375 file benchmarks/_cs_benchmark_0.c line 853 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_thread_index=1 (1)
+
+State 379 file benchmarks/_cs_benchmark_0.c line 129 function __cs_mutex_lock thread 0
+----------------------------------------------------
+  library_lock=2 (00000000 00000000 00000000 00000010)
+
+State 382 file benchmarks/_cs_benchmark_0.c line 130 function __cs_mutex_lock thread 0
+----------------------------------------------------
+  __cs_message="lock acquired" (00000110 00000000 00000000 00000000)
+
+State 390 file benchmarks/_cs_benchmark_0.c line 855 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_param___CSEQ_atomic_swap_stack_top_top=mystack.top (00000011 00000000 00000000 00000000)
+
+State 391 file benchmarks/_cs_benchmark_0.c line 855 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_param___CSEQ_atomic_swap_stack_top_oldtop=__cs_local_lfds711_stack_push_original_top (00001101 00000000 00000000 00000000)
+
+State 392 file benchmarks/_cs_benchmark_0.c line 855 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_param___CSEQ_atomic_swap_stack_top_newtop=__cs_local_lfds711_stack_push_new_top (00001110 00000000 00000000 00000000)
+
+State 393 file benchmarks/_cs_benchmark_0.c line 696 function __CSEQ_atomic_swap_stack_top thread 0
+----------------------------------------------------
+  __cs_local___CSEQ_atomic_swap_stack_top___cs_tmp_if_cond_0=TRUE (00000001)
+
+State 395 file benchmarks/_cs_benchmark_0.c line 699 function __CSEQ_atomic_swap_stack_top thread 0
+----------------------------------------------------
+  mystack={ .top={ &dynamic_object2.se.next, ((struct lfds711_stack_element *)NULL) }, .user_state=NULL,
+    .$pad2=0u, .pop_backoff={ .lock=0ull, .backoff_iteration_frequency_counters={ 0ull, 0ull }, .metric=1ull,
+    .total_operations=0ull }, .push_backoff={ .lock=0ull, .backoff_iteration_frequency_counters={ 0ull, 0ull }, .metric=1ull,
+    .total_operations=0ull } } ({ { 00000010 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 }, 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000, { 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, { 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 }, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 }, { 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, { 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 }, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 } })
+
+State 400 file benchmarks/_cs_benchmark_0.c line 855 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_local_lfds711_stack_push_result=1 (00000001)
+
+State 404 file benchmarks/_cs_benchmark_0.c line 857 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_mutex_to_unlock=&library_lock (00000101 00000000 00000000 00000000)
+
+State 405 file benchmarks/_cs_benchmark_0.c line 857 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_thread_index=1 (1)
+
+State 409 file benchmarks/_cs_benchmark_0.c line 138 function __cs_mutex_unlock thread 0
+----------------------------------------------------
+  library_lock=-1 (11111111 11111111 11111111 11111111)
+
+State 412 file benchmarks/_cs_benchmark_0.c line 139 function __cs_mutex_unlock thread 0
+----------------------------------------------------
+  __cs_message="lock released" (00001001 00000000 00000000 00000000)
+
+State 416 file benchmarks/_cs_benchmark_0.c line 861 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_local_lfds711_stack_push___cs_tmp_if_cond_16=FALSE (00000000)
+
+State 419 file benchmarks/_cs_benchmark_0.c line 900 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_local_lfds711_stack_push_i=1 (00000000 00000000 00000000 00000001)
+
+State 420 file benchmarks/_cs_benchmark_0.c line 904 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_local_lfds711_stack_push___cs_tmp_if_cond_17=FALSE (00000000)
+
+State 428 file benchmarks/_cs_benchmark_0.c line 1241 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_local_thread1___cs_tmp_if_cond_26=TRUE (00000001)
+
+State 433 file benchmarks/_cs_benchmark_0.c line 1245 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_mutex_to_unlock=&lock (00000100 00000000 00000000 00000000)
+
+State 434 file benchmarks/_cs_benchmark_0.c line 1245 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_thread_index=1 (1)
+
+State 438 file benchmarks/_cs_benchmark_0.c line 138 function __cs_mutex_unlock thread 0
+----------------------------------------------------
+  lock=-1 (11111111 11111111 11111111 11111111)
+
+State 441 file benchmarks/_cs_benchmark_0.c line 139 function __cs_mutex_unlock thread 0
+----------------------------------------------------
+  __cs_message="lock released" (00001001 00000000 00000000 00000000)
+
+State 449 file benchmarks/_cs_benchmark_0.c line 1256 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_value_ptr=NULL (00000000 00000000 00000000 00000000)
+
+State 450 file benchmarks/_cs_benchmark_0.c line 1256 function thread1_0 thread 0
+----------------------------------------------------
+  __cs_thread_index=1u (00000000 00000000 00000000 00000001)
+
+State 451 file benchmarks/_cs_benchmark_0.c line 102 function __cs_exit thread 0
+----------------------------------------------------
+  __cs_thread_joinargs[1]=NULL (00000000 00000000 00000000 00000000)
+
+State 456 file benchmarks/_cs_benchmark_0.c line 1509 function main thread 0
+----------------------------------------------------
+  __cs_pc[1]=61 (111101)
+
+State 457 file benchmarks/_cs_benchmark_0.c line 1511 function main thread 0
+----------------------------------------------------
+  __cs_tmp_t0_r1=2 (10)
+
+State 459 file benchmarks/_cs_benchmark_0.c line 1514 function main thread 0
+----------------------------------------------------
+  __cs_pc_cs[0]=3 (0000011)
+
+State 468 file benchmarks/_cs_benchmark_0.c line 1471 function main_thread thread 0
+----------------------------------------------------
+  __cs_id=1 (00000000 00000000 00000000 00000001)
+
+State 469 file benchmarks/_cs_benchmark_0.c line 1471 function main_thread thread 0
+----------------------------------------------------
+  __cs_value_ptr=((const void **)NULL) (00000000 00000000 00000000 00000000)
+
+State 471 file benchmarks/_cs_benchmark_0.c line 97 function __cs_join thread 0
+----------------------------------------------------
+  __cs_value_ptr$object=NULL (00000000 00000000 00000000 00000000)
+
+State 475 file benchmarks/_cs_benchmark_0.c line 1475 function main_thread thread 0
+----------------------------------------------------
+  __cs_param_check_ss=mystack.top (00000011 00000000 00000000 00000000)
+
+Violated property:
+  file benchmarks/_cs_benchmark_0.c line 1476 function main_thread
+  assertion 0
+  0 != 0
+
+
+VERIFICATION FAILED

@@ -152,10 +152,6 @@ typedef void BZFILE;
 typedef int va_list;
 typedef int loff_t;
 typedef int _____STOPSTRIPPINGFROMHERE_____;
-void check(void *__cs_param_check_ss)
-{
-__CSEQ_assert(contains(__cs_param_check_ss, 0));
-}
 #pragma warning( push )
 #pragma warning( disable : 4324 )
 #pragma prefast( disable : 28113 28182 28183, "blah" )
@@ -1011,11 +1007,15 @@ return __cs_local_LIST_InsertTailNode_rCode;
 struct lfds711_stack_element se;
 int long long unsigned user_id;
 };
-void *init()
+struct lfds711_stack_state *init()
 {
 lfds711_stack_init_valid_on_current_logical_core(&mystack, 0);
+<<<<<<< HEAD
 return (void *) (&mystack);
 >>>>>>> origin/main
+=======
+return &mystack;
+>>>>>>> origin/scorso
 }
 void insert(struct lfds711_stack_state *__cs_param_insert_s, int long long unsigned __cs_param_insert_id)
 {
@@ -1030,12 +1030,13 @@ int delete(struct lfds711_stack_state *__cs_param_delete_s)
 struct lfds711_stack_element *__cs_local_delete_se;
 struct test_data *__cs_local_delete_temp_td;
 int __cs_local_delete_res;
-__cs_local_delete_res = lfds711_stack_pop(&mystack, &__cs_local_delete_se);
+__cs_local_delete_res = lfds711_stack_pop((struct lfds711_stack_state *) __cs_param_delete_s, &__cs_local_delete_se);
 ;
         _Bool __cs_local_delete___cs_tmp_if_cond_19;
-        __cs_local_delete___cs_tmp_if_cond_19 = __cs_local_delete_res == 0;
+        __cs_local_delete___cs_tmp_if_cond_19 = __cs_local_delete_res != 0;
 if (__cs_local_delete___cs_tmp_if_cond_19)
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 __cs_local_LIST_InsertNodeById_rCode = ENOMEM;
@@ -1047,11 +1048,10 @@ goto CLEANUP;
 =======
 return __cs_local_delete_res;
 >>>>>>> origin/main
+=======
+free((*__cs_local_delete_se).value);
+>>>>>>> origin/scorso
         }
-__cs_local_delete_temp_td = (*__cs_local_delete_se).value;
-int __cs_local_delete_id_popped;
-__cs_local_delete_id_popped = (*__cs_local_delete_temp_td).user_id;
-printf("%llu\n", (*__cs_local_delete_temp_td).user_id);
 return __cs_local_delete_res;
 }
 int contains(struct lfds711_stack_state *__cs_param_contains_s, unsigned long long int __cs_param_contains_id)
@@ -1069,7 +1069,7 @@ __cs_local_contains_dimension = 2;
 struct test_data **__cs_local_contains_datas;
 __cs_local_contains_datas = __cs_safe_malloc((sizeof(struct test_data *)) * __cs_local_contains_max_size);
 struct lfds711_stack_element *__cs_local_contains_se;
-while (__cs_local_contains_actual_size < 2)
+while ((__cs_local_contains_found == 0) && (__cs_local_contains_res != 0))
         {
 __cs_local_contains_res = lfds711_stack_pop(__cs_param_contains_s, &__cs_local_contains_se);
 ;
@@ -1080,6 +1080,7 @@ if (__cs_local_contains___cs_tmp_if_cond_20)
 break;
                 }
 __cs_local_contains_datas[__cs_local_contains_actual_size] = (*__cs_local_contains_se).value;
+printf("%d -- %d\n", (*__cs_local_contains_datas[__cs_local_contains_actual_size]).user_id, __cs_local_contains_actual_size);
 ;
                 _Bool __cs_local_contains___cs_tmp_if_cond_21;
                 __cs_local_contains___cs_tmp_if_cond_21 = (*__cs_local_contains_datas[__cs_local_contains_actual_size]).user_id == __cs_param_contains_id;
@@ -1111,9 +1112,10 @@ __cs_local_get_size_dimension = 2;
 struct test_data **__cs_local_get_size_datas;
 __cs_local_get_size_datas = __cs_safe_malloc((sizeof(struct test_data *)) * __cs_local_get_size_max_size);
 struct lfds711_stack_element *__cs_local_get_size_se;
-while (__cs_local_get_size_actual_size < 2)
+while (__cs_local_get_size_res != 0)
         {
-__cs_local_get_size_res = lfds711_stack_pop(__cs_param_get_size_s, &__cs_local_get_size_se);
+__cs_local_get_size_res = lfds711_stack_pop(&mystack, &__cs_local_get_size_se);
+__cs_local_get_size_datas[__cs_local_get_size_actual_size] = (*__cs_local_get_size_se).value;
 ;
                 _Bool __cs_local_get_size___cs_tmp_if_cond_22;
                 __cs_local_get_size___cs_tmp_if_cond_22 = __cs_local_get_size_res == 0;
@@ -1147,11 +1149,9 @@ return 0;
         }
 return 1;
 }
-int ATOMIC_OPERATION = 0;
-void *ss;
-__cs_mutex_t lock;
-void *push(void *__cs_param_push___cs_unused)
+int dump_structure(struct lfds711_stack_state *__cs_param_dump_structure_s, int __cs_param_dump_structure_size, int *__cs_param_dump_structure_ids)
 {
+<<<<<<< HEAD
 int long long unsigned __cs_local_push_loop;
 ;
         _Bool __cs_local_push___cs_tmp_if_cond_24;
@@ -1232,9 +1232,46 @@ lfds711_stack_push(&ss, &__cs_local_push_td[__cs_local_push_loop].se);
 >>>>>>> origin/main
         }
 ;
+=======
+int __cs_local_dump_structure_res;
+__cs_local_dump_structure_res = 1;
+int __cs_local_dump_structure_data_structure_size;
+__cs_local_dump_structure_data_structure_size = 0;
+struct test_data *__cs_local_dump_structure_data;
+struct lfds711_stack_element *__cs_local_dump_structure_se;
+while (__cs_local_dump_structure_res != 0)
+        {
+__cs_local_dump_structure_res = lfds711_stack_pop(__cs_param_dump_structure_s, &__cs_local_dump_structure_se);
+;
+                _Bool __cs_local_dump_structure___cs_tmp_if_cond_24;
+                __cs_local_dump_structure___cs_tmp_if_cond_24 = __cs_local_dump_structure_res == 0;
+if (__cs_local_dump_structure___cs_tmp_if_cond_24)
+                {
+return __cs_local_dump_structure_data_structure_size;
+                }
+__cs_local_dump_structure_data_structure_size = __cs_local_dump_structure_data_structure_size + 1;
+__cs_local_dump_structure_data = (*__cs_local_dump_structure_se).value;
+unsigned long long int __cs_local_dump_structure_id_found;
+__cs_local_dump_structure_id_found = (*__cs_local_dump_structure_data).user_id;
+__cs_param_dump_structure_ids[(*__cs_local_dump_structure_data).user_id] = 1;
+free(__cs_local_dump_structure_data);
+        }
+return __cs_local_dump_structure_data_structure_size;
+>>>>>>> origin/scorso
 }
-void *pop(void *__cs_param_pop___cs_unused)
+void check(struct lfds711_stack_state *__cs_param_check_ss)
 {
+int __cs_local_check_ids[1];
+int __cs_local_check_size;
+__cs_local_check_size = dump_structure(__cs_param_check_ss, 1, __cs_local_check_ids);
+__CSEQ_assert((__cs_local_check_size == 1) && (__cs_local_check_ids[0] == 1));
+}
+int ATOMIC_OPERATION = 1;
+struct lfds711_stack_state *ss;
+__cs_mutex_t lock;
+void *thread1(void *__cs_param_thread1___cs_unused)
+{
+<<<<<<< HEAD
 int __cs_local_pop_res;
 int __cs_local_pop_count;
 __cs_local_pop_count = 0;
@@ -1282,14 +1319,27 @@ if (__cs_local_pop___cs_tmp_if_cond_26)
 =======
         {
 >>>>>>> origin/main
+=======
+;
+        _Bool __cs_local_thread1___cs_tmp_if_cond_25;
+        __cs_local_thread1___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
+if (__cs_local_thread1___cs_tmp_if_cond_25)
+        {
+>>>>>>> origin/scorso
 __cs_mutex_lock(&lock);
         }
 ;
-delete(ss);
+insert(ss, 0);
 ;
+<<<<<<< HEAD
         _Bool __cs_local_pop___cs_tmp_if_cond_27;
         __cs_local_pop___cs_tmp_if_cond_27 = ATOMIC_OPERATION;
 if (__cs_local_pop___cs_tmp_if_cond_27)
+=======
+        _Bool __cs_local_thread1___cs_tmp_if_cond_26;
+        __cs_local_thread1___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
+if (__cs_local_thread1___cs_tmp_if_cond_26)
+>>>>>>> origin/scorso
         {
 __cs_mutex_unlock(&lock);
         }
@@ -1300,6 +1350,7 @@ int main()
 __cs_mutex_init(&lock, 0);
 ss = init();
 __cs_t __cs_local_main_t1;
+<<<<<<< HEAD
 __cs_t __cs_local_main_t2;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1321,5 +1372,10 @@ __cs_create(&__cs_local_main_t6, 0, pop, 0);
 __cs_join(__cs_local_main_t1, 0);
 __cs_join(__cs_local_main_t6, 0);
 __CSEQ_assert(is_empty(ss));
+=======
+__cs_create(&__cs_local_main_t1, 0, thread1, 0);
+__cs_join(__cs_local_main_t1, 0);
+check(ss);
+>>>>>>> origin/scorso
 return 0;
 }

@@ -4,15 +4,21 @@
 # 1 "<stdin>"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 1 "/home/giuseppedp/tacs/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/stdio.h" 1
 # 1 "/home/giuseppedp/tacs/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/_fake_defines.h" 1
 # 2 "/home/giuseppedp/tacs/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/stdio.h" 2
 # 1 "/home/giuseppedp/tacs/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/_fake_typedefs.h" 1
 =======
+=======
+
+
+>>>>>>> origin/scorso
 # 1 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/stdio.h" 1
 # 1 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/_fake_defines.h" 1
 # 2 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/stdio.h" 2
 # 1 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/_fake_typedefs.h" 1
+<<<<<<< HEAD
 >>>>>>> origin/main
 =======
 # 1 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/stdio.h" 1
@@ -20,6 +26,8 @@
 # 2 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/stdio.h" 2
 # 1 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/_fake_typedefs.h" 1
 >>>>>>> origin/main
+=======
+>>>>>>> origin/scorso
 
 
 typedef int _____STARTSTRIPPINGFROMHERE_____;
@@ -196,6 +204,7 @@ typedef int loff_t;
 typedef int _____STOPSTRIPPINGFROMHERE_____;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 2 "/home/giuseppedp/tacs/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/stdio.h" 2
 # 2 "<stdin>" 2
 # 1 "/home/giuseppedp/tacs/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/stdlib.h" 1
@@ -215,20 +224,17 @@ typedef int _____STOPSTRIPPINGFROMHERE_____;
 =======
 # 1 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/unistd.h" 1
 >>>>>>> origin/main
+=======
+# 2 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/stdio.h" 2
+>>>>>>> origin/scorso
 # 4 "<stdin>" 2
-# 1 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/assert.h" 1
+# 1 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/stdlib.h" 1
 # 5 "<stdin>" 2
-# 1 "../workspace/multithread/check.c" 1
-void check(void* ss){
- assert(contains(ss,0));
-}
+# 1 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/unistd.h" 1
 # 6 "<stdin>" 2
-
-
-# 1 "../workspace/multithread/../inteface/interface.c" 1
-# 1 "../workspace/multithread/../inteface/stack/stack_interface.c" 1
-# 1 "../workspace/multithread/../inteface/stack/stack_methods.c" 1
-# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 1
+# 1 "/home/luigi/lazy-cseq-2.0/workspace/inteface/stack/stack_interface.c" 1
+# 1 "/home/luigi/lazy-cseq-2.0/workspace/inteface/stack/stack_methods.c" 1
+# 1 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711.h" 1
 
 
 
@@ -240,18 +246,18 @@ void check(void* ss){
 #pragma prefast( disable : 28113 28182 28183, "blah" )
 
 
-# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_porting_abstraction_layer_compiler.h" 1
-# 13 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_porting_abstraction_layer_operating_system.h" 1
-# 14 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_porting_abstraction_layer_processor.h" 1
-# 210 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_porting_abstraction_layer_processor.h"
+# 1 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_porting_abstraction_layer_compiler.h" 1
+# 13 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_porting_abstraction_layer_operating_system.h" 1
+# 14 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_porting_abstraction_layer_processor.h" 1
+# 210 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_porting_abstraction_layer_processor.h"
   typedef int long long lfds711_pal_int_t;
   typedef int long long unsigned lfds711_pal_uint_t;
-# 15 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 15 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
 
-# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_prng.h" 1
-# 59 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_prng.h"
+# 1 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_prng.h" 1
+# 59 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_prng.h"
 struct lfds711_prng_state
 {
   lfds711_pal_uint_t volatile
@@ -267,9 +273,9 @@ struct lfds711_prng_st_state
 
 void lfds711_prng_init_valid_on_current_logical_core( struct lfds711_prng_state *ps, lfds711_pal_uint_t seed );
 void lfds711_prng_st_init( struct lfds711_prng_st_state *psts, lfds711_pal_uint_t seed );
-# 17 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_misc.h" 1
-# 141 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_misc.h"
+# 17 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_misc.h" 1
+# 141 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_misc.h"
 enum lfds711_misc_cas_strength
 {
 
@@ -362,9 +368,9 @@ static inline void lfds711_misc_force_store()
 
   return;
 }
-# 18 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_btree_addonly_unbalanced.h" 1
-# 9 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_btree_addonly_unbalanced.h"
+# 18 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_btree_addonly_unbalanced.h" 1
+# 9 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_btree_addonly_unbalanced.h"
 enum lfds711_btree_au_absolute_position
 {
   LFDS711_BTREE_AU_ABSOLUTE_POSITION_ROOT,
@@ -477,9 +483,9 @@ void lfds711_btree_au_query( struct lfds711_btree_au_state *baus,
                              enum lfds711_btree_au_query query_type,
                              void *query_input,
                              void *query_output );
-# 19 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_freelist.h" 1
-# 11 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_freelist.h"
+# 19 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_freelist.h" 1
+# 11 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_freelist.h"
 enum lfds711_freelist_query
 {
   LFDS711_FREELIST_QUERY_SINGLETHREADED_GET_COUNT,
@@ -539,9 +545,9 @@ void lfds711_freelist_query( struct lfds711_freelist_state *fs,
                              enum lfds711_freelist_query query_type,
                              void *query_input,
                              void *query_output );
-# 20 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_hash_addonly.h" 1
-# 43 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_hash_addonly.h"
+# 20 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_hash_addonly.h" 1
+# 43 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_hash_addonly.h"
 enum lfds711_hash_a_existing_key
 {
   LFDS711_HASH_A_EXISTING_KEY_OVERWRITE,
@@ -635,9 +641,9 @@ void lfds711_hash_a_query( struct lfds711_hash_a_state *has,
                            enum lfds711_hash_a_query query_type,
                            void *query_input,
                            void *query_output );
-# 21 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_list_addonly_singlylinked_ordered.h" 1
-# 12 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_list_addonly_singlylinked_ordered.h"
+# 21 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_list_addonly_singlylinked_ordered.h" 1
+# 12 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_list_addonly_singlylinked_ordered.h"
 enum lfds711_list_aso_existing_key
 {
   LFDS711_LIST_ASO_EXISTING_KEY_OVERWRITE,
@@ -713,9 +719,9 @@ void lfds711_list_aso_query( struct lfds711_list_aso_state *lasos,
                              enum lfds711_list_aso_query query_type,
                              void *query_input,
                              void *query_output );
-# 22 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_list_addonly_singlylinked_unordered.h" 1
-# 12 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_list_addonly_singlylinked_unordered.h"
+# 22 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_list_addonly_singlylinked_unordered.h" 1
+# 12 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_list_addonly_singlylinked_unordered.h"
 enum lfds711_list_asu_position
 {
   LFDS711_LIST_ASU_POSITION_START,
@@ -794,8 +800,8 @@ void lfds711_list_asu_query( struct lfds711_list_asu_state *lasus,
                              enum lfds711_list_asu_query query_type,
                              void *query_input,
                              void *query_output );
-# 23 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_queue_bounded_manyproducer_manyconsumer.h" 1
+# 23 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_queue_bounded_manyproducer_manyconsumer.h" 1
 
 
 
@@ -861,8 +867,8 @@ void lfds711_queue_bmm_query( struct lfds711_queue_bmm_state *qbmms,
                               enum lfds711_queue_bmm_query query_type,
                               void *query_input,
                               void *query_output );
-# 24 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_queue_bounded_singleproducer_singleconsumer.h" 1
+# 24 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_queue_bounded_singleproducer_singleconsumer.h" 1
 
 
 
@@ -921,9 +927,9 @@ void lfds711_queue_bss_query( struct lfds711_queue_bss_state *qbsss,
                               enum lfds711_queue_bss_query query_type,
                               void *query_input,
                               void *query_output );
-# 25 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_queue_unbounded_manyproducer_manyconsumer.h" 1
-# 9 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_queue_unbounded_manyproducer_manyconsumer.h"
+# 25 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_queue_unbounded_manyproducer_manyconsumer.h" 1
+# 9 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_queue_unbounded_manyproducer_manyconsumer.h"
 enum lfds711_queue_umm_query
 {
   LFDS711_QUEUE_UMM_QUERY_SINGLETHREADED_GET_COUNT,
@@ -977,8 +983,8 @@ void lfds711_queue_umm_query( struct lfds711_queue_umm_state *qumms,
                               enum lfds711_queue_umm_query query_type,
                               void *query_input,
                               void *query_output );
-# 26 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_ringbuffer.h" 1
+# 26 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_ringbuffer.h" 1
 
 
 
@@ -1044,9 +1050,9 @@ void lfds711_ringbuffer_query( struct lfds711_ringbuffer_state *rs,
                                enum lfds711_ringbuffer_query query_type,
                                void *query_input,
                                void *query_output );
-# 27 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
-# 1 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_stack.h" 1
-# 9 "../liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_stack.h"
+# 27 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 1 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_stack.h" 1
+# 9 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711/lfds711_stack.h"
 enum lfds711_stack_query
 {
   LFDS711_STACK_QUERY_SINGLETHREADED_GET_COUNT,
@@ -1095,17 +1101,18 @@ void lfds711_stack_query( struct lfds711_stack_state *ss,
                           enum lfds711_stack_query query_type,
                           void *query_input,
                           void *query_output );
-# 28 "../liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
+# 28 "/home/luigi/lazy-cseq-2.0/liblfds7.1.1/liblfds711/inc/liblfds711.h" 2
 
 
 #pragma warning( pop )
-# 2 "../workspace/multithread/../inteface/stack/stack_methods.c" 2
-# 1 "../workspace/multithread/../inteface/stack/../../../liblfds7.1.1/liblfds711/src/liblfds711_internal.h" 1
+# 2 "/home/luigi/lazy-cseq-2.0/workspace/inteface/stack/stack_methods.c" 2
+# 1 "/home/luigi/lazy-cseq-2.0/workspace/inteface/stack/../../../liblfds7.1.1/liblfds711/src/liblfds711_internal.h" 1
 
-# 1 "../workspace/multithread/../inteface/stack/../../../liblfds7.1.1/liblfds711/src/../inc/liblfds711.h" 1
-# 3 "../workspace/multithread/../inteface/stack/../../../liblfds7.1.1/liblfds711/src/liblfds711_internal.h" 2
-# 101 "../workspace/multithread/../inteface/stack/../../../liblfds7.1.1/liblfds711/src/liblfds711_internal.h"
+# 1 "/home/luigi/lazy-cseq-2.0/workspace/inteface/stack/../../../liblfds7.1.1/liblfds711/src/../inc/liblfds711.h" 1
+# 3 "/home/luigi/lazy-cseq-2.0/workspace/inteface/stack/../../../liblfds7.1.1/liblfds711/src/liblfds711_internal.h" 2
+# 101 "/home/luigi/lazy-cseq-2.0/workspace/inteface/stack/../../../liblfds7.1.1/liblfds711/src/liblfds711_internal.h"
 void lfds711_misc_internal_backoff_init( struct lfds711_misc_backoff_state *bs );
+<<<<<<< HEAD
 <<<<<<< HEAD
 # 3 "../workspace/multithread/../library_barrier.c" 2
 <<<<<<< HEAD
@@ -1121,6 +1128,11 @@ void lfds711_misc_internal_backoff_init( struct lfds711_misc_backoff_state *bs )
 # 1 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/pthread.h" 1
 # 4 "../workspace/multithread/../inteface/stack/stack_methods.c" 2
 >>>>>>> origin/main
+=======
+# 3 "/home/luigi/lazy-cseq-2.0/workspace/inteface/stack/stack_methods.c" 2
+# 1 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/pthread.h" 1
+# 4 "/home/luigi/lazy-cseq-2.0/workspace/inteface/stack/stack_methods.c" 2
+>>>>>>> origin/scorso
 
 pthread_mutex_t library_lock;
 
@@ -1368,8 +1380,8 @@ void lfds711_stack_push(struct lfds711_stack_state *ss,
 
  return;
 }
-# 2 "../workspace/multithread/../inteface/stack/stack_interface.c" 2
-# 1 "../workspace/multithread/../inteface/stack/../../placeholder_library.c" 1
+# 2 "/home/luigi/lazy-cseq-2.0/workspace/inteface/stack/stack_interface.c" 2
+# 1 "/home/luigi/lazy-cseq-2.0/workspace/inteface/stack/../../placeholder_library.c" 1
 
 
 
@@ -1537,9 +1549,9 @@ CLEANUP:
 =======
 >>>>>>> origin/main
 }
-# 3 "../workspace/multithread/../inteface/stack/stack_interface.c" 2
-# 1 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/stdlib.h" 1
-# 4 "../workspace/multithread/../inteface/stack/stack_interface.c" 2
+# 3 "/home/luigi/lazy-cseq-2.0/workspace/inteface/stack/stack_interface.c" 2
+# 1 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/stdlib.h" 1
+# 4 "/home/luigi/lazy-cseq-2.0/workspace/inteface/stack/stack_interface.c" 2
 
 struct lfds711_stack_state mystack;
 struct test_data
@@ -1613,10 +1625,10 @@ CLEANUP:
   user_id;
 };
 
-void *init()
+struct lfds711_stack_state* init()
 {
  lfds711_stack_init_valid_on_current_logical_core(&mystack, 0);
- return (void *)&mystack;
+ return &mystack;
 }
 
 void insert(struct lfds711_stack_state *s, int long long unsigned id)
@@ -1631,15 +1643,10 @@ int delete (struct lfds711_stack_state *s)
 {
  struct lfds711_stack_element *se;
  struct test_data *temp_td;
- int res = lfds711_stack_pop(&mystack, &se);
+ int res = lfds711_stack_pop((struct lfds711_stack_state *)s, &se);
 
-
- if (res == 0)
-  return res;
- temp_td = ( (*se).value );
- int id_popped = temp_td->user_id;
- printf("%llu\n", temp_td->user_id);
-
+ if (res != 0)
+  free(( (*se).value ));
  return res;
 }
 
@@ -1655,14 +1662,8 @@ int contains(struct lfds711_stack_state *s, unsigned long long int id)
  struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
  struct lfds711_stack_element *se;
 
-
- while (actual_size < 2)
+ while (found == 0 && res != 0)
  {
-
-
-
-
-
 
   res = lfds711_stack_pop(s, &se);
   if (res == 0){
@@ -1670,6 +1671,7 @@ int contains(struct lfds711_stack_state *s, unsigned long long int id)
   }
 
   datas[actual_size] = ( (*se).value );
+  printf("%d -- %d\n",datas[actual_size]->user_id,actual_size);
   if (datas[actual_size]->user_id == id)
    found = 1;
 
@@ -1692,16 +1694,10 @@ int get_size(struct lfds711_stack_state *s){
  struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
  struct lfds711_stack_element *se;
 
-
- while (actual_size < 2)
+ while (res != 0)
  {
-
-
-
-
-
-
-  res = lfds711_stack_pop(s, &se);
+  res = lfds711_stack_pop(&mystack, &se);
+  datas[actual_size] = ( (*se).value );
   if (res == 0)
    break;
 
@@ -1731,11 +1727,9 @@ int is_empty(struct lfds711_stack_state *s){
 
  return 1;
 }
-# 1 "../workspace/multithread/../inteface/interface.c" 2
-# 9 "<stdin>" 2
 
 
-
+<<<<<<< HEAD
 <<<<<<< HEAD
 int LIST_Destroy(LIST_NODE_T **IO_head)
 {
@@ -1981,14 +1975,56 @@ int main()
 
  pthread_create(&t1, 0, push, 0);
  pthread_create(&t6, 0, pop, 0);
+=======
 
 
 
+int dump_structure(struct lfds711_stack_state *s, int size, int* ids){
+ int res = 1, data_structure_size = 0;
+ struct test_data* data;
+ struct lfds711_stack_element *se;
 
- pthread_join(t1, 0);
+ while (res != 0)
+ {
+  res = lfds711_stack_pop(s, &se);
+  if (res == 0)
+   return data_structure_size;
+
+  data_structure_size = data_structure_size + 1;
+  data = ( (*se).value );
+  unsigned long long int id_found = data->user_id;
+  ids[data->user_id] = 1;
+  free(data);
+ }
+>>>>>>> origin/scorso
+
+ return data_structure_size;
+}
+# 7 "<stdin>" 2
+# 1 "/home/luigi/lazy-cseq-2.0/lazy-cseq2.0/core/include/assert.h" 1
+# 8 "<stdin>" 2
+# 1 "benchmarks/checker.c" 1
+void check(struct lfds711_stack_state *ss){
+int ids[1];
+int size = dump_structure(ss,1,ids);
+assert((size == 1 && ids[0]==1));
+}
+# 9 "<stdin>" 2
+
+int volatile ATOMIC_OPERATION = 1;
 
 
 
+struct lfds711_stack_state* ss;
+pthread_mutex_t lock;
+
+void *thread1(){
+ if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
+ insert(ss,0);
+ if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
+ }
+
+<<<<<<< HEAD
 <<<<<<< HEAD
  pthread_t t1, t2;
 <<<<<<< HEAD
@@ -2024,5 +2060,17 @@ int main()
 >>>>>>> origin/main
 
 >>>>>>> origin/main
+=======
+int main()
+{
+ pthread_mutex_init(&lock, 0);
+ ss = init();
+
+pthread_t t1;
+pthread_create(&t1, 0, thread1, 0);
+pthread_join(t1, 0);
+
+ check(ss);
+>>>>>>> origin/scorso
  return (0);
 }

@@ -152,10 +152,6 @@ typedef void BZFILE;
 typedef int va_list;
 typedef int loff_t;
 typedef int _____STOPSTRIPPINGFROMHERE_____;
-void check(void *ss)
-{
-__CSEQ_assert(contains(ss, 0));
-}
 #pragma warning( push )
 #pragma warning( disable : 4324 )
 #pragma prefast( disable : 28113 28182 28183, "blah" )
@@ -940,11 +936,15 @@ return rCode;
 struct lfds711_stack_element se;
 int long long unsigned user_id;
 };
-void *init()
+struct lfds711_stack_state *init()
 {
 lfds711_stack_init_valid_on_current_logical_core(&mystack, 0);
+<<<<<<< HEAD
 return (void *) (&mystack);
 >>>>>>> origin/main
+=======
+return &mystack;
+>>>>>>> origin/scorso
 }
 void insert(struct lfds711_stack_state *s, int long long unsigned id)
 {
@@ -1008,16 +1008,17 @@ if (0 == parent)
 struct lfds711_stack_element *se;
 struct test_data *temp_td;
 int res;
+<<<<<<< HEAD
 res = lfds711_stack_pop(&mystack, &se);
 if (res == 0)
 >>>>>>> origin/main
+=======
+res = lfds711_stack_pop((struct lfds711_stack_state *) s, &se);
+if (res != 0)
+>>>>>>> origin/scorso
     {
-return res;
+free((*se).value);
     }
-temp_td = (*se).value;
-int id_popped;
-id_popped = (*temp_td).user_id;
-printf("%llu\n", (*temp_td).user_id);
 return res;
 }
 int contains(struct lfds711_stack_state *s, unsigned long long int id)
@@ -1035,7 +1036,7 @@ dimension = 2;
 struct test_data **datas;
 datas = __cs_safe_malloc((sizeof(struct test_data *)) * max_size);
 struct lfds711_stack_element *se;
-while (actual_size < 2)
+while ((found == 0) && (res != 0))
     {
 res = lfds711_stack_pop(s, &se);
 if (res == 0)
@@ -1043,6 +1044,7 @@ if (res == 0)
 break;
         }
 datas[actual_size] = (*se).value;
+printf("%d -- %d\n", (*datas[actual_size]).user_id, actual_size);
 if ((*datas[actual_size]).user_id == id)
         {
 found = 1;
@@ -1071,9 +1073,10 @@ dimension = 2;
 struct test_data **datas;
 datas = __cs_safe_malloc((sizeof(struct test_data *)) * max_size);
 struct lfds711_stack_element *se;
-while (actual_size < 2)
+while (res != 0)
     {
-res = lfds711_stack_pop(s, &se);
+res = lfds711_stack_pop(&mystack, &se);
+datas[actual_size] = (*se).value;
 if (res == 0)
         {
 break;
@@ -1101,11 +1104,9 @@ return 0;
     }
 return 1;
 }
-int ATOMIC_OPERATION = 0;
-void *ss;
-__cs_mutex_t lock;
-void *push(void *__cs_unused)
+int dump_structure(struct lfds711_stack_state *s, int size, int *ids)
 {
+<<<<<<< HEAD
 int long long unsigned loop;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1152,9 +1153,43 @@ __cs_mutex_unlock(&lock);
 >>>>>>> origin/main
     }
 ;
+=======
+int res;
+res = 1;
+int data_structure_size;
+data_structure_size = 0;
+struct test_data *data;
+struct lfds711_stack_element *se;
+while (res != 0)
+    {
+res = lfds711_stack_pop(s, &se);
+if (res == 0)
+        {
+return data_structure_size;
+        }
+data_structure_size = data_structure_size + 1;
+data = (*se).value;
+unsigned long long int id_found;
+id_found = (*data).user_id;
+ids[(*data).user_id] = 1;
+free(data);
+    }
+return data_structure_size;
+>>>>>>> origin/scorso
 }
-void *pop(void *__cs_unused)
+void check(struct lfds711_stack_state *ss)
 {
+int ids[1];
+int size;
+size = dump_structure(ss, 1, ids);
+__CSEQ_assert((size == 1) && (ids[0] == 1));
+}
+int ATOMIC_OPERATION = 1;
+struct lfds711_stack_state *ss;
+__cs_mutex_t lock;
+void *thread1(void *__cs_unused)
+{
+<<<<<<< HEAD
 int res;
 int count;
 count = 0;
@@ -1245,12 +1280,14 @@ for (loop = 0; loop < 2; loop++)
     {
 =======
 >>>>>>> origin/main
+=======
+>>>>>>> origin/scorso
 if (ATOMIC_OPERATION)
     {
 __cs_mutex_lock(&lock);
     }
 ;
-delete(ss);
+insert(ss, 0);
 if (ATOMIC_OPERATION)
     {
 __cs_mutex_unlock(&lock);
@@ -1262,6 +1299,7 @@ int main()
 __cs_mutex_init(&lock, 0);
 ss = init();
 __cs_t t1;
+<<<<<<< HEAD
 __cs_t t2;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1283,5 +1321,10 @@ __cs_create(&t6, 0, pop, 0);
 __cs_join(t1, 0);
 __cs_join(t6, 0);
 __CSEQ_assert(is_empty(ss));
+=======
+__cs_create(&t1, 0, thread1, 0);
+__cs_join(t1, 0);
+check(ss);
+>>>>>>> origin/scorso
 return 0;
 }

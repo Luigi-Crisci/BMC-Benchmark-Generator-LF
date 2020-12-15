@@ -1,5 +1,7 @@
 
 
+
+
 typedef int _____STARTSTRIPPINGFROMHERE_____;
 typedef int __cs_barrier_t;
 typedef int __cs_barrierattr_t;
@@ -172,11 +174,6 @@ typedef int va_list;
 typedef int loff_t;
 
 typedef int _____STOPSTRIPPINGFROMHERE_____;
-void check(void* ss){
- assert(contains(ss,0));
-}
-
-
 
 
 
@@ -1455,10 +1452,10 @@ CLEANUP:
   user_id;
 };
 
-void *init()
+struct lfds711_stack_state* init()
 {
  lfds711_stack_init_valid_on_current_logical_core(&mystack, 0);
- return (void *)&mystack;
+ return &mystack;
 }
 
 void insert(struct lfds711_stack_state *s, int long long unsigned id)
@@ -1473,15 +1470,10 @@ int delete (struct lfds711_stack_state *s)
 {
  struct lfds711_stack_element *se;
  struct test_data *temp_td;
- int res = lfds711_stack_pop(&mystack, &se);
+ int res = lfds711_stack_pop((struct lfds711_stack_state *)s, &se);
 
-
- if (res == 0)
-  return res;
- temp_td = ( (*se).value );
- int id_popped = temp_td->user_id;
- printf("%llu\n", temp_td->user_id);
-
+ if (res != 0)
+  free(( (*se).value ));
  return res;
 }
 
@@ -1497,14 +1489,8 @@ int contains(struct lfds711_stack_state *s, unsigned long long int id)
  struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
  struct lfds711_stack_element *se;
 
-
- while (actual_size < 2)
+ while (found == 0 && res != 0)
  {
-
-
-
-
-
 
   res = lfds711_stack_pop(s, &se);
   if (res == 0){
@@ -1512,6 +1498,7 @@ int contains(struct lfds711_stack_state *s, unsigned long long int id)
   }
 
   datas[actual_size] = ( (*se).value );
+  printf("%d -- %d\n",datas[actual_size]->user_id,actual_size);
   if (datas[actual_size]->user_id == id)
    found = 1;
 
@@ -1534,16 +1521,10 @@ int get_size(struct lfds711_stack_state *s){
  struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
  struct lfds711_stack_element *se;
 
-
- while (actual_size < 2)
+ while (res != 0)
  {
-
-
-
-
-
-
-  res = lfds711_stack_pop(s, &se);
+  res = lfds711_stack_pop(&mystack, &se);
+  datas[actual_size] = ( (*se).value );
   if (res == 0)
    break;
 
@@ -1576,18 +1557,14 @@ int is_empty(struct lfds711_stack_state *s){
 
 
 
-int volatile ATOMIC_OPERATION = 0;
 
 
+int dump_structure(struct lfds711_stack_state *s, int size, int* ids){
+ int res = 1, data_structure_size = 0;
+ struct test_data* data;
+ struct lfds711_stack_element *se;
 
-void* ss;
-pthread_mutex_t lock;
-
-
-void *push()
-{
- int long long unsigned loop;
-
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1697,14 +1674,43 @@ int main()
 
  pthread_create(&t1, 0, push, 0);
  pthread_create(&t6, 0, pop, 0);
+=======
+ while (res != 0)
+ {
+  res = lfds711_stack_pop(s, &se);
+  if (res == 0)
+   return data_structure_size;
+
+  data_structure_size = data_structure_size + 1;
+  data = ( (*se).value );
+  unsigned long long int id_found = data->user_id;
+  ids[data->user_id] = 1;
+  free(data);
+ }
+>>>>>>> origin/scorso
+
+ return data_structure_size;
+}
+void check(struct lfds711_stack_state *ss){
+int ids[1];
+int size = dump_structure(ss,1,ids);
+assert((size == 1 && ids[0]==1));
+}
+
+int volatile ATOMIC_OPERATION = 1;
 
 
 
+struct lfds711_stack_state* ss;
+pthread_mutex_t lock;
 
- pthread_join(t1, 0);
+void *thread1(){
+ if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
+ insert(ss,0);
+ if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
+ }
 
-
-
+<<<<<<< HEAD
 <<<<<<< HEAD
  pthread_t t1, t2;
 <<<<<<< HEAD
@@ -1741,5 +1747,17 @@ int main()
 >>>>>>> origin/main
 
 >>>>>>> origin/main
+=======
+int main()
+{
+ pthread_mutex_init(&lock, 0);
+ ss = init();
+
+pthread_t t1;
+pthread_create(&t1, 0, thread1, 0);
+pthread_join(t1, 0);
+
+ check(ss);
+>>>>>>> origin/scorso
  return (0);
 }
