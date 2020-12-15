@@ -126,13 +126,6 @@ def create_benchmarks(perm):
 
         generalized.seek(0,SEEK_SET)
     generalized.close()
-
-
-    for i in range(len(string_thread_comb)):
-        filename = f"benchmark_{i}.c"
-        if not analyze_trace.run_benchmark(filename,data_structure_type,include_params):
-            print(f"Error found with {filename} benchmark. Please see checker.c and the related log to find out more")
-            sys.exit(1)
     
         
 if __name__ == "__main__":
