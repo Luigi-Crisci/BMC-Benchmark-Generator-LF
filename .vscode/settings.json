@@ -1,5 +1,6 @@
 {
 	"files.associations": {
 		"atomic": "cpp"
-	}
+	},
+	"python.pythonPath": "/usr/bin/python2"
 }
