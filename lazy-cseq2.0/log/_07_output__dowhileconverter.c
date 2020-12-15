@@ -849,77 +849,6 @@ free((*se).value);
     }
 return res;
 }
-int contains(struct lfds711_stack_state *s, unsigned long long int id)
-{
-int max_size;
-max_size = 2;
-int actual_size;
-actual_size = 0;
-int res;
-res = 1;
-int found;
-found = 0;
-int dimension;
-dimension = 2;
-struct test_data **datas;
-datas = __cs_safe_malloc((sizeof(struct test_data *)) * max_size);
-struct lfds711_stack_element *se;
-while ((found == 0) && (res != 0))
-    {
-res = lfds711_stack_pop(s, &se);
-if (res == 0)
-        {
-break;
-        }
-datas[actual_size] = (*se).value;
-printf("%d -- %d\n", (*datas[actual_size]).user_id, actual_size);
-if ((*datas[actual_size]).user_id == id)
-        {
-found = 1;
-        }
-actual_size = actual_size + 1;
-    }
-int i;
-i = 0;
-while (i < actual_size)
-    {
-lfds711_stack_push(s, &(*datas[i]).se);
-i++;
-    }
-return found;
-}
-int get_size(struct lfds711_stack_state *s)
-{
-int max_size;
-max_size = 2;
-int actual_size;
-actual_size = 0;
-int res;
-res = 1;
-int dimension;
-dimension = 2;
-struct test_data **datas;
-datas = __cs_safe_malloc((sizeof(struct test_data *)) * max_size);
-struct lfds711_stack_element *se;
-while (res != 0)
-    {
-res = lfds711_stack_pop(&mystack, &se);
-datas[actual_size] = (*se).value;
-if (res == 0)
-        {
-break;
-        }
-actual_size = actual_size + 1;
-    }
-int i;
-i = 0;
-while (i < actual_size)
-    {
-lfds711_stack_push(s, &(*datas[i]).se);
-i++;
-    }
-return actual_size;
-}
 int is_empty(struct lfds711_stack_state *s)
 {
 struct lfds711_stack_element *se;
@@ -958,40 +887,15 @@ return data_structure_size;
 }
 void check(struct lfds711_stack_state *ss)
 {
-int ids[3];
+int ids[0];
 int size;
-size = dump_structure(ss, 3, ids);
-__CSEQ_assert(((((size == 2) && (ids[0] == 1)) && (ids[2] == 1)) || (((size == 2) && (ids[1] == 1)) && (ids[2] == 1))) || ((((size == 3) && (ids[0] == 1)) && (ids[1] == 1)) && (ids[2] == 1)));
+size = dump_structure(ss, 0, ids);
+__CSEQ_assert(is_empty(ss));
 }
 int ATOMIC_OPERATION = 0;
 struct lfds711_stack_state *ss;
 __cs_mutex_t lock;
 void *thread1(void *__cs_unused)
-{
-if (ATOMIC_OPERATION)
-    {
-__cs_mutex_lock(&lock);
-    }
-;
-insert(ss, 0);
-if (ATOMIC_OPERATION)
-    {
-__cs_mutex_unlock(&lock);
-    }
-;
-if (ATOMIC_OPERATION)
-    {
-__cs_mutex_lock(&lock);
-    }
-;
-insert(ss, 1);
-if (ATOMIC_OPERATION)
-    {
-__cs_mutex_unlock(&lock);
-    }
-;
-}
-void *thread2(void *__cs_unused)
 {
 if (ATOMIC_OPERATION)
     {
@@ -1004,28 +908,14 @@ if (ATOMIC_OPERATION)
 __cs_mutex_unlock(&lock);
     }
 ;
-if (ATOMIC_OPERATION)
-    {
-__cs_mutex_lock(&lock);
-    }
-;
-insert(ss, 2);
-if (ATOMIC_OPERATION)
-    {
-__cs_mutex_unlock(&lock);
-    }
-;
 }
 int main()
 {
 __cs_mutex_init(&lock, 0);
 ss = init();
 __cs_t t1;
-__cs_t t2;
 __cs_create(&t1, 0, thread1, 0);
-__cs_create(&t2, 0, thread2, 0);
 __cs_join(t1, 0);
-__cs_join(t2, 0);
 check(ss);
 return 0;
 }

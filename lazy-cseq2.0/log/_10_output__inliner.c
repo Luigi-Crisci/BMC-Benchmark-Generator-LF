@@ -608,201 +608,9 @@ __cs_mutex_t lock;
 void *thread1(void *__cs_param_thread1___cs_unused)
 {
 ;
-static _Bool __cs_local_thread1___cs_tmp_if_cond_25;
-__cs_local_thread1___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
-if (__cs_local_thread1___cs_tmp_if_cond_25)
-    {
-__cs_mutex_lock(&lock);
-    }
-;
-    {
-        static struct lfds711_stack_state * __cs_param_insert_s; __cs_param_insert_s = ss; static int long long unsigned __cs_param_insert_id; __cs_param_insert_id = 0; 
-static struct test_data *__cs_local_insert_td;
-__cs_local_insert_td = __cs_safe_malloc(sizeof(struct test_data));
-(*__cs_local_insert_td).user_id = __cs_param_insert_id;
-(*__cs_local_insert_td).se.value = (void *) ((lfds711_pal_uint_t) __cs_local_insert_td);
-        {
-            static struct lfds711_stack_state * __cs_param_lfds711_stack_push_ss; __cs_param_lfds711_stack_push_ss = (struct lfds711_stack_state *) __cs_param_insert_s; static struct lfds711_stack_element * __cs_param_lfds711_stack_push_se; __cs_param_lfds711_stack_push_se = &(*__cs_local_insert_td).se; 
-static char unsigned __cs_local_lfds711_stack_push_result;
-static lfds711_pal_uint_t __cs_local_lfds711_stack_push_backoff_iteration;
-__cs_local_lfds711_stack_push_backoff_iteration = 0;
-static struct lfds711_stack_element *__cs_local_lfds711_stack_push_new_top[2];
-static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_push_original_top[2];
-;
-static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_14;
-__cs_local_lfds711_stack_push___cs_tmp_if_cond_14 = !(__cs_param_lfds711_stack_push_ss != 0);
-if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_14)
-            {
-static char *__cs_local_lfds711_stack_push_c;
-__cs_local_lfds711_stack_push_c = 0;
-*__cs_local_lfds711_stack_push_c = 0;
-            }
-;
-;
-;
-static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_15;
-__cs_local_lfds711_stack_push___cs_tmp_if_cond_15 = !(__cs_param_lfds711_stack_push_se != 0);
-if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
-            {
-static char *__cs_local_lfds711_stack_push_c;
-__cs_local_lfds711_stack_push_c = 0;
-*__cs_local_lfds711_stack_push_c = 0;
-            }
-;
-;
-__cs_local_lfds711_stack_push_new_top[0] = __cs_param_lfds711_stack_push_se;
-__cs_local_lfds711_stack_push_original_top[1] = (*__cs_param_lfds711_stack_push_ss).top[1];
-__cs_local_lfds711_stack_push_original_top[0] = (*__cs_param_lfds711_stack_push_ss).top[0];
-__cs_local_lfds711_stack_push_result = 0;
-static int __cs_local_lfds711_stack_push_i;
-__cs_local_lfds711_stack_push_i = 0;
-while (__cs_local_lfds711_stack_push_result == 0)
-            {
-__cs_mutex_lock(&library_lock);
-(*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-__cs_mutex_unlock(&library_lock);
-__cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-__cs_mutex_lock(&library_lock);
-__cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-__cs_mutex_unlock(&library_lock);
-;
-static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-__cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                {
-                    {
-static int __cs_local_exponential_backoff_loop;
-for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loop < 3; __cs_local_exponential_backoff_loop++)
-                        {
-;
-                        }
-                                             __exit__exponential_backoff_1: ;  
-                    }
-                }
-__cs_local_lfds711_stack_push_i++;
-;
-static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-__cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                {
-break;
-                }
-            }
-goto __exit__lfds711_stack_push_1;
-                     __exit__lfds711_stack_push_1: ;  
-        }
-             __exit__insert_1: ;  
-    }
-;
-static _Bool __cs_local_thread1___cs_tmp_if_cond_26;
-__cs_local_thread1___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
-if (__cs_local_thread1___cs_tmp_if_cond_26)
-    {
-__cs_mutex_unlock(&lock);
-    }
-;
-;
-static _Bool __cs_local_thread1___cs_tmp_if_cond_27;
-__cs_local_thread1___cs_tmp_if_cond_27 = ATOMIC_OPERATION;
-if (__cs_local_thread1___cs_tmp_if_cond_27)
-    {
-__cs_mutex_lock(&lock);
-    }
-;
-    {
-        static struct lfds711_stack_state * __cs_param_insert_s; __cs_param_insert_s = ss; static int long long unsigned __cs_param_insert_id; __cs_param_insert_id = 1; 
-static struct test_data *__cs_local_insert_td;
-__cs_local_insert_td = __cs_safe_malloc(sizeof(struct test_data));
-(*__cs_local_insert_td).user_id = __cs_param_insert_id;
-(*__cs_local_insert_td).se.value = (void *) ((lfds711_pal_uint_t) __cs_local_insert_td);
-        {
-            static struct lfds711_stack_state * __cs_param_lfds711_stack_push_ss; __cs_param_lfds711_stack_push_ss = (struct lfds711_stack_state *) __cs_param_insert_s; static struct lfds711_stack_element * __cs_param_lfds711_stack_push_se; __cs_param_lfds711_stack_push_se = &(*__cs_local_insert_td).se; 
-static char unsigned __cs_local_lfds711_stack_push_result;
-static lfds711_pal_uint_t __cs_local_lfds711_stack_push_backoff_iteration;
-__cs_local_lfds711_stack_push_backoff_iteration = 0;
-static struct lfds711_stack_element *__cs_local_lfds711_stack_push_new_top[2];
-static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_push_original_top[2];
-;
-static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_14;
-__cs_local_lfds711_stack_push___cs_tmp_if_cond_14 = !(__cs_param_lfds711_stack_push_ss != 0);
-if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_14)
-            {
-static char *__cs_local_lfds711_stack_push_c;
-__cs_local_lfds711_stack_push_c = 0;
-*__cs_local_lfds711_stack_push_c = 0;
-            }
-;
-;
-;
-static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_15;
-__cs_local_lfds711_stack_push___cs_tmp_if_cond_15 = !(__cs_param_lfds711_stack_push_se != 0);
-if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
-            {
-static char *__cs_local_lfds711_stack_push_c;
-__cs_local_lfds711_stack_push_c = 0;
-*__cs_local_lfds711_stack_push_c = 0;
-            }
-;
-;
-__cs_local_lfds711_stack_push_new_top[0] = __cs_param_lfds711_stack_push_se;
-__cs_local_lfds711_stack_push_original_top[1] = (*__cs_param_lfds711_stack_push_ss).top[1];
-__cs_local_lfds711_stack_push_original_top[0] = (*__cs_param_lfds711_stack_push_ss).top[0];
-__cs_local_lfds711_stack_push_result = 0;
-static int __cs_local_lfds711_stack_push_i;
-__cs_local_lfds711_stack_push_i = 0;
-while (__cs_local_lfds711_stack_push_result == 0)
-            {
-__cs_mutex_lock(&library_lock);
-(*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-__cs_mutex_unlock(&library_lock);
-__cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-__cs_mutex_lock(&library_lock);
-__cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-__cs_mutex_unlock(&library_lock);
-;
-static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-__cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                {
-                    {
-static int __cs_local_exponential_backoff_loop;
-for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loop < 3; __cs_local_exponential_backoff_loop++)
-                        {
-;
-                        }
-                                             __exit__exponential_backoff_2: ;  
-                    }
-                }
-__cs_local_lfds711_stack_push_i++;
-;
-static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-__cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                {
-break;
-                }
-            }
-goto __exit__lfds711_stack_push_2;
-                     __exit__lfds711_stack_push_2: ;  
-        }
-             __exit__insert_2: ;  
-    }
-;
-static _Bool __cs_local_thread1___cs_tmp_if_cond_28;
-__cs_local_thread1___cs_tmp_if_cond_28 = ATOMIC_OPERATION;
-if (__cs_local_thread1___cs_tmp_if_cond_28)
-    {
-__cs_mutex_unlock(&lock);
-    }
-;
-    __exit_thread1: ; __cs_exit(0);
-}
-void *thread2(void *__cs_param_thread2___cs_unused)
-{
-;
-static _Bool __cs_local_thread2___cs_tmp_if_cond_29;
-__cs_local_thread2___cs_tmp_if_cond_29 = ATOMIC_OPERATION;
-if (__cs_local_thread2___cs_tmp_if_cond_29)
+static _Bool __cs_local_thread1___cs_tmp_if_cond_22;
+__cs_local_thread1___cs_tmp_if_cond_22 = ATOMIC_OPERATION;
+if (__cs_local_thread1___cs_tmp_if_cond_22)
     {
 __cs_mutex_lock(&lock);
     }
@@ -877,7 +685,7 @@ for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loo
                         {
 ;
                         }
-                                             __exit__exponential_backoff_3: ;  
+                                             __exit__exponential_backoff_1: ;  
                     }
 __cs_mutex_lock(&library_lock);
 __cs_mutex_unlock(&library_lock);
@@ -918,7 +726,7 @@ for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loo
                         {
 ;
                         }
-                                             __exit__exponential_backoff_4: ;  
+                                             __exit__exponential_backoff_2: ;  
                     }
 __cs_mutex_lock(&library_lock);
 __cs_mutex_unlock(&library_lock);
@@ -949,108 +757,14 @@ __cs_retval__delete_1 = __cs_local_delete_res; goto __exit__delete_1;
     }
 __cs_retval__delete_1;
 ;
-static _Bool __cs_local_thread2___cs_tmp_if_cond_30;
-__cs_local_thread2___cs_tmp_if_cond_30 = ATOMIC_OPERATION;
-if (__cs_local_thread2___cs_tmp_if_cond_30)
+static _Bool __cs_local_thread1___cs_tmp_if_cond_23;
+__cs_local_thread1___cs_tmp_if_cond_23 = ATOMIC_OPERATION;
+if (__cs_local_thread1___cs_tmp_if_cond_23)
     {
 __cs_mutex_unlock(&lock);
     }
 ;
-;
-static _Bool __cs_local_thread2___cs_tmp_if_cond_31;
-__cs_local_thread2___cs_tmp_if_cond_31 = ATOMIC_OPERATION;
-if (__cs_local_thread2___cs_tmp_if_cond_31)
-    {
-__cs_mutex_lock(&lock);
-    }
-;
-    {
-        static struct lfds711_stack_state * __cs_param_insert_s; __cs_param_insert_s = ss; static int long long unsigned __cs_param_insert_id; __cs_param_insert_id = 2; 
-static struct test_data *__cs_local_insert_td;
-__cs_local_insert_td = __cs_safe_malloc(sizeof(struct test_data));
-(*__cs_local_insert_td).user_id = __cs_param_insert_id;
-(*__cs_local_insert_td).se.value = (void *) ((lfds711_pal_uint_t) __cs_local_insert_td);
-        {
-            static struct lfds711_stack_state * __cs_param_lfds711_stack_push_ss; __cs_param_lfds711_stack_push_ss = (struct lfds711_stack_state *) __cs_param_insert_s; static struct lfds711_stack_element * __cs_param_lfds711_stack_push_se; __cs_param_lfds711_stack_push_se = &(*__cs_local_insert_td).se; 
-static char unsigned __cs_local_lfds711_stack_push_result;
-static lfds711_pal_uint_t __cs_local_lfds711_stack_push_backoff_iteration;
-__cs_local_lfds711_stack_push_backoff_iteration = 0;
-static struct lfds711_stack_element *__cs_local_lfds711_stack_push_new_top[2];
-static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_push_original_top[2];
-;
-static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_14;
-__cs_local_lfds711_stack_push___cs_tmp_if_cond_14 = !(__cs_param_lfds711_stack_push_ss != 0);
-if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_14)
-            {
-static char *__cs_local_lfds711_stack_push_c;
-__cs_local_lfds711_stack_push_c = 0;
-*__cs_local_lfds711_stack_push_c = 0;
-            }
-;
-;
-;
-static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_15;
-__cs_local_lfds711_stack_push___cs_tmp_if_cond_15 = !(__cs_param_lfds711_stack_push_se != 0);
-if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
-            {
-static char *__cs_local_lfds711_stack_push_c;
-__cs_local_lfds711_stack_push_c = 0;
-*__cs_local_lfds711_stack_push_c = 0;
-            }
-;
-;
-__cs_local_lfds711_stack_push_new_top[0] = __cs_param_lfds711_stack_push_se;
-__cs_local_lfds711_stack_push_original_top[1] = (*__cs_param_lfds711_stack_push_ss).top[1];
-__cs_local_lfds711_stack_push_original_top[0] = (*__cs_param_lfds711_stack_push_ss).top[0];
-__cs_local_lfds711_stack_push_result = 0;
-static int __cs_local_lfds711_stack_push_i;
-__cs_local_lfds711_stack_push_i = 0;
-while (__cs_local_lfds711_stack_push_result == 0)
-            {
-__cs_mutex_lock(&library_lock);
-(*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-__cs_mutex_unlock(&library_lock);
-__cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-__cs_mutex_lock(&library_lock);
-__cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-__cs_mutex_unlock(&library_lock);
-;
-static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-__cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                {
-                    {
-static int __cs_local_exponential_backoff_loop;
-for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loop < 3; __cs_local_exponential_backoff_loop++)
-                        {
-;
-                        }
-                                             __exit__exponential_backoff_5: ;  
-                    }
-                }
-__cs_local_lfds711_stack_push_i++;
-;
-static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-__cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                {
-break;
-                }
-            }
-goto __exit__lfds711_stack_push_3;
-                     __exit__lfds711_stack_push_3: ;  
-        }
-             __exit__insert_3: ;  
-    }
-;
-static _Bool __cs_local_thread2___cs_tmp_if_cond_32;
-__cs_local_thread2___cs_tmp_if_cond_32 = ATOMIC_OPERATION;
-if (__cs_local_thread2___cs_tmp_if_cond_32)
-    {
-__cs_mutex_unlock(&lock);
-    }
-;
-    __exit_thread2: ; __cs_exit(0);
+    __exit_thread1: ; __cs_exit(0);
 }
 int main()
 {
@@ -1187,18 +901,15 @@ __cs_retval__init_1 = &mystack; goto __exit__init_1;
     }
 ss = __cs_retval__init_1;
 static __cs_t __cs_local_main_t1; ;
-static __cs_t __cs_local_main_t2; ;
 __cs_create(&__cs_local_main_t1, 0, thread1, 0);
-__cs_create(&__cs_local_main_t2, 0, thread2, 0);
 __cs_join(__cs_local_main_t1, 0);
-__cs_join(__cs_local_main_t2, 0);
     {
         static struct lfds711_stack_state * __cs_param_check_ss; __cs_param_check_ss = ss; 
-static int * __cs_local_check_ids; __cs_local_check_ids = (int *) __cs_safe_malloc(sizeof(int)*3);
+static int * __cs_local_check_ids; __cs_local_check_ids = (int *) __cs_safe_malloc(sizeof(int)*0);
 static int __cs_local_check_size;
 static int __cs_retval__dump_structure_1;
         {
-            static struct lfds711_stack_state * __cs_param_dump_structure_s; __cs_param_dump_structure_s = __cs_param_check_ss; static int __cs_param_dump_structure_size; __cs_param_dump_structure_size = 3; static int * __cs_param_dump_structure_ids; __cs_param_dump_structure_ids = __cs_local_check_ids; 
+            static struct lfds711_stack_state * __cs_param_dump_structure_s; __cs_param_dump_structure_s = __cs_param_check_ss; static int __cs_param_dump_structure_size; __cs_param_dump_structure_size = 0; static int * __cs_param_dump_structure_ids; __cs_param_dump_structure_ids = __cs_local_check_ids; 
 static int __cs_local_dump_structure_res;
 __cs_local_dump_structure_res = 1;
 static int __cs_local_dump_structure_data_structure_size;
@@ -1271,7 +982,7 @@ for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loo
                                 {
 ;
                                 }
-                                                             __exit__exponential_backoff_6: ;  
+                                                             __exit__exponential_backoff_3: ;  
                             }
 __cs_mutex_lock(&library_lock);
 __cs_mutex_unlock(&library_lock);
@@ -1312,7 +1023,7 @@ for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loo
                                 {
 ;
                                 }
-                                                             __exit__exponential_backoff_7: ;  
+                                                             __exit__exponential_backoff_4: ;  
                             }
 __cs_mutex_lock(&library_lock);
 __cs_mutex_unlock(&library_lock);
@@ -1332,9 +1043,9 @@ __cs_retval__lfds711_stack_pop_2 = __cs_local_lfds711_stack_pop_result; goto __e
                 }
 __cs_local_dump_structure_res = __cs_retval__lfds711_stack_pop_2;
 ;
-static _Bool __cs_local_dump_structure___cs_tmp_if_cond_24;
-__cs_local_dump_structure___cs_tmp_if_cond_24 = __cs_local_dump_structure_res == 0;
-if (__cs_local_dump_structure___cs_tmp_if_cond_24)
+static _Bool __cs_local_dump_structure___cs_tmp_if_cond_21;
+__cs_local_dump_structure___cs_tmp_if_cond_21 = __cs_local_dump_structure_res == 0;
+if (__cs_local_dump_structure___cs_tmp_if_cond_21)
                 {
 __cs_retval__dump_structure_1 = __cs_local_dump_structure_data_structure_size; goto __exit__dump_structure_1;
                 }
@@ -1349,7 +1060,216 @@ __cs_retval__dump_structure_1 = __cs_local_dump_structure_data_structure_size; g
                      __exit__dump_structure_1: ;  
         }
 __cs_local_check_size = __cs_retval__dump_structure_1;
-__CSEQ_assert(((((__cs_local_check_size == 2) && (__cs_local_check_ids[0] == 1)) && (__cs_local_check_ids[2] == 1)) || (((__cs_local_check_size == 2) && (__cs_local_check_ids[1] == 1)) && (__cs_local_check_ids[2] == 1))) || ((((__cs_local_check_size == 3) && (__cs_local_check_ids[0] == 1)) && (__cs_local_check_ids[1] == 1)) && (__cs_local_check_ids[2] == 1)));
+static int __cs_retval__is_empty_1;
+        {
+            static struct lfds711_stack_state * __cs_param_is_empty_s; __cs_param_is_empty_s = __cs_param_check_ss; 
+static struct lfds711_stack_element *__cs_local_is_empty_se;
+static int __cs_local_is_empty_res;
+static int __cs_retval__lfds711_stack_pop_3;
+            {
+                static struct lfds711_stack_state * __cs_param_lfds711_stack_pop_ss; __cs_param_lfds711_stack_pop_ss = __cs_param_is_empty_s; static struct lfds711_stack_element ** __cs_param_lfds711_stack_pop_se; __cs_param_lfds711_stack_pop_se = &__cs_local_is_empty_se; 
+static char unsigned __cs_local_lfds711_stack_pop_result;
+static lfds711_pal_uint_t __cs_local_lfds711_stack_pop_backoff_iteration;
+__cs_local_lfds711_stack_pop_backoff_iteration = 0;
+static struct lfds711_stack_element *__cs_local_lfds711_stack_pop_new_top[2];
+static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_pop_original_top[2];
+;
+static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_6;
+__cs_local_lfds711_stack_pop___cs_tmp_if_cond_6 = !(__cs_param_lfds711_stack_pop_ss != 0);
+if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_6)
+                {
+static char *__cs_local_lfds711_stack_pop_c;
+__cs_local_lfds711_stack_pop_c = 0;
+*__cs_local_lfds711_stack_pop_c = 0;
+                }
+;
+;
+;
+static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_7;
+__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7 = !(__cs_param_lfds711_stack_pop_se != 0);
+if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7)
+                {
+static char *__cs_local_lfds711_stack_pop_c;
+__cs_local_lfds711_stack_pop_c = 0;
+*__cs_local_lfds711_stack_pop_c = 0;
+                }
+;
+;
+__cs_mutex_lock(&library_lock);
+__cs_mutex_unlock(&library_lock);
+__cs_local_lfds711_stack_pop_original_top[1] = (*__cs_param_lfds711_stack_pop_ss).top[1];
+__cs_local_lfds711_stack_pop_original_top[0] = (*__cs_param_lfds711_stack_pop_ss).top[0];
+static int __cs_local_lfds711_stack_pop_i;
+__cs_local_lfds711_stack_pop_i = 0;
+;
+static int __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1;
+for (__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1 = 0; __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1 < 1; __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1++)
+                {
+;
+static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_8;
+__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8)
+                    {
+*__cs_param_lfds711_stack_pop_se = 0;
+__cs_retval__lfds711_stack_pop_3 = 0; goto __exit__lfds711_stack_pop_3;
+                    }
+__cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
+__cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
+__cs_mutex_lock(&library_lock);
+__cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
+__cs_mutex_unlock(&library_lock);
+;
+static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_9;
+__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9 = __cs_local_lfds711_stack_pop_result == 0;
+if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9)
+                    {
+                        {
+static int __cs_local_exponential_backoff_loop;
+for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loop < 3; __cs_local_exponential_backoff_loop++)
+                            {
+;
+                            }
+                                                     __exit__exponential_backoff_5: ;  
+                        }
+__cs_mutex_lock(&library_lock);
+__cs_mutex_unlock(&library_lock);
+                    }
+__cs_local_lfds711_stack_pop_i++;
+;
+static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_10;
+__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10 = __cs_local_lfds711_stack_pop_i > 1000;
+if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10)
+                    {
+break;
+                    }
+                }
+while (
+__cs_local_lfds711_stack_pop_result == 0)
+                {
+;
+static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
+__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
+                    {
+*__cs_param_lfds711_stack_pop_se = 0;
+__cs_retval__lfds711_stack_pop_3 = 0; goto __exit__lfds711_stack_pop_3;
+                    }
+__cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
+__cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
+__cs_mutex_lock(&library_lock);
+__cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
+__cs_mutex_unlock(&library_lock);
+;
+static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
+__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
+if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
+                    {
+                        {
+static int __cs_local_exponential_backoff_loop;
+for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loop < 3; __cs_local_exponential_backoff_loop++)
+                            {
+;
+                            }
+                                                     __exit__exponential_backoff_6: ;  
+                        }
+__cs_mutex_lock(&library_lock);
+__cs_mutex_unlock(&library_lock);
+                    }
+__cs_local_lfds711_stack_pop_i++;
+;
+static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
+__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
+if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
+                    {
+break;
+                    }
+                }
+*__cs_param_lfds711_stack_pop_se = __cs_local_lfds711_stack_pop_original_top[0];
+__cs_retval__lfds711_stack_pop_3 = __cs_local_lfds711_stack_pop_result; goto __exit__lfds711_stack_pop_3;
+                             __exit__lfds711_stack_pop_3: ;  
+            }
+__cs_local_is_empty_res = __cs_retval__lfds711_stack_pop_3;
+;
+static _Bool __cs_local_is_empty___cs_tmp_if_cond_20;
+__cs_local_is_empty___cs_tmp_if_cond_20 = __cs_local_is_empty_res != 0;
+if (__cs_local_is_empty___cs_tmp_if_cond_20)
+            {
+                {
+                    static struct lfds711_stack_state * __cs_param_lfds711_stack_push_ss; __cs_param_lfds711_stack_push_ss = __cs_param_is_empty_s; static struct lfds711_stack_element * __cs_param_lfds711_stack_push_se; __cs_param_lfds711_stack_push_se = __cs_local_is_empty_se; 
+static char unsigned __cs_local_lfds711_stack_push_result;
+static lfds711_pal_uint_t __cs_local_lfds711_stack_push_backoff_iteration;
+__cs_local_lfds711_stack_push_backoff_iteration = 0;
+static struct lfds711_stack_element *__cs_local_lfds711_stack_push_new_top[2];
+static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_push_original_top[2];
+;
+static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_14;
+__cs_local_lfds711_stack_push___cs_tmp_if_cond_14 = !(__cs_param_lfds711_stack_push_ss != 0);
+if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_14)
+                    {
+static char *__cs_local_lfds711_stack_push_c;
+__cs_local_lfds711_stack_push_c = 0;
+*__cs_local_lfds711_stack_push_c = 0;
+                    }
+;
+;
+;
+static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_15;
+__cs_local_lfds711_stack_push___cs_tmp_if_cond_15 = !(__cs_param_lfds711_stack_push_se != 0);
+if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
+                    {
+static char *__cs_local_lfds711_stack_push_c;
+__cs_local_lfds711_stack_push_c = 0;
+*__cs_local_lfds711_stack_push_c = 0;
+                    }
+;
+;
+__cs_local_lfds711_stack_push_new_top[0] = __cs_param_lfds711_stack_push_se;
+__cs_local_lfds711_stack_push_original_top[1] = (*__cs_param_lfds711_stack_push_ss).top[1];
+__cs_local_lfds711_stack_push_original_top[0] = (*__cs_param_lfds711_stack_push_ss).top[0];
+__cs_local_lfds711_stack_push_result = 0;
+static int __cs_local_lfds711_stack_push_i;
+__cs_local_lfds711_stack_push_i = 0;
+while (__cs_local_lfds711_stack_push_result == 0)
+                    {
+__cs_mutex_lock(&library_lock);
+(*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+__cs_mutex_unlock(&library_lock);
+__cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
+__cs_mutex_lock(&library_lock);
+__cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
+__cs_mutex_unlock(&library_lock);
+;
+static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
+__cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
+if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                        {
+                            {
+static int __cs_local_exponential_backoff_loop;
+for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loop < 3; __cs_local_exponential_backoff_loop++)
+                                {
+;
+                                }
+                                                             __exit__exponential_backoff_7: ;  
+                            }
+                        }
+__cs_local_lfds711_stack_push_i++;
+;
+static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+__cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                        {
+break;
+                        }
+                    }
+goto __exit__lfds711_stack_push_1;
+                                     __exit__lfds711_stack_push_1: ;  
+                }
+__cs_retval__is_empty_1 = 0; goto __exit__is_empty_1;
+            }
+__cs_retval__is_empty_1 = 1; goto __exit__is_empty_1;
+                     __exit__is_empty_1: ;  
+        }
+__CSEQ_assert(__cs_retval__is_empty_1);
              __exit__check_1: ;  
     }
 goto __exit_main; 

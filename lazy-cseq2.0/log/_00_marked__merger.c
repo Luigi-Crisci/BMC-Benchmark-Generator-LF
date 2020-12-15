@@ -1336,72 +1336,6 @@ int delete (struct lfds711_stack_state *s)
  return res;
 }
 
-
-
-
-
-
-
-int contains(struct lfds711_stack_state *s, unsigned long long int id)
-{
- int max_size = 2, actual_size = 0, res = 1, found = 0, dimension = 2;
- struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
- struct lfds711_stack_element *se;
-
- while (found == 0 && res != 0)
- {
-
-  res = lfds711_stack_pop(s, &se);
-  if (res == 0){
-   break;
-  }
-
-  datas[actual_size] = ( (*se).value );
-  printf("%d -- %d\n",datas[actual_size]->user_id,actual_size);
-  if (datas[actual_size]->user_id == id)
-   found = 1;
-
-  actual_size = actual_size + 1;
- }
-
-
- int i = 0;
- while(i < actual_size){
-  lfds711_stack_push(s, &(datas[i]->se));
-  i++;
- }
-
-
- return found;
-}
-
-int get_size(struct lfds711_stack_state *s){
- int max_size = 2, actual_size = 0, res = 1, dimension = 2;
- struct test_data **datas = malloc(sizeof(struct test_data*) * max_size);
- struct lfds711_stack_element *se;
-
- while (res != 0)
- {
-  res = lfds711_stack_pop(&mystack, &se);
-  datas[actual_size] = ( (*se).value );
-  if (res == 0)
-   break;
-
-  actual_size = actual_size + 1;
- }
-
-
- int i = 0;
- while(i < actual_size){
-  lfds711_stack_push(s, &(datas[i]->se));
-  i++;
- }
-
-
- return actual_size;
-}
-
-
 int is_empty(struct lfds711_stack_state *s){
  struct lfds711_stack_element *se;
  int res = lfds711_stack_pop(s, &se);
@@ -1441,11 +1375,11 @@ int dump_structure(struct lfds711_stack_state *s, int size, int* ids){
 # 7 "<stdin>" 2
 # 1 "/home/luigi/LFDS-LazyCseq-Project/lazy-cseq2.0/core/include/assert.h" 1
 # 8 "<stdin>" 2
-# 1 "benchmarks/checker.c" 1
+# 1 "benchmarks/benchmark_Tue_Dec_15_12:40:08_2020/checker_1.c" 1
 void check(struct lfds711_stack_state *ss){
-int ids[3];
-int size = dump_structure(ss,3,ids);
-assert((size == 2 && ids[0]==1 && ids[2]==1) || (size == 2 && ids[1]==1 && ids[2]==1) || (size == 3 && ids[0]==1 && ids[1]==1 && ids[2]==1));
+int ids[0];
+int size = dump_structure(ss,0,ids);
+assert((is_empty(ss)));
 }
 # 9 "<stdin>" 2
 
@@ -1458,18 +1392,7 @@ pthread_mutex_t lock;
 
 void *thread1(){
  if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
- insert(ss,0);
- if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
- if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
- insert(ss,1);
- if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
- }
- void *thread2(){
- if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
  delete(ss);
- if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
- if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
- insert(ss,2);
  if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
  }
 
@@ -1478,11 +1401,9 @@ int main()
  pthread_mutex_init(&lock, 0);
  ss = init();
 
-pthread_t t1,t2;
+pthread_t t1;
 pthread_create(&t1, 0, thread1, 0);
-pthread_create(&t2, 0, thread2, 0);
 pthread_join(t1, 0);
-pthread_join(t2, 0);
 
  check(ss);
  return (0);

@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include "/home/luigi/LFDS-LazyCseq-Project/workspace/inteface/stack/stack_interface.c"
 #include <assert.h>
-#include "checker.c"
+#include "checker_1.c"
 
 int volatile ATOMIC_OPERATION = 0;
 #define LOCK if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);}
@@ -16,18 +16,7 @@ pthread_mutex_t lock;
 
 void *thread1(){
  LOCK;
- insert(ss,0);
- UNLOCK;
- LOCK;
- insert(ss,1);
- UNLOCK;
- }
- void *thread2(){
- LOCK;
  delete(ss);
- UNLOCK;
- LOCK;
- insert(ss,2);
  UNLOCK;
  }
 
@@ -36,11 +25,9 @@ int main()
 	pthread_mutex_init(&lock, NULL);
 	ss = init();
 	
-pthread_t t1,t2;
+pthread_t t1;
 pthread_create(&t1, NULL, thread1, NULL);
-pthread_create(&t2, NULL, thread2, NULL);
 pthread_join(t1, 0);
-pthread_join(t2, 0);
 
 	check(ss);
 	return (EXIT_SUCCESS);

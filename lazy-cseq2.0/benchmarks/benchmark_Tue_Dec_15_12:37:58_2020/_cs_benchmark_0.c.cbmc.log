@@ -1,5 +1,5 @@
 CBMC version 5.19.0 (cbmc-5.19.0) 64-bit x86_64 linux
-Parsing benchmarks/_cs_benchmark_0.c
+Parsing benchmarks/benchmark_Tue_Dec_15_12:37:58_2020/_cs_benchmark_0.c
 Converting
 Type-checking _cs_benchmark_0
 Generating GOTO Program
@@ -8,20 +8,20 @@ Removal of function pointers and virtual functions
 Generic Property Instrumentation
 Running with 8 object bits, 24 offset bits (default)
 Starting Bounded Model Checking
-Runtime Symex: 21.782s
-size of program expression: 46610 steps
+Runtime Symex: 20.915s
+size of program expression: 37696 steps
 simple slicing removed 18 assignments
-Generated 1237 VCC(s), 1194 remaining after simplification
-Runtime Postprocess Equation: 0.0061344s
+Generated 973 VCC(s), 930 remaining after simplification
+Runtime Postprocess Equation: 0.0066496s
 Passing problem to propositional reduction
 converting SSA
-Runtime Convert SSA: 0.815541s
+Runtime Convert SSA: 0.60861s
 Running propositional reduction
 Post-processing
-Runtime Post-process: 0.0158277s
+Runtime Post-process: 0.0106006s
 Solving with MiniSAT 2.2.1 with simplifier
-403175 variables, 1770765 clauses
+293741 variables, 1244412 clauses
 SAT checker: instance is UNSATISFIABLE
-Runtime Solver: 92.7017s
-Runtime decision procedure: 93.5227s
+Runtime Solver: 69.4005s
+Runtime decision procedure: 70.014s
 VERIFICATION SUCCESSFUL

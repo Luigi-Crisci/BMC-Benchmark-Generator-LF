@@ -2161,479 +2161,191 @@ return res;
 
 
 # 811 "<previous_module>"
-int contains(struct lfds711_stack_state *s, unsigned long long int id)
+int is_empty(struct lfds711_stack_state *s)
 
 # 812 "<previous_module>"
 {
     
 # 813 "<previous_module>"
-int max_size;
-    max_size = 2;
-    
-# 814 "<previous_module>"
-int actual_size;
-    actual_size = 0;
-    
-# 815 "<previous_module>"
-int res;
-    res = 1;
-    
-# 816 "<previous_module>"
-int found;
-    found = 0;
-    
-# 817 "<previous_module>"
-int dimension;
-    dimension = 2;
-    
-# 818 "<previous_module>"
-struct test_data **datas;
-    datas = malloc((sizeof(struct test_data *)) * max_size);
-    
-# 819 "<previous_module>"
 struct lfds711_stack_element *se;
     
-# 820 "<previous_module>"
-while ((found == 0) && (res != 0))
+# 814 "<previous_module>"
+int res;
+    res = lfds711_stack_pop(s, &se);
+    
+# 815 "<previous_module>"
+if (res != 0)
 
-# 821 "<previous_module>"
+# 816 "<previous_module>"
     {
         
-# 822 "<previous_module>"
-res = lfds711_stack_pop(s, &se);
+# 817 "<previous_module>"
+lfds711_stack_push(s, se);
         
-# 823 "<previous_module>"
-if (res == 0)
-
-# 824 "<previous_module>"
-        {
-            
-# 825 "<previous_module>"
-break;
-        }
-
-        
-# 827 "<previous_module>"
-datas[actual_size] = (*se).value;
-        
-# 828 "<previous_module>"
-printf("%d -- %d\n", (*datas[actual_size]).user_id, actual_size);
-        
-# 829 "<previous_module>"
-if ((*datas[actual_size]).user_id == id)
-
-# 830 "<previous_module>"
-        {
-            
-# 831 "<previous_module>"
-found = 1;
-        }
-
-        
-# 833 "<previous_module>"
-actual_size = actual_size + 1;
+# 818 "<previous_module>"
+return 0;
     }
 
     
-# 835 "<previous_module>"
-int i;
-    i = 0;
-    
-# 836 "<previous_module>"
-while (i < actual_size)
+# 820 "<previous_module>"
+return 1;
+}
 
-# 837 "<previous_module>"
+
+# 822 "<previous_module>"
+int dump_structure(struct lfds711_stack_state *s, int size, int *ids)
+
+# 823 "<previous_module>"
+{
+    
+# 824 "<previous_module>"
+int res;
+    res = 1;
+    
+# 825 "<previous_module>"
+int data_structure_size;
+    data_structure_size = 0;
+    
+# 826 "<previous_module>"
+struct test_data *data;
+    
+# 827 "<previous_module>"
+struct lfds711_stack_element *se;
+    
+# 828 "<previous_module>"
+while (res != 0)
+
+# 829 "<previous_module>"
     {
         
+# 830 "<previous_module>"
+res = lfds711_stack_pop(s, &se);
+        
+# 831 "<previous_module>"
+if (res == 0)
+
+# 832 "<previous_module>"
+        {
+            
+# 833 "<previous_module>"
+return data_structure_size;
+        }
+
+        
+# 835 "<previous_module>"
+data_structure_size = data_structure_size + 1;
+        
+# 836 "<previous_module>"
+data = (*se).value;
+        
+# 837 "<previous_module>"
+unsigned long long int id_found;
+        id_found = (*data).user_id;
+        
 # 838 "<previous_module>"
-lfds711_stack_push(s, &(*datas[i]).se);
+ids[(*data).user_id] = 1;
         
 # 839 "<previous_module>"
-i++;
+free(data);
     }
 
     
 # 841 "<previous_module>"
-return found;
+return data_structure_size;
 }
 
 
 # 843 "<previous_module>"
-int get_size(struct lfds711_stack_state *s)
+void check(struct lfds711_stack_state *ss)
 
 # 844 "<previous_module>"
 {
     
 # 845 "<previous_module>"
-int max_size;
-    max_size = 2;
+int ids[0];
     
 # 846 "<previous_module>"
-int actual_size;
-    actual_size = 0;
+int size;
+    size = dump_structure(ss, 0, ids);
     
 # 847 "<previous_module>"
-int res;
-    res = 1;
-    
-# 848 "<previous_module>"
-int dimension;
-    dimension = 2;
-    
+assert(is_empty(ss));
+}
+
+
 # 849 "<previous_module>"
-struct test_data **datas;
-    datas = malloc((sizeof(struct test_data *)) * max_size);
-    
-# 850 "<previous_module>"
-struct lfds711_stack_element *se;
-    
-# 851 "<previous_module>"
-while (res != 0)
-
-# 852 "<previous_module>"
-    {
-        
-# 853 "<previous_module>"
-res = lfds711_stack_pop(&mystack, &se);
-        
-# 854 "<previous_module>"
-datas[actual_size] = (*se).value;
-        
-# 855 "<previous_module>"
-if (res == 0)
-
-# 856 "<previous_module>"
-        {
-            
-# 857 "<previous_module>"
-break;
-        }
-
-        
-# 859 "<previous_module>"
-actual_size = actual_size + 1;
-    }
-
-    
-# 861 "<previous_module>"
-int i;
-    i = 0;
-    
-# 862 "<previous_module>"
-while (i < actual_size)
-
-# 863 "<previous_module>"
-    {
-        
-# 864 "<previous_module>"
-lfds711_stack_push(s, &(*datas[i]).se);
-        
-# 865 "<previous_module>"
-i++;
-    }
-
-    
-# 867 "<previous_module>"
-return actual_size;
-}
-
-
-# 869 "<previous_module>"
-int is_empty(struct lfds711_stack_state *s)
-
-# 870 "<previous_module>"
-{
-    
-# 871 "<previous_module>"
-struct lfds711_stack_element *se;
-    
-# 872 "<previous_module>"
-int res;
-    res = lfds711_stack_pop(s, &se);
-    
-# 873 "<previous_module>"
-if (res != 0)
-
-# 874 "<previous_module>"
-    {
-        
-# 875 "<previous_module>"
-lfds711_stack_push(s, se);
-        
-# 876 "<previous_module>"
-return 0;
-    }
-
-    
-# 878 "<previous_module>"
-return 1;
-}
-
-
-# 880 "<previous_module>"
-int dump_structure(struct lfds711_stack_state *s, int size, int *ids)
-
-# 881 "<previous_module>"
-{
-    
-# 882 "<previous_module>"
-int res;
-    res = 1;
-    
-# 883 "<previous_module>"
-int data_structure_size;
-    data_structure_size = 0;
-    
-# 884 "<previous_module>"
-struct test_data *data;
-    
-# 885 "<previous_module>"
-struct lfds711_stack_element *se;
-    
-# 886 "<previous_module>"
-while (res != 0)
-
-# 887 "<previous_module>"
-    {
-        
-# 888 "<previous_module>"
-res = lfds711_stack_pop(s, &se);
-        
-# 889 "<previous_module>"
-if (res == 0)
-
-# 890 "<previous_module>"
-        {
-            
-# 891 "<previous_module>"
-return data_structure_size;
-        }
-
-        
-# 893 "<previous_module>"
-data_structure_size = data_structure_size + 1;
-        
-# 894 "<previous_module>"
-data = (*se).value;
-        
-# 895 "<previous_module>"
-unsigned long long int id_found;
-        id_found = (*data).user_id;
-        
-# 896 "<previous_module>"
-ids[(*data).user_id] = 1;
-        
-# 897 "<previous_module>"
-free(data);
-    }
-
-    
-# 899 "<previous_module>"
-return data_structure_size;
-}
-
-
-# 901 "<previous_module>"
-void check(struct lfds711_stack_state *ss)
-
-# 902 "<previous_module>"
-{
-    
-# 903 "<previous_module>"
-int ids[3];
-    
-# 904 "<previous_module>"
-int size;
-    size = dump_structure(ss, 3, ids);
-    
-# 905 "<previous_module>"
-assert(((((size == 2) && (ids[0] == 1)) && (ids[2] == 1)) || (((size == 2) && (ids[1] == 1)) && (ids[2] == 1))) || ((((size == 3) && (ids[0] == 1)) && (ids[1] == 1)) && (ids[2] == 1)));
-}
-
-
-# 907 "<previous_module>"
 int ATOMIC_OPERATION = 0;
 
-# 908 "<previous_module>"
+# 850 "<previous_module>"
 struct lfds711_stack_state *ss;
 
-# 909 "<previous_module>"
+# 851 "<previous_module>"
 pthread_mutex_t lock;
 
-# 910 "<previous_module>"
+# 852 "<previous_module>"
 void *thread1(void *__cs_unused)
 
-# 911 "<previous_module>"
+# 853 "<previous_module>"
 {
     
-# 912 "<previous_module>"
+# 854 "<previous_module>"
 if (ATOMIC_OPERATION)
 
-# 913 "<previous_module>"
+# 855 "<previous_module>"
     {
         
-# 914 "<previous_module>"
+# 856 "<previous_module>"
 pthread_mutex_lock(&lock);
     }
 
     
-# 916 "<previous_module>"
+# 858 "<previous_module>"
 ;
     
-# 917 "<previous_module>"
-insert(ss, 0);
-    
-# 918 "<previous_module>"
-if (ATOMIC_OPERATION)
-
-# 919 "<previous_module>"
-    {
-        
-# 920 "<previous_module>"
-pthread_mutex_unlock(&lock);
-    }
-
-    
-# 922 "<previous_module>"
-;
-    
-# 923 "<previous_module>"
-if (ATOMIC_OPERATION)
-
-# 924 "<previous_module>"
-    {
-        
-# 925 "<previous_module>"
-pthread_mutex_lock(&lock);
-    }
-
-    
-# 927 "<previous_module>"
-;
-    
-# 928 "<previous_module>"
-insert(ss, 1);
-    
-# 929 "<previous_module>"
-if (ATOMIC_OPERATION)
-
-# 930 "<previous_module>"
-    {
-        
-# 931 "<previous_module>"
-pthread_mutex_unlock(&lock);
-    }
-
-    
-# 933 "<previous_module>"
-;
-}
-
-
-# 935 "<previous_module>"
-void *thread2(void *__cs_unused)
-
-# 936 "<previous_module>"
-{
-    
-# 937 "<previous_module>"
-if (ATOMIC_OPERATION)
-
-# 938 "<previous_module>"
-    {
-        
-# 939 "<previous_module>"
-pthread_mutex_lock(&lock);
-    }
-
-    
-# 941 "<previous_module>"
-;
-    
-# 942 "<previous_module>"
+# 859 "<previous_module>"
 delete(ss);
     
-# 943 "<previous_module>"
+# 860 "<previous_module>"
 if (ATOMIC_OPERATION)
 
-# 944 "<previous_module>"
+# 861 "<previous_module>"
     {
         
-# 945 "<previous_module>"
+# 862 "<previous_module>"
 pthread_mutex_unlock(&lock);
     }
 
     
-# 947 "<previous_module>"
-;
-    
-# 948 "<previous_module>"
-if (ATOMIC_OPERATION)
-
-# 949 "<previous_module>"
-    {
-        
-# 950 "<previous_module>"
-pthread_mutex_lock(&lock);
-    }
-
-    
-# 952 "<previous_module>"
-;
-    
-# 953 "<previous_module>"
-insert(ss, 2);
-    
-# 954 "<previous_module>"
-if (ATOMIC_OPERATION)
-
-# 955 "<previous_module>"
-    {
-        
-# 956 "<previous_module>"
-pthread_mutex_unlock(&lock);
-    }
-
-    
-# 958 "<previous_module>"
+# 864 "<previous_module>"
 ;
 }
 
 
-# 960 "<previous_module>"
+# 866 "<previous_module>"
 int main()
 
-# 961 "<previous_module>"
+# 867 "<previous_module>"
 {
     
-# 962 "<previous_module>"
+# 868 "<previous_module>"
 pthread_mutex_init(&lock, 0);
     
-# 963 "<previous_module>"
+# 869 "<previous_module>"
 ss = init();
     
-# 964 "<previous_module>"
+# 870 "<previous_module>"
 pthread_t t1;
     
-# 965 "<previous_module>"
-pthread_t t2;
-    
-# 966 "<previous_module>"
+# 871 "<previous_module>"
 pthread_create(&t1, 0, thread1, 0);
     
-# 967 "<previous_module>"
-pthread_create(&t2, 0, thread2, 0);
-    
-# 968 "<previous_module>"
+# 872 "<previous_module>"
 pthread_join(t1, 0);
     
-# 969 "<previous_module>"
-pthread_join(t2, 0);
-    
-# 970 "<previous_module>"
+# 873 "<previous_module>"
 check(ss);
     
-# 971 "<previous_module>"
+# 874 "<previous_module>"
 return 0;
 }
 

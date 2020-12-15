@@ -911,95 +911,15 @@ free((*__cs_local_delete_se).value);
         }
 return __cs_local_delete_res;
 }
-int contains(struct lfds711_stack_state *__cs_param_contains_s, unsigned long long int __cs_param_contains_id)
-{
-int __cs_local_contains_max_size;
-__cs_local_contains_max_size = 2;
-int __cs_local_contains_actual_size;
-__cs_local_contains_actual_size = 0;
-int __cs_local_contains_res;
-__cs_local_contains_res = 1;
-int __cs_local_contains_found;
-__cs_local_contains_found = 0;
-int __cs_local_contains_dimension;
-__cs_local_contains_dimension = 2;
-struct test_data **__cs_local_contains_datas;
-__cs_local_contains_datas = __cs_safe_malloc((sizeof(struct test_data *)) * __cs_local_contains_max_size);
-struct lfds711_stack_element *__cs_local_contains_se;
-while ((__cs_local_contains_found == 0) && (__cs_local_contains_res != 0))
-        {
-__cs_local_contains_res = lfds711_stack_pop(__cs_param_contains_s, &__cs_local_contains_se);
-;
-                _Bool __cs_local_contains___cs_tmp_if_cond_20;
-                __cs_local_contains___cs_tmp_if_cond_20 = __cs_local_contains_res == 0;
-if (__cs_local_contains___cs_tmp_if_cond_20)
-                {
-break;
-                }
-__cs_local_contains_datas[__cs_local_contains_actual_size] = (*__cs_local_contains_se).value;
-printf("%d -- %d\n", (*__cs_local_contains_datas[__cs_local_contains_actual_size]).user_id, __cs_local_contains_actual_size);
-;
-                _Bool __cs_local_contains___cs_tmp_if_cond_21;
-                __cs_local_contains___cs_tmp_if_cond_21 = (*__cs_local_contains_datas[__cs_local_contains_actual_size]).user_id == __cs_param_contains_id;
-if (__cs_local_contains___cs_tmp_if_cond_21)
-                {
-__cs_local_contains_found = 1;
-                }
-__cs_local_contains_actual_size = __cs_local_contains_actual_size + 1;
-        }
-int __cs_local_contains_i;
-__cs_local_contains_i = 0;
-while (__cs_local_contains_i < __cs_local_contains_actual_size)
-        {
-lfds711_stack_push(__cs_param_contains_s, &(*__cs_local_contains_datas[__cs_local_contains_i]).se);
-__cs_local_contains_i++;
-        }
-return __cs_local_contains_found;
-}
-int get_size(struct lfds711_stack_state *__cs_param_get_size_s)
-{
-int __cs_local_get_size_max_size;
-__cs_local_get_size_max_size = 2;
-int __cs_local_get_size_actual_size;
-__cs_local_get_size_actual_size = 0;
-int __cs_local_get_size_res;
-__cs_local_get_size_res = 1;
-int __cs_local_get_size_dimension;
-__cs_local_get_size_dimension = 2;
-struct test_data **__cs_local_get_size_datas;
-__cs_local_get_size_datas = __cs_safe_malloc((sizeof(struct test_data *)) * __cs_local_get_size_max_size);
-struct lfds711_stack_element *__cs_local_get_size_se;
-while (__cs_local_get_size_res != 0)
-        {
-__cs_local_get_size_res = lfds711_stack_pop(&mystack, &__cs_local_get_size_se);
-__cs_local_get_size_datas[__cs_local_get_size_actual_size] = (*__cs_local_get_size_se).value;
-;
-                _Bool __cs_local_get_size___cs_tmp_if_cond_22;
-                __cs_local_get_size___cs_tmp_if_cond_22 = __cs_local_get_size_res == 0;
-if (__cs_local_get_size___cs_tmp_if_cond_22)
-                {
-break;
-                }
-__cs_local_get_size_actual_size = __cs_local_get_size_actual_size + 1;
-        }
-int __cs_local_get_size_i;
-__cs_local_get_size_i = 0;
-while (__cs_local_get_size_i < __cs_local_get_size_actual_size)
-        {
-lfds711_stack_push(__cs_param_get_size_s, &(*__cs_local_get_size_datas[__cs_local_get_size_i]).se);
-__cs_local_get_size_i++;
-        }
-return __cs_local_get_size_actual_size;
-}
 int is_empty(struct lfds711_stack_state *__cs_param_is_empty_s)
 {
 struct lfds711_stack_element *__cs_local_is_empty_se;
 int __cs_local_is_empty_res;
 __cs_local_is_empty_res = lfds711_stack_pop(__cs_param_is_empty_s, &__cs_local_is_empty_se);
 ;
-        _Bool __cs_local_is_empty___cs_tmp_if_cond_23;
-        __cs_local_is_empty___cs_tmp_if_cond_23 = __cs_local_is_empty_res != 0;
-if (__cs_local_is_empty___cs_tmp_if_cond_23)
+        _Bool __cs_local_is_empty___cs_tmp_if_cond_20;
+        __cs_local_is_empty___cs_tmp_if_cond_20 = __cs_local_is_empty_res != 0;
+if (__cs_local_is_empty___cs_tmp_if_cond_20)
         {
 lfds711_stack_push(__cs_param_is_empty_s, __cs_local_is_empty_se);
 return 0;
@@ -1018,9 +938,9 @@ while (__cs_local_dump_structure_res != 0)
         {
 __cs_local_dump_structure_res = lfds711_stack_pop(__cs_param_dump_structure_s, &__cs_local_dump_structure_se);
 ;
-                _Bool __cs_local_dump_structure___cs_tmp_if_cond_24;
-                __cs_local_dump_structure___cs_tmp_if_cond_24 = __cs_local_dump_structure_res == 0;
-if (__cs_local_dump_structure___cs_tmp_if_cond_24)
+                _Bool __cs_local_dump_structure___cs_tmp_if_cond_21;
+                __cs_local_dump_structure___cs_tmp_if_cond_21 = __cs_local_dump_structure_res == 0;
+if (__cs_local_dump_structure___cs_tmp_if_cond_21)
                 {
 return __cs_local_dump_structure_data_structure_size;
                 }
@@ -1035,10 +955,10 @@ return __cs_local_dump_structure_data_structure_size;
 }
 void check(struct lfds711_stack_state *__cs_param_check_ss)
 {
-int __cs_local_check_ids[3];
+int __cs_local_check_ids[0];
 int __cs_local_check_size;
-__cs_local_check_size = dump_structure(__cs_param_check_ss, 3, __cs_local_check_ids);
-__CSEQ_assert(((((__cs_local_check_size == 2) && (__cs_local_check_ids[0] == 1)) && (__cs_local_check_ids[2] == 1)) || (((__cs_local_check_size == 2) && (__cs_local_check_ids[1] == 1)) && (__cs_local_check_ids[2] == 1))) || ((((__cs_local_check_size == 3) && (__cs_local_check_ids[0] == 1)) && (__cs_local_check_ids[1] == 1)) && (__cs_local_check_ids[2] == 1)));
+__cs_local_check_size = dump_structure(__cs_param_check_ss, 0, __cs_local_check_ids);
+__CSEQ_assert(is_empty(__cs_param_check_ss));
 }
 int ATOMIC_OPERATION = 0;
 struct lfds711_stack_state *ss;
@@ -1046,72 +966,18 @@ __cs_mutex_t lock;
 void *thread1(void *__cs_param_thread1___cs_unused)
 {
 ;
-        _Bool __cs_local_thread1___cs_tmp_if_cond_25;
-        __cs_local_thread1___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
-if (__cs_local_thread1___cs_tmp_if_cond_25)
-        {
-__cs_mutex_lock(&lock);
-        }
-;
-insert(ss, 0);
-;
-        _Bool __cs_local_thread1___cs_tmp_if_cond_26;
-        __cs_local_thread1___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
-if (__cs_local_thread1___cs_tmp_if_cond_26)
-        {
-__cs_mutex_unlock(&lock);
-        }
-;
-;
-        _Bool __cs_local_thread1___cs_tmp_if_cond_27;
-        __cs_local_thread1___cs_tmp_if_cond_27 = ATOMIC_OPERATION;
-if (__cs_local_thread1___cs_tmp_if_cond_27)
-        {
-__cs_mutex_lock(&lock);
-        }
-;
-insert(ss, 1);
-;
-        _Bool __cs_local_thread1___cs_tmp_if_cond_28;
-        __cs_local_thread1___cs_tmp_if_cond_28 = ATOMIC_OPERATION;
-if (__cs_local_thread1___cs_tmp_if_cond_28)
-        {
-__cs_mutex_unlock(&lock);
-        }
-;
-}
-void *thread2(void *__cs_param_thread2___cs_unused)
-{
-;
-        _Bool __cs_local_thread2___cs_tmp_if_cond_29;
-        __cs_local_thread2___cs_tmp_if_cond_29 = ATOMIC_OPERATION;
-if (__cs_local_thread2___cs_tmp_if_cond_29)
+        _Bool __cs_local_thread1___cs_tmp_if_cond_22;
+        __cs_local_thread1___cs_tmp_if_cond_22 = ATOMIC_OPERATION;
+if (__cs_local_thread1___cs_tmp_if_cond_22)
         {
 __cs_mutex_lock(&lock);
         }
 ;
 delete(ss);
 ;
-        _Bool __cs_local_thread2___cs_tmp_if_cond_30;
-        __cs_local_thread2___cs_tmp_if_cond_30 = ATOMIC_OPERATION;
-if (__cs_local_thread2___cs_tmp_if_cond_30)
-        {
-__cs_mutex_unlock(&lock);
-        }
-;
-;
-        _Bool __cs_local_thread2___cs_tmp_if_cond_31;
-        __cs_local_thread2___cs_tmp_if_cond_31 = ATOMIC_OPERATION;
-if (__cs_local_thread2___cs_tmp_if_cond_31)
-        {
-__cs_mutex_lock(&lock);
-        }
-;
-insert(ss, 2);
-;
-        _Bool __cs_local_thread2___cs_tmp_if_cond_32;
-        __cs_local_thread2___cs_tmp_if_cond_32 = ATOMIC_OPERATION;
-if (__cs_local_thread2___cs_tmp_if_cond_32)
+        _Bool __cs_local_thread1___cs_tmp_if_cond_23;
+        __cs_local_thread1___cs_tmp_if_cond_23 = ATOMIC_OPERATION;
+if (__cs_local_thread1___cs_tmp_if_cond_23)
         {
 __cs_mutex_unlock(&lock);
         }
@@ -1122,11 +988,8 @@ int main()
 __cs_mutex_init(&lock, 0);
 ss = init();
 __cs_t __cs_local_main_t1;
-__cs_t __cs_local_main_t2;
 __cs_create(&__cs_local_main_t1, 0, thread1, 0);
-__cs_create(&__cs_local_main_t2, 0, thread2, 0);
 __cs_join(__cs_local_main_t1, 0);
-__cs_join(__cs_local_main_t2, 0);
 check(ss);
 return 0;
 }

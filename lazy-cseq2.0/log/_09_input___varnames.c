@@ -871,87 +871,13 @@ free((*se).value);
         }
 return res;
 }
-int contains(struct lfds711_stack_state *s, unsigned long long int id)
-{
-int max_size;
-max_size = 2;
-int actual_size;
-actual_size = 0;
-int res;
-res = 1;
-int found;
-found = 0;
-int dimension;
-dimension = 2;
-struct test_data **datas;
-datas = __cs_safe_malloc((sizeof(struct test_data *)) * max_size);
-struct lfds711_stack_element *se;
-while ((found == 0) && (res != 0))
-        {
-res = lfds711_stack_pop(s, &se);
-;_Bool __cs_tmp_if_cond_20; __cs_tmp_if_cond_20 = (res == 0); 
-                if (__cs_tmp_if_cond_20)
-                {
-break;
-                }
-datas[actual_size] = (*se).value;
-printf("%d -- %d\n", (*datas[actual_size]).user_id, actual_size);
-;_Bool __cs_tmp_if_cond_21; __cs_tmp_if_cond_21 = ((*datas[actual_size]).user_id == id); 
-                if (__cs_tmp_if_cond_21)
-                {
-found = 1;
-                }
-actual_size = actual_size + 1;
-        }
-int i;
-i = 0;
-while (i < actual_size)
-        {
-lfds711_stack_push(s, &(*datas[i]).se);
-i++;
-        }
-return found;
-}
-int get_size(struct lfds711_stack_state *s)
-{
-int max_size;
-max_size = 2;
-int actual_size;
-actual_size = 0;
-int res;
-res = 1;
-int dimension;
-dimension = 2;
-struct test_data **datas;
-datas = __cs_safe_malloc((sizeof(struct test_data *)) * max_size);
-struct lfds711_stack_element *se;
-while (res != 0)
-        {
-res = lfds711_stack_pop(&mystack, &se);
-datas[actual_size] = (*se).value;
-;_Bool __cs_tmp_if_cond_22; __cs_tmp_if_cond_22 = (res == 0); 
-                if (__cs_tmp_if_cond_22)
-                {
-break;
-                }
-actual_size = actual_size + 1;
-        }
-int i;
-i = 0;
-while (i < actual_size)
-        {
-lfds711_stack_push(s, &(*datas[i]).se);
-i++;
-        }
-return actual_size;
-}
 int is_empty(struct lfds711_stack_state *s)
 {
 struct lfds711_stack_element *se;
 int res;
 res = lfds711_stack_pop(s, &se);
-;_Bool __cs_tmp_if_cond_23; __cs_tmp_if_cond_23 = (res != 0); 
-        if (__cs_tmp_if_cond_23)
+;_Bool __cs_tmp_if_cond_20; __cs_tmp_if_cond_20 = (res != 0); 
+        if (__cs_tmp_if_cond_20)
         {
 lfds711_stack_push(s, se);
 return 0;
@@ -969,8 +895,8 @@ struct lfds711_stack_element *se;
 while (res != 0)
         {
 res = lfds711_stack_pop(s, &se);
-;_Bool __cs_tmp_if_cond_24; __cs_tmp_if_cond_24 = (res == 0); 
-                if (__cs_tmp_if_cond_24)
+;_Bool __cs_tmp_if_cond_21; __cs_tmp_if_cond_21 = (res == 0); 
+                if (__cs_tmp_if_cond_21)
                 {
 return data_structure_size;
                 }
@@ -985,67 +911,25 @@ return data_structure_size;
 }
 void check(struct lfds711_stack_state *ss)
 {
-int ids[3];
+int ids[0];
 int size;
-size = dump_structure(ss, 3, ids);
-__CSEQ_assert(((((size == 2) && (ids[0] == 1)) && (ids[2] == 1)) || (((size == 2) && (ids[1] == 1)) && (ids[2] == 1))) || ((((size == 3) && (ids[0] == 1)) && (ids[1] == 1)) && (ids[2] == 1)));
+size = dump_structure(ss, 0, ids);
+__CSEQ_assert(is_empty(ss));
 }
 int ATOMIC_OPERATION = 0;
 struct lfds711_stack_state *ss;
 __cs_mutex_t lock;
 void *thread1(void *__cs_unused)
 {
-;_Bool __cs_tmp_if_cond_25; __cs_tmp_if_cond_25 = (ATOMIC_OPERATION); 
-        if (__cs_tmp_if_cond_25)
-        {
-__cs_mutex_lock(&lock);
-        }
-;
-insert(ss, 0);
-;_Bool __cs_tmp_if_cond_26; __cs_tmp_if_cond_26 = (ATOMIC_OPERATION); 
-        if (__cs_tmp_if_cond_26)
-        {
-__cs_mutex_unlock(&lock);
-        }
-;
-;_Bool __cs_tmp_if_cond_27; __cs_tmp_if_cond_27 = (ATOMIC_OPERATION); 
-        if (__cs_tmp_if_cond_27)
-        {
-__cs_mutex_lock(&lock);
-        }
-;
-insert(ss, 1);
-;_Bool __cs_tmp_if_cond_28; __cs_tmp_if_cond_28 = (ATOMIC_OPERATION); 
-        if (__cs_tmp_if_cond_28)
-        {
-__cs_mutex_unlock(&lock);
-        }
-;
-}
-void *thread2(void *__cs_unused)
-{
-;_Bool __cs_tmp_if_cond_29; __cs_tmp_if_cond_29 = (ATOMIC_OPERATION); 
-        if (__cs_tmp_if_cond_29)
+;_Bool __cs_tmp_if_cond_22; __cs_tmp_if_cond_22 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_22)
         {
 __cs_mutex_lock(&lock);
         }
 ;
 delete(ss);
-;_Bool __cs_tmp_if_cond_30; __cs_tmp_if_cond_30 = (ATOMIC_OPERATION); 
-        if (__cs_tmp_if_cond_30)
-        {
-__cs_mutex_unlock(&lock);
-        }
-;
-;_Bool __cs_tmp_if_cond_31; __cs_tmp_if_cond_31 = (ATOMIC_OPERATION); 
-        if (__cs_tmp_if_cond_31)
-        {
-__cs_mutex_lock(&lock);
-        }
-;
-insert(ss, 2);
-;_Bool __cs_tmp_if_cond_32; __cs_tmp_if_cond_32 = (ATOMIC_OPERATION); 
-        if (__cs_tmp_if_cond_32)
+;_Bool __cs_tmp_if_cond_23; __cs_tmp_if_cond_23 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_23)
         {
 __cs_mutex_unlock(&lock);
         }
@@ -1056,11 +940,8 @@ int main()
 __cs_mutex_init(&lock, 0);
 ss = init();
 __cs_t t1;
-__cs_t t2;
 __cs_create(&t1, 0, thread1, 0);
-__cs_create(&t2, 0, thread2, 0);
 __cs_join(t1, 0);
-__cs_join(t2, 0);
 check(ss);
 return 0;
 }

@@ -4,28 +4,24 @@ list of functions:
    __CSEQ_atomic_swap_stack_top(param: top, oldtop, newtop)  call count 3
    lfds711_misc_internal_backoff_init(param: bs)  call count 2
    lfds711_stack_init_valid_on_current_logical_core(param: ss, user_state)  call count 1
-   lfds711_stack_pop(param: ss, se)  call count 5
-   lfds711_stack_push(param: ss, se)  call count 4
+   lfds711_stack_pop(param: ss, se)  call count 3
+   lfds711_stack_push(param: ss, se)  call count 2
    __CSEQ_atomic_compare_and_exchange(param: mptr, eptr, newval, weak_p, sm, fm)  call count 1
    __atomic_compare_exchange_n(param: mptr, eptr, newval, weak_p, sm, fm)  call count 0
    __CSEQ_atomic_exchange(param: previous, new, memorder)  call count 1
    __atomic_exchange_n(param: previous, new, memorder)  call count 0
    __atomic_thread_fence(param: i)  call count 0
    init(param: )  call count 1
-   insert(param: s, id)  call count 3
+   insert(param: s, id)  call count 0
    delete(param: s)  call count 1
-   contains(param: s, id)  call count 0
-   get_size(param: s)  call count 0
-   is_empty(param: s)  call count 0
+   is_empty(param: s)  call count 1
    dump_structure(param: s, size, ids)  call count 1
    check(param: ss)  call count 1
    thread1(param: __cs_unused)  call count 0
-   thread2(param: __cs_unused)  call count 0
    main(param: )  call count 0
 
 list of thread functions:
    thread1  call count 1
-   thread2  call count 1
 
 parameters for main():
    (no params)
@@ -343,7 +339,7 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1004, 1017, 1033, 1046, 1057, 1064]'  
+         occurs '[930, 941, 945]'  
       id168  'se'  
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
          size '[]'  
@@ -365,21 +361,21 @@ Variables:
       id238  'mystack'  
          type 'struct lfds711_stack_state'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[850, 851, 930]'  
+         ref '[850, 851]'  
          deref '[]'  
-         occurs '[850, 851, 930]'  
-      id286  'ATOMIC_OPERATION'  
+         occurs '[850, 851]'  
+      id265  'ATOMIC_OPERATION'  
          type 'int'  kind 'g'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[998, 1005, 1011, 1018, 1027, 1034, 1040, 1047]'  
-      id287  'lock'  
+         occurs '[924, 931]'  
+      id266  'lock'  
          type '__cs_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[1001, 1008, 1014, 1021, 1030, 1037, 1043, 1050, 1056]'  
+         ref '[927, 934, 940]'  
          deref '[]'  
-         occurs '[1001, 1008, 1014, 1021, 1030, 1037, 1043, 1050, 1056]'  
+         occurs '[927, 934, 940]'  
    lfds711_misc_force_store
       id17  'destination'  
          type 'lfds711_pal_uint_t'  kind 'l'  arity '0'  
@@ -851,308 +847,131 @@ Variables:
          ref '[]'  
          deref '[]'  
          occurs '[867, 868]'  
-   contains
+   is_empty
       id249  's'  
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[891, 910]'  
-      id250  'id'  
-         type 'unsigned long long int'  kind 'p'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[899]'  
-      id251  'max_size'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[877, 887]'  
-      id252  'actual_size'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[879, 897, 898, 898, 899, 904, 904, 908]'  
-      id253  'res'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[881, 889, 891, 892]'  
-      id254  'found'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[883, 889, 902, 913]'  
-      id255  'dimension'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[885]'  
-      id256  'datas'  
-         type 'struct test_data **'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[898, 899, 910]'  
-         occurs '[887, 897, 898, 899, 910]'  
-      id257  'se'  
+         occurs '[878, 882]'  
+      id250  'se'  
          type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[891]'  
-         deref '[897]'  
-         occurs '[891, 897]'  
-      id258  '__cs_tmp_if_cond_20'  
+         ref '[878]'  
+         deref '[]'  
+         occurs '[878, 882]'  
+      id251  'res'  
+         type 'int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[878, 879]'  
+      id252  '__cs_tmp_if_cond_20'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[892, 893]'  
-      id259  '__cs_tmp_if_cond_21'  
-         type '_Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[899, 900]'  
-      id260  'i'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[907, 908, 910, 911]'  
-   get_size
-      id261  's'  
-         type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[943]'  
-      id262  'max_size'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[918, 926]'  
-      id263  'actual_size'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[920, 931, 937, 937, 941, 946]'  
-      id264  'res'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[922, 928, 930, 932]'  
-      id265  'dimension'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[924]'  
-      id266  'datas'  
-         type 'struct test_data **'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[943]'  
-         occurs '[926, 931, 943]'  
-      id267  'se'  
-         type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[930]'  
-         deref '[931]'  
-         occurs '[930, 931]'  
-      id268  '__cs_tmp_if_cond_22'  
-         type '_Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[932, 933]'  
-      id269  'i'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[940, 941, 943, 944]'  
-   is_empty
-      id270  's'  
-         type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[952, 956]'  
-      id271  'se'  
-         type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[952]'  
-         deref '[]'  
-         occurs '[952, 956]'  
-      id272  'res'  
-         type 'int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[952, 953]'  
-      id273  '__cs_tmp_if_cond_23'  
-         type '_Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[953, 954]'  
+         occurs '[879, 880]'  
    dump_structure
-      id274  's'  
+      id253  's'  
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[971]'  
-      id275  'size'  
+         occurs '[897]'  
+      id254  'size'  
          type 'int'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id276  'ids'  
+      id255  'ids'  
          type 'int *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[981]'  
-      id277  'res'  
+         occurs '[907]'  
+      id256  'res'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[964, 969, 971, 972]'  
-      id278  'data_structure_size'  
+         occurs '[890, 895, 897, 898]'  
+      id257  'data_structure_size'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[966, 975, 977, 977, 984]'  
-      id279  'data'  
+         occurs '[892, 901, 903, 903, 910]'  
+      id258  'data'  
          type 'struct test_data *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[980, 981]'  
-         occurs '[978, 980, 981, 982]'  
-      id280  'se'  
+         deref '[906, 907]'  
+         occurs '[904, 906, 907, 908]'  
+      id259  'se'  
          type 'struct lfds711_stack_element *'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[971]'  
-         deref '[978]'  
-         occurs '[971, 978]'  
-      id281  '__cs_tmp_if_cond_24'  
+         ref '[897]'  
+         deref '[904]'  
+         occurs '[897, 904]'  
+      id260  '__cs_tmp_if_cond_21'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[972, 973]'  
-      id282  'id_found'  
+         occurs '[898, 899]'  
+      id261  'id_found'  
          type 'unsigned long long int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[980]'  
+         occurs '[906]'  
    check
-      id283  'ss'  
+      id262  'ss'  
          type 'struct lfds711_stack_state *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[990]'  
-      id284  'ids'  
+         occurs '[916, 917]'  
+      id263  'ids'  
          type 'int'  kind 'l'  arity '1'  
-         size '[3]'  
+         size '[0]'  
          ref '[]'  
          deref '[]'  
-         occurs '[990, 991, 991, 991, 991, 991, 991, 991]'  
-      id285  'size'  
+         occurs '[916]'  
+      id264  'size'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[990, 991, 991, 991]'  
+         occurs '[916]'  
    thread1
-      id288  '__cs_unused'  
+      id267  '__cs_unused'  
          type 'void *'  kind 'p'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id289  '__cs_tmp_if_cond_25'  
+      id268  '__cs_tmp_if_cond_22'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[998, 999]'  
-      id290  '__cs_tmp_if_cond_26'  
+         occurs '[924, 925]'  
+      id269  '__cs_tmp_if_cond_23'  
          type '_Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1005, 1006]'  
-      id291  '__cs_tmp_if_cond_27'  
-         type '_Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1011, 1012]'  
-      id292  '__cs_tmp_if_cond_28'  
-         type '_Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1018, 1019]'  
-   thread2
-      id293  '__cs_unused'  
-         type 'void *'  kind 'p'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
-      id294  '__cs_tmp_if_cond_29'  
-         type '_Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1027, 1028]'  
-      id295  '__cs_tmp_if_cond_30'  
-         type '_Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1034, 1035]'  
-      id296  '__cs_tmp_if_cond_31'  
-         type '_Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1040, 1041]'  
-      id297  '__cs_tmp_if_cond_32'  
-         type '_Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1047, 1048]'  
+         occurs '[931, 932]'  
    main
-      id298  't1'  
+      id270  't1'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[1060]'  
+         ref '[943]'  
          deref '[]'  
-         occurs '[1060, 1062]'  
-      id299  't2'  
-         type '__cs_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[1061]'  
-         deref '[]'  
-         occurs '[1061, 1063]'  
+         occurs '[943, 944]'  
 
 Fields:
    lfds711_prng_state
@@ -1383,14 +1202,6 @@ Pointer variables:
        var 's'   type 'struct lfds711_stack_state *'   kind 'p'   arity '0'   size '[]'   
        var 'se'   type 'struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
        var 'temp_td'   type 'struct test_data *'   kind 'l'   arity '0'   size '[]'   
-   contains
-       var 's'   type 'struct lfds711_stack_state *'   kind 'p'   arity '0'   size '[]'   
-       var 'datas'   type 'struct test_data **'   kind 'l'   arity '0'   size '[]'   
-       var 'se'   type 'struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
-   get_size
-       var 's'   type 'struct lfds711_stack_state *'   kind 'p'   arity '0'   size '[]'   
-       var 'datas'   type 'struct test_data **'   kind 'l'   arity '0'   size '[]'   
-       var 'se'   type 'struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
    is_empty
        var 's'   type 'struct lfds711_stack_state *'   kind 'p'   arity '0'   size '[]'   
        var 'se'   type 'struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
@@ -1402,8 +1213,6 @@ Pointer variables:
    check
        var 'ss'   type 'struct lfds711_stack_state *'   kind 'p'   arity '0'   size '[]'   
    thread1
-       var '__cs_unused'   type 'void *'   kind 'p'   arity '0'   size '[]'   
-   thread2
        var '__cs_unused'   type 'void *'   kind 'p'   arity '0'   size '[]'   
    main
 
@@ -1851,103 +1660,6 @@ int delete(struct lfds711_stack_state *s)
 
 struct lfds711_stack_state *s
 int
-function 'contains' ----------------------------------:
-int contains(struct lfds711_stack_state *s, unsigned long long int id)
-{
-    int max_size;
-    max_size = 2;
-    int actual_size;
-    actual_size = 0;
-    int res;
-    res = 1;
-    int found;
-    found = 0;
-    int dimension;
-    dimension = 2;
-    struct test_data **datas;
-    datas = __cs_safe_malloc((sizeof(struct test_data *)) * max_size);
-    struct lfds711_stack_element *se;
-    while ((found == 0) && (res != 0))
-    {
-        res = lfds711_stack_pop(s, &se);
-        ;
-        _Bool __cs_tmp_if_cond_20;
-        __cs_tmp_if_cond_20 = res == 0;
-        if (__cs_tmp_if_cond_20)
-        {
-            break;
-        }
-
-        datas[actual_size] = (*se).value;
-        printf("%d -- %d\n", (*datas[actual_size]).user_id, actual_size);
-        ;
-        _Bool __cs_tmp_if_cond_21;
-        __cs_tmp_if_cond_21 = (*datas[actual_size]).user_id == id;
-        if (__cs_tmp_if_cond_21)
-        {
-            found = 1;
-        }
-
-        actual_size = actual_size + 1;
-    }
-
-    int i;
-    i = 0;
-    while (i < actual_size)
-    {
-        lfds711_stack_push(s, &(*datas[i]).se);
-        i++;
-    }
-
-    return found;
-}
-
-
-struct lfds711_stack_state *s, unsigned long long int id
-int
-function 'get_size' ----------------------------------:
-int get_size(struct lfds711_stack_state *s)
-{
-    int max_size;
-    max_size = 2;
-    int actual_size;
-    actual_size = 0;
-    int res;
-    res = 1;
-    int dimension;
-    dimension = 2;
-    struct test_data **datas;
-    datas = __cs_safe_malloc((sizeof(struct test_data *)) * max_size);
-    struct lfds711_stack_element *se;
-    while (res != 0)
-    {
-        res = lfds711_stack_pop(&mystack, &se);
-        datas[actual_size] = (*se).value;
-        ;
-        _Bool __cs_tmp_if_cond_22;
-        __cs_tmp_if_cond_22 = res == 0;
-        if (__cs_tmp_if_cond_22)
-        {
-            break;
-        }
-
-        actual_size = actual_size + 1;
-    }
-
-    int i;
-    i = 0;
-    while (i < actual_size)
-    {
-        lfds711_stack_push(s, &(*datas[i]).se);
-        i++;
-    }
-
-    return actual_size;
-}
-
-
-struct lfds711_stack_state *s
-int
 function 'is_empty' ----------------------------------:
 int is_empty(struct lfds711_stack_state *s)
 {
@@ -1955,9 +1667,9 @@ int is_empty(struct lfds711_stack_state *s)
     int res;
     res = lfds711_stack_pop(s, &se);
     ;
-    _Bool __cs_tmp_if_cond_23;
-    __cs_tmp_if_cond_23 = res != 0;
-    if (__cs_tmp_if_cond_23)
+    _Bool __cs_tmp_if_cond_20;
+    __cs_tmp_if_cond_20 = res != 0;
+    if (__cs_tmp_if_cond_20)
     {
         lfds711_stack_push(s, se);
         return 0;
@@ -1982,9 +1694,9 @@ int dump_structure(struct lfds711_stack_state *s, int size, int *ids)
     {
         res = lfds711_stack_pop(s, &se);
         ;
-        _Bool __cs_tmp_if_cond_24;
-        __cs_tmp_if_cond_24 = res == 0;
-        if (__cs_tmp_if_cond_24)
+        _Bool __cs_tmp_if_cond_21;
+        __cs_tmp_if_cond_21 = res == 0;
+        if (__cs_tmp_if_cond_21)
         {
             return data_structure_size;
         }
@@ -2006,10 +1718,10 @@ int
 function 'check' ----------------------------------:
 void check(struct lfds711_stack_state *ss)
 {
-    int ids[3];
+    int ids[0];
     int size;
-    size = dump_structure(ss, 3, ids);
-    __CSEQ_assert(((((size == 2) && (ids[0] == 1)) && (ids[2] == 1)) || (((size == 2) && (ids[1] == 1)) && (ids[2] == 1))) || ((((size == 3) && (ids[0] == 1)) && (ids[1] == 1)) && (ids[2] == 1)));
+    size = dump_structure(ss, 0, ids);
+    __CSEQ_assert(is_empty(ss));
 }
 
 
@@ -2019,55 +1731,9 @@ function 'thread1' ----------------------------------:
 void *thread1(void *__cs_unused)
 {
     ;
-    _Bool __cs_tmp_if_cond_25;
-    __cs_tmp_if_cond_25 = ATOMIC_OPERATION;
-    if (__cs_tmp_if_cond_25)
-    {
-        __cs_mutex_lock(&lock);
-    }
-
-    ;
-    insert(ss, 0);
-    ;
-    _Bool __cs_tmp_if_cond_26;
-    __cs_tmp_if_cond_26 = ATOMIC_OPERATION;
-    if (__cs_tmp_if_cond_26)
-    {
-        __cs_mutex_unlock(&lock);
-    }
-
-    ;
-    ;
-    _Bool __cs_tmp_if_cond_27;
-    __cs_tmp_if_cond_27 = ATOMIC_OPERATION;
-    if (__cs_tmp_if_cond_27)
-    {
-        __cs_mutex_lock(&lock);
-    }
-
-    ;
-    insert(ss, 1);
-    ;
-    _Bool __cs_tmp_if_cond_28;
-    __cs_tmp_if_cond_28 = ATOMIC_OPERATION;
-    if (__cs_tmp_if_cond_28)
-    {
-        __cs_mutex_unlock(&lock);
-    }
-
-    ;
-}
-
-
-void *__cs_unused
-void *
-function 'thread2' ----------------------------------:
-void *thread2(void *__cs_unused)
-{
-    ;
-    _Bool __cs_tmp_if_cond_29;
-    __cs_tmp_if_cond_29 = ATOMIC_OPERATION;
-    if (__cs_tmp_if_cond_29)
+    _Bool __cs_tmp_if_cond_22;
+    __cs_tmp_if_cond_22 = ATOMIC_OPERATION;
+    if (__cs_tmp_if_cond_22)
     {
         __cs_mutex_lock(&lock);
     }
@@ -2075,28 +1741,9 @@ void *thread2(void *__cs_unused)
     ;
     delete(ss);
     ;
-    _Bool __cs_tmp_if_cond_30;
-    __cs_tmp_if_cond_30 = ATOMIC_OPERATION;
-    if (__cs_tmp_if_cond_30)
-    {
-        __cs_mutex_unlock(&lock);
-    }
-
-    ;
-    ;
-    _Bool __cs_tmp_if_cond_31;
-    __cs_tmp_if_cond_31 = ATOMIC_OPERATION;
-    if (__cs_tmp_if_cond_31)
-    {
-        __cs_mutex_lock(&lock);
-    }
-
-    ;
-    insert(ss, 2);
-    ;
-    _Bool __cs_tmp_if_cond_32;
-    __cs_tmp_if_cond_32 = ATOMIC_OPERATION;
-    if (__cs_tmp_if_cond_32)
+    _Bool __cs_tmp_if_cond_23;
+    __cs_tmp_if_cond_23 = ATOMIC_OPERATION;
+    if (__cs_tmp_if_cond_23)
     {
         __cs_mutex_unlock(&lock);
     }
@@ -2113,11 +1760,8 @@ int main()
     __cs_mutex_init(&lock, 0);
     ss = init();
     __cs_t t1;
-    __cs_t t2;
     __cs_create(&t1, 0, thread1, 0);
-    __cs_create(&t2, 0, thread2, 0);
     __cs_join(t1, 0);
-    __cs_join(t2, 0);
     check(ss);
     return 0;
 }
@@ -2180,19 +1824,13 @@ function: insert   stmt:     lfds711_stack_push((struct lfds711_stack_state *) s
 
 function: delete   stmt:     return res;
 
-function: contains   stmt:     return found;
-
-function: get_size   stmt:     return actual_size;
-
 function: is_empty   stmt:     return 1;
 
 function: dump_structure   stmt:     return data_structure_size;
 
-function: check   stmt:     __CSEQ_assert(((((size == 2) && (ids[0] == 1)) && (ids[2] == 1)) || (((size == 2) && (ids[1] == 1)) && (ids[2] == 1))) || ((((size == 3) && (ids[0] == 1)) && (ids[1] == 1)) && (ids[2] == 1)));
+function: check   stmt:     __CSEQ_assert(is_empty(ss));
 
 function: thread1   stmt:     ;
-
-function: thread2   stmt:     ;
 
 function: main   stmt:     return 0;
 
@@ -2711,63 +2349,31 @@ All symbols (new symbol table - work in progress):
    (510, 'temp_td')  
    (511, 'res')  
    (512, '__cs_tmp_if_cond_19')  
-   (513, 'contains')  
+   (513, 'is_empty')  
    (514, 's')  
-   (515, 'id')  
-   (516, 'max_size')  
-   (517, 'actual_size')  
-   (518, 'res')  
-   (519, 'found')  
-   (520, 'dimension')  
-   (521, 'datas')  
-   (522, 'se')  
-   (523, '__cs_tmp_if_cond_20')  
-   (524, '__cs_tmp_if_cond_21')  
-   (525, 'i')  
-   (526, 'get_size')  
-   (527, 's')  
-   (528, 'max_size')  
-   (529, 'actual_size')  
-   (530, 'res')  
-   (531, 'dimension')  
-   (532, 'datas')  
-   (533, 'se')  
-   (534, '__cs_tmp_if_cond_22')  
-   (535, 'i')  
-   (536, 'is_empty')  
-   (537, 's')  
-   (538, 'se')  
-   (539, 'res')  
-   (540, '__cs_tmp_if_cond_23')  
-   (541, 'dump_structure')  
-   (542, 's')  
-   (543, 'size')  
-   (544, 'ids')  
-   (545, 'res')  
-   (546, 'data_structure_size')  
-   (547, 'data')  
-   (548, 'se')  
-   (549, '__cs_tmp_if_cond_24')  
-   (550, 'id_found')  
-   (551, 'check')  
-   (552, 'ss')  
-   (553, 'ids')  
-   (554, 'size')  
-   (555, 'ATOMIC_OPERATION')  
-   (556, 'ss')  
-   (557, 'lock')  
-   (558, 'thread1')  
-   (559, '__cs_unused')  
-   (560, '__cs_tmp_if_cond_25')  
-   (561, '__cs_tmp_if_cond_26')  
-   (562, '__cs_tmp_if_cond_27')  
-   (563, '__cs_tmp_if_cond_28')  
-   (564, 'thread2')  
-   (565, '__cs_unused')  
-   (566, '__cs_tmp_if_cond_29')  
-   (567, '__cs_tmp_if_cond_30')  
-   (568, '__cs_tmp_if_cond_31')  
-   (569, '__cs_tmp_if_cond_32')  
-   (570, 'main')  
-   (571, 't1')  
-   (572, 't2')  
+   (515, 'se')  
+   (516, 'res')  
+   (517, '__cs_tmp_if_cond_20')  
+   (518, 'dump_structure')  
+   (519, 's')  
+   (520, 'size')  
+   (521, 'ids')  
+   (522, 'res')  
+   (523, 'data_structure_size')  
+   (524, 'data')  
+   (525, 'se')  
+   (526, '__cs_tmp_if_cond_21')  
+   (527, 'id_found')  
+   (528, 'check')  
+   (529, 'ss')  
+   (530, 'ids')  
+   (531, 'size')  
+   (532, 'ATOMIC_OPERATION')  
+   (533, 'ss')  
+   (534, 'lock')  
+   (535, 'thread1')  
+   (536, '__cs_unused')  
+   (537, '__cs_tmp_if_cond_22')  
+   (538, '__cs_tmp_if_cond_23')  
+   (539, 'main')  
+   (540, 't1')  

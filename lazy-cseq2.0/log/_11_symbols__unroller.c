@@ -3,12 +3,10 @@ list of functions:
    __CSEQ_atomic_compare_and_exchange(param: __cs_param___CSEQ_atomic_compare_and_exchange_mptr, __cs_param___CSEQ_atomic_compare_and_exchange_eptr, __cs_param___CSEQ_atomic_compare_and_exchange_newval, __cs_param___CSEQ_atomic_compare_and_exchange_weak_p, __cs_param___CSEQ_atomic_compare_and_exchange_sm, __cs_param___CSEQ_atomic_compare_and_exchange_fm)  call count 0
    __CSEQ_atomic_exchange(param: __cs_param___CSEQ_atomic_exchange_previous, __cs_param___CSEQ_atomic_exchange_new, __cs_param___CSEQ_atomic_exchange_memorder)  call count 1
    thread1(param: __cs_param_thread1___cs_unused)  call count 0
-   thread2(param: __cs_param_thread2___cs_unused)  call count 0
    main(param: )  call count 0
 
 list of thread functions:
    thread1  call count 1
-   thread2  call count 1
 
 parameters for main():
    (no params)
@@ -342,33 +340,33 @@ Variables:
       id172  'library_lock'  
          type '__cs_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[661, 663, 665, 667, 755, 757, 759, 761, 846, 847, 866, 868, 882, 883, 907, 909, 923, 924, 1010, 1012, 1014, 1016, 1062, 1096, 1181, 1240, 1241, 1260, 1262, 1276, 1277, 1301, 1303, 1317, 1318]'  
+         ref '[654, 655, 674, 676, 690, 691, 715, 717, 731, 732, 776, 810, 895, 951, 952, 971, 973, 987, 988, 1012, 1014, 1028, 1029, 1098, 1099, 1118, 1120, 1134, 1135, 1159, 1161, 1175, 1176, 1234, 1236, 1238, 1240]'  
          deref '[]'  
-         occurs '[661, 663, 665, 667, 755, 757, 759, 761, 846, 847, 866, 868, 882, 883, 907, 909, 923, 924, 1010, 1012, 1014, 1016, 1062, 1096, 1181, 1240, 1241, 1260, 1262, 1276, 1277, 1301, 1303, 1317, 1318]'  
+         occurs '[654, 655, 674, 676, 690, 691, 715, 717, 731, 732, 776, 810, 895, 951, 952, 971, 973, 987, 988, 1012, 1014, 1028, 1029, 1098, 1099, 1118, 1120, 1134, 1135, 1159, 1161, 1175, 1176, 1234, 1236, 1238, 1240]'  
       id188  'mystack'  
          type 'struct lfds711_stack_state'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[1061, 1185]'  
+         ref '[775, 899]'  
          deref '[]'  
-         occurs '[1061, 1185]'  
+         occurs '[775, 899]'  
       id191  'ATOMIC_OPERATION'  
          type 'int'  kind 'g'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[612, 698, 706, 792, 804, 953, 961, 1047]'  
+         occurs '[612, 761]'  
       id192  'ss'  
          type 'struct lfds711_stack_state *'  kind 'g'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[619, 713, 812, 968, 1188, 1196]'  
+         occurs '[620, 902, 907]'  
       id193  'lock'  
          type '__cs_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[615, 701, 709, 795, 807, 956, 964, 1050, 1057]'  
+         ref '[615, 764, 771]'  
          deref '[]'  
-         occurs '[615, 701, 709, 795, 807, 956, 964, 1050, 1057]'  
+         occurs '[615, 764, 771]'  
    __CSEQ_atomic_swap_stack_top
       id173  '__cs_param___CSEQ_atomic_swap_stack_top_top'  
          type 'struct lfds711_stack_element * volatile *'  kind 'p'  arity '0'  
@@ -469,704 +467,577 @@ Variables:
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id195  '__cs_local_thread1___cs_tmp_if_cond_25'  
+      id195  '__cs_local_thread1___cs_tmp_if_cond_22'  
          type 'static _Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[612, 613]'  
-      id196  '__cs_param_insert_s'  
+      id196  '__cs_retval__delete_1'  
+         type 'static int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[755, 758]'  
+      id197  '__cs_param_delete_s'  
          type 'static struct lfds711_stack_state *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[619, 625, 713, 719]'  
-      id197  '__cs_param_insert_id'  
-         type 'static int long long unsigned'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[619, 622, 713, 716]'  
-      id198  '__cs_local_insert_td'  
-         type 'static struct test_data *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[622, 623, 625, 716, 717, 719]'  
-         occurs '[621, 622, 623, 623, 625, 715, 716, 717, 717, 719]'  
-      id199  '__cs_param_lfds711_stack_push_ss'  
-         type 'static struct lfds711_stack_state *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[654, 655, 666, 748, 749, 760]'  
-         occurs '[625, 633, 654, 655, 666, 719, 727, 748, 749, 760]'  
-      id200  '__cs_param_lfds711_stack_push_se'  
+         occurs '[620, 626]'  
+      id198  '__cs_local_delete_se'  
          type 'static struct lfds711_stack_element *'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[]'  
-         deref '[662, 756]'  
-         occurs '[625, 644, 653, 662, 719, 738, 747, 756]'  
-      id201  '__cs_local_lfds711_stack_push_result'  
-         type 'static char unsigned'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[656, 659, 666, 670, 750, 753, 760, 764]'  
-      id202  '__cs_local_lfds711_stack_push_backoff_iteration'  
-         type 'static lfds711_pal_uint_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[628, 722]'  
-      id203  '__cs_local_lfds711_stack_push_new_top'  
-         type 'static struct lfds711_stack_element *'  kind 'l'  arity '1'  
-         size '[2]'  
-         ref '[666, 760]'  
-         deref '[]'  
-         occurs '[653, 664, 666, 747, 758, 760]'  
-      id204  '__cs_local_lfds711_stack_push_original_top'  
-         type 'static struct lfds711_stack_element * volatile'  kind 'l'  arity '1'  
-         size '[2]'  
-         ref '[666, 760]'  
-         deref '[]'  
-         occurs '[654, 655, 662, 664, 666, 748, 749, 756, 758, 760]'  
-      id205  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_14'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[633, 634, 727, 728]'  
-      id206  '__cs_local_lfds711_stack_push_c'  
-         type 'static char *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[638, 649, 732, 743]'  
-         occurs '[637, 638, 648, 649, 731, 732, 742, 743]'  
-      id207  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_15'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[644, 645, 738, 739]'  
-      id208  '__cs_local_lfds711_stack_push_i'  
-         type 'static int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[658, 682, 685, 752, 776, 779]'  
-      id209  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_16'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[670, 671, 764, 765]'  
-      id210  '__cs_local_exponential_backoff_loop'  
-         type 'static int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[675, 675, 675, 769, 769, 769]'  
-      id211  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_17'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[685, 686, 779, 780]'  
-      id212  '__cs_local_thread1___cs_tmp_if_cond_26'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[698, 699]'  
-      id213  '__cs_local_thread1___cs_tmp_if_cond_27'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[706, 707]'  
-      id214  '__cs_local_thread1___cs_tmp_if_cond_28'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[792, 793]'  
-   thread2
-      id215  '__cs_param_thread2___cs_unused'  
-         type 'void *'  kind 'p'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[]'  
-      id216  '__cs_local_thread2___cs_tmp_if_cond_29'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[804, 805]'  
-      id217  '__cs_retval__delete_1'  
-         type 'static int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[947, 950]'  
-      id218  '__cs_param_delete_s'  
-         type 'static struct lfds711_stack_state *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[812, 818]'  
-      id219  '__cs_local_delete_se'  
-         type 'static struct lfds711_stack_element *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[818]'  
-         deref '[945]'  
-         occurs '[818, 945]'  
-      id220  '__cs_local_delete_temp_td'  
+         ref '[626]'  
+         deref '[753]'  
+         occurs '[626, 753]'  
+      id199  '__cs_local_delete_temp_td'  
          type 'static struct test_data *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[]'  
-      id221  '__cs_local_delete_res'  
+      id200  '__cs_local_delete_res'  
          type 'static int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[939, 942, 947]'  
-      id222  '__cs_retval__lfds711_stack_pop_1'  
+         occurs '[747, 750, 755]'  
+      id201  '__cs_retval__lfds711_stack_pop_1'  
          type 'static int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[862, 903, 936, 939]'  
-      id223  '__cs_param_lfds711_stack_pop_ss'  
+         occurs '[670, 711, 744, 747]'  
+      id202  '__cs_param_lfds711_stack_pop_ss'  
          type 'static struct lfds711_stack_state *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[848, 849, 867, 908]'  
-         occurs '[818, 826, 848, 849, 867, 908]'  
-      id224  '__cs_param_lfds711_stack_pop_se'  
+         deref '[656, 657, 675, 716]'  
+         occurs '[626, 634, 656, 657, 675, 716]'  
+      id203  '__cs_param_lfds711_stack_pop_se'  
          type 'static struct lfds711_stack_element **'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[861, 902, 935]'  
-         occurs '[818, 837, 861, 902, 935]'  
-      id225  '__cs_local_lfds711_stack_pop_result'  
+         deref '[669, 710, 743]'  
+         occurs '[626, 645, 669, 710, 743]'  
+      id204  '__cs_local_lfds711_stack_pop_result'  
          type 'static char unsigned'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[867, 871, 895, 908, 912, 936]'  
-      id226  '__cs_local_lfds711_stack_pop_backoff_iteration'  
+         occurs '[675, 679, 703, 716, 720, 744]'  
+      id205  '__cs_local_lfds711_stack_pop_backoff_iteration'  
          type 'static lfds711_pal_uint_t'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[821]'  
-      id227  '__cs_local_lfds711_stack_pop_new_top'  
+         occurs '[629]'  
+      id206  '__cs_local_lfds711_stack_pop_new_top'  
          type 'static struct lfds711_stack_element *'  kind 'l'  arity '1'  
          size '[2]'  
-         ref '[867, 908]'  
+         ref '[675, 716]'  
          deref '[]'  
-         occurs '[864, 865, 867, 905, 906, 908]'  
-      id228  '__cs_local_lfds711_stack_pop_original_top'  
+         occurs '[672, 673, 675, 713, 714, 716]'  
+      id207  '__cs_local_lfds711_stack_pop_original_top'  
          type 'static struct lfds711_stack_element * volatile'  kind 'l'  arity '1'  
          size '[2]'  
-         ref '[867, 908]'  
-         deref '[865, 906]'  
-         occurs '[848, 849, 858, 864, 865, 867, 899, 905, 906, 908, 935]'  
-      id229  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_6'  
+         ref '[675, 716]'  
+         deref '[673, 714]'  
+         occurs '[656, 657, 666, 672, 673, 675, 707, 713, 714, 716, 743]'  
+      id208  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_6'  
          type 'static _Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[826, 827]'  
-      id230  '__cs_local_lfds711_stack_pop_c'  
+         occurs '[634, 635]'  
+      id209  '__cs_local_lfds711_stack_pop_c'  
          type 'static char *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
-         deref '[831, 842]'  
-         occurs '[830, 831, 841, 842]'  
-      id231  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7'  
+         deref '[639, 650]'  
+         occurs '[638, 639, 649, 650]'  
+      id210  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7'  
          type 'static _Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[837, 838]'  
-      id232  '__cs_local_lfds711_stack_pop_i'  
+         occurs '[645, 646]'  
+      id211  '__cs_local_lfds711_stack_pop_i'  
          type 'static int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[851, 885, 888, 926, 929]'  
-      id233  '__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1'  
+         occurs '[659, 693, 696, 734, 737]'  
+      id212  '__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1'  
          type 'static int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[854, 854, 854]'  
-      id234  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8'  
+         occurs '[662, 662, 662]'  
+      id213  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8'  
          type 'static _Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[858, 859]'  
-      id235  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9'  
+         occurs '[666, 667]'  
+      id214  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9'  
          type 'static _Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[871, 872]'  
-      id236  '__cs_local_exponential_backoff_loop'  
+         occurs '[679, 680]'  
+      id215  '__cs_local_exponential_backoff_loop'  
          type 'static int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[876, 876, 876, 917, 917, 917, 1024, 1024, 1024]'  
-      id237  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10'  
+         occurs '[684, 684, 684, 725, 725, 725]'  
+      id216  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10'  
          type 'static _Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[888, 889]'  
-      id238  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11'  
+         occurs '[696, 697]'  
+      id217  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11'  
          type 'static _Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[899, 900]'  
-      id239  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12'  
+         occurs '[707, 708]'  
+      id218  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12'  
          type 'static _Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[912, 913]'  
-      id240  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13'  
+         occurs '[720, 721]'  
+      id219  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13'  
          type 'static _Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[929, 930]'  
-      id241  '__cs_local_delete___cs_tmp_if_cond_19'  
+         occurs '[737, 738]'  
+      id220  '__cs_local_delete___cs_tmp_if_cond_19'  
          type 'static _Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[942, 943]'  
-      id242  '__cs_local_thread2___cs_tmp_if_cond_30'  
+         occurs '[750, 751]'  
+      id221  '__cs_local_thread1___cs_tmp_if_cond_23'  
          type 'static _Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[953, 954]'  
-      id243  '__cs_local_thread2___cs_tmp_if_cond_31'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[961, 962]'  
-      id244  '__cs_param_insert_s'  
+         occurs '[761, 762]'  
+   main
+      id222  '__cs_retval__init_1'  
          type 'static struct lfds711_stack_state *'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[968, 974]'  
-      id245  '__cs_param_insert_id'  
+         occurs '[899, 902]'  
+      id223  '__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss'  
+         type 'static struct lfds711_stack_state *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[790, 801, 811, 812, 813, 815, 847]'  
+         occurs '[775, 779, 790, 801, 811, 812, 813, 815, 847]'  
+      id224  '__cs_param_lfds711_stack_init_valid_on_current_logical_core_user_state'  
+         type 'static void *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[775, 813]'  
+      id225  '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_3'  
+         type 'static _Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[779, 780]'  
+      id226  '__cs_local_lfds711_stack_init_valid_on_current_logical_core_c'  
+         type 'static char *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[784, 795, 806]'  
+         occurs '[783, 784, 794, 795, 805, 806]'  
+      id227  '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4'  
+         type 'static _Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[790, 791]'  
+      id228  '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5'  
+         type 'static _Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[801, 802]'  
+      id229  '__cs_param_lfds711_misc_internal_backoff_init_bs'  
+         type 'static struct lfds711_misc_backoff_state *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[829, 838, 839, 840, 841, 842, 861, 870, 871, 872, 873, 874]'  
+         occurs '[815, 818, 829, 838, 839, 840, 841, 842, 847, 850, 861, 870, 871, 872, 873, 874]'  
+      id230  '__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1'  
+         type 'static _Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[818, 819, 850, 851]'  
+      id231  '__cs_local_lfds711_misc_internal_backoff_init_c'  
+         type 'static char *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[823, 834, 855, 866]'  
+         occurs '[822, 823, 833, 834, 854, 855, 865, 866]'  
+      id232  '__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2'  
+         type 'static _Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[829, 830, 861, 862]'  
+      id233  '__cs_local_lfds711_misc_force_store_destination'  
+         type 'static lfds711_pal_uint_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[879, 883]'  
+         deref '[]'  
+         occurs '[879, 883]'  
+      id234  '__cs_retval____atomic_exchange_n_1'  
+         type 'static unsigned long'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[886, 889]'  
+      id235  '__cs_param___atomic_exchange_n_previous'  
+         type 'static int long long unsigned *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[883, 885]'  
+      id236  '__cs_param___atomic_exchange_n_new'  
          type 'static int long long unsigned'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[968, 971]'  
-      id246  '__cs_local_insert_td'  
-         type 'static struct test_data *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[971, 972, 974]'  
-         occurs '[970, 971, 972, 972, 974]'  
-      id247  '__cs_param_lfds711_stack_push_ss'  
-         type 'static struct lfds711_stack_state *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[1003, 1004, 1015]'  
-         occurs '[974, 982, 1003, 1004, 1015]'  
-      id248  '__cs_param_lfds711_stack_push_se'  
-         type 'static struct lfds711_stack_element *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[1011]'  
-         occurs '[974, 993, 1002, 1011]'  
-      id249  '__cs_local_lfds711_stack_push_result'  
-         type 'static char unsigned'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1005, 1008, 1015, 1019]'  
-      id250  '__cs_local_lfds711_stack_push_backoff_iteration'  
-         type 'static lfds711_pal_uint_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[977]'  
-      id251  '__cs_local_lfds711_stack_push_new_top'  
-         type 'static struct lfds711_stack_element *'  kind 'l'  arity '1'  
-         size '[2]'  
-         ref '[1015]'  
-         deref '[]'  
-         occurs '[1002, 1013, 1015]'  
-      id252  '__cs_local_lfds711_stack_push_original_top'  
-         type 'static struct lfds711_stack_element * volatile'  kind 'l'  arity '1'  
-         size '[2]'  
-         ref '[1015]'  
-         deref '[]'  
-         occurs '[1003, 1004, 1011, 1013, 1015]'  
-      id253  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_14'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[982, 983]'  
-      id254  '__cs_local_lfds711_stack_push_c'  
-         type 'static char *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[987, 998]'  
-         occurs '[986, 987, 997, 998]'  
-      id255  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_15'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[993, 994]'  
-      id256  '__cs_local_lfds711_stack_push_i'  
+         occurs '[883, 885]'  
+      id237  '__cs_param___atomic_exchange_n_memorder'  
          type 'static int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1007, 1031, 1034]'  
-      id257  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_16'  
+         occurs '[883, 885]'  
+      id238  '__cs_local___atomic_exchange_n_res'  
+         type 'static int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[885, 886]'  
+      id239  '__cs_local_main_t1'  
+         type 'static __cs_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[904]'  
+         deref '[]'  
+         occurs '[904, 905]'  
+      id240  '__cs_param_check_ss'  
+         type 'static struct lfds711_stack_state *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[907, 912, 1065]'  
+      id241  '__cs_local_check_ids'  
+         type 'static int *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[908, 912]'  
+      id242  '__cs_local_check_size'  
+         type 'static int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1062]'  
+      id243  '__cs_retval__dump_structure_1'  
+         type 'static int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1050, 1059, 1062]'  
+      id244  '__cs_param_dump_structure_s'  
+         type 'static struct lfds711_stack_state *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[912, 923]'  
+      id245  '__cs_param_dump_structure_size'  
+         type 'static int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[912]'  
+      id246  '__cs_param_dump_structure_ids'  
+         type 'static int *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[912, 1056]'  
+      id247  '__cs_local_dump_structure_res'  
+         type 'static int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[914, 919, 1044, 1047]'  
+      id248  '__cs_local_dump_structure_data_structure_size'  
+         type 'static int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[916, 1050, 1052, 1052, 1059]'  
+      id249  '__cs_local_dump_structure_data'  
+         type 'static struct test_data *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1055, 1056]'  
+         occurs '[1053, 1055, 1056, 1057]'  
+      id250  '__cs_local_dump_structure_se'  
+         type 'static struct lfds711_stack_element *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[923]'  
+         deref '[1053]'  
+         occurs '[923, 1053]'  
+      id251  '__cs_retval__lfds711_stack_pop_2'  
+         type 'static int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[967, 1008, 1041, 1044]'  
+      id252  '__cs_param_lfds711_stack_pop_ss'  
+         type 'static struct lfds711_stack_state *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[953, 954, 972, 1013, 1100, 1101, 1119, 1160]'  
+         occurs '[923, 931, 953, 954, 972, 1013, 1070, 1078, 1100, 1101, 1119, 1160]'  
+      id253  '__cs_param_lfds711_stack_pop_se'  
+         type 'static struct lfds711_stack_element **'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[966, 1007, 1040, 1113, 1154, 1187]'  
+         occurs '[923, 942, 966, 1007, 1040, 1070, 1089, 1113, 1154, 1187]'  
+      id254  '__cs_local_lfds711_stack_pop_result'  
+         type 'static char unsigned'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[972, 976, 1000, 1013, 1017, 1041, 1119, 1123, 1147, 1160, 1164, 1188]'  
+      id255  '__cs_local_lfds711_stack_pop_backoff_iteration'  
+         type 'static lfds711_pal_uint_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[926, 1073]'  
+      id256  '__cs_local_lfds711_stack_pop_new_top'  
+         type 'static struct lfds711_stack_element *'  kind 'l'  arity '1'  
+         size '[2]'  
+         ref '[972, 1013, 1119, 1160]'  
+         deref '[]'  
+         occurs '[969, 970, 972, 1010, 1011, 1013, 1116, 1117, 1119, 1157, 1158, 1160]'  
+      id257  '__cs_local_lfds711_stack_pop_original_top'  
+         type 'static struct lfds711_stack_element * volatile'  kind 'l'  arity '1'  
+         size '[2]'  
+         ref '[972, 1013, 1119, 1160]'  
+         deref '[970, 1011, 1117, 1158]'  
+         occurs '[953, 954, 963, 969, 970, 972, 1004, 1010, 1011, 1013, 1040, 1100, 1101, 1110, 1116, 1117, 1119, 1151, 1157, 1158, 1160, 1187]'  
+      id258  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_6'  
          type 'static _Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1019, 1020]'  
-      id258  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_17'  
+         occurs '[931, 932, 1078, 1079]'  
+      id259  '__cs_local_lfds711_stack_pop_c'  
+         type 'static char *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[936, 947, 1083, 1094]'  
+         occurs '[935, 936, 946, 947, 1082, 1083, 1093, 1094]'  
+      id260  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7'  
          type 'static _Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1034, 1035]'  
-      id259  '__cs_local_thread2___cs_tmp_if_cond_32'  
+         occurs '[942, 943, 1089, 1090]'  
+      id261  '__cs_local_lfds711_stack_pop_i'  
+         type 'static int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[956, 990, 993, 1031, 1034, 1103, 1137, 1140, 1178, 1181]'  
+      id262  '__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1'  
+         type 'static int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[959, 959, 959, 1106, 1106, 1106]'  
+      id263  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8'  
+         type 'static _Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[963, 964, 1110, 1111]'  
+      id264  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9'  
+         type 'static _Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[976, 977, 1123, 1124]'  
+      id265  '__cs_local_exponential_backoff_loop'  
+         type 'static int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[981, 981, 981, 1022, 1022, 1022, 1128, 1128, 1128, 1169, 1169, 1169, 1248, 1248, 1248]'  
+      id266  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10'  
+         type 'static _Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[993, 994, 1140, 1141]'  
+      id267  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11'  
+         type 'static _Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1004, 1005, 1151, 1152]'  
+      id268  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12'  
+         type 'static _Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1017, 1018, 1164, 1165]'  
+      id269  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13'  
+         type 'static _Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1034, 1035, 1181, 1182]'  
+      id270  '__cs_local_dump_structure___cs_tmp_if_cond_21'  
          type 'static _Bool'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
          occurs '[1047, 1048]'  
-   main
-      id260  '__cs_retval__init_1'  
-         type 'static struct lfds711_stack_state *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1185, 1188]'  
-      id261  '__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss'  
-         type 'static struct lfds711_stack_state *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[1076, 1087, 1097, 1098, 1099, 1101, 1133]'  
-         occurs '[1061, 1065, 1076, 1087, 1097, 1098, 1099, 1101, 1133]'  
-      id262  '__cs_param_lfds711_stack_init_valid_on_current_logical_core_user_state'  
-         type 'static void *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1061, 1099]'  
-      id263  '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_3'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1065, 1066]'  
-      id264  '__cs_local_lfds711_stack_init_valid_on_current_logical_core_c'  
-         type 'static char *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[1070, 1081, 1092]'  
-         occurs '[1069, 1070, 1080, 1081, 1091, 1092]'  
-      id265  '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1076, 1077]'  
-      id266  '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1087, 1088]'  
-      id267  '__cs_param_lfds711_misc_internal_backoff_init_bs'  
-         type 'static struct lfds711_misc_backoff_state *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[1115, 1124, 1125, 1126, 1127, 1128, 1147, 1156, 1157, 1158, 1159, 1160]'  
-         occurs '[1101, 1104, 1115, 1124, 1125, 1126, 1127, 1128, 1133, 1136, 1147, 1156, 1157, 1158, 1159, 1160]'  
-      id268  '__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1104, 1105, 1136, 1137]'  
-      id269  '__cs_local_lfds711_misc_internal_backoff_init_c'  
-         type 'static char *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[1109, 1120, 1141, 1152]'  
-         occurs '[1108, 1109, 1119, 1120, 1140, 1141, 1151, 1152]'  
-      id270  '__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1115, 1116, 1147, 1148]'  
-      id271  '__cs_local_lfds711_misc_force_store_destination'  
-         type 'static lfds711_pal_uint_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[1165, 1169]'  
-         deref '[]'  
-         occurs '[1165, 1169]'  
-      id272  '__cs_retval____atomic_exchange_n_1'  
-         type 'static unsigned long'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1172, 1175]'  
-      id273  '__cs_param___atomic_exchange_n_previous'  
-         type 'static int long long unsigned *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1169, 1171]'  
-      id274  '__cs_param___atomic_exchange_n_new'  
-         type 'static int long long unsigned'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1169, 1171]'  
-      id275  '__cs_param___atomic_exchange_n_memorder'  
-         type 'static int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1169, 1171]'  
-      id276  '__cs_local___atomic_exchange_n_res'  
-         type 'static int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1171, 1172]'  
-      id277  '__cs_local_main_t1'  
-         type 'static __cs_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[1191]'  
-         deref '[]'  
-         occurs '[1191, 1193]'  
-      id278  '__cs_local_main_t2'  
-         type 'static __cs_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[1192]'  
-         deref '[]'  
-         occurs '[1192, 1194]'  
-      id279  '__cs_param_check_ss'  
-         type 'static struct lfds711_stack_state *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1196, 1201]'  
-      id280  '__cs_local_check_ids'  
-         type 'static int *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1197, 1201, 1352, 1352, 1352, 1352, 1352, 1352, 1352]'  
-      id281  '__cs_local_check_size'  
-         type 'static int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1351, 1352, 1352, 1352]'  
-      id282  '__cs_retval__dump_structure_1'  
-         type 'static int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1339, 1348, 1351]'  
-      id283  '__cs_param_dump_structure_s'  
-         type 'static struct lfds711_stack_state *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1201, 1212]'  
-      id284  '__cs_param_dump_structure_size'  
-         type 'static int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1201]'  
-      id285  '__cs_param_dump_structure_ids'  
-         type 'static int *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1201, 1345]'  
-      id286  '__cs_local_dump_structure_res'  
-         type 'static int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1203, 1208, 1333, 1336]'  
-      id287  '__cs_local_dump_structure_data_structure_size'  
-         type 'static int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1205, 1339, 1341, 1341, 1348]'  
-      id288  '__cs_local_dump_structure_data'  
-         type 'static struct test_data *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[1344, 1345]'  
-         occurs '[1342, 1344, 1345, 1346]'  
-      id289  '__cs_local_dump_structure_se'  
-         type 'static struct lfds711_stack_element *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[1212]'  
-         deref '[1342]'  
-         occurs '[1212, 1342]'  
-      id290  '__cs_retval__lfds711_stack_pop_2'  
-         type 'static int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1256, 1297, 1330, 1333]'  
-      id291  '__cs_param_lfds711_stack_pop_ss'  
-         type 'static struct lfds711_stack_state *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[1242, 1243, 1261, 1302]'  
-         occurs '[1212, 1220, 1242, 1243, 1261, 1302]'  
-      id292  '__cs_param_lfds711_stack_pop_se'  
-         type 'static struct lfds711_stack_element **'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[1255, 1296, 1329]'  
-         occurs '[1212, 1231, 1255, 1296, 1329]'  
-      id293  '__cs_local_lfds711_stack_pop_result'  
-         type 'static char unsigned'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1261, 1265, 1289, 1302, 1306, 1330]'  
-      id294  '__cs_local_lfds711_stack_pop_backoff_iteration'  
-         type 'static lfds711_pal_uint_t'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1215]'  
-      id295  '__cs_local_lfds711_stack_pop_new_top'  
-         type 'static struct lfds711_stack_element *'  kind 'l'  arity '1'  
-         size '[2]'  
-         ref '[1261, 1302]'  
-         deref '[]'  
-         occurs '[1258, 1259, 1261, 1299, 1300, 1302]'  
-      id296  '__cs_local_lfds711_stack_pop_original_top'  
-         type 'static struct lfds711_stack_element * volatile'  kind 'l'  arity '1'  
-         size '[2]'  
-         ref '[1261, 1302]'  
-         deref '[1259, 1300]'  
-         occurs '[1242, 1243, 1252, 1258, 1259, 1261, 1293, 1299, 1300, 1302, 1329]'  
-      id297  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_6'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1220, 1221]'  
-      id298  '__cs_local_lfds711_stack_pop_c'  
-         type 'static char *'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[1225, 1236]'  
-         occurs '[1224, 1225, 1235, 1236]'  
-      id299  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1231, 1232]'  
-      id300  '__cs_local_lfds711_stack_pop_i'  
-         type 'static int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1245, 1279, 1282, 1320, 1323]'  
-      id301  '__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1'  
-         type 'static int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1248, 1248, 1248]'  
-      id302  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1252, 1253]'  
-      id303  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1265, 1266]'  
-      id304  '__cs_local_exponential_backoff_loop'  
-         type 'static int'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1270, 1270, 1270, 1311, 1311, 1311]'  
-      id305  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1282, 1283]'  
-      id306  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1293, 1294]'  
-      id307  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1306, 1307]'  
-      id308  '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1323, 1324]'  
-      id309  '__cs_local_dump_structure___cs_tmp_if_cond_24'  
-         type 'static _Bool'  kind 'l'  arity '0'  
-         size '[]'  
-         ref '[]'  
-         deref '[]'  
-         occurs '[1336, 1337]'  
-      id310  '__cs_local_dump_structure_id_found'  
+      id271  '__cs_local_dump_structure_id_found'  
          type 'static unsigned long long int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1344]'  
+         occurs '[1055]'  
+      id272  '__cs_retval__is_empty_1'  
+         type 'static int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1267, 1269, 1272]'  
+      id273  '__cs_param_is_empty_s'  
+         type 'static struct lfds711_stack_state *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1065, 1070, 1198]'  
+      id274  '__cs_local_is_empty_se'  
+         type 'static struct lfds711_stack_element *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[1070]'  
+         deref '[]'  
+         occurs '[1070, 1198]'  
+      id275  '__cs_local_is_empty_res'  
+         type 'static int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1191, 1194]'  
+      id276  '__cs_retval__lfds711_stack_pop_3'  
+         type 'static int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1114, 1155, 1188, 1191]'  
+      id277  '__cs_local_is_empty___cs_tmp_if_cond_20'  
+         type 'static _Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1194, 1195]'  
+      id278  '__cs_param_lfds711_stack_push_ss'  
+         type 'static struct lfds711_stack_state *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1227, 1228, 1239]'  
+         occurs '[1198, 1206, 1227, 1228, 1239]'  
+      id279  '__cs_param_lfds711_stack_push_se'  
+         type 'static struct lfds711_stack_element *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1235]'  
+         occurs '[1198, 1217, 1226, 1235]'  
+      id280  '__cs_local_lfds711_stack_push_result'  
+         type 'static char unsigned'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1229, 1232, 1239, 1243]'  
+      id281  '__cs_local_lfds711_stack_push_backoff_iteration'  
+         type 'static lfds711_pal_uint_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1201]'  
+      id282  '__cs_local_lfds711_stack_push_new_top'  
+         type 'static struct lfds711_stack_element *'  kind 'l'  arity '1'  
+         size '[2]'  
+         ref '[1239]'  
+         deref '[]'  
+         occurs '[1226, 1237, 1239]'  
+      id283  '__cs_local_lfds711_stack_push_original_top'  
+         type 'static struct lfds711_stack_element * volatile'  kind 'l'  arity '1'  
+         size '[2]'  
+         ref '[1239]'  
+         deref '[]'  
+         occurs '[1227, 1228, 1235, 1237, 1239]'  
+      id284  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_14'  
+         type 'static _Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1206, 1207]'  
+      id285  '__cs_local_lfds711_stack_push_c'  
+         type 'static char *'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[1211, 1222]'  
+         occurs '[1210, 1211, 1221, 1222]'  
+      id286  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_15'  
+         type 'static _Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1217, 1218]'  
+      id287  '__cs_local_lfds711_stack_push_i'  
+         type 'static int'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1231, 1255, 1258]'  
+      id288  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_16'  
+         type 'static _Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1243, 1244]'  
+      id289  '__cs_local_lfds711_stack_push___cs_tmp_if_cond_17'  
+         type 'static _Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1258, 1259]'  
 
 Fields:
    lfds711_prng_state
@@ -1370,14 +1241,6 @@ Pointer variables:
        var '__cs_param___CSEQ_atomic_exchange_previous'   type 'int long long unsigned *'   kind 'p'   arity '0'   size '[]'   
    thread1
        var '__cs_param_thread1___cs_unused'   type 'void *'   kind 'p'   arity '0'   size '[]'   
-       var '__cs_param_insert_s'   type 'static struct lfds711_stack_state *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_local_insert_td'   type 'static struct test_data *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_param_lfds711_stack_push_ss'   type 'static struct lfds711_stack_state *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_param_lfds711_stack_push_se'   type 'static struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_local_lfds711_stack_push_new_top'   type 'static struct lfds711_stack_element *'   kind 'l'   arity '1'   size '[2]'   
-       var '__cs_local_lfds711_stack_push_c'   type 'static char *'   kind 'l'   arity '0'   size '[]'   
-   thread2
-       var '__cs_param_thread2___cs_unused'   type 'void *'   kind 'p'   arity '0'   size '[]'   
        var '__cs_param_delete_s'   type 'static struct lfds711_stack_state *'   kind 'l'   arity '0'   size '[]'   
        var '__cs_local_delete_se'   type 'static struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
        var '__cs_local_delete_temp_td'   type 'static struct test_data *'   kind 'l'   arity '0'   size '[]'   
@@ -1385,12 +1248,6 @@ Pointer variables:
        var '__cs_param_lfds711_stack_pop_se'   type 'static struct lfds711_stack_element **'   kind 'l'   arity '0'   size '[]'   
        var '__cs_local_lfds711_stack_pop_new_top'   type 'static struct lfds711_stack_element *'   kind 'l'   arity '1'   size '[2]'   
        var '__cs_local_lfds711_stack_pop_c'   type 'static char *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_param_insert_s'   type 'static struct lfds711_stack_state *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_local_insert_td'   type 'static struct test_data *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_param_lfds711_stack_push_ss'   type 'static struct lfds711_stack_state *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_param_lfds711_stack_push_se'   type 'static struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
-       var '__cs_local_lfds711_stack_push_new_top'   type 'static struct lfds711_stack_element *'   kind 'l'   arity '1'   size '[2]'   
-       var '__cs_local_lfds711_stack_push_c'   type 'static char *'   kind 'l'   arity '0'   size '[]'   
    main
        var '__cs_retval__init_1'   type 'static struct lfds711_stack_state *'   kind 'l'   arity '0'   size '[]'   
        var '__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss'   type 'static struct lfds711_stack_state *'   kind 'l'   arity '0'   size '[]'   
@@ -1409,6 +1266,12 @@ Pointer variables:
        var '__cs_param_lfds711_stack_pop_se'   type 'static struct lfds711_stack_element **'   kind 'l'   arity '0'   size '[]'   
        var '__cs_local_lfds711_stack_pop_new_top'   type 'static struct lfds711_stack_element *'   kind 'l'   arity '1'   size '[2]'   
        var '__cs_local_lfds711_stack_pop_c'   type 'static char *'   kind 'l'   arity '0'   size '[]'   
+       var '__cs_param_is_empty_s'   type 'static struct lfds711_stack_state *'   kind 'l'   arity '0'   size '[]'   
+       var '__cs_local_is_empty_se'   type 'static struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
+       var '__cs_param_lfds711_stack_push_ss'   type 'static struct lfds711_stack_state *'   kind 'l'   arity '0'   size '[]'   
+       var '__cs_param_lfds711_stack_push_se'   type 'static struct lfds711_stack_element *'   kind 'l'   arity '0'   size '[]'   
+       var '__cs_local_lfds711_stack_push_new_top'   type 'static struct lfds711_stack_element *'   kind 'l'   arity '1'   size '[2]'   
+       var '__cs_local_lfds711_stack_push_c'   type 'static char *'   kind 'l'   arity '0'   size '[]'   
 
 Function blocks:
 function '__CSEQ_atomic_swap_stack_top' ----------------------------------:
@@ -1471,249 +1334,9 @@ function 'thread1' ----------------------------------:
 void *thread1(void *__cs_param_thread1___cs_unused)
 {
     ;
-    static _Bool __cs_local_thread1___cs_tmp_if_cond_25;
-    __cs_local_thread1___cs_tmp_if_cond_25 = ATOMIC_OPERATION;
-    if (__cs_local_thread1___cs_tmp_if_cond_25)
-    {
-        __cs_mutex_lock(&lock);
-    }
-
-    ;
-    {
-        static struct lfds711_stack_state *__cs_param_insert_s;
-        __cs_param_insert_s = ss;
-        static int long long unsigned __cs_param_insert_id;
-        __cs_param_insert_id = 0;
-        static struct test_data *__cs_local_insert_td;
-        __cs_local_insert_td = __cs_safe_malloc(sizeof(struct test_data));
-        (*__cs_local_insert_td).user_id = __cs_param_insert_id;
-        (*__cs_local_insert_td).se.value = (void *) ((lfds711_pal_uint_t) __cs_local_insert_td);
-        {
-            static struct lfds711_stack_state *__cs_param_lfds711_stack_push_ss;
-            __cs_param_lfds711_stack_push_ss = (struct lfds711_stack_state *) __cs_param_insert_s;
-            static struct lfds711_stack_element *__cs_param_lfds711_stack_push_se;
-            __cs_param_lfds711_stack_push_se = &(*__cs_local_insert_td).se;
-            static char unsigned __cs_local_lfds711_stack_push_result;
-            static lfds711_pal_uint_t __cs_local_lfds711_stack_push_backoff_iteration;
-            __cs_local_lfds711_stack_push_backoff_iteration = 0;
-            static struct lfds711_stack_element *__cs_local_lfds711_stack_push_new_top[2];
-            static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_push_original_top[2];
-            ;
-            static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_14;
-            __cs_local_lfds711_stack_push___cs_tmp_if_cond_14 = !(__cs_param_lfds711_stack_push_ss != 0);
-            if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_14)
-            {
-                static char *__cs_local_lfds711_stack_push_c;
-                __cs_local_lfds711_stack_push_c = 0;
-                *__cs_local_lfds711_stack_push_c = 0;
-            }
-
-            ;
-            ;
-            ;
-            static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_15;
-            __cs_local_lfds711_stack_push___cs_tmp_if_cond_15 = !(__cs_param_lfds711_stack_push_se != 0);
-            if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
-            {
-                static char *__cs_local_lfds711_stack_push_c;
-                __cs_local_lfds711_stack_push_c = 0;
-                *__cs_local_lfds711_stack_push_c = 0;
-            }
-
-            ;
-            ;
-            __cs_local_lfds711_stack_push_new_top[0] = __cs_param_lfds711_stack_push_se;
-            __cs_local_lfds711_stack_push_original_top[1] = (*__cs_param_lfds711_stack_push_ss).top[1];
-            __cs_local_lfds711_stack_push_original_top[0] = (*__cs_param_lfds711_stack_push_ss).top[0];
-            __cs_local_lfds711_stack_push_result = 0;
-            static int __cs_local_lfds711_stack_push_i;
-            __cs_local_lfds711_stack_push_i = 0;
-            while (__cs_local_lfds711_stack_push_result == 0)
-            {
-                __cs_mutex_lock(&library_lock);
-                (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-                __cs_mutex_unlock(&library_lock);
-                __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-                __cs_mutex_lock(&library_lock);
-                __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-                __cs_mutex_unlock(&library_lock);
-                ;
-                static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                {
-                    {
-                        static int __cs_local_exponential_backoff_loop;
-                        for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loop < 3; __cs_local_exponential_backoff_loop++)
-                        {
-                            ;
-                        }
-
-                        __exit__exponential_backoff_1:
-                        ;
-
-                    }
-                }
-
-                __cs_local_lfds711_stack_push_i++;
-                ;
-                static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                {
-                    break;
-                }
-
-            }
-
-            goto __exit__lfds711_stack_push_1;
-            __exit__lfds711_stack_push_1:
-            ;
-
-        }
-        __exit__insert_1:
-        ;
-
-    }
-    ;
-    static _Bool __cs_local_thread1___cs_tmp_if_cond_26;
-    __cs_local_thread1___cs_tmp_if_cond_26 = ATOMIC_OPERATION;
-    if (__cs_local_thread1___cs_tmp_if_cond_26)
-    {
-        __cs_mutex_unlock(&lock);
-    }
-
-    ;
-    ;
-    static _Bool __cs_local_thread1___cs_tmp_if_cond_27;
-    __cs_local_thread1___cs_tmp_if_cond_27 = ATOMIC_OPERATION;
-    if (__cs_local_thread1___cs_tmp_if_cond_27)
-    {
-        __cs_mutex_lock(&lock);
-    }
-
-    ;
-    {
-        static struct lfds711_stack_state *__cs_param_insert_s;
-        __cs_param_insert_s = ss;
-        static int long long unsigned __cs_param_insert_id;
-        __cs_param_insert_id = 1;
-        static struct test_data *__cs_local_insert_td;
-        __cs_local_insert_td = __cs_safe_malloc(sizeof(struct test_data));
-        (*__cs_local_insert_td).user_id = __cs_param_insert_id;
-        (*__cs_local_insert_td).se.value = (void *) ((lfds711_pal_uint_t) __cs_local_insert_td);
-        {
-            static struct lfds711_stack_state *__cs_param_lfds711_stack_push_ss;
-            __cs_param_lfds711_stack_push_ss = (struct lfds711_stack_state *) __cs_param_insert_s;
-            static struct lfds711_stack_element *__cs_param_lfds711_stack_push_se;
-            __cs_param_lfds711_stack_push_se = &(*__cs_local_insert_td).se;
-            static char unsigned __cs_local_lfds711_stack_push_result;
-            static lfds711_pal_uint_t __cs_local_lfds711_stack_push_backoff_iteration;
-            __cs_local_lfds711_stack_push_backoff_iteration = 0;
-            static struct lfds711_stack_element *__cs_local_lfds711_stack_push_new_top[2];
-            static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_push_original_top[2];
-            ;
-            static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_14;
-            __cs_local_lfds711_stack_push___cs_tmp_if_cond_14 = !(__cs_param_lfds711_stack_push_ss != 0);
-            if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_14)
-            {
-                static char *__cs_local_lfds711_stack_push_c;
-                __cs_local_lfds711_stack_push_c = 0;
-                *__cs_local_lfds711_stack_push_c = 0;
-            }
-
-            ;
-            ;
-            ;
-            static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_15;
-            __cs_local_lfds711_stack_push___cs_tmp_if_cond_15 = !(__cs_param_lfds711_stack_push_se != 0);
-            if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
-            {
-                static char *__cs_local_lfds711_stack_push_c;
-                __cs_local_lfds711_stack_push_c = 0;
-                *__cs_local_lfds711_stack_push_c = 0;
-            }
-
-            ;
-            ;
-            __cs_local_lfds711_stack_push_new_top[0] = __cs_param_lfds711_stack_push_se;
-            __cs_local_lfds711_stack_push_original_top[1] = (*__cs_param_lfds711_stack_push_ss).top[1];
-            __cs_local_lfds711_stack_push_original_top[0] = (*__cs_param_lfds711_stack_push_ss).top[0];
-            __cs_local_lfds711_stack_push_result = 0;
-            static int __cs_local_lfds711_stack_push_i;
-            __cs_local_lfds711_stack_push_i = 0;
-            while (__cs_local_lfds711_stack_push_result == 0)
-            {
-                __cs_mutex_lock(&library_lock);
-                (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-                __cs_mutex_unlock(&library_lock);
-                __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-                __cs_mutex_lock(&library_lock);
-                __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-                __cs_mutex_unlock(&library_lock);
-                ;
-                static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                {
-                    {
-                        static int __cs_local_exponential_backoff_loop;
-                        for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loop < 3; __cs_local_exponential_backoff_loop++)
-                        {
-                            ;
-                        }
-
-                        __exit__exponential_backoff_2:
-                        ;
-
-                    }
-                }
-
-                __cs_local_lfds711_stack_push_i++;
-                ;
-                static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                {
-                    break;
-                }
-
-            }
-
-            goto __exit__lfds711_stack_push_2;
-            __exit__lfds711_stack_push_2:
-            ;
-
-        }
-        __exit__insert_2:
-        ;
-
-    }
-    ;
-    static _Bool __cs_local_thread1___cs_tmp_if_cond_28;
-    __cs_local_thread1___cs_tmp_if_cond_28 = ATOMIC_OPERATION;
-    if (__cs_local_thread1___cs_tmp_if_cond_28)
-    {
-        __cs_mutex_unlock(&lock);
-    }
-
-    ;
-    __exit_thread1:
-    ;
-
-    __cs_exit(0);
-}
-
-
-void *__cs_param_thread1___cs_unused
-void *
-function 'thread2' ----------------------------------:
-void *thread2(void *__cs_param_thread2___cs_unused)
-{
-    ;
-    static _Bool __cs_local_thread2___cs_tmp_if_cond_29;
-    __cs_local_thread2___cs_tmp_if_cond_29 = ATOMIC_OPERATION;
-    if (__cs_local_thread2___cs_tmp_if_cond_29)
+    static _Bool __cs_local_thread1___cs_tmp_if_cond_22;
+    __cs_local_thread1___cs_tmp_if_cond_22 = ATOMIC_OPERATION;
+    if (__cs_local_thread1___cs_tmp_if_cond_22)
     {
         __cs_mutex_lock(&lock);
     }
@@ -1798,7 +1421,7 @@ void *thread2(void *__cs_param_thread2___cs_unused)
                             ;
                         }
 
-                        __exit__exponential_backoff_3:
+                        __exit__exponential_backoff_1:
                         ;
 
                     }
@@ -1846,7 +1469,7 @@ void *thread2(void *__cs_param_thread2___cs_unused)
                             ;
                         }
 
-                        __exit__exponential_backoff_4:
+                        __exit__exponential_backoff_2:
                         ;
 
                     }
@@ -1889,136 +1512,22 @@ void *thread2(void *__cs_param_thread2___cs_unused)
     }
     __cs_retval__delete_1;
     ;
-    static _Bool __cs_local_thread2___cs_tmp_if_cond_30;
-    __cs_local_thread2___cs_tmp_if_cond_30 = ATOMIC_OPERATION;
-    if (__cs_local_thread2___cs_tmp_if_cond_30)
+    static _Bool __cs_local_thread1___cs_tmp_if_cond_23;
+    __cs_local_thread1___cs_tmp_if_cond_23 = ATOMIC_OPERATION;
+    if (__cs_local_thread1___cs_tmp_if_cond_23)
     {
         __cs_mutex_unlock(&lock);
     }
 
     ;
-    ;
-    static _Bool __cs_local_thread2___cs_tmp_if_cond_31;
-    __cs_local_thread2___cs_tmp_if_cond_31 = ATOMIC_OPERATION;
-    if (__cs_local_thread2___cs_tmp_if_cond_31)
-    {
-        __cs_mutex_lock(&lock);
-    }
-
-    ;
-    {
-        static struct lfds711_stack_state *__cs_param_insert_s;
-        __cs_param_insert_s = ss;
-        static int long long unsigned __cs_param_insert_id;
-        __cs_param_insert_id = 2;
-        static struct test_data *__cs_local_insert_td;
-        __cs_local_insert_td = __cs_safe_malloc(sizeof(struct test_data));
-        (*__cs_local_insert_td).user_id = __cs_param_insert_id;
-        (*__cs_local_insert_td).se.value = (void *) ((lfds711_pal_uint_t) __cs_local_insert_td);
-        {
-            static struct lfds711_stack_state *__cs_param_lfds711_stack_push_ss;
-            __cs_param_lfds711_stack_push_ss = (struct lfds711_stack_state *) __cs_param_insert_s;
-            static struct lfds711_stack_element *__cs_param_lfds711_stack_push_se;
-            __cs_param_lfds711_stack_push_se = &(*__cs_local_insert_td).se;
-            static char unsigned __cs_local_lfds711_stack_push_result;
-            static lfds711_pal_uint_t __cs_local_lfds711_stack_push_backoff_iteration;
-            __cs_local_lfds711_stack_push_backoff_iteration = 0;
-            static struct lfds711_stack_element *__cs_local_lfds711_stack_push_new_top[2];
-            static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_push_original_top[2];
-            ;
-            static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_14;
-            __cs_local_lfds711_stack_push___cs_tmp_if_cond_14 = !(__cs_param_lfds711_stack_push_ss != 0);
-            if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_14)
-            {
-                static char *__cs_local_lfds711_stack_push_c;
-                __cs_local_lfds711_stack_push_c = 0;
-                *__cs_local_lfds711_stack_push_c = 0;
-            }
-
-            ;
-            ;
-            ;
-            static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_15;
-            __cs_local_lfds711_stack_push___cs_tmp_if_cond_15 = !(__cs_param_lfds711_stack_push_se != 0);
-            if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
-            {
-                static char *__cs_local_lfds711_stack_push_c;
-                __cs_local_lfds711_stack_push_c = 0;
-                *__cs_local_lfds711_stack_push_c = 0;
-            }
-
-            ;
-            ;
-            __cs_local_lfds711_stack_push_new_top[0] = __cs_param_lfds711_stack_push_se;
-            __cs_local_lfds711_stack_push_original_top[1] = (*__cs_param_lfds711_stack_push_ss).top[1];
-            __cs_local_lfds711_stack_push_original_top[0] = (*__cs_param_lfds711_stack_push_ss).top[0];
-            __cs_local_lfds711_stack_push_result = 0;
-            static int __cs_local_lfds711_stack_push_i;
-            __cs_local_lfds711_stack_push_i = 0;
-            while (__cs_local_lfds711_stack_push_result == 0)
-            {
-                __cs_mutex_lock(&library_lock);
-                (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
-                __cs_mutex_unlock(&library_lock);
-                __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
-                __cs_mutex_lock(&library_lock);
-                __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
-                __cs_mutex_unlock(&library_lock);
-                ;
-                static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
-                __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
-                if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
-                {
-                    {
-                        static int __cs_local_exponential_backoff_loop;
-                        for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loop < 3; __cs_local_exponential_backoff_loop++)
-                        {
-                            ;
-                        }
-
-                        __exit__exponential_backoff_5:
-                        ;
-
-                    }
-                }
-
-                __cs_local_lfds711_stack_push_i++;
-                ;
-                static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
-                __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
-                if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
-                {
-                    break;
-                }
-
-            }
-
-            goto __exit__lfds711_stack_push_3;
-            __exit__lfds711_stack_push_3:
-            ;
-
-        }
-        __exit__insert_3:
-        ;
-
-    }
-    ;
-    static _Bool __cs_local_thread2___cs_tmp_if_cond_32;
-    __cs_local_thread2___cs_tmp_if_cond_32 = ATOMIC_OPERATION;
-    if (__cs_local_thread2___cs_tmp_if_cond_32)
-    {
-        __cs_mutex_unlock(&lock);
-    }
-
-    ;
-    __exit_thread2:
+    __exit_thread1:
     ;
 
     __cs_exit(0);
 }
 
 
-void *__cs_param_thread2___cs_unused
+void *__cs_param_thread1___cs_unused
 void *
 function 'main' ----------------------------------:
 int main()
@@ -2189,24 +1698,20 @@ int main()
     ss = __cs_retval__init_1;
     static __cs_t __cs_local_main_t1;
     ;
-    static __cs_t __cs_local_main_t2;
-    ;
     __cs_create(&__cs_local_main_t1, 0, thread1, 0);
-    __cs_create(&__cs_local_main_t2, 0, thread2, 0);
     __cs_join(__cs_local_main_t1, 0);
-    __cs_join(__cs_local_main_t2, 0);
     {
         static struct lfds711_stack_state *__cs_param_check_ss;
         __cs_param_check_ss = ss;
         static int *__cs_local_check_ids;
-        __cs_local_check_ids = (int *) __cs_safe_malloc((sizeof(int)) * 3);
+        __cs_local_check_ids = (int *) __cs_safe_malloc((sizeof(int)) * 0);
         static int __cs_local_check_size;
         static int __cs_retval__dump_structure_1;
         {
             static struct lfds711_stack_state *__cs_param_dump_structure_s;
             __cs_param_dump_structure_s = __cs_param_check_ss;
             static int __cs_param_dump_structure_size;
-            __cs_param_dump_structure_size = 3;
+            __cs_param_dump_structure_size = 0;
             static int *__cs_param_dump_structure_ids;
             __cs_param_dump_structure_ids = __cs_local_check_ids;
             static int __cs_local_dump_structure_res;
@@ -2289,7 +1794,7 @@ int main()
                                     ;
                                 }
 
-                                __exit__exponential_backoff_6:
+                                __exit__exponential_backoff_3:
                                 ;
 
                             }
@@ -2337,7 +1842,7 @@ int main()
                                     ;
                                 }
 
-                                __exit__exponential_backoff_7:
+                                __exit__exponential_backoff_4:
                                 ;
 
                             }
@@ -2365,9 +1870,9 @@ int main()
                 }
                 __cs_local_dump_structure_res = __cs_retval__lfds711_stack_pop_2;
                 ;
-                static _Bool __cs_local_dump_structure___cs_tmp_if_cond_24;
-                __cs_local_dump_structure___cs_tmp_if_cond_24 = __cs_local_dump_structure_res == 0;
-                if (__cs_local_dump_structure___cs_tmp_if_cond_24)
+                static _Bool __cs_local_dump_structure___cs_tmp_if_cond_21;
+                __cs_local_dump_structure___cs_tmp_if_cond_21 = __cs_local_dump_structure_res == 0;
+                if (__cs_local_dump_structure___cs_tmp_if_cond_21)
                 {
                     __cs_retval__dump_structure_1 = __cs_local_dump_structure_data_structure_size;
                     goto __exit__dump_structure_1;
@@ -2388,7 +1893,258 @@ int main()
 
         }
         __cs_local_check_size = __cs_retval__dump_structure_1;
-        __CSEQ_assert(((((__cs_local_check_size == 2) && (__cs_local_check_ids[0] == 1)) && (__cs_local_check_ids[2] == 1)) || (((__cs_local_check_size == 2) && (__cs_local_check_ids[1] == 1)) && (__cs_local_check_ids[2] == 1))) || ((((__cs_local_check_size == 3) && (__cs_local_check_ids[0] == 1)) && (__cs_local_check_ids[1] == 1)) && (__cs_local_check_ids[2] == 1)));
+        static int __cs_retval__is_empty_1;
+        {
+            static struct lfds711_stack_state *__cs_param_is_empty_s;
+            __cs_param_is_empty_s = __cs_param_check_ss;
+            static struct lfds711_stack_element *__cs_local_is_empty_se;
+            static int __cs_local_is_empty_res;
+            static int __cs_retval__lfds711_stack_pop_3;
+            {
+                static struct lfds711_stack_state *__cs_param_lfds711_stack_pop_ss;
+                __cs_param_lfds711_stack_pop_ss = __cs_param_is_empty_s;
+                static struct lfds711_stack_element **__cs_param_lfds711_stack_pop_se;
+                __cs_param_lfds711_stack_pop_se = &__cs_local_is_empty_se;
+                static char unsigned __cs_local_lfds711_stack_pop_result;
+                static lfds711_pal_uint_t __cs_local_lfds711_stack_pop_backoff_iteration;
+                __cs_local_lfds711_stack_pop_backoff_iteration = 0;
+                static struct lfds711_stack_element *__cs_local_lfds711_stack_pop_new_top[2];
+                static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_pop_original_top[2];
+                ;
+                static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_6;
+                __cs_local_lfds711_stack_pop___cs_tmp_if_cond_6 = !(__cs_param_lfds711_stack_pop_ss != 0);
+                if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_6)
+                {
+                    static char *__cs_local_lfds711_stack_pop_c;
+                    __cs_local_lfds711_stack_pop_c = 0;
+                    *__cs_local_lfds711_stack_pop_c = 0;
+                }
+
+                ;
+                ;
+                ;
+                static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_7;
+                __cs_local_lfds711_stack_pop___cs_tmp_if_cond_7 = !(__cs_param_lfds711_stack_pop_se != 0);
+                if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7)
+                {
+                    static char *__cs_local_lfds711_stack_pop_c;
+                    __cs_local_lfds711_stack_pop_c = 0;
+                    *__cs_local_lfds711_stack_pop_c = 0;
+                }
+
+                ;
+                ;
+                __cs_mutex_lock(&library_lock);
+                __cs_mutex_unlock(&library_lock);
+                __cs_local_lfds711_stack_pop_original_top[1] = (*__cs_param_lfds711_stack_pop_ss).top[1];
+                __cs_local_lfds711_stack_pop_original_top[0] = (*__cs_param_lfds711_stack_pop_ss).top[0];
+                static int __cs_local_lfds711_stack_pop_i;
+                __cs_local_lfds711_stack_pop_i = 0;
+                ;
+                static int __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1;
+                for (__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1 = 0; __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1 < 1; __cs_local_lfds711_stack_pop___cs_dowhile_onetime_1++)
+                {
+                    ;
+                    static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_8;
+                    __cs_local_lfds711_stack_pop___cs_tmp_if_cond_8 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+                    if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8)
+                    {
+                        *__cs_param_lfds711_stack_pop_se = 0;
+                        __cs_retval__lfds711_stack_pop_3 = 0;
+                        goto __exit__lfds711_stack_pop_3;
+                    }
+
+                    __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
+                    __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
+                    __cs_mutex_lock(&library_lock);
+                    __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
+                    __cs_mutex_unlock(&library_lock);
+                    ;
+                    static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_9;
+                    __cs_local_lfds711_stack_pop___cs_tmp_if_cond_9 = __cs_local_lfds711_stack_pop_result == 0;
+                    if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9)
+                    {
+                        {
+                            static int __cs_local_exponential_backoff_loop;
+                            for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loop < 3; __cs_local_exponential_backoff_loop++)
+                            {
+                                ;
+                            }
+
+                            __exit__exponential_backoff_5:
+                            ;
+
+                        }
+                        __cs_mutex_lock(&library_lock);
+                        __cs_mutex_unlock(&library_lock);
+                    }
+
+                    __cs_local_lfds711_stack_pop_i++;
+                    ;
+                    static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_10;
+                    __cs_local_lfds711_stack_pop___cs_tmp_if_cond_10 = __cs_local_lfds711_stack_pop_i > 1000;
+                    if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10)
+                    {
+                        break;
+                    }
+
+                }
+
+                while (__cs_local_lfds711_stack_pop_result == 0)
+                {
+                    ;
+                    static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11;
+                    __cs_local_lfds711_stack_pop___cs_tmp_if_cond_11 = __cs_local_lfds711_stack_pop_original_top[0] == 0;
+                    if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11)
+                    {
+                        *__cs_param_lfds711_stack_pop_se = 0;
+                        __cs_retval__lfds711_stack_pop_3 = 0;
+                        goto __exit__lfds711_stack_pop_3;
+                    }
+
+                    __cs_local_lfds711_stack_pop_new_top[1] = __cs_local_lfds711_stack_pop_original_top[1] + 1;
+                    __cs_local_lfds711_stack_pop_new_top[0] = (*__cs_local_lfds711_stack_pop_original_top[0]).next;
+                    __cs_mutex_lock(&library_lock);
+                    __cs_local_lfds711_stack_pop_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_pop_ss).top[0], &__cs_local_lfds711_stack_pop_original_top[0], &__cs_local_lfds711_stack_pop_new_top[0]);
+                    __cs_mutex_unlock(&library_lock);
+                    ;
+                    static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12;
+                    __cs_local_lfds711_stack_pop___cs_tmp_if_cond_12 = __cs_local_lfds711_stack_pop_result == 0;
+                    if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12)
+                    {
+                        {
+                            static int __cs_local_exponential_backoff_loop;
+                            for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loop < 3; __cs_local_exponential_backoff_loop++)
+                            {
+                                ;
+                            }
+
+                            __exit__exponential_backoff_6:
+                            ;
+
+                        }
+                        __cs_mutex_lock(&library_lock);
+                        __cs_mutex_unlock(&library_lock);
+                    }
+
+                    __cs_local_lfds711_stack_pop_i++;
+                    ;
+                    static _Bool __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13;
+                    __cs_local_lfds711_stack_pop___cs_tmp_if_cond_13 = __cs_local_lfds711_stack_pop_i > 1000;
+                    if (__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13)
+                    {
+                        break;
+                    }
+
+                }
+
+                *__cs_param_lfds711_stack_pop_se = __cs_local_lfds711_stack_pop_original_top[0];
+                __cs_retval__lfds711_stack_pop_3 = __cs_local_lfds711_stack_pop_result;
+                goto __exit__lfds711_stack_pop_3;
+                __exit__lfds711_stack_pop_3:
+                ;
+
+            }
+            __cs_local_is_empty_res = __cs_retval__lfds711_stack_pop_3;
+            ;
+            static _Bool __cs_local_is_empty___cs_tmp_if_cond_20;
+            __cs_local_is_empty___cs_tmp_if_cond_20 = __cs_local_is_empty_res != 0;
+            if (__cs_local_is_empty___cs_tmp_if_cond_20)
+            {
+                {
+                    static struct lfds711_stack_state *__cs_param_lfds711_stack_push_ss;
+                    __cs_param_lfds711_stack_push_ss = __cs_param_is_empty_s;
+                    static struct lfds711_stack_element *__cs_param_lfds711_stack_push_se;
+                    __cs_param_lfds711_stack_push_se = __cs_local_is_empty_se;
+                    static char unsigned __cs_local_lfds711_stack_push_result;
+                    static lfds711_pal_uint_t __cs_local_lfds711_stack_push_backoff_iteration;
+                    __cs_local_lfds711_stack_push_backoff_iteration = 0;
+                    static struct lfds711_stack_element *__cs_local_lfds711_stack_push_new_top[2];
+                    static struct lfds711_stack_element * volatile __cs_local_lfds711_stack_push_original_top[2];
+                    ;
+                    static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_14;
+                    __cs_local_lfds711_stack_push___cs_tmp_if_cond_14 = !(__cs_param_lfds711_stack_push_ss != 0);
+                    if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_14)
+                    {
+                        static char *__cs_local_lfds711_stack_push_c;
+                        __cs_local_lfds711_stack_push_c = 0;
+                        *__cs_local_lfds711_stack_push_c = 0;
+                    }
+
+                    ;
+                    ;
+                    ;
+                    static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_15;
+                    __cs_local_lfds711_stack_push___cs_tmp_if_cond_15 = !(__cs_param_lfds711_stack_push_se != 0);
+                    if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_15)
+                    {
+                        static char *__cs_local_lfds711_stack_push_c;
+                        __cs_local_lfds711_stack_push_c = 0;
+                        *__cs_local_lfds711_stack_push_c = 0;
+                    }
+
+                    ;
+                    ;
+                    __cs_local_lfds711_stack_push_new_top[0] = __cs_param_lfds711_stack_push_se;
+                    __cs_local_lfds711_stack_push_original_top[1] = (*__cs_param_lfds711_stack_push_ss).top[1];
+                    __cs_local_lfds711_stack_push_original_top[0] = (*__cs_param_lfds711_stack_push_ss).top[0];
+                    __cs_local_lfds711_stack_push_result = 0;
+                    static int __cs_local_lfds711_stack_push_i;
+                    __cs_local_lfds711_stack_push_i = 0;
+                    while (__cs_local_lfds711_stack_push_result == 0)
+                    {
+                        __cs_mutex_lock(&library_lock);
+                        (*__cs_param_lfds711_stack_push_se).next = __cs_local_lfds711_stack_push_original_top[0];
+                        __cs_mutex_unlock(&library_lock);
+                        __cs_local_lfds711_stack_push_new_top[1] = __cs_local_lfds711_stack_push_original_top[1] + 1;
+                        __cs_mutex_lock(&library_lock);
+                        __cs_local_lfds711_stack_push_result = __CSEQ_atomic_swap_stack_top(&(*__cs_param_lfds711_stack_push_ss).top[0], &__cs_local_lfds711_stack_push_original_top[0], &__cs_local_lfds711_stack_push_new_top[0]);
+                        __cs_mutex_unlock(&library_lock);
+                        ;
+                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_16;
+                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_16 = __cs_local_lfds711_stack_push_result == 0;
+                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_16)
+                        {
+                            {
+                                static int __cs_local_exponential_backoff_loop;
+                                for (__cs_local_exponential_backoff_loop = 0; __cs_local_exponential_backoff_loop < 3; __cs_local_exponential_backoff_loop++)
+                                {
+                                    ;
+                                }
+
+                                __exit__exponential_backoff_7:
+                                ;
+
+                            }
+                        }
+
+                        __cs_local_lfds711_stack_push_i++;
+                        ;
+                        static _Bool __cs_local_lfds711_stack_push___cs_tmp_if_cond_17;
+                        __cs_local_lfds711_stack_push___cs_tmp_if_cond_17 = __cs_local_lfds711_stack_push_i > 1000;
+                        if (__cs_local_lfds711_stack_push___cs_tmp_if_cond_17)
+                        {
+                            break;
+                        }
+
+                    }
+
+                    goto __exit__lfds711_stack_push_1;
+                    __exit__lfds711_stack_push_1:
+                    ;
+
+                }
+                __cs_retval__is_empty_1 = 0;
+                goto __exit__is_empty_1;
+            }
+
+            __cs_retval__is_empty_1 = 1;
+            goto __exit__is_empty_1;
+            __exit__is_empty_1:
+            ;
+
+        }
+        __CSEQ_assert(__cs_retval__is_empty_1);
         __exit__check_1:
         ;
 
@@ -2431,8 +2187,6 @@ function: __CSEQ_atomic_compare_and_exchange   stmt:     if (__cs_local___CSEQ_a
 function: __CSEQ_atomic_exchange   stmt:     return __cs_local___CSEQ_atomic_exchange_old;
 
 function: thread1   stmt:     __cs_exit(0);
-
-function: thread2   stmt:     __cs_exit(0);
 
 function: main   stmt:     __cs_exit(0);
 
@@ -2878,153 +2632,133 @@ All symbols (new symbol table - work in progress):
    (437, 'lock')  
    (438, 'thread1')  
    (439, '__cs_param_thread1___cs_unused')  
-   (440, '__cs_local_thread1___cs_tmp_if_cond_25')  
-   (441, '__cs_param_insert_s')  
-   (442, '__cs_param_insert_id')  
-   (443, '__cs_local_insert_td')  
-   (444, '__cs_param_lfds711_stack_push_ss')  
-   (445, '__cs_param_lfds711_stack_push_se')  
-   (446, '__cs_local_lfds711_stack_push_result')  
-   (447, '__cs_local_lfds711_stack_push_backoff_iteration')  
-   (448, '__cs_local_lfds711_stack_push_new_top')  
-   (449, '__cs_local_lfds711_stack_push_original_top')  
-   (450, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_14')  
-   (451, '__cs_local_lfds711_stack_push_c')  
-   (452, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_15')  
-   (453, '__cs_local_lfds711_stack_push_c')  
-   (454, '__cs_local_lfds711_stack_push_i')  
-   (455, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_16')  
-   (456, '__cs_local_exponential_backoff_loop')  
-   (457, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_17')  
-   (458, '__cs_local_thread1___cs_tmp_if_cond_26')  
-   (459, '__cs_local_thread1___cs_tmp_if_cond_27')  
-   (460, '__cs_param_insert_s')  
-   (461, '__cs_param_insert_id')  
-   (462, '__cs_local_insert_td')  
-   (463, '__cs_param_lfds711_stack_push_ss')  
-   (464, '__cs_param_lfds711_stack_push_se')  
-   (465, '__cs_local_lfds711_stack_push_result')  
-   (466, '__cs_local_lfds711_stack_push_backoff_iteration')  
-   (467, '__cs_local_lfds711_stack_push_new_top')  
-   (468, '__cs_local_lfds711_stack_push_original_top')  
-   (469, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_14')  
-   (470, '__cs_local_lfds711_stack_push_c')  
-   (471, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_15')  
-   (472, '__cs_local_lfds711_stack_push_c')  
-   (473, '__cs_local_lfds711_stack_push_i')  
-   (474, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_16')  
-   (475, '__cs_local_exponential_backoff_loop')  
-   (476, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_17')  
-   (477, '__cs_local_thread1___cs_tmp_if_cond_28')  
-   (478, 'thread2')  
-   (479, '__cs_param_thread2___cs_unused')  
-   (480, '__cs_local_thread2___cs_tmp_if_cond_29')  
-   (481, '__cs_retval__delete_1')  
-   (482, '__cs_param_delete_s')  
-   (483, '__cs_local_delete_se')  
-   (484, '__cs_local_delete_temp_td')  
-   (485, '__cs_local_delete_res')  
-   (486, '__cs_retval__lfds711_stack_pop_1')  
-   (487, '__cs_param_lfds711_stack_pop_ss')  
-   (488, '__cs_param_lfds711_stack_pop_se')  
-   (489, '__cs_local_lfds711_stack_pop_result')  
-   (490, '__cs_local_lfds711_stack_pop_backoff_iteration')  
-   (491, '__cs_local_lfds711_stack_pop_new_top')  
-   (492, '__cs_local_lfds711_stack_pop_original_top')  
-   (493, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_6')  
-   (494, '__cs_local_lfds711_stack_pop_c')  
-   (495, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7')  
-   (496, '__cs_local_lfds711_stack_pop_c')  
-   (497, '__cs_local_lfds711_stack_pop_i')  
-   (498, '__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1')  
-   (499, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8')  
-   (500, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9')  
-   (501, '__cs_local_exponential_backoff_loop')  
-   (502, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10')  
-   (503, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11')  
-   (504, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12')  
-   (505, '__cs_local_exponential_backoff_loop')  
-   (506, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13')  
-   (507, '__cs_local_delete___cs_tmp_if_cond_19')  
-   (508, '__cs_local_thread2___cs_tmp_if_cond_30')  
-   (509, '__cs_local_thread2___cs_tmp_if_cond_31')  
-   (510, '__cs_param_insert_s')  
-   (511, '__cs_param_insert_id')  
-   (512, '__cs_local_insert_td')  
-   (513, '__cs_param_lfds711_stack_push_ss')  
-   (514, '__cs_param_lfds711_stack_push_se')  
-   (515, '__cs_local_lfds711_stack_push_result')  
-   (516, '__cs_local_lfds711_stack_push_backoff_iteration')  
-   (517, '__cs_local_lfds711_stack_push_new_top')  
-   (518, '__cs_local_lfds711_stack_push_original_top')  
-   (519, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_14')  
-   (520, '__cs_local_lfds711_stack_push_c')  
-   (521, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_15')  
-   (522, '__cs_local_lfds711_stack_push_c')  
-   (523, '__cs_local_lfds711_stack_push_i')  
-   (524, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_16')  
-   (525, '__cs_local_exponential_backoff_loop')  
-   (526, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_17')  
-   (527, '__cs_local_thread2___cs_tmp_if_cond_32')  
-   (528, 'main')  
-   (529, '__cs_retval__init_1')  
-   (530, '__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss')  
-   (531, '__cs_param_lfds711_stack_init_valid_on_current_logical_core_user_state')  
-   (532, '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_3')  
-   (533, '__cs_local_lfds711_stack_init_valid_on_current_logical_core_c')  
-   (534, '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4')  
-   (535, '__cs_local_lfds711_stack_init_valid_on_current_logical_core_c')  
-   (536, '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5')  
-   (537, '__cs_local_lfds711_stack_init_valid_on_current_logical_core_c')  
-   (538, '__cs_param_lfds711_misc_internal_backoff_init_bs')  
-   (539, '__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1')  
-   (540, '__cs_local_lfds711_misc_internal_backoff_init_c')  
-   (541, '__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2')  
-   (542, '__cs_local_lfds711_misc_internal_backoff_init_c')  
-   (543, '__cs_param_lfds711_misc_internal_backoff_init_bs')  
-   (544, '__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1')  
-   (545, '__cs_local_lfds711_misc_internal_backoff_init_c')  
-   (546, '__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2')  
-   (547, '__cs_local_lfds711_misc_internal_backoff_init_c')  
-   (548, '__cs_local_lfds711_misc_force_store_destination')  
-   (549, '__cs_retval____atomic_exchange_n_1')  
-   (550, '__cs_param___atomic_exchange_n_previous')  
-   (551, '__cs_param___atomic_exchange_n_new')  
-   (552, '__cs_param___atomic_exchange_n_memorder')  
-   (553, '__cs_local___atomic_exchange_n_res')  
-   (554, '__cs_local_main_t1')  
-   (555, '__cs_local_main_t2')  
-   (556, '__cs_param_check_ss')  
-   (557, '__cs_local_check_ids')  
-   (558, '__cs_local_check_size')  
-   (559, '__cs_retval__dump_structure_1')  
-   (560, '__cs_param_dump_structure_s')  
-   (561, '__cs_param_dump_structure_size')  
-   (562, '__cs_param_dump_structure_ids')  
-   (563, '__cs_local_dump_structure_res')  
-   (564, '__cs_local_dump_structure_data_structure_size')  
-   (565, '__cs_local_dump_structure_data')  
-   (566, '__cs_local_dump_structure_se')  
-   (567, '__cs_retval__lfds711_stack_pop_2')  
-   (568, '__cs_param_lfds711_stack_pop_ss')  
-   (569, '__cs_param_lfds711_stack_pop_se')  
-   (570, '__cs_local_lfds711_stack_pop_result')  
-   (571, '__cs_local_lfds711_stack_pop_backoff_iteration')  
-   (572, '__cs_local_lfds711_stack_pop_new_top')  
-   (573, '__cs_local_lfds711_stack_pop_original_top')  
-   (574, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_6')  
-   (575, '__cs_local_lfds711_stack_pop_c')  
-   (576, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7')  
-   (577, '__cs_local_lfds711_stack_pop_c')  
-   (578, '__cs_local_lfds711_stack_pop_i')  
-   (579, '__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1')  
-   (580, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8')  
-   (581, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9')  
-   (582, '__cs_local_exponential_backoff_loop')  
-   (583, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10')  
-   (584, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11')  
-   (585, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12')  
-   (586, '__cs_local_exponential_backoff_loop')  
-   (587, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13')  
-   (588, '__cs_local_dump_structure___cs_tmp_if_cond_24')  
-   (589, '__cs_local_dump_structure_id_found')  
+   (440, '__cs_local_thread1___cs_tmp_if_cond_22')  
+   (441, '__cs_retval__delete_1')  
+   (442, '__cs_param_delete_s')  
+   (443, '__cs_local_delete_se')  
+   (444, '__cs_local_delete_temp_td')  
+   (445, '__cs_local_delete_res')  
+   (446, '__cs_retval__lfds711_stack_pop_1')  
+   (447, '__cs_param_lfds711_stack_pop_ss')  
+   (448, '__cs_param_lfds711_stack_pop_se')  
+   (449, '__cs_local_lfds711_stack_pop_result')  
+   (450, '__cs_local_lfds711_stack_pop_backoff_iteration')  
+   (451, '__cs_local_lfds711_stack_pop_new_top')  
+   (452, '__cs_local_lfds711_stack_pop_original_top')  
+   (453, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_6')  
+   (454, '__cs_local_lfds711_stack_pop_c')  
+   (455, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7')  
+   (456, '__cs_local_lfds711_stack_pop_c')  
+   (457, '__cs_local_lfds711_stack_pop_i')  
+   (458, '__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1')  
+   (459, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8')  
+   (460, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9')  
+   (461, '__cs_local_exponential_backoff_loop')  
+   (462, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10')  
+   (463, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11')  
+   (464, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12')  
+   (465, '__cs_local_exponential_backoff_loop')  
+   (466, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13')  
+   (467, '__cs_local_delete___cs_tmp_if_cond_19')  
+   (468, '__cs_local_thread1___cs_tmp_if_cond_23')  
+   (469, 'main')  
+   (470, '__cs_retval__init_1')  
+   (471, '__cs_param_lfds711_stack_init_valid_on_current_logical_core_ss')  
+   (472, '__cs_param_lfds711_stack_init_valid_on_current_logical_core_user_state')  
+   (473, '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_3')  
+   (474, '__cs_local_lfds711_stack_init_valid_on_current_logical_core_c')  
+   (475, '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_4')  
+   (476, '__cs_local_lfds711_stack_init_valid_on_current_logical_core_c')  
+   (477, '__cs_local_lfds711_stack_init_valid_on_current_logical_core___cs_tmp_if_cond_5')  
+   (478, '__cs_local_lfds711_stack_init_valid_on_current_logical_core_c')  
+   (479, '__cs_param_lfds711_misc_internal_backoff_init_bs')  
+   (480, '__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1')  
+   (481, '__cs_local_lfds711_misc_internal_backoff_init_c')  
+   (482, '__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2')  
+   (483, '__cs_local_lfds711_misc_internal_backoff_init_c')  
+   (484, '__cs_param_lfds711_misc_internal_backoff_init_bs')  
+   (485, '__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_1')  
+   (486, '__cs_local_lfds711_misc_internal_backoff_init_c')  
+   (487, '__cs_local_lfds711_misc_internal_backoff_init___cs_tmp_if_cond_2')  
+   (488, '__cs_local_lfds711_misc_internal_backoff_init_c')  
+   (489, '__cs_local_lfds711_misc_force_store_destination')  
+   (490, '__cs_retval____atomic_exchange_n_1')  
+   (491, '__cs_param___atomic_exchange_n_previous')  
+   (492, '__cs_param___atomic_exchange_n_new')  
+   (493, '__cs_param___atomic_exchange_n_memorder')  
+   (494, '__cs_local___atomic_exchange_n_res')  
+   (495, '__cs_local_main_t1')  
+   (496, '__cs_param_check_ss')  
+   (497, '__cs_local_check_ids')  
+   (498, '__cs_local_check_size')  
+   (499, '__cs_retval__dump_structure_1')  
+   (500, '__cs_param_dump_structure_s')  
+   (501, '__cs_param_dump_structure_size')  
+   (502, '__cs_param_dump_structure_ids')  
+   (503, '__cs_local_dump_structure_res')  
+   (504, '__cs_local_dump_structure_data_structure_size')  
+   (505, '__cs_local_dump_structure_data')  
+   (506, '__cs_local_dump_structure_se')  
+   (507, '__cs_retval__lfds711_stack_pop_2')  
+   (508, '__cs_param_lfds711_stack_pop_ss')  
+   (509, '__cs_param_lfds711_stack_pop_se')  
+   (510, '__cs_local_lfds711_stack_pop_result')  
+   (511, '__cs_local_lfds711_stack_pop_backoff_iteration')  
+   (512, '__cs_local_lfds711_stack_pop_new_top')  
+   (513, '__cs_local_lfds711_stack_pop_original_top')  
+   (514, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_6')  
+   (515, '__cs_local_lfds711_stack_pop_c')  
+   (516, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7')  
+   (517, '__cs_local_lfds711_stack_pop_c')  
+   (518, '__cs_local_lfds711_stack_pop_i')  
+   (519, '__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1')  
+   (520, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8')  
+   (521, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9')  
+   (522, '__cs_local_exponential_backoff_loop')  
+   (523, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10')  
+   (524, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11')  
+   (525, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12')  
+   (526, '__cs_local_exponential_backoff_loop')  
+   (527, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13')  
+   (528, '__cs_local_dump_structure___cs_tmp_if_cond_21')  
+   (529, '__cs_local_dump_structure_id_found')  
+   (530, '__cs_retval__is_empty_1')  
+   (531, '__cs_param_is_empty_s')  
+   (532, '__cs_local_is_empty_se')  
+   (533, '__cs_local_is_empty_res')  
+   (534, '__cs_retval__lfds711_stack_pop_3')  
+   (535, '__cs_param_lfds711_stack_pop_ss')  
+   (536, '__cs_param_lfds711_stack_pop_se')  
+   (537, '__cs_local_lfds711_stack_pop_result')  
+   (538, '__cs_local_lfds711_stack_pop_backoff_iteration')  
+   (539, '__cs_local_lfds711_stack_pop_new_top')  
+   (540, '__cs_local_lfds711_stack_pop_original_top')  
+   (541, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_6')  
+   (542, '__cs_local_lfds711_stack_pop_c')  
+   (543, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_7')  
+   (544, '__cs_local_lfds711_stack_pop_c')  
+   (545, '__cs_local_lfds711_stack_pop_i')  
+   (546, '__cs_local_lfds711_stack_pop___cs_dowhile_onetime_1')  
+   (547, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_8')  
+   (548, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_9')  
+   (549, '__cs_local_exponential_backoff_loop')  
+   (550, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_10')  
+   (551, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_11')  
+   (552, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_12')  
+   (553, '__cs_local_exponential_backoff_loop')  
+   (554, '__cs_local_lfds711_stack_pop___cs_tmp_if_cond_13')  
+   (555, '__cs_local_is_empty___cs_tmp_if_cond_20')  
+   (556, '__cs_param_lfds711_stack_push_ss')  
+   (557, '__cs_param_lfds711_stack_push_se')  
+   (558, '__cs_local_lfds711_stack_push_result')  
+   (559, '__cs_local_lfds711_stack_push_backoff_iteration')  
+   (560, '__cs_local_lfds711_stack_push_new_top')  
+   (561, '__cs_local_lfds711_stack_push_original_top')  
+   (562, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_14')  
+   (563, '__cs_local_lfds711_stack_push_c')  
+   (564, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_15')  
+   (565, '__cs_local_lfds711_stack_push_c')  
+   (566, '__cs_local_lfds711_stack_push_i')  
+   (567, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_16')  
+   (568, '__cs_local_exponential_backoff_loop')  
+   (569, '__cs_local_lfds711_stack_push___cs_tmp_if_cond_17')  
