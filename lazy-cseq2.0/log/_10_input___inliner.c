@@ -1035,12 +1035,12 @@ return __cs_local_dump_structure_data_structure_size;
 }
 void check(struct lfds711_stack_state *__cs_param_check_ss)
 {
-int __cs_local_check_ids[1];
+int __cs_local_check_ids[3];
 int __cs_local_check_size;
-__cs_local_check_size = dump_structure(__cs_param_check_ss, 1, __cs_local_check_ids);
-__CSEQ_assert((__cs_local_check_size == 1) && (__cs_local_check_ids[0] == 1));
+__cs_local_check_size = dump_structure(__cs_param_check_ss, 3, __cs_local_check_ids);
+__CSEQ_assert(((((__cs_local_check_size == 2) && (__cs_local_check_ids[0] == 1)) && (__cs_local_check_ids[2] == 1)) || (((__cs_local_check_size == 2) && (__cs_local_check_ids[1] == 1)) && (__cs_local_check_ids[2] == 1))) || ((((__cs_local_check_size == 3) && (__cs_local_check_ids[0] == 1)) && (__cs_local_check_ids[1] == 1)) && (__cs_local_check_ids[2] == 1)));
 }
-int ATOMIC_OPERATION = 1;
+int ATOMIC_OPERATION = 0;
 struct lfds711_stack_state *ss;
 __cs_mutex_t lock;
 void *thread1(void *__cs_param_thread1___cs_unused)
@@ -1062,14 +1062,71 @@ if (__cs_local_thread1___cs_tmp_if_cond_26)
 __cs_mutex_unlock(&lock);
         }
 ;
+;
+        _Bool __cs_local_thread1___cs_tmp_if_cond_27;
+        __cs_local_thread1___cs_tmp_if_cond_27 = ATOMIC_OPERATION;
+if (__cs_local_thread1___cs_tmp_if_cond_27)
+        {
+__cs_mutex_lock(&lock);
+        }
+;
+insert(ss, 1);
+;
+        _Bool __cs_local_thread1___cs_tmp_if_cond_28;
+        __cs_local_thread1___cs_tmp_if_cond_28 = ATOMIC_OPERATION;
+if (__cs_local_thread1___cs_tmp_if_cond_28)
+        {
+__cs_mutex_unlock(&lock);
+        }
+;
+}
+void *thread2(void *__cs_param_thread2___cs_unused)
+{
+;
+        _Bool __cs_local_thread2___cs_tmp_if_cond_29;
+        __cs_local_thread2___cs_tmp_if_cond_29 = ATOMIC_OPERATION;
+if (__cs_local_thread2___cs_tmp_if_cond_29)
+        {
+__cs_mutex_lock(&lock);
+        }
+;
+delete(ss);
+;
+        _Bool __cs_local_thread2___cs_tmp_if_cond_30;
+        __cs_local_thread2___cs_tmp_if_cond_30 = ATOMIC_OPERATION;
+if (__cs_local_thread2___cs_tmp_if_cond_30)
+        {
+__cs_mutex_unlock(&lock);
+        }
+;
+;
+        _Bool __cs_local_thread2___cs_tmp_if_cond_31;
+        __cs_local_thread2___cs_tmp_if_cond_31 = ATOMIC_OPERATION;
+if (__cs_local_thread2___cs_tmp_if_cond_31)
+        {
+__cs_mutex_lock(&lock);
+        }
+;
+insert(ss, 2);
+;
+        _Bool __cs_local_thread2___cs_tmp_if_cond_32;
+        __cs_local_thread2___cs_tmp_if_cond_32 = ATOMIC_OPERATION;
+if (__cs_local_thread2___cs_tmp_if_cond_32)
+        {
+__cs_mutex_unlock(&lock);
+        }
+;
 }
 int main()
 {
 __cs_mutex_init(&lock, 0);
 ss = init();
 __cs_t __cs_local_main_t1;
+__cs_t __cs_local_main_t2;
 __cs_create(&__cs_local_main_t1, 0, thread1, 0);
+__cs_create(&__cs_local_main_t2, 0, thread2, 0);
 __cs_join(__cs_local_main_t1, 0);
+__cs_join(__cs_local_main_t2, 0);
 check(ss);
 return 0;
 }

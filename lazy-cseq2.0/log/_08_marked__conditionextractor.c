@@ -2603,21 +2603,21 @@ void check(struct lfds711_stack_state *ss)
 {
         
 # 961 "<previous_module>"
-int ids[1];
+int ids[3];
         
 # 962 "<previous_module>"
 int size;
         
 # 963 "<previous_module>"
-size = dump_structure(ss, 1, ids);
+size = dump_structure(ss, 3, ids);
         
 # 964 "<previous_module>"
-__CSEQ_assert((size == 1) && (ids[0] == 1));
+__CSEQ_assert(((((size == 2) && (ids[0] == 1)) && (ids[2] == 1)) || (((size == 2) && (ids[1] == 1)) && (ids[2] == 1))) || ((((size == 3) && (ids[0] == 1)) && (ids[1] == 1)) && (ids[2] == 1)));
 }
 
 
 # 966 "<previous_module>"
-int ATOMIC_OPERATION = 1;
+int ATOMIC_OPERATION = 0;
 
 # 967 "<previous_module>"
 struct lfds711_stack_state *ss;
@@ -2663,34 +2663,150 @@ __cs_mutex_unlock(&lock);
         
 # 981 "<previous_module>"
 ;
+        
+# 982 "<previous_module>"
+;_Bool __cs_tmp_if_cond_27; __cs_tmp_if_cond_27 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_27)
+
+# 983 "<previous_module>"
+        {
+                
+# 984 "<previous_module>"
+__cs_mutex_lock(&lock);
+        }
+
+        
+# 986 "<previous_module>"
+;
+        
+# 987 "<previous_module>"
+insert(ss, 1);
+        
+# 988 "<previous_module>"
+;_Bool __cs_tmp_if_cond_28; __cs_tmp_if_cond_28 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_28)
+
+# 989 "<previous_module>"
+        {
+                
+# 990 "<previous_module>"
+__cs_mutex_unlock(&lock);
+        }
+
+        
+# 992 "<previous_module>"
+;
 }
 
 
-# 983 "<previous_module>"
-int main()
+# 994 "<previous_module>"
+void *thread2(void *__cs_unused)
 
-# 984 "<previous_module>"
+# 995 "<previous_module>"
 {
         
-# 985 "<previous_module>"
+# 996 "<previous_module>"
+;_Bool __cs_tmp_if_cond_29; __cs_tmp_if_cond_29 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_29)
+
+# 997 "<previous_module>"
+        {
+                
+# 998 "<previous_module>"
+__cs_mutex_lock(&lock);
+        }
+
+        
+# 1000 "<previous_module>"
+;
+        
+# 1001 "<previous_module>"
+delete(ss);
+        
+# 1002 "<previous_module>"
+;_Bool __cs_tmp_if_cond_30; __cs_tmp_if_cond_30 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_30)
+
+# 1003 "<previous_module>"
+        {
+                
+# 1004 "<previous_module>"
+__cs_mutex_unlock(&lock);
+        }
+
+        
+# 1006 "<previous_module>"
+;
+        
+# 1007 "<previous_module>"
+;_Bool __cs_tmp_if_cond_31; __cs_tmp_if_cond_31 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_31)
+
+# 1008 "<previous_module>"
+        {
+                
+# 1009 "<previous_module>"
+__cs_mutex_lock(&lock);
+        }
+
+        
+# 1011 "<previous_module>"
+;
+        
+# 1012 "<previous_module>"
+insert(ss, 2);
+        
+# 1013 "<previous_module>"
+;_Bool __cs_tmp_if_cond_32; __cs_tmp_if_cond_32 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_32)
+
+# 1014 "<previous_module>"
+        {
+                
+# 1015 "<previous_module>"
+__cs_mutex_unlock(&lock);
+        }
+
+        
+# 1017 "<previous_module>"
+;
+}
+
+
+# 1019 "<previous_module>"
+int main()
+
+# 1020 "<previous_module>"
+{
+        
+# 1021 "<previous_module>"
 __cs_mutex_init(&lock, 0);
         
-# 986 "<previous_module>"
+# 1022 "<previous_module>"
 ss = init();
         
-# 987 "<previous_module>"
+# 1023 "<previous_module>"
 __cs_t t1;
         
-# 988 "<previous_module>"
+# 1024 "<previous_module>"
+__cs_t t2;
+        
+# 1025 "<previous_module>"
 __cs_create(&t1, 0, thread1, 0);
         
-# 989 "<previous_module>"
+# 1026 "<previous_module>"
+__cs_create(&t2, 0, thread2, 0);
+        
+# 1027 "<previous_module>"
 __cs_join(t1, 0);
         
-# 990 "<previous_module>"
+# 1028 "<previous_module>"
+__cs_join(t2, 0);
+        
+# 1029 "<previous_module>"
 check(ss);
         
-# 991 "<previous_module>"
+# 1030 "<previous_module>"
 return 0;
 }
 

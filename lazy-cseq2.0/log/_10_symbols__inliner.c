@@ -12,18 +12,20 @@ list of functions:
    __atomic_exchange_n(param: __cs_param___atomic_exchange_n_previous, __cs_param___atomic_exchange_n_new, __cs_param___atomic_exchange_n_memorder)  call count 0
    __atomic_thread_fence(param: __cs_param___atomic_thread_fence_i)  call count 0
    init(param: )  call count 1
-   insert(param: __cs_param_insert_s, __cs_param_insert_id)  call count 1
-   delete(param: __cs_param_delete_s)  call count 0
+   insert(param: __cs_param_insert_s, __cs_param_insert_id)  call count 3
+   delete(param: __cs_param_delete_s)  call count 1
    contains(param: __cs_param_contains_s, __cs_param_contains_id)  call count 0
    get_size(param: __cs_param_get_size_s)  call count 0
    is_empty(param: __cs_param_is_empty_s)  call count 0
    dump_structure(param: __cs_param_dump_structure_s, __cs_param_dump_structure_size, __cs_param_dump_structure_ids)  call count 1
    check(param: __cs_param_check_ss)  call count 1
    thread1(param: __cs_param_thread1___cs_unused)  call count 0
+   thread2(param: __cs_param_thread2___cs_unused)  call count 0
    main(param: )  call count 0
 
 list of thread functions:
    thread1  call count 1
+   thread2  call count 1
 
 parameters for main():
    (no params)
@@ -371,19 +373,19 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1050, 1059]'  
+         occurs '[1050, 1059, 1067, 1076, 1087, 1096, 1104, 1113]'  
       id290  'ss'  
          type 'struct lfds711_stack_state *'  kind 'g'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1056, 1069, 1073]'  
+         occurs '[1056, 1073, 1093, 1110, 1123, 1130]'  
       id291  'lock'  
          type '__cs_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[1053, 1062, 1068]'  
+         ref '[1053, 1062, 1070, 1079, 1090, 1099, 1107, 1116, 1122]'  
          deref '[]'  
-         occurs '[1053, 1062, 1068]'  
+         occurs '[1053, 1062, 1070, 1079, 1090, 1099, 1107, 1116, 1122]'  
    lfds711_misc_force_store
       id17  '__cs_local_lfds711_misc_force_store_destination'  
          type 'lfds711_pal_uint_t'  kind 'l'  arity '0'  
@@ -1072,16 +1074,16 @@ Variables:
          occurs '[1040]'  
       id287  '__cs_local_check_ids'  
          type 'int'  kind 'l'  arity '1'  
-         size '[1]'  
+         size '[3]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1040, 1041]'  
+         occurs '[1040, 1041, 1041, 1041, 1041, 1041, 1041, 1041]'  
       id288  '__cs_local_check_size'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1040, 1041]'  
+         occurs '[1040, 1041, 1041, 1041]'  
    thread1
       id292  '__cs_param_thread1___cs_unused'  
          type 'void *'  kind 'p'  arity '0'  
@@ -1101,13 +1103,62 @@ Variables:
          ref '[]'  
          deref '[]'  
          occurs '[1059, 1060]'  
+      id295  '__cs_local_thread1___cs_tmp_if_cond_27'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1067, 1068]'  
+      id296  '__cs_local_thread1___cs_tmp_if_cond_28'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1076, 1077]'  
+   thread2
+      id297  '__cs_param_thread2___cs_unused'  
+         type 'void *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id298  '__cs_local_thread2___cs_tmp_if_cond_29'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1087, 1088]'  
+      id299  '__cs_local_thread2___cs_tmp_if_cond_30'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1096, 1097]'  
+      id300  '__cs_local_thread2___cs_tmp_if_cond_31'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1104, 1105]'  
+      id301  '__cs_local_thread2___cs_tmp_if_cond_32'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1113, 1114]'  
    main
-      id295  '__cs_local_main_t1'  
+      id302  '__cs_local_main_t1'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[1071]'  
+         ref '[1126]'  
          deref '[]'  
-         occurs '[1071, 1072]'  
+         occurs '[1126, 1128]'  
+      id303  '__cs_local_main_t2'  
+         type '__cs_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[1127]'  
+         deref '[]'  
+         occurs '[1127, 1129]'  
 
 Fields:
    lfds711_prng_state
@@ -1362,6 +1413,8 @@ Pointer variables:
        var '__cs_param_check_ss'   type 'struct lfds711_stack_state *'   kind 'p'   arity '0'   size '[]'   
    thread1
        var '__cs_param_thread1___cs_unused'   type 'void *'   kind 'p'   arity '0'   size '[]'   
+   thread2
+       var '__cs_param_thread2___cs_unused'   type 'void *'   kind 'p'   arity '0'   size '[]'   
    main
 
 Function blocks:
@@ -1963,10 +2016,10 @@ int
 function 'check' ----------------------------------:
 void check(struct lfds711_stack_state *__cs_param_check_ss)
 {
-    int __cs_local_check_ids[1];
+    int __cs_local_check_ids[3];
     int __cs_local_check_size;
-    __cs_local_check_size = dump_structure(__cs_param_check_ss, 1, __cs_local_check_ids);
-    __CSEQ_assert((__cs_local_check_size == 1) && (__cs_local_check_ids[0] == 1));
+    __cs_local_check_size = dump_structure(__cs_param_check_ss, 3, __cs_local_check_ids);
+    __CSEQ_assert(((((__cs_local_check_size == 2) && (__cs_local_check_ids[0] == 1)) && (__cs_local_check_ids[2] == 1)) || (((__cs_local_check_size == 2) && (__cs_local_check_ids[1] == 1)) && (__cs_local_check_ids[2] == 1))) || ((((__cs_local_check_size == 3) && (__cs_local_check_ids[0] == 1)) && (__cs_local_check_ids[1] == 1)) && (__cs_local_check_ids[2] == 1)));
 }
 
 
@@ -1994,10 +2047,75 @@ void *thread1(void *__cs_param_thread1___cs_unused)
     }
 
     ;
+    ;
+    _Bool __cs_local_thread1___cs_tmp_if_cond_27;
+    __cs_local_thread1___cs_tmp_if_cond_27 = ATOMIC_OPERATION;
+    if (__cs_local_thread1___cs_tmp_if_cond_27)
+    {
+        __cs_mutex_lock(&lock);
+    }
+
+    ;
+    insert(ss, 1);
+    ;
+    _Bool __cs_local_thread1___cs_tmp_if_cond_28;
+    __cs_local_thread1___cs_tmp_if_cond_28 = ATOMIC_OPERATION;
+    if (__cs_local_thread1___cs_tmp_if_cond_28)
+    {
+        __cs_mutex_unlock(&lock);
+    }
+
+    ;
 }
 
 
 void *__cs_param_thread1___cs_unused
+void *
+function 'thread2' ----------------------------------:
+void *thread2(void *__cs_param_thread2___cs_unused)
+{
+    ;
+    _Bool __cs_local_thread2___cs_tmp_if_cond_29;
+    __cs_local_thread2___cs_tmp_if_cond_29 = ATOMIC_OPERATION;
+    if (__cs_local_thread2___cs_tmp_if_cond_29)
+    {
+        __cs_mutex_lock(&lock);
+    }
+
+    ;
+    delete(ss);
+    ;
+    _Bool __cs_local_thread2___cs_tmp_if_cond_30;
+    __cs_local_thread2___cs_tmp_if_cond_30 = ATOMIC_OPERATION;
+    if (__cs_local_thread2___cs_tmp_if_cond_30)
+    {
+        __cs_mutex_unlock(&lock);
+    }
+
+    ;
+    ;
+    _Bool __cs_local_thread2___cs_tmp_if_cond_31;
+    __cs_local_thread2___cs_tmp_if_cond_31 = ATOMIC_OPERATION;
+    if (__cs_local_thread2___cs_tmp_if_cond_31)
+    {
+        __cs_mutex_lock(&lock);
+    }
+
+    ;
+    insert(ss, 2);
+    ;
+    _Bool __cs_local_thread2___cs_tmp_if_cond_32;
+    __cs_local_thread2___cs_tmp_if_cond_32 = ATOMIC_OPERATION;
+    if (__cs_local_thread2___cs_tmp_if_cond_32)
+    {
+        __cs_mutex_unlock(&lock);
+    }
+
+    ;
+}
+
+
+void *__cs_param_thread2___cs_unused
 void *
 function 'main' ----------------------------------:
 int main()
@@ -2005,8 +2123,11 @@ int main()
     __cs_mutex_init(&lock, 0);
     ss = init();
     __cs_t __cs_local_main_t1;
+    __cs_t __cs_local_main_t2;
     __cs_create(&__cs_local_main_t1, 0, thread1, 0);
+    __cs_create(&__cs_local_main_t2, 0, thread2, 0);
     __cs_join(__cs_local_main_t1, 0);
+    __cs_join(__cs_local_main_t2, 0);
     check(ss);
     return 0;
 }
@@ -2077,9 +2198,11 @@ function: is_empty   stmt:     return 1;
 
 function: dump_structure   stmt:     return __cs_local_dump_structure_data_structure_size;
 
-function: check   stmt:     __CSEQ_assert((__cs_local_check_size == 1) && (__cs_local_check_ids[0] == 1));
+function: check   stmt:     __CSEQ_assert(((((__cs_local_check_size == 2) && (__cs_local_check_ids[0] == 1)) && (__cs_local_check_ids[2] == 1)) || (((__cs_local_check_size == 2) && (__cs_local_check_ids[1] == 1)) && (__cs_local_check_ids[2] == 1))) || ((((__cs_local_check_size == 3) && (__cs_local_check_ids[0] == 1)) && (__cs_local_check_ids[1] == 1)) && (__cs_local_check_ids[2] == 1)));
 
 function: thread1   stmt:     ;
+
+function: thread2   stmt:     ;
 
 function: main   stmt:     return 0;
 
@@ -2647,5 +2770,14 @@ All symbols (new symbol table - work in progress):
    (559, '__cs_param_thread1___cs_unused')  
    (560, '__cs_local_thread1___cs_tmp_if_cond_25')  
    (561, '__cs_local_thread1___cs_tmp_if_cond_26')  
-   (562, 'main')  
-   (563, '__cs_local_main_t1')  
+   (562, '__cs_local_thread1___cs_tmp_if_cond_27')  
+   (563, '__cs_local_thread1___cs_tmp_if_cond_28')  
+   (564, 'thread2')  
+   (565, '__cs_param_thread2___cs_unused')  
+   (566, '__cs_local_thread2___cs_tmp_if_cond_29')  
+   (567, '__cs_local_thread2___cs_tmp_if_cond_30')  
+   (568, '__cs_local_thread2___cs_tmp_if_cond_31')  
+   (569, '__cs_local_thread2___cs_tmp_if_cond_32')  
+   (570, 'main')  
+   (571, '__cs_local_main_t1')  
+   (572, '__cs_local_main_t2')  

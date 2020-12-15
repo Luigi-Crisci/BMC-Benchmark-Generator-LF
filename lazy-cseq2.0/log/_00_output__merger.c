@@ -1369,12 +1369,12 @@ int dump_structure(struct lfds711_stack_state *s, int size, int* ids){
  return data_structure_size;
 }
 void check(struct lfds711_stack_state *ss){
-int ids[1];
-int size = dump_structure(ss,1,ids);
-assert((size == 1 && ids[0]==1));
+int ids[3];
+int size = dump_structure(ss,3,ids);
+assert((size == 2 && ids[0]==1 && ids[2]==1) || (size == 2 && ids[1]==1 && ids[2]==1) || (size == 3 && ids[0]==1 && ids[1]==1 && ids[2]==1));
 }
 
-int volatile ATOMIC_OPERATION = 1;
+int volatile ATOMIC_OPERATION = 0;
 
 
 
@@ -1385,6 +1385,17 @@ void *thread1(){
  if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
  insert(ss,0);
  if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
+ if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
+ insert(ss,1);
+ if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
+ }
+ void *thread2(){
+ if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
+ delete(ss);
+ if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
+ if(ATOMIC_OPERATION){ pthread_mutex_lock(&lock);};
+ insert(ss,2);
+ if(ATOMIC_OPERATION){ pthread_mutex_unlock(&lock); };
  }
 
 int main()
@@ -1392,9 +1403,11 @@ int main()
  pthread_mutex_init(&lock, 0);
  ss = init();
 
-pthread_t t1;
+pthread_t t1,t2;
 pthread_create(&t1, 0, thread1, 0);
+pthread_create(&t2, 0, thread2, 0);
 pthread_join(t1, 0);
+pthread_join(t2, 0);
 
  check(ss);
  return (0);

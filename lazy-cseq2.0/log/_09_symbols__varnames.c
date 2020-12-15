@@ -12,18 +12,20 @@ list of functions:
    __atomic_exchange_n(param: previous, new, memorder)  call count 0
    __atomic_thread_fence(param: i)  call count 0
    init(param: )  call count 1
-   insert(param: s, id)  call count 1
-   delete(param: s)  call count 0
+   insert(param: s, id)  call count 3
+   delete(param: s)  call count 1
    contains(param: s, id)  call count 0
    get_size(param: s)  call count 0
    is_empty(param: s)  call count 0
    dump_structure(param: s, size, ids)  call count 1
    check(param: ss)  call count 1
    thread1(param: __cs_unused)  call count 0
+   thread2(param: __cs_unused)  call count 0
    main(param: )  call count 0
 
 list of thread functions:
    thread1  call count 1
+   thread2  call count 1
 
 parameters for main():
    (no params)
@@ -341,7 +343,7 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1004, 1015, 1019]'  
+         occurs '[1004, 1017, 1033, 1046, 1057, 1064]'  
       id168  'se'  
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
          size '[]'  
@@ -371,13 +373,13 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[998, 1005]'  
+         occurs '[998, 1005, 1011, 1018, 1027, 1034, 1040, 1047]'  
       id287  'lock'  
          type '__cs_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[1001, 1008, 1014]'  
+         ref '[1001, 1008, 1014, 1021, 1030, 1037, 1043, 1050, 1056]'  
          deref '[]'  
-         occurs '[1001, 1008, 1014]'  
+         occurs '[1001, 1008, 1014, 1021, 1030, 1037, 1043, 1050, 1056]'  
    lfds711_misc_force_store
       id17  'destination'  
          type 'lfds711_pal_uint_t'  kind 'l'  arity '0'  
@@ -1066,16 +1068,16 @@ Variables:
          occurs '[990]'  
       id284  'ids'  
          type 'int'  kind 'l'  arity '1'  
-         size '[1]'  
+         size '[3]'  
          ref '[]'  
          deref '[]'  
-         occurs '[990, 991]'  
+         occurs '[990, 991, 991, 991, 991, 991, 991, 991]'  
       id285  'size'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[990, 991]'  
+         occurs '[990, 991, 991, 991]'  
    thread1
       id288  '__cs_unused'  
          type 'void *'  kind 'p'  arity '0'  
@@ -1095,13 +1097,62 @@ Variables:
          ref '[]'  
          deref '[]'  
          occurs '[1005, 1006]'  
+      id291  '__cs_tmp_if_cond_27'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1011, 1012]'  
+      id292  '__cs_tmp_if_cond_28'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1018, 1019]'  
+   thread2
+      id293  '__cs_unused'  
+         type 'void *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
+      id294  '__cs_tmp_if_cond_29'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1027, 1028]'  
+      id295  '__cs_tmp_if_cond_30'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1034, 1035]'  
+      id296  '__cs_tmp_if_cond_31'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1040, 1041]'  
+      id297  '__cs_tmp_if_cond_32'  
+         type '_Bool'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[1047, 1048]'  
    main
-      id291  't1'  
+      id298  't1'  
          type '__cs_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[1017]'  
+         ref '[1060]'  
          deref '[]'  
-         occurs '[1017, 1018]'  
+         occurs '[1060, 1062]'  
+      id299  't2'  
+         type '__cs_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[1061]'  
+         deref '[]'  
+         occurs '[1061, 1063]'  
 
 Fields:
    lfds711_prng_state
@@ -1351,6 +1402,8 @@ Pointer variables:
    check
        var 'ss'   type 'struct lfds711_stack_state *'   kind 'p'   arity '0'   size '[]'   
    thread1
+       var '__cs_unused'   type 'void *'   kind 'p'   arity '0'   size '[]'   
+   thread2
        var '__cs_unused'   type 'void *'   kind 'p'   arity '0'   size '[]'   
    main
 
@@ -1953,10 +2006,10 @@ int
 function 'check' ----------------------------------:
 void check(struct lfds711_stack_state *ss)
 {
-    int ids[1];
+    int ids[3];
     int size;
-    size = dump_structure(ss, 1, ids);
-    __CSEQ_assert((size == 1) && (ids[0] == 1));
+    size = dump_structure(ss, 3, ids);
+    __CSEQ_assert(((((size == 2) && (ids[0] == 1)) && (ids[2] == 1)) || (((size == 2) && (ids[1] == 1)) && (ids[2] == 1))) || ((((size == 3) && (ids[0] == 1)) && (ids[1] == 1)) && (ids[2] == 1)));
 }
 
 
@@ -1984,6 +2037,71 @@ void *thread1(void *__cs_unused)
     }
 
     ;
+    ;
+    _Bool __cs_tmp_if_cond_27;
+    __cs_tmp_if_cond_27 = ATOMIC_OPERATION;
+    if (__cs_tmp_if_cond_27)
+    {
+        __cs_mutex_lock(&lock);
+    }
+
+    ;
+    insert(ss, 1);
+    ;
+    _Bool __cs_tmp_if_cond_28;
+    __cs_tmp_if_cond_28 = ATOMIC_OPERATION;
+    if (__cs_tmp_if_cond_28)
+    {
+        __cs_mutex_unlock(&lock);
+    }
+
+    ;
+}
+
+
+void *__cs_unused
+void *
+function 'thread2' ----------------------------------:
+void *thread2(void *__cs_unused)
+{
+    ;
+    _Bool __cs_tmp_if_cond_29;
+    __cs_tmp_if_cond_29 = ATOMIC_OPERATION;
+    if (__cs_tmp_if_cond_29)
+    {
+        __cs_mutex_lock(&lock);
+    }
+
+    ;
+    delete(ss);
+    ;
+    _Bool __cs_tmp_if_cond_30;
+    __cs_tmp_if_cond_30 = ATOMIC_OPERATION;
+    if (__cs_tmp_if_cond_30)
+    {
+        __cs_mutex_unlock(&lock);
+    }
+
+    ;
+    ;
+    _Bool __cs_tmp_if_cond_31;
+    __cs_tmp_if_cond_31 = ATOMIC_OPERATION;
+    if (__cs_tmp_if_cond_31)
+    {
+        __cs_mutex_lock(&lock);
+    }
+
+    ;
+    insert(ss, 2);
+    ;
+    _Bool __cs_tmp_if_cond_32;
+    __cs_tmp_if_cond_32 = ATOMIC_OPERATION;
+    if (__cs_tmp_if_cond_32)
+    {
+        __cs_mutex_unlock(&lock);
+    }
+
+    ;
 }
 
 
@@ -1995,8 +2113,11 @@ int main()
     __cs_mutex_init(&lock, 0);
     ss = init();
     __cs_t t1;
+    __cs_t t2;
     __cs_create(&t1, 0, thread1, 0);
+    __cs_create(&t2, 0, thread2, 0);
     __cs_join(t1, 0);
+    __cs_join(t2, 0);
     check(ss);
     return 0;
 }
@@ -2067,9 +2188,11 @@ function: is_empty   stmt:     return 1;
 
 function: dump_structure   stmt:     return data_structure_size;
 
-function: check   stmt:     __CSEQ_assert((size == 1) && (ids[0] == 1));
+function: check   stmt:     __CSEQ_assert(((((size == 2) && (ids[0] == 1)) && (ids[2] == 1)) || (((size == 2) && (ids[1] == 1)) && (ids[2] == 1))) || ((((size == 3) && (ids[0] == 1)) && (ids[1] == 1)) && (ids[2] == 1)));
 
 function: thread1   stmt:     ;
+
+function: thread2   stmt:     ;
 
 function: main   stmt:     return 0;
 
@@ -2637,5 +2760,14 @@ All symbols (new symbol table - work in progress):
    (559, '__cs_unused')  
    (560, '__cs_tmp_if_cond_25')  
    (561, '__cs_tmp_if_cond_26')  
-   (562, 'main')  
-   (563, 't1')  
+   (562, '__cs_tmp_if_cond_27')  
+   (563, '__cs_tmp_if_cond_28')  
+   (564, 'thread2')  
+   (565, '__cs_unused')  
+   (566, '__cs_tmp_if_cond_29')  
+   (567, '__cs_tmp_if_cond_30')  
+   (568, '__cs_tmp_if_cond_31')  
+   (569, '__cs_tmp_if_cond_32')  
+   (570, 'main')  
+   (571, 't1')  
+   (572, 't2')  

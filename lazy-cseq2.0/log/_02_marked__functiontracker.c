@@ -2440,19 +2440,19 @@ void check(struct lfds711_stack_state *ss)
 {
     
 # 903 "<previous_module>"
-int ids[1];
+int ids[3];
     
 # 904 "<previous_module>"
 int size;
-    size = dump_structure(ss, 1, ids);
+    size = dump_structure(ss, 3, ids);
     
 # 905 "<previous_module>"
-assert((size == 1) && (ids[0] == 1));
+assert(((((size == 2) && (ids[0] == 1)) && (ids[2] == 1)) || (((size == 2) && (ids[1] == 1)) && (ids[2] == 1))) || ((((size == 3) && (ids[0] == 1)) && (ids[1] == 1)) && (ids[2] == 1)));
 }
 
 
 # 907 "<previous_module>"
-int ATOMIC_OPERATION = 1;
+int ATOMIC_OPERATION = 0;
 
 # 908 "<previous_module>"
 struct lfds711_stack_state *ss;
@@ -2496,34 +2496,144 @@ pthread_mutex_unlock(&lock);
     
 # 922 "<previous_module>"
 ;
+    
+# 923 "<previous_module>"
+if (ATOMIC_OPERATION)
+
+# 924 "<previous_module>"
+    {
+        
+# 925 "<previous_module>"
+pthread_mutex_lock(&lock);
+    }
+
+    
+# 927 "<previous_module>"
+;
+    
+# 928 "<previous_module>"
+insert(ss, 1);
+    
+# 929 "<previous_module>"
+if (ATOMIC_OPERATION)
+
+# 930 "<previous_module>"
+    {
+        
+# 931 "<previous_module>"
+pthread_mutex_unlock(&lock);
+    }
+
+    
+# 933 "<previous_module>"
+;
 }
 
 
-# 924 "<previous_module>"
-int main()
+# 935 "<previous_module>"
+void *thread2(void *__cs_unused)
 
-# 925 "<previous_module>"
+# 936 "<previous_module>"
 {
     
-# 926 "<previous_module>"
+# 937 "<previous_module>"
+if (ATOMIC_OPERATION)
+
+# 938 "<previous_module>"
+    {
+        
+# 939 "<previous_module>"
+pthread_mutex_lock(&lock);
+    }
+
+    
+# 941 "<previous_module>"
+;
+    
+# 942 "<previous_module>"
+delete(ss);
+    
+# 943 "<previous_module>"
+if (ATOMIC_OPERATION)
+
+# 944 "<previous_module>"
+    {
+        
+# 945 "<previous_module>"
+pthread_mutex_unlock(&lock);
+    }
+
+    
+# 947 "<previous_module>"
+;
+    
+# 948 "<previous_module>"
+if (ATOMIC_OPERATION)
+
+# 949 "<previous_module>"
+    {
+        
+# 950 "<previous_module>"
+pthread_mutex_lock(&lock);
+    }
+
+    
+# 952 "<previous_module>"
+;
+    
+# 953 "<previous_module>"
+insert(ss, 2);
+    
+# 954 "<previous_module>"
+if (ATOMIC_OPERATION)
+
+# 955 "<previous_module>"
+    {
+        
+# 956 "<previous_module>"
+pthread_mutex_unlock(&lock);
+    }
+
+    
+# 958 "<previous_module>"
+;
+}
+
+
+# 960 "<previous_module>"
+int main()
+
+# 961 "<previous_module>"
+{
+    
+# 962 "<previous_module>"
 pthread_mutex_init(&lock, 0);
     
-# 927 "<previous_module>"
+# 963 "<previous_module>"
 ss = init();
     
-# 928 "<previous_module>"
+# 964 "<previous_module>"
 pthread_t t1;
     
-# 929 "<previous_module>"
+# 965 "<previous_module>"
+pthread_t t2;
+    
+# 966 "<previous_module>"
 pthread_create(&t1, 0, thread1, 0);
     
-# 930 "<previous_module>"
+# 967 "<previous_module>"
+pthread_create(&t2, 0, thread2, 0);
+    
+# 968 "<previous_module>"
 pthread_join(t1, 0);
     
-# 931 "<previous_module>"
+# 969 "<previous_module>"
+pthread_join(t2, 0);
+    
+# 970 "<previous_module>"
 check(ss);
     
-# 932 "<previous_module>"
+# 971 "<previous_module>"
 return 0;
 }
 

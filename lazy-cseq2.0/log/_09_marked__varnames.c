@@ -2709,21 +2709,21 @@ void check(struct lfds711_stack_state *__cs_param_check_ss)
 {
         
 # 988 "<previous_module>"
-int __cs_local_check_ids[1];
+int __cs_local_check_ids[3];
         
 # 989 "<previous_module>"
 int __cs_local_check_size;
         
 # 990 "<previous_module>"
-__cs_local_check_size = dump_structure(__cs_param_check_ss, 1, __cs_local_check_ids);
+__cs_local_check_size = dump_structure(__cs_param_check_ss, 3, __cs_local_check_ids);
         
 # 991 "<previous_module>"
-__CSEQ_assert((__cs_local_check_size == 1) && (__cs_local_check_ids[0] == 1));
+__CSEQ_assert(((((__cs_local_check_size == 2) && (__cs_local_check_ids[0] == 1)) && (__cs_local_check_ids[2] == 1)) || (((__cs_local_check_size == 2) && (__cs_local_check_ids[1] == 1)) && (__cs_local_check_ids[2] == 1))) || ((((__cs_local_check_size == 3) && (__cs_local_check_ids[0] == 1)) && (__cs_local_check_ids[1] == 1)) && (__cs_local_check_ids[2] == 1)));
 }
 
 
 # 993 "<previous_module>"
-int ATOMIC_OPERATION = 1;
+int ATOMIC_OPERATION = 0;
 
 # 994 "<previous_module>"
 struct lfds711_stack_state *ss;
@@ -2777,34 +2777,174 @@ __cs_mutex_unlock(&lock);
         
 # 1010 "<previous_module>"
 ;
+        
+# 1011 "<previous_module>"
+;
+        _Bool __cs_local_thread1___cs_tmp_if_cond_27;
+        __cs_local_thread1___cs_tmp_if_cond_27 = ATOMIC_OPERATION;
+        
+# 1012 "<previous_module>"
+if (__cs_local_thread1___cs_tmp_if_cond_27)
+
+# 1013 "<previous_module>"
+        {
+                
+# 1014 "<previous_module>"
+__cs_mutex_lock(&lock);
+        }
+
+        
+# 1016 "<previous_module>"
+;
+        
+# 1017 "<previous_module>"
+insert(ss, 1);
+        
+# 1018 "<previous_module>"
+;
+        _Bool __cs_local_thread1___cs_tmp_if_cond_28;
+        __cs_local_thread1___cs_tmp_if_cond_28 = ATOMIC_OPERATION;
+        
+# 1019 "<previous_module>"
+if (__cs_local_thread1___cs_tmp_if_cond_28)
+
+# 1020 "<previous_module>"
+        {
+                
+# 1021 "<previous_module>"
+__cs_mutex_unlock(&lock);
+        }
+
+        
+# 1023 "<previous_module>"
+;
 }
 
 
-# 1012 "<previous_module>"
-int main()
+# 1025 "<previous_module>"
+void *thread2(void *__cs_param_thread2___cs_unused)
 
-# 1013 "<previous_module>"
+# 1026 "<previous_module>"
 {
         
-# 1014 "<previous_module>"
+# 1027 "<previous_module>"
+;
+        _Bool __cs_local_thread2___cs_tmp_if_cond_29;
+        __cs_local_thread2___cs_tmp_if_cond_29 = ATOMIC_OPERATION;
+        
+# 1028 "<previous_module>"
+if (__cs_local_thread2___cs_tmp_if_cond_29)
+
+# 1029 "<previous_module>"
+        {
+                
+# 1030 "<previous_module>"
+__cs_mutex_lock(&lock);
+        }
+
+        
+# 1032 "<previous_module>"
+;
+        
+# 1033 "<previous_module>"
+delete(ss);
+        
+# 1034 "<previous_module>"
+;
+        _Bool __cs_local_thread2___cs_tmp_if_cond_30;
+        __cs_local_thread2___cs_tmp_if_cond_30 = ATOMIC_OPERATION;
+        
+# 1035 "<previous_module>"
+if (__cs_local_thread2___cs_tmp_if_cond_30)
+
+# 1036 "<previous_module>"
+        {
+                
+# 1037 "<previous_module>"
+__cs_mutex_unlock(&lock);
+        }
+
+        
+# 1039 "<previous_module>"
+;
+        
+# 1040 "<previous_module>"
+;
+        _Bool __cs_local_thread2___cs_tmp_if_cond_31;
+        __cs_local_thread2___cs_tmp_if_cond_31 = ATOMIC_OPERATION;
+        
+# 1041 "<previous_module>"
+if (__cs_local_thread2___cs_tmp_if_cond_31)
+
+# 1042 "<previous_module>"
+        {
+                
+# 1043 "<previous_module>"
+__cs_mutex_lock(&lock);
+        }
+
+        
+# 1045 "<previous_module>"
+;
+        
+# 1046 "<previous_module>"
+insert(ss, 2);
+        
+# 1047 "<previous_module>"
+;
+        _Bool __cs_local_thread2___cs_tmp_if_cond_32;
+        __cs_local_thread2___cs_tmp_if_cond_32 = ATOMIC_OPERATION;
+        
+# 1048 "<previous_module>"
+if (__cs_local_thread2___cs_tmp_if_cond_32)
+
+# 1049 "<previous_module>"
+        {
+                
+# 1050 "<previous_module>"
+__cs_mutex_unlock(&lock);
+        }
+
+        
+# 1052 "<previous_module>"
+;
+}
+
+
+# 1054 "<previous_module>"
+int main()
+
+# 1055 "<previous_module>"
+{
+        
+# 1056 "<previous_module>"
 __cs_mutex_init(&lock, 0);
         
-# 1015 "<previous_module>"
+# 1057 "<previous_module>"
 ss = init();
         
-# 1016 "<previous_module>"
+# 1058 "<previous_module>"
 __cs_t __cs_local_main_t1;
         
-# 1017 "<previous_module>"
+# 1059 "<previous_module>"
+__cs_t __cs_local_main_t2;
+        
+# 1060 "<previous_module>"
 __cs_create(&__cs_local_main_t1, 0, thread1, 0);
         
-# 1018 "<previous_module>"
+# 1061 "<previous_module>"
+__cs_create(&__cs_local_main_t2, 0, thread2, 0);
+        
+# 1062 "<previous_module>"
 __cs_join(__cs_local_main_t1, 0);
         
-# 1019 "<previous_module>"
+# 1063 "<previous_module>"
+__cs_join(__cs_local_main_t2, 0);
+        
+# 1064 "<previous_module>"
 check(ss);
         
-# 1020 "<previous_module>"
+# 1065 "<previous_module>"
 return 0;
 }
 

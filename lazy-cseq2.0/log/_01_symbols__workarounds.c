@@ -12,18 +12,20 @@ list of functions:
    __atomic_exchange_n(param: previous, new, memorder)  call count 0
    __atomic_thread_fence(param: i)  call count 0
    init(param: )  call count 1
-   insert(param: s, id)  call count 1
-   delete(param: s)  call count 0
+   insert(param: s, id)  call count 3
+   delete(param: s)  call count 1
    contains(param: s, id)  call count 0
    get_size(param: s)  call count 0
    is_empty(param: s)  call count 0
    dump_structure(param: s, size, ids)  call count 1
    check(param: ss)  call count 1
    thread1(param: )  call count 0
+   thread2(param: )  call count 0
    main(param: )  call count 0
 
 list of thread functions:
    thread1  call count 1
+   thread2  call count 1
 
 parameters for main():
    (no params)
@@ -341,7 +343,7 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1386, 1393, 1399]'  
+         occurs '[1386, 1389, 1394, 1397, 1404, 1412]'  
       id168  'se'  
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
          size '[]'  
@@ -371,13 +373,13 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1385, 1387]'  
+         occurs '[1385, 1387, 1388, 1390, 1393, 1395, 1396, 1398]'  
       id261  'lock'  
          type 'pthread_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[1385, 1387, 1392]'  
+         ref '[1385, 1387, 1388, 1390, 1393, 1395, 1396, 1398, 1403]'  
          deref '[]'  
-         occurs '[1385, 1387, 1392]'  
+         occurs '[1385, 1387, 1388, 1390, 1393, 1395, 1396, 1398, 1403]'  
    lfds711_misc_force_store
       id17  'destination'  
          type 'volatile lfds711_pal_uint_t'  kind 'l'  arity '0'  
@@ -910,24 +912,31 @@ Variables:
          occurs '[1373]'  
       id258  'ids'  
          type 'int'  kind 'l'  arity '1'  
-         size '[1]'  
+         size '[3]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1373, 1374]'  
+         occurs '[1373, 1374, 1374, 1374, 1374, 1374, 1374, 1374]'  
       id259  'size'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[1374]'  
+         occurs '[1374, 1374, 1374]'  
    thread1
+   thread2
    main
       id262  't1'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[1396]'  
+         ref '[1407]'  
          deref '[]'  
-         occurs '[1396, 1397]'  
+         occurs '[1407, 1409]'  
+      id263  't2'  
+         type 'pthread_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[1408]'  
+         deref '[]'  
+         occurs '[1408, 1410]'  
 
 Fields:
    lfds711_prng_state
@@ -1177,6 +1186,7 @@ Pointer variables:
    check
        var 'ss'   type 'struct lfds711_stack_state *'   kind 'p'   arity '0'   size '[]'   
    thread1
+   thread2
    main
 
 Function blocks:
@@ -1622,9 +1632,9 @@ int
 function 'check' ----------------------------------:
 void check(struct lfds711_stack_state *ss)
 {
-    int ids[1];
-    int size = dump_structure(ss, 1, ids);
-    assert((size == 1) && (ids[0] == 1));
+    int ids[3];
+    int size = dump_structure(ss, 3, ids);
+    assert(((((size == 2) && (ids[0] == 1)) && (ids[2] == 1)) || (((size == 2) && (ids[1] == 1)) && (ids[2] == 1))) || ((((size == 3) && (ids[0] == 1)) && (ids[1] == 1)) && (ids[2] == 1)));
 }
 
 
@@ -1646,6 +1656,53 @@ void *thread1()
     }
 
     ;
+    if (ATOMIC_OPERATION)
+    {
+        pthread_mutex_lock(&lock);
+    }
+
+    ;
+    insert(ss, 1);
+    if (ATOMIC_OPERATION)
+    {
+        pthread_mutex_unlock(&lock);
+    }
+
+    ;
+}
+
+
+
+void *
+function 'thread2' ----------------------------------:
+void *thread2()
+{
+    if (ATOMIC_OPERATION)
+    {
+        pthread_mutex_lock(&lock);
+    }
+
+    ;
+    delete(ss);
+    if (ATOMIC_OPERATION)
+    {
+        pthread_mutex_unlock(&lock);
+    }
+
+    ;
+    if (ATOMIC_OPERATION)
+    {
+        pthread_mutex_lock(&lock);
+    }
+
+    ;
+    insert(ss, 2);
+    if (ATOMIC_OPERATION)
+    {
+        pthread_mutex_unlock(&lock);
+    }
+
+    ;
 }
 
 
@@ -1657,8 +1714,11 @@ int main()
     pthread_mutex_init(&lock, 0);
     ss = init();
     pthread_t t1;
+    pthread_t t2;
     pthread_create(&t1, 0, thread1, 0);
+    pthread_create(&t2, 0, thread2, 0);
     pthread_join(t1, 0);
+    pthread_join(t2, 0);
     check(ss);
     return 0;
 }
@@ -1727,9 +1787,11 @@ function: is_empty   stmt:     return 1;
 
 function: dump_structure   stmt:     return data_structure_size;
 
-function: check   stmt:     assert((size == 1) && (ids[0] == 1));
+function: check   stmt:     assert(((((size == 2) && (ids[0] == 1)) && (ids[2] == 1)) || (((size == 2) && (ids[1] == 1)) && (ids[2] == 1))) || ((((size == 3) && (ids[0] == 1)) && (ids[1] == 1)) && (ids[2] == 1)));
 
 function: thread1   stmt:     ;
+
+function: thread2   stmt:     ;
 
 function: main   stmt:     return 0;
 
@@ -2268,5 +2330,7 @@ All symbols (new symbol table - work in progress):
    (530, 'ss')  
    (531, 'lock')  
    (532, 'thread1')  
-   (533, 'main')  
-   (534, 't1')  
+   (533, 'thread2')  
+   (534, 'main')  
+   (535, 't1')  
+   (536, 't2')  

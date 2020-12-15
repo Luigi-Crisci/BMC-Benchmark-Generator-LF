@@ -2510,21 +2510,21 @@ void check(struct lfds711_stack_state *ss)
 {
         
 # 938 "<previous_module>"
-int ids[1];
+int ids[3];
         
 # 939 "<previous_module>"
 int size;
         
 # 940 "<previous_module>"
-size = dump_structure(ss, 1, ids);
+size = dump_structure(ss, 3, ids);
         
 # 941 "<previous_module>"
-__CSEQ_assert((size == 1) && (ids[0] == 1));
+__CSEQ_assert(((((size == 2) && (ids[0] == 1)) && (ids[2] == 1)) || (((size == 2) && (ids[1] == 1)) && (ids[2] == 1))) || ((((size == 3) && (ids[0] == 1)) && (ids[1] == 1)) && (ids[2] == 1)));
 }
 
 
 # 943 "<previous_module>"
-int ATOMIC_OPERATION = 1;
+int ATOMIC_OPERATION = 0;
 
 # 944 "<previous_module>"
 struct lfds711_stack_state *ss;
@@ -2568,34 +2568,144 @@ __cs_mutex_unlock(&lock);
         
 # 958 "<previous_module>"
 ;
+        
+# 959 "<previous_module>"
+if (ATOMIC_OPERATION)
+
+# 960 "<previous_module>"
+        {
+                
+# 961 "<previous_module>"
+__cs_mutex_lock(&lock);
+        }
+
+        
+# 963 "<previous_module>"
+;
+        
+# 964 "<previous_module>"
+insert(ss, 1);
+        
+# 965 "<previous_module>"
+if (ATOMIC_OPERATION)
+
+# 966 "<previous_module>"
+        {
+                
+# 967 "<previous_module>"
+__cs_mutex_unlock(&lock);
+        }
+
+        
+# 969 "<previous_module>"
+;
 }
 
 
-# 960 "<previous_module>"
-int main()
+# 971 "<previous_module>"
+void *thread2(void *__cs_unused)
 
-# 961 "<previous_module>"
+# 972 "<previous_module>"
 {
         
-# 962 "<previous_module>"
+# 973 "<previous_module>"
+if (ATOMIC_OPERATION)
+
+# 974 "<previous_module>"
+        {
+                
+# 975 "<previous_module>"
+__cs_mutex_lock(&lock);
+        }
+
+        
+# 977 "<previous_module>"
+;
+        
+# 978 "<previous_module>"
+delete(ss);
+        
+# 979 "<previous_module>"
+if (ATOMIC_OPERATION)
+
+# 980 "<previous_module>"
+        {
+                
+# 981 "<previous_module>"
+__cs_mutex_unlock(&lock);
+        }
+
+        
+# 983 "<previous_module>"
+;
+        
+# 984 "<previous_module>"
+if (ATOMIC_OPERATION)
+
+# 985 "<previous_module>"
+        {
+                
+# 986 "<previous_module>"
+__cs_mutex_lock(&lock);
+        }
+
+        
+# 988 "<previous_module>"
+;
+        
+# 989 "<previous_module>"
+insert(ss, 2);
+        
+# 990 "<previous_module>"
+if (ATOMIC_OPERATION)
+
+# 991 "<previous_module>"
+        {
+                
+# 992 "<previous_module>"
+__cs_mutex_unlock(&lock);
+        }
+
+        
+# 994 "<previous_module>"
+;
+}
+
+
+# 996 "<previous_module>"
+int main()
+
+# 997 "<previous_module>"
+{
+        
+# 998 "<previous_module>"
 __cs_mutex_init(&lock, 0);
         
-# 963 "<previous_module>"
+# 999 "<previous_module>"
 ss = init();
         
-# 964 "<previous_module>"
+# 1000 "<previous_module>"
 __cs_t t1;
         
-# 965 "<previous_module>"
+# 1001 "<previous_module>"
+__cs_t t2;
+        
+# 1002 "<previous_module>"
 __cs_create(&t1, 0, thread1, 0);
         
-# 966 "<previous_module>"
+# 1003 "<previous_module>"
+__cs_create(&t2, 0, thread2, 0);
+        
+# 1004 "<previous_module>"
 __cs_join(t1, 0);
         
-# 967 "<previous_module>"
+# 1005 "<previous_module>"
+__cs_join(t2, 0);
+        
+# 1006 "<previous_module>"
 check(ss);
         
-# 968 "<previous_module>"
+# 1007 "<previous_module>"
 return 0;
 }
 

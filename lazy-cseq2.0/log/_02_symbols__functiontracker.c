@@ -12,18 +12,20 @@ list of functions:
    __atomic_exchange_n(param: previous, new, memorder)  call count 0
    __atomic_thread_fence(param: i)  call count 0
    init(param: )  call count 1
-   insert(param: s, id)  call count 1
-   delete(param: s)  call count 0
+   insert(param: s, id)  call count 3
+   delete(param: s)  call count 1
    contains(param: s, id)  call count 0
    get_size(param: s)  call count 0
    is_empty(param: s)  call count 0
    dump_structure(param: s, size, ids)  call count 1
    check(param: ss)  call count 1
    thread1(param: __cs_unused)  call count 0
+   thread2(param: __cs_unused)  call count 0
    main(param: )  call count 0
 
 list of thread functions:
    thread1  call count 1
+   thread2  call count 1
 
 parameters for main():
    (no params)
@@ -341,7 +343,7 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[917, 927, 931]'  
+         occurs '[917, 928, 942, 953, 963, 970]'  
       id168  'se'  
          type 'struct lfds711_stack_element **'  kind 'p'  arity '0'  
          size '[]'  
@@ -371,13 +373,13 @@ Variables:
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[912, 918]'  
+         occurs '[912, 918, 923, 929, 937, 943, 948, 954]'  
       id261  'lock'  
          type 'pthread_mutex_t'  kind 'g'  arity '0'  
          size '[]'  
-         ref '[914, 920, 926]'  
+         ref '[914, 920, 925, 931, 939, 945, 950, 956, 962]'  
          deref '[]'  
-         occurs '[914, 920, 926]'  
+         occurs '[914, 920, 925, 931, 939, 945, 950, 956, 962]'  
    lfds711_misc_force_store
       id17  'destination'  
          type 'lfds711_pal_uint_t'  kind 'l'  arity '0'  
@@ -910,16 +912,16 @@ Variables:
          occurs '[904]'  
       id258  'ids'  
          type 'int'  kind 'l'  arity '1'  
-         size '[1]'  
+         size '[3]'  
          ref '[]'  
          deref '[]'  
-         occurs '[904, 905]'  
+         occurs '[904, 905, 905, 905, 905, 905, 905, 905]'  
       id259  'size'  
          type 'int'  kind 'l'  arity '0'  
          size '[]'  
          ref '[]'  
          deref '[]'  
-         occurs '[904, 905]'  
+         occurs '[904, 905, 905, 905]'  
    thread1
       id262  '__cs_unused'  
          type 'void *'  kind 'p'  arity '0'  
@@ -927,13 +929,26 @@ Variables:
          ref '[]'  
          deref '[]'  
          occurs '[]'  
+   thread2
+      id263  '__cs_unused'  
+         type 'void *'  kind 'p'  arity '0'  
+         size '[]'  
+         ref '[]'  
+         deref '[]'  
+         occurs '[]'  
    main
-      id263  't1'  
+      id264  't1'  
          type 'pthread_t'  kind 'l'  arity '0'  
          size '[]'  
-         ref '[929]'  
+         ref '[966]'  
          deref '[]'  
-         occurs '[929, 930]'  
+         occurs '[966, 968]'  
+      id265  't2'  
+         type 'pthread_t'  kind 'l'  arity '0'  
+         size '[]'  
+         ref '[967]'  
+         deref '[]'  
+         occurs '[967, 969]'  
 
 Fields:
    lfds711_prng_state
@@ -1183,6 +1198,8 @@ Pointer variables:
    check
        var 'ss'   type 'struct lfds711_stack_state *'   kind 'p'   arity '0'   size '[]'   
    thread1
+       var '__cs_unused'   type 'void *'   kind 'p'   arity '0'   size '[]'   
+   thread2
        var '__cs_unused'   type 'void *'   kind 'p'   arity '0'   size '[]'   
    main
 
@@ -1680,10 +1697,10 @@ int
 function 'check' ----------------------------------:
 void check(struct lfds711_stack_state *ss)
 {
-    int ids[1];
+    int ids[3];
     int size;
-    size = dump_structure(ss, 1, ids);
-    assert((size == 1) && (ids[0] == 1));
+    size = dump_structure(ss, 3, ids);
+    assert(((((size == 2) && (ids[0] == 1)) && (ids[2] == 1)) || (((size == 2) && (ids[1] == 1)) && (ids[2] == 1))) || ((((size == 3) && (ids[0] == 1)) && (ids[1] == 1)) && (ids[2] == 1)));
 }
 
 
@@ -1705,6 +1722,53 @@ void *thread1(void *__cs_unused)
     }
 
     ;
+    if (ATOMIC_OPERATION)
+    {
+        pthread_mutex_lock(&lock);
+    }
+
+    ;
+    insert(ss, 1);
+    if (ATOMIC_OPERATION)
+    {
+        pthread_mutex_unlock(&lock);
+    }
+
+    ;
+}
+
+
+void *__cs_unused
+void *
+function 'thread2' ----------------------------------:
+void *thread2(void *__cs_unused)
+{
+    if (ATOMIC_OPERATION)
+    {
+        pthread_mutex_lock(&lock);
+    }
+
+    ;
+    delete(ss);
+    if (ATOMIC_OPERATION)
+    {
+        pthread_mutex_unlock(&lock);
+    }
+
+    ;
+    if (ATOMIC_OPERATION)
+    {
+        pthread_mutex_lock(&lock);
+    }
+
+    ;
+    insert(ss, 2);
+    if (ATOMIC_OPERATION)
+    {
+        pthread_mutex_unlock(&lock);
+    }
+
+    ;
 }
 
 
@@ -1716,8 +1780,11 @@ int main()
     pthread_mutex_init(&lock, 0);
     ss = init();
     pthread_t t1;
+    pthread_t t2;
     pthread_create(&t1, 0, thread1, 0);
+    pthread_create(&t2, 0, thread2, 0);
     pthread_join(t1, 0);
+    pthread_join(t2, 0);
     check(ss);
     return 0;
 }
@@ -1788,9 +1855,11 @@ function: is_empty   stmt:     return 1;
 
 function: dump_structure   stmt:     return data_structure_size;
 
-function: check   stmt:     assert((size == 1) && (ids[0] == 1));
+function: check   stmt:     assert(((((size == 2) && (ids[0] == 1)) && (ids[2] == 1)) || (((size == 2) && (ids[1] == 1)) && (ids[2] == 1))) || ((((size == 3) && (ids[0] == 1)) && (ids[1] == 1)) && (ids[2] == 1)));
 
 function: thread1   stmt:     ;
+
+function: thread2   stmt:     ;
 
 function: main   stmt:     return 0;
 
@@ -2330,5 +2399,8 @@ All symbols (new symbol table - work in progress):
    (531, 'lock')  
    (532, 'thread1')  
    (533, '__cs_unused')  
-   (534, 'main')  
-   (535, 't1')  
+   (534, 'thread2')  
+   (535, '__cs_unused')  
+   (536, 'main')  
+   (537, 't1')  
+   (538, 't2')  

@@ -143,6 +143,7 @@ def disable_atomic_operations(filename):
       file.seek(0,SEEK_SET)
       file.write(lines)
    
+
 def run_benchmark(filename,data_structure_type,include_params,max_num_elements,name,rounds): 
    
    create_checker(name)
@@ -158,7 +159,7 @@ def run_benchmark(filename,data_structure_type,include_params,max_num_elements,n
    
    # Test with lock-free behaviour
    disable_atomic_operations(filename)
-   launch_lazy_cseq(filename,include_params)
+   launch_lazy_cseq(filename,include_params,rounds)
    data_structure_state = get_data_structure_state(f"{BENCHMARK_DIR}/_cs_{filename}.cbmc.log",data_structure_type)
    if is_safe(data_structure_state):
       return True

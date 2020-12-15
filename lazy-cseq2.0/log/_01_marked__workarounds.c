@@ -2435,18 +2435,18 @@ void check(struct lfds711_stack_state *ss)
 {
         
 # 1372 "<previous_module>"
-int ids[1];
+int ids[3];
         
 # 1373 "<previous_module>"
-int size; size = dump_structure(ss, 1, ids);
+int size; size = dump_structure(ss, 3, ids);
         
 # 1374 "<previous_module>"
-assert((size == 1) && (ids[0] == 1));
+assert(((((size == 2) && (ids[0] == 1)) && (ids[2] == 1)) || (((size == 2) && (ids[1] == 1)) && (ids[2] == 1))) || ((((size == 3) && (ids[0] == 1)) && (ids[1] == 1)) && (ids[2] == 1)));
 }
 
 
 # 1377 "<previous_module>"
-int ATOMIC_OPERATION = 1;
+int ATOMIC_OPERATION = 0;
 
 # 1381 "<previous_module>"
 struct lfds711_stack_state *ss;
@@ -2476,34 +2476,104 @@ if (ATOMIC_OPERATION)
         }
 
         ;
+        
+# 1388 "<previous_module>"
+if (ATOMIC_OPERATION)
+        {
+                pthread_mutex_lock(&lock);
+        }
+
+        ;
+        
+# 1389 "<previous_module>"
+insert(ss, 1);
+        
+# 1390 "<previous_module>"
+if (ATOMIC_OPERATION)
+        {
+                pthread_mutex_unlock(&lock);
+        }
+
+        ;
 }
 
 
-# 1390 "<previous_module>"
-int main()
-
-# 1391 "<previous_module>"
+# 1392 "<previous_module>"
+void *thread2(void *__cs_unused)
 {
         
-# 1392 "<previous_module>"
-pthread_mutex_init(&lock, 0);
-        
 # 1393 "<previous_module>"
-ss = init();
+if (ATOMIC_OPERATION)
+        {
+                pthread_mutex_lock(&lock);
+        }
+
+        ;
+        
+# 1394 "<previous_module>"
+delete(ss);
         
 # 1395 "<previous_module>"
-pthread_t t1;
+if (ATOMIC_OPERATION)
+        {
+                pthread_mutex_unlock(&lock);
+        }
+
+        ;
         
 # 1396 "<previous_module>"
-pthread_create(&t1, 0, thread1, 0);
+if (ATOMIC_OPERATION)
+        {
+                pthread_mutex_lock(&lock);
+        }
+
+        ;
         
 # 1397 "<previous_module>"
+insert(ss, 2);
+        
+# 1398 "<previous_module>"
+if (ATOMIC_OPERATION)
+        {
+                pthread_mutex_unlock(&lock);
+        }
+
+        ;
+}
+
+
+# 1401 "<previous_module>"
+int main()
+
+# 1402 "<previous_module>"
+{
+        
+# 1403 "<previous_module>"
+pthread_mutex_init(&lock, 0);
+        
+# 1404 "<previous_module>"
+ss = init();
+        
+# 1406 "<previous_module>"
+pthread_t t1;
+        pthread_t t2;
+        
+# 1407 "<previous_module>"
+pthread_create(&t1, 0, thread1, 0);
+        
+# 1408 "<previous_module>"
+pthread_create(&t2, 0, thread2, 0);
+        
+# 1409 "<previous_module>"
 pthread_join(t1, 0);
         
-# 1399 "<previous_module>"
+# 1410 "<previous_module>"
+pthread_join(t2, 0);
+        
+# 1412 "<previous_module>"
 check(ss);
         
-# 1400 "<previous_module>"
+# 1413 "<previous_module>"
 return 0;
 }
 

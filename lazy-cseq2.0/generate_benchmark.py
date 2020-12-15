@@ -156,6 +156,6 @@ if __name__ == "__main__":
     rounds = options.rounds
 
     perm = create_permutation(num_thread,num_op)
-    subprocess.call(["rm","-fr","benchmarks"])
-    subprocess.call(["mkdir","-p","benchmarks/logDir"])
+    # subprocess.call(["rm","-fr","benchmarks"])
+    # subprocess.call(["mkdir","-p","benchmarks/logDir"])
     create_benchmarks(perm)

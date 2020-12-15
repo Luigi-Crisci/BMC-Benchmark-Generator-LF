@@ -985,12 +985,12 @@ return data_structure_size;
 }
 void check(struct lfds711_stack_state *ss)
 {
-int ids[1];
+int ids[3];
 int size;
-size = dump_structure(ss, 1, ids);
-__CSEQ_assert((size == 1) && (ids[0] == 1));
+size = dump_structure(ss, 3, ids);
+__CSEQ_assert(((((size == 2) && (ids[0] == 1)) && (ids[2] == 1)) || (((size == 2) && (ids[1] == 1)) && (ids[2] == 1))) || ((((size == 3) && (ids[0] == 1)) && (ids[1] == 1)) && (ids[2] == 1)));
 }
-int ATOMIC_OPERATION = 1;
+int ATOMIC_OPERATION = 0;
 struct lfds711_stack_state *ss;
 __cs_mutex_t lock;
 void *thread1(void *__cs_unused)
@@ -1008,14 +1008,59 @@ insert(ss, 0);
 __cs_mutex_unlock(&lock);
         }
 ;
+;_Bool __cs_tmp_if_cond_27; __cs_tmp_if_cond_27 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_27)
+        {
+__cs_mutex_lock(&lock);
+        }
+;
+insert(ss, 1);
+;_Bool __cs_tmp_if_cond_28; __cs_tmp_if_cond_28 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_28)
+        {
+__cs_mutex_unlock(&lock);
+        }
+;
+}
+void *thread2(void *__cs_unused)
+{
+;_Bool __cs_tmp_if_cond_29; __cs_tmp_if_cond_29 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_29)
+        {
+__cs_mutex_lock(&lock);
+        }
+;
+delete(ss);
+;_Bool __cs_tmp_if_cond_30; __cs_tmp_if_cond_30 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_30)
+        {
+__cs_mutex_unlock(&lock);
+        }
+;
+;_Bool __cs_tmp_if_cond_31; __cs_tmp_if_cond_31 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_31)
+        {
+__cs_mutex_lock(&lock);
+        }
+;
+insert(ss, 2);
+;_Bool __cs_tmp_if_cond_32; __cs_tmp_if_cond_32 = (ATOMIC_OPERATION); 
+        if (__cs_tmp_if_cond_32)
+        {
+__cs_mutex_unlock(&lock);
+        }
+;
 }
 int main()
 {
 __cs_mutex_init(&lock, 0);
 ss = init();
 __cs_t t1;
+__cs_t t2;
 __cs_create(&t1, 0, thread1, 0);
+__cs_create(&t2, 0, thread2, 0);
 __cs_join(t1, 0);
+__cs_join(t2, 0);
 check(ss);
 return 0;
 }
