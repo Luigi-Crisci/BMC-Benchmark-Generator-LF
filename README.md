@@ -16,9 +16,7 @@ You need to install all the prerequisites necessary to run properly lazy-cseq:
 - Python 2.7
 - [PYCParser 2.17](https://github.com/eliben/pycparser) (`pip install pycparser==2.17`)
 - Backends:
-  + [CBMC](http://www.cprover.org/cbmc/) (cbmc 19.0)
-
-- Ubuntu SO
+  + [CBMC](http://www.cprover.org/cbmc/) > 5.10
 
 Python 3 is needed to execute the program.
 
