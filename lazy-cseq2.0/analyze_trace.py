@@ -3,11 +3,10 @@ from os import SEEK_SET, getenvb
 
 INSERT_TRACE_NAME = "insert_id="
 DELETE_TRACE_NAME = "delete_s="
-BENCHMARK_DIR = "benchmarks"
 SAFE_TRACE_NAME = "VERIFICATION SUCCESSFUL"
    
-def launch_lazy_cseq(input_file,include_param,rounds):
-   subprocess.call(["./cseq-feeder.py", "-i", f"{BENCHMARK_DIR}/{input_file}","-I",include_param
+def launch_lazy_cseq(input_file,output_dir,include_param,rounds):
+   subprocess.call(["./cseq-feeder.py", "-i", f"{output_dir}/{input_file}","-I",include_param
    ,"--unwind","5","--cex","--debug", "--rounds", f"{rounds}"])
    
 def generate_stack_state(state_list):
@@ -70,15 +69,6 @@ def generate_assert_condition(data_structure):
       i+=1
    return condition
 
-
-# def generate_contains(new_items):
-#    if(len(new_items) == 0):
-#       return ""
-#    lines = ""
-#    for elem in new_items:
-#       lines += f"long unsigned int c{elem} = contains(ss,{elem});\n"
-#    return lines
-
 def dump_structure(data_structure,max_num_elements):
    lines = ""
    lines += f"int ids[{max_num_elements}];\n"
@@ -86,26 +76,18 @@ def dump_structure(data_structure,max_num_elements):
    return lines
 
 #Create or expand the assert in checker.c
-def create_assert(data_structure,max_num_elements):
-   with open(f"{BENCHMARK_DIR}/checker.c","r+") as checker:
+def create_assert(checker_name,data_structure,max_num_elements,output_dir):
+   with open(f"{output_dir}/{checker_name}","r+") as checker:
       newfile_lines = ""
       lines = [line.rstrip('\n') for line in checker.readlines()]
       # contains_op = []
       for line in lines:
-         
-         # if "contains" in line:
-         #    contains_op.append(line[ line.index("contains(ss,") + 1 : line.rindex(")")])
-         
          if "assert(" in line:
             if "assert(0)" in line:
-                  # newfile_lines += generate_contains(data_structure)
                   newfile_lines += dump_structure(data_structure,max_num_elements)
                   condition = generate_assert_condition(data_structure)
                   newfile_lines += f"assert({condition});\n"
             else:
-               # new_elements = list(set([data_structure]) - set([contains_op]))
-               # newfile_lines += generate_contains(new_elements)
-               
                assert_closure_index = line.rindex(")") #penultimo character
                assert_condtions = line[:assert_closure_index]
                generated_condition = generate_assert_condition(data_structure)
@@ -119,19 +101,12 @@ def create_assert(data_structure,max_num_elements):
          checker.write(newfile_lines)
 
 
-def create_checker(name):
-   with open(f"{BENCHMARK_DIR}/checker.c", "w+") as checker:
-      checker.write("void check("+str(name)+" *ss){\n")
-      checker.write("assert(0);\n") 
-      checker.write("}")  
-
-
 def is_safe(data_structure_state):
    return len(data_structure_state) > 0 and data_structure_state[0] == "SAFE"
 
 
-def disable_atomic_operations(filename):
-   with open(f"{BENCHMARK_DIR}/{filename}","r+") as file:
+def disable_atomic_operations(filename,output_dir):
+   with open(f"{output_dir}/{filename}","r+") as file:
       lines = ""
       filelines = file.readlines()
       for line in filelines:
@@ -143,23 +118,22 @@ def disable_atomic_operations(filename):
       file.seek(0,SEEK_SET)
       file.write(lines)
    
-def run_benchmark(filename,data_structure_type,include_params,max_num_elements,name,rounds): 
-   
-   create_checker(name)
-   
+
+def run_benchmark(filename,checker_name,output_dir,data_structure_type,include_params,max_num_elements,rounds): 
+
    # Capture all possible state of this configuration
    while True:
-      launch_lazy_cseq(filename,include_params,rounds)
-      data_structure_state = get_data_structure_state(f"{BENCHMARK_DIR}/_cs_{filename}.cbmc.log",data_structure_type)
+      launch_lazy_cseq(filename,output_dir,include_params,rounds)
+      data_structure_state = get_data_structure_state(f"{output_dir}/_cs_{filename}.cbmc.log",data_structure_type)
       if is_safe(data_structure_state):
          break
       else:
-         create_assert(data_structure_state,max_num_elements)
+         create_assert(checker_name,data_structure_state,max_num_elements,output_dir)
    
    # Test with lock-free behaviour
-   disable_atomic_operations(filename)
-   launch_lazy_cseq(filename,include_params)
-   data_structure_state = get_data_structure_state(f"{BENCHMARK_DIR}/_cs_{filename}.cbmc.log",data_structure_type)
+   disable_atomic_operations(filename,output_dir)
+   launch_lazy_cseq(filename,output_dir,include_params,rounds)
+   data_structure_state = get_data_structure_state(f"{output_dir}/_cs_{filename}.cbmc.log",data_structure_type)
    if is_safe(data_structure_state):
       return True
    else:

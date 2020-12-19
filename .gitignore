@@ -1,4 +1,4 @@
 *.o
 *.out
-*lazy-cseq/*
-*log/*
+lazy-cseq2.0/log/
+lazy-cseq2.0/modules/*.pyc

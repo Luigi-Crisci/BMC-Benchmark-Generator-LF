@@ -1,9 +1,11 @@
 from io import SEEK_SET
+from os import write
 import sys
 import subprocess
 from itertools import product
 from optparse import OptionParser
 import analyze_trace
+import time
 
 num_thread = 0
 num_op = 0
@@ -12,6 +14,7 @@ interface_path = ""
 include_params = ""
 name = ""
 rounds = 1
+benchmark_dir = ""
 
 # Function to convert   
 def listToString(s):
@@ -41,6 +44,14 @@ def create_permutation(num_t,num_op):
 
 
     return thread_comb
+
+
+def create_checker(progressive_num):
+   with open(f"{benchmark_dir}/checker_{progressive_num}.c", "w+") as checker:
+      checker.write("void check("+str(name)+" *ss){\n")
+      checker.write("assert(0);\n") 
+      checker.write("}")  
+
 
 #Function to write into "generalized.c" a possible configuration of threads
 def create_benchmarks(perm):
@@ -72,7 +83,8 @@ def create_benchmarks(perm):
     generalized = open("templates/template.c","r")
     for i in range(len(string_thread_comb)):
         filename = f"benchmark_{i}.c"
-        file_result = open(f"benchmarks/{filename}","w+")
+        checker_name = f"checker_{i}.c"
+        file_result = open(f"{benchmark_dir}/{filename}","w+")
         
         for line in generalized.readlines():
             if line.__contains__("// INTERFACE GOES THERE\n"):
@@ -80,6 +92,9 @@ def create_benchmarks(perm):
                 continue
             if line.__contains__("//TYPE DEC\n"):
                 file_result.write(f"{name}* ss;\n")
+                continue
+            if line.__contains__("// CHECKER"):
+                file_result.write(f"#include \"checker_{i}.c\"\n")
                 continue
             if line.__contains__("// THREAD GOES THERE\n"):
                 file_result.write(string_thread_comb[i][0])
@@ -103,21 +118,14 @@ def create_benchmarks(perm):
                 continue
             file_result.write(line)
         file_result.close()
-        # generalized.close()
+        create_checker(i)
         
-        if not analyze_trace.run_benchmark(filename,data_structure_type,include_params,string_thread_comb[i][1],name,rounds):
+        if not analyze_trace.run_benchmark(filename,checker_name,benchmark_dir,data_structure_type,include_params,string_thread_comb[i][1],rounds):
             print(f"Error found with {filename} benchmark. Please see checker.c and the related log to find out more")
             sys.exit(1)
 
         generalized.seek(0,SEEK_SET)
     generalized.close()
-
-
-    # for i in range(len(string_thread_comb)):
-    #     filename = f"benchmark_{i}.c"
-    #     if not analyze_trace.run_benchmark(filename,data_structure_type,include_params):
-    #         print(f"Error found with {filename} benchmark. Please see checker.c and the related log to find out more")
-    #         sys.exit(1)
     
         
 if __name__ == "__main__":
@@ -156,6 +164,8 @@ if __name__ == "__main__":
     rounds = options.rounds
 
     perm = create_permutation(num_thread,num_op)
-    subprocess.call(["rm","-fr","benchmarks"])
-    subprocess.call(["mkdir","-p","benchmarks/logDir"])
+
+    current_time = str(time.asctime()).replace(" ","_")
+    benchmark_dir = f"benchmarks/benchmark_{current_time}"
+    subprocess.call(["mkdir","-p",benchmark_dir])
     create_benchmarks(perm)
