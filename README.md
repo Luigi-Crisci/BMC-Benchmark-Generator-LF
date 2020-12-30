@@ -1,6 +1,6 @@
 # BMC-Benchmark-Generator-LF
 
- 
+This software provides a simple way to test a lock-free data structure using Bounded Model Checking and Lazy Sequentialization. When runned, a set of repetable benchmark are generated and a counterexample is shown. 
 
 ## Repository Structure
 
@@ -19,6 +19,7 @@ You need to install all the prerequisites necessary to run properly lazy-cseq:
   + [CBMC](http://www.cprover.org/cbmc/) > 5.10
 
 Python 3 is needed to execute the program.
+> CBMC > 5.10 is needed because of a strange bug where heap-allocated memory just disappear between executions while using CBMC 5.10 
 
 ## What it does and how to use it
 
