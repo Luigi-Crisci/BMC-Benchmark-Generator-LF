@@ -1,6 +1,6 @@
-# LazyCseq Benchmark Generator
+# BMC-Benchmark-Generator-LF
 
-A python script for generating benchmark on lock-free data strucures.  
+ 
 
 ## Repository Structure
 
